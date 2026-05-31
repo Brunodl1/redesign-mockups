@@ -45,7 +45,7 @@ header{position:sticky;top:0;z-index:50;background:rgba(247,247,242,.94);backdro
 .hero{display:grid;grid-template-columns:1.05fr .95fr;min-height:min(82vh,700px)}
 .hero-copy{display:flex;flex-direction:column;justify-content:center;padding:clamp(2rem,5vw,5rem)}
 .hero-copy .eyebrow{color:var(--terra)}
-.hero-copy h1{font-size:clamp(2.1rem,4vw,var(--s-5));margin:.8rem 0 1rem;font-weight:600;text-transform:uppercase;letter-spacing:.02em;line-height:1.08}
+.hero-copy h1{font-size:clamp(2.1rem,4vw,var(--s-5));margin:.8rem 0 1rem;font-weight:600;text-transform:uppercase;letter-spacing:.04em;line-height:1.08}
 .hero-copy h1 em{font-style:normal;color:var(--terra)}
 .hero-copy .lede{font-size:var(--s-1);color:var(--ink-soft);max-width:31rem}
 .hero-cta{display:flex;gap:.7rem;margin-top:1.7rem;flex-wrap:wrap}
@@ -179,4 +179,7 @@ footer{background:var(--ink);color:#C7C5BE;padding:var(--sp-6) 0 var(--sp-4)}
 @media(max-width:640px){
   .grid{grid-template-columns:1fr 1fr}.section{padding:var(--sp-6) 0}.proof .row{grid-template-columns:1fr 1fr}
   .foot-grid{grid-template-columns:1fr}.news form{flex-direction:column}
+}
+@media(max-width:420px){
+  .grid{grid-template-columns:1fr}
 }
