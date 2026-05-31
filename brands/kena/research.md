@@ -1,73 +1,58 @@
 # Kena Skincare — research (home redesign)
 
-## Language — **FRENCH** (verdict)
-Québec/Canada brand: header shows "CAD $ | Canada", a "FRANÇAIS" toggle, and all
-on-page copy is French ("Découvrez notre soin", "Nos étoiles", "Notre mission").
-Per Bruno's rule (Québec brand offering FR → build FR). **All copy in French.**
-Keep product proper names exactly as on packaging.
+## Language — **ENGLISH** (verdict)
+`<html lang="en">`, `.com`, generic Shopify country/currency list (Canada CAD $
+default but no FR site/toggle), all on-page copy English. A few French *customer
+reviews* exist but no French UI/version → English is correct (skill rule: default
+FR only for QC/.ca brands that actually offer French; Kena does not).
 
 ## ICP
-Femmes & hommes ~25–50 cherchant des soins **naturels, multi-usage, fabriqués au
-Québec**. Achat émotionnel: « un soin sain, nourrissant, polyvalent qui me donne
-un éclat doré (Lueur Dorée), d'une petite marque d'ici en qui j'ai confiance. »
-Objection à lever: *est-ce que ça fonctionne vraiment / est-ce vraiment naturel?*
-→ avis + notes, ingrédients (chlorophylle), mission/origine, garantie.
+Results-driven skincare buyers (~25–45) with dark spots / uneven tone / sensitive
+skin, wanting fast visible clarity from a gentle, lightweight formula. Founder-led,
+trust-through-story + reviews.
 
-## What they sell (REAL product names)
-- **L'huile de soin nourrissante** — HÉROS. Multi-usage visage/corps/cheveux, infusée à la chlorophylle.
-- **L'ensemble Lueur Dorée** — coffret signature (éclat doré).
-- **Le beurre fouetté hydratant** — beurre corporel fouetté.
-- **L'huile fouettée pour la barbe** — soin barbe.
-- **Le gommage exfoliant** — gommage corps.
+## What they sell
+**ONE product: The Glace Skin Serum** (amber facial serum w/ dropper, ~$138 CAD,
+often sold out). No other live SKUs → the redesign must be a single-product story,
+NOT a multi-product grid.
 
-## USP / value prop
-Soins naturels **multi-usage**, **infusés à la chlorophylle**, fabriqués au
-Québec; polyvalence (un produit, plusieurs usages); éclat « doré » naturel.
+## USP / value prop (real copy)
+"FAST RESULTS — noticeably clearer skin in just 10 weeks", fades dark spots,
+"light and not oily", soft/soothing, hydrating. Emotional layer: "A skincare love
+story" / founder origin.
 
 ## Tone
-Naturel, chaleureux, élégant-épuré, accessible.
+Results-driven, warm, aspirational, founder-personal, clean-modern.
 
 ## Pains → Desires
-Pains: routine trop compliquée/multi-produits; peau sèche/terne; méfiance « clean=marketing ».
-Desires: simplicité (1 produit polyvalent); peau nourrie + éclat doré; soutenir une marque d'ici.
+Pains: dark spots/uneven tone; irritation from harsh actives; slow/unconvincing results.
+Desires: visibly clearer skin fast; lightweight non-greasy feel; gentle enough for sensitive skin.
 
-## Real copy snippets (reinterpret)
-- « WELCOME TO OUR WORLD OF SKINCARE ! »
-- « Découvrez notre soin — L'huile de soin nourrissante »
-- « Multi-usage pour le visage, le corps et les cheveux »
-- « Nos étoiles »
-- « Infusé à la chlorophylle… »
-- « PROFITEZ DE 15% DE RABAIS SUR VOTRE PREMIÈRE COMMANDE »
+## Real copy snippets
+- "FAST RESULTS"
+- "Experience the potential of noticeably clearer skin in just 10 weeks with THE GLACE SKIN SERUM"
+- "A skincare love story."
+- "The Story Behind The Brand — our founders share the story…"
+- "It's light and it's not oily on my face"
 
 ## Niche
-skincare-cosmetics (→ references/skincare-cosmetics.md). Reinterpret OSEA DNA
-through Kena's REAL brand (below), not warm-sand: Kena is white + sage-olive + gold.
+skincare-cosmetics (→ references/skincare-cosmetics.md). Reinterpreted through
+Kena's REAL brand below (teal/black, not warm-sand).
 
-## Kena REAL design tokens (cdp.py styles — be faithful)
-- Headings: **Cormorant Garamond**, serif, weight 500, normal casing. H1 ~60px.
-- Body/UI: **Poppins**, sans.
-- Accent/buttons: **sage-olive `#747A5F`**, white text, **square (radius 0)**, padding 15px 30px, no casing, Poppins 400.
-- Body bg white `#FFFFFF`; ink near-black `#212429`.
-- Brand layer to add: **gold** accent (Lueur Dorée) + soft cream surfaces + chlorophyll green hints.
+## Kena REAL design tokens (from raw HTML — cdp.py was broken)
+- Font: **Montserrat** (display + body).
+- Accent/teal **#108474** (deeper #0B6557; bright #07DEBC); ink near-black **#0A0A0A**; white bg.
+- Logo (black wordmark): `Kena_logo_LBlackT.jpg`.
 
-## Logo
-- Header (dark): `https://www.kenaskincare.com/cdn/shop/files/Beige_Minimalist_Skincare_Logo_1.png?width=400`
-- Footer (white, for dark bg): `https://www.kenaskincare.com/cdn/shop/files/kena_logo_blanc.png?width=600`
-
-## Image plan
-**Hotlink (real Kena photos, Shopify CDN):**
-- Oil bottle hero/product: `…/photo_kena_huile.png?width=1200`
-- Lifestyle/oil: `…/IMG_5860.jpg?width=1000` , `…/_MG_5860.jpg?width=1000`
-- Beurre fouetté: `…/IMG_6262.jpg?width=900`
-- Lueur Dorée set: `…/IMG_3206.jpg?width=900`
-- Barbe: `…/F8208E32-D618-49F1-A47C-D2A65F45E927.jpg?width=900`
-
-**Generate:**
-- HERO composite (Gemini edit, real oil bottle `src_oil.png`) — warm golden-hour vanity, botanicals, gold+green, negative space. 2 variants. ~$0.08.
-- FLOAT: amber/gold **oil droplets & bubbles** (the hero oil) — Flux, 3 variants → `float-oil-*`.
-- FLOAT: **whipped butter dollop**, soft cream colour (beurre fouetté) — Flux, 3 variants → `float-butter-*`.
+## Image plan (Gemini edit + PIL both broken → no compositing)
+**Hotlinked real Kena photos (cdn.shopify.com / kenaskincare.com/cdn/shop/files):**
+- Serum bottle: `YPT04762.png`
+- Lifestyle / before-after skin: `9ACBFD65-E5EE-4EDC-A403-4A89ED12AB43.png` (used in hero.jpg via sips, + science band)
+- Founders: `68968AD9-88D1-49D3-B738-9901F97F8EBC.png` (story band)
+- Logo: `Kena_logo_LBlackT.jpg` (header black, footer inverted white)
+**Generated:** none usable (Gemini edit + Flux-float chroma-key both blocked). Floats dropped.
 
 ## Hero variant
-etymologie=split, lemustdose=full-bleed → Kena = **centered editorial**
-(centered Cormorant promise + 1 CTA on soft cream/gold ground, large hero image
-below, both above fold desktop; mobile = image first).
+etymologie=split, lemustdose=full-bleed → Kena = **centered editorial** (centered
+Montserrat promise + 1 CTA, real before/after skin diptych showcase below; mobile
+image above fold).
