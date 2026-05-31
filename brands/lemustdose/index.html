@@ -12,7 +12,7 @@
 </head>
 <body>
 
-<div class="announce">Nouveaux clients : 10 % de rabais + livraison gratuite sur votre première commande</div>
+<div class="announce">Nouveaux clients : −10 % + livraison gratuite sur la 1<sup>re</sup> commande</div>
 
 <header class="header">
   <nav class="nav">
@@ -29,19 +29,21 @@
   </nav>
 </header>
 
-<!-- hero (split — text panel + photo, no text over image) -->
+<!-- hero (full-bleed image + contained text card) -->
 <section class="hero">
-  <div class="hero-copy">
-    <span class="eyebrow">K-beauty · qualité clinique</span>
-    <h1>Des sérums booster <em>concentrés</em>, inspirés de la clinique.</h1>
-    <p class="lede">La puissance de la K-beauty en quelques gouttes : PDRN, exosomes et micro-spicules dosés pour des résultats visibles — sans procédure invasive.</p>
-    <div class="hero-actions">
-      <a class="btn btn-primary" href="https://www.google.com">Magasiner les best-sellers</a>
-      <a class="btn btn-outline" href="https://www.google.com">Découvrir la science</a>
+  <div class="hero-overlay"></div>
+  <div class="hero-inner">
+    <div class="hero-card">
+      <span class="eyebrow">K-beauty · qualité clinique</span>
+      <h1>La dose qui <em>transforme</em> votre peau.</h1>
+      <p class="lede">La K-beauty clinique, concentrée en quelques gouttes.</p>
+      <div class="hero-actions">
+        <a class="btn btn-light" href="https://www.google.com">Magasiner les best-sellers</a>
+        <a class="hero-link" href="https://www.google.com">Découvrir la science →</a>
+      </div>
+      <p class="hero-trust"><span class="stars">★★★★★</span> 12 000+ doses livrées · Vegan · Sans parfum</p>
     </div>
-    <p class="hero-trust"><span class="stars">★★★★★</span> Plus de 12 000 doses livrées · Vegan · Sans parfum</p>
   </div>
-  <div class="hero-img" role="img" aria-label="Routine de soin Le Must Dose appliquée au quotidien" style="background-image:url('https://lemustdose.com/cdn/shop/files/Man_Woman_750_x_750_px.jpg?v=1757277591&width=1500')"></div>
 </section>
 
 <!-- claim strip -->
@@ -56,6 +58,7 @@
 
 <!-- bestsellers -->
 <section class="section">
+  <img class="float float-a" src="assets/float-drop-cut.png" alt="" aria-hidden="true">
   <div class="wrap">
     <div class="sec-head">
       <span class="eyebrow">Best-sellers</span>
@@ -116,6 +119,7 @@
 
 <!-- clean formulation -->
 <section class="section clean">
+  <img class="float float-b" src="assets/float-bottle-cut.png" alt="" aria-hidden="true">
   <div class="wrap">
     <div class="sec-head">
       <span class="eyebrow">Formulation propre</span>
@@ -123,19 +127,30 @@
       <p>Des formules épurées, centrées sur les actifs qui font la différence — et rien d'autre.</p>
     </div>
     <ul class="checks">
-      <li><b><span class="tick">✓</span>Sans PEG, parabènes ni silicones</b><small>Des formules épurées, centrées sur les actifs.</small></li>
-      <li><b><span class="tick">✓</span>Vegan &amp; sans parfum</b><small>Pensé pour les peaux réactives et sensibles.</small></li>
-      <li><b><span class="tick">✓</span>Dosé à la teneur clinique</b><small>La concentration des soins professionnels, à la maison.</small></li>
+      <li>
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><line x1="6.2" y1="6.2" x2="17.8" y2="17.8"/></svg></span>
+        <div><b>Sans PEG, parabènes ni silicones</b><small>Des formules épurées, centrées sur les actifs.</small></div>
+      </li>
+      <li>
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 4C9 5 4 11 4 19c0 0 0 1 1 1 8 0 14-5 15-16z"/><path d="M5 19c3-4 7-7 11-8.5"/></svg></span>
+        <div><b>Vegan &amp; sans parfum</b><small>Pensé pour les peaux réactives et sensibles.</small></div>
+      </li>
+      <li>
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 3h6M10 3v6.2L5.3 17.5A2 2 0 0 0 7 20.5h10a2 2 0 0 0 1.7-3L14 9.2V3"/><line x1="7.5" y1="15" x2="16.5" y2="15"/></svg></span>
+        <div><b>Dosé à la teneur clinique</b><small>La concentration des soins professionnels, à la maison.</small></div>
+      </li>
     </ul>
   </div>
 </section>
 
 <!-- reviews -->
 <section class="section reviews">
+  <img class="float float-c" src="assets/float-drop-cut.png" alt="" aria-hidden="true">
   <div class="wrap">
     <div class="sec-head">
       <span class="eyebrow">Avis vérifiés</span>
       <h2>Des peaux transformées, dose après dose.</h2>
+      <p class="rating-sum"><span class="stars">★★★★★</span> 4,9/5 · plus de 2 300 avis vérifiés</p>
     </div>
     <div class="grid">
       <div class="review">
@@ -152,6 +167,21 @@
         <span class="stars">★★★★★</span>
         <p>« Enfin un anti-âge qui ne tiraille pas. Mon teint est plus uniforme et lumineux, sans irritation. »</p>
         <div class="who"><span class="ava">G</span><span><b>Geneviève R.</b><small>Exosomes Age Defense</small></span></div>
+      </div>
+      <div class="review">
+        <span class="stars">★★★★★</span>
+        <p>« Texture ultra légère, zéro résidu collant. Je l'ai adopté matin et soir depuis trois mois. »</p>
+        <div class="who"><span class="ava">S</span><span><b>Sophie L.</b><small>PDRN All-in-One</small></span></div>
+      </div>
+      <div class="review">
+        <span class="stars">★★★★★</span>
+        <p>« Résultats visibles en trois semaines : pores resserrés et grain de peau nettement affiné. »</p>
+        <div class="who"><span class="ava">M</span><span><b>Maxime D.</b><small>Spicule Shot</small></span></div>
+      </div>
+      <div class="review">
+        <span class="stars">★★★★★</span>
+        <p>« Mon dermatologue a remarqué la différence — une peau plus dense et visiblement rebondie. »</p>
+        <div class="who"><span class="ava">A</span><span><b>Annie P.</b><small>Exosomes Age Defense</small></span></div>
       </div>
     </div>
   </div>
