@@ -58,7 +58,7 @@
 
 <!-- bestsellers -->
 <section class="section">
-  <img class="float float-a" src="assets/float-drop2-cut.png" alt="" aria-hidden="true">
+  <div class="float float-a" data-speed="34"><img src="assets/float-drop2-cut.png" alt="" aria-hidden="true"></div>
   <div class="wrap">
     <div class="sec-head">
       <span class="eyebrow">Best-sellers</span>
@@ -119,7 +119,7 @@
 
 <!-- clean formulation -->
 <section class="section clean">
-  <img class="float float-b" src="assets/float-bottle2-cut.png" alt="" aria-hidden="true">
+  <div class="float float-b" data-speed="64"><img src="assets/float-bottle2-cut.png" alt="" aria-hidden="true"></div>
   <div class="wrap">
     <div class="sec-head">
       <span class="eyebrow">Formulation propre</span>
@@ -145,7 +145,7 @@
 
 <!-- reviews -->
 <section class="section reviews">
-  <img class="float float-c" src="assets/float-drop2-cut.png" alt="" aria-hidden="true">
+  <div class="float float-c" data-speed="44"><img src="assets/float-drop2-cut.png" alt="" aria-hidden="true"></div>
   <div class="wrap">
     <div class="sec-head">
       <span class="eyebrow">Avis vérifiés</span>
@@ -237,6 +237,31 @@
     </div>
   </div>
 </footer>
+
+<script>
+/* lightweight scroll parallax for the floating elements (desktop only) */
+(function(){
+  if(window.matchMedia('(max-width:1000px)').matches)return;
+  var floats=[].slice.call(document.querySelectorAll('.float'));
+  if(!floats.length)return;
+  function base(){var sy=window.pageYOffset||0;floats.forEach(function(f){var r=f.getBoundingClientRect();f._b=r.top+r.height/2+sy;});}
+  function clamp(v,a,b){return v<a?a:v>b?b:v;}
+  var ticking=false;
+  function update(){
+    var sy=window.pageYOffset||0, vh=window.innerHeight;
+    floats.forEach(function(f){
+      var rel=clamp((f._b - sy - vh/2)/vh,-1.3,1.3);
+      var sp=parseFloat(f.getAttribute('data-speed'))||40;
+      f.style.transform='translateY('+(rel*sp).toFixed(1)+'px)';
+    });
+    ticking=false;
+  }
+  function onScroll(){if(!ticking){requestAnimationFrame(update);ticking=true;}}
+  window.addEventListener('scroll',onScroll,{passive:true});
+  window.addEventListener('resize',function(){base();update();});
+  base();update();
+})();
+</script>
 
 </body>
 </html>
