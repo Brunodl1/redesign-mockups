@@ -1,9 +1,7 @@
 /* redesign-mockup motion — dependency-free.
-   1) scroll-reveal: elements with .reveal rise + fade + un-rotateX into place
-      as they enter the viewport (all devices). Siblings stagger.
-   2) float parallax: elements with .float[data-speed] drift as you scroll
-      (desktop only). Pairs with the .float / @keyframes bob CSS.
-   Respects prefers-reduced-motion. */
+   scroll-reveal: elements with .reveal rise + fade + un-rotateX into place as they
+   enter the viewport (all devices). Siblings stagger. Respects prefers-reduced-motion.
+   (Floating .float elements are intentionally STATIC — no parallax/bob.) */
 (function () {
   var reduce = window.matchMedia('(prefers-reduced-motion:reduce)').matches;
 
@@ -30,31 +28,6 @@
     }
   }
 
-  /* ---- float parallax (desktop only) ---- */
-  if (reduce || window.matchMedia('(max-width:1000px)').matches) return;
-  var floats = [].slice.call(document.querySelectorAll('.float'));
-  if (!floats.length) return;
-  function base() {
-    var sy = window.pageYOffset || 0;
-    floats.forEach(function (f) {
-      var r = f.getBoundingClientRect();
-      f._b = r.top + r.height / 2 + sy;
-    });
-  }
-  function clamp(v, a, b) { return v < a ? a : v > b ? b : v; }
-  var ticking = false;
-  function update() {
-    var sy = window.pageYOffset || 0, vh = window.innerHeight;
-    floats.forEach(function (f) {
-      var rel = clamp((f._b - sy - vh / 2) / vh, -1.3, 1.3);
-      var sp = parseFloat(f.getAttribute('data-speed')) || 40;
-      f.style.transform = 'translateY(' + (rel * sp).toFixed(1) + 'px)';
-    });
-    ticking = false;
-  }
-  window.addEventListener('scroll', function () {
-    if (!ticking) { requestAnimationFrame(update); ticking = true; }
-  }, { passive: true });
-  window.addEventListener('resize', function () { base(); update(); });
-  base(); update();
+  /* floating elements are STATIC (Bruno's preference) — no parallax, no bob.
+     They keep a fixed rotation via CSS (.float img { transform: rotate(var(--rot)) }). */
 })();
