@@ -151,14 +151,32 @@
   flex-shrink: 0;
 }
 
-.site-header__logo-img {
-  height: 46px;
-  width: auto;
-  display: block;
-  /* Prevent browser from stretching to fill */
-  object-fit: contain;
-  /* Subtle sharpness tweak for retina */
-  image-rendering: -webkit-optimize-contrast;
+/* Text wordmark (the real emblem is a fine gold line-art that's illegible at
+   header size on cream — render a crisp serif wordmark; real logo lives in footer) */
+.site-header__wordmark {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1;
+  gap: 3px;
+}
+.site-header__wordmark-name {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.9rem;
+  letter-spacing: .02em;
+  color: var(--ink);
+  white-space: nowrap;
+}
+.site-header__wordmark-sub {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: .56rem;
+  letter-spacing: .34em;
+  text-transform: uppercase;
+  color: var(--accent);
+  white-space: nowrap;
+  padding-left: .34em; /* optical: balance the tracking */
 }
 
 /* ── Right: utility icons ───────────────────────────────── */
@@ -240,8 +258,12 @@
     justify-content: center;
   }
 
-  .site-header__logo-img {
-    height: 38px;
+  .site-header__wordmark-name {
+    font-size: 1.4rem;
+  }
+  .site-header__wordmark-sub {
+    font-size: .48rem;
+    letter-spacing: .28em;
   }
 
   /* Utils: right-aligned, cart only */
@@ -1939,18 +1961,9 @@
 }
 
 /* Logo chip: small light pill so colour logo reads on dark bg */
-.site-footer__logo-chip{
-  display:inline-flex;
-  align-items:center;
-  background:#F5F0E8;
-  border-radius:var(--radius);
-  padding:var(--sp-2) var(--sp-3);
-  width:fit-content
-}
-
 .site-footer__logo{
   display:block;
-  height:44px;
+  height:104px;
   width:auto
 }
 
