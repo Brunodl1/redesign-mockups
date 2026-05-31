@@ -1,0 +1,11 @@
+{
+  "provider": "gemini-pro",
+  "model": "gemini-2.5-flash-image",
+  "account": "bruno1",
+  "aspect": "4:5",
+  "size": "1K",
+  "elapsed_s": 7.03,
+  "timestamp": "2026-05-31T11:28:55-0500",
+  "input_image": null,
+  "prompt": "Editorial macro photograph of a clear glass cosmetic dropper releasing a single amber serum droplet over a warm cream marble surface, soft diffused natural light, deep maroon and warm amber color palette, a few softly out-of-focus dried botanical sprigs, generous negative space, minimalist luxury Korean skincare aesthetic, photorealistic, absolutely no text, no labels, no packaging"
+}
