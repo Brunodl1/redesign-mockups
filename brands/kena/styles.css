@@ -217,7 +217,12 @@
 /* ─── Hero — Centered Editorial ─────────────────────────────── */
 
 .s-hero {
-  background: linear-gradient(180deg, var(--bg) 0%, var(--surface-2) 100%);
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.78) 0%, rgba(230,241,238,.70) 100%),
+    url("assets/hero-bg.jpg");
+  background-size: cover, cover;
+  background-position: center, center;
+  background-repeat: no-repeat, no-repeat;
   padding-top: var(--sp-7);
   padding-bottom: var(--sp-6);
   overflow: hidden;
