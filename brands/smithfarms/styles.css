@@ -97,6 +97,9 @@ header { position: sticky; top: 0; z-index: 50; background: rgba(244,238,227,.92
 .hero h1 em { font-style: italic; color: #E7C4A8; }
 .hero p.lede { font-size: var(--step-1); color: var(--ink-soft); max-width: 27rem; }
 .hero-cta { display: flex; gap: .8rem; margin-top: 1.8rem; flex-wrap: wrap; }
+/* outline CTA sits on the dark hero panel — make it light for contrast */
+.hero-cta .btn-outline { color: var(--surface); border-color: rgba(255,255,255,.6); }
+.hero-cta .btn-outline:hover { background: var(--surface); color: var(--ink); border-color: var(--surface); }
 .hero-trust { margin-top: 1.6rem; font-size: var(--step--1); color: var(--ink-soft); display: flex; align-items: center; gap: .5rem; }
 .hero-trust .stars { color: var(--star); letter-spacing: .05em; }
 
