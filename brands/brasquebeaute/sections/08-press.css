@@ -1,0 +1,227 @@
+/* =============================================
+   BRASQUÉ BEAUTÉ — Section 08 · Dans les médias
+   Scoped to: .s-press
+   Uses base.css token contract (no raw colors)
+   ============================================= */
+
+/* ─── TOKEN PASSTHROUGH (ensures scope safety) ─── */
+.s-press {
+  --bg:          #FCFBF8;
+  --surface:     #fff;
+  --surface-2:   #F4F1EA;
+  --ink:         #1D1D1D;
+  --ink-soft:    #5C5A55;
+  --accent:      #108474;
+  --accent-ink:  #fff;
+  --accent-deep: #0B6557;
+  --mint:        #EDF5F5;
+  --gold:        #C8A24B;
+  --dark:        #161616;
+  --line:        #E4DFD5;
+  --font-display:"Halant", serif;
+  --font-body:   "Assistant", sans-serif;
+  --s--1:  .75rem;
+  --s-0:   1rem;
+  --s-1:   1.125rem;
+  --s-2:   1.375rem;
+  --s-3:   1.75rem;
+  --s-4:   2.25rem;
+  --s-5:   3rem;
+  --sp-1:  .25rem;
+  --sp-2:  .5rem;
+  --sp-3:  .75rem;
+  --sp-4:  1rem;
+  --sp-5:  1.5rem;
+  --sp-6:  2rem;
+  --sp-7:  3rem;
+  --sp-8:  5rem;
+  --radius:    3px;
+  --radius-lg: 8px;
+  --shadow:    0 2px 16px rgba(0,0,0,.07);
+  --maxw:      1160px;
+}
+
+/* ─── SECTION SHELL ─────────────────────────── */
+
+.s-press {
+  background: var(--dark);
+  padding-block: var(--sp-8);
+  overflow: hidden;
+}
+
+/* ─── REVEAL ────────────────────────────────── */
+
+.s-press.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity .65s ease, transform .65s ease;
+}
+.s-press.reveal.in {
+  opacity: 1;
+  transform: none;
+}
+
+/* ─── WRAP ──────────────────────────────────── */
+
+.s-press .wrap {
+  max-width: var(--maxw);
+  margin-inline: auto;
+  padding-inline: var(--sp-6);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sp-5);
+  text-align: center;
+}
+
+/* ─── EYEBROW ───────────────────────────────── */
+
+.s-press__eyebrow {
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  font-weight: 700;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 0;
+}
+
+/* ─── HEADING ───────────────────────────────── */
+
+.s-press__h2 {
+  font-family: var(--font-display);
+  font-size: clamp(var(--s-2), 3vw, var(--s-4));
+  font-weight: 500;
+  line-height: 1.22;
+  color: rgba(255,255,255,.88);
+  margin: 0;
+  letter-spacing: .01em;
+}
+
+/* ─── PRESS ROW ─────────────────────────────── */
+
+.s-press__row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+  gap: 0;
+  width: 100%;
+  margin-top: var(--sp-3);
+}
+
+/* ─── PRESS ITEM ────────────────────────────── */
+
+.s-press__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sp-2);
+  flex: 1;
+  padding: var(--sp-5) var(--sp-4);
+  text-decoration: none;
+  transition: opacity .22s ease;
+  min-width: 0;
+}
+
+.s-press__item:hover .s-press__name {
+  color: var(--accent);
+}
+
+.s-press__item:hover {
+  opacity: 1;
+}
+
+/* ─── WORDMARK NAME ─────────────────────────── */
+
+.s-press__name {
+  font-family: var(--font-display);
+  font-size: clamp(1.05rem, 2.2vw, 1.5rem);
+  font-weight: 500;
+  letter-spacing: .04em;
+  color: rgba(255,255,255,.62);
+  white-space: nowrap;
+  transition: color .22s ease;
+  line-height: 1.1;
+}
+
+/* ─── CAPTION ───────────────────────────────── */
+
+.s-press__caption {
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  font-weight: 400;
+  letter-spacing: .05em;
+  color: rgba(255,255,255,.32);
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+/* ─── DIVIDER ───────────────────────────────── */
+
+.s-press__divider {
+  display: block;
+  width: 1px;
+  height: 48px;
+  background: rgba(255,255,255,.12);
+  flex-shrink: 0;
+  align-self: center;
+}
+
+/* ─── MOBILE ────────────────────────────────── */
+
+@media (max-width: 700px) {
+  .s-press {
+    padding-block: var(--sp-7);
+  }
+
+  .s-press .wrap {
+    padding-inline: var(--sp-5);
+    gap: var(--sp-5);
+  }
+
+  .s-press__row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    row-gap: 0;
+  }
+
+  /* hide the inline dividers in grid mode */
+  .s-press__divider {
+    display: none;
+  }
+
+  .s-press__item {
+    padding: var(--sp-5) var(--sp-3);
+    border: 1px solid rgba(255,255,255,.07);
+    gap: var(--sp-1);
+  }
+
+  /* subtle inner borders via outline trick */
+  .s-press__item:nth-child(odd):not(:last-child) {
+    border-right: none;
+  }
+
+  .s-press__name {
+    font-size: var(--s-1);
+    white-space: normal;
+    text-align: center;
+  }
+
+  .s-press__caption {
+    white-space: normal;
+    text-align: center;
+    font-size: calc(var(--s--1) - .05rem);
+  }
+}
+
+@media (max-width: 480px) {
+  .s-press .wrap {
+    padding-inline: var(--sp-4);
+  }
+
+  .s-press__h2 {
+    font-size: var(--s-3);
+  }
+}

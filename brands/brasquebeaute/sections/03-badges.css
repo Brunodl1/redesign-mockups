@@ -1,0 +1,136 @@
+/* =============================================
+   BRASQUÉ BEAUTÉ — 03-badges.css
+   Badge strip — bande de certifications propres
+   ============================================= */
+
+/* --- tokens (referenced from base.css) --- */
+.s-badges {
+  --bg:         #FCFBF8;
+  --surface:    #fff;
+  --surface-2:  #F4F1EA;
+  --ink:        #1D1D1D;
+  --ink-soft:   #5C5A55;
+  --accent:     #108474;
+  --accent-ink: #fff;
+  --accent-deep:#0B6557;
+  --mint:       #EDF5F5;
+  --gold:       #C8A24B;
+  --dark:       #161616;
+  --line:       #E4DFD5;
+  --star:       #C8A24B;
+  --font-display:"Halant","Georgia","Times New Roman",serif;
+  --font-body:  "Assistant","Helvetica Neue",Arial,sans-serif;
+  --s--1:       .82rem;
+  --s-0:        1.075rem;
+  --s-1:        1.25rem;
+  --s-2:        1.6rem;
+  --s-3:        2.15rem;
+  --s-4:        3rem;
+  --s-5:        4.1rem;
+  --sp-1:       .25rem;
+  --sp-2:       .5rem;
+  --sp-3:       1rem;
+  --sp-4:       1.5rem;
+  --sp-5:       2.5rem;
+  --sp-6:       4rem;
+  --sp-7:       6rem;
+  --sp-8:       8rem;
+  --radius:     3px;
+  --radius-lg:  8px;
+  --shadow:     0 14px 40px rgba(29,29,29,.10);
+  --maxw:       1280px;
+}
+
+/* --- section shell --- */
+.s-badges {
+  background: var(--surface-2);
+  padding-block: var(--sp-4); /* slim — deliberate */
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+/* --- list row --- */
+.s-badges__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sp-5);
+  flex-wrap: wrap;
+}
+
+/* --- single badge item --- */
+.s-badges__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sp-2);
+  min-width: 80px;
+}
+
+/* --- icon wrapper --- */
+.s-badges__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent);
+  flex-shrink: 0;
+}
+
+.s-badges__icon svg {
+  width: 30px;
+  height: 30px;
+  display: block;
+}
+
+/* --- label --- */
+.s-badges__label {
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  font-weight: 700;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  line-height: 1;
+  white-space: nowrap;
+}
+
+/* ---- responsive ---- */
+
+/* tablet: allow natural wrapping already set by flex-wrap */
+@media (max-width: 780px) {
+  .s-badges {
+    padding-block: var(--sp-3);
+  }
+
+  .s-badges__list {
+    gap: var(--sp-3) var(--sp-4);
+    justify-content: center;
+  }
+
+  .s-badges__item {
+    min-width: 72px;
+  }
+}
+
+/* very small: horizontal scroll if items refuse to wrap (safety net) */
+@media (max-width: 420px) {
+  .s-badges__list {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    justify-content: flex-start;
+    padding-inline: var(--sp-3);
+    /* hide scrollbar but keep scrollable */
+    scrollbar-width: none;
+  }
+  .s-badges__list::-webkit-scrollbar {
+    display: none;
+  }
+
+  .s-badges__item {
+    flex-shrink: 0;
+  }
+}

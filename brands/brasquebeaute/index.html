@@ -1,0 +1,1105 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BRASQUÉ BEAUTÉ — Soins pro-âge naturels · RAJEUNI, l'alternative naturelle au Botox</title>
+<meta name="description" content="BRASQUÉ BEAUTÉ : soins de la peau holistiques, végans et faits main au Québec. RAJEUNI, le sérum pro-âge — un effet lift inspiré du botox, sans aiguille.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Halant:wght@400;500;600;700&family=Assistant:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<!-- =============================================
+     BRASQUÉ BEAUTÉ — Announcement Bar + Header
+     ============================================= -->
+
+<!-- ANNOUNCEMENT BAR -->
+<div class="announce">
+  <div class="announce__inner wrap">
+    <span class="announce__item announce__item--primary">Livraison gratuite dès 75&nbsp;$</span>
+    <span class="announce__sep" aria-hidden="true">·</span>
+    <span class="announce__item announce__item--secondary">Entreprise de femmes au Québec</span>
+    <span class="announce__sep" aria-hidden="true">·</span>
+    <span class="announce__item announce__item--secondary">Végane &amp; sans cruauté</span>
+  </div>
+</div>
+
+<!-- STICKY HEADER -->
+<header class="site-header" id="site-header" role="banner">
+  <div class="site-header__inner wrap">
+
+    <!-- LEFT: Hamburger (mobile) / Nav (desktop) -->
+    <div class="site-header__col site-header__col--left">
+
+      <!-- Hamburger — mobile only -->
+      <button class="site-header__hamburger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobile-nav">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true">
+          <line x1="2" y1="6"  x2="20" y2="6"/>
+          <line x1="2" y1="11" x2="20" y2="11"/>
+          <line x1="2" y1="16" x2="20" y2="16"/>
+        </svg>
+      </button>
+
+      <!-- Desktop nav -->
+      <nav class="site-header__nav" aria-label="Navigation principale" id="main-nav">
+        <ul class="site-header__nav-list" role="list">
+          <li><a href="https://www.google.com" class="site-header__nav-link">Accueil</a></li>
+          <li><a href="https://www.google.com" class="site-header__nav-link">Produits</a></li>
+          <li><a href="https://www.google.com" class="site-header__nav-link site-header__nav-link--featured">RAJEUNI</a></li>
+          <li><a href="https://www.google.com" class="site-header__nav-link">À propos</a></li>
+          <li><a href="https://www.google.com" class="site-header__nav-link">Notre histoire</a></li>
+          <li><a href="https://www.google.com" class="site-header__nav-link">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <!-- CENTER: Wordmark -->
+    <div class="site-header__col site-header__col--center">
+      <a class="site-header__logo" href="https://www.google.com" aria-label="Brasqué Beauté — Accueil">
+        <span class="site-header__logo-leaf" aria-hidden="true">✦</span>
+        BRASQUÉ&nbsp;BEAUTÉ
+      </a>
+    </div>
+
+    <!-- RIGHT: Actions -->
+    <div class="site-header__col site-header__col--right">
+
+      <!-- Search — hidden on mobile -->
+      <button class="site-header__action site-header__action--search site-header__action--desktop-only" aria-label="Rechercher">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="9.5" cy="9.5" r="6.5"/>
+          <line x1="14.5" y1="14.5" x2="20" y2="20"/>
+        </svg>
+      </button>
+
+      <!-- Account — hidden on mobile -->
+      <button class="site-header__action site-header__action--account site-header__action--desktop-only" aria-label="Mon compte">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="11" cy="7" r="4"/>
+          <path d="M2 20c0-5 4-8 9-8s9 3 9 8"/>
+        </svg>
+      </button>
+
+      <!-- Cart — always visible -->
+      <button class="site-header__action site-header__action--cart" aria-label="Panier (0 article)">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M6 2L3 6v13a2 2 0 002 2h12a2 2 0 002-2V6l-3-4z"/>
+          <line x1="3" y1="6" x2="19" y2="6"/>
+          <path d="M14 10a3 3 0 01-6 0"/>
+        </svg>
+        <span class="site-header__cart-badge" aria-hidden="true">0</span>
+      </button>
+
+    </div>
+  </div>
+
+  <!-- Mobile nav drawer (hidden by default) -->
+  <nav class="site-header__mobile-nav" id="mobile-nav" aria-label="Menu mobile" aria-hidden="true">
+    <ul class="site-header__mobile-nav-list" role="list">
+      <li><a href="https://www.google.com" class="site-header__mobile-nav-link">Accueil</a></li>
+      <li><a href="https://www.google.com" class="site-header__mobile-nav-link">Produits</a></li>
+      <li><a href="https://www.google.com" class="site-header__mobile-nav-link site-header__mobile-nav-link--featured">RAJEUNI</a></li>
+      <li><a href="https://www.google.com" class="site-header__mobile-nav-link">À propos</a></li>
+      <li><a href="https://www.google.com" class="site-header__mobile-nav-link">Notre histoire</a></li>
+      <li><a href="https://www.google.com" class="site-header__mobile-nav-link">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="sec s-hero hero-split">
+  <div class="wrap">
+    <div class="s-hero__grid">
+
+      <!-- LEFT: text panel -->
+      <div class="s-hero__text">
+        <p class="eyebrow">Soin Pro-Âge · Alternative Naturelle au Botox</p>
+
+        <h1 class="s-hero__h1">
+          Le lift,<br>
+          <span class="s-hero__accent">au naturel.</span>
+        </h1>
+
+        <p class="s-hero__sub">
+          Le sérum RAJEUNI détend les micro-contractions de la peau pour lisser rides et ridules — un effet botox, sans aiguille. Aux botaniques exotiques, végane et fait main au Québec.
+        </p>
+
+        <div class="s-hero__chips">
+          <span class="chip">Sans aiguille</span>
+          <span class="chip">Végane</span>
+          <span class="chip">Fait au Québec</span>
+        </div>
+
+        <div class="s-hero__cta">
+          <a href="https://www.google.com" class="btn btn-primary">Découvrir RAJEUNI</a>
+        </div>
+
+        <p class="s-hero__rating">
+          <span class="stars">★★★★★</span>
+          <span class="s-hero__rating-text">Adoré · soin pro-âge québécois</span>
+        </p>
+      </div>
+
+      <!-- RIGHT: image panel -->
+      <div class="s-hero__media">
+        <div class="s-hero__img-wrap">
+          <img
+            src="https://brasquebeaute.com/cdn/shop/files/homepage_BackupImage_comp_1_2048x2048.jpg?v=1652904507&width=1200"
+            alt="Une femme ouvre un sérum BRASQUÉ BEAUTÉ devant un paysage d'automne au Québec"
+            class="s-hero__img"
+          >
+          <div class="s-hero__badge">
+            <span class="s-hero__badge-name">RAJEUNI</span>
+            <span class="s-hero__badge-price">59,99 $</span>
+            <span class="s-hero__badge-stars">★ 5,0</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- =============================================
+     BRASQUÉ BEAUTÉ — Section 03 : Badge Strip
+     Bande de certifications — claims propres
+     ============================================= -->
+
+<section class="sec s-badges" aria-label="Nos engagements">
+  <div class="wrap">
+    <ul class="s-badges__list" role="list">
+
+      <!-- Végane -->
+      <li class="s-badges__item">
+        <span class="s-badges__icon" aria-hidden="true">
+          <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
+               stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+               aria-hidden="true">
+            <!-- Leaf outline -->
+            <path d="M15 26 C15 26 4 20 4 10 C4 10 10 4 20 6 C20 6 26 12 24 20 C22 28 15 26 15 26Z"/>
+            <path d="M15 26 C15 26 15 14 10 8"/>
+          </svg>
+        </span>
+        <span class="s-badges__label">Végane</span>
+      </li>
+
+      <!-- Sans paraben -->
+      <li class="s-badges__item">
+        <span class="s-badges__icon" aria-hidden="true">
+          <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
+               stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+               aria-hidden="true">
+            <!-- Shield with X cross (no/ban) -->
+            <path d="M15 3 L25 7 L25 16 C25 21.5 20 26 15 28 C10 26 5 21.5 5 16 L5 7 Z"/>
+            <line x1="11" y1="11" x2="19" y2="19"/>
+            <line x1="19" y1="11" x2="11" y2="19"/>
+          </svg>
+        </span>
+        <span class="s-badges__label">Sans paraben</span>
+      </li>
+
+      <!-- Sans cruauté -->
+      <li class="s-badges__item">
+        <span class="s-badges__icon" aria-hidden="true">
+          <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
+               stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+               aria-hidden="true">
+            <!-- Bunny silhouette / cruelty-free -->
+            <ellipse cx="15" cy="18" rx="7" ry="6"/>
+            <path d="M10 12 C8 6 10 3 12 5 C12 5 13 8 13 12"/>
+            <path d="M20 12 C22 6 20 3 18 5 C18 5 17 8 17 12"/>
+            <circle cx="12.5" cy="18.5" r=".8" fill="var(--accent)"/>
+            <circle cx="17.5" cy="18.5" r=".8" fill="var(--accent)"/>
+            <path d="M13.5 21 Q15 22.5 16.5 21"/>
+          </svg>
+        </span>
+        <span class="s-badges__label">Sans cruauté</span>
+      </li>
+
+      <!-- Non toxique -->
+      <li class="s-badges__item">
+        <span class="s-badges__icon" aria-hidden="true">
+          <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
+               stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+               aria-hidden="true">
+            <!-- Water drop with checkmark -->
+            <path d="M15 4 C15 4 6 14 6 19 A9 9 0 0 0 24 19 C24 14 15 4 15 4Z"/>
+            <polyline points="11,19 14,22 20,15"/>
+          </svg>
+        </span>
+        <span class="s-badges__label">Non toxique</span>
+      </li>
+
+      <!-- Fait au Québec -->
+      <li class="s-badges__item">
+        <span class="s-badges__icon" aria-hidden="true">
+          <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
+               stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+               aria-hidden="true">
+            <!-- Map pin / location -->
+            <path d="M15 3 C10.03 3 6 7.03 6 12 C6 18.5 15 28 15 28 C15 28 24 18.5 24 12 C24 7.03 19.97 3 15 3Z"/>
+            <circle cx="15" cy="12" r="3.5"/>
+          </svg>
+        </span>
+        <span class="s-badges__label">Fait au Québec</span>
+      </li>
+
+    </ul>
+  </div>
+</section>
+
+<!-- =============================================
+     BRASQUÉ BEAUTÉ — Section 04 : RAJEUNI Feature
+     Section héros du sérum phare — lift au naturel
+     ============================================= -->
+
+<section class="sec s-rajeuni" aria-labelledby="rajeuni-heading">
+  <div class="wrap">
+    <div class="s-rajeuni__grid">
+
+      <!-- ─── IMAGE SIDE (gauche) ─── -->
+      <div class="s-rajeuni__visual reveal" aria-hidden="false">
+
+        <!-- Image principale : texture sérum sur marbre -->
+        <div class="s-rajeuni__img-main-wrap">
+          <img
+            class="s-rajeuni__img-main"
+            src="https://cdn.shopify.com/s/files/1/0582/5488/4917/products/RAJEUNI_Brasque_2.jpg?v=1658855160&width=1000"
+            alt="Gouttes de sérum RAJEUNI sur marbre"
+            loading="lazy"
+            decoding="async"
+          >
+        </div>
+
+        <!-- Flacon en surimpression (petit, carte flottante) -->
+        <div class="s-rajeuni__img-bottle-card">
+          <img
+            class="s-rajeuni__img-bottle"
+            src="https://cdn.shopify.com/s/files/1/0582/5488/4917/products/RAJEUNI_Brasque_1.jpg?v=1658855161&width=600"
+            alt="Flacon du sérum RAJEUNI"
+            loading="lazy"
+            decoding="async"
+          >
+        </div>
+
+      </div><!-- /.s-rajeuni__visual -->
+
+      <!-- ─── TEXT SIDE (droite) ─── -->
+      <div class="s-rajeuni__copy reveal">
+
+        <!-- Eyebrow -->
+        <p class="eyebrow">Le héros · Rajeuni</p>
+
+        <!-- H2 -->
+        <h2 id="rajeuni-heading">Le lift, au naturel&nbsp;—<br>sans aiguille.</h2>
+
+        <!-- Lead -->
+        <p class="s-rajeuni__lead">
+          Notre sérum signature RAJEUNI détend les micro-contractions du visage pour réduire la profondeur des rides et ridules — un effet inspiré du botox, 100&nbsp;% naturel et non invasif.
+        </p>
+
+        <!-- Benefit list -->
+        <ul class="s-rajeuni__benefits" role="list">
+
+          <li class="s-rajeuni__benefit">
+            <span class="s-rajeuni__benefit-icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                   stroke="var(--accent)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="4,10 8,14 16,6"/>
+              </svg>
+            </span>
+            <span class="s-rajeuni__benefit-text">
+              <strong>Effet lift visible</strong>
+              <span>Lisse rides et ridules en détendant les micro-contractions.</span>
+            </span>
+          </li>
+
+          <li class="s-rajeuni__benefit">
+            <span class="s-rajeuni__benefit-icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                   stroke="var(--accent)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <!-- Leaf / barrier -->
+                <path d="M10 17 C10 17 3 13 3 7 C3 7 7 3 13 4 C13 4 17 8 16 13 C15 18 10 17 10 17Z"/>
+                <path d="M10 17 C10 17 10 10 7 6"/>
+              </svg>
+            </span>
+            <span class="s-rajeuni__benefit-text">
+              <strong>Renforce la barrière</strong>
+              <span>La phytocéramide protège et prévient la perte d'eau (PIE).</span>
+            </span>
+          </li>
+
+          <li class="s-rajeuni__benefit">
+            <span class="s-rajeuni__benefit-icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                   stroke="var(--accent)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="4,10 8,14 16,6"/>
+              </svg>
+            </span>
+            <span class="s-rajeuni__benefit-text">
+              <strong>Alternative au rétinol</strong>
+              <span>La chicorée raffermit et stimule le collagène, en douceur.</span>
+            </span>
+          </li>
+
+          <li class="s-rajeuni__benefit">
+            <span class="s-rajeuni__benefit-icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                   stroke="var(--accent)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="4,10 8,14 16,6"/>
+              </svg>
+            </span>
+            <span class="s-rajeuni__benefit-text">
+              <strong>Pour peaux sensibles</strong>
+              <span>Sans parfum, texture laiteuse légère, absorption rapide.</span>
+            </span>
+          </li>
+
+        </ul><!-- /.s-rajeuni__benefits -->
+
+        <!-- Stars -->
+        <p class="stars s-rajeuni__stars" aria-label="5 étoiles sur 5 — 100 % d'avis positifs">
+          ★★★★★
+          <span class="s-rajeuni__stars-label">· 100&nbsp;% d'avis 5&nbsp;étoiles</span>
+        </p>
+
+        <!-- Price + CTAs -->
+        <div class="s-rajeuni__cta-row">
+          <p class="s-rajeuni__price" aria-label="59,99 dollars pour 50 millilitres">59,99&nbsp;$&nbsp;<span class="s-rajeuni__volume">· 50 ml</span></p>
+          <div class="s-rajeuni__btns">
+            <a href="https://www.google.com" class="btn btn-primary">Ajouter au panier</a>
+            <a href="https://www.google.com" class="btn btn-outline">En savoir plus</a>
+          </div>
+        </div>
+
+      </div><!-- /.s-rajeuni__copy -->
+
+    </div><!-- /.s-rajeuni__grid -->
+  </div><!-- /.wrap -->
+</section>
+
+<!-- =============================================
+     BRASQUÉ BEAUTÉ — Section 05 : LA SCIENCE
+     Actifs botaniques RAJEUNI — 4-up grid
+     ============================================= -->
+
+<section class="sec s-science" aria-labelledby="science-heading">
+  <div class="wrap">
+
+    <!-- ─── EN-TÊTE ─── -->
+    <div class="s-science__header reveal">
+      <p class="eyebrow">LA SCIENCE BOTANIQUE</p>
+      <h2 id="science-heading">Le lift, expliqué —<br>quatre actifs, zéro aiguille.</h2>
+      <p class="s-science__intro">
+        Chaque actif de notre sérum RAJEUNI a été sélectionné pour son efficacité cliniquement documentée
+        — et son origine 100 % naturelle. Voici comment ils agissent ensemble sur votre peau.
+      </p>
+    </div>
+
+    <!-- ─── GRILLE 4 ACTIFS ─── -->
+    <ul class="s-science__grid" role="list">
+
+      <!-- 1 · JAMBU -->
+      <li class="s-science__card reveal" style="--delay:0s">
+        <div class="s-science__icon-wrap" aria-hidden="true">
+          <!-- Flower icon -->
+          <svg class="ic" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <circle cx="20" cy="20" r="3.5" stroke="#108474" stroke-width="1.6"/>
+            <ellipse cx="20" cy="11" rx="3" ry="5.5" stroke="#108474" stroke-width="1.6" stroke-linecap="round"/>
+            <ellipse cx="20" cy="29" rx="3" ry="5.5" stroke="#108474" stroke-width="1.6" stroke-linecap="round"/>
+            <ellipse cx="11" cy="20" rx="5.5" ry="3" stroke="#108474" stroke-width="1.6" stroke-linecap="round"/>
+            <ellipse cx="29" cy="20" rx="5.5" ry="3" stroke="#108474" stroke-width="1.6" stroke-linecap="round"/>
+            <ellipse cx="13.5" cy="13.5" rx="3" ry="5.5" transform="rotate(-45 13.5 13.5)" stroke="#108474" stroke-width="1.6" stroke-linecap="round"/>
+            <ellipse cx="26.5" cy="26.5" rx="3" ry="5.5" transform="rotate(-45 26.5 26.5)" stroke="#108474" stroke-width="1.6" stroke-linecap="round"/>
+            <ellipse cx="26.5" cy="13.5" rx="3" ry="5.5" transform="rotate(45 26.5 13.5)" stroke="#108474" stroke-width="1.6" stroke-linecap="round"/>
+            <ellipse cx="13.5" cy="26.5" rx="3" ry="5.5" transform="rotate(45 13.5 26.5)" stroke="#108474" stroke-width="1.6" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h3 class="s-science__name">JAMBU</h3>
+        <p class="s-science__role">Le « botox végétal » : le spilanthol détend les micro-contractions et lisse les rides.</p>
+      </li>
+
+      <!-- 2 · GABA -->
+      <li class="s-science__card reveal" style="--delay:.1s">
+        <div class="s-science__icon-wrap" aria-hidden="true">
+          <!-- Wave/relax icon -->
+          <svg class="ic" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M6 20 C9 14, 13 14, 16 20 C19 26, 23 26, 26 20 C29 14, 33 14, 34 20" stroke="#108474" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            <path d="M6 27 C9 21, 13 21, 16 27 C19 33, 23 33, 26 27 C29 21, 33 21, 34 27" stroke="#108474" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity=".45"/>
+            <path d="M6 13 C9 7, 13 7, 16 13 C19 19, 23 19, 26 13 C29 7, 33 7, 34 13" stroke="#108474" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity=".25"/>
+          </svg>
+        </div>
+        <h3 class="s-science__name">GABA</h3>
+        <p class="s-science__role">Acide aminé apaisant : relâche les tensions musculaires et réduit la profondeur des rides.</p>
+      </li>
+
+      <!-- 3 · CHICORÉE -->
+      <li class="s-science__card reveal" style="--delay:.2s">
+        <div class="s-science__icon-wrap" aria-hidden="true">
+          <!-- Leaf/root icon -->
+          <svg class="ic" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M20 34 L20 18" stroke="#108474" stroke-width="1.6" stroke-linecap="round"/>
+            <path d="M20 18 C20 18, 10 15, 9 7 C14 7, 20 10, 20 18Z" stroke="#108474" stroke-width="1.6" stroke-linejoin="round" fill="none"/>
+            <path d="M20 18 C20 18, 30 15, 31 7 C26 7, 20 10, 20 18Z" stroke="#108474" stroke-width="1.6" stroke-linejoin="round" fill="none"/>
+            <path d="M20 26 C20 26, 13 24, 12 19" stroke="#108474" stroke-width="1.6" stroke-linecap="round" opacity=".5"/>
+            <path d="M20 26 C20 26, 27 24, 28 19" stroke="#108474" stroke-width="1.6" stroke-linecap="round" opacity=".5"/>
+          </svg>
+        </div>
+        <h3 class="s-science__name">CHICORÉE</h3>
+        <p class="s-science__role">Alternative naturelle au rétinol : raffermit la peau et stimule le collagène, en douceur.</p>
+      </li>
+
+      <!-- 4 · PHYTOCÉRAMIDE -->
+      <li class="s-science__card reveal" style="--delay:.3s">
+        <div class="s-science__icon-wrap" aria-hidden="true">
+          <!-- Shield icon -->
+          <svg class="ic" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M20 6 L33 11 L33 21 C33 28.5, 27 34, 20 36 C13 34, 7 28.5, 7 21 L7 11 Z" stroke="#108474" stroke-width="1.6" stroke-linejoin="round" fill="none"/>
+            <path d="M14.5 20 L18.5 24 L25.5 16.5" stroke="#108474" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <h3 class="s-science__name">PHYTOCÉRAMIDE</h3>
+        <p class="s-science__role">Renforce la barrière cutanée et prévient la perte d'eau transépidermique (PIE).</p>
+      </li>
+
+    </ul><!-- /.s-science__grid -->
+
+    <!-- ─── CTA ─── -->
+    <div class="s-science__cta reveal">
+      <a href="https://www.google.com" class="btn btn-outline">Voir tous les ingrédients</a>
+    </div>
+
+  </div><!-- /.wrap -->
+</section>
+
+<!-- =============================================
+     BRASQUÉ BEAUTÉ — Section 06 : LA COLLECTION
+     Grille produits 6 cartes — 3-up desktop
+     ============================================= -->
+
+<section class="sec s-collection" aria-labelledby="collection-heading">
+  <div class="wrap">
+
+    <!-- ─── EN-TÊTE ─── -->
+    <div class="s-collection__header reveal">
+      <p class="eyebrow">LA COLLECTION</p>
+      <h2 id="collection-heading">Une routine, entièrement naturelle.</h2>
+      <p class="s-collection__intro">
+        Six produits conçus pour travailler ensemble — du soin pro-âge au rituel gua sha — pour une
+        peau visiblement transformée, formulés avec des actifs certifiés et sourcés responsablement.
+      </p>
+    </div>
+
+    <!-- ─── GRILLE PRODUITS ─── -->
+    <ul class="s-collection__grid" role="list">
+
+      <!-- 1 · RAJEUNI -->
+      <li class="s-collection__item reveal" style="--delay:0s">
+        <article class="card">
+          <a href="https://www.google.com" class="card__img-link" tabindex="-1" aria-hidden="true">
+            <div class="card__img-wrap">
+              <img
+                src="https://cdn.shopify.com/s/files/1/0582/5488/4917/products/RAJEUNI_Brasque_1.jpg?v=1658855161&width=800"
+                alt="Sérum RAJEUNI"
+                class="card__img"
+                loading="lazy"
+                decoding="async"
+              >
+            </div>
+          </a>
+          <div class="card__body">
+            <div class="stars" aria-label="5 étoiles sur 5">
+              <span aria-hidden="true">★★★★★</span>
+            </div>
+            <h3 class="card__name">RAJEUNI</h3>
+            <p class="card__desc">Sérum pro-âge · alternative au botox</p>
+            <p class="card__price">59,99 $</p>
+            <a href="https://www.google.com" class="btn btn-primary">Ajouter</a>
+          </div>
+        </article>
+      </li>
+
+      <!-- 2 · ILLUMI -->
+      <li class="s-collection__item reveal" style="--delay:.08s">
+        <article class="card">
+          <a href="https://www.google.com" class="card__img-link" tabindex="-1" aria-hidden="true">
+            <div class="card__img-wrap">
+              <img
+                src="https://cdn.shopify.com/s/files/1/0582/5488/4917/products/ILLUMI_Brasque_1.jpg?v=1659013400&width=800"
+                alt="Sérum ILLUMI"
+                class="card__img"
+                loading="lazy"
+                decoding="async"
+              >
+            </div>
+          </a>
+          <div class="card__body">
+            <div class="stars" aria-label="5 étoiles sur 5">
+              <span aria-hidden="true">★★★★★</span>
+            </div>
+            <h3 class="card__name">ILLUMI</h3>
+            <p class="card__desc">Sérum éclat · vitamine C de kiwi &amp; PHA</p>
+            <p class="card__price">59,99 $</p>
+            <a href="https://www.google.com" class="btn btn-primary">Ajouter</a>
+          </div>
+        </article>
+      </li>
+
+      <!-- 3 · PRO-MULTI -->
+      <li class="s-collection__item reveal" style="--delay:.16s">
+        <article class="card">
+          <a href="https://www.google.com" class="card__img-link" tabindex="-1" aria-hidden="true">
+            <div class="card__img-wrap">
+              <img
+                src="https://cdn.shopify.com/s/files/1/0582/5488/4917/products/PRO-MULTI_30ml_Brasque_1.jpg?v=1658521045&width=800"
+                alt="Huile PRO-MULTI"
+                class="card__img"
+                loading="lazy"
+                decoding="async"
+              >
+            </div>
+          </a>
+          <div class="card__body">
+            <div class="stars" aria-label="5 étoiles sur 5">
+              <span aria-hidden="true">★★★★★</span>
+            </div>
+            <h3 class="card__name">PRO-MULTI</h3>
+            <p class="card__desc">Huile tout-en-un · graines amazoniennes</p>
+            <p class="card__price">59,99 $</p>
+            <a href="https://www.google.com" class="btn btn-primary">Ajouter</a>
+          </div>
+        </article>
+      </li>
+
+      <!-- 4 · L'ESSENCE -->
+      <li class="s-collection__item reveal" style="--delay:.24s">
+        <article class="card">
+          <a href="https://www.google.com" class="card__img-link" tabindex="-1" aria-hidden="true">
+            <div class="card__img-wrap">
+              <img
+                src="https://cdn.shopify.com/s/files/1/0582/5488/4917/files/EssenceBrasque_1.jpg?v=1683141806&width=800"
+                alt="Brume L'ESSENCE"
+                class="card__img"
+                loading="lazy"
+                decoding="async"
+              >
+            </div>
+          </a>
+          <div class="card__body">
+            <div class="stars" aria-label="5 étoiles sur 5">
+              <span aria-hidden="true">★★★★★</span>
+            </div>
+            <h3 class="card__name">L'ESSENCE</h3>
+            <p class="card__desc">Brume pro-âge · 1<sup>re</sup> étape du rituel</p>
+            <p class="card__price">39,99 $</p>
+            <a href="https://www.google.com" class="btn btn-primary">Ajouter</a>
+          </div>
+        </article>
+      </li>
+
+      <!-- 5 · PIÑA COLADA -->
+      <li class="s-collection__item reveal" style="--delay:.32s">
+        <article class="card">
+          <a href="https://www.google.com" class="card__img-link" tabindex="-1" aria-hidden="true">
+            <div class="card__img-wrap">
+              <img
+                src="https://cdn.shopify.com/s/files/1/0582/5488/4917/products/PINA_COLADA_Brasque_1.jpg?v=1658758977&width=800"
+                alt="Masque PIÑA COLADA"
+                class="card__img"
+                loading="lazy"
+                decoding="async"
+              >
+            </div>
+          </a>
+          <div class="card__body">
+            <div class="stars" aria-label="4 étoiles sur 5">
+              <span aria-hidden="true">★★★★☆</span>
+            </div>
+            <h3 class="card__name">PIÑA COLADA</h3>
+            <p class="card__desc">Masque &amp; poudre · enzyme d'ananas</p>
+            <p class="card__price">24,99 $</p>
+            <a href="https://www.google.com" class="btn btn-primary">Ajouter</a>
+          </div>
+        </article>
+      </li>
+
+      <!-- 6 · GUA SHA -->
+      <li class="s-collection__item reveal" style="--delay:.4s">
+        <article class="card">
+          <a href="https://www.google.com" class="card__img-link" tabindex="-1" aria-hidden="true">
+            <div class="card__img-wrap">
+              <img
+                src="https://cdn.shopify.com/s/files/1/0582/5488/4917/products/ROSE_QUARTZ_GUASHA_Brasque_1.jpg?v=1658759213&width=800"
+                alt="Gua sha de quartz rose"
+                class="card__img"
+                loading="lazy"
+                decoding="async"
+              >
+            </div>
+          </a>
+          <div class="card__body">
+            <div class="stars" aria-label="5 étoiles sur 5">
+              <span aria-hidden="true">★★★★★</span>
+            </div>
+            <h3 class="card__name">GUA SHA</h3>
+            <p class="card__desc">Outil liftant · quartz rose</p>
+            <p class="card__price">19,99 $</p>
+            <a href="https://www.google.com" class="btn btn-primary">Ajouter</a>
+          </div>
+        </article>
+      </li>
+
+    </ul><!-- /.s-collection__grid -->
+
+    <!-- ─── CTA ─── -->
+    <div class="s-collection__cta reveal">
+      <a href="https://www.google.com" class="btn btn-outline">Magasiner tout</a>
+    </div>
+
+  </div><!-- /.wrap -->
+</section>
+
+<section class="sec s-story reveal">
+  <div class="wrap">
+    <div class="s-story__grid">
+
+      <!-- LEFT: ingredient image -->
+      <div class="s-story__img-col">
+        <div class="s-story__img-wrap">
+          <img
+            src="https://brasquebeaute.com/cdn/shop/files/luxury_ingredients_2048x2048.jpg?v=1652905082&width=1100"
+            alt="Fleurs de jasmin — ingrédient botanique de luxe BRASQUÉ BEAUTÉ"
+            class="s-story__img"
+            loading="lazy"
+          >
+        </div>
+      </div>
+
+      <!-- RIGHT: editorial text -->
+      <div class="s-story__text-col">
+        <p class="eyebrow s-story__eyebrow">NOTRE HISTOIRE</p>
+
+        <h2 class="s-story__h2">Le luxe se joint<br>à la nature.</h2>
+
+        <p class="s-story__body">
+          BRASQUÉ BEAUTÉ — contraction de « Brésil » et « Québec » — est née en 2019 de Cristiane et ses deux filles. Des soins faits main, en petits lots, aux botaniques exotiques inspirées du Brésil, formulés avec soin pour une peau radieuse à tout âge.
+        </p>
+
+        <p class="s-story__body">
+          Une approche holistique et pro-âge : vieillir avec confiance, pas contre soi. Végane, sans cruauté, non toxique — le luxe, sans compromis.
+        </p>
+
+        <div class="s-story__chips">
+          <span class="chip">Fière entreprise de femmes</span>
+          <span class="chip">Fait main au Québec</span>
+          <span class="chip">Botaniques brésiliennes</span>
+        </div>
+
+        <div class="s-story__cta">
+          <a href="https://www.google.com" class="btn btn-primary">Notre histoire</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="sec s-press reveal">
+  <div class="wrap">
+
+    <p class="eyebrow s-press__eyebrow">DANS LES MÉDIAS</p>
+    <h2 class="s-press__h2">Reconnu par la presse québécoise.</h2>
+
+    <div class="s-press__row" role="list">
+
+      <a href="https://www.google.com" class="s-press__item" role="listitem" aria-label="ELLE Québec — Produits testés &amp; approuvés">
+        <span class="s-press__name">ELLE Québec</span>
+        <span class="s-press__caption">Produits testés &amp; approuvés</span>
+      </a>
+
+      <span class="s-press__divider" aria-hidden="true"></span>
+
+      <a href="https://www.google.com" class="s-press__item" role="listitem" aria-label="La Presse — Coup de cœur beauté">
+        <span class="s-press__name">La Presse</span>
+        <span class="s-press__caption">Coup de cœur beauté</span>
+      </a>
+
+      <span class="s-press__divider" aria-hidden="true"></span>
+
+      <a href="https://www.google.com" class="s-press__item" role="listitem" aria-label="Clin d'œil — Sélection de la rédaction">
+        <span class="s-press__name">Clin d'œil</span>
+        <span class="s-press__caption">Sélection de la rédaction</span>
+      </a>
+
+      <span class="s-press__divider" aria-hidden="true"></span>
+
+      <a href="https://www.google.com" class="s-press__item" role="listitem" aria-label="Le Panier Bleu — Fier produit québécois">
+        <span class="s-press__name">Le Panier Bleu</span>
+        <span class="s-press__caption">Fier produit québécois</span>
+      </a>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- =============================================
+     BRASQUÉ BEAUTÉ — Section 09 : AVIS CLIENTES
+     Mur de témoignages — éditorial-luxe naturel
+     ============================================= -->
+
+<section class="sec s-reviews" aria-labelledby="reviews-heading">
+  <div class="wrap">
+
+    <!-- ─── EN-TÊTE ─── -->
+    <div class="s-reviews__header reveal">
+      <p class="eyebrow">Elles adorent</p>
+      <h2 id="reviews-heading">Une peau visiblement<br>plus ferme.</h2>
+
+      <!-- Résumé note globale -->
+      <div class="s-reviews__summary" aria-label="Note globale : 4,9 sur 5 selon nos clientes vérifiées">
+        <span class="s-reviews__summary-score">★ 4,9<span class="s-reviews__summary-denom">/5</span></span>
+        <span class="s-reviews__summary-label">selon nos clientes vérifiées</span>
+      </div>
+    </div><!-- /.s-reviews__header -->
+
+    <!-- ─── GRILLE DE CARTES ─── -->
+    <div class="s-reviews__grid" role="list">
+
+      <!-- Carte 1 — Marie-Hélène -->
+      <article class="review reveal" role="listitem" style="--delay:.05s">
+        <header class="review__top">
+          <span class="stars" aria-label="5 étoiles sur 5">★★★★★</span>
+          <span class="chip review__tag">Achat vérifié</span>
+        </header>
+        <blockquote class="review__quote">
+          <p>«&nbsp;J'ai vu une réelle différence après seulement trois semaines. Mes rides se sont beaucoup estompées, ma peau est plus ferme et lumineuse. J'adore RAJEUNI, l'Essence en spray et le masque Piña Colada — ma routine parfaite !&nbsp;»</p>
+        </blockquote>
+        <footer class="review__footer">
+          <span class="review__name">Marie-Hélène</span>
+        </footer>
+      </article>
+
+      <!-- Carte 2 — Nancy -->
+      <article class="review reveal" role="listitem" style="--delay:.15s">
+        <header class="review__top">
+          <span class="stars" aria-label="5 étoiles sur 5">★★★★★</span>
+          <span class="chip review__tag">Peau sensible</span>
+        </header>
+        <blockquote class="review__quote">
+          <p>«&nbsp;J'utilise les produits depuis quelques jours et je suis très satisfaite. J'adore la sensation sur ma peau — j'ai l'impression qu'ils agissent vraiment. Aucune rougeur, aucune irritation. Bravo Brasqué !&nbsp;»</p>
+        </blockquote>
+        <footer class="review__footer">
+          <span class="review__name">Nancy</span>
+        </footer>
+      </article>
+
+      <!-- Carte 3 — Isabelle -->
+      <article class="review reveal" role="listitem" style="--delay:.25s">
+        <header class="review__top">
+          <span class="stars" aria-label="5 étoiles sur 5">★★★★★</span>
+          <span class="chip review__tag">Cliente fidèle</span>
+        </header>
+        <blockquote class="review__quote">
+          <p>«&nbsp;Fini le rétinol qui m'irritait ! RAJEUNI est tellement plus doux et pourtant les résultats sont là — mes ridules du contour des yeux ont clairement diminué. Je suis cliente depuis un an et je ne changerais pas.&nbsp;»</p>
+        </blockquote>
+        <footer class="review__footer">
+          <span class="review__name">Isabelle</span>
+        </footer>
+      </article>
+
+      <!-- Carte 4 — Geneviève -->
+      <article class="review reveal" role="listitem" style="--delay:.35s">
+        <header class="review__top">
+          <span class="stars" aria-label="5 étoiles sur 5">★★★★★</span>
+          <span class="chip review__tag">Achat vérifié</span>
+        </header>
+        <blockquote class="review__quote">
+          <p>«&nbsp;L'Essence en spray, c'est la révélation de l'année pour moi. Une brume légère, un parfum subtil et naturel, et ma peau tient l'hydratation toute la journée. Et fait au Québec en plus — fière d'acheter local !&nbsp;»</p>
+        </blockquote>
+        <footer class="review__footer">
+          <span class="review__name">Geneviève</span>
+        </footer>
+      </article>
+
+      <!-- Carte 5 — Véronique -->
+      <article class="review reveal" role="listitem" style="--delay:.45s">
+        <header class="review__top">
+          <span class="stars" aria-label="5 étoiles sur 5">★★★★★</span>
+          <span class="chip review__tag">Peau sensible</span>
+        </header>
+        <blockquote class="review__quote">
+          <p>«&nbsp;Ma peau réactive a enfin trouvé sa routine ! Les formules véganes sont si douces — pas de parfum agressif, pas d'huile minérale. RAJEUNI s'absorbe en quelques secondes et ma peau parait plus ferme dès le matin.&nbsp;»</p>
+        </blockquote>
+        <footer class="review__footer">
+          <span class="review__name">Véronique</span>
+        </footer>
+      </article>
+
+      <!-- Carte 6 — Chantal -->
+      <article class="review reveal" role="listitem" style="--delay:.55s">
+        <header class="review__top">
+          <span class="stars" aria-label="5 étoiles sur 5">★★★★★</span>
+          <span class="chip review__tag">Cliente fidèle</span>
+        </header>
+        <blockquote class="review__quote">
+          <p>«&nbsp;Des ingrédients botaniques qu'on peut lire et comprendre, des résultats vrais — c'est tout ce que je demandais. En deux mois, mon ovale du visage est redéfini. Je recommande Brasqué à toutes mes amies !&nbsp;»</p>
+        </blockquote>
+        <footer class="review__footer">
+          <span class="review__name">Chantal</span>
+        </footer>
+      </article>
+
+    </div><!-- /.s-reviews__grid -->
+
+    <!-- ─── CTA bas ─── -->
+    <div class="s-reviews__cta reveal">
+      <a href="https://www.google.com" class="btn btn-primary">Découvrir nos soins</a>
+    </div>
+
+    <!-- ─── Note légale ─── -->
+    <p class="s-reviews__legal">Avis représentatifs (maquette).</p>
+
+  </div><!-- /.wrap -->
+</section>
+
+<!-- =============================================
+     BRASQUÉ BEAUTÉ — Section 10: Infolettre
+     Fond --accent (teal), texte blanc, bouton .btn-light
+     ============================================= -->
+
+<section class="sec s-newsletter" aria-labelledby="nl-heading">
+  <div class="wrap s-newsletter__wrap">
+
+    <!-- Eyebrow -->
+    <p class="eyebrow s-newsletter__eyebrow">Le rituel Brasqué</p>
+
+    <!-- Heading -->
+    <h2 class="s-newsletter__heading" id="nl-heading">
+      Obtenez&nbsp;10&nbsp;% sur votre première commande
+    </h2>
+
+    <!-- Sub-copy -->
+    <p class="s-newsletter__sub">
+      Conseils pro-âge, nouveautés et offres&nbsp;— directement dans votre boîte courriel.
+    </p>
+
+    <!-- Inline email form -->
+    <form class="s-newsletter__form" onsubmit="return false" novalidate aria-label="Inscription à l'infolettre">
+      <div class="s-newsletter__field-wrap">
+        <label for="nl-email" class="s-newsletter__label">Adresse courriel</label>
+        <input
+          class="s-newsletter__input"
+          type="email"
+          id="nl-email"
+          name="email"
+          placeholder="votre@courriel.com"
+          autocomplete="email"
+          required
+        />
+      </div>
+      <button type="submit" class="btn btn-light s-newsletter__btn">
+        S'abonner
+      </button>
+    </form>
+
+    <!-- Tiny print -->
+    <p class="s-newsletter__fine">Désabonnement en tout temps.</p>
+
+  </div>
+</section>
+
+<!-- =============================================
+     BRASQUÉ BEAUTÉ — Footer
+     Fond --dark (#161616), texte clair
+     ============================================= -->
+
+<footer class="site-footer" role="contentinfo" aria-label="Pied de page">
+
+  <!-- ======= TOP: Logo + blurb ======= -->
+  <div class="site-footer__top">
+    <div class="wrap site-footer__top-wrap">
+
+      <div class="site-footer__brand">
+        <a href="https://www.google.com" class="site-footer__wordmark" aria-label="Brasqué Beauté — Accueil">
+          BRASQUÉ&nbsp;BEAUTÉ
+        </a>
+        <p class="site-footer__blurb">
+          Soins de la peau holistiques, végans et faits main au Québec.<br>
+          Le luxe se joint à la nature.
+        </p>
+        <!-- Social icons -->
+        <div class="site-footer__socials" aria-label="Réseaux sociaux">
+
+          <!-- Instagram -->
+          <a href="https://www.google.com" class="site-footer__social-link" aria-label="Instagram">
+            <svg class="ic" viewBox="0 0 24 24" aria-hidden="true">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+              <circle cx="12" cy="12" r="4.5"/>
+              <circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/>
+            </svg>
+          </a>
+
+          <!-- Facebook -->
+          <a href="https://www.google.com" class="site-footer__social-link" aria-label="Facebook">
+            <svg class="ic" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/>
+            </svg>
+          </a>
+
+          <!-- YouTube -->
+          <a href="https://www.google.com" class="site-footer__social-link" aria-label="YouTube">
+            <svg class="ic" viewBox="0 0 24 24" aria-hidden="true">
+              <rect x="2" y="4" width="20" height="16" rx="4"/>
+              <polygon points="10,8.5 10,15.5 16,12" fill="currentColor" stroke="none"/>
+            </svg>
+          </a>
+
+          <!-- LinkedIn -->
+          <a href="https://www.google.com" class="site-footer__social-link" aria-label="LinkedIn">
+            <svg class="ic" viewBox="0 0 24 24" aria-hidden="true">
+              <rect x="2" y="2" width="20" height="20" rx="3"/>
+              <line x1="8" y1="10" x2="8" y2="17"/>
+              <line x1="8" y1="7" x2="8" y2="7" stroke-width="2" stroke-linecap="round"/>
+              <path d="M12 10v7M12 13a3 3 0 016 0v4"/>
+            </svg>
+          </a>
+
+        </div>
+      </div>
+
+      <!-- ======= 4 link columns ======= -->
+      <nav class="site-footer__nav" aria-label="Navigation pied de page">
+
+        <!-- Boutique -->
+        <div class="site-footer__col">
+          <h3 class="site-footer__col-heading">Boutique</h3>
+          <ul class="site-footer__list" role="list">
+            <li><a href="https://www.google.com" class="site-footer__link">RAJEUNI</a></li>
+            <li><a href="https://www.google.com" class="site-footer__link">Sérums</a></li>
+            <li><a href="https://www.google.com" class="site-footer__link">Huiles visage</a></li>
+            <li><a href="https://www.google.com" class="site-footer__link">L'ESSENCE</a></li>
+            <li><a href="https://www.google.com" class="site-footer__link">Masques</a></li>
+            <li><a href="https://www.google.com" class="site-footer__link">Outils</a></li>
+          </ul>
+        </div>
+
+        <!-- La maison -->
+        <div class="site-footer__col">
+          <h3 class="site-footer__col-heading">La maison</h3>
+          <ul class="site-footer__list" role="list">
+            <li><a href="https://www.google.com" class="site-footer__link">Notre histoire</a></li>
+            <li><a href="https://www.google.com" class="site-footer__link">À propos</a></li>
+            <li><a href="https://www.google.com" class="site-footer__link">Ingrédients</a></li>
+            <li><a href="https://www.google.com" class="site-footer__link">Programme récompense</a></li>
+          </ul>
+        </div>
+
+        <!-- Aide -->
+        <div class="site-footer__col">
+          <h3 class="site-footer__col-heading">Aide</h3>
+          <ul class="site-footer__list" role="list">
+            <li><a href="https://www.google.com" class="site-footer__link">Livraison &amp; retours</a></li>
+            <li><a href="https://www.google.com" class="site-footer__link">Suivi de commande</a></li>
+            <li><a href="https://www.google.com" class="site-footer__link">Nous joindre</a></li>
+            <li><a href="https://www.google.com" class="site-footer__link">Mon compte</a></li>
+          </ul>
+        </div>
+
+        <!-- Suivez-nous -->
+        <div class="site-footer__col">
+          <h3 class="site-footer__col-heading">Suivez-nous</h3>
+          <ul class="site-footer__list" role="list">
+            <li><a href="https://www.google.com" class="site-footer__link">Instagram</a></li>
+            <li><a href="https://www.google.com" class="site-footer__link">Facebook</a></li>
+            <li><a href="https://www.google.com" class="site-footer__link">YouTube</a></li>
+            <li><a href="https://www.google.com" class="site-footer__link">LinkedIn</a></li>
+          </ul>
+        </div>
+
+      </nav>
+    </div>
+  </div>
+
+  <!-- ======= TRUST MARKS ======= -->
+  <div class="site-footer__trust">
+    <div class="wrap site-footer__trust-wrap">
+      <span class="chip site-footer__trust-chip">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        Végane
+      </span>
+      <span class="chip site-footer__trust-chip">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 000-7.78z"/></svg>
+        Sans cruauté
+      </span>
+      <span class="chip site-footer__trust-chip">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9,22 9,12 15,12 15,22"/></svg>
+        Fait au Québec
+      </span>
+      <span class="chip site-footer__trust-chip">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M20 21a8 8 0 10-16 0"/></svg>
+        Entreprise de femmes
+      </span>
+    </div>
+  </div>
+
+  <!-- ======= BOTTOM BAR ======= -->
+  <div class="site-footer__bottom">
+    <div class="wrap site-footer__bottom-wrap">
+
+      <!-- Left: copyright + legal links -->
+      <div class="site-footer__legal">
+        <span class="site-footer__copy">&copy; 2026 BRASQUÉ BEAUTÉ. Tous droits réservés.</span>
+        <span class="site-footer__legal-sep" aria-hidden="true">·</span>
+        <a href="https://www.google.com" class="site-footer__legal-link">Politique de confidentialité</a>
+        <span class="site-footer__legal-sep" aria-hidden="true">·</span>
+        <a href="https://www.google.com" class="site-footer__legal-link">Modalités</a>
+      </div>
+
+      <!-- Right: payment icons -->
+      <div class="site-footer__payments" aria-label="Modes de paiement acceptés">
+
+        <!-- Visa -->
+        <span class="site-footer__pay-mark" aria-label="Visa">
+          <svg width="38" height="24" viewBox="0 0 38 24" role="img" aria-hidden="true">
+            <rect width="38" height="24" rx="3" fill="#1A1F71"/>
+            <text x="19" y="16.5" text-anchor="middle" font-family="Arial,sans-serif" font-weight="700" font-size="10" fill="#fff" letter-spacing=".5">VISA</text>
+          </svg>
+        </span>
+
+        <!-- Mastercard -->
+        <span class="site-footer__pay-mark" aria-label="Mastercard">
+          <svg width="38" height="24" viewBox="0 0 38 24" role="img" aria-hidden="true">
+            <rect width="38" height="24" rx="3" fill="#252525"/>
+            <circle cx="15" cy="12" r="7" fill="#EB001B"/>
+            <circle cx="23" cy="12" r="7" fill="#F79E1B"/>
+            <path d="M19 6.8a7 7 0 010 10.4A7 7 0 0119 6.8z" fill="#FF5F00"/>
+          </svg>
+        </span>
+
+        <!-- Amex -->
+        <span class="site-footer__pay-mark" aria-label="American Express">
+          <svg width="38" height="24" viewBox="0 0 38 24" role="img" aria-hidden="true">
+            <rect width="38" height="24" rx="3" fill="#2E77BC"/>
+            <text x="19" y="16.5" text-anchor="middle" font-family="Arial,sans-serif" font-weight="700" font-size="7.5" fill="#fff" letter-spacing=".2">AMEX</text>
+          </svg>
+        </span>
+
+        <!-- PayPal -->
+        <span class="site-footer__pay-mark" aria-label="PayPal">
+          <svg width="38" height="24" viewBox="0 0 38 24" role="img" aria-hidden="true">
+            <rect width="38" height="24" rx="3" fill="#003087"/>
+            <text x="19" y="16" text-anchor="middle" font-family="Arial,sans-serif" font-weight="700" font-size="8" fill="#fff" letter-spacing=".3">PayPal</text>
+          </svg>
+        </span>
+
+      </div>
+    </div>
+  </div>
+
+</footer>
+
+<script src="fx.js"></script>
+</body>
+</html>

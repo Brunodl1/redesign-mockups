@@ -1,0 +1,303 @@
+/* =============================================
+   BRASQUÉ BEAUTÉ — 06-collection.css
+   Section LA COLLECTION — grille 6 produits
+   ============================================= */
+
+/* --- tokens (referenced from base.css) --- */
+.s-collection {
+  --bg:          #FCFBF8;
+  --surface:     #fff;
+  --surface-2:   #F4F1EA;
+  --ink:         #1D1D1D;
+  --ink-soft:    #5C5A55;
+  --accent:      #108474;
+  --accent-ink:  #fff;
+  --accent-deep: #0B6557;
+  --mint:        #EDF5F5;
+  --gold:        #C8A24B;
+  --dark:        #161616;
+  --line:        #E4DFD5;
+  --star:        #C8A24B;
+  --font-display:"Halant","Georgia","Times New Roman",serif;
+  --font-body:   "Assistant","Helvetica Neue",Arial,sans-serif;
+  --s--1:        .82rem;
+  --s-0:         1.075rem;
+  --s-1:         1.25rem;
+  --s-2:         1.6rem;
+  --s-3:         2.15rem;
+  --s-4:         3rem;
+  --s-5:         4.1rem;
+  --sp-1:        .25rem;
+  --sp-2:        .5rem;
+  --sp-3:        1rem;
+  --sp-4:        1.5rem;
+  --sp-5:        2.5rem;
+  --sp-6:        4rem;
+  --sp-7:        6rem;
+  --sp-8:        8rem;
+  --radius:      3px;
+  --radius-lg:   8px;
+  --shadow:      0 14px 40px rgba(29,29,29,.10);
+  --maxw:        1280px;
+}
+
+/* ─── Section shell ─── */
+.s-collection {
+  background: var(--bg);
+  padding: var(--sp-7) 0;
+  font-family: var(--font-body);
+  color: var(--ink);
+}
+
+/* ─── Eyebrow ─── */
+.s-collection .eyebrow {
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 0 0 var(--sp-2);
+}
+
+/* ─── Header block ─── */
+.s-collection__header {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto var(--sp-6);
+}
+
+.s-collection__header h2 {
+  font-family: var(--font-display);
+  font-size: clamp(var(--s-3), 4vw, var(--s-4));
+  font-weight: 500;
+  color: var(--ink);
+  line-height: 1.2;
+  margin: 0 0 var(--sp-3);
+}
+
+.s-collection__intro {
+  font-size: var(--s-0);
+  color: var(--ink-soft);
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* ─── Product grid ─── */
+.s-collection__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-4);
+  list-style: none;
+  margin: 0 0 var(--sp-6);
+  padding: 0;
+}
+
+/* ─── Product card ─── */
+.s-collection .card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow .25s ease, transform .25s ease;
+}
+
+.s-collection .card:hover {
+  box-shadow: var(--shadow);
+  transform: translateY(-5px);
+}
+
+/* ─── Image link ─── */
+.s-collection .card__img-link {
+  display: block;
+  text-decoration: none;
+}
+
+/* ─── Image container: marble-ish white bg ─── */
+.s-collection .card__img-wrap {
+  aspect-ratio: 1 / 1;
+  background: #F9F8F5;
+  overflow: hidden;
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+}
+
+.s-collection .card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  transition: transform .4s ease;
+}
+
+.s-collection .card:hover .card__img {
+  transform: scale(1.04);
+}
+
+/* ─── Card body ─── */
+.s-collection .card__body {
+  padding: var(--sp-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+  flex: 1;
+}
+
+/* ─── Stars ─── */
+.s-collection .stars {
+  color: var(--star);
+  font-size: var(--s--1);
+  letter-spacing: .05em;
+  line-height: 1;
+}
+
+/* ─── Product name ─── */
+.s-collection .card__name {
+  font-family: var(--font-body);
+  font-size: var(--s-0);
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--ink);
+  margin: 0;
+  line-height: 1.2;
+}
+
+/* ─── Descriptor ─── */
+.s-collection .card__desc {
+  font-size: var(--s--1);
+  color: var(--ink-soft);
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* ─── Price ─── */
+.s-collection .card__price {
+  font-family: var(--font-body);
+  font-size: var(--s-1);
+  font-weight: 700;
+  color: var(--ink);
+  margin: 0 0 var(--sp-1);
+}
+
+/* ─── Buttons (scoped) ─── */
+.s-collection .btn {
+  display: block;
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  text-align: center;
+  padding: .75rem 1.5rem;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: background .2s ease, color .2s ease, border-color .2s ease;
+  border: 2px solid transparent;
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: auto;
+}
+
+.s-collection .btn-primary {
+  background: var(--accent);
+  color: var(--accent-ink);
+  border-color: var(--accent);
+}
+
+.s-collection .btn-primary:hover {
+  background: var(--accent-deep);
+  border-color: var(--accent-deep);
+}
+
+/* ─── CTA (centered, btn-outline) ─── */
+.s-collection__cta {
+  text-align: center;
+}
+
+.s-collection__cta .btn {
+  display: inline-block;
+  width: auto;
+  padding: .75rem 2.5rem;
+}
+
+.s-collection .btn-outline {
+  background: transparent;
+  color: var(--accent);
+  border: 2px solid var(--accent);
+}
+
+.s-collection .btn-outline:hover {
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+
+/* ─── Reveal animation ─── */
+.s-collection .reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity .55s ease var(--delay, 0s), transform .55s ease var(--delay, 0s);
+}
+
+.s-collection .reveal.in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ─── Tablet: 2-up ─── */
+@media (max-width: 960px) {
+  .s-collection__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--sp-3);
+  }
+}
+
+/* ─── Mobile: horizontal snap then 1-up ─── */
+@media (max-width: 600px) {
+  .s-collection {
+    padding: var(--sp-6) 0;
+  }
+
+  .s-collection__header {
+    margin-bottom: var(--sp-5);
+  }
+
+  .s-collection__header h2 {
+    font-size: var(--s-2);
+  }
+
+  /* 2-up snap scroll on narrow mobile */
+  .s-collection__grid {
+    grid-template-columns: repeat(2, minmax(160px, 1fr));
+    gap: var(--sp-2);
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: var(--sp-2);
+    /* hide scrollbar visually */
+    scrollbar-width: none;
+  }
+
+  .s-collection__grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .s-collection__item {
+    scroll-snap-align: start;
+  }
+
+  .s-collection .card__body {
+    padding: var(--sp-3);
+  }
+}
+
+/* ─── Very small mobile: 1-up ─── */
+@media (max-width: 380px) {
+  .s-collection__grid {
+    grid-template-columns: 1fr;
+    overflow-x: visible;
+    scroll-snap-type: none;
+  }
+}

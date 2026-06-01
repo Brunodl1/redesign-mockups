@@ -1,0 +1,279 @@
+/* ============================================================
+   02-hero.css — BRASQUÉ BEAUTÉ · SPLIT HERO
+   Text LEFT on clean band · Image RIGHT · French · Editorial-luxe
+   ============================================================ */
+
+/* --- token re-declarations (ensure availability if loaded standalone) --- */
+.s-hero {
+  --bg:         #FCFBF8;
+  --surface:    #FFFFFF;
+  --surface-2:  #F4F1EA;
+  --ink:        #1D1D1D;
+  --ink-soft:   #5C5A55;
+  --accent:     #108474;
+  --accent-ink: #FFFFFF;
+  --accent-deep:#0B6557;
+  --mint:       #EDF5F5;
+  --gold:       #C8A24B;
+  --dark:       #161616;
+  --line:       #E4DFD5;
+  --star:       #C8A24B;
+  --font-display: "Halant", "Georgia", "Times New Roman", serif;
+  --font-body:    "Assistant", "Helvetica Neue", Arial, sans-serif;
+  --s--1: .82rem;
+  --s-0:  1.075rem;
+  --s-1:  1.25rem;
+  --s-2:  1.6rem;
+  --s-3:  2.15rem;
+  --s-4:  3rem;
+  --s-5:  4.1rem;
+  --sp-1: .25rem;
+  --sp-2: .5rem;
+  --sp-3: 1rem;
+  --sp-4: 1.5rem;
+  --sp-5: 2.5rem;
+  --sp-6: 4rem;
+  --sp-7: 6rem;
+  --sp-8: 8rem;
+  --radius:    3px;
+  --radius-lg: 8px;
+  --shadow:    0 14px 40px rgba(29,29,29,.10);
+  --maxw:      1280px;
+}
+
+/* --- section shell --- */
+.s-hero {
+  background: var(--bg);
+  padding-block: 0; /* grid handles vertical rhythm */
+  overflow: hidden;
+}
+
+/* --- two-column grid --- */
+.s-hero__grid {
+  display: grid;
+  grid-template-columns: 1fr 1.05fr;
+  gap: var(--sp-6);
+  align-items: center;
+  min-height: 600px;
+  padding-block: var(--sp-7);
+  min-width: 0;
+}
+
+/* ============================================================
+   LEFT PANEL — clean warm-white band, fully legible
+   ============================================================ */
+.s-hero__text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+  min-width: 0;
+  max-width: 100%;
+}
+
+/* eyebrow overrides — inherits .eyebrow from base */
+.s-hero .eyebrow {
+  margin-bottom: 0;
+}
+
+/* h1 */
+.s-hero__h1 {
+  font-family: var(--font-display);
+  font-size: var(--s-5);
+  font-weight: 600;
+  line-height: 1.08;
+  letter-spacing: -.025em;
+  color: var(--ink);
+  margin: 0;
+}
+
+/* teal word in headline */
+.s-hero__accent {
+  color: var(--accent);
+}
+
+/* subhead value-prop */
+.s-hero__sub {
+  font-family: var(--font-body);
+  font-size: var(--s-0);
+  line-height: 1.65;
+  color: var(--ink-soft);
+  margin: 0;
+  max-width: 46ch;
+}
+
+/* chip row */
+.s-hero__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+  min-width: 0;
+}
+
+/* CTA wrapper */
+.s-hero__cta {
+  margin-top: var(--sp-2);
+}
+
+/* rating line */
+.s-hero__rating {
+  display: flex;
+  align-items: center;
+  gap: .65em;
+  margin: 0;
+  flex-wrap: wrap;
+}
+
+.s-hero__rating .stars {
+  color: var(--star);
+  font-size: var(--s-0);
+  letter-spacing: .06em;
+  line-height: 1;
+}
+
+.s-hero__rating-text {
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  color: var(--ink-soft);
+  letter-spacing: .04em;
+}
+
+/* ============================================================
+   RIGHT PANEL — image
+   ============================================================ */
+.s-hero__media {
+  display: flex;
+  align-items: stretch;
+  min-width: 0;
+  max-width: 100%;
+}
+
+.s-hero__img-wrap {
+  position: relative;
+  width: 100%;
+  max-height: 600px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.s-hero__img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 460px;
+  max-height: 600px;
+  object-fit: cover;
+  object-position: center;
+  filter: saturate(.9);
+  max-width: 100%;
+}
+
+/* floating badge — white card chip */
+.s-hero__badge {
+  position: absolute;
+  bottom: var(--sp-4);
+  left: var(--sp-4);
+  background: var(--surface);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: .75em 1.1em;
+  display: flex;
+  flex-direction: column;
+  gap: .2em;
+  min-width: 0;
+}
+
+.s-hero__badge-name {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: var(--s--1);
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--ink);
+  line-height: 1;
+}
+
+.s-hero__badge-price {
+  font-family: var(--font-display);
+  font-size: var(--s-1);
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1.1;
+}
+
+.s-hero__badge-stars {
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  color: var(--star);
+  font-weight: 700;
+  line-height: 1;
+}
+
+/* ============================================================
+   MOBILE (<=780px) — image above, text below, single column
+   ============================================================ */
+@media (max-width: 780px) {
+  .s-hero__grid {
+    grid-template-columns: 1fr;
+    gap: var(--sp-4);
+    padding-block: var(--sp-5);
+    min-height: unset;
+  }
+
+  /* swap order: image first */
+  .s-hero__media {
+    order: -1;
+  }
+
+  .s-hero__img-wrap {
+    max-height: 340px;
+    border-radius: var(--radius-lg);
+  }
+
+  .s-hero__img {
+    min-height: 260px;
+    max-height: 340px;
+  }
+
+  .s-hero__text {
+    gap: var(--sp-3);
+  }
+
+  .s-hero__h1 {
+    font-size: var(--s-4);
+  }
+
+  .s-hero__sub {
+    font-size: var(--s-0);
+    max-width: none;
+  }
+
+  /* full-width CTA on mobile */
+  .s-hero__cta .btn {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .s-hero__badge {
+    bottom: var(--sp-3);
+    left: var(--sp-3);
+    padding: .6em .9em;
+  }
+}
+
+/* very small screens — tighten */
+@media (max-width: 400px) {
+  .s-hero__h1 {
+    font-size: var(--s-3);
+  }
+
+  .s-hero__chips {
+    gap: var(--sp-2);
+  }
+
+  .s-hero .chip {
+    font-size: .72rem;
+    padding: .45em .8em;
+  }
+}

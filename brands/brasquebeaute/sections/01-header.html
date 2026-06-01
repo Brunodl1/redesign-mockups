@@ -1,0 +1,96 @@
+<!-- =============================================
+     BRASQUÉ BEAUTÉ — Announcement Bar + Header
+     ============================================= -->
+
+<!-- ANNOUNCEMENT BAR -->
+<div class="announce">
+  <div class="announce__inner wrap">
+    <span class="announce__item announce__item--primary">Livraison gratuite dès 75&nbsp;$</span>
+    <span class="announce__sep" aria-hidden="true">·</span>
+    <span class="announce__item announce__item--secondary">Entreprise de femmes au Québec</span>
+    <span class="announce__sep" aria-hidden="true">·</span>
+    <span class="announce__item announce__item--secondary">Végane &amp; sans cruauté</span>
+  </div>
+</div>
+
+<!-- STICKY HEADER -->
+<header class="site-header" id="site-header" role="banner">
+  <div class="site-header__inner wrap">
+
+    <!-- LEFT: Hamburger (mobile) / Nav (desktop) -->
+    <div class="site-header__col site-header__col--left">
+
+      <!-- Hamburger — mobile only -->
+      <button class="site-header__hamburger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobile-nav">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true">
+          <line x1="2" y1="6"  x2="20" y2="6"/>
+          <line x1="2" y1="11" x2="20" y2="11"/>
+          <line x1="2" y1="16" x2="20" y2="16"/>
+        </svg>
+      </button>
+
+      <!-- Desktop nav -->
+      <nav class="site-header__nav" aria-label="Navigation principale" id="main-nav">
+        <ul class="site-header__nav-list" role="list">
+          <li><a href="https://www.google.com" class="site-header__nav-link">Accueil</a></li>
+          <li><a href="https://www.google.com" class="site-header__nav-link">Produits</a></li>
+          <li><a href="https://www.google.com" class="site-header__nav-link site-header__nav-link--featured">RAJEUNI</a></li>
+          <li><a href="https://www.google.com" class="site-header__nav-link">À propos</a></li>
+          <li><a href="https://www.google.com" class="site-header__nav-link">Notre histoire</a></li>
+          <li><a href="https://www.google.com" class="site-header__nav-link">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <!-- CENTER: Wordmark -->
+    <div class="site-header__col site-header__col--center">
+      <a class="site-header__logo" href="https://www.google.com" aria-label="Brasqué Beauté — Accueil">
+        <span class="site-header__logo-leaf" aria-hidden="true">✦</span>
+        BRASQUÉ&nbsp;BEAUTÉ
+      </a>
+    </div>
+
+    <!-- RIGHT: Actions -->
+    <div class="site-header__col site-header__col--right">
+
+      <!-- Search — hidden on mobile -->
+      <button class="site-header__action site-header__action--search site-header__action--desktop-only" aria-label="Rechercher">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="9.5" cy="9.5" r="6.5"/>
+          <line x1="14.5" y1="14.5" x2="20" y2="20"/>
+        </svg>
+      </button>
+
+      <!-- Account — hidden on mobile -->
+      <button class="site-header__action site-header__action--account site-header__action--desktop-only" aria-label="Mon compte">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="11" cy="7" r="4"/>
+          <path d="M2 20c0-5 4-8 9-8s9 3 9 8"/>
+        </svg>
+      </button>
+
+      <!-- Cart — always visible -->
+      <button class="site-header__action site-header__action--cart" aria-label="Panier (0 article)">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M6 2L3 6v13a2 2 0 002 2h12a2 2 0 002-2V6l-3-4z"/>
+          <line x1="3" y1="6" x2="19" y2="6"/>
+          <path d="M14 10a3 3 0 01-6 0"/>
+        </svg>
+        <span class="site-header__cart-badge" aria-hidden="true">0</span>
+      </button>
+
+    </div>
+  </div>
+
+  <!-- Mobile nav drawer (hidden by default) -->
+  <nav class="site-header__mobile-nav" id="mobile-nav" aria-label="Menu mobile" aria-hidden="true">
+    <ul class="site-header__mobile-nav-list" role="list">
+      <li><a href="https://www.google.com" class="site-header__mobile-nav-link">Accueil</a></li>
+      <li><a href="https://www.google.com" class="site-header__mobile-nav-link">Produits</a></li>
+      <li><a href="https://www.google.com" class="site-header__mobile-nav-link site-header__mobile-nav-link--featured">RAJEUNI</a></li>
+      <li><a href="https://www.google.com" class="site-header__mobile-nav-link">À propos</a></li>
+      <li><a href="https://www.google.com" class="site-header__mobile-nav-link">Notre histoire</a></li>
+      <li><a href="https://www.google.com" class="site-header__mobile-nav-link">Contact</a></li>
+    </ul>
+  </nav>
+</header>

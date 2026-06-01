@@ -1,0 +1,129 @@
+/* ============================================================
+   BRASQUÉ BEAUTÉ — base.css (foundation)
+   Clean botanical anti-aging · "Le luxe se joint à la nature" · QC · FR
+   Editorial-luxe-natural: warm white + near-black + botanical TEAL. Halant serif + Assistant.
+   ============================================================ */
+:root{
+  /* color */
+  --bg:        #FCFBF8;   /* soft warm white page */
+  --surface:   #FFFFFF;   /* cards */
+  --surface-2: #F4F1EA;   /* warm cream alt band */
+  --ink:       #1D1D1D;   /* near-black ink */
+  --ink-soft:  #5C5A55;   /* warm grey — secondary text */
+  --accent:    #108474;   /* deep botanical teal — brand accent / CTAs / eyebrows */
+  --accent-ink:#FFFFFF;
+  --accent-deep:#0B6557;  /* hover */
+  --mint:      #EDF5F5;   /* pale teal-tint surface band */
+  --gold:      #C8A24B;   /* warm luxe gold (sparing — ingredients) */
+  --dark:      #161616;   /* near-black footer/band (echoes their black header) */
+  --line:      #E4DFD5;   /* warm hairline */
+  --star:      #C8A24B;   /* gold stars */
+  --btn:       #108474;
+  --btn-ink:   #FFFFFF;
+  /* type */
+  --font-display: "Halant", "Georgia", "Times New Roman", serif;
+  --font-body:    "Assistant", "Helvetica Neue", Arial, sans-serif;
+  --s--1: .82rem;
+  --s-0:  1.075rem;  /* body ~18px */
+  --s-1:  1.25rem;
+  --s-2:  1.6rem;
+  --s-3:  2.15rem;
+  --s-4:  3rem;
+  --s-5:  4.1rem;
+  /* space */
+  --sp-1:.25rem; --sp-2:.5rem; --sp-3:1rem; --sp-4:1.5rem;
+  --sp-5:2.5rem; --sp-6:4rem; --sp-7:6rem;
+  --sp-8:8rem;
+  /* shape */
+  --radius:3px; --radius-lg:8px;
+  --shadow:0 14px 40px rgba(29,29,29,.10);
+  --maxw:1280px;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html,body{overflow-x:clip}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--ink);
+  font-family:var(--font-body);
+  font-size:var(--s-0);
+  line-height:1.6;
+  font-weight:400;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+
+/* headings — Halant serif, elegant editorial-luxe */
+h1,h2,h3{font-family:var(--font-display);font-weight:600;line-height:1.1;letter-spacing:-.02em;margin:0 0 var(--sp-3);color:var(--ink)}
+h1{font-size:var(--s-5)}
+h2{font-size:var(--s-4)}
+h3{font-size:var(--s-2);font-weight:500}
+p{margin:0 0 var(--sp-3)}
+
+/* layout */
+.wrap{max-width:var(--maxw);margin:0 auto;padding-inline:var(--sp-4);width:100%}
+.sec{position:relative;padding-block:var(--sp-7)}
+.section{position:relative}
+
+/* eyebrow — teal tracked caps */
+.eyebrow{
+  display:inline-block;font-family:var(--font-body);font-weight:700;
+  font-size:var(--s--1);letter-spacing:.2em;text-transform:uppercase;
+  color:var(--accent);margin:0 0 var(--sp-3)
+}
+
+/* buttons — SQUARE, uppercase, bold, tracked (their brand signal) */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:.55em;
+  font-family:var(--font-body);font-weight:700;font-size:var(--s--1);
+  letter-spacing:.1em;text-transform:uppercase;
+  padding:1.05em 2.2em;border-radius:0;border:1.5px solid transparent;
+  cursor:pointer;transition:background .22s,color .22s,border-color .22s,transform .15s;
+  line-height:1;white-space:nowrap
+}
+.btn:hover{transform:translateY(-2px)}
+.btn-primary{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.btn-primary:hover{background:var(--accent-deep);border-color:var(--accent-deep)}
+.btn-dark{background:var(--ink);color:#fff;border-color:var(--ink)}
+.btn-dark:hover{background:#000}
+.btn-outline{background:transparent;color:var(--ink);border-color:var(--ink)}
+.btn-outline:hover{background:var(--ink);color:#fff}
+.btn-light{background:#fff;color:var(--ink);border-color:#fff}
+.btn-light:hover{background:transparent;color:#fff;border-color:#fff}
+.btn-block{display:flex;width:100%}
+
+/* rating stars */
+.stars{color:var(--star);letter-spacing:.06em;font-size:var(--s-0)}
+
+/* chips */
+.chip{
+  display:inline-flex;align-items:center;gap:.45em;
+  font-family:var(--font-body);font-weight:700;font-size:var(--s--1);
+  letter-spacing:.1em;text-transform:uppercase;
+  padding:.5em 1em;border-radius:0;border:1.5px solid var(--line);
+  background:var(--surface);color:var(--ink);line-height:1
+}
+
+/* section icons */
+.ic{width:40px;height:40px;display:block;stroke:currentColor;stroke-width:1.4;fill:none}
+
+/* floats — static, hidden mobile */
+.float{position:absolute;pointer-events:none;z-index:5}
+.float img{width:100%;transform:rotate(var(--rot,0deg));
+  filter:drop-shadow(0 24px 22px rgba(29,29,29,.18))}
+@media(max-width:1000px){.float{display:none}}
+
+/* scroll-reveal (3D) — NOT on hero */
+.reveal{opacity:0;transform:perspective(900px) rotateX(8deg) translateY(26px);
+  transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+
+/* responsive type */
+@media(max-width:780px){
+  :root{--s-5:2.7rem;--s-4:2.1rem;--s-3:1.7rem;--s-2:1.35rem}
+  .sec{padding-block:var(--sp-6)}
+}

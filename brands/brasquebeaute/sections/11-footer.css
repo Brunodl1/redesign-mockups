@@ -1,0 +1,322 @@
+/* ============================================================
+   BRASQUÉ BEAUTÉ — 11-footer.css
+   .site-footer: dark band (#161616), light text, teal accents
+   All vars defined; scoped under .site-footer
+   ============================================================ */
+
+/* ---- Token re-declarations (local fallbacks) ---- */
+.site-footer {
+  --bg:         #FCFBF8;
+  --surface:    #FFFFFF;
+  --surface-2:  #F4F1EA;
+  --ink:        #1D1D1D;
+  --ink-soft:   #5C5A55;
+  --accent:     #108474;
+  --accent-ink: #FFFFFF;
+  --accent-deep:#0B6557;
+  --mint:       #EDF5F5;
+  --gold:       #C8A24B;
+  --dark:       #161616;
+  --line:       #E4DFD5;
+  --font-display:"Halant", "Georgia", "Times New Roman", serif;
+  --font-body:   "Assistant", "Helvetica Neue", Arial, sans-serif;
+  --s--1: .82rem;
+  --s-0:  1.075rem;
+  --s-1:  1.25rem;
+  --s-2:  1.6rem;
+  --s-3:  2.15rem;
+  --s-4:  3rem;
+  --s-5:  4.1rem;
+  --sp-1: .25rem; --sp-2: .5rem;  --sp-3: 1rem;   --sp-4: 1.5rem;
+  --sp-5: 2.5rem; --sp-6: 4rem;   --sp-7: 6rem;    --sp-8: 8rem;
+  --radius:    3px;
+  --radius-lg: 8px;
+  --shadow:    0 14px 40px rgba(29,29,29,.10);
+  --maxw:      1280px;
+
+  /* Footer-specific light palette */
+  --ft-text:   #CFCFCF;
+  --ft-link:   #CFCFCF;
+  --ft-link-hover: #56BEAE;   /* light teal */
+  --ft-col-head: #56BEAE;     /* light teal column headers */
+  --ft-divider: rgba(255,255,255,.10);
+}
+
+/* ---- Outer shell ---- */
+.site-footer {
+  background: var(--dark);
+  color: var(--ft-text);
+  font-family: var(--font-body);
+  font-size: var(--s-0);
+}
+
+/* ================================================================
+   TOP: brand + nav columns
+   ================================================================ */
+.site-footer__top {
+  padding-block: var(--sp-7) var(--sp-6);
+  border-bottom: 1px solid var(--ft-divider);
+}
+
+.site-footer__top-wrap {
+  display: grid;
+  grid-template-columns: minmax(220px, 300px) 1fr;
+  gap: var(--sp-6);
+  align-items: start;
+}
+
+/* ---- Brand column ---- */
+.site-footer__brand {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+}
+
+.site-footer__wordmark {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.5rem; /* ~24px */
+  color: #fff;
+  letter-spacing: .04em;
+  line-height: 1;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.site-footer__wordmark:hover {
+  color: var(--ft-link-hover);
+}
+
+.site-footer__blurb {
+  font-size: var(--s--1);
+  color: var(--ft-text);
+  line-height: 1.65;
+  margin: 0;
+  max-width: 260px;
+}
+
+/* ---- Social icons ---- */
+.site-footer__socials {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  flex-wrap: wrap;
+}
+
+.site-footer__social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--ft-text);
+  transition: color .2s;
+}
+
+.site-footer__social-link:hover {
+  color: var(--ft-link-hover);
+}
+
+.site-footer__social-link .ic {
+  width: 22px;
+  height: 22px;
+  stroke: currentColor;
+  stroke-width: 1.4;
+  fill: none;
+}
+
+/* ---- Nav grid: 4 columns ---- */
+.site-footer__nav {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--sp-5) var(--sp-4);
+}
+
+.site-footer__col {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+}
+
+.site-footer__col-heading {
+  font-family: var(--font-display);
+  font-size: var(--s--1);
+  font-weight: 600;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--ft-col-head);
+  margin: 0 0 var(--sp-2);
+  line-height: 1;
+}
+
+.site-footer__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+}
+
+.site-footer__link {
+  color: var(--ft-link);
+  font-size: var(--s--1);
+  text-decoration: none;
+  line-height: 1.5;
+  transition: color .2s;
+}
+
+.site-footer__link:hover {
+  color: var(--ft-link-hover);
+}
+
+/* ================================================================
+   TRUST MARKS
+   ================================================================ */
+.site-footer__trust {
+  padding-block: var(--sp-4);
+  border-bottom: 1px solid var(--ft-divider);
+}
+
+.site-footer__trust-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: var(--sp-3);
+}
+
+/* Override .chip for dark background */
+.site-footer .chip,
+.site-footer__trust-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: .45em;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: var(--s--1);
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  padding: .5em 1em;
+  border-radius: 0;
+  border: 1.5px solid rgba(255,255,255,.18);
+  background: transparent;
+  color: var(--ft-text);
+  line-height: 1;
+}
+
+.site-footer__trust-chip svg {
+  color: var(--ft-col-head);
+  flex-shrink: 0;
+}
+
+/* ================================================================
+   BOTTOM BAR
+   ================================================================ */
+.site-footer__bottom {
+  padding-block: var(--sp-4);
+}
+
+.site-footer__bottom-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--sp-3);
+}
+
+/* ---- Legal line ---- */
+.site-footer__legal {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: .45em;
+  font-size: var(--s--1);
+  color: rgba(207,207,207,.65);
+}
+
+.site-footer__legal-sep {
+  color: rgba(207,207,207,.35);
+}
+
+.site-footer__legal-link {
+  color: rgba(207,207,207,.65);
+  text-decoration: none;
+  transition: color .2s;
+}
+
+.site-footer__legal-link:hover {
+  color: var(--ft-link-hover);
+}
+
+.site-footer__copy {
+  white-space: nowrap;
+}
+
+/* ---- Payment marks ---- */
+.site-footer__payments {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  flex-wrap: wrap;
+}
+
+.site-footer__pay-mark {
+  display: inline-flex;
+  opacity: .75;
+  transition: opacity .2s;
+}
+
+.site-footer__pay-mark:hover {
+  opacity: 1;
+}
+
+/* ================================================================
+   RESPONSIVE
+   ================================================================ */
+
+/* Medium: 2-column layout; collapse nav to 2-up */
+@media (max-width: 1024px) {
+  .site-footer__top-wrap {
+    grid-template-columns: 1fr;
+    gap: var(--sp-5);
+  }
+
+  .site-footer__blurb {
+    max-width: 100%;
+  }
+
+  .site-footer__nav {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--sp-5) var(--sp-4);
+  }
+}
+
+/* Small: 1-column, full stack */
+@media (max-width: 600px) {
+  .site-footer__top {
+    padding-block: var(--sp-6) var(--sp-5);
+  }
+
+  .site-footer__nav {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--sp-4) var(--sp-3);
+  }
+
+  .site-footer__trust-wrap {
+    justify-content: flex-start;
+  }
+
+  .site-footer__bottom-wrap {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .site-footer__legal {
+    gap: var(--sp-2);
+  }
+}
+
+@media (max-width: 400px) {
+  .site-footer__nav {
+    grid-template-columns: 1fr;
+  }
+}

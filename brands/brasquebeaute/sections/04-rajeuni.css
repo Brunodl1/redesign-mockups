@@ -1,0 +1,330 @@
+/* =============================================
+   BRASQUÉ BEAUTÉ — 04-rajeuni.css
+   Section héros RAJEUNI — sérum phare
+   ============================================= */
+
+/* --- tokens (referenced from base.css) --- */
+.s-rajeuni {
+  --bg:         #FCFBF8;
+  --surface:    #fff;
+  --surface-2:  #F4F1EA;
+  --ink:        #1D1D1D;
+  --ink-soft:   #5C5A55;
+  --accent:     #108474;
+  --accent-ink: #fff;
+  --accent-deep:#0B6557;
+  --mint:       #EDF5F5;
+  --gold:       #C8A24B;
+  --dark:       #161616;
+  --line:       #E4DFD5;
+  --star:       #C8A24B;
+  --font-display:"Halant","Georgia","Times New Roman",serif;
+  --font-body:  "Assistant","Helvetica Neue",Arial,sans-serif;
+  --s--1:       .82rem;
+  --s-0:        1.075rem;
+  --s-1:        1.25rem;
+  --s-2:        1.6rem;
+  --s-3:        2.15rem;
+  --s-4:        3rem;
+  --s-5:        4.1rem;
+  --sp-1:       .25rem;
+  --sp-2:       .5rem;
+  --sp-3:       1rem;
+  --sp-4:       1.5rem;
+  --sp-5:       2.5rem;
+  --sp-6:       4rem;
+  --sp-7:       6rem;
+  --sp-8:       8rem;
+  --radius:     3px;
+  --radius-lg:  8px;
+  --shadow:     0 14px 40px rgba(29,29,29,.10);
+  --maxw:       1280px;
+}
+
+/* --- section shell --- */
+.s-rajeuni {
+  background: var(--bg);
+  overflow: hidden;
+}
+
+/* --- 2-column grid --- */
+.s-rajeuni__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 520px) minmax(0, 540px);
+  gap: var(--sp-7);
+  align-items: center;
+  justify-content: center;
+}
+
+/* ============================================================
+   VISUAL SIDE
+   ============================================================ */
+
+.s-rajeuni__visual {
+  position: relative;
+  max-width: 520px;
+  width: 100%;
+  justify-self: end;
+}
+
+/* Main serum-drip texture image */
+.s-rajeuni__img-main-wrap {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  line-height: 0; /* remove inline gap */
+  box-shadow: var(--shadow);
+}
+
+.s-rajeuni__img-main {
+  width: 100%;
+  height: 520px;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  border-radius: var(--radius-lg);
+}
+
+/* Small floating bottle card — overlaps bottom-right corner */
+.s-rajeuni__img-bottle-card {
+  position: absolute;
+  bottom: -var(--sp-4);
+  bottom: calc(var(--sp-4) * -1);
+  right: calc(var(--sp-5) * -1);
+  width: 155px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  border: 3px solid var(--surface);
+  background: var(--surface);
+  /* subtle offset from main image corner */
+  transform: translate(-8px, -40px);
+}
+
+.s-rajeuni__img-bottle {
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+
+/* ============================================================
+   COPY SIDE
+   ============================================================ */
+
+.s-rajeuni__copy {
+  max-width: 500px;
+  justify-self: start;
+}
+
+/* eyebrow inherits from base.css .eyebrow */
+
+/* H2 — inherits from base.css h2 */
+.s-rajeuni__copy h2 {
+  margin-bottom: var(--sp-4);
+}
+
+/* Lead paragraph */
+.s-rajeuni__lead {
+  font-size: var(--s-1);
+  color: var(--ink-soft);
+  line-height: 1.65;
+  margin-bottom: var(--sp-5);
+  max-width: 44ch;
+}
+
+/* ---- Benefit list ---- */
+.s-rajeuni__benefits {
+  list-style: none;
+  margin: 0 0 var(--sp-5);
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+}
+
+.s-rajeuni__benefit {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--sp-3);
+}
+
+.s-rajeuni__benefit-icon {
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--mint);
+  margin-top: .12em; /* optical align with text cap height */
+}
+
+.s-rajeuni__benefit-icon svg {
+  display: block;
+}
+
+.s-rajeuni__benefit-text {
+  display: flex;
+  flex-direction: column;
+  gap: .15em;
+}
+
+.s-rajeuni__benefit-text strong {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: var(--s-0);
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+.s-rajeuni__benefit-text span {
+  font-size: var(--s--1);
+  color: var(--ink-soft);
+  line-height: 1.5;
+}
+
+/* ---- Stars ---- */
+.s-rajeuni__stars {
+  display: flex;
+  align-items: center;
+  gap: .5em;
+  margin-bottom: var(--sp-4);
+  font-size: var(--s-1);
+  color: var(--star);
+}
+
+.s-rajeuni__stars-label {
+  font-size: var(--s--1);
+  font-family: var(--font-body);
+  font-weight: 700;
+  letter-spacing: .06em;
+  color: var(--ink-soft);
+  text-transform: uppercase;
+}
+
+/* ---- CTA row ---- */
+.s-rajeuni__cta-row {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+}
+
+.s-rajeuni__price {
+  font-family: var(--font-display);
+  font-size: var(--s-3);
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1;
+  margin: 0;
+  letter-spacing: -.01em;
+}
+
+.s-rajeuni__volume {
+  font-family: var(--font-body);
+  font-size: var(--s-0);
+  font-weight: 400;
+  color: var(--ink-soft);
+  letter-spacing: 0;
+}
+
+.s-rajeuni__btns {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  flex-wrap: wrap;
+}
+
+/* btn styles inherited from base.css .btn / .btn-primary / .btn-outline */
+
+/* ============================================================
+   REVEAL — inherited from base.css (.reveal + .in)
+   Stagger: image first, copy after
+   ============================================================ */
+
+.s-rajeuni__visual.reveal {
+  transition-delay: 0s;
+}
+
+.s-rajeuni__copy.reveal {
+  transition-delay: .15s;
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 1000px) {
+  .s-rajeuni__grid {
+    gap: var(--sp-6);
+  }
+
+  /* slightly reduce image */
+  .s-rajeuni__img-main {
+    height: 440px;
+  }
+}
+
+@media (max-width: 780px) {
+  /* stack: image top, text below */
+  .s-rajeuni__grid {
+    grid-template-columns: 1fr;
+    gap: var(--sp-5);
+  }
+
+  .s-rajeuni__visual {
+    max-width: 100%;
+    justify-self: stretch;
+    order: -1; /* image above on mobile */
+  }
+
+  .s-rajeuni__copy {
+    max-width: 100%;
+    justify-self: stretch;
+  }
+
+  .s-rajeuni__img-main {
+    height: 340px;
+    object-position: center 20%;
+  }
+
+  /* Bottle card: reposition for mobile */
+  .s-rajeuni__img-bottle-card {
+    right: var(--sp-3);
+    transform: translate(0, -36px);
+    width: 120px;
+  }
+
+  .s-rajeuni__img-bottle {
+    height: 148px;
+  }
+
+  .s-rajeuni__lead {
+    max-width: 100%;
+  }
+
+  .s-rajeuni__btns {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .s-rajeuni__btns .btn {
+    text-align: center;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 420px) {
+  .s-rajeuni__img-main {
+    height: 280px;
+  }
+
+  .s-rajeuni__img-bottle-card {
+    width: 100px;
+  }
+
+  .s-rajeuni__img-bottle {
+    height: 120px;
+  }
+}

@@ -1,0 +1,394 @@
+/* =============================================
+   BRASQUÉ BEAUTÉ — Announcement Bar + Header
+   Scoped to: .announce / .site-header
+   Uses base.css token contract (no raw colors)
+   ============================================= */
+
+/* ─── ANNOUNCEMENT BAR ─────────────────────── */
+
+.announce {
+  background: var(--accent);
+  color: var(--accent-ink);
+  width: 100%;
+  z-index: 200;
+}
+
+.announce__inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sp-3);
+  padding-block: calc(var(--sp-1) + 1px);
+  flex-wrap: nowrap;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.announce__item {
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  font-weight: 500;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--accent-ink);
+  line-height: 1;
+}
+
+.announce__sep {
+  font-size: var(--s--1);
+  opacity: .55;
+  color: var(--accent-ink);
+  flex-shrink: 0;
+}
+
+/* Mobile: hide secondary items and separators */
+@media (max-width: 780px) {
+  .announce__item--secondary,
+  .announce__sep {
+    display: none;
+  }
+  .announce__inner {
+    justify-content: center;
+  }
+}
+
+
+/* ─── STICKY HEADER ─────────────────────────── */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--bg);
+  border-bottom: 1px solid var(--line);
+  /* Subtle shadow rendered via box-shadow using rgba scrim only */
+  box-shadow: 0 1px 0 var(--line), 0 2px 12px rgba(0,0,0,.04);
+  transition: box-shadow .2s ease;
+}
+
+.site-header__inner {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  min-height: 64px;
+  gap: var(--sp-3);
+}
+
+/* ─── Column scaffolding ── */
+
+.site-header__col {
+  display: flex;
+  align-items: center;
+  min-width: 0; /* prevents logo from being squeezed */
+}
+
+.site-header__col--left {
+  justify-content: flex-start;
+}
+
+.site-header__col--center {
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.site-header__col--right {
+  justify-content: flex-end;
+  gap: var(--sp-1);
+}
+
+
+/* ─── WORDMARK ───────────────────────────────── */
+
+.site-header__logo {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 26px;
+  letter-spacing: .02em;
+  color: var(--ink);
+  text-decoration: none;
+  white-space: nowrap;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  gap: .35em;
+  transition: color .2s ease;
+}
+
+.site-header__logo:hover {
+  color: var(--accent-deep);
+}
+
+.site-header__logo-leaf {
+  font-size: .65em;
+  color: var(--accent);
+  line-height: 1;
+  position: relative;
+  top: -.05em;
+  flex-shrink: 0;
+}
+
+
+/* ─── DESKTOP NAV ────────────────────────────── */
+
+.site-header__nav {
+  display: flex;
+  align-items: center;
+}
+
+.site-header__nav-list {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: var(--sp-3);
+  flex-wrap: nowrap;
+}
+
+.site-header__nav-link {
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  font-weight: 500;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--ink);
+  text-decoration: none;
+  white-space: nowrap;
+  line-height: 1;
+  padding-block: var(--sp-1);
+  position: relative;
+  transition: color .2s ease;
+}
+
+.site-header__nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform .25s ease;
+}
+
+.site-header__nav-link:hover {
+  color: var(--accent);
+}
+
+.site-header__nav-link:hover::after {
+  transform: scaleX(1);
+}
+
+/* RAJEUNI — featured link */
+.site-header__nav-link--featured {
+  color: var(--accent-deep);
+  font-weight: 600;
+}
+
+.site-header__nav-link--featured:hover {
+  color: var(--accent);
+}
+
+
+/* ─── ACTION ICONS ───────────────────────────── */
+
+.site-header__action {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--ink);
+  padding: var(--sp-1);
+  border-radius: var(--radius);
+  position: relative;
+  transition: color .2s ease, background .2s ease;
+  flex-shrink: 0;
+}
+
+.site-header__action:hover {
+  color: var(--accent);
+  background: var(--mint);
+}
+
+/* Cart badge */
+.site-header__cart-badge {
+  position: absolute;
+  top: 1px;
+  right: 1px;
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-family: var(--font-body);
+  font-size: 9px;
+  font-weight: 700;
+  line-height: 1;
+  min-width: 14px;
+  height: 14px;
+  border-radius: 99px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-inline: 2px;
+  pointer-events: none;
+}
+
+
+/* ─── HAMBURGER (mobile only by default hidden) ─ */
+
+.site-header__hamburger {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--ink);
+  padding: var(--sp-1);
+  border-radius: var(--radius);
+  flex-shrink: 0;
+  transition: color .2s ease;
+}
+
+.site-header__hamburger:hover {
+  color: var(--accent);
+}
+
+
+/* ─── MOBILE NAV DRAWER ───────────────────────── */
+
+.site-header__mobile-nav {
+  display: none;
+  background: var(--bg);
+  border-top: 1px solid var(--line);
+  padding: var(--sp-3) 0 var(--sp-4);
+  animation: slideDown .2s ease;
+}
+
+.site-header__mobile-nav[aria-hidden="false"] {
+  display: block;
+}
+
+.site-header__mobile-nav-list {
+  list-style: none;
+  margin: 0;
+  padding: 0 var(--sp-4);
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.site-header__mobile-nav-link {
+  display: block;
+  font-family: var(--font-body);
+  font-size: var(--s-1);
+  font-weight: 500;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--ink);
+  text-decoration: none;
+  padding-block: var(--sp-2);
+  border-bottom: 1px solid var(--line);
+  transition: color .2s ease;
+}
+
+.site-header__mobile-nav-link:last-child {
+  border-bottom: none;
+}
+
+.site-header__mobile-nav-link:hover {
+  color: var(--accent);
+}
+
+.site-header__mobile-nav-link--featured {
+  color: var(--accent-deep);
+  font-weight: 600;
+}
+
+.site-header__mobile-nav-link--featured:hover {
+  color: var(--accent);
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* ─── MOBILE BREAKPOINT (<=780px) ────────────── */
+
+@media (max-width: 780px) {
+
+  .site-header__inner {
+    grid-template-columns: auto 1fr auto;
+    min-height: 54px;
+    gap: var(--sp-2);
+    padding-inline: var(--sp-3);
+  }
+
+  /* Hamburger visible, nav hidden */
+  .site-header__hamburger {
+    display: flex;
+  }
+
+  .site-header__nav {
+    display: none;
+  }
+
+  /* Wordmark smaller on mobile */
+  .site-header__logo {
+    font-size: 18px;
+    letter-spacing: .01em;
+    justify-content: center;
+  }
+
+  .site-header__logo-leaf {
+    font-size: .7em;
+  }
+
+  /* Hide search + account on mobile */
+  .site-header__action--desktop-only {
+    display: none;
+  }
+
+  /* Keep cart only */
+  .site-header__col--right {
+    gap: 0;
+  }
+}
+
+
+/* ─── SCROLL SHADOW ENHANCEMENT ─────────────── */
+/* Applied via JS class .is-scrolled on <header> */
+
+.site-header.is-scrolled {
+  box-shadow: 0 1px 0 var(--line), 0 4px 20px rgba(0,0,0,.07);
+}
+
+
+/* ─── HAMBURGER OPEN STATE ───────────────────── */
+/* Applied via JS: [aria-expanded="true"] */
+
+.site-header__hamburger[aria-expanded="true"] svg line:nth-child(1) {
+  transform: translateY(5px) rotate(45deg);
+  transform-origin: center;
+}
+.site-header__hamburger[aria-expanded="true"] svg line:nth-child(2) {
+  opacity: 0;
+}
+.site-header__hamburger[aria-expanded="true"] svg line:nth-child(3) {
+  transform: translateY(-5px) rotate(-45deg);
+  transform-origin: center;
+}
+
+.site-header__hamburger svg line {
+  transition: transform .2s ease, opacity .15s ease;
+}
