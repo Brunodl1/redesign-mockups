@@ -1,0 +1,128 @@
+/* ============================================================
+   Les soins de Menea — base.css (foundation)
+   Soins naturels · peaux sensibles/sèches/eczéma · famille · Montréal · FR
+   Gentle botanical premium: ivory + petrol-teal + turquoise + warm caramel.
+   ============================================================ */
+:root{
+  /* color */
+  --bg:        #F4F0E8;   /* warm ivory page */
+  --surface:   #FFFFFF;   /* cards */
+  --surface-2: #E5EDEA;   /* pale sage-teal alt band */
+  --ink:       #16363E;   /* deep petrol-teal — headings, text */
+  --ink-soft:  #586A69;   /* secondary text */
+  --accent:    #1A8B90;   /* teal — primary buttons */
+  --accent-ink:#FFFFFF;
+  --accent-deep:#136B6F;  /* hover */
+  --teal:      #25B1B7;   /* turquoise — eyebrows, links, accents (logo color) */
+  --caramel:   #C3935B;   /* warm caramel — apricot oil pop */
+  --dark:      #16363E;   /* dark footer/band */
+  --line:      #E2DCCF;   /* hairline */
+  --star:      #C3935B;
+  --btn:       #1A8B90;
+  --btn-ink:   #FFFFFF;
+  /* type */
+  --font-display: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  --font-body:    "Nunito Sans", "Helvetica Neue", Arial, sans-serif;
+  --s--1: .82rem;
+  --s-0:  1rem;
+  --s-1:  1.2rem;
+  --s-2:  1.55rem;
+  --s-3:  2.1rem;
+  --s-4:  3rem;
+  --s-5:  4.4rem;
+  /* space */
+  --sp-1:.25rem; --sp-2:.5rem; --sp-3:1rem; --sp-4:1.5rem;
+  --sp-5:2.5rem; --sp-6:4rem; --sp-7:6rem;
+  /* shape */
+  --radius:10px; --radius-lg:22px;
+  --shadow:0 14px 40px rgba(22,54,62,.12);
+  --maxw:1200px;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html,body{overflow-x:clip}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--ink);
+  font-family:var(--font-body);
+  font-size:var(--s-0);
+  line-height:1.65;
+  font-weight:400;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+
+/* headings — elegant serif */
+h1,h2,h3{font-family:var(--font-display);font-weight:600;line-height:1.08;letter-spacing:0;margin:0 0 var(--sp-3);color:var(--ink)}
+h1{font-size:var(--s-5)}
+h2{font-size:var(--s-4)}
+h3{font-size:var(--s-2)}
+p{margin:0 0 var(--sp-3)}
+
+/* layout */
+.wrap{max-width:var(--maxw);margin:0 auto;padding-inline:var(--sp-4);width:100%}
+.sec{position:relative;padding-block:var(--sp-7)}
+.section{position:relative}
+
+/* eyebrow — turquoise tracked caps */
+.eyebrow{
+  display:inline-block;font-family:var(--font-body);font-weight:700;
+  font-size:var(--s--1);letter-spacing:.2em;text-transform:uppercase;
+  color:var(--teal);margin:0 0 var(--sp-3)
+}
+
+/* buttons — gentle pill */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:.5em;
+  font-family:var(--font-body);font-weight:700;font-size:var(--s-0);
+  letter-spacing:.02em;
+  padding:.9em 1.9em;border-radius:999px;border:1.5px solid transparent;
+  cursor:pointer;transition:background .2s,color .2s,border-color .2s,transform .15s;
+  line-height:1;white-space:nowrap
+}
+.btn:hover{transform:translateY(-2px)}
+.btn-primary{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.btn-primary:hover{background:var(--accent-deep);border-color:var(--accent-deep)}
+.btn-caramel{background:var(--caramel);color:#fff;border-color:var(--caramel)}
+.btn-caramel:hover{background:#ad8049;border-color:#ad8049}
+.btn-outline{background:transparent;color:var(--ink);border-color:var(--ink)}
+.btn-outline:hover{background:var(--ink);color:#fff}
+.btn-light{background:#fff;color:var(--ink);border-color:#fff}
+.btn-light:hover{background:transparent;color:#fff;border-color:#fff}
+.btn-block{display:flex;width:100%}
+
+/* rating stars */
+.stars{color:var(--star);letter-spacing:.04em;font-size:var(--s-0)}
+
+/* chips */
+.chip{
+  display:inline-flex;align-items:center;gap:.45em;
+  font-family:var(--font-body);font-weight:700;font-size:var(--s--1);
+  letter-spacing:.04em;text-transform:uppercase;
+  padding:.5em .9em;border-radius:999px;border:1.5px solid var(--line);
+  background:var(--surface);color:var(--ink);line-height:1
+}
+
+/* section icons */
+.ic{width:40px;height:40px;display:block;stroke:currentColor;stroke-width:1.5;fill:none}
+
+/* floats — static, hidden mobile */
+.float{position:absolute;pointer-events:none;z-index:5}
+.float img{width:100%;transform:rotate(var(--rot,0deg));
+  filter:drop-shadow(0 26px 22px rgba(22,54,62,.20))}
+@media(max-width:1000px){.float{display:none}}
+
+/* scroll-reveal (3D) — NOT on hero */
+.reveal{opacity:0;transform:perspective(900px) rotateX(8deg) translateY(26px);
+  transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+
+/* responsive type */
+@media(max-width:780px){
+  :root{--s-5:3rem;--s-4:2.1rem;--s-3:1.65rem;--s-2:1.3rem}
+  .sec{padding-block:var(--sp-6)}
+}

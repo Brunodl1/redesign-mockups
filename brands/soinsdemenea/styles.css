@@ -1,0 +1,2523 @@
+/* ===== 01-header.css ===== */
+/* ============================================================
+   Les soins de Menea — 01-header.css
+   Announcement bar + sticky split-nav header
+   All CSS scoped under .announce / .site-header
+   ============================================================ */
+
+/* ─── Announcement bar ─────────────────────────────────────── */
+.announce {
+  background: var(--accent);
+  color: var(--accent-ink);
+  width: 100%;
+  position: relative;
+  z-index: 200;
+}
+
+.announce__inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  padding-block: var(--sp-2);
+  text-align: center;
+}
+
+.announce__msg {
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  font-weight: 600;
+  letter-spacing: .04em;
+  white-space: nowrap;
+  color: var(--accent-ink);
+}
+
+.announce__sep {
+  font-size: var(--s--1);
+  color: rgba(255, 255, 255, .55);
+  flex-shrink: 0;
+}
+
+/* Mobile: hide secondary messages */
+@media (max-width: 780px) {
+  .announce__sep,
+  .announce__msg--secondary {
+    display: none;
+  }
+
+  .announce__msg--primary {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+  }
+}
+
+
+/* ─── Sticky header ─────────────────────────────────────────── */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--bg);
+  border-bottom: 1px solid var(--line);
+  box-shadow: 0 2px 16px rgba(22, 54, 62, .07);
+}
+
+.site-header__inner {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  grid-template-areas: "nav-left logo nav-right";
+  align-items: center;
+  height: 84px;
+  gap: var(--sp-3);
+  position: relative;
+}
+
+/* ─── Logo ──────────────────────────────────────────────────── */
+.site-header__logo {
+  grid-area: logo;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  z-index: 1;
+}
+
+.site-header__logo-img {
+  height: 60px;
+  width: auto;
+  display: block;
+  /* square stacked logo (mark + wordmark) — needs more height to stay legible */
+}
+
+/* ─── Nav ──────────────────────────────────────────────────── */
+.site-header__nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  gap: var(--sp-4);
+}
+
+.site-header__nav a {
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  font-weight: 600;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--ink);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color .18s ease;
+  position: relative;
+}
+
+.site-header__nav a::after {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  right: 0;
+  height: 1.5px;
+  background: var(--teal);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .22s ease;
+}
+
+.site-header__nav a:hover {
+  color: var(--teal);
+}
+
+.site-header__nav a:hover::after {
+  transform: scaleX(1);
+}
+
+.site-header__nav--left {
+  grid-area: nav-left;
+  display: flex;
+  justify-content: flex-end;
+  min-width: 0;   /* keep the two 1fr columns balanced so the logo stays centered */
+}
+
+.site-header__nav--right {
+  grid-area: nav-right;
+  display: flex;
+  justify-content: flex-start;
+  min-width: 0;
+}
+
+/* ─── Icons cluster ──────────────────────────────────────────── */
+.site-header__icons {
+  /* Floated to far right, out of grid flow via absolute on desktop */
+  position: absolute;
+  right: var(--sp-4);
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  z-index: 2;
+}
+
+.site-header__icon-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  padding: var(--sp-1);
+  cursor: pointer;
+  color: var(--ink);
+  transition: color .18s ease;
+  position: relative;
+  line-height: 0;
+}
+
+.site-header__icon-btn:hover {
+  color: var(--teal);
+}
+
+/* Cart badge */
+.site-header__cart {
+  position: relative;
+}
+
+.site-header__cart-badge {
+  position: absolute;
+  top: -4px;
+  right: -6px;
+  min-width: 17px;
+  height: 17px;
+  background: var(--caramel);
+  color: #fff;
+  font-family: var(--font-body);
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  padding: 0 3px;
+  pointer-events: none;
+}
+
+/* ─── Hamburger (hidden on desktop) ─────────────────────────── */
+.site-header__hamburger {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  padding: var(--sp-1);
+  cursor: pointer;
+  color: var(--ink);
+  transition: color .18s ease;
+  line-height: 0;
+}
+
+.site-header__hamburger:hover {
+  color: var(--teal);
+}
+
+
+/* ─── Mobile layout (≤780px) ────────────────────────────────── */
+@media (max-width: 780px) {
+
+  .site-header__inner {
+    /* Three-column: hamburger | logo | cart */
+    grid-template-columns: 44px 1fr 44px;
+    grid-template-areas: "hamburger logo cart";
+    height: 60px;
+    gap: 0;
+    padding-inline: var(--sp-3);
+  }
+
+  /* Hamburger visible */
+  .site-header__hamburger {
+    display: flex;
+    grid-area: hamburger;
+  }
+
+  /* Logo re-centered in middle cell */
+  .site-header__logo {
+    grid-area: logo;
+    position: static;
+    transform: none;
+    justify-content: center;
+  }
+
+  .site-header__logo-img {
+    height: 48px;
+  }
+
+  /* Hide desktop nav entirely */
+  .site-header__nav {
+    display: none;
+  }
+
+  /* Hide desktop icons cluster, replaced by mobile cart only */
+  .site-header__icons {
+    position: static;
+    transform: none;
+    grid-area: cart;
+    justify-content: flex-end;
+    gap: 0;
+    padding-right: 0;
+    right: auto;
+    top: auto;
+  }
+
+  /* Hide search + account on mobile */
+  .site-header__icon--search,
+  .site-header__icon--account {
+    display: none;
+  }
+
+}
+
+/* ===== 02-hero.css ===== */
+/* ============================================================
+   02-hero.css — Hero section (centered editorial)
+   Les soins de Menea · ALL styles scoped under .s-hero
+   ============================================================ */
+
+/* ── Section shell ─────────────────────────────────────────── */
+.s-hero {
+  background: var(--bg);
+  padding-block: var(--sp-7);
+  overflow: hidden;
+}
+
+.s-hero .wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sp-6);
+}
+
+/* ── Centered copy column ───────────────────────────────────── */
+.s-hero__copy {
+  max-width: 720px;
+  width: 100%;
+  margin-inline: auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+}
+
+/* Eyebrow — inherits .eyebrow; override margin for tighter editorial rhythm */
+.s-hero__copy .eyebrow {
+  margin-bottom: var(--sp-4);
+  color: var(--teal);
+}
+
+/* ── Heading ────────────────────────────────────────────────── */
+.s-hero__heading {
+  font-family: var(--font-display);
+  font-size: var(--s-5);          /* 4.4rem desktop */
+  font-weight: 600;
+  line-height: 1.05;
+  letter-spacing: -.01em;
+  color: var(--ink);
+  margin: 0 0 var(--sp-4);
+  /* avoid orphan lines clipping on small widths */
+  max-width: 100%;
+  min-width: 0;
+}
+
+/* ── Subhead ────────────────────────────────────────────────── */
+.s-hero__sub {
+  font-family: var(--font-body);
+  font-size: var(--s-1);          /* 1.2rem */
+  line-height: 1.6;
+  color: var(--ink-soft);
+  max-width: 600px;
+  margin: 0 0 var(--sp-5);
+  min-width: 0;
+}
+
+/* ── CTA ────────────────────────────────────────────────────── */
+.s-hero__cta {
+  margin-bottom: var(--sp-5);
+}
+
+.s-hero__cta .btn {
+  /* slightly larger than base for hero prominence */
+  padding: 1em 2.2em;
+  font-size: var(--s-1);
+}
+
+/* ── Proof chips ────────────────────────────────────────────── */
+.s-hero__chips {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--sp-2);
+}
+
+.s-hero__chips .chip {
+  /* subtle ivory-tinted bg to lift from the --bg ground */
+  background: var(--surface);
+  border-color: var(--line);
+  color: var(--ink-soft);
+}
+
+/* ── Hero image band ────────────────────────────────────────── */
+.s-hero__band {
+  width: 100%;
+  max-width: 100%;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  /* ensure nothing clips on flex children */
+  min-width: 0;
+  flex-shrink: 0;
+}
+
+.s-hero__img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: 440px;
+  object-fit: cover;
+  /* products (jar + dropper) sit right-of-center; left third is negative space */
+  object-position: center right;
+}
+
+/* ── Mobile (≤780px) ────────────────────────────────────────── */
+@media (max-width: 780px) {
+
+  .s-hero {
+    padding-block: var(--sp-6);
+  }
+
+  .s-hero .wrap {
+    gap: var(--sp-5);
+  }
+
+  /* heading inherits --s-5: 3rem from base.css responsive override */
+  .s-hero__heading {
+    font-size: var(--s-5);   /* picks up the 3rem override from base.css */
+    letter-spacing: -.005em;
+  }
+
+  .s-hero__sub {
+    font-size: var(--s-0);   /* 1rem */
+  }
+
+  /* Full-width CTA on mobile */
+  .s-hero__cta .btn {
+    width: 100%;
+    max-width: 360px;
+    font-size: var(--s-0);
+    padding: 1em 1.5em;
+  }
+
+  /* Image band — shorter but still above fold */
+  .s-hero__img {
+    height: 260px;
+    object-position: center;   /* on narrow screens show center so jar is visible */
+  }
+}
+
+@media (max-width: 480px) {
+  .s-hero__img {
+    height: 240px;
+  }
+
+  .s-hero__chips {
+    gap: var(--sp-2);
+  }
+}
+
+/* ===== 03-trust.css ===== */
+/* ============================================================
+   Les soins de Menea — 03-trust.css
+   Scoped under .s-trust
+   ============================================================ */
+
+/* ── Band shell ───────────────────────────────────────────── */
+.s-trust {
+  background: var(--surface-2);
+  padding-block: var(--sp-4);          /* slim band */
+  border-top:    1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+/* ── Row ─────────────────────────────────────────────────── */
+.s-trust__row {
+  list-style: none;
+  margin:  0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--sp-3) var(--sp-4);
+  align-items: start;
+}
+
+/* ── Individual item ─────────────────────────────────────── */
+.s-trust__item {
+  display:        flex;
+  flex-direction: column;
+  align-items:    center;
+  text-align:     center;
+  gap:            var(--sp-2);
+}
+
+/* ── Icon wrapper ────────────────────────────────────────── */
+.s-trust__icon {
+  display:        flex;
+  align-items:    center;
+  justify-content: center;
+  color:          var(--teal);
+  flex-shrink:    0;
+}
+
+.s-trust__icon--caramel {
+  color: var(--caramel);
+}
+
+/* Force SVG to use currentColor and correct size */
+.s-trust__icon svg {
+  width:  36px;
+  height: 36px;
+  stroke: currentColor;
+  fill:   none;
+}
+
+/* ── Labels ──────────────────────────────────────────────── */
+.s-trust__label {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size:   var(--s-0);
+  color:       var(--ink);
+  line-height: 1.2;
+}
+
+.s-trust__sub {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size:   var(--s--1);
+  color:       var(--ink-soft);
+  line-height: 1.4;
+  margin-top:  calc(-1 * var(--sp-1));  /* tighten */
+}
+
+/* ── Divider lines between items (desktop) ───────────────── */
+.s-trust__item + .s-trust__item {
+  border-left: 1px solid var(--line);
+  padding-left: var(--sp-4);
+}
+
+/* ── Mobile: 2×2 grid ────────────────────────────────────── */
+@media (max-width: 780px) {
+  .s-trust {
+    padding-block: var(--sp-4) var(--sp-5);
+  }
+
+  .s-trust__row {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--sp-4) var(--sp-3);
+  }
+
+  /* Remove dividers — use gap instead */
+  .s-trust__item + .s-trust__item {
+    border-left: none;
+    padding-left: 0;
+  }
+
+  /* Re-add vertical rules between the two columns only */
+  .s-trust__item:nth-child(even) {
+    border-left: 1px solid var(--line);
+    padding-left: var(--sp-3);
+  }
+}
+
+/* ===== 04-categories.css ===== */
+/* ============================================================
+   Les soins de Menea — 04-categories.css
+   Scoped under .s-categories
+   ============================================================ */
+
+/* ── Section shell ───────────────────────────────────────── */
+.s-categories {
+  background: var(--bg);
+}
+
+/* ── Header block ────────────────────────────────────────── */
+.s-categories__header {
+  text-align:    center;
+  margin-bottom: var(--sp-5);
+}
+
+.s-categories__header h2 {
+  font-family: var(--font-display);
+  font-size:   var(--s-4);
+  color:       var(--ink);
+  margin:      0;
+}
+
+/* ── Grid ────────────────────────────────────────────────── */
+.s-categories__grid {
+  list-style: none;
+  margin:     0;
+  padding:    0;
+  display:    grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap:        var(--sp-4);
+}
+
+/* ── Single tile ─────────────────────────────────────────── */
+.s-categories__tile {
+  display: flex;
+}
+
+.s-categories__link {
+  display:        flex;
+  flex-direction: column;
+  width:          100%;
+  border-radius:  var(--radius-lg);
+  overflow:       hidden;
+  background:     var(--surface-2);
+  text-decoration: none;
+  color:          inherit;
+  transition:     transform .25s cubic-bezier(.2,.7,.2,1),
+                  box-shadow .25s ease;
+  box-shadow:     0 4px 16px rgba(22, 54, 62, .06);
+}
+
+.s-categories__link:hover {
+  transform:  translateY(-6px);
+  box-shadow: var(--shadow);
+}
+
+/* ── Image wrapper (packshot on soft bg) ─────────────────── */
+.s-categories__img-wrap {
+  background:     var(--surface-2);
+  border-radius:  var(--radius-lg) var(--radius-lg) 0 0;
+  overflow:       hidden;
+  aspect-ratio:   1 / 1;
+  display:        flex;
+  align-items:    center;
+  justify-content: center;
+  padding:        var(--sp-4);
+}
+
+.s-categories__img {
+  width:       100%;
+  height:      100%;
+  object-fit:  contain;
+  display:     block;
+  transition:  transform .35s ease;
+}
+
+.s-categories__link:hover .s-categories__img {
+  transform: scale(1.04);
+}
+
+/* ── Caption area ────────────────────────────────────────── */
+.s-categories__caption {
+  display:        flex;
+  flex-direction: column;
+  gap:            var(--sp-1);
+  padding:        var(--sp-3) var(--sp-3) var(--sp-4);
+  background:     var(--surface);
+  border-radius:  0 0 var(--radius-lg) var(--radius-lg);
+  border-top:     1px solid var(--line);
+  flex-grow:      1;
+}
+
+.s-categories__name {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size:   var(--s-2);
+  color:       var(--ink);
+  line-height: 1.1;
+}
+
+.s-categories__cta {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size:   var(--s--1);
+  color:       var(--teal);
+  letter-spacing: .04em;
+  transition:  color .2s;
+}
+
+.s-categories__link:hover .s-categories__cta {
+  color: var(--accent);
+}
+
+/* ── Tablet: 2-up ────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .s-categories__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--sp-3);
+  }
+}
+
+/* ── Mobile: 2-up (kept consistent, tighter) ─────────────── */
+@media (max-width: 780px) {
+  .s-categories__header h2 {
+    font-size: var(--s-3);
+  }
+
+  .s-categories__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--sp-3);
+  }
+
+  .s-categories__img-wrap {
+    padding: var(--sp-3);
+  }
+
+  .s-categories__name {
+    font-size: var(--s-1);
+  }
+}
+
+/* ===== 05-bestsellers.css ===== */
+/* ============================================================
+   Les soins de Menea — 05-bestsellers.css
+   Best-sellers product grid · Scoped under .s-bestsellers
+   ============================================================ */
+
+/* ─── Local token aliases (base.css vars reaffirmed) ────────── */
+.s-bestsellers {
+  --bg:          #F4F0E8;
+  --surface:     #fff;
+  --surface-2:   #E5EDEA;
+  --ink:         #16363E;
+  --ink-soft:    #586A69;
+  --accent:      #1A8B90;
+  --accent-ink:  #fff;
+  --accent-deep: #136B6F;
+  --teal:        #25B1B7;
+  --caramel:     #C3935B;
+  --line:        #E2DCCF;
+  --star:        #C3935B;
+  --font-display:"Cormorant Garamond", Georgia, "Times New Roman", serif;
+  --font-body:   "Nunito Sans", "Helvetica Neue", Arial, sans-serif;
+  --s--1:        .82rem;
+  --s-0:         1rem;
+  --s-1:         1.2rem;
+  --s-2:         1.55rem;
+  --s-3:         2.1rem;
+  --s-4:         3rem;
+  --sp-2:        .5rem;
+  --sp-3:        1rem;
+  --sp-4:        1.5rem;
+  --sp-5:        2.5rem;
+  --sp-6:        4rem;
+  --sp-7:        6rem;
+  --radius:      10px;
+  --radius-lg:   22px;
+  --shadow:      0 14px 40px rgba(22,54,62,.12);
+  --maxw:        1200px;
+
+  background: var(--bg);
+}
+
+/* ─── Section background ────────────────────────────────────── */
+.s-bestsellers {
+  background: var(--bg);
+}
+
+/* ─── Header row ─────────────────────────────────────────────── */
+.s-bestsellers__header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--sp-3);
+  margin-bottom: var(--sp-5);
+  flex-wrap: wrap;
+}
+
+.s-bestsellers__header-left {
+  flex: 1 1 auto;
+}
+
+/* eyebrow spacing reset (base already styles .eyebrow) */
+.s-bestsellers__header-left .eyebrow {
+  margin-bottom: var(--sp-2);
+}
+
+.s-bestsellers__title {
+  font-family: var(--font-display);
+  font-size: var(--s-4);
+  color: var(--ink);
+  font-weight: 600;
+  line-height: 1.05;
+  margin: 0;
+}
+
+.s-bestsellers__voir-tout {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: var(--s-0);
+  color: var(--accent);
+  letter-spacing: .02em;
+  white-space: nowrap;
+  text-decoration: none;
+  border-bottom: 1.5px solid currentColor;
+  padding-bottom: 1px;
+  transition: color .2s, border-color .2s;
+  flex-shrink: 0;
+  align-self: flex-end;
+  margin-bottom: 4px; /* optical align with h2 baseline */
+}
+
+.s-bestsellers__voir-tout:hover {
+  color: var(--accent-deep);
+  border-color: var(--accent-deep);
+}
+
+/* ─── Product grid ───────────────────────────────────────────── */
+.s-bestsellers__grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-4);
+}
+
+/* ─── Product card ───────────────────────────────────────────── */
+.s-bestsellers .card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  border: 1.5px solid var(--line);
+  overflow: hidden;
+  transition: transform .28s cubic-bezier(.2,.7,.2,1), box-shadow .28s ease;
+}
+
+.s-bestsellers .card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow);
+}
+
+/* Image area */
+.s-bestsellers .card__img-wrap {
+  position: relative;
+  background: var(--surface-2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--sp-4);
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+}
+
+.s-bestsellers .card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  transition: transform .38s cubic-bezier(.2,.7,.2,1);
+}
+
+.s-bestsellers .card:hover .card__img {
+  transform: scale(1.04);
+}
+
+/* Badge */
+.s-bestsellers .card__badge {
+  position: absolute;
+  top: var(--sp-3);
+  left: var(--sp-3);
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 10px;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  padding: .3em .7em;
+  border-radius: 999px;
+  line-height: 1;
+  z-index: 2;
+  white-space: nowrap;
+}
+
+.s-bestsellers .card__badge--teal {
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+
+.s-bestsellers .card__badge--caramel {
+  background: var(--caramel);
+  color: #fff;
+}
+
+/* Card body */
+.s-bestsellers .card__body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+  padding: var(--sp-3) var(--sp-4) var(--sp-4);
+}
+
+/* Product name */
+.s-bestsellers .card__name {
+  font-family: var(--font-display);
+  font-size: var(--s-2);
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1.15;
+  margin: 0;
+  letter-spacing: 0;
+}
+
+/* Benefit descriptor */
+.s-bestsellers .card__desc {
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  color: var(--ink-soft);
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* Rating row */
+.s-bestsellers .card__rating {
+  display: flex;
+  align-items: center;
+  gap: .4em;
+}
+
+.s-bestsellers .card__rating .stars {
+  color: var(--star);
+  font-size: var(--s--1);
+  letter-spacing: .06em;
+  line-height: 1;
+}
+
+.s-bestsellers .card__avis {
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  color: var(--ink-soft);
+  line-height: 1;
+}
+
+/* Price */
+.s-bestsellers .card__price {
+  font-family: var(--font-body);
+  font-weight: 800;
+  font-size: var(--s-2);
+  color: var(--ink);
+  margin: 0;
+  line-height: 1;
+}
+
+.s-bestsellers .card__currency {
+  font-size: var(--s-1);
+  font-weight: 700;
+}
+
+/* CTA — push to bottom */
+.s-bestsellers .card__cta {
+  margin-top: auto;
+  display: flex;
+  width: 100%;
+  font-size: var(--s--1);
+  padding: .85em 1.5em;
+  border-radius: 999px;
+  background: var(--accent);
+  color: var(--accent-ink);
+  border: 1.5px solid var(--accent);
+  font-family: var(--font-body);
+  font-weight: 700;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  text-decoration: none;
+  text-align: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background .2s, border-color .2s, transform .15s;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.s-bestsellers .card__cta:hover {
+  background: var(--accent-deep);
+  border-color: var(--accent-deep);
+  transform: translateY(-1px);
+}
+
+/* ─── Footnote ───────────────────────────────────────────────── */
+.s-bestsellers__footnote {
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  color: var(--ink-soft);
+  opacity: .7;
+  text-align: right;
+  margin: var(--sp-3) 0 0;
+  letter-spacing: .01em;
+}
+
+/* ─── Screen-reader only ─────────────────────────────────────── */
+.s-bestsellers .sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ─── Responsive · tablet: 2 cols ───────────────────────────── */
+@media (max-width: 900px) {
+  .s-bestsellers__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--sp-3);
+  }
+
+  .s-bestsellers__title {
+    font-size: var(--s-3);
+  }
+}
+
+/* ─── Responsive · mobile: 2 cols (compact) ─────────────────── */
+@media (max-width: 600px) {
+  .s-bestsellers__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--sp-2);
+  }
+
+  .s-bestsellers__header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--sp-2);
+    margin-bottom: var(--sp-4);
+  }
+
+  .s-bestsellers__voir-tout {
+    align-self: flex-start;
+    margin-bottom: 0;
+  }
+
+  .s-bestsellers .card__img-wrap {
+    padding: var(--sp-3);
+  }
+
+  .s-bestsellers .card__body {
+    padding: var(--sp-2) var(--sp-3) var(--sp-3);
+    gap: 6px;
+  }
+
+  .s-bestsellers .card__name {
+    font-size: var(--s-1);
+  }
+
+  .s-bestsellers .card__price {
+    font-size: var(--s-1);
+  }
+
+  .s-bestsellers .card__cta {
+    font-size: 10px;
+    padding: .75em 1em;
+    letter-spacing: .03em;
+  }
+
+  .s-bestsellers__footnote {
+    text-align: left;
+  }
+}
+
+/* ===== 06-sensible.css ===== */
+/* ============================================================
+   Les soins de Menea — 06-sensible.css
+   Bande de réassurance · peaux sensibles & eczéma
+   Scoped under .s-sensible
+   ============================================================ */
+
+/* ─── Local tokens (all base.css vars re-declared to guarantee availability) */
+.s-sensible {
+  --bg:          #F4F0E8;
+  --surface:     #fff;
+  --surface-2:   #E5EDEA;
+  --ink:         #16363E;
+  --ink-soft:    #586A69;
+  --accent:      #1A8B90;
+  --accent-ink:  #fff;
+  --teal:        #25B1B7;
+  --caramel:     #C3935B;
+  --dark:        #16363E;
+  --line:        #E2DCCF;
+  --font-display:"Cormorant Garamond", Georgia, "Times New Roman", serif;
+  --font-body:   "Nunito Sans", "Helvetica Neue", Arial, sans-serif;
+  --s--1:        .82rem;
+  --s-0:         1rem;
+  --s-1:         1.2rem;
+  --s-2:         1.55rem;
+  --s-3:         2.1rem;
+  --s-4:         3rem;
+  --s-5:         4.2rem;
+  --sp-1:        .25rem;
+  --sp-2:        .5rem;
+  --sp-3:        1rem;
+  --sp-4:        1.5rem;
+  --sp-5:        2.5rem;
+  --sp-6:        4rem;
+  --sp-7:        6rem;
+  --radius:      10px;
+  --radius-lg:   22px;
+  --shadow:      0 14px 40px rgba(22,54,62,.12);
+  --maxw:        1200px;
+
+  /* Section uses dark background */
+  background: var(--dark);
+  padding-block: var(--sp-7);
+  position: relative;
+  overflow: hidden;
+}
+
+/* ─── .wrap contract: max-width centered, horizontal padding ── */
+.s-sensible .wrap {
+  max-width: var(--maxw);
+  margin-inline: auto;
+  padding-inline: var(--sp-4);
+}
+
+/* ─── Inner 2-column layout: text | decorative ─────────────── */
+.s-sensible__inner {
+  display: grid;
+  grid-template-columns: 1fr 260px;
+  gap: var(--sp-6);
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+/* ─── Text block ────────────────────────────────────────────── */
+.s-sensible__text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--sp-4);
+}
+
+/* Eyebrow — override global .eyebrow on dark bg */
+.s-sensible .s-sensible__eyebrow.eyebrow,
+.s-sensible .eyebrow.s-sensible__eyebrow {
+  color: var(--teal);
+  letter-spacing: .12em;
+  font-size: var(--s--1);
+  font-family: var(--font-body);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+/* H2 — display serif, light on dark */
+.s-sensible__heading {
+  font-family: var(--font-display);
+  font-size: clamp(var(--s-3), 4vw, var(--s-4));
+  font-weight: 400;
+  line-height: 1.15;
+  color: #fff;
+  margin: 0;
+}
+
+/* Body paragraph */
+.s-sensible__body {
+  font-family: var(--font-body);
+  font-size: var(--s-0);
+  line-height: 1.75;
+  color: rgba(255, 255, 255, .75);
+  max-width: 54ch;
+  margin: 0;
+}
+
+/* ─── Chips row ─────────────────────────────────────────────── */
+.s-sensible__chips {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2) var(--sp-3);
+}
+
+/* Each chip — override global .chip for dark bg context */
+.s-sensible__chip.chip {
+  display:        inline-flex;
+  align-items:    center;
+  gap:            var(--sp-2);
+  background:     rgba(255, 255, 255, .10);
+  border:         1px solid rgba(255, 255, 255, .20);
+  color:          #fff;
+  border-radius:  99px;
+  padding:        var(--sp-2) var(--sp-3);
+  font-family:    var(--font-body);
+  font-size:      var(--s--1);
+  font-weight:    600;
+  white-space:    nowrap;
+}
+
+.s-sensible__chip-icon {
+  display: flex;
+  align-items: center;
+  color: var(--teal);
+  flex-shrink: 0;
+}
+
+.s-sensible__chip-icon svg {
+  display: block;
+}
+
+/* ─── CTA button — .btn-light override for dark section ─────── */
+.s-sensible .btn-light.s-sensible__cta,
+.s-sensible .s-sensible__cta.btn.btn-light {
+  display:          inline-flex;
+  align-items:      center;
+  justify-content:  center;
+  gap:              var(--sp-2);
+  font-family:      var(--font-body);
+  font-weight:      700;
+  font-size:        var(--s-0);
+  letter-spacing:   .04em;
+  padding:          var(--sp-3) var(--sp-5);
+  border-radius:    var(--radius);
+  border:           none;
+  cursor:           pointer;
+  text-decoration:  none;
+  background:       #fff;
+  color:            var(--dark);
+  transition:       opacity .2s ease, transform .15s ease;
+}
+
+.s-sensible .btn-light.s-sensible__cta:hover {
+  opacity: .88;
+  transform: translateY(-1px);
+}
+
+/* ─── Decorative leaf column ────────────────────────────────── */
+.s-sensible__deco {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 260px;
+}
+
+.s-sensible__deco-leaf {
+  width:  160px;
+  height: 240px;
+  position: relative;
+  z-index: 1;
+  opacity: .7;
+}
+
+/* Soft glowing rings behind the leaf */
+.s-sensible__deco-ring {
+  position:      absolute;
+  border-radius: 50%;
+  border:        1px solid rgba(37, 177, 183, .18);
+}
+
+.s-sensible__deco-ring--1 {
+  width:  180px;
+  height: 180px;
+  top:    50%;
+  left:   50%;
+  transform: translate(-50%, -50%);
+}
+
+.s-sensible__deco-ring--2 {
+  width:  240px;
+  height: 240px;
+  top:    50%;
+  left:   50%;
+  transform: translate(-50%, -50%);
+  opacity: .5;
+}
+
+/* ─── Reveal animation (matches global .reveal) ────────────── */
+.s-sensible .reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity .65s ease, transform .65s ease;
+}
+
+.s-sensible .reveal.in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ─── Mobile: single column, stack ─────────────────────────── */
+@media (max-width: 780px) {
+  .s-sensible {
+    padding-block: var(--sp-6);
+  }
+
+  .s-sensible__inner {
+    grid-template-columns: 1fr;
+    gap: var(--sp-5);
+  }
+
+  .s-sensible__deco {
+    display: none; /* hide deco on mobile for clean stack */
+  }
+
+  .s-sensible__heading {
+    font-size: clamp(var(--s-2), 6vw, var(--s-3));
+  }
+
+  .s-sensible__chips {
+    gap: var(--sp-2);
+  }
+
+  .s-sensible__chip.chip {
+    white-space: normal;
+  }
+}
+
+/* ===== 07-ingredient.css ===== */
+/* ============================================================
+   Les soins de Menea — 07-ingredient.css
+   Section ingrédient star · Huile de noyaux d'abricot
+   Scoped under .s-ingredient
+   ============================================================ */
+
+/* ─── Local tokens (all base.css vars re-declared to guarantee availability) */
+.s-ingredient {
+  --bg:          #F4F0E8;
+  --surface:     #fff;
+  --surface-2:   #E5EDEA;
+  --ink:         #16363E;
+  --ink-soft:    #586A69;
+  --accent:      #1A8B90;
+  --accent-ink:  #fff;
+  --teal:        #25B1B7;
+  --caramel:     #C3935B;
+  --dark:        #16363E;
+  --line:        #E2DCCF;
+  --font-display:"Cormorant Garamond", Georgia, "Times New Roman", serif;
+  --font-body:   "Nunito Sans", "Helvetica Neue", Arial, sans-serif;
+  --s--1:        .82rem;
+  --s-0:         1rem;
+  --s-1:         1.2rem;
+  --s-2:         1.55rem;
+  --s-3:         2.1rem;
+  --s-4:         3rem;
+  --s-5:         4.2rem;
+  --sp-1:        .25rem;
+  --sp-2:        .5rem;
+  --sp-3:        1rem;
+  --sp-4:        1.5rem;
+  --sp-5:        2.5rem;
+  --sp-6:        4rem;
+  --sp-7:        6rem;
+  --radius:      10px;
+  --radius-lg:   22px;
+  --shadow:      0 14px 40px rgba(22,54,62,.12);
+  --maxw:        1200px;
+
+  background: var(--bg);
+  padding-block: var(--sp-7);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle top border separator */
+.s-ingredient {
+  border-top: 1px solid var(--line);
+}
+
+/* ─── .wrap contract ────────────────────────────────────────── */
+.s-ingredient .wrap {
+  max-width: var(--maxw);
+  margin-inline: auto;
+  padding-inline: var(--sp-4);
+}
+
+/* ─── 2-col grid: image LEFT · text RIGHT ───────────────────── */
+.s-ingredient__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-7);
+  align-items: center;
+}
+
+/* ─── Image panel ───────────────────────────────────────────── */
+.s-ingredient__media {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Soft rounded container on --surface-2 */
+.s-ingredient__img-wrap {
+  background:    var(--surface-2);
+  border-radius: var(--radius-lg);
+  overflow:      hidden;
+  width:         100%;
+  aspect-ratio:  4 / 4.5;
+  display:       flex;
+  align-items:   center;
+  justify-content: center;
+  padding: var(--sp-4);
+  box-sizing: border-box;
+}
+
+/* Image itself: contain, no crop */
+.s-ingredient__img {
+  display:     block;
+  width:       100%;
+  height:      100%;
+  object-fit:  contain;
+  object-position: center;
+}
+
+/* Thin caramel accent bar — decorative, positioned under img */
+.s-ingredient__media-accent {
+  display:       block;
+  width:         60px;
+  height:        3px;
+  background:    var(--caramel);
+  border-radius: 99px;
+  margin-top:    var(--sp-4);
+  opacity:       .7;
+}
+
+/* ─── Text panel ────────────────────────────────────────────── */
+.s-ingredient__text {
+  display:        flex;
+  flex-direction: column;
+  align-items:    flex-start;
+  gap:            var(--sp-4);
+}
+
+/* Eyebrow — keep existing .eyebrow styles but add teal color */
+.s-ingredient .s-ingredient__eyebrow.eyebrow,
+.s-ingredient .eyebrow.s-ingredient__eyebrow {
+  color:          var(--teal);
+  font-family:    var(--font-body);
+  font-size:      var(--s--1);
+  font-weight:    700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+/* H2 — display serif */
+.s-ingredient__heading {
+  font-family: var(--font-display);
+  font-size:   clamp(var(--s-3), 3.5vw, var(--s-4));
+  font-weight: 400;
+  line-height: 1.15;
+  color:       var(--ink);
+  margin:      0;
+}
+
+/* Body paragraph */
+.s-ingredient__body {
+  font-family: var(--font-body);
+  font-size:   var(--s-0);
+  line-height: 1.75;
+  color:       var(--ink-soft);
+  max-width:   50ch;
+  margin:      0;
+}
+
+/* ─── Bullet list ───────────────────────────────────────────── */
+.s-ingredient__bullets {
+  list-style: none;
+  margin:     0;
+  padding:    0;
+  display:    flex;
+  flex-direction: column;
+  gap:        var(--sp-3);
+  border-top: 1px solid var(--line);
+  padding-top: var(--sp-4);
+  width: 100%;
+}
+
+.s-ingredient__bullet {
+  display:     flex;
+  align-items: center;
+  gap:         var(--sp-3);
+}
+
+.s-ingredient__bullet-icon {
+  display:         flex;
+  align-items:     center;
+  justify-content: center;
+  width:           36px;
+  height:          36px;
+  border-radius:   50%;
+  background:      var(--surface-2);
+  color:           var(--accent);
+  flex-shrink:     0;
+}
+
+.s-ingredient__bullet-icon svg {
+  display: block;
+  stroke:  currentColor;
+  fill:    none;
+}
+
+.s-ingredient__bullet-label {
+  font-family: var(--font-body);
+  font-size:   var(--s-0);
+  font-weight: 700;
+  color:       var(--ink);
+  line-height: 1.3;
+}
+
+/* ─── CTA + meta row ────────────────────────────────────────── */
+.s-ingredient__actions {
+  display:     flex;
+  align-items: center;
+  gap:         var(--sp-4);
+  flex-wrap:   wrap;
+  margin-top:  var(--sp-1);
+}
+
+/* .btn-outline override scoped to this section */
+.s-ingredient .btn-outline.s-ingredient__cta,
+.s-ingredient .s-ingredient__cta.btn.btn-outline {
+  display:          inline-flex;
+  align-items:      center;
+  justify-content:  center;
+  gap:              var(--sp-2);
+  font-family:      var(--font-body);
+  font-weight:      700;
+  font-size:        var(--s-0);
+  letter-spacing:   .04em;
+  padding:          var(--sp-3) var(--sp-5);
+  border-radius:    var(--radius);
+  border:           2px solid var(--accent);
+  background:       transparent;
+  color:            var(--accent);
+  cursor:           pointer;
+  text-decoration:  none;
+  transition:       background .2s ease, color .2s ease, transform .15s ease;
+}
+
+.s-ingredient .btn-outline.s-ingredient__cta:hover {
+  background:  var(--accent);
+  color:       var(--accent-ink);
+  transform:   translateY(-1px);
+}
+
+/* Price + rating note */
+.s-ingredient__meta {
+  display:     flex;
+  align-items: center;
+  gap:         var(--sp-2);
+  font-family: var(--font-body);
+  font-size:   var(--s--1);
+  font-weight: 600;
+  color:       var(--ink-soft);
+  white-space: nowrap;
+}
+
+.s-ingredient__sep {
+  color: var(--line);
+}
+
+/* Stars badge */
+.s-ingredient__stars.stars {
+  display:     inline-flex;
+  align-items: center;
+  gap:         3px;
+  color:       var(--caramel);
+  font-weight: 700;
+}
+
+.s-ingredient__star-svg {
+  display:  block;
+  fill:     currentColor;
+  flex-shrink: 0;
+}
+
+/* ─── Reveal animation (matches global .reveal pattern) ─────── */
+.s-ingredient .reveal {
+  opacity:    0;
+  transform:  translateY(24px);
+  transition: opacity .65s ease, transform .65s ease;
+}
+
+.s-ingredient .reveal.in {
+  opacity:   1;
+  transform: translateY(0);
+}
+
+/* ─── Mobile: stack image above text ────────────────────────── */
+@media (max-width: 860px) {
+  .s-ingredient {
+    padding-block: var(--sp-6);
+  }
+
+  .s-ingredient__inner {
+    grid-template-columns: 1fr;
+    gap:                   var(--sp-5);
+  }
+
+  /* Image naturally appears first in DOM → top of stack */
+  .s-ingredient__img-wrap {
+    aspect-ratio: 4 / 3;
+    max-width:    480px;
+    margin-inline: auto;
+  }
+
+  .s-ingredient__media-accent {
+    margin-inline: auto;
+  }
+
+  .s-ingredient__heading {
+    font-size: clamp(var(--s-2), 6vw, var(--s-3));
+  }
+
+  .s-ingredient__body {
+    max-width: 100%;
+  }
+}
+
+/* ===== 08-avis.css ===== */
+/* ============================================================
+   Les soins de Menea — 08-avis.css
+   Mur d'avis clients · Scoped under .s-avis
+   ============================================================ */
+
+/* ─── Local token aliases ───────────────────────────────────── */
+.s-avis {
+  --bg:          #F4F0E8;
+  --surface:     #fff;
+  --surface-2:   #E5EDEA;
+  --ink:         #16363E;
+  --ink-soft:    #586A69;
+  --accent:      #1A8B90;
+  --accent-ink:  #fff;
+  --accent-deep: #136B6F;
+  --teal:        #25B1B7;
+  --caramel:     #C3935B;
+  --dark:        #16363E;
+  --line:        #E2DCCF;
+  --star:        #C3935B;
+  --font-display:"Cormorant Garamond", Georgia, "Times New Roman", serif;
+  --font-body:   "Nunito Sans", "Helvetica Neue", Arial, sans-serif;
+  --s--1:        .82rem;
+  --s-0:         1rem;
+  --s-1:         1.2rem;
+  --s-2:         1.55rem;
+  --s-3:         2.1rem;
+  --s-4:         3rem;
+  --s-5:         4.4rem;
+  --sp-1:        .25rem;
+  --sp-2:        .5rem;
+  --sp-3:        1rem;
+  --sp-4:        1.5rem;
+  --sp-5:        2.5rem;
+  --sp-6:        4rem;
+  --sp-7:        6rem;
+  --radius:      10px;
+  --radius-lg:   22px;
+  --shadow:      0 14px 40px rgba(22,54,62,.12);
+  --maxw:        1200px;
+
+  background: var(--bg);
+}
+
+/* ─── Section header ─────────────────────────────────────────── */
+.s-avis__header {
+  text-align: center;
+  margin-bottom: var(--sp-6);
+}
+
+.s-avis__header .eyebrow {
+  margin-bottom: var(--sp-3);
+}
+
+.s-avis__title {
+  font-family: var(--font-display);
+  font-size: var(--s-4);
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1.05;
+  margin: 0 0 var(--sp-4);
+}
+
+/* ─── Rating summary ─────────────────────────────────────────── */
+.s-avis__summary {
+  display: inline-flex;
+  align-items: baseline;
+  gap: .4em;
+  background: var(--surface);
+  border: 1.5px solid var(--line);
+  border-radius: 999px;
+  padding: .6em 1.4em;
+  box-shadow: 0 4px 18px rgba(22,54,62,.07);
+}
+
+.s-avis__big-star {
+  color: var(--star);
+  font-size: var(--s-2);
+  line-height: 1;
+}
+
+.s-avis__score {
+  font-family: var(--font-display);
+  font-size: var(--s-3);
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1;
+}
+
+.s-avis__on-five {
+  font-size: var(--s-1);
+  font-weight: 600;
+  color: var(--ink-soft);
+}
+
+.s-avis__count {
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  font-weight: 600;
+  color: var(--ink-soft);
+  letter-spacing: .01em;
+}
+
+/* ─── Grid ───────────────────────────────────────────────────── */
+.s-avis__grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-4);
+}
+
+/* ─── Review card ────────────────────────────────────────────── */
+.s-avis .review {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  border: 1.5px solid var(--line);
+  padding: var(--sp-4) var(--sp-4) var(--sp-3);
+  transition: transform .28s cubic-bezier(.2,.7,.2,1), box-shadow .28s ease;
+}
+
+.s-avis .review:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow);
+}
+
+/* Stars row */
+.s-avis .review__top {
+  display: flex;
+  align-items: center;
+  gap: .3em;
+}
+
+.s-avis .review__top .stars {
+  color: var(--caramel);
+  font-size: var(--s-1);
+  letter-spacing: .06em;
+  line-height: 1;
+}
+
+/* Quote */
+.s-avis .review__quote {
+  font-family: var(--font-body);
+  font-size: var(--s-0);
+  color: var(--ink);
+  line-height: 1.65;
+  margin: 0;
+  font-style: italic;
+  flex: 1;
+}
+
+/* Footer: name · badge · product */
+.s-avis .review__footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .45em;
+  border-top: 1px solid var(--line);
+  padding-top: var(--sp-3);
+  margin-top: auto;
+}
+
+.s-avis .review__name {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: var(--s-0);
+  color: var(--ink);
+}
+
+.s-avis .review__badge {
+  font-family: var(--font-body);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  background: rgba(26,139,144,.08);
+  border: 1px solid rgba(26,139,144,.25);
+  border-radius: 999px;
+  padding: .2em .65em;
+  line-height: 1.4;
+}
+
+.s-avis .review__product {
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  width: 100%;
+  margin-top: .1em;
+}
+
+/* ─── CTA row + footnote ─────────────────────────────────────── */
+.s-avis__cta-row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sp-3);
+  margin-top: var(--sp-6);
+  text-align: center;
+}
+
+.s-avis__footnote {
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  color: var(--ink-soft);
+  opacity: .65;
+  margin: 0;
+  letter-spacing: .01em;
+}
+
+/* ─── Screen-reader only ─────────────────────────────────────── */
+.s-avis .sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ─── Responsive · tablet: 2 cols ───────────────────────────── */
+@media (max-width: 900px) {
+  .s-avis__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--sp-3);
+  }
+
+  .s-avis__title {
+    font-size: var(--s-3);
+  }
+}
+
+/* ─── Responsive · mobile: horizontal scroll ────────────────── */
+@media (max-width: 600px) {
+  .s-avis__grid {
+    grid-template-columns: repeat(1, 1fr);
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    gap: var(--sp-3);
+    padding-bottom: var(--sp-3);
+    /* hide scrollbar visually but keep functional */
+    scrollbar-width: none;
+  }
+
+  .s-avis__grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .s-avis .review {
+    flex: 0 0 80vw;
+    max-width: 340px;
+    scroll-snap-align: start;
+  }
+
+  .s-avis__title {
+    font-size: var(--s-3);
+  }
+
+  .s-avis__header {
+    margin-bottom: var(--sp-5);
+  }
+}
+
+/* ===== 09-engagement.css ===== */
+/* ============================================================
+   Les soins de Menea — 09-engagement.css
+   Bande valeurs · fond --dark · Scoped under .s-engagement
+   ============================================================ */
+
+/* ─── Local token aliases ───────────────────────────────────── */
+.s-engagement {
+  --bg:          #F4F0E8;
+  --surface:     #fff;
+  --surface-2:   #E5EDEA;
+  --ink:         #16363E;
+  --ink-soft:    #586A69;
+  --accent:      #1A8B90;
+  --accent-ink:  #fff;
+  --accent-deep: #136B6F;
+  --teal:        #25B1B7;
+  --caramel:     #C3935B;
+  --dark:        #16363E;
+  --line:        #E2DCCF;
+  --star:        #C3935B;
+  --font-display:"Cormorant Garamond", Georgia, "Times New Roman", serif;
+  --font-body:   "Nunito Sans", "Helvetica Neue", Arial, sans-serif;
+  --s--1:        .82rem;
+  --s-0:         1rem;
+  --s-1:         1.2rem;
+  --s-2:         1.55rem;
+  --s-3:         2.1rem;
+  --s-4:         3rem;
+  --s-5:         4.4rem;
+  --sp-1:        .25rem;
+  --sp-2:        .5rem;
+  --sp-3:        1rem;
+  --sp-4:        1.5rem;
+  --sp-5:        2.5rem;
+  --sp-6:        4rem;
+  --sp-7:        6rem;
+  --radius:      10px;
+  --radius-lg:   22px;
+  --shadow:      0 14px 40px rgba(22,54,62,.12);
+  --maxw:        1200px;
+
+  /* Dark band: override text colors for readability */
+  --band-bg:    var(--dark);   /* #16363E */
+  --band-ink:   #FFFFFF;
+  --band-soft:  rgba(255,255,255,.65);
+  --band-line:  rgba(255,255,255,.12);
+  --band-icon:  rgba(255,255,255,.08);
+}
+
+/* ─── Section background: dark ──────────────────────────────── */
+.s-engagement {
+  background: var(--band-bg);
+  color: var(--band-ink);
+}
+
+/* ─── Header ─────────────────────────────────────────────────── */
+.s-engagement__header {
+  text-align: center;
+  margin-bottom: var(--sp-6);
+}
+
+/* Eyebrow: keep teal but slightly brighter on dark */
+.s-engagement .eyebrow {
+  color: var(--teal);
+  margin-bottom: var(--sp-3);
+}
+
+.s-engagement__title {
+  font-family: var(--font-display);
+  font-size: var(--s-4);
+  font-weight: 600;
+  color: var(--band-ink);
+  line-height: 1.05;
+  margin: 0 0 var(--sp-3);
+}
+
+.s-engagement__lead {
+  font-family: var(--font-body);
+  font-size: var(--s-1);
+  color: var(--band-soft);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* ─── Pillars row ────────────────────────────────────────────── */
+.s-engagement__pillars {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--sp-4);
+}
+
+/* ─── Single pillar ──────────────────────────────────────────── */
+.s-engagement__pillar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--sp-3);
+}
+
+/* Icon circle */
+.s-engagement__icon-wrap {
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--band-icon);
+  border: 1.5px solid rgba(255,255,255,.14);
+  flex-shrink: 0;
+  transition: background .25s, border-color .25s, transform .25s;
+}
+
+.s-engagement__pillar:hover .s-engagement__icon-wrap {
+  background: rgba(37,177,183,.15);
+  border-color: rgba(37,177,183,.35);
+  transform: translateY(-4px);
+}
+
+/* Scale the .ic inside */
+.s-engagement__icon-wrap .ic {
+  width: 36px;
+  height: 36px;
+}
+
+/* Label */
+.s-engagement__label {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: var(--s-0);
+  color: var(--band-ink);
+  letter-spacing: .01em;
+  line-height: 1.25;
+  margin: 0;
+}
+
+/* Short description */
+.s-engagement__desc {
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  color: var(--band-soft);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ─── CTA row ─────────────────────────────────────────────────── */
+.s-engagement__cta-row {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--sp-6);
+}
+
+/* btn-light on dark background: white pill → ghost on hover */
+.s-engagement .btn-light {
+  background: #fff;
+  color: var(--dark);
+  border-color: #fff;
+}
+
+.s-engagement .btn-light:hover {
+  background: transparent;
+  color: #fff;
+  border-color: #fff;
+}
+
+/* ─── Responsive · tablet: 2×2 ──────────────────────────────── */
+@media (max-width: 900px) {
+  .s-engagement__pillars {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--sp-5);
+  }
+
+  .s-engagement__title {
+    font-size: var(--s-3);
+  }
+}
+
+/* ─── Responsive · mobile ─────────────────────────────────────── */
+@media (max-width: 600px) {
+  .s-engagement__pillars {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--sp-4) var(--sp-3);
+  }
+
+  .s-engagement__title {
+    font-size: var(--s-3);
+  }
+
+  .s-engagement__lead {
+    font-size: var(--s-0);
+  }
+
+  .s-engagement__header {
+    margin-bottom: var(--sp-5);
+  }
+
+  .s-engagement__icon-wrap {
+    width: 64px;
+    height: 64px;
+  }
+
+  .s-engagement__icon-wrap .ic {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+/* ===== 10-infolettre.css ===== */
+/* ============================================================
+   Les soins de Menea — 10-infolettre.css
+   Newsletter signup warm band
+   All CSS scoped under .s-infolettre
+   ============================================================ */
+
+/* ─── Screen-reader only utility ────────────────────────────── */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ─── Section band ───────────────────────────────────────────── */
+.s-infolettre {
+  background: var(--surface-2);   /* #E5EDEA pale sage-teal */
+  padding-block: var(--sp-7);
+  position: relative;
+  overflow: hidden;
+}
+
+/* subtle decorative ring — bottom-right corner */
+.s-infolettre::after {
+  content: "";
+  position: absolute;
+  bottom: -80px;
+  right: -80px;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(37, 177, 183, .18);
+  pointer-events: none;
+}
+
+/* ─── Wrapper ────────────────────────────────────────────────── */
+.s-infolettre__wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--sp-3);
+}
+
+/* ─── Heading ────────────────────────────────────────────────── */
+.s-infolettre__heading {
+  font-family: var(--font-display);
+  font-size: var(--s-4);
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1.08;
+  letter-spacing: -.01em;
+  margin: 0;
+  max-width: 640px;
+}
+
+/* ─── Subtext ────────────────────────────────────────────────── */
+.s-infolettre__sub {
+  font-family: var(--font-body);
+  font-size: var(--s-1);
+  color: var(--ink-soft);
+  margin: 0;
+  max-width: 520px;
+  line-height: 1.6;
+}
+
+/* ─── Form row ───────────────────────────────────────────────── */
+.s-infolettre__form {
+  display: flex;
+  align-items: stretch;
+  gap: var(--sp-3);
+  width: 100%;
+  max-width: 520px;
+  margin-top: var(--sp-2);
+}
+
+/* ─── Email input ────────────────────────────────────────────── */
+.s-infolettre__input {
+  flex: 1 1 0;
+  min-width: 0;
+  font-family: var(--font-body);
+  font-size: var(--s-0);
+  color: var(--ink);
+  background: var(--surface);
+  border: 1.5px solid var(--line);
+  border-radius: 999px;
+  padding: .85em 1.4em;
+  outline: none;
+  transition: border-color .2s, box-shadow .2s;
+  line-height: 1;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.s-infolettre__input::placeholder {
+  color: var(--ink-soft);
+  opacity: .7;
+}
+
+.s-infolettre__input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(26, 139, 144, .15);
+}
+
+/* ─── Submit button ──────────────────────────────────────────── */
+.s-infolettre__btn {
+  flex-shrink: 0;
+  font-size: var(--s-0);
+}
+
+/* ─── Fine print ─────────────────────────────────────────────── */
+.s-infolettre__fine {
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  color: var(--ink-soft);
+  margin: 0;
+  opacity: .8;
+}
+
+/* ─── Mobile — stack full-width ──────────────────────────────── */
+@media (max-width: 600px) {
+  .s-infolettre {
+    padding-block: var(--sp-6);
+  }
+
+  .s-infolettre__heading {
+    font-size: var(--s-3);
+  }
+
+  .s-infolettre__form {
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--sp-2);
+    max-width: 100%;
+  }
+
+  .s-infolettre__input,
+  .s-infolettre__btn {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+/* ===== 11-footer.css ===== */
+/* ============================================================
+   Les soins de Menea — 11-footer.css
+   Site footer · dark petrol-teal band
+   All CSS scoped under .site-footer
+   ============================================================ */
+
+/* ─── Footer shell ───────────────────────────────────────────── */
+.site-footer {
+  background: #16363E;               /* --dark, explicit for contrast */
+  color: #B8CCC9;                    /* readable soft light */
+  font-family: var(--font-body);
+  font-size: var(--s-0);
+  line-height: 1.65;
+  padding-top: var(--sp-7);
+  padding-bottom: var(--sp-5);
+  position: relative;
+  overflow: hidden;
+}
+
+/* subtle large ring decoration */
+.site-footer::before {
+  content: "";
+  position: absolute;
+  top: -120px;
+  right: -120px;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(37, 177, 183, .10);
+  pointer-events: none;
+}
+
+/* ─── Outer wrap uses base .wrap; inner layout ───────────────── */
+.site-footer__wrap {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-6);
+}
+
+/* ─── Top row: brand + 4 columns ────────────────────────────── */
+.site-footer__top {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: var(--sp-6);
+  align-items: start;
+}
+
+/* ─── Brand block ────────────────────────────────────────────── */
+.site-footer__brand {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+}
+
+.site-footer__logo-link {
+  display: inline-block;
+  line-height: 0;
+}
+
+.site-footer__logo {
+  height: 64px;
+  width: auto;
+  /* filter applied inline in HTML: brightness(0) invert(1) */
+}
+
+.site-footer__blurb {
+  font-size: var(--s-0);
+  color: #B8CCC9;
+  margin: 0;
+  max-width: 240px;
+  line-height: 1.65;
+}
+
+/* ─── Social icons ───────────────────────────────────────────── */
+.site-footer__socials {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  margin-top: var(--sp-2);
+}
+
+.site-footer__social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #B8CCC9;
+  transition: color .2s;
+}
+
+.site-footer__social-link:hover {
+  color: #25B1B7;   /* --teal, explicit */
+}
+
+.site-footer__social-ic {
+  width: 28px;
+  height: 28px;
+  stroke: currentColor;
+  stroke-width: 1.5;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* ─── 4-column nav grid ──────────────────────────────────────── */
+.site-footer__nav {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--sp-5);
+  align-items: start;
+}
+
+.site-footer__col {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+}
+
+.site-footer__col-heading {
+  font-family: var(--font-display);
+  font-size: var(--s-1);
+  font-weight: 600;
+  letter-spacing: .01em;
+  color: #25B1B7;        /* --teal, turquoise column headers */
+  margin: 0;
+  line-height: 1.1;
+}
+
+.site-footer__links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+}
+
+.site-footer__link {
+  font-family: var(--font-body);
+  font-size: var(--s-0);
+  color: #DCE6E3;         /* ≥ 4.5:1 against #16363E */
+  text-decoration: none;
+  transition: color .2s;
+  display: inline-block;
+}
+
+.site-footer__link:hover {
+  color: #25B1B7;         /* --teal */
+}
+
+/* ─── Trust chips ────────────────────────────────────────────── */
+.site-footer__trust {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--sp-2);
+}
+
+/* Override base .chip for dark background */
+.site-footer .chip.site-footer__chip {
+  background: rgba(255, 255, 255, .07);
+  border-color: rgba(220, 230, 227, .25);
+  color: #DCE6E3;
+  font-size: var(--s--1);
+}
+
+/* ─── Divider line ───────────────────────────────────────────── */
+.site-footer__divider {
+  height: 1px;
+  background: rgba(220, 230, 227, .15);
+  width: 100%;
+}
+
+/* ─── Bottom bar ─────────────────────────────────────────────── */
+.site-footer__bottom {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-3);
+}
+
+.site-footer__legal {
+  display: flex;
+  flex-direction: column;
+  gap: .2em;
+}
+
+.site-footer__copy {
+  font-size: var(--s--1);
+  color: #B8CCC9;
+  font-weight: 600;
+}
+
+.site-footer__address {
+  font-size: var(--s--1);
+  color: #7A9994;    /* subtler — address de-emphasised */
+  letter-spacing: .01em;
+}
+
+.site-footer__legal-links {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+}
+
+.site-footer__legal-link {
+  font-size: var(--s--1);
+  color: #DCE6E3;
+  text-decoration: none;
+  transition: color .2s;
+}
+
+.site-footer__legal-link:hover {
+  color: #25B1B7;
+}
+
+.site-footer__legal-sep {
+  color: #7A9994;
+  font-size: var(--s--1);
+  line-height: 1;
+}
+
+/* ─── Payment marks ──────────────────────────────────────────── */
+.site-footer__payments {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+}
+
+.site-footer__pay-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 0;
+  transition: opacity .2s;
+}
+
+.site-footer__pay-icon:hover {
+  opacity: .8;
+}
+
+/* ─── Tablet: 2-col nav, stacked brand ──────────────────────── */
+@media (max-width: 960px) {
+  .site-footer__top {
+    grid-template-columns: 1fr;
+  }
+
+  .site-footer__brand {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: var(--sp-4);
+  }
+
+  .site-footer__blurb {
+    max-width: 100%;
+  }
+
+  .site-footer__nav {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--sp-5) var(--sp-4);
+  }
+}
+
+/* ─── Mobile: 1-col nav, stacked bottom bar ─────────────────── */
+@media (max-width: 600px) {
+  .site-footer {
+    padding-top: var(--sp-6);
+    padding-bottom: var(--sp-4);
+  }
+
+  .site-footer__brand {
+    flex-direction: column;
+    gap: var(--sp-3);
+  }
+
+  .site-footer__nav {
+    grid-template-columns: 1fr;
+    gap: var(--sp-5);
+  }
+
+  .site-footer__bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--sp-3);
+  }
+
+  .site-footer__trust {
+    justify-content: flex-start;
+  }
+
+  .site-footer__payments {
+    flex-wrap: wrap;
+  }
+}
+
