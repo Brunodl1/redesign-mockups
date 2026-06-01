@@ -1215,7 +1215,7 @@
 .s-founder__inner {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: clamp(var(--sp-6), 6vw, var(--sp-9));
+  gap: clamp(var(--sp-6), 6vw, var(--sp-7));
   align-items: center;
 }
 
