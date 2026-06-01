@@ -1,0 +1,185 @@
+/* ============================================================
+   AntidotPro · 04-how.css
+   How It Works — 3-step + supporting image, 2-col layout
+   All rules scoped under .s-how
+   ============================================================ */
+
+/* ---------- Section band ---------- */
+.s-how {
+  background: var(--bg);
+}
+
+/* ---------- Header ---------- */
+.s-how__header {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto var(--sp-6);
+}
+
+.s-how__header h2 {
+  color: var(--ink);
+}
+
+/* ---------- Two-column layout ---------- */
+.s-how__layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-6);
+  align-items: center;
+}
+
+/* ---------- Steps ordered list ---------- */
+.s-how__steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ---------- Connector between steps ---------- */
+.s-how__connector {
+  width: 1px;
+  height: var(--sp-4);           /* 1.5rem gap line */
+  background: var(--line);
+  margin-left: calc(2.1ch + var(--sp-3));  /* aligned under the number */
+  list-style: none;
+  flex-shrink: 0;
+}
+
+/* ---------- Each step ---------- */
+.s-how__step {
+  display: flex;
+  flex-direction: row;
+  gap: var(--sp-3);
+  align-items: flex-start;
+  list-style: none;
+  /* reveal stagger handled by fx.js, add delay via nth-child */
+}
+
+.s-how__step:nth-child(1) { transition-delay: 0s; }
+.s-how__step:nth-child(3) { transition-delay: .12s; }
+.s-how__step:nth-child(5) { transition-delay: .24s; }
+
+/* ---------- Big red ordinal number ---------- */
+.s-how__step-num {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--s-3);        /* 2.1rem */
+  color: var(--accent);
+  line-height: 1;
+  min-width: 2.6ch;
+  flex-shrink: 0;
+  letter-spacing: -.02em;
+  padding-top: 2px;             /* optical alignment with h3 */
+}
+
+/* ---------- Step body ---------- */
+.s-how__step-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.s-how__step-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-2);
+  margin-bottom: var(--sp-2);
+}
+
+.s-how__step-title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--s-2);
+  color: var(--ink);
+  margin: 0;
+  line-height: 1.15;
+}
+
+/* ---------- Step icon (small, right-aligned) ---------- */
+.s-how__step-icon {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  background: rgba(206, 17, 38, 0.07);
+  border-radius: 50%;
+}
+
+.s-how__step-icon .ic {
+  width: 28px;
+  height: 28px;
+}
+
+/* ---------- Step description ---------- */
+.s-how__step-desc {
+  font-family: var(--font-body);
+  font-size: var(--s-0);
+  color: var(--ink-soft);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ---------- Image ---------- */
+.s-how__image-wrap {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  /* lock to a tall portrait ratio for salon feel */
+  aspect-ratio: 3 / 4;
+}
+
+.s-how__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+
+/* ---------- CTA ---------- */
+.s-how__cta {
+  margin-top: var(--sp-6);
+  display: flex;
+  justify-content: center;
+}
+
+/* ---------- Tablet: tighten gap ---------- */
+@media (max-width: 1000px) {
+  .s-how__layout {
+    gap: var(--sp-5);
+  }
+}
+
+/* ---------- Mobile: stack 1-up ---------- */
+@media (max-width: 780px) {
+  .s-how__layout {
+    grid-template-columns: 1fr;
+    gap: var(--sp-5);
+  }
+
+  /* Image moves above steps on mobile */
+  .s-how__image-wrap {
+    order: -1;
+    aspect-ratio: 16 / 9;       /* wide banner above steps */
+  }
+
+  .s-how__image {
+    object-position: center 30%;
+  }
+
+  .s-how__connector {
+    height: var(--sp-3);
+  }
+
+  .s-how__step-num {
+    font-size: var(--s-2);
+  }
+
+  .s-how__step-title {
+    font-size: var(--s-1);
+  }
+}

@@ -1,0 +1,172 @@
+/* ============================================================
+   AntidotPro · 09-newsletter.css
+   Newsletter signup band
+   Scoped: .s-newsletter
+   All tokens from base.css — no raw hex except allowed scrim.
+   ============================================================ */
+
+/* ----------------------------------------------------------
+   BAND
+   ---------------------------------------------------------- */
+.s-newsletter {
+  background: var(--accent);
+  color: #FFFFFF;
+  padding-block: var(--sp-7);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle diagonal noise texture via pseudo — depth without imagery */
+.s-newsletter::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    repeating-linear-gradient(
+      -55deg,
+      rgba(255,255,255,.04) 0px,
+      rgba(255,255,255,.04) 1px,
+      transparent 1px,
+      transparent 18px
+    );
+  pointer-events: none;
+}
+
+/* ----------------------------------------------------------
+   LAYOUT
+   ---------------------------------------------------------- */
+.s-newsletter__wrap {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+}
+
+/* ----------------------------------------------------------
+   EYEBROW — override base color for this band
+   ---------------------------------------------------------- */
+.s-newsletter .eyebrow,
+.s-newsletter__eyebrow {
+  color: rgba(255, 255, 255, .80);
+  border-color: rgba(255, 255, 255, .35);
+  margin-bottom: var(--sp-3);
+}
+
+/* ----------------------------------------------------------
+   HEADING
+   ---------------------------------------------------------- */
+.s-newsletter__heading {
+  font-family: var(--font-display);
+  font-size: var(--s-4);
+  font-weight: 700;
+  color: #FFFFFF;
+  line-height: 1.08;
+  letter-spacing: -.02em;
+  margin: 0 0 var(--sp-3);
+  max-width: 640px;
+}
+
+/* ----------------------------------------------------------
+   SUBLINE
+   ---------------------------------------------------------- */
+.s-newsletter__sub {
+  font-family: var(--font-body);
+  font-size: var(--s-1);
+  color: rgba(255, 255, 255, .85);
+  margin: 0 0 var(--sp-5);
+  max-width: 480px;
+}
+
+/* ----------------------------------------------------------
+   FORM — inline row
+   ---------------------------------------------------------- */
+.s-newsletter__form {
+  display: flex;
+  align-items: stretch;
+  gap: var(--sp-2);
+  width: 100%;
+  max-width: 520px;
+  margin-bottom: var(--sp-3);
+}
+
+.s-newsletter__field-wrap {
+  flex: 1 1 0;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Visually hide label but keep it accessible */
+.s-newsletter__label {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.s-newsletter__input {
+  flex: 1;
+  background: #FFFFFF;
+  color: var(--ink);
+  border: 2px solid transparent;
+  border-radius: var(--radius);
+  padding: .95em 1.2em;
+  font-family: var(--font-body);
+  font-size: var(--s-0);
+  line-height: 1;
+  outline: none;
+  transition: border-color .2s;
+  width: 100%;
+}
+
+.s-newsletter__input::placeholder {
+  color: var(--ink-soft);
+}
+
+.s-newsletter__input:focus {
+  border-color: #FFFFFF;
+  box-shadow: 0 0 0 3px rgba(255,255,255,.35);
+}
+
+/* ----------------------------------------------------------
+   BUTTON — .btn-light renders white bg / dark text from base
+   On hover base turns it transparent+white-border; that works on red.
+   ---------------------------------------------------------- */
+.s-newsletter__btn {
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+/* ----------------------------------------------------------
+   FINE PRINT
+   ---------------------------------------------------------- */
+.s-newsletter__fine {
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  color: rgba(255, 255, 255, .65);
+  margin: 0;
+}
+
+/* ----------------------------------------------------------
+   MOBILE — stack full-width
+   ---------------------------------------------------------- */
+@media (max-width: 580px) {
+  .s-newsletter__form {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .s-newsletter__btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .s-newsletter__heading {
+    font-size: var(--s-3);
+  }
+}

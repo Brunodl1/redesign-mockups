@@ -1,0 +1,2022 @@
+/* ============================================================
+   AntidotPro — base.css (foundation)
+   Pro scalp-protection during color/bleach · clinical-pro · EN
+   Charcoal + medical-red + white. Poppins + Inter. Bold, trustworthy.
+   ============================================================ */
+:root{
+  /* color */
+  --bg:        #FFFFFF;   /* clean white page */
+  --surface:   #FFFFFF;   /* cards */
+  --surface-2: #F4F4F1;   /* light grey alt band */
+  --ink:       #232323;   /* charcoal */
+  --ink-soft:  #67676A;   /* grey — secondary text */
+  --accent:    #CE1126;   /* medical red — CTAs, the cross */
+  --accent-ink:#FFFFFF;
+  --accent-deep:#A50E1F;  /* hover */
+  --gold:      #F2B500;   /* secondary highlight (sparing) */
+  --dark:      #1B1B1D;   /* dark band / footer */
+  --line:      #E6E5E1;   /* hairline */
+  --star:      #F2B500;   /* gold stars */
+  --btn:       #CE1126;
+  --btn-ink:   #FFFFFF;
+  /* type */
+  --font-display: "Poppins", "Helvetica Neue", Arial, sans-serif;
+  --font-body:    "Inter", "Helvetica Neue", Arial, sans-serif;
+  --s--1: .84rem;
+  --s-0:  1rem;
+  --s-1:  1.2rem;
+  --s-2:  1.55rem;
+  --s-3:  2.1rem;
+  --s-4:  3rem;
+  --s-5:  4.2rem;
+  /* space */
+  --sp-1:.25rem; --sp-2:.5rem; --sp-3:1rem; --sp-4:1.5rem;
+  --sp-5:2.5rem; --sp-6:4rem; --sp-7:6rem;
+  /* shape */
+  --radius:8px; --radius-lg:16px;
+  --shadow:0 14px 40px rgba(35,35,35,.12);
+  --maxw:1240px;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html,body{overflow-x:clip}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--ink);
+  font-family:var(--font-body);
+  font-size:var(--s-0);
+  line-height:1.6;
+  font-weight:400;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+
+/* headings — Poppins, bold + confident */
+h1,h2,h3{font-family:var(--font-display);font-weight:700;line-height:1.06;letter-spacing:-.02em;margin:0 0 var(--sp-3);color:var(--ink)}
+h1{font-size:var(--s-5)}
+h2{font-size:var(--s-4)}
+h3{font-size:var(--s-2)}
+p{margin:0 0 var(--sp-3)}
+
+/* layout */
+.wrap{max-width:var(--maxw);margin:0 auto;padding-inline:var(--sp-4);width:100%}
+.sec{position:relative;padding-block:var(--sp-7)}
+.section{position:relative}
+
+/* eyebrow — red tracked caps */
+.eyebrow{
+  display:inline-block;font-family:var(--font-display);font-weight:700;
+  font-size:var(--s--1);letter-spacing:.16em;text-transform:uppercase;
+  color:var(--accent);margin:0 0 var(--sp-3)
+}
+
+/* buttons */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:.5em;
+  font-family:var(--font-display);font-weight:700;font-size:var(--s-0);
+  letter-spacing:.04em;text-transform:uppercase;
+  padding:.95em 2em;border-radius:var(--radius);border:2px solid transparent;
+  cursor:pointer;transition:background .2s,color .2s,border-color .2s,transform .15s;
+  line-height:1;white-space:nowrap
+}
+.btn:hover{transform:translateY(-2px)}
+.btn-primary{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.btn-primary:hover{background:var(--accent-deep);border-color:var(--accent-deep)}
+.btn-dark{background:var(--ink);color:#fff;border-color:var(--ink)}
+.btn-dark:hover{background:#000}
+.btn-outline{background:transparent;color:var(--ink);border-color:var(--ink)}
+.btn-outline:hover{background:var(--ink);color:#fff}
+.btn-light{background:#fff;color:var(--ink);border-color:#fff}
+.btn-light:hover{background:transparent;color:#fff;border-color:#fff}
+.btn-block{display:flex;width:100%}
+
+/* rating stars */
+.stars{color:var(--star);letter-spacing:.04em;font-size:var(--s-0)}
+
+/* chips */
+.chip{
+  display:inline-flex;align-items:center;gap:.45em;
+  font-family:var(--font-display);font-weight:600;font-size:var(--s--1);
+  letter-spacing:.04em;text-transform:uppercase;
+  padding:.5em .9em;border-radius:999px;border:1.5px solid var(--line);
+  background:var(--surface);color:var(--ink);line-height:1
+}
+
+/* section icons */
+.ic{width:40px;height:40px;display:block;stroke:currentColor;stroke-width:1.7;fill:none}
+
+/* floats — static, hidden mobile */
+.float{position:absolute;pointer-events:none;z-index:5}
+.float img{width:100%;transform:rotate(var(--rot,0deg));
+  filter:drop-shadow(0 24px 22px rgba(35,35,35,.20))}
+@media(max-width:1000px){.float{display:none}}
+
+/* scroll-reveal (3D) — NOT on hero */
+.reveal{opacity:0;transform:perspective(900px) rotateX(8deg) translateY(26px);
+  transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+
+/* responsive type */
+@media(max-width:780px){
+  :root{--s-5:2.7rem;--s-4:2.05rem;--s-3:1.6rem;--s-2:1.3rem}
+  .sec{padding-block:var(--sp-6)}
+}
+/* ============================================================
+   AntidotPro · 01-header.css
+   Announcement bar + Sticky site header
+   Scoped: .announce / .site-header
+   All tokens from base.css — no raw hex except allowed scrim.
+   ============================================================ */
+
+/* ----------------------------------------------------------
+   ANNOUNCEMENT BAR
+   ---------------------------------------------------------- */
+.announce {
+  background: var(--accent);
+  color: var(--accent-ink);
+  padding-block: var(--sp-2);
+  text-align: center;
+  position: relative;
+  z-index: 200;
+}
+
+.announce .wrap {
+  /* already constrained by base .wrap */
+}
+
+.announce__inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sp-3);
+  flex-wrap: nowrap;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.announce__item {
+  font-family: var(--font-display);
+  font-size: var(--s--1);
+  font-weight: 600;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  line-height: 1.2;
+}
+
+.announce__sep {
+  font-size: var(--s-0);
+  opacity: .5;
+  font-weight: 300;
+  flex-shrink: 0;
+}
+
+/* ----------------------------------------------------------
+   SITE HEADER — sticky, white, hairline bottom
+   ---------------------------------------------------------- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--bg);
+  border-bottom: 1px solid var(--line);
+  box-shadow: 0 2px 12px rgba(35, 35, 35, .06);
+  width: 100%;
+}
+
+.site-header__wrap {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-4);
+  padding-block: var(--sp-3);
+  /* .wrap handles max-width + inline padding */
+}
+
+/* ---- LEFT: hamburger + logo ---- */
+.site-header__left {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  flex-shrink: 0;
+}
+
+.site-header__hamburger {
+  display: none; /* hidden desktop; shown mobile */
+  background: transparent;
+  border: none;
+  padding: var(--sp-1);
+  cursor: pointer;
+  color: var(--ink);
+  border-radius: var(--radius);
+  transition: background .15s;
+  line-height: 0;
+}
+.site-header__hamburger:hover {
+  background: var(--surface-2);
+}
+
+.site-header__logo {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.site-header__logo-img {
+  height: 26px;
+  width: auto;
+  display: block;
+}
+
+/* ---- CENTER: nav ---- */
+.site-header__nav {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.site-header__nav-list {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-4);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.site-header__nav-link {
+  font-family: var(--font-display);
+  font-size: var(--s--1);
+  font-weight: 600;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--ink);
+  padding-block: var(--sp-2);
+  border-bottom: 2px solid transparent;
+  transition: color .18s, border-color .18s;
+  white-space: nowrap;
+  line-height: 1;
+}
+
+.site-header__nav-link:hover,
+.site-header__nav-link[aria-current="page"] {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
+/* ---- RIGHT: actions ---- */
+.site-header__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  flex-shrink: 0;
+}
+
+/* Compact Shop pill (desktop) */
+.site-header__shop-pill {
+  font-size: var(--s--1);
+  padding: .58em 1.25em;
+  border-radius: 999px;
+  letter-spacing: .1em;
+  line-height: 1;
+}
+
+/* Icon buttons */
+.site-header__icon-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background: transparent;
+  border: none;
+  padding: var(--sp-1);
+  cursor: pointer;
+  color: var(--ink);
+  border-radius: var(--radius);
+  transition: color .15s, background .15s;
+  line-height: 0;
+}
+
+.site-header__icon-btn:hover {
+  color: var(--accent);
+  background: var(--surface-2);
+}
+
+/* Cart badge */
+.site-header__cart-btn {
+  position: relative;
+}
+
+.site-header__cart-badge {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-family: var(--font-display);
+  font-size: .6rem;
+  font-weight: 700;
+  line-height: 1;
+  min-width: 16px;
+  height: 16px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-inline: 3px;
+  pointer-events: none;
+}
+
+/* ----------------------------------------------------------
+   MOBILE ≤ 780px
+   ---------------------------------------------------------- */
+@media (max-width: 780px) {
+
+  /* Announcement bar: show only first bit */
+  .announce__item--hide-mobile,
+  .announce__sep--hide-mobile {
+    display: none;
+  }
+
+  .announce__inner {
+    justify-content: center;
+  }
+
+  /* Header layout */
+  .site-header__wrap {
+    gap: var(--sp-2);
+    padding-block: .75rem;
+  }
+
+  /* Show hamburger */
+  .site-header__hamburger {
+    display: flex;
+  }
+
+  /* Logo slightly smaller */
+  .site-header__logo-img {
+    height: 22px;
+  }
+
+  /* Hide desktop nav */
+  .site-header__nav {
+    display: none;
+  }
+
+  /* Hide search, account, shop pill */
+  .site-header__icon-btn--hide-mobile,
+  .site-header__shop-pill {
+    display: none;
+  }
+
+  /* Actions: only cart remains */
+  .site-header__actions {
+    margin-left: auto; /* push cart to far right */
+    gap: var(--sp-1);
+  }
+}
+/* ============================================================
+   02-hero.css — split hero (text LEFT · image RIGHT)
+   AntidotPro · clinical-pro · EN
+   All rules scoped under .s-hero
+   ============================================================ */
+
+/* ---- layout ---- */
+.s-hero {
+  background: var(--bg);
+  padding-block: var(--sp-7);
+  overflow: hidden;
+}
+
+.s-hero .wrap {
+  /* inherit .wrap centering; no extra needed */
+}
+
+.s-hero__grid {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: center;
+  min-height: 0;
+}
+
+/* ---- LEFT: text column ---- */
+.s-hero__text {
+  min-width: 0;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0; /* individual margins below control rhythm */
+}
+
+.s-hero__text .eyebrow {
+  margin-bottom: var(--sp-3);
+}
+
+.s-hero__text h1 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(2.6rem, 5vw, var(--s-5));
+  line-height: 1.06;
+  letter-spacing: -0.025em;
+  color: var(--ink);
+  margin: 0 0 var(--sp-4);
+  max-width: 13ch; /* tight wrap for drama */
+}
+
+/* red accent on "the burn." */
+.s-hero__accent {
+  color: var(--accent);
+}
+
+.s-hero__sub {
+  font-family: var(--font-body);
+  font-size: var(--s-0);
+  line-height: 1.65;
+  color: var(--ink-soft);
+  margin: 0 0 var(--sp-5);
+  max-width: 46ch;
+}
+
+.s-hero__cta-row {
+  margin-bottom: var(--sp-4);
+}
+
+/* ---- chips ---- */
+.s-hero__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+}
+
+/* use base .chip — no override needed beyond layout */
+
+/* ---- RIGHT: image column ---- */
+.s-hero__media {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.s-hero__img-wrap {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  line-height: 0; /* kill inline-block gap */
+}
+
+.s-hero__img {
+  width: 100%;
+  max-height: 540px;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  border-radius: var(--radius-lg);
+}
+
+/* floating "★ 5.0 · loved by colorists" pill */
+.s-hero__float-pill {
+  position: absolute;
+  bottom: 1.25rem;
+  left: 1.25rem;
+  background: #fff;
+  color: var(--ink);
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: var(--s--1);
+  letter-spacing: 0.03em;
+  padding: 0.5em 1em;
+  border-radius: 999px;
+  box-shadow: var(--shadow);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35em;
+  line-height: 1;
+  white-space: nowrap;
+  z-index: 10;
+}
+
+.s-hero__float-stars {
+  color: var(--star);
+  font-size: 1em;
+}
+
+/* ============================================================
+   Mobile — <=780px: image ABOVE text, stacked single column
+   ============================================================ */
+@media (max-width: 780px) {
+  .s-hero {
+    padding-block: var(--sp-5) var(--sp-6);
+  }
+
+  .s-hero__grid {
+    grid-template-columns: 1fr;
+    gap: var(--sp-4);
+  }
+
+  /* swap visual order: image first */
+  .s-hero__media {
+    order: -1;
+  }
+
+  .s-hero__img {
+    max-height: 320px;
+    border-radius: var(--radius-lg);
+  }
+
+  .s-hero__text h1 {
+    font-size: clamp(2rem, 8vw, 2.6rem);
+    max-width: 100%;
+  }
+
+  .s-hero__sub {
+    font-size: var(--s-0);
+    max-width: 100%;
+    margin-bottom: var(--sp-4);
+  }
+
+  .s-hero__cta-row .btn {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .s-hero__chips {
+    gap: var(--sp-2);
+  }
+
+  .s-hero__float-pill {
+    bottom: 0.75rem;
+    left: 0.75rem;
+    font-size: 0.78rem;
+    padding: 0.45em 0.85em;
+  }
+}
+/* ============================================================
+   AntidotPro · 03-trust.css
+   Slim trust strip — 4 icon+label items on --surface-2
+   All rules scoped under .s-trust
+   ============================================================ */
+
+/* ---------- Band ---------- */
+.s-trust {
+  padding-block: var(--sp-5);          /* slim — 2.5rem top/bottom */
+  background: var(--surface-2);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+/* ---------- List ---------- */
+.s-trust__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--sp-4) var(--sp-3);
+  align-items: start;
+}
+
+/* ---------- Each item ---------- */
+.s-trust__item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: var(--sp-3);
+}
+
+/* ---------- Icon wrap ---------- */
+.s-trust__icon-wrap {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* subtle red tint circle */
+  background: rgba(206, 17, 38, 0.07);
+  border-radius: 50%;
+  padding: 3px;
+}
+
+.s-trust__icon-wrap .ic {
+  width: 34px;
+  height: 34px;
+}
+
+/* ---------- Text ---------- */
+.s-trust__text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.s-trust__label {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--s-0);
+  color: var(--ink);
+  line-height: 1.2;
+  display: block;
+}
+
+.s-trust__sub {
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  color: var(--ink-soft);
+  line-height: 1.3;
+  display: block;
+}
+
+/* ---------- Vertical separator between items (desktop) ---------- */
+.s-trust__item + .s-trust__item {
+  border-left: 1px solid var(--line);
+  padding-left: var(--sp-3);
+}
+
+/* ---------- Mobile: 2x2 grid ---------- */
+@media (max-width: 780px) {
+  .s-trust {
+    padding-block: var(--sp-4);
+  }
+
+  .s-trust__list {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--sp-4);
+  }
+
+  /* remove all borders in 2x2 — use gap instead */
+  .s-trust__item + .s-trust__item {
+    border-left: none;
+    padding-left: 0;
+  }
+
+  /* restore vertical dividers only within each row */
+  .s-trust__item:nth-child(2),
+  .s-trust__item:nth-child(4) {
+    border-left: 1px solid var(--line);
+    padding-left: var(--sp-3);
+  }
+}
+
+/* ---------- Very small screens ---------- */
+@media (max-width: 420px) {
+  .s-trust__item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--sp-2);
+  }
+
+  .s-trust__item:nth-child(2),
+  .s-trust__item:nth-child(4) {
+    border-left: none;
+    padding-left: 0;
+  }
+}
+/* ============================================================
+   AntidotPro · 04-how.css
+   How It Works — 3-step + supporting image, 2-col layout
+   All rules scoped under .s-how
+   ============================================================ */
+
+/* ---------- Section band ---------- */
+.s-how {
+  background: var(--bg);
+}
+
+/* ---------- Header ---------- */
+.s-how__header {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto var(--sp-6);
+}
+
+.s-how__header h2 {
+  color: var(--ink);
+}
+
+/* ---------- Two-column layout ---------- */
+.s-how__layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-6);
+  align-items: center;
+}
+
+/* ---------- Steps ordered list ---------- */
+.s-how__steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ---------- Connector between steps ---------- */
+.s-how__connector {
+  width: 1px;
+  height: var(--sp-4);           /* 1.5rem gap line */
+  background: var(--line);
+  margin-left: calc(2.1ch + var(--sp-3));  /* aligned under the number */
+  list-style: none;
+  flex-shrink: 0;
+}
+
+/* ---------- Each step ---------- */
+.s-how__step {
+  display: flex;
+  flex-direction: row;
+  gap: var(--sp-3);
+  align-items: flex-start;
+  list-style: none;
+  /* reveal stagger handled by fx.js, add delay via nth-child */
+}
+
+.s-how__step:nth-child(1) { transition-delay: 0s; }
+.s-how__step:nth-child(3) { transition-delay: .12s; }
+.s-how__step:nth-child(5) { transition-delay: .24s; }
+
+/* ---------- Big red ordinal number ---------- */
+.s-how__step-num {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--s-3);        /* 2.1rem */
+  color: var(--accent);
+  line-height: 1;
+  min-width: 2.6ch;
+  flex-shrink: 0;
+  letter-spacing: -.02em;
+  padding-top: 2px;             /* optical alignment with h3 */
+}
+
+/* ---------- Step body ---------- */
+.s-how__step-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.s-how__step-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-2);
+  margin-bottom: var(--sp-2);
+}
+
+.s-how__step-title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--s-2);
+  color: var(--ink);
+  margin: 0;
+  line-height: 1.15;
+}
+
+/* ---------- Step icon (small, right-aligned) ---------- */
+.s-how__step-icon {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  background: rgba(206, 17, 38, 0.07);
+  border-radius: 50%;
+}
+
+.s-how__step-icon .ic {
+  width: 28px;
+  height: 28px;
+}
+
+/* ---------- Step description ---------- */
+.s-how__step-desc {
+  font-family: var(--font-body);
+  font-size: var(--s-0);
+  color: var(--ink-soft);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ---------- Image ---------- */
+.s-how__image-wrap {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  /* lock to a tall portrait ratio for salon feel */
+  aspect-ratio: 3 / 4;
+}
+
+.s-how__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+
+/* ---------- CTA ---------- */
+.s-how__cta {
+  margin-top: var(--sp-6);
+  display: flex;
+  justify-content: center;
+}
+
+/* ---------- Tablet: tighten gap ---------- */
+@media (max-width: 1000px) {
+  .s-how__layout {
+    gap: var(--sp-5);
+  }
+}
+
+/* ---------- Mobile: stack 1-up ---------- */
+@media (max-width: 780px) {
+  .s-how__layout {
+    grid-template-columns: 1fr;
+    gap: var(--sp-5);
+  }
+
+  /* Image moves above steps on mobile */
+  .s-how__image-wrap {
+    order: -1;
+    aspect-ratio: 16 / 9;       /* wide banner above steps */
+  }
+
+  .s-how__image {
+    object-position: center 30%;
+  }
+
+  .s-how__connector {
+    height: var(--sp-3);
+  }
+
+  .s-how__step-num {
+    font-size: var(--s-2);
+  }
+
+  .s-how__step-title {
+    font-size: var(--s-1);
+  }
+}
+/* ============================================================
+   AntidotPro · 05-system.css
+   The System — numbered product lineup, 2-col layout
+   All rules scoped under .s-system
+   ============================================================ */
+
+/* ---------- Section band ---------- */
+.s-system {
+  background: var(--bg);
+}
+
+/* ---------- Two-column layout: image left, text right ---------- */
+.s-system__layout {
+  display: grid;
+  grid-template-columns: minmax(0, 520px) 1fr;
+  gap: var(--sp-7);
+  align-items: center;
+}
+
+/* ---------- Image block ---------- */
+.s-system__image-wrap {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  aspect-ratio: 3 / 4;
+  max-width: 520px;
+  width: 100%;
+}
+
+.s-system__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+
+/* ---------- Text content ---------- */
+.s-system__content h2 {
+  color: var(--ink);
+  margin-top: var(--sp-2);
+  margin-bottom: var(--sp-3);
+}
+
+.s-system__intro {
+  font-family: var(--font-body);
+  font-size: var(--s-0);
+  color: var(--ink-soft);
+  line-height: 1.65;
+  margin: 0 0 var(--sp-5);
+  max-width: 480px;
+}
+
+/* ---------- Numbered product list ---------- */
+.s-system__list {
+  list-style: none;
+  margin: 0 0 var(--sp-6);
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+}
+
+/* ---------- Each product item ---------- */
+.s-system__item {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: var(--sp-3);
+  padding-bottom: var(--sp-4);
+  border-bottom: 1px solid var(--line);
+}
+
+.s-system__item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+/* Stagger reveal delays */
+.s-system__item:nth-child(1) { transition-delay: 0s; }
+.s-system__item:nth-child(2) { transition-delay: .08s; }
+.s-system__item:nth-child(3) { transition-delay: .16s; }
+.s-system__item:nth-child(4) { transition-delay: .24s; }
+.s-system__item:nth-child(5) { transition-delay: .32s; }
+
+/* ---------- Red number badge ---------- */
+.s-system__num {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--s--1);
+  color: var(--accent-ink);
+  background: var(--accent);
+  border-radius: var(--radius);
+  min-width: 2.6rem;
+  height: 2.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  letter-spacing: .03em;
+  line-height: 1;
+}
+
+/* ---------- Item body ---------- */
+.s-system__item-body {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding-top: 2px;
+}
+
+.s-system__item-name {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--s-1);
+  color: var(--ink);
+  line-height: 1.2;
+}
+
+.s-system__item-role {
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  color: var(--ink-soft);
+  line-height: 1.5;
+}
+
+/* ---------- CTA row ---------- */
+.s-system__cta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--sp-3);
+}
+
+.s-system__cta-note {
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  color: var(--ink-soft);
+  font-style: italic;
+}
+
+/* ---------- Tablet ---------- */
+@media (max-width: 1020px) {
+  .s-system__layout {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--sp-5);
+  }
+
+  .s-system__image-wrap {
+    max-width: 100%;
+  }
+}
+
+/* ---------- Mobile: stack image above text ---------- */
+@media (max-width: 720px) {
+  .s-system__layout {
+    grid-template-columns: 1fr;
+    gap: var(--sp-5);
+  }
+
+  .s-system__image-wrap {
+    order: -1;
+    aspect-ratio: 4 / 3;
+    max-width: 100%;
+  }
+
+  .s-system__image {
+    object-position: center 20%;
+  }
+
+  .s-system__intro {
+    max-width: 100%;
+  }
+
+  .s-system__cta {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+/* ============================================================
+   AntidotPro · 06-results.css
+   Results / Before-After proof band
+   All rules scoped under .s-results
+   ============================================================ */
+
+/* ---------- Section band ---------- */
+.s-results {
+  background: var(--surface-2);
+}
+
+/* ---------- Section header ---------- */
+.s-results__header {
+  text-align: center;
+  max-width: 580px;
+  margin: 0 auto var(--sp-7);
+}
+
+.s-results__header h2 {
+  color: var(--ink);
+  margin-top: var(--sp-2);
+  margin-bottom: var(--sp-2);
+}
+
+.s-results__sub {
+  font-family: var(--font-body);
+  font-size: var(--s-0);
+  color: var(--ink-soft);
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* ---------- Before / After two-up ---------- */
+.s-results__compare {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-4);
+  margin-bottom: var(--sp-7);
+}
+
+/* ---------- Each panel ---------- */
+.s-results__panel {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ---------- Image wrapper with label ---------- */
+.s-results__img-wrap {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  aspect-ratio: 1 / 1;
+}
+
+.s-results__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+/* ---------- BEFORE / AFTER label chips ---------- */
+.s-results__label {
+  position: absolute;
+  bottom: var(--sp-3);
+  left: var(--sp-3);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--s--1);
+  letter-spacing: .07em;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border-radius: var(--radius);
+  line-height: 1.4;
+  pointer-events: none;
+}
+
+.s-results__label--before {
+  background: rgba(255, 255, 255, 0.88);
+  color: var(--ink-soft);
+  border: 1px solid var(--line);
+}
+
+.s-results__label--after {
+  background: var(--accent);
+  color: var(--accent-ink);
+  border: none;
+}
+
+/* ---------- Stat + CTA row ---------- */
+.s-results__stat-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-5);
+  background: var(--dark);
+  border-radius: var(--radius-lg);
+  padding: var(--sp-6) var(--sp-7);
+}
+
+/* ---------- Stat block ---------- */
+.s-results__stat {
+  flex: 1;
+  min-width: 0;
+}
+
+.s-results__stat-number {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--s-5);
+  color: var(--accent);
+  line-height: 1;
+  margin: 0 0 var(--sp-1);
+  letter-spacing: -.03em;
+}
+
+.s-results__stat-label {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: var(--s-1);
+  color: #ffffff;
+  margin: 0 0 var(--sp-2);
+  line-height: 1.2;
+}
+
+.s-results__stat-caption {
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  color: rgba(255, 255, 255, 0.55);
+  line-height: 1.55;
+  margin: 0;
+  max-width: 380px;
+}
+
+/* ---------- CTA ---------- */
+.s-results__cta {
+  flex-shrink: 0;
+}
+
+/* ---------- Tablet ---------- */
+@media (max-width: 900px) {
+  .s-results__stat-row {
+    padding: var(--sp-5) var(--sp-5);
+    gap: var(--sp-4);
+  }
+
+  .s-results__stat-number {
+    font-size: var(--s-4);
+  }
+}
+
+/* ---------- Mobile ---------- */
+@media (max-width: 680px) {
+  .s-results__compare {
+    gap: var(--sp-3);
+  }
+
+  /* Keep 2-up but shrink gracefully — labels adjust */
+  .s-results__img-wrap {
+    aspect-ratio: 3 / 4;
+  }
+
+  .s-results__stat-row {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: var(--sp-5) var(--sp-4);
+    gap: var(--sp-4);
+  }
+
+  .s-results__stat-number {
+    font-size: var(--s-3);
+  }
+
+  .s-results__stat-caption {
+    max-width: 100%;
+  }
+
+  .s-results__cta {
+    width: 100%;
+  }
+
+  .s-results__cta .btn {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+}
+/* ============================================================
+   AntidotPro · 07-reviews.css
+   Reviews wall — scoped under .s-reviews
+   ============================================================ */
+
+/* ---------- Section band ---------- */
+.s-reviews {
+  background: var(--bg);
+}
+
+/* ---------- Header ---------- */
+.s-reviews__header {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto var(--sp-5);
+}
+
+.s-reviews__header h2 {
+  color: var(--ink);
+}
+
+/* ---------- Rating summary ---------- */
+.s-reviews__summary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sp-3);
+  margin-bottom: var(--sp-6);
+  padding: var(--sp-4) var(--sp-5);
+  background: var(--surface-2);
+  border-radius: var(--radius-lg);
+  max-width: 360px;
+  margin-inline: auto;
+  margin-bottom: var(--sp-6);
+}
+
+.s-reviews__big-star {
+  font-size: var(--s-4);          /* 3rem */
+  color: var(--gold);
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.s-reviews__summary-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: .15em;
+}
+
+.s-reviews__score {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--s-3);          /* 2.1rem */
+  color: var(--ink);
+  line-height: 1;
+  letter-spacing: -.02em;
+}
+
+.s-reviews__score-denom {
+  font-size: var(--s-1);
+  color: var(--ink-soft);
+  font-weight: 600;
+}
+
+.s-reviews__count {
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  color: var(--ink-soft);
+  letter-spacing: .02em;
+}
+
+/* ---------- Cards grid ---------- */
+.s-reviews__grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-4);
+}
+
+/* ---------- Single review card ---------- */
+.s-reviews .review {
+  background: var(--surface);
+  border: 1.5px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: var(--sp-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+  transition: box-shadow .2s, transform .2s;
+}
+
+.s-reviews .review:hover {
+  box-shadow: var(--shadow);
+  transform: translateY(-4px);
+}
+
+/* ---------- Card top row: stars + chip ---------- */
+.s-reviews .review__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-2);
+  flex-wrap: wrap;
+}
+
+.s-reviews .review__top .stars {
+  font-size: var(--s-0);
+  color: var(--star);
+  letter-spacing: .04em;
+  line-height: 1;
+}
+
+/* ---------- Quote ---------- */
+.s-reviews .review__quote {
+  font-family: var(--font-body);
+  font-size: var(--s-0);
+  color: var(--ink);
+  line-height: 1.65;
+  margin: 0;
+  flex: 1;
+  font-style: normal;
+}
+
+.s-reviews .review__product {
+  font-weight: 700;
+  color: var(--accent);
+}
+
+/* ---------- Card footer ---------- */
+.s-reviews .review__footer {
+  display: flex;
+  flex-direction: column;
+  gap: .3em;
+  padding-top: var(--sp-3);
+  border-top: 1px solid var(--line);
+}
+
+.s-reviews .review__name {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--s-0);
+  color: var(--ink);
+  line-height: 1;
+}
+
+.s-reviews .review__product-tag {
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  color: var(--ink-soft);
+  letter-spacing: .10em;
+  text-transform: uppercase;
+}
+
+/* ---------- CTA row ---------- */
+.s-reviews__cta {
+  margin-top: var(--sp-6);
+  display: flex;
+  justify-content: center;
+}
+
+/* ---------- Footnote ---------- */
+.s-reviews__footnote {
+  text-align: center;
+  font-size: var(--s--1);
+  color: var(--ink-soft);
+  margin-top: var(--sp-3);
+  margin-bottom: 0;
+}
+
+/* ---------- Tablet: 2-up ---------- */
+@media (max-width: 1000px) {
+  .s-reviews__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ---------- Mobile: horizontal scroll (peek-at-third UX) ---------- */
+@media (max-width: 600px) {
+  .s-reviews__grid {
+    grid-template-columns: unset;
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    gap: var(--sp-3);
+    padding-bottom: var(--sp-2);
+    /* negative margin trick to let cards bleed to edge */
+    margin-inline: calc(-1 * var(--sp-4));
+    padding-inline: var(--sp-4);
+  }
+
+  .s-reviews__grid::-webkit-scrollbar {
+    height: 4px;
+  }
+
+  .s-reviews__grid::-webkit-scrollbar-track {
+    background: var(--line);
+    border-radius: 2px;
+  }
+
+  .s-reviews__grid::-webkit-scrollbar-thumb {
+    background: var(--ink-soft);
+    border-radius: 2px;
+  }
+
+  .s-reviews .review {
+    min-width: 78vw;
+    max-width: 78vw;
+    flex-shrink: 0;
+    scroll-snap-align: start;
+  }
+
+  .s-reviews__summary {
+    max-width: 100%;
+    padding: var(--sp-3) var(--sp-4);
+  }
+}
+/* ============================================================
+   AntidotPro · 08-audience.css
+   Dual-audience band — scoped under .s-audience
+   ============================================================ */
+
+/* ---------- Section band ---------- */
+.s-audience {
+  background: var(--surface-2);
+}
+
+/* ---------- Header ---------- */
+.s-audience__header {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto var(--sp-6);
+}
+
+.s-audience__header h2 {
+  color: var(--ink);
+}
+
+/* ---------- Dual cards grid ---------- */
+.s-audience__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--sp-4);
+}
+
+/* ---------- Individual card ---------- */
+.s-audience__card {
+  background: var(--surface);
+  border: 1.5px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: var(--sp-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+  transition: box-shadow .2s, transform .2s;
+}
+
+.s-audience__card:hover {
+  box-shadow: var(--shadow);
+  transform: translateY(-4px);
+}
+
+/* ---------- Icon circle ---------- */
+.s-audience__icon-wrap {
+  width: 56px;
+  height: 56px;
+  background: rgba(206, 17, 38, 0.07);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.s-audience__icon {
+  width: 28px;
+  height: 28px;
+  color: var(--accent);
+  stroke-width: 1.7;
+}
+
+/* ---------- Card body ---------- */
+.s-audience__card-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+}
+
+.s-audience__card-label {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--s--1);
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 0;
+  line-height: 1;
+}
+
+.s-audience__card-title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--s-2);        /* 1.55rem */
+  color: var(--ink);
+  line-height: 1.2;
+  letter-spacing: -.01em;
+  margin: 0;
+}
+
+.s-audience__card-desc {
+  font-family: var(--font-body);
+  font-size: var(--s-0);
+  color: var(--ink-soft);
+  line-height: 1.65;
+  margin: 0;
+}
+
+.s-audience__card-desc strong {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+/* ---------- CTA button at card bottom ---------- */
+.s-audience__btn {
+  align-self: flex-start;
+  margin-top: auto;
+}
+
+/* ---------- Tablet: tight gap, same 2-col ---------- */
+@media (max-width: 1000px) {
+  .s-audience__grid {
+    gap: var(--sp-3);
+  }
+
+  .s-audience__card {
+    padding: var(--sp-4);
+  }
+}
+
+/* ---------- Mobile: stack ---------- */
+@media (max-width: 640px) {
+  .s-audience__grid {
+    grid-template-columns: 1fr;
+    gap: var(--sp-3);
+  }
+
+  .s-audience__card-title {
+    font-size: var(--s-1);
+  }
+
+  .s-audience__btn {
+    align-self: stretch;
+    display: flex;
+    justify-content: center;
+  }
+}
+/* ============================================================
+   AntidotPro · 09-newsletter.css
+   Newsletter signup band
+   Scoped: .s-newsletter
+   All tokens from base.css — no raw hex except allowed scrim.
+   ============================================================ */
+
+/* ----------------------------------------------------------
+   BAND
+   ---------------------------------------------------------- */
+.s-newsletter {
+  background: var(--accent);
+  color: #FFFFFF;
+  padding-block: var(--sp-7);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle diagonal noise texture via pseudo — depth without imagery */
+.s-newsletter::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    repeating-linear-gradient(
+      -55deg,
+      rgba(255,255,255,.04) 0px,
+      rgba(255,255,255,.04) 1px,
+      transparent 1px,
+      transparent 18px
+    );
+  pointer-events: none;
+}
+
+/* ----------------------------------------------------------
+   LAYOUT
+   ---------------------------------------------------------- */
+.s-newsletter__wrap {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+}
+
+/* ----------------------------------------------------------
+   EYEBROW — override base color for this band
+   ---------------------------------------------------------- */
+.s-newsletter .eyebrow,
+.s-newsletter__eyebrow {
+  color: rgba(255, 255, 255, .80);
+  border-color: rgba(255, 255, 255, .35);
+  margin-bottom: var(--sp-3);
+}
+
+/* ----------------------------------------------------------
+   HEADING
+   ---------------------------------------------------------- */
+.s-newsletter__heading {
+  font-family: var(--font-display);
+  font-size: var(--s-4);
+  font-weight: 700;
+  color: #FFFFFF;
+  line-height: 1.08;
+  letter-spacing: -.02em;
+  margin: 0 0 var(--sp-3);
+  max-width: 640px;
+}
+
+/* ----------------------------------------------------------
+   SUBLINE
+   ---------------------------------------------------------- */
+.s-newsletter__sub {
+  font-family: var(--font-body);
+  font-size: var(--s-1);
+  color: rgba(255, 255, 255, .85);
+  margin: 0 0 var(--sp-5);
+  max-width: 480px;
+}
+
+/* ----------------------------------------------------------
+   FORM — inline row
+   ---------------------------------------------------------- */
+.s-newsletter__form {
+  display: flex;
+  align-items: stretch;
+  gap: var(--sp-2);
+  width: 100%;
+  max-width: 520px;
+  margin-bottom: var(--sp-3);
+}
+
+.s-newsletter__field-wrap {
+  flex: 1 1 0;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Visually hide label but keep it accessible */
+.s-newsletter__label {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.s-newsletter__input {
+  flex: 1;
+  background: #FFFFFF;
+  color: var(--ink);
+  border: 2px solid transparent;
+  border-radius: var(--radius);
+  padding: .95em 1.2em;
+  font-family: var(--font-body);
+  font-size: var(--s-0);
+  line-height: 1;
+  outline: none;
+  transition: border-color .2s;
+  width: 100%;
+}
+
+.s-newsletter__input::placeholder {
+  color: var(--ink-soft);
+}
+
+.s-newsletter__input:focus {
+  border-color: #FFFFFF;
+  box-shadow: 0 0 0 3px rgba(255,255,255,.35);
+}
+
+/* ----------------------------------------------------------
+   BUTTON — .btn-light renders white bg / dark text from base
+   On hover base turns it transparent+white-border; that works on red.
+   ---------------------------------------------------------- */
+.s-newsletter__btn {
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+/* ----------------------------------------------------------
+   FINE PRINT
+   ---------------------------------------------------------- */
+.s-newsletter__fine {
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  color: rgba(255, 255, 255, .65);
+  margin: 0;
+}
+
+/* ----------------------------------------------------------
+   MOBILE — stack full-width
+   ---------------------------------------------------------- */
+@media (max-width: 580px) {
+  .s-newsletter__form {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .s-newsletter__btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .s-newsletter__heading {
+    font-size: var(--s-3);
+  }
+}
+/* ============================================================
+   AntidotPro · 10-footer.css
+   Site footer — dark charcoal base, light text, red column headers
+   Scoped: .site-footer
+   All tokens from base.css — no raw hex except allowed scrim.
+   ============================================================ */
+
+/* ----------------------------------------------------------
+   FOOTER SHELL
+   ---------------------------------------------------------- */
+.site-footer {
+  background: var(--dark);
+  color: #CFCFCF;
+  padding-top: var(--sp-7);
+  padding-bottom: 0;
+  font-family: var(--font-body);
+  font-size: var(--s-0);
+}
+
+/* ----------------------------------------------------------
+   INNER WRAP
+   ---------------------------------------------------------- */
+.site-footer__wrap {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-6);
+}
+
+/* ----------------------------------------------------------
+   TOP ROW: brand col + nav columns
+   ---------------------------------------------------------- */
+.site-footer__top {
+  display: grid;
+  grid-template-columns: 1fr 2.4fr;
+  gap: var(--sp-6) var(--sp-5);
+  align-items: start;
+}
+
+/* ----------------------------------------------------------
+   BRAND COLUMN
+   ---------------------------------------------------------- */
+.site-footer__logo-link {
+  display: inline-block;
+  margin-bottom: var(--sp-4);
+}
+
+.site-footer__logo {
+  height: 26px;
+  width: auto;
+  display: block;
+}
+
+.site-footer__blurb {
+  font-size: var(--s--1);
+  color: rgba(207, 207, 207, .75);
+  line-height: 1.65;
+  margin: 0 0 var(--sp-4);
+  max-width: 260px;
+}
+
+/* ----------------------------------------------------------
+   SOCIAL ROW
+   ---------------------------------------------------------- */
+.site-footer__social {
+  display: flex;
+  gap: var(--sp-3);
+}
+
+.site-footer__social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #CFCFCF;
+  transition: color .2s;
+}
+
+.site-footer__social-link:hover {
+  color: var(--accent);
+}
+
+.site-footer__social-icon {
+  width: 22px;
+  height: 22px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 1.7;
+  display: block;
+}
+
+/* ----------------------------------------------------------
+   NAV GRID — 4 columns
+   ---------------------------------------------------------- */
+.site-footer__nav {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--sp-5) var(--sp-4);
+}
+
+.site-footer__col-heading {
+  font-family: var(--font-display);
+  font-size: var(--s--1);
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 0 0 var(--sp-3);
+  line-height: 1;
+}
+
+.site-footer__col-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+}
+
+.site-footer__link {
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  color: #CFCFCF;
+  text-decoration: none;
+  transition: color .2s;
+  line-height: 1.5;
+}
+
+.site-footer__link:hover {
+  color: #FFFFFF;
+}
+
+/* ----------------------------------------------------------
+   TRUST MARKS ROW
+   ---------------------------------------------------------- */
+.site-footer__trust {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+  padding-top: var(--sp-4);
+  border-top: 1px solid rgba(230, 229, 225, .12);
+}
+
+/* Override chip tokens for dark background */
+.site-footer__trust-chip.chip {
+  background: rgba(255, 255, 255, .06);
+  border-color: rgba(230, 229, 225, .18);
+  color: #CFCFCF;
+}
+
+/* ----------------------------------------------------------
+   BOTTOM BAR
+   ---------------------------------------------------------- */
+.site-footer__bottom {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--sp-3) var(--sp-4);
+  padding-block: var(--sp-4);
+  border-top: 1px solid rgba(230, 229, 225, .12);
+}
+
+.site-footer__copy {
+  font-size: var(--s--1);
+  color: rgba(207, 207, 207, .55);
+  margin: 0;
+  flex: 1 1 auto;
+}
+
+/* Legal links */
+.site-footer__legal-nav {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+}
+
+.site-footer__legal-link {
+  font-size: var(--s--1);
+  color: rgba(207, 207, 207, .65);
+  text-decoration: none;
+  transition: color .2s;
+}
+
+.site-footer__legal-link:hover {
+  color: #FFFFFF;
+}
+
+.site-footer__legal-sep {
+  color: rgba(207, 207, 207, .3);
+  font-size: var(--s--1);
+}
+
+/* Payment icons row */
+.site-footer__payment {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+}
+
+.site-footer__pay-icon {
+  width: 38px;
+  height: 24px;
+  border-radius: 4px;
+  display: block;
+  opacity: .7;
+  transition: opacity .2s;
+}
+
+.site-footer__pay-icon:hover {
+  opacity: 1;
+}
+
+/* ----------------------------------------------------------
+   RESPONSIVE — medium: 2-up columns
+   ---------------------------------------------------------- */
+@media (max-width: 960px) {
+  .site-footer__top {
+    grid-template-columns: 1fr;
+    gap: var(--sp-5);
+  }
+
+  .site-footer__nav {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .site-footer__blurb {
+    max-width: 100%;
+  }
+}
+
+/* ----------------------------------------------------------
+   RESPONSIVE — small: 1-up columns, tighter spacing
+   ---------------------------------------------------------- */
+@media (max-width: 560px) {
+  .site-footer__nav {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--sp-4) var(--sp-3);
+  }
+
+  .site-footer__bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--sp-3);
+  }
+
+  .site-footer__payment {
+    flex-wrap: wrap;
+  }
+
+  .site-footer__trust {
+    gap: var(--sp-2);
+  }
+}
+
+@media (max-width: 380px) {
+  .site-footer__nav {
+    grid-template-columns: 1fr;
+  }
+}

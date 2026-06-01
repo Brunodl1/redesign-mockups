@@ -1,0 +1,252 @@
+/* ============================================================
+   AntidotPro · 01-header.css
+   Announcement bar + Sticky site header
+   Scoped: .announce / .site-header
+   All tokens from base.css — no raw hex except allowed scrim.
+   ============================================================ */
+
+/* ----------------------------------------------------------
+   ANNOUNCEMENT BAR
+   ---------------------------------------------------------- */
+.announce {
+  background: var(--accent);
+  color: var(--accent-ink);
+  padding-block: var(--sp-2);
+  text-align: center;
+  position: relative;
+  z-index: 200;
+}
+
+.announce .wrap {
+  /* already constrained by base .wrap */
+}
+
+.announce__inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sp-3);
+  flex-wrap: nowrap;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.announce__item {
+  font-family: var(--font-display);
+  font-size: var(--s--1);
+  font-weight: 600;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  line-height: 1.2;
+}
+
+.announce__sep {
+  font-size: var(--s-0);
+  opacity: .5;
+  font-weight: 300;
+  flex-shrink: 0;
+}
+
+/* ----------------------------------------------------------
+   SITE HEADER — sticky, white, hairline bottom
+   ---------------------------------------------------------- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--bg);
+  border-bottom: 1px solid var(--line);
+  box-shadow: 0 2px 12px rgba(35, 35, 35, .06);
+  width: 100%;
+}
+
+.site-header__wrap {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-4);
+  padding-block: var(--sp-3);
+  /* .wrap handles max-width + inline padding */
+}
+
+/* ---- LEFT: hamburger + logo ---- */
+.site-header__left {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  flex-shrink: 0;
+}
+
+.site-header__hamburger {
+  display: none; /* hidden desktop; shown mobile */
+  background: transparent;
+  border: none;
+  padding: var(--sp-1);
+  cursor: pointer;
+  color: var(--ink);
+  border-radius: var(--radius);
+  transition: background .15s;
+  line-height: 0;
+}
+.site-header__hamburger:hover {
+  background: var(--surface-2);
+}
+
+.site-header__logo {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.site-header__logo-img {
+  height: 26px;
+  width: auto;
+  display: block;
+}
+
+/* ---- CENTER: nav ---- */
+.site-header__nav {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.site-header__nav-list {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-4);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.site-header__nav-link {
+  font-family: var(--font-display);
+  font-size: var(--s--1);
+  font-weight: 600;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--ink);
+  padding-block: var(--sp-2);
+  border-bottom: 2px solid transparent;
+  transition: color .18s, border-color .18s;
+  white-space: nowrap;
+  line-height: 1;
+}
+
+.site-header__nav-link:hover,
+.site-header__nav-link[aria-current="page"] {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
+/* ---- RIGHT: actions ---- */
+.site-header__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  flex-shrink: 0;
+}
+
+/* Compact Shop pill (desktop) */
+.site-header__shop-pill {
+  font-size: var(--s--1);
+  padding: .58em 1.25em;
+  border-radius: 999px;
+  letter-spacing: .1em;
+  line-height: 1;
+}
+
+/* Icon buttons */
+.site-header__icon-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background: transparent;
+  border: none;
+  padding: var(--sp-1);
+  cursor: pointer;
+  color: var(--ink);
+  border-radius: var(--radius);
+  transition: color .15s, background .15s;
+  line-height: 0;
+}
+
+.site-header__icon-btn:hover {
+  color: var(--accent);
+  background: var(--surface-2);
+}
+
+/* Cart badge */
+.site-header__cart-btn {
+  position: relative;
+}
+
+.site-header__cart-badge {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-family: var(--font-display);
+  font-size: .6rem;
+  font-weight: 700;
+  line-height: 1;
+  min-width: 16px;
+  height: 16px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-inline: 3px;
+  pointer-events: none;
+}
+
+/* ----------------------------------------------------------
+   MOBILE ≤ 780px
+   ---------------------------------------------------------- */
+@media (max-width: 780px) {
+
+  /* Announcement bar: show only first bit */
+  .announce__item--hide-mobile,
+  .announce__sep--hide-mobile {
+    display: none;
+  }
+
+  .announce__inner {
+    justify-content: center;
+  }
+
+  /* Header layout */
+  .site-header__wrap {
+    gap: var(--sp-2);
+    padding-block: .75rem;
+  }
+
+  /* Show hamburger */
+  .site-header__hamburger {
+    display: flex;
+  }
+
+  /* Logo slightly smaller */
+  .site-header__logo-img {
+    height: 22px;
+  }
+
+  /* Hide desktop nav */
+  .site-header__nav {
+    display: none;
+  }
+
+  /* Hide search, account, shop pill */
+  .site-header__icon-btn--hide-mobile,
+  .site-header__shop-pill {
+    display: none;
+  }
+
+  /* Actions: only cart remains */
+  .site-header__actions {
+    margin-left: auto; /* push cart to far right */
+    gap: var(--sp-1);
+  }
+}

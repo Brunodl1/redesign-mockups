@@ -1,0 +1,221 @@
+/* ============================================================
+   AntidotPro · 07-reviews.css
+   Reviews wall — scoped under .s-reviews
+   ============================================================ */
+
+/* ---------- Section band ---------- */
+.s-reviews {
+  background: var(--bg);
+}
+
+/* ---------- Header ---------- */
+.s-reviews__header {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto var(--sp-5);
+}
+
+.s-reviews__header h2 {
+  color: var(--ink);
+}
+
+/* ---------- Rating summary ---------- */
+.s-reviews__summary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sp-3);
+  margin-bottom: var(--sp-6);
+  padding: var(--sp-4) var(--sp-5);
+  background: var(--surface-2);
+  border-radius: var(--radius-lg);
+  max-width: 360px;
+  margin-inline: auto;
+  margin-bottom: var(--sp-6);
+}
+
+.s-reviews__big-star {
+  font-size: var(--s-4);          /* 3rem */
+  color: var(--gold);
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.s-reviews__summary-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: .15em;
+}
+
+.s-reviews__score {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--s-3);          /* 2.1rem */
+  color: var(--ink);
+  line-height: 1;
+  letter-spacing: -.02em;
+}
+
+.s-reviews__score-denom {
+  font-size: var(--s-1);
+  color: var(--ink-soft);
+  font-weight: 600;
+}
+
+.s-reviews__count {
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  color: var(--ink-soft);
+  letter-spacing: .02em;
+}
+
+/* ---------- Cards grid ---------- */
+.s-reviews__grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-4);
+}
+
+/* ---------- Single review card ---------- */
+.s-reviews .review {
+  background: var(--surface);
+  border: 1.5px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: var(--sp-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+  transition: box-shadow .2s, transform .2s;
+}
+
+.s-reviews .review:hover {
+  box-shadow: var(--shadow);
+  transform: translateY(-4px);
+}
+
+/* ---------- Card top row: stars + chip ---------- */
+.s-reviews .review__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-2);
+  flex-wrap: wrap;
+}
+
+.s-reviews .review__top .stars {
+  font-size: var(--s-0);
+  color: var(--star);
+  letter-spacing: .04em;
+  line-height: 1;
+}
+
+/* ---------- Quote ---------- */
+.s-reviews .review__quote {
+  font-family: var(--font-body);
+  font-size: var(--s-0);
+  color: var(--ink);
+  line-height: 1.65;
+  margin: 0;
+  flex: 1;
+  font-style: normal;
+}
+
+.s-reviews .review__product {
+  font-weight: 700;
+  color: var(--accent);
+}
+
+/* ---------- Card footer ---------- */
+.s-reviews .review__footer {
+  display: flex;
+  flex-direction: column;
+  gap: .3em;
+  padding-top: var(--sp-3);
+  border-top: 1px solid var(--line);
+}
+
+.s-reviews .review__name {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--s-0);
+  color: var(--ink);
+  line-height: 1;
+}
+
+.s-reviews .review__product-tag {
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  color: var(--ink-soft);
+  letter-spacing: .10em;
+  text-transform: uppercase;
+}
+
+/* ---------- CTA row ---------- */
+.s-reviews__cta {
+  margin-top: var(--sp-6);
+  display: flex;
+  justify-content: center;
+}
+
+/* ---------- Footnote ---------- */
+.s-reviews__footnote {
+  text-align: center;
+  font-size: var(--s--1);
+  color: var(--ink-soft);
+  margin-top: var(--sp-3);
+  margin-bottom: 0;
+}
+
+/* ---------- Tablet: 2-up ---------- */
+@media (max-width: 1000px) {
+  .s-reviews__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ---------- Mobile: horizontal scroll (peek-at-third UX) ---------- */
+@media (max-width: 600px) {
+  .s-reviews__grid {
+    grid-template-columns: unset;
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    gap: var(--sp-3);
+    padding-bottom: var(--sp-2);
+    /* negative margin trick to let cards bleed to edge */
+    margin-inline: calc(-1 * var(--sp-4));
+    padding-inline: var(--sp-4);
+  }
+
+  .s-reviews__grid::-webkit-scrollbar {
+    height: 4px;
+  }
+
+  .s-reviews__grid::-webkit-scrollbar-track {
+    background: var(--line);
+    border-radius: 2px;
+  }
+
+  .s-reviews__grid::-webkit-scrollbar-thumb {
+    background: var(--ink-soft);
+    border-radius: 2px;
+  }
+
+  .s-reviews .review {
+    min-width: 78vw;
+    max-width: 78vw;
+    flex-shrink: 0;
+    scroll-snap-align: start;
+  }
+
+  .s-reviews__summary {
+    max-width: 100%;
+    padding: var(--sp-3) var(--sp-4);
+  }
+}

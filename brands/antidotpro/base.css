@@ -1,0 +1,127 @@
+/* ============================================================
+   AntidotPro — base.css (foundation)
+   Pro scalp-protection during color/bleach · clinical-pro · EN
+   Charcoal + medical-red + white. Poppins + Inter. Bold, trustworthy.
+   ============================================================ */
+:root{
+  /* color */
+  --bg:        #FFFFFF;   /* clean white page */
+  --surface:   #FFFFFF;   /* cards */
+  --surface-2: #F4F4F1;   /* light grey alt band */
+  --ink:       #232323;   /* charcoal */
+  --ink-soft:  #67676A;   /* grey — secondary text */
+  --accent:    #CE1126;   /* medical red — CTAs, the cross */
+  --accent-ink:#FFFFFF;
+  --accent-deep:#A50E1F;  /* hover */
+  --gold:      #F2B500;   /* secondary highlight (sparing) */
+  --dark:      #1B1B1D;   /* dark band / footer */
+  --line:      #E6E5E1;   /* hairline */
+  --star:      #F2B500;   /* gold stars */
+  --btn:       #CE1126;
+  --btn-ink:   #FFFFFF;
+  /* type */
+  --font-display: "Poppins", "Helvetica Neue", Arial, sans-serif;
+  --font-body:    "Inter", "Helvetica Neue", Arial, sans-serif;
+  --s--1: .84rem;
+  --s-0:  1rem;
+  --s-1:  1.2rem;
+  --s-2:  1.55rem;
+  --s-3:  2.1rem;
+  --s-4:  3rem;
+  --s-5:  4.2rem;
+  /* space */
+  --sp-1:.25rem; --sp-2:.5rem; --sp-3:1rem; --sp-4:1.5rem;
+  --sp-5:2.5rem; --sp-6:4rem; --sp-7:6rem;
+  /* shape */
+  --radius:8px; --radius-lg:16px;
+  --shadow:0 14px 40px rgba(35,35,35,.12);
+  --maxw:1240px;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html,body{overflow-x:clip}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--ink);
+  font-family:var(--font-body);
+  font-size:var(--s-0);
+  line-height:1.6;
+  font-weight:400;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+
+/* headings — Poppins, bold + confident */
+h1,h2,h3{font-family:var(--font-display);font-weight:700;line-height:1.06;letter-spacing:-.02em;margin:0 0 var(--sp-3);color:var(--ink)}
+h1{font-size:var(--s-5)}
+h2{font-size:var(--s-4)}
+h3{font-size:var(--s-2)}
+p{margin:0 0 var(--sp-3)}
+
+/* layout */
+.wrap{max-width:var(--maxw);margin:0 auto;padding-inline:var(--sp-4);width:100%}
+.sec{position:relative;padding-block:var(--sp-7)}
+.section{position:relative}
+
+/* eyebrow — red tracked caps */
+.eyebrow{
+  display:inline-block;font-family:var(--font-display);font-weight:700;
+  font-size:var(--s--1);letter-spacing:.16em;text-transform:uppercase;
+  color:var(--accent);margin:0 0 var(--sp-3)
+}
+
+/* buttons */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:.5em;
+  font-family:var(--font-display);font-weight:700;font-size:var(--s-0);
+  letter-spacing:.04em;text-transform:uppercase;
+  padding:.95em 2em;border-radius:var(--radius);border:2px solid transparent;
+  cursor:pointer;transition:background .2s,color .2s,border-color .2s,transform .15s;
+  line-height:1;white-space:nowrap
+}
+.btn:hover{transform:translateY(-2px)}
+.btn-primary{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.btn-primary:hover{background:var(--accent-deep);border-color:var(--accent-deep)}
+.btn-dark{background:var(--ink);color:#fff;border-color:var(--ink)}
+.btn-dark:hover{background:#000}
+.btn-outline{background:transparent;color:var(--ink);border-color:var(--ink)}
+.btn-outline:hover{background:var(--ink);color:#fff}
+.btn-light{background:#fff;color:var(--ink);border-color:#fff}
+.btn-light:hover{background:transparent;color:#fff;border-color:#fff}
+.btn-block{display:flex;width:100%}
+
+/* rating stars */
+.stars{color:var(--star);letter-spacing:.04em;font-size:var(--s-0)}
+
+/* chips */
+.chip{
+  display:inline-flex;align-items:center;gap:.45em;
+  font-family:var(--font-display);font-weight:600;font-size:var(--s--1);
+  letter-spacing:.04em;text-transform:uppercase;
+  padding:.5em .9em;border-radius:999px;border:1.5px solid var(--line);
+  background:var(--surface);color:var(--ink);line-height:1
+}
+
+/* section icons */
+.ic{width:40px;height:40px;display:block;stroke:currentColor;stroke-width:1.7;fill:none}
+
+/* floats — static, hidden mobile */
+.float{position:absolute;pointer-events:none;z-index:5}
+.float img{width:100%;transform:rotate(var(--rot,0deg));
+  filter:drop-shadow(0 24px 22px rgba(35,35,35,.20))}
+@media(max-width:1000px){.float{display:none}}
+
+/* scroll-reveal (3D) — NOT on hero */
+.reveal{opacity:0;transform:perspective(900px) rotateX(8deg) translateY(26px);
+  transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+
+/* responsive type */
+@media(max-width:780px){
+  :root{--s-5:2.7rem;--s-4:2.05rem;--s-3:1.6rem;--s-2:1.3rem}
+  .sec{padding-block:var(--sp-6)}
+}
