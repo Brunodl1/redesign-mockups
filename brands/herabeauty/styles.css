@@ -379,8 +379,10 @@
 
   .s-hero .hero-eyebrow {
     margin-bottom: var(--sp-3);
-    letter-spacing: .08em;
+    letter-spacing: .05em;
+    font-size: .72rem;
     overflow-wrap: break-word;
+    max-width: 100%;
   }
 
   .s-hero .hero-statement {
