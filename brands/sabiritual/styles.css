@@ -263,131 +263,115 @@
 
 /* ===== 02-hero.css ===== */
 /* ============================================================
-   02-hero.css — SABI RITUAL · Split hero (text left, image right)
-   All rules scoped under .s-hero
+   02-hero.css — SABI RITUAL · FULL-BLEED editorial hero
+   Cinematic photo + left-anchored scrim + light text. Scoped under .s-hero
    ============================================================ */
 
 /* ── Section shell ─────────────────────────────────────────── */
-.s-hero {
-  background: var(--bg);
-  padding-block: var(--sp-5) var(--sp-6);
-  overflow: hidden;
-}
-
-/* ── Two-column grid ───────────────────────────────────────── */
-.s-hero .wrap {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--sp-6);
+.s-hero.hero-fullbleed {
+  position: relative;
+  padding: 0;
+  min-height: 660px;
+  display: flex;
   align-items: center;
-  min-height: 540px;
+  overflow: hidden;
+  background: var(--dark);
 }
 
-/* ── LEFT — text panel ─────────────────────────────────────── */
-.s-hero .hero-split__text {
-  min-width: 0;
+/* full-bleed background image */
+.s-hero__bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 0;
+}
+
+/* left-anchored scrim — dark on the left text zone, clears to the glowing right */
+.s-hero__scrim {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    linear-gradient(90deg, rgba(20,18,15,.74) 0%, rgba(20,18,15,.46) 34%, rgba(20,18,15,.05) 64%, rgba(20,18,15,0) 100%),
+    linear-gradient(0deg, rgba(20,18,15,.30), rgba(20,18,15,0) 40%);
+}
+
+.s-hero.hero-fullbleed .wrap {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+}
+
+/* ── Content (left, light text) ─────────────────────────────── */
+.s-hero__content {
+  max-width: 600px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 0;
 }
 
-.s-hero .hero-split__text .eyebrow {
+.s-hero__content .eyebrow {
+  color: #C9E3DC !important;     /* light emerald-tint — wins over base .eyebrow */
   margin-bottom: var(--sp-4);
 }
 
-.s-hero .hero-split__text h1 {
-  font-size: var(--s-5);
+.s-hero__content h1 {
   font-family: var(--font-display);
+  font-size: clamp(2.8rem, 5vw, var(--s-5));
   font-weight: 500;
-  line-height: 1.08;
+  line-height: 1.04;
   letter-spacing: -.02em;
-  color: var(--ink);
+  color: #FFFFFF;
   margin: 0 0 var(--sp-4);
+  text-shadow: 0 2px 24px rgba(0,0,0,.32);
 }
 
-.s-hero .hero-split__sub {
+.s-hero__sub {
   font-family: var(--font-body);
   font-size: var(--s-1);
   line-height: 1.65;
-  color: var(--ink-soft);
+  color: rgba(255,255,255,.92);
   margin: 0 0 var(--sp-5);
-  max-width: 42ch;
+  max-width: 46ch;
+  text-shadow: 0 1px 14px rgba(0,0,0,.3);
 }
 
-.s-hero .hero-split__cta {
+.s-hero__cta {
   margin-bottom: var(--sp-5);
 }
 
-/* ── Proof chips row ───────────────────────────────────────── */
-.s-hero .hero-split__chips {
+/* ── Proof chips — light, glassy on the photo ──────────────── */
+.s-hero__chips {
   display: flex;
   flex-wrap: wrap;
   gap: var(--sp-2);
 }
 
-/* ── RIGHT — image container ───────────────────────────────── */
-.s-hero .hero-split__media {
-  min-width: 0;
-  max-width: 100%;
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  background: var(--surface-2);
-  aspect-ratio: 3 / 2;       /* match the landscape trio shot — no letterbox bands */
+.s-hero__chips .chip {
+  background: rgba(255,255,255,.12);
+  border-color: rgba(255,255,255,.45);
+  color: #fff;
+  backdrop-filter: blur(4px);
 }
 
-.s-hero .hero-split__img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  border-radius: var(--radius-lg);
-}
-
-/* ── Mobile ≤ 780px — stack: image above text ──────────────── */
+/* ── Mobile ≤ 780px ────────────────────────────────────────── */
 @media (max-width: 780px) {
-  .s-hero {
-    padding-block: var(--sp-5);
+  .s-hero.hero-fullbleed {
+    min-height: 560px;
+    align-items: flex-end;
+    padding-block: var(--sp-6);
   }
-
-  .s-hero .wrap {
-    grid-template-columns: 1fr;
-    gap: var(--sp-4);
-    min-height: unset;
+  /* strengthen the bottom of the scrim so the lower-anchored text stays legible */
+  .s-hero__scrim {
+    background:
+      linear-gradient(0deg, rgba(20,18,15,.80) 0%, rgba(20,18,15,.40) 42%, rgba(20,18,15,.10) 100%);
   }
-
-  /* Image comes first visually */
-  .s-hero .hero-split__media {
-    order: -1;
-    max-height: 320px;
-    border-radius: var(--radius-lg);
-  }
-
-  .s-hero .hero-split__img {
-    height: 320px;
-    object-fit: cover;
-    object-position: center;
-  }
-
-  .s-hero .hero-split__text h1 {
-    font-size: var(--s-4);
-  }
-
-  .s-hero .hero-split__sub {
-    font-size: var(--s-0);
-    max-width: 100%;
-  }
-
-  .s-hero .hero-split__cta {
-    display: flex;
-    width: 100%;
-    justify-content: center;
-  }
-
-  .s-hero .hero-split__chips {
-    flex-wrap: wrap;
-  }
+  .s-hero__content { max-width: 100%; }
+  .s-hero__sub { font-size: var(--s-0); max-width: 100%; }
+  .s-hero__cta { display: flex; width: 100%; justify-content: center; }
 }
 
 /* ===== 03-trust.css ===== */
