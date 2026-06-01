@@ -1,0 +1,2174 @@
+/* ===== 01-header.css ===== */
+/* ============================================================
+   V*GAM Biome — 01-header.css
+   Announcement bar + sticky header (split-nav, centered logo)
+   Scoped entirely under .announce / .site-header
+   ============================================================ */
+
+/* ── ANNOUNCEMENT BAR ──────────────────────────────────────── */
+.announce {
+  background: var(--dark);
+  color: rgba(255,255,255,.88);
+  width: 100%;
+  z-index: 100;
+}
+
+.announce__inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
+  padding-block: var(--sp-2);
+  text-align: center;
+}
+
+.announce__full,
+.announce__mobile {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-3);
+  flex-wrap: nowrap;
+  white-space: nowrap;
+  font-family: var(--font-display);
+  font-size: var(--s--1);
+  font-weight: 500;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+}
+
+.announce__full a,
+.announce__mobile a {
+  color: inherit;
+  text-decoration: none;
+  transition: color .2s;
+  white-space: nowrap;
+}
+
+.announce__full a:hover,
+.announce__mobile a:hover {
+  color: #fff;
+}
+
+.announce__dot {
+  opacity: .45;
+  font-size: .9em;
+}
+
+/* mobile: hide full, show single */
+.announce__mobile { display: none; }
+
+@media (max-width: 780px) {
+  .announce__full   { display: none; }
+  .announce__mobile { display: inline-flex; }
+}
+
+
+/* ── STICKY HEADER ─────────────────────────────────────────── */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 90;
+  background: var(--bg);
+  border-bottom: 1px solid var(--line);
+  box-shadow: 0 2px 16px rgba(20,48,74,.06);
+  width: 100%;
+}
+
+/* inner: full-width flex row — three peers */
+.site-header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 66px;
+  position: relative;     /* anchor for absolute logo */
+  gap: 0;
+}
+
+/* ── LEFT NAV ──────────────────────────────────────────────── */
+.site-header__nav {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-4);
+  flex-shrink: 0;
+}
+
+.site-header__nav-link {
+  font-family: var(--font-display);
+  font-size: var(--s--1);
+  font-weight: 600;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--ink);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color .2s;
+  padding-block: var(--sp-2);
+  position: relative;
+}
+
+.site-header__nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1.5px;
+  background: var(--green);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .25s cubic-bezier(.4,0,.2,1);
+}
+
+.site-header__nav-link:hover {
+  color: var(--green);
+}
+
+.site-header__nav-link:hover::after {
+  transform: scaleX(1);
+}
+
+/* ── CENTERED LOGO (absolute — never affected by nav width) ── */
+.site-header__logo {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  z-index: 2;
+  pointer-events: auto;
+  text-decoration: none;
+}
+
+.site-header__logo-img {
+  display: block;
+  height: 34px;
+  width: auto;
+  /* The logo is a navy wordmark — readable on cream/white */
+}
+
+/* ── RIGHT ZONE: right-nav + utils ────────────────────────── */
+.site-header__right {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-4);
+  flex-shrink: 0;
+}
+
+/* ── UTILITY ICONS ─────────────────────────────────────────── */
+.site-header__utils {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+}
+
+.site-header__icon-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  padding: var(--sp-2);
+  cursor: pointer;
+  color: var(--ink);
+  border-radius: var(--radius);
+  transition: color .2s, background .2s;
+  line-height: 0;
+}
+
+.site-header__icon-btn .ic {
+  width: 22px;
+  height: 22px;
+}
+
+.site-header__icon-btn:hover {
+  color: var(--green);
+  background: rgba(111,154,130,.08);
+}
+
+/* cart badge */
+.site-header__cart-badge {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  background: var(--green);
+  color: #fff;
+  font-family: var(--font-display);
+  font-size: .6rem;
+  font-weight: 700;
+  line-height: 1;
+  min-width: 16px;
+  height: 16px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-inline: 3px;
+  letter-spacing: 0;
+}
+
+/* ── MOBILE ELEMENTS (hidden on desktop) ───────────────────── */
+.site-header__hamburger,
+.site-header__logo-mobile,
+.site-header__cart-mobile {
+  display: none;
+}
+
+/* ── MOBILE BREAKPOINT ─────────────────────────────────────── */
+@media (max-width: 780px) {
+
+  /* hide all desktop elements */
+  .site-header__nav,
+  .site-header__logo,
+  .site-header__right {
+    display: none;
+  }
+
+  /* show mobile elements */
+  .site-header__hamburger,
+  .site-header__logo-mobile,
+  .site-header__cart-mobile {
+    display: flex;
+    align-items: center;
+  }
+
+  /* inner: hamburger | [logo absolute-center] | cart */
+  .site-header__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 56px;
+    position: relative;
+  }
+
+  /* hamburger */
+  .site-header__hamburger {
+    background: none;
+    border: none;
+    padding: var(--sp-2);
+    cursor: pointer;
+    color: var(--ink);
+    border-radius: var(--radius);
+    transition: color .2s, background .2s;
+    flex-shrink: 0;
+    z-index: 2;
+  }
+
+  .site-header__hamburger:hover {
+    color: var(--green);
+    background: rgba(111,154,130,.08);
+  }
+
+  /* mobile logo — absolutely centered */
+  .site-header__logo-mobile {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+    text-decoration: none;
+  }
+
+  .site-header__logo-mobile img {
+    display: block;
+    height: 28px;
+    width: auto;
+  }
+
+  /* mobile cart */
+  .site-header__cart-mobile {
+    position: relative;
+    background: none;
+    border: none;
+    padding: var(--sp-2);
+    cursor: pointer;
+    color: var(--ink);
+    border-radius: var(--radius);
+    transition: color .2s, background .2s;
+    flex-shrink: 0;
+    z-index: 2;
+    line-height: 0;
+  }
+
+  .site-header__cart-mobile:hover {
+    color: var(--green);
+    background: rgba(111,154,130,.08);
+  }
+
+  .site-header__cart-mobile .site-header__cart-badge {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+  }
+}
+
+/* ===== 02-hero.css ===== */
+/* ============================================================
+   02-hero.css — Split hero: text LEFT · product image RIGHT
+   V*GAM Biome · scoped under .s-hero
+   ============================================================ */
+
+/* ----- section shell ----- */
+.s-hero {
+  background: var(--bg);
+  padding-block: var(--sp-7) var(--sp-6);
+  overflow: hidden;
+}
+
+/* ----- two-column grid ----- */
+.s-hero__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-6);
+  align-items: center;
+  min-height: 580px;
+}
+
+/* ----- LEFT: text panel ----- */
+.s-hero__text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0;
+  padding-block: var(--sp-5);
+}
+
+.s-hero__text .eyebrow {
+  margin-bottom: var(--sp-3);
+  color: var(--green-deep);
+}
+
+.s-hero__headline {
+  font-family: var(--font-display);
+  font-size: clamp(2.8rem, 4.5vw, var(--s-5));
+  font-weight: 700;
+  line-height: 1.06;
+  letter-spacing: -.025em;
+  color: var(--ink);
+  margin: 0 0 var(--sp-4);
+}
+
+.s-hero__sub {
+  font-family: var(--font-body);
+  font-size: var(--s-1);
+  line-height: 1.65;
+  color: var(--ink-soft);
+  max-width: 44ch;
+  margin: 0 0 var(--sp-5);
+}
+
+.s-hero__cta {
+  margin-bottom: var(--sp-4);
+}
+
+/* proof chips row */
+.s-hero__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+  margin-top: var(--sp-2);
+}
+
+/* ----- RIGHT: image panel ----- */
+.s-hero__img-wrap {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+  max-height: 540px;
+  align-self: stretch;
+}
+
+.s-hero__img {
+  width: 100%;
+  height: 100%;
+  min-height: 400px;
+  max-height: 540px;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  border-radius: var(--radius-lg);
+}
+
+/* floating pill on image */
+.s-hero__float-chip {
+  position: absolute;
+  bottom: var(--sp-4);
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--surface);
+  color: var(--ink);
+  box-shadow: var(--shadow);
+  border-color: transparent;
+  font-size: var(--s--1);
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+/* ----- Mobile: ≤780px — image above text ----- */
+@media (max-width: 780px) {
+  .s-hero {
+    padding-block: 0 var(--sp-6);
+  }
+
+  .s-hero__grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    gap: var(--sp-4);
+    min-height: unset;
+  }
+
+  /* image first (row 1) — contained (no negative-margin bleed → no grid blowout) */
+  .s-hero__img-wrap {
+    order: -1;
+    box-shadow: none;
+    max-height: 320px;
+    align-self: auto;
+    margin-inline: 0;
+    width: 100%;
+  }
+
+  .s-hero__img {
+    max-height: 320px;
+    min-height: unset;
+    width: 100%;
+  }
+
+  /* prevent grid blowout: 1fr items must be allowed to shrink below content */
+  .s-hero__grid > * { min-width: 0; }
+
+  /* text below (row 2) */
+  .s-hero__text {
+    padding-block: var(--sp-4) 0;
+    align-items: flex-start;
+    min-width: 0;
+  }
+
+  .s-hero__text .eyebrow {
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+
+  .s-hero__sub {
+    max-width: 100%;
+    font-size: var(--s-0);
+    overflow-wrap: break-word;
+  }
+
+  .s-hero__chips {
+    flex-wrap: wrap;
+  }
+
+  .s-hero__cta {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    justify-content: center;
+  }
+
+  .s-hero__float-chip {
+    bottom: var(--sp-3);
+    font-size: calc(var(--s--1) * .9);
+  }
+}
+
+/* ===== 03-trust.css ===== */
+/* ============================================================
+   V*GAM Biome — 03-trust.css
+   Slim trust strip · 4-item row · 2×2 on mobile
+   ============================================================ */
+
+/* ── Band ─────────────────────────────────────────────────── */
+.s-trust {
+  padding-block: var(--sp-4);          /* slim: 1.5rem top & bottom */
+  background: var(--surface-2);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+/* ── Row ──────────────────────────────────────────────────── */
+.s-trust__row {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-4);
+}
+
+/* ── Item ─────────────────────────────────────────────────── */
+.s-trust__item {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  flex: 1;
+  min-width: 0;
+}
+
+/* Dividers between items (desktop only) */
+.s-trust__item + .s-trust__item {
+  padding-left: var(--sp-4);
+  border-left: 1px solid var(--line);
+}
+
+/* ── Icon ─────────────────────────────────────────────────── */
+.s-trust__icon {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: var(--surface);
+  color: var(--green);
+}
+
+.s-trust__icon .ic {
+  width: 22px;
+  height: 22px;
+  stroke: var(--green);
+}
+
+/* ── Text block ───────────────────────────────────────────── */
+.s-trust__text {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  min-width: 0;
+}
+
+.s-trust__label {
+  font-family: var(--font-display);
+  font-size: var(--s-0);
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.s-trust__sub {
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  color: var(--ink-soft);
+  line-height: 1.35;
+}
+
+/* ── Mobile: 2×2 grid ─────────────────────────────────────── */
+@media (max-width: 780px) {
+  .s-trust {
+    padding-block: var(--sp-4) var(--sp-5);
+  }
+
+  .s-trust__row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--sp-4) var(--sp-3);
+    justify-content: unset;
+  }
+
+  .s-trust__item + .s-trust__item {
+    padding-left: 0;
+    border-left: none;
+  }
+
+  .s-trust__label {
+    white-space: normal;
+    font-size: var(--s--1);
+  }
+
+  .s-trust__sub {
+    font-size: .72rem;
+  }
+
+  .s-trust__icon {
+    width: 36px;
+    height: 36px;
+  }
+
+  .s-trust__icon .ic {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+/* ===== 04-simplicity.css ===== */
+/* ============================================================
+   V*GAM Biome — 04-simplicity.css
+   Bold editorial stat band · dark navy · light text · reveal
+   ============================================================ */
+
+/* ── Band ─────────────────────────────────────────────────── */
+.s-simplicity {
+  background: var(--dark);
+  color: #fff;                         /* force light text on dark bg */
+  text-align: center;
+  padding-block: var(--sp-7);
+}
+
+/* Override any base.css defaults that inherit --ink */
+.s-simplicity h2,
+.s-simplicity h3,
+.s-simplicity p,
+.s-simplicity strong {
+  color: inherit;
+}
+
+/* ── Eyebrow override: light tint on dark ─────────────────── */
+.s-simplicity .eyebrow,
+.s-simplicity .s-simplicity__eyebrow {
+  color: var(--green);                 /* seafoam pops on navy */
+  margin-bottom: var(--sp-3);
+}
+
+/* ── Header block ─────────────────────────────────────────── */
+.s-simplicity__header {
+  margin-bottom: var(--sp-6);
+}
+
+.s-simplicity__h2 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 3.6rem);
+  font-weight: 700;
+  line-height: 1.06;
+  letter-spacing: -.03em;
+  color: #fff;
+  margin: 0 auto;
+  max-width: 780px;
+  overflow-wrap: break-word;
+}
+
+/* ── Stats row ────────────────────────────────────────────── */
+.s-simplicity__stats {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  gap: 0;
+  margin-bottom: var(--sp-6);
+  border-top: 1px solid rgba(255,255,255,.12);
+  border-bottom: 1px solid rgba(255,255,255,.12);
+  padding-block: var(--sp-5);
+}
+
+/* ── Single stat ──────────────────────────────────────────── */
+.s-simplicity__stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sp-2);
+  flex: 1;
+  padding-inline: var(--sp-5);
+}
+
+.s-simplicity__num {
+  font-family: var(--font-display);
+  font-size: clamp(3.2rem, 8vw, 5.6rem);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -.04em;
+  color: #fff;
+  /* subtle seafoam accent on the numeral */
+  background: linear-gradient(135deg, #fff 60%, var(--green) 140%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.s-simplicity__label {
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  color: rgba(255,255,255,.82);
+  line-height: 1.4;
+  max-width: 14ch;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  font-weight: 500;
+}
+
+/* ── Dividers between stats ───────────────────────────────── */
+.s-simplicity__divider {
+  width: 1px;
+  background: rgba(255,255,255,.14);
+  align-self: stretch;
+  flex-shrink: 0;
+}
+
+/* ── Footer copy + CTA ────────────────────────────────────── */
+.s-simplicity__footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sp-4);
+}
+
+.s-simplicity__body {
+  font-family: var(--font-body);
+  font-size: var(--s-1);
+  color: rgba(255,255,255,.72);
+  line-height: 1.65;
+  max-width: 54ch;
+  margin: 0 auto;
+}
+
+/* .btn-light is defined in base.css: bg #fff, color --ink, border #fff */
+/* No override needed — it reads perfectly on this dark band */
+
+/* ── Stagger reveals ──────────────────────────────────────── */
+.s-simplicity__header.reveal { transition-delay: 0s }
+.s-simplicity__stats.reveal  { transition-delay: .12s }
+.s-simplicity__footer.reveal { transition-delay: .24s }
+
+/* ── Mobile ───────────────────────────────────────────────── */
+@media (max-width: 780px) {
+  .s-simplicity {
+    padding-block: var(--sp-6);
+  }
+
+  .s-simplicity__stats {
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    border-top: none;
+    border-bottom: none;
+    padding-block: 0;
+  }
+
+  .s-simplicity__stat {
+    padding-block: var(--sp-4);
+    padding-inline: var(--sp-4);
+    width: 100%;
+    border-bottom: 1px solid rgba(255,255,255,.12);
+  }
+
+  .s-simplicity__stat:first-child {
+    border-top: 1px solid rgba(255,255,255,.12);
+  }
+
+  .s-simplicity__divider {
+    display: none;
+  }
+
+  .s-simplicity__num {
+    font-size: clamp(3rem, 14vw, 4.5rem);
+  }
+
+  .s-simplicity__label {
+    max-width: 22ch;
+  }
+
+  .s-simplicity__body {
+    font-size: var(--s-0);
+  }
+}
+
+/* ===== 05-bestsellers.css ===== */
+/* ============================================================
+   05-bestsellers.css — Product grid · V*GAM Biome
+   8 cards · 4-col desktop · 3-col tablet · 2-col mobile
+   All rules scoped under .s-bestsellers
+   ============================================================ */
+
+/* ----- section shell ----- */
+.s-bestsellers {
+  background: var(--bg);
+}
+
+/* ----- header row: title left · shop-all right ----- */
+.s-bestsellers__header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--sp-4);
+  margin-bottom: var(--sp-5);
+}
+
+.s-bestsellers__header-left {
+  flex: 1 1 auto;
+}
+
+.s-bestsellers__header-left h2 {
+  margin-bottom: 0;
+  font-size: clamp(var(--s-3), 3.5vw, var(--s-4));
+}
+
+.s-bestsellers__shop-all {
+  flex: 0 0 auto;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: var(--s-0);
+  color: var(--green-deep);
+  letter-spacing: .01em;
+  text-decoration: none;
+  white-space: nowrap;
+  padding-bottom: .2em;
+  border-bottom: 1.5px solid var(--green-deep);
+  transition: color .2s, border-color .2s;
+  align-self: flex-end;
+  margin-bottom: .35rem; /* align with h2 baseline */
+}
+
+.s-bestsellers__shop-all:hover {
+  color: var(--green);
+  border-color: var(--green);
+}
+
+/* ----- product grid ----- */
+.s-bestsellers__grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--sp-4);
+}
+
+/* ----- card base ----- */
+.s-bestsellers .card {
+  display: flex;
+  flex-direction: column;
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  border: 1.5px solid var(--line);
+  overflow: hidden;
+  text-decoration: none;
+  color: var(--ink);
+  transition: transform .25s cubic-bezier(.2,.7,.2,1), box-shadow .25s ease;
+  cursor: pointer;
+  height: 100%;
+}
+
+.s-bestsellers .card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow);
+}
+
+/* ----- image area ----- */
+.s-bestsellers .card__img-wrap {
+  position: relative;
+  background: var(--surface-2);
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  flex: 0 0 auto;
+}
+
+.s-bestsellers .card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: var(--sp-4);
+  display: block;
+  transition: transform .35s ease;
+}
+
+.s-bestsellers .card:hover .card__img {
+  transform: scale(1.04);
+}
+
+/* ----- badge ----- */
+.s-bestsellers .card__badge {
+  position: absolute;
+  top: var(--sp-3);
+  left: var(--sp-3);
+  z-index: 2;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: .65rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  padding: .28em .7em;
+  border-radius: 999px;
+  line-height: 1;
+  pointer-events: none;
+}
+
+.s-bestsellers .card__badge--bestseller {
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+
+.s-bestsellers .card__badge--new {
+  background: var(--green);
+  color: #fff;
+}
+
+/* ----- card body ----- */
+.s-bestsellers .card__body {
+  flex: 1 1 auto;
+  padding: var(--sp-3) var(--sp-3) var(--sp-2);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-1);
+}
+
+.s-bestsellers .card__name {
+  font-family: var(--font-display);
+  font-size: var(--s-0);
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.25;
+  letter-spacing: -.01em;
+  margin: 0;
+}
+
+.s-bestsellers .card__desc {
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  color: var(--ink-soft);
+  line-height: 1.4;
+  margin: 0;
+}
+
+.s-bestsellers .card__meta {
+  display: flex;
+  align-items: center;
+  gap: .35em;
+  margin-top: var(--sp-1);
+}
+
+.s-bestsellers .card__meta .stars {
+  font-size: .85rem;
+  line-height: 1;
+}
+
+.s-bestsellers .card__reviews {
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  color: var(--ink-soft);
+  line-height: 1;
+}
+
+.s-bestsellers .card__price {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--s-1);
+  color: var(--ink);
+  margin: var(--sp-1) 0 0;
+  letter-spacing: -.01em;
+}
+
+/* ----- card footer (add to cart) ----- */
+.s-bestsellers .card__footer {
+  padding: 0 var(--sp-3) var(--sp-3);
+  flex: 0 0 auto;
+}
+
+.s-bestsellers .card__footer .btn {
+  font-size: var(--s--1);
+  padding: .75em 1em;
+  width: 100%;
+  display: flex;
+}
+
+/* ----- footnote ----- */
+.s-bestsellers__footnote {
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  color: var(--ink-soft);
+  opacity: .7;
+  text-align: center;
+  margin: var(--sp-5) 0 0;
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+/* tablet: 3 columns — ≤1024px */
+@media (max-width: 1024px) {
+  .s-bestsellers__grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--sp-3);
+  }
+}
+
+/* small tablet / landscape mobile: 2 columns — ≤680px */
+@media (max-width: 680px) {
+  .s-bestsellers__header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--sp-2);
+    margin-bottom: var(--sp-4);
+  }
+
+  .s-bestsellers__shop-all {
+    align-self: flex-start;
+    margin-bottom: 0;
+  }
+
+  .s-bestsellers__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--sp-3);
+  }
+
+  .s-bestsellers .card__name {
+    font-size: var(--s--1);
+  }
+
+  .s-bestsellers .card__price {
+    font-size: var(--s-0);
+  }
+}
+
+/* very small mobile — keep 2 cols but tighten padding */
+@media (max-width: 400px) {
+  .s-bestsellers__grid {
+    gap: var(--sp-2);
+  }
+
+  .s-bestsellers .card__body {
+    padding: var(--sp-2) var(--sp-2) var(--sp-1);
+  }
+
+  .s-bestsellers .card__footer {
+    padding: 0 var(--sp-2) var(--sp-2);
+  }
+}
+
+/* ===== 06-science.css ===== */
+/* ============================================================
+   V*GAM Biome — 06-science.css
+   Microbiome science band · light surface-2 bg · 3 pillars · reveal
+   All rules scoped under .s-science
+   ============================================================ */
+
+/* ── Band shell ───────────────────────────────────────────── */
+.s-science {
+  background: var(--surface-2);
+}
+
+/* ── Header ───────────────────────────────────────────────── */
+.s-science__header {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto var(--sp-7);
+}
+
+.s-science__eyebrow {
+  color: var(--green-deep);
+  margin-bottom: var(--sp-2);
+}
+
+.s-science__h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.85rem, 4vw, 3rem);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -.03em;
+  color: var(--ink);
+  margin: 0 0 var(--sp-3);
+}
+
+.s-science__h2 em {
+  font-style: italic;
+  color: var(--green-deep);
+}
+
+.s-science__intro {
+  font-family: var(--font-body);
+  font-size: var(--s-1);
+  color: var(--ink-soft);
+  line-height: 1.7;
+  max-width: 58ch;
+  margin: 0 auto;
+}
+
+/* ── Pillars row ──────────────────────────────────────────── */
+.s-science__pillars {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  gap: 0;
+  background: var(--surface);
+  border: 1.5px solid var(--line);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  margin-bottom: var(--sp-7);
+  box-shadow: var(--shadow);
+}
+
+/* ── Single pillar ────────────────────────────────────────── */
+.s-science__pillar {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--sp-2);
+  padding: var(--sp-6) var(--sp-5);
+}
+
+/* ── Icon wrapper ─────────────────────────────────────────── */
+.s-science__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: var(--surface-2);
+  color: var(--green);
+  flex-shrink: 0;
+  margin-bottom: var(--sp-1);
+}
+
+/* ── Pillar title ─────────────────────────────────────────── */
+.s-science__pillar-title {
+  font-family: var(--font-display);
+  font-size: var(--s-1);
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: -.01em;
+  margin: 0;
+  line-height: 1.2;
+}
+
+/* ── Pillar description ───────────────────────────────────── */
+.s-science__pillar-desc {
+  font-family: var(--font-body);
+  font-size: var(--s-0);
+  color: var(--ink-soft);
+  line-height: 1.55;
+  max-width: 24ch;
+  margin: 0;
+}
+
+/* ── Dividers between pillars ─────────────────────────────── */
+.s-science__rule {
+  width: 1px;
+  background: var(--line);
+  align-self: stretch;
+  flex-shrink: 0;
+}
+
+/* ── Footer: body + CTA ───────────────────────────────────── */
+.s-science__footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sp-4);
+  text-align: center;
+}
+
+.s-science__body {
+  font-family: var(--font-body);
+  font-size: var(--s-0);
+  color: var(--ink-soft);
+  line-height: 1.7;
+  max-width: 60ch;
+  margin: 0;
+}
+
+/* ── Reveal stagger ───────────────────────────────────────── */
+.s-science__header.reveal  { transition-delay: 0s; }
+.s-science__pillars.reveal { transition-delay: .12s; }
+.s-science__footer.reveal  { transition-delay: .24s; }
+
+/* ── Mobile: stack pillars ────────────────────────────────── */
+@media (max-width: 720px) {
+  .s-science__pillars {
+    flex-direction: column;
+    border-radius: var(--radius-lg);
+  }
+
+  .s-science__rule {
+    width: auto;
+    height: 1px;
+    align-self: stretch;
+  }
+
+  .s-science__pillar {
+    padding: var(--sp-5) var(--sp-4);
+  }
+
+  .s-science__pillar-desc {
+    max-width: 40ch;
+  }
+
+  .s-science__h2 {
+    font-size: clamp(1.6rem, 6vw, 2.2rem);
+  }
+
+  .s-science__intro {
+    font-size: var(--s-0);
+  }
+
+  .s-science__header {
+    margin-bottom: var(--sp-5);
+  }
+}
+
+/* ===== 07-founder.css ===== */
+/* ============================================================
+   V*GAM Biome — 07-founder.css
+   Founder story · white bg · 2-col (photo left, text right) · reveal
+   All rules scoped under .s-founder
+   ============================================================ */
+
+/* ── Band shell ───────────────────────────────────────────── */
+.s-founder {
+  background: var(--surface);
+}
+
+/* ── Inner 2-col grid ─────────────────────────────────────── */
+.s-founder__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(var(--sp-6), 6vw, var(--sp-9));
+  align-items: center;
+}
+
+/* ── Media (photo) column ─────────────────────────────────── */
+.s-founder__media {
+  /* image is LEFT — no reorder needed */
+}
+
+.s-founder__img-wrap {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  aspect-ratio: 4 / 5;
+  background: var(--surface-2);
+  box-shadow: var(--shadow);
+}
+
+.s-founder__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+
+/* ── Content (text) column ────────────────────────────────── */
+.s-founder__content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+  align-items: flex-start;
+}
+
+/* ── Eyebrow ──────────────────────────────────────────────── */
+.s-founder__eyebrow {
+  color: var(--green-deep);
+  margin-bottom: 0;
+}
+
+/* ── Heading ──────────────────────────────────────────────── */
+.s-founder__h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 3.5vw, 2.75rem);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -.03em;
+  color: var(--ink);
+  margin: 0;
+}
+
+/* ── Body paragraph ───────────────────────────────────────── */
+.s-founder__body {
+  font-family: var(--font-body);
+  font-size: var(--s-1);
+  color: var(--ink-soft);
+  line-height: 1.7;
+  max-width: 52ch;
+  margin: 0;
+}
+
+/* ── Signature line ───────────────────────────────────────── */
+.s-founder__signature {
+  font-family: var(--font-display);
+  font-size: var(--s-0);
+  font-weight: 500;
+  font-style: italic;
+  color: var(--green-deep);
+  letter-spacing: .01em;
+  margin: 0;
+  padding-left: .1em;
+}
+
+/* ── CTA button ───────────────────────────────────────────── */
+.s-founder__content .btn {
+  margin-top: var(--sp-1);
+}
+
+/* ── Reveal stagger ───────────────────────────────────────── */
+.s-founder__media.reveal   { transition-delay: 0s; }
+.s-founder__content.reveal { transition-delay: .15s; }
+
+/* ── Tablet: tighten gap ──────────────────────────────────── */
+@media (max-width: 900px) {
+  .s-founder__inner {
+    gap: var(--sp-5);
+  }
+
+  .s-founder__h2 {
+    font-size: clamp(1.5rem, 4vw, 2.2rem);
+  }
+
+  .s-founder__body {
+    font-size: var(--s-0);
+  }
+}
+
+/* ── Mobile: stack image above text ──────────────────────── */
+@media (max-width: 680px) {
+  .s-founder__inner {
+    grid-template-columns: 1fr;
+    gap: var(--sp-5);
+  }
+
+  /* image stays first in DOM → renders above text naturally */
+  .s-founder__img-wrap {
+    aspect-ratio: 3 / 2;     /* landscape crop on mobile */
+  }
+
+  .s-founder__img {
+    object-position: center 20%;
+  }
+
+  .s-founder__content {
+    gap: var(--sp-3);
+  }
+
+  .s-founder__body {
+    max-width: none;
+  }
+}
+
+/* ===== 08-reviews.css ===== */
+/* ============================================================
+   08-reviews.css — Reviews Wall · V*GAM Biome
+   6 cards · 3-col desktop · 2-col tablet · 1-col or h-scroll mobile
+   All rules scoped under .s-reviews
+   ============================================================ */
+
+/* ----- section shell ----- */
+.s-reviews {
+  background: var(--surface-2);
+}
+
+/* ----- header block ----- */
+.s-reviews__header {
+  text-align: center;
+  margin-bottom: var(--sp-6);
+}
+
+.s-reviews__header h2 {
+  font-size: clamp(var(--s-3), 4vw, var(--s-4));
+  margin-bottom: var(--sp-4);
+}
+
+/* ----- rating summary ----- */
+.s-reviews__summary {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+  background: var(--surface);
+  border: 1.5px solid var(--line);
+  border-radius: 999px;
+  padding: .65em 1.4em;
+}
+
+.s-reviews__big-star {
+  color: var(--star);
+  font-size: var(--s-2);
+  line-height: 1;
+}
+
+.s-reviews__score {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--s-2);
+  color: var(--ink);
+  line-height: 1;
+}
+
+.s-reviews__denom {
+  font-size: var(--s-0);
+  color: var(--ink-soft);
+  font-weight: 600;
+}
+
+.s-reviews__count {
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  color: var(--ink-soft);
+  font-weight: 400;
+  padding-left: var(--sp-2);
+  border-left: 1.5px solid var(--line);
+}
+
+/* ----- review grid ----- */
+.s-reviews__grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-4);
+  align-items: start;
+}
+
+/* ----- individual review card ----- */
+.s-reviews .review {
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  border: 1.5px solid var(--line);
+  padding: var(--sp-4) var(--sp-4) var(--sp-3);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+  transition: transform .25s cubic-bezier(.2,.7,.2,1), box-shadow .25s ease;
+}
+
+.s-reviews .review:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow);
+}
+
+/* stars row — seafoam */
+.s-reviews .review__stars {
+  font-size: .95rem;
+  color: var(--star);
+  letter-spacing: .06em;
+  line-height: 1;
+}
+
+/* quote */
+.s-reviews .review__quote {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+.s-reviews .review__quote p {
+  font-family: var(--font-body);
+  font-size: var(--s-0);
+  color: var(--ink);
+  line-height: 1.65;
+  margin: 0;
+  font-style: italic;
+}
+
+/* footer: name + verified */
+.s-reviews .review__footer {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  flex-wrap: wrap;
+  margin-top: var(--sp-1);
+}
+
+.s-reviews .review__name {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--s-0);
+  color: var(--ink);
+  line-height: 1;
+}
+
+.s-reviews .review__verified {
+  font-family: var(--font-body);
+  font-size: .7rem;
+  font-weight: 600;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--green-deep);
+  background: rgba(111, 154, 130, .12);
+  padding: .2em .6em;
+  border-radius: 999px;
+  line-height: 1.4;
+}
+
+/* product label — tracked caps */
+.s-reviews .review__product {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: .65rem;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin: 0;
+  padding-top: var(--sp-2);
+  border-top: 1px solid var(--line);
+}
+
+/* ----- footnote ----- */
+.s-reviews__footnote {
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  color: var(--ink-soft);
+  opacity: .65;
+  text-align: center;
+  margin: var(--sp-5) 0 0;
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+/* tablet: 2 columns */
+@media (max-width: 1024px) {
+  .s-reviews__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--sp-3);
+  }
+}
+
+/* mobile: horizontal scroll strip */
+@media (max-width: 640px) {
+  .s-reviews__header {
+    text-align: left;
+    margin-bottom: var(--sp-4);
+  }
+
+  .s-reviews__summary {
+    flex-wrap: wrap;
+    text-align: left;
+    gap: var(--sp-1);
+    border-radius: var(--radius-lg);
+    padding: .75em 1.1em;
+  }
+
+  /* horizontal scroll on mobile */
+  .s-reviews__grid {
+    grid-template-columns: unset;
+    display: flex;
+    flex-direction: row;
+    gap: var(--sp-3);
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: var(--sp-3);
+    /* hide scrollbar visually but keep functional */
+    scrollbar-width: none;
+  }
+
+  .s-reviews__grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .s-reviews__item {
+    flex: 0 0 82vw;
+    max-width: 340px;
+    scroll-snap-align: start;
+  }
+
+  .s-reviews .review {
+    height: 100%;
+  }
+}
+
+@media (max-width: 400px) {
+  .s-reviews__item {
+    flex: 0 0 90vw;
+  }
+}
+
+/* ===== 09-clean.css ===== */
+/* ============================================================
+   09-clean.css — Clean Promise Band · V*GAM Biome
+   Dark navy bg · light text enforced · free-from + always chips
+   All rules scoped under .s-clean
+   ============================================================ */
+
+/* ----- section shell — dark navy ----- */
+.s-clean {
+  background: var(--dark);
+  /* isolate so no base.css heading color bleeds in */
+  color: #E8EDF2;
+}
+
+/* Force all text children to be light */
+.s-clean *,
+.s-clean h1,
+.s-clean h2,
+.s-clean h3,
+.s-clean p {
+  color: inherit;
+}
+
+/* ----- headings override (base.css sets color:var(--ink)) ----- */
+.s-clean h2,
+.s-clean #clean-heading {
+  color: #FFFFFF !important;
+  font-size: clamp(var(--s-3), 4.5vw, var(--s-4));
+  margin-bottom: var(--sp-2);
+}
+
+/* ----- header block ----- */
+.s-clean__header {
+  text-align: center;
+  margin-bottom: var(--sp-6);
+}
+
+.s-clean__sub {
+  font-family: var(--font-body);
+  font-size: var(--s-1);
+  color: rgba(232, 237, 242, .75) !important;
+  font-weight: 300;
+  letter-spacing: .01em;
+  margin: 0;
+}
+
+/* ----- two-column group layout ----- */
+.s-clean__groups {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-5) var(--sp-6);
+  margin-bottom: var(--sp-6);
+}
+
+/* ----- each group ----- */
+.s-clean__group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+}
+
+/* group label row: icon + text */
+.s-clean__group-label {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--s--1);
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: rgba(232, 237, 242, .55) !important;
+  margin: 0;
+}
+
+/* icon circle: stroke inherits from label */
+.s-clean__group-icon {
+  display: inline-flex;
+  align-items: center;
+  flex: 0 0 auto;
+}
+
+/* "FREE FROM" group icon color */
+.s-clean__group:first-child .s-clean__group-icon .ic {
+  stroke: rgba(232, 237, 242, .45);
+  width: 20px;
+  height: 20px;
+}
+
+/* "ALWAYS" group icon color */
+.s-clean__group:last-child .s-clean__group-icon .ic {
+  stroke: var(--green);
+  width: 20px;
+  height: 20px;
+}
+
+/* ----- chip list ----- */
+.s-clean__chips {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+}
+
+/* ----- chip base overrides for dark bg ----- */
+.s-clean .s-clean__chip {
+  /* override base .chip defaults */
+  background: rgba(255, 255, 255, .06);
+  border-color: rgba(255, 255, 255, .18);
+  color: #E8EDF2;
+  font-size: .72rem;
+  letter-spacing: .08em;
+  padding: .55em 1em;
+  transition: background .2s, border-color .2s;
+}
+
+.s-clean .s-clean__chip:hover {
+  background: rgba(255, 255, 255, .11);
+  border-color: rgba(255, 255, 255, .32);
+}
+
+/* inline SVG icon inside chip */
+.s-clean__chip-icon {
+  width: 12px;
+  height: 12px;
+  display: inline-block;
+  flex: 0 0 auto;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* "FREE FROM" chip icon: warm white-ish cross */
+.s-clean__chip--free .s-clean__chip-icon {
+  stroke: rgba(232, 237, 242, .60);
+}
+
+/* "ALWAYS" chip icon: seafoam check */
+.s-clean__chip--always .s-clean__chip-icon {
+  stroke: var(--green);
+}
+
+/* "ALWAYS" chip border: subtle green tint */
+.s-clean .s-clean__chip--always {
+  border-color: rgba(111, 154, 130, .40);
+  background: rgba(111, 154, 130, .10);
+}
+
+.s-clean .s-clean__chip--always:hover {
+  background: rgba(111, 154, 130, .18);
+  border-color: rgba(111, 154, 130, .6);
+}
+
+/* ----- divider line between groups (visual) ----- */
+.s-clean__groups {
+  position: relative;
+}
+
+.s-clean__groups::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: rgba(255, 255, 255, .10);
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+/* ----- CTA ----- */
+.s-clean__cta {
+  text-align: center;
+}
+
+/* btn-light override on dark bg ensures correct contrast */
+.s-clean .btn-light {
+  background: #fff;
+  color: var(--dark);
+  border-color: #fff;
+}
+
+.s-clean .btn-light:hover {
+  background: transparent;
+  color: #fff;
+  border-color: #fff;
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+/* stack chip groups on tablet and below */
+@media (max-width: 840px) {
+  .s-clean__groups {
+    grid-template-columns: 1fr;
+    gap: var(--sp-5);
+  }
+
+  .s-clean__groups::before {
+    display: none;
+  }
+
+  .s-clean__header {
+    text-align: left;
+  }
+
+  .s-clean__cta {
+    text-align: left;
+  }
+}
+
+@media (max-width: 480px) {
+  .s-clean__chips {
+    gap: var(--sp-1);
+  }
+
+  .s-clean h2,
+  .s-clean #clean-heading {
+    font-size: var(--s-3);
+  }
+
+  .s-clean__sub {
+    font-size: var(--s-0);
+  }
+}
+
+/* ===== 10-newsletter.css ===== */
+/* ============================================================
+   V*GAM Biome — 10-newsletter.css
+   Newsletter signup band — scoped under .s-newsletter
+   ============================================================ */
+
+.s-newsletter {
+  background: var(--surface-2);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle organic tint overlay — very soft green veil */
+.s-newsletter::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 80% 120% at 50% 0%, rgba(111,154,130,.10) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.s-newsletter__wrap {
+  position: relative;
+  z-index: 1;
+  max-width: 680px;
+}
+
+/* Heading — slightly smaller than default h2 to feel newsletter-y */
+.s-newsletter__heading {
+  font-size: var(--s-4);
+  color: var(--ink);
+  margin-bottom: var(--sp-3);
+  letter-spacing: -.025em;
+}
+
+.s-newsletter__sub {
+  font-size: var(--s-1);
+  color: var(--ink-soft);
+  margin-bottom: var(--sp-5);
+  line-height: 1.55;
+}
+
+/* Visually hidden label (accessible) */
+.s-newsletter__label {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* Inline form row */
+.s-newsletter__form {
+  width: 100%;
+}
+
+.s-newsletter__row {
+  display: flex;
+  align-items: stretch;
+  gap: var(--sp-3);
+  justify-content: center;
+  width: 100%;
+  max-width: 560px;
+  margin-inline: auto;
+}
+
+.s-newsletter__input {
+  flex: 1 1 auto;
+  min-width: 0;
+  height: 54px;
+  padding-inline: var(--sp-4);
+  font-family: var(--font-body);
+  font-size: var(--s-0);
+  color: var(--ink);
+  background: var(--surface);
+  border: 1.5px solid var(--line);
+  border-radius: 999px;
+  outline: none;
+  transition: border-color .2s, box-shadow .2s;
+  -webkit-appearance: none;
+}
+
+.s-newsletter__input::placeholder {
+  color: var(--ink-soft);
+  opacity: .7;
+}
+
+.s-newsletter__input:focus {
+  border-color: var(--green);
+  box-shadow: 0 0 0 3px rgba(111,154,130,.18);
+}
+
+.s-newsletter__btn {
+  flex-shrink: 0;
+  height: 54px;
+  padding-inline: 2em;
+  font-size: var(--s-0);
+}
+
+/* Fine print */
+.s-newsletter__fine {
+  margin-top: var(--sp-3);
+  margin-bottom: 0;
+  font-size: var(--s--1);
+  color: var(--ink-soft);
+  opacity: .75;
+}
+
+/* ── MOBILE ─────────────────────────────────────────────────── */
+@media (max-width: 600px) {
+
+  .s-newsletter__heading {
+    font-size: var(--s-3);
+  }
+
+  .s-newsletter__row {
+    flex-direction: column;
+    gap: var(--sp-3);
+    align-items: stretch;
+  }
+
+  .s-newsletter__input {
+    width: 100%;
+  }
+
+  .s-newsletter__btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* ===== 11-footer.css ===== */
+/* ============================================================
+   V*GAM Biome — 11-footer.css
+   Dark navy footer — scoped entirely under .site-footer
+   ============================================================ */
+
+.site-footer {
+  background: var(--dark);           /* #122B41 navy */
+  color: #D7DEE4;                    /* light text — ≥4.5:1 on dark */
+  padding-block: var(--sp-7) var(--sp-5);
+  font-family: var(--font-body);
+  font-size: var(--s-0);
+  line-height: 1.6;
+}
+
+/* ── TOP: Brand column + 4 link columns ──────────────────────── */
+.site-footer__top {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: var(--sp-6);
+  align-items: start;
+}
+
+/* ── BRAND COLUMN ────────────────────────────────────────────── */
+.site-footer__logo-link {
+  display: inline-flex;
+  margin-bottom: var(--sp-4);
+  text-decoration: none;
+}
+
+.site-footer__blurb {
+  font-size: var(--s-0);
+  color: rgba(215,222,228,.80);
+  line-height: 1.6;
+  margin-bottom: var(--sp-4);
+  max-width: 240px;
+}
+
+/* ── SOCIAL ICONS ────────────────────────────────────────────── */
+.site-footer__social {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  margin-bottom: var(--sp-4);
+}
+
+.site-footer__social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(215,222,228,.25);
+  color: rgba(215,222,228,.75);
+  text-decoration: none;
+  transition: color .2s, border-color .2s, background .2s;
+}
+
+.site-footer__social-link:hover {
+  color: var(--green);
+  border-color: var(--green);
+  background: rgba(111,154,130,.12);
+}
+
+/* ── TRUST CHIPS ─────────────────────────────────────────────── */
+.site-footer__trust {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+}
+
+/* Override .chip base to work on dark bg */
+.site-footer__chip {
+  background: rgba(215,222,228,.08);
+  border-color: rgba(215,222,228,.22);
+  color: rgba(215,222,228,.85);
+  font-size: .72rem;
+  padding: .4em .8em;
+}
+
+/* ── 4-COLUMN NAV GRID ───────────────────────────────────────── */
+.site-footer__nav {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--sp-4);
+}
+
+/* column header — Montserrat caps, --green seafoam */
+.site-footer__col-head {
+  font-family: var(--font-display);
+  font-size: var(--s--1);
+  font-weight: 700;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--green);
+  margin: 0 0 var(--sp-3);
+}
+
+.site-footer__col-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+}
+
+.site-footer__link {
+  font-size: var(--s-0);
+  color: #D7DEE4;
+  text-decoration: none;
+  transition: color .2s;
+  display: inline-block;
+}
+
+.site-footer__link:hover {
+  color: var(--green);
+}
+
+/* ── RULE ────────────────────────────────────────────────────── */
+.site-footer__rule {
+  border: none;
+  border-top: 1px solid rgba(215,222,228,.15);
+  margin: var(--sp-6) 0 var(--sp-4);
+}
+
+/* ── BOTTOM BAR ──────────────────────────────────────────────── */
+.site-footer__bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--sp-3);
+}
+
+.site-footer__copy {
+  font-family: var(--font-display);
+  font-size: var(--s--1);
+  color: rgba(215,222,228,.55);
+  margin: 0;
+  letter-spacing: .04em;
+}
+
+/* Legal links */
+.site-footer__legal {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+}
+
+.site-footer__legal-link {
+  font-family: var(--font-display);
+  font-size: var(--s--1);
+  color: rgba(215,222,228,.65);
+  text-decoration: none;
+  letter-spacing: .04em;
+  transition: color .2s;
+}
+
+.site-footer__legal-link:hover {
+  color: var(--green);
+}
+
+.site-footer__dot {
+  color: rgba(215,222,228,.35);
+  font-size: var(--s--1);
+}
+
+/* Payment marks */
+.site-footer__pay {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+}
+
+.site-footer__pay-mark {
+  display: inline-flex;
+  align-items: center;
+  opacity: .75;
+  transition: opacity .2s;
+}
+
+.site-footer__pay-mark:hover {
+  opacity: 1;
+}
+
+/* ── RESPONSIVE ──────────────────────────────────────────────── */
+
+/* 2-up columns at tablet */
+@media (max-width: 1060px) {
+  .site-footer__top {
+    grid-template-columns: 1fr;
+    gap: var(--sp-5);
+  }
+
+  .site-footer__blurb {
+    max-width: 360px;
+  }
+
+  .site-footer__nav {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* 2×2 grid at small tablet */
+@media (max-width: 720px) {
+  .site-footer__nav {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--sp-4) var(--sp-5);
+  }
+
+  .site-footer__bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--sp-3);
+  }
+}
+
+/* 1-up columns at mobile */
+@media (max-width: 480px) {
+  .site-footer {
+    padding-block: var(--sp-6) var(--sp-4);
+  }
+
+  .site-footer__nav {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .site-footer__trust {
+    gap: var(--sp-2);
+  }
+
+  .site-footer__pay {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 360px) {
+  .site-footer__nav {
+    grid-template-columns: 1fr;
+  }
+}
+

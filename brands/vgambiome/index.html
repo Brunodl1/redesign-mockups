@@ -1,0 +1,1187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>V*GAM Biome — Science-based microbiome skincare | Made in Canada</title>
+<meta name="description" content="Clean, vegan microbiome skincare that works with your skin. 35 active ingredients, 2 products, all year. For every skin type — made in Canada by Dr. Mireille Vega.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="base.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<main>
+<!-- 01-header.html -->
+<!-- ============================================================
+     V*GAM Biome — Section 01: Announcement Bar + Header
+     split-nav · centered logo · sticky · mobile-responsive
+     ============================================================ -->
+
+<!-- ANNOUNCEMENT BAR -->
+<div class="announce">
+  <div class="announce__inner wrap">
+    <span class="announce__full">
+      <a href="https://www.google.com">Free shipping over $75</a>
+      <span class="announce__dot">·</span>
+      <a href="https://www.google.com">Clean &amp; vegan — made in Canada 🇨🇦</a>
+      <span class="announce__dot">·</span>
+      <a href="https://www.google.com">35 ingredients. 2 products. All year.</a>
+    </span>
+    <span class="announce__mobile">
+      <a href="https://www.google.com">Free shipping over $75</a>
+    </span>
+  </div>
+</div>
+
+<!-- STICKY HEADER -->
+<header class="site-header">
+  <div class="site-header__inner wrap">
+
+    <!-- LEFT NAV (items 1–3) -->
+    <nav class="site-header__nav site-header__nav--left" aria-label="Primary navigation left">
+      <a href="https://www.google.com" class="site-header__nav-link">Shop</a>
+      <a href="https://www.google.com" class="site-header__nav-link">The GO2 Duo</a>
+      <a href="https://www.google.com" class="site-header__nav-link">One Human Skin</a>
+    </nav>
+
+    <!-- CENTER LOGO -->
+    <a href="https://www.google.com" class="site-header__logo" aria-label="V*GAM Biome — Home">
+      <img
+        src="https://vgambiome.ca/cdn/shop/files/L_VGAM_Marine.png?height=120"
+        alt="V*GAM Biome"
+        class="site-header__logo-img"
+        width="auto"
+        height="34"
+      />
+    </a>
+
+    <!-- RIGHT NAV (items 4–6) + UTILS -->
+    <div class="site-header__right">
+      <nav class="site-header__nav site-header__nav--right" aria-label="Primary navigation right">
+        <a href="https://www.google.com" class="site-header__nav-link">The Science</a>
+        <a href="https://www.google.com" class="site-header__nav-link">About</a>
+        <a href="https://www.google.com" class="site-header__nav-link">Journal</a>
+      </nav>
+
+      <!-- UTILITY ICONS -->
+      <div class="site-header__utils">
+        <!-- Search -->
+        <button class="site-header__icon-btn site-header__util--search" aria-label="Search">
+          <svg class="ic" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="11" cy="11" r="7"/>
+            <line x1="16.5" y1="16.5" x2="22" y2="22"/>
+          </svg>
+        </button>
+        <!-- Account -->
+        <button class="site-header__icon-btn site-header__util--account" aria-label="Account">
+          <svg class="ic" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="8" r="4"/>
+            <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
+          </svg>
+        </button>
+        <!-- Cart -->
+        <button class="site-header__icon-btn site-header__util--cart" aria-label="Cart — 0 items">
+          <svg class="ic" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
+            <line x1="3" y1="6" x2="21" y2="6"/>
+            <path d="M16 10a4 4 0 01-8 0"/>
+          </svg>
+          <span class="site-header__cart-badge" aria-label="0 items in cart">0</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- MOBILE HAMBURGER (left) -->
+    <button class="site-header__hamburger" aria-label="Open menu" aria-expanded="false">
+      <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true">
+        <line x1="3" y1="6" x2="21" y2="6"/>
+        <line x1="3" y1="12" x2="21" y2="12"/>
+        <line x1="3" y1="18" x2="21" y2="18"/>
+      </svg>
+    </button>
+
+    <!-- MOBILE LOGO CENTER -->
+    <a href="https://www.google.com" class="site-header__logo-mobile" aria-label="V*GAM Biome — Home">
+      <img
+        src="https://vgambiome.ca/cdn/shop/files/L_VGAM_Marine.png?height=120"
+        alt="V*GAM Biome"
+        height="28"
+        width="auto"
+      />
+    </a>
+
+    <!-- MOBILE CART ONLY -->
+    <button class="site-header__cart-mobile" aria-label="Cart — 0 items">
+      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
+        <line x1="3" y1="6" x2="21" y2="6"/>
+        <path d="M16 10a4 4 0 01-8 0"/>
+      </svg>
+      <span class="site-header__cart-badge" aria-label="0 items in cart">0</span>
+    </button>
+
+  </div>
+</header>
+
+<!-- 02-hero.html -->
+<section class="sec s-hero hero-split">
+  <div class="wrap">
+    <div class="s-hero__grid">
+
+      <!-- LEFT: text panel -->
+      <div class="s-hero__text">
+        <p class="eyebrow">Microbiome Skincare · Made in Canada</p>
+
+        <h1 class="s-hero__headline">Nature makes<br>science.</h1>
+
+        <p class="s-hero__sub">One simple routine — 35 active ingredients in just 2 products — that works with your skin's microbiome. For every skin type, age and season.</p>
+
+        <a href="https://www.google.com" class="btn btn-primary s-hero__cta">Discover the GO2 Duo</a>
+
+        <div class="s-hero__chips">
+          <span class="chip">★ Loved by sensitive skin</span>
+          <span class="chip">Clean &amp; Vegan</span>
+          <span class="chip">No parabens or perfume</span>
+        </div>
+      </div>
+
+      <!-- RIGHT: product image -->
+      <div class="s-hero__img-wrap">
+        <img
+          class="s-hero__img"
+          src="https://vgambiome.ca/cdn/shop/files/V_GAM_HR_duo_1_2_copy.jpg?v=1687968369&width=1000"
+          alt="The GO2 Duo — facial cream and mineral serum by V*GAM Biome on marble"
+        >
+        <span class="s-hero__float-chip chip">2 products · all skin types</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- 03-trust.html -->
+<!-- ============================================================
+     V*GAM Biome — Section 03: Trust Strip
+     4-item row · inline SVG icons · slim band · instant (no reveal)
+     ============================================================ -->
+
+<section class="sec s-trust" aria-label="Brand trust signals">
+  <div class="wrap">
+    <ul class="s-trust__row" role="list">
+
+      <!-- 1. Clean & Vegan — leaf icon -->
+      <li class="s-trust__item">
+        <span class="s-trust__icon" aria-hidden="true">
+          <svg class="ic" width="34" height="34" viewBox="0 0 24 24" fill="none"
+               stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2C6.5 2 3 7.5 3 12c0 5.5 4 9 9 9s9-3.5 9-9c0-1.2-.2-2.4-.6-3.5"/>
+            <path d="M12 2c2.5 2.5 4 6 4 10"/>
+            <path d="M12 2C9.5 4.5 8 8 8 12"/>
+            <line x1="12" y1="12" x2="12" y2="21"/>
+          </svg>
+        </span>
+        <span class="s-trust__text">
+          <strong class="s-trust__label">Clean &amp; Vegan</strong>
+          <span class="s-trust__sub">No BHA, parabens, phthalates or perfume</span>
+        </span>
+      </li>
+
+      <!-- 2. Made in Canada — maple leaf / pin icon -->
+      <li class="s-trust__item">
+        <span class="s-trust__icon" aria-hidden="true">
+          <svg class="ic" width="34" height="34" viewBox="0 0 24 24" fill="none"
+               stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2l1.8 3.6 3.9.6-2.8 2.8.6 3.9L12 11.1l-3.5 1.8.6-3.9L6.3 6.2l3.9-.6z"/>
+            <line x1="12" y1="12" x2="12" y2="22"/>
+            <line x1="9" y1="22" x2="15" y2="22"/>
+          </svg>
+        </span>
+        <span class="s-trust__text">
+          <strong class="s-trust__label">Made in Canada</strong>
+          <span class="s-trust__sub">Formulated by Dr.&nbsp;Mireille Vega</span>
+        </span>
+      </li>
+
+      <!-- 3. All Skin Types — layers / skin icon -->
+      <li class="s-trust__item">
+        <span class="s-trust__icon" aria-hidden="true">
+          <svg class="ic" width="34" height="34" viewBox="0 0 24 24" fill="none"
+               stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <ellipse cx="12" cy="12" rx="9" ry="5"/>
+            <ellipse cx="12" cy="12" rx="9" ry="9"/>
+            <path d="M3 12c0 2.8 4 5 9 5s9-2.2 9-5"/>
+            <path d="M3 7c0 2.8 4 5 9 5s9-2.2 9-5"/>
+          </svg>
+        </span>
+        <span class="s-trust__text">
+          <strong class="s-trust__label">All Skin Types</strong>
+          <span class="s-trust__sub">All ages, all seasons</span>
+        </span>
+      </li>
+
+      <!-- 4. Microbiome-Friendly — cells / microbe icon -->
+      <li class="s-trust__item">
+        <span class="s-trust__icon" aria-hidden="true">
+          <svg class="ic" width="34" height="34" viewBox="0 0 24 24" fill="none"
+               stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="3"/>
+            <circle cx="5.5" cy="8" r="2"/>
+            <circle cx="18.5" cy="8" r="2"/>
+            <circle cx="5.5" cy="16" r="2"/>
+            <circle cx="18.5" cy="16" r="2"/>
+            <line x1="7.5" y1="8.8" x2="9" y2="10"/>
+            <line x1="15" y1="10" x2="16.5" y2="8.8"/>
+            <line x1="7.5" y1="15.2" x2="9" y2="14"/>
+            <line x1="15" y1="14" x2="16.5" y2="15.2"/>
+          </svg>
+        </span>
+        <span class="s-trust__text">
+          <strong class="s-trust__label">Microbiome-Friendly</strong>
+          <span class="s-trust__sub">Works with your skin flora</span>
+        </span>
+      </li>
+
+    </ul>
+  </div>
+</section>
+
+<!-- 04-simplicity.html -->
+<!-- ============================================================
+     V*GAM Biome — Section 04: Simplicity Stat Band
+     Bold editorial · dark navy bg · 3 giant stats · reveal
+     ============================================================ -->
+
+<section class="sec s-simplicity" aria-label="Radical simplicity — our formulation philosophy">
+  <div class="wrap">
+
+    <!-- Eyebrow + Headline -->
+    <div class="s-simplicity__header reveal">
+      <p class="eyebrow s-simplicity__eyebrow">Skincare, Simplified</p>
+      <h2 class="s-simplicity__h2">35 ingredients.&thinsp;2&nbsp;products.&thinsp;All&nbsp;year.</h2>
+    </div>
+
+    <!-- 3 stat blocks -->
+    <div class="s-simplicity__stats reveal">
+
+      <div class="s-simplicity__stat">
+        <span class="s-simplicity__num" aria-label="35">35</span>
+        <span class="s-simplicity__label">active natural ingredients</span>
+      </div>
+
+      <div class="s-simplicity__divider" aria-hidden="true"></div>
+
+      <div class="s-simplicity__stat">
+        <span class="s-simplicity__num" aria-label="2">2</span>
+        <span class="s-simplicity__label">products for your whole routine</span>
+      </div>
+
+      <div class="s-simplicity__divider" aria-hidden="true"></div>
+
+      <div class="s-simplicity__stat">
+        <span class="s-simplicity__num" aria-label="1">1</span>
+        <span class="s-simplicity__label">routine for every skin type &amp; season</span>
+      </div>
+
+    </div>
+
+    <!-- Supporting copy + CTA -->
+    <div class="s-simplicity__footer reveal">
+      <p class="s-simplicity__body">
+        We replaced the 10-step shelf with two adaptive formulas that nourish your
+        skin's microbiome&nbsp;— nothing you don't need.
+      </p>
+      <a href="https://www.google.com" class="btn btn-light">Why two is enough</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- 05-bestsellers.html -->
+<!-- ============================================================
+     V*GAM Biome — Section 05: Bestsellers Product Grid
+     4-col desktop · 3-col tablet · 2-col mobile · 8 cards · reveal
+     ============================================================ -->
+
+<section class="sec s-bestsellers" aria-labelledby="bestsellers-heading">
+  <div class="wrap">
+
+    <!-- Header row: eyebrow + h2 left · shop-all right -->
+    <div class="s-bestsellers__header">
+      <div class="s-bestsellers__header-left">
+        <p class="eyebrow">Bestsellers</p>
+        <h2 id="bestsellers-heading">Loved by every skin&nbsp;type</h2>
+      </div>
+      <a href="https://www.google.com" class="s-bestsellers__shop-all" aria-label="Shop all products">
+        Shop all <span aria-hidden="true">→</span>
+      </a>
+    </div>
+
+    <!-- Product grid -->
+    <ul class="s-bestsellers__grid reveal" role="list" aria-label="Bestselling products">
+
+      <!-- 1. The GO2 Duo — BESTSELLER · $96 -->
+      <li class="s-bestsellers__item">
+        <a href="https://www.google.com" class="card" aria-label="The GO2 Duo — $96">
+          <div class="card__img-wrap">
+            <span class="card__badge card__badge--bestseller">Bestseller</span>
+            <img
+              src="https://vgambiome.ca/cdn/shop/files/go2-biotik-duo-facial-cream-mineral-serum_1.jpg?v=1692743119"
+              alt="The GO2 Duo — Cream and mineral serum"
+              class="card__img"
+              loading="lazy"
+              width="400"
+              height="400"
+            />
+          </div>
+          <div class="card__body">
+            <h3 class="card__name">The GO2 Duo</h3>
+            <p class="card__desc">Cream + mineral serum, all skin types</p>
+            <div class="card__meta">
+              <span class="stars" aria-label="4.9 out of 5 stars">★★★★★</span>
+              <span class="card__reviews">(312)</span>
+            </div>
+            <p class="card__price">$96 USD</p>
+          </div>
+          <div class="card__footer">
+            <span class="btn btn-primary btn-block" role="button">Add to cart</span>
+          </div>
+        </a>
+      </li>
+
+      <!-- 2. Pure Artik Facial Cleanser — BESTSELLER · $38 -->
+      <li class="s-bestsellers__item">
+        <a href="https://www.google.com" class="card" aria-label="Pure Artik Facial Cleanser — $38">
+          <div class="card__img-wrap">
+            <span class="card__badge card__badge--bestseller">Bestseller</span>
+            <img
+              src="https://vgambiome.ca/cdn/shop/files/pure-artik-facial-cleaner_0439d883-7ff4-4b57-b130-9b824bba55fd.jpg?v=1692743212"
+              alt="Pure Artik Facial Cleanser"
+              class="card__img"
+              loading="lazy"
+              width="400"
+              height="400"
+            />
+          </div>
+          <div class="card__body">
+            <h3 class="card__name">Pure Artik Facial Cleanser</h3>
+            <p class="card__desc">Gentle daily cleanser</p>
+            <div class="card__meta">
+              <span class="stars" aria-label="4.8 out of 5 stars">★★★★★</span>
+              <span class="card__reviews">(156)</span>
+            </div>
+            <p class="card__price">$38 USD</p>
+          </div>
+          <div class="card__footer">
+            <span class="btn btn-primary btn-block" role="button">Add to cart</span>
+          </div>
+        </a>
+      </li>
+
+      <!-- 3. Biotik Elements Facial Cream — no badge · $58 -->
+      <li class="s-bestsellers__item">
+        <a href="https://www.google.com" class="card" aria-label="Biotik Elements Facial Cream — $58">
+          <div class="card__img-wrap">
+            <img
+              src="https://vgambiome.ca/cdn/shop/files/biotik-elements-facial-cream.jpg?v=1744820337"
+              alt="Biotik Elements Facial Cream"
+              class="card__img"
+              loading="lazy"
+              width="400"
+              height="400"
+            />
+          </div>
+          <div class="card__body">
+            <h3 class="card__name">Biotik Elements Facial Cream</h3>
+            <p class="card__desc">Nourishing day &amp; night</p>
+            <div class="card__meta">
+              <span class="stars" aria-label="4.9 out of 5 stars">★★★★★</span>
+              <span class="card__reviews">(98)</span>
+            </div>
+            <p class="card__price">$58 USD</p>
+          </div>
+          <div class="card__footer">
+            <span class="btn btn-primary btn-block" role="button">Add to cart</span>
+          </div>
+        </a>
+      </li>
+
+      <!-- 4. Biotik Emprint Hand & Body Cream — no badge · $32 -->
+      <li class="s-bestsellers__item">
+        <a href="https://www.google.com" class="card" aria-label="Biotik Emprint Hand & Body Cream — $32">
+          <div class="card__img-wrap">
+            <img
+              src="https://vgambiome.ca/cdn/shop/files/hand-cream-biotik-emprint_70a6b8ff-9824-42a1-b899-dd7b28c4b3ce.jpg?v=1692743228"
+              alt="Biotik Emprint Hand and Body Cream"
+              class="card__img"
+              loading="lazy"
+              width="400"
+              height="400"
+            />
+          </div>
+          <div class="card__body">
+            <h3 class="card__name">Biotik Emprint Hand &amp; Body Cream</h3>
+            <p class="card__desc">Rich hand &amp; body care</p>
+            <div class="card__meta">
+              <span class="stars" aria-label="4.8 out of 5 stars">★★★★★</span>
+              <span class="card__reviews">(64)</span>
+            </div>
+            <p class="card__price">$32 USD</p>
+          </div>
+          <div class="card__footer">
+            <span class="btn btn-primary btn-block" role="button">Add to cart</span>
+          </div>
+        </a>
+      </li>
+
+      <!-- 5. PLUS Boost Balm — NEW · $28 -->
+      <li class="s-bestsellers__item">
+        <a href="https://www.google.com" class="card" aria-label="PLUS Boost Balm — $28">
+          <div class="card__img-wrap">
+            <span class="card__badge card__badge--new">New</span>
+            <img
+              src="https://vgambiome.ca/cdn/shop/files/CremePLUS-1.jpg?v=1732748781"
+              alt="PLUS Boost Balm"
+              class="card__img"
+              loading="lazy"
+              width="400"
+              height="400"
+            />
+          </div>
+          <div class="card__body">
+            <h3 class="card__name">PLUS Boost Balm</h3>
+            <p class="card__desc">Multi-use repair balm</p>
+            <div class="card__meta">
+              <span class="stars" aria-label="4.9 out of 5 stars">★★★★★</span>
+              <span class="card__reviews">(47)</span>
+            </div>
+            <p class="card__price">$28 USD</p>
+          </div>
+          <div class="card__footer">
+            <span class="btn btn-primary btn-block" role="button">Add to cart</span>
+          </div>
+        </a>
+      </li>
+
+      <!-- 6. The Total Skin Reset Pack — BESTSELLER · $140 -->
+      <li class="s-bestsellers__item">
+        <a href="https://www.google.com" class="card" aria-label="The Total Skin Reset Pack — $140">
+          <div class="card__img-wrap">
+            <span class="card__badge card__badge--bestseller">Bestseller</span>
+            <img
+              src="https://vgambiome.ca/cdn/shop/files/V_GAM_HR_duo_1_2_copy.jpg?v=1687968369"
+              alt="The Total Skin Reset Pack"
+              class="card__img"
+              loading="lazy"
+              width="400"
+              height="400"
+            />
+          </div>
+          <div class="card__body">
+            <h3 class="card__name">The Total Skin Reset Pack</h3>
+            <p class="card__desc">Full adaptive routine</p>
+            <div class="card__meta">
+              <span class="stars" aria-label="5.0 out of 5 stars">★★★★★</span>
+              <span class="card__reviews">(41)</span>
+            </div>
+            <p class="card__price">$140 USD</p>
+          </div>
+          <div class="card__footer">
+            <span class="btn btn-primary btn-block" role="button">Add to cart</span>
+          </div>
+        </a>
+      </li>
+
+      <!-- 7. Nomad Onboarding Routine — NEW · $45 -->
+      <li class="s-bestsellers__item">
+        <a href="https://www.google.com" class="card" aria-label="Nomad Onboarding Routine — $45">
+          <div class="card__img-wrap">
+            <span class="card__badge card__badge--new">New</span>
+            <img
+              src="https://vgambiome.ca/cdn/shop/files/vgambiome-go-2-trio-cleanser-nettoyant-creme-cream-sans-odeur-unscented-serum-15-ml-01.jpg?v=1751992199"
+              alt="Nomad Onboarding Routine — travel-size starter trio"
+              class="card__img"
+              loading="lazy"
+              width="400"
+              height="400"
+            />
+          </div>
+          <div class="card__body">
+            <h3 class="card__name">Nomad Onboarding Routine</h3>
+            <p class="card__desc">Travel-size starter trio</p>
+            <div class="card__meta">
+              <span class="stars" aria-label="4.8 out of 5 stars">★★★★★</span>
+              <span class="card__reviews">(33)</span>
+            </div>
+            <p class="card__price">$45 USD</p>
+          </div>
+          <div class="card__footer">
+            <span class="btn btn-primary btn-block" role="button">Add to cart</span>
+          </div>
+        </a>
+      </li>
+
+      <!-- 8. GO2 Duo — Unscented — no badge · $96 -->
+      <li class="s-bestsellers__item">
+        <a href="https://www.google.com" class="card" aria-label="GO2 Duo Unscented — $96">
+          <div class="card__img-wrap">
+            <img
+              src="https://vgambiome.ca/cdn/shop/files/vgambiome-go-2-duo-creme-cream-serum-45-ml-02.jpg?v=1764337845"
+              alt="GO2 Duo — Unscented fragrance-free formula"
+              class="card__img"
+              loading="lazy"
+              width="400"
+              height="400"
+            />
+          </div>
+          <div class="card__body">
+            <h3 class="card__name">GO2 Duo — Unscented</h3>
+            <p class="card__desc">Fragrance-free formula</p>
+            <div class="card__meta">
+              <span class="stars" aria-label="4.9 out of 5 stars">★★★★★</span>
+              <span class="card__reviews">(58)</span>
+            </div>
+            <p class="card__price">$96 USD</p>
+          </div>
+          <div class="card__footer">
+            <span class="btn btn-primary btn-block" role="button">Add to cart</span>
+          </div>
+        </a>
+      </li>
+
+    </ul><!-- /.s-bestsellers__grid -->
+
+    <!-- Footnote -->
+    <p class="s-bestsellers__footnote">* Ratings and review counts are illustrative.</p>
+
+  </div><!-- /.wrap -->
+</section>
+
+<!-- 06-science.html -->
+<!-- ============================================================
+     V*GAM Biome — Section 06: Microbiome Science Band
+     eyebrow + h2 + 3-pillar row (SVG icons) + body + CTA · reveal
+     ============================================================ -->
+
+<section class="sec s-science" aria-labelledby="science-heading">
+  <div class="wrap">
+
+    <!-- Header -->
+    <div class="s-science__header reveal">
+      <p class="eyebrow s-science__eyebrow">ONE HUMAN SKIN</p>
+      <h2 id="science-heading" class="s-science__h2">Skincare that works <em>with</em> your skin.</h2>
+      <p class="s-science__intro">
+        Your skin hosts trillions of microorganisms that regulate moisture, fight inflammation,
+        and keep your barrier strong. V*GAM Biome formulas are built to support that ecosystem —
+        not strip it bare.
+      </p>
+    </div>
+
+    <!-- 3-pillar row -->
+    <div class="s-science__pillars reveal">
+
+      <!-- Pillar 1: Restore -->
+      <div class="s-science__pillar">
+        <div class="s-science__icon" aria-hidden="true">
+          <!-- Restore: two curved arrows forming a cycle -->
+          <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M8 22C8 14.268 14.268 8 22 8c4.14 0 7.87 1.73 10.52 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <path d="M36 22C36 29.732 29.732 36 22 36c-4.14 0-7.87-1.73-10.52-4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <polyline points="30,7 32.52,12.5 27,12.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <polyline points="14,37 11.48,31.5 17,31.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <h3 class="s-science__pillar-title">Restore</h3>
+        <p class="s-science__pillar-desc">Gentle actives rebalance your skin's natural barrier.</p>
+      </div>
+
+      <div class="s-science__rule" aria-hidden="true"></div>
+
+      <!-- Pillar 2: Nourish -->
+      <div class="s-science__pillar">
+        <div class="s-science__icon" aria-hidden="true">
+          <!-- Nourish: leaf/drop organic shape -->
+          <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M22 8C22 8 10 16 10 25.5a12 12 0 0 0 24 0C34 16 22 8 22 8Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M22 36V22" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <path d="M22 27l-4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <path d="M22 27l4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h3 class="s-science__pillar-title">Nourish</h3>
+        <p class="s-science__pillar-desc">Feeds your skin flora — the microbiome that keeps skin resilient.</p>
+      </div>
+
+      <div class="s-science__rule" aria-hidden="true"></div>
+
+      <!-- Pillar 3: Adapt -->
+      <div class="s-science__pillar">
+        <div class="s-science__icon" aria-hidden="true">
+          <!-- Adapt: horizontal sliders / equaliser bars -->
+          <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <line x1="8" y1="14" x2="36" y2="14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="28" cy="14" r="3" stroke="currentColor" stroke-width="2" fill="none"/>
+            <line x1="8" y1="22" x2="36" y2="22" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="18" cy="22" r="3" stroke="currentColor" stroke-width="2" fill="none"/>
+            <line x1="8" y1="30" x2="36" y2="30" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="26" cy="30" r="3" stroke="currentColor" stroke-width="2" fill="none"/>
+          </svg>
+        </div>
+        <h3 class="s-science__pillar-title">Adapt</h3>
+        <p class="s-science__pillar-desc">One formula that adjusts to your skin's changing needs, all year.</p>
+      </div>
+
+    </div><!-- /.s-science__pillars -->
+
+    <!-- Supporting copy + CTA -->
+    <div class="s-science__footer reveal">
+      <p class="s-science__body">
+        Backed by biotechnology, every V*GAM Biome ingredient is chosen for a reason.
+        No fragrance overload, no disruptive surfactants — just clean, targeted science
+        formulated to restore balance from within.
+      </p>
+      <a href="https://www.google.com" class="btn btn-outline">The science</a>
+    </div>
+
+  </div><!-- /.wrap -->
+</section>
+
+<!-- 07-founder.html -->
+<!-- ============================================================
+     V*GAM Biome — Section 07: Founder Story
+     2-col · photo LEFT · text RIGHT · warm credibility · reveal
+     ============================================================ -->
+
+<section class="sec s-founder" aria-labelledby="founder-heading">
+  <div class="wrap">
+
+    <div class="s-founder__inner">
+
+      <!-- Left: founder photo -->
+      <div class="s-founder__media reveal">
+        <div class="s-founder__img-wrap">
+          <img
+            src="https://vgambiome.ca/cdn/shop/files/MIREILLE_VEGA_159510_copy_2.jpg?v=1693337497&width=900"
+            alt="Dr. Mireille Vega, founder and chemist of V*GAM Biome"
+            class="s-founder__img"
+            loading="lazy"
+            width="900"
+            height="900"
+          />
+        </div>
+      </div><!-- /.s-founder__media -->
+
+      <!-- Right: story text -->
+      <div class="s-founder__content reveal">
+
+        <p class="eyebrow s-founder__eyebrow">MEET THE FOUNDER</p>
+
+        <h2 id="founder-heading" class="s-founder__h2">Created by Dr.&nbsp;Mireille&nbsp;Vega</h2>
+
+        <p class="s-founder__body">
+          A chemist with a PhD in biotechnology and 35 years of experience,
+          Dr. Mireille Vega built V*GAM Biome on one belief: skincare should work
+          with your skin's biology, not against it. No fillers, no fluff&nbsp;—
+          just clean, adaptive formulas made in Canada.
+        </p>
+
+        <p class="s-founder__signature" aria-label="Signed: Dr. Mireille V., Founder and Chemist">
+          &mdash;&thinsp;Dr. Mireille V., Founder &amp; Chemist
+        </p>
+
+        <a href="https://www.google.com" class="btn btn-primary">Our story</a>
+
+      </div><!-- /.s-founder__content -->
+
+    </div><!-- /.s-founder__inner -->
+
+  </div><!-- /.wrap -->
+</section>
+
+<!-- 08-reviews.html -->
+<!-- ============================================================
+     V*GAM Biome — Section 08: Reviews Wall
+     Rating summary + 6 cards · 3-col desktop · 2-col tablet · 1-col mobile
+     ============================================================ -->
+
+<section class="sec s-reviews" aria-labelledby="reviews-heading">
+  <div class="wrap">
+
+    <!-- Header -->
+    <div class="s-reviews__header reveal">
+      <p class="eyebrow">Real Skin, Real Results</p>
+      <h2 id="reviews-heading">Loved by sensitive skin</h2>
+
+      <!-- Rating summary bar -->
+      <div class="s-reviews__summary" aria-label="4.9 out of 5 stars based on over 900 reviews">
+        <span class="s-reviews__big-star" aria-hidden="true">★</span>
+        <span class="s-reviews__score">4.9<span class="s-reviews__denom">/5</span></span>
+        <span class="s-reviews__count">based on 900+ reviews</span>
+      </div>
+    </div>
+
+    <!-- Review grid -->
+    <ul class="s-reviews__grid reveal" role="list" aria-label="Customer reviews">
+
+      <!-- 1 -->
+      <li class="s-reviews__item">
+        <article class="review" aria-label="Review by Camille T.">
+          <div class="review__stars stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <blockquote class="review__quote">
+            <p>"I have tried everything for my reactive skin. The GO2 Duo is the first routine that didn't cause a single flare-up — even through a full month of stress. My skin just... calmed down."</p>
+          </blockquote>
+          <footer class="review__footer">
+            <span class="review__name">Camille T.</span>
+            <span class="review__verified">Verified buyer</span>
+          </footer>
+          <p class="review__product">The GO2 Duo</p>
+        </article>
+      </li>
+
+      <!-- 2 -->
+      <li class="s-reviews__item">
+        <article class="review" aria-label="Review by Sophie M.">
+          <div class="review__stars stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <blockquote class="review__quote">
+            <p>"Finally a 2-step routine I can actually stick to. Cleanse, moisturize, done. My skin looks healthier than it did with a 7-step shelf of products. Simple is the new luxury."</p>
+          </blockquote>
+          <footer class="review__footer">
+            <span class="review__name">Sophie M.</span>
+            <span class="review__verified">Verified buyer</span>
+          </footer>
+          <p class="review__product">The GO2 Duo</p>
+        </article>
+      </li>
+
+      <!-- 3 -->
+      <li class="s-reviews__item">
+        <article class="review" aria-label="Review by James R.">
+          <div class="review__stars stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <blockquote class="review__quote">
+            <p>"The Pure Artik cleanser is the gentlest thing I have ever put on my face. No tight feeling after, no redness — just clean. As someone with eczema-prone skin, that genuinely means a lot."</p>
+          </blockquote>
+          <footer class="review__footer">
+            <span class="review__name">James R.</span>
+            <span class="review__verified">Verified buyer</span>
+          </footer>
+          <p class="review__product">Pure Artik Facial Cleanser</p>
+        </article>
+      </li>
+
+      <!-- 4 -->
+      <li class="s-reviews__item">
+        <article class="review" aria-label="Review by Nadia K.">
+          <div class="review__stars stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <blockquote class="review__quote">
+            <p>"I specifically needed unscented. So many 'unscented' creams still have a chemical smell — the GO2 Duo Unscented is genuinely odorless. My skin is happy and my partner is happy."</p>
+          </blockquote>
+          <footer class="review__footer">
+            <span class="review__name">Nadia K.</span>
+            <span class="review__verified">Verified buyer</span>
+          </footer>
+          <p class="review__product">GO2 Duo — Unscented</p>
+        </article>
+      </li>
+
+      <!-- 5 -->
+      <li class="s-reviews__item">
+        <article class="review" aria-label="Review by Marc-Antoine L.">
+          <div class="review__stars stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <blockquote class="review__quote">
+            <p>"The Biotik Elements cream is rich without being heavy. I use it morning and night — it absorbs completely and my skin barrier has noticeably improved over the past 6 weeks. Quiet miracle."</p>
+          </blockquote>
+          <footer class="review__footer">
+            <span class="review__name">Marc-Antoine L.</span>
+            <span class="review__verified">Verified buyer</span>
+          </footer>
+          <p class="review__product">Biotik Elements Facial Cream</p>
+        </article>
+      </li>
+
+      <!-- 6 -->
+      <li class="s-reviews__item">
+        <article class="review" aria-label="Review by Priya D.">
+          <div class="review__stars stars" aria-label="4 out of 5 stars">★★★★☆</div>
+          <blockquote class="review__quote">
+            <p>"Bought the GO2 Duo skeptical it would actually help my sensitive combination skin. Three weeks in, my pores look smaller and the redness I always had across my nose is almost gone. Four stars for now — waiting to see month two."</p>
+          </blockquote>
+          <footer class="review__footer">
+            <span class="review__name">Priya D.</span>
+            <span class="review__verified">Verified buyer</span>
+          </footer>
+          <p class="review__product">The GO2 Duo</p>
+        </article>
+      </li>
+
+    </ul><!-- /.s-reviews__grid -->
+
+    <!-- Footnote -->
+    <p class="s-reviews__footnote">Reviews are illustrative.</p>
+
+  </div><!-- /.wrap -->
+</section>
+
+<!-- 09-clean.html -->
+<!-- ============================================================
+     V*GAM Biome — Section 09: Clean Promise Band
+     Dark navy bg · free-from + always chips · inline SVG icons
+     ============================================================ -->
+
+<section class="sec s-clean" aria-labelledby="clean-heading">
+  <div class="wrap">
+
+    <!-- Header -->
+    <div class="s-clean__header reveal">
+      <h2 id="clean-heading">Clean means clean.</h2>
+      <p class="s-clean__sub">Everything your skin needs — nothing it doesn't.</p>
+    </div>
+
+    <!-- Chip groups -->
+    <div class="s-clean__groups reveal">
+
+      <!-- FREE FROM -->
+      <div class="s-clean__group">
+        <p class="s-clean__group-label">
+          <span class="s-clean__group-icon" aria-hidden="true">
+            <!-- X circle icon -->
+            <svg class="ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <circle cx="12" cy="12" r="9"/>
+              <line x1="9" y1="9" x2="15" y2="15"/>
+              <line x1="15" y1="9" x2="9" y2="15"/>
+            </svg>
+          </span>
+          Free From
+        </p>
+        <ul class="s-clean__chips" role="list" aria-label="Ingredients we exclude">
+          <li>
+            <span class="chip s-clean__chip s-clean__chip--free">
+              <svg class="s-clean__chip-icon" viewBox="0 0 16 16" aria-hidden="true" focusable="false">
+                <line x1="4" y1="4" x2="12" y2="12" stroke-width="2" stroke-linecap="round"/>
+                <line x1="12" y1="4" x2="4" y2="12" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+              BHA
+            </span>
+          </li>
+          <li>
+            <span class="chip s-clean__chip s-clean__chip--free">
+              <svg class="s-clean__chip-icon" viewBox="0 0 16 16" aria-hidden="true" focusable="false">
+                <line x1="4" y1="4" x2="12" y2="12" stroke-width="2" stroke-linecap="round"/>
+                <line x1="12" y1="4" x2="4" y2="12" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+              Parabens
+            </span>
+          </li>
+          <li>
+            <span class="chip s-clean__chip s-clean__chip--free">
+              <svg class="s-clean__chip-icon" viewBox="0 0 16 16" aria-hidden="true" focusable="false">
+                <line x1="4" y1="4" x2="12" y2="12" stroke-width="2" stroke-linecap="round"/>
+                <line x1="12" y1="4" x2="4" y2="12" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+              Phthalates
+            </span>
+          </li>
+          <li>
+            <span class="chip s-clean__chip s-clean__chip--free">
+              <svg class="s-clean__chip-icon" viewBox="0 0 16 16" aria-hidden="true" focusable="false">
+                <line x1="4" y1="4" x2="12" y2="12" stroke-width="2" stroke-linecap="round"/>
+                <line x1="12" y1="4" x2="4" y2="12" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+              Synthetic Perfume
+            </span>
+          </li>
+          <li>
+            <span class="chip s-clean__chip s-clean__chip--free">
+              <svg class="s-clean__chip-icon" viewBox="0 0 16 16" aria-hidden="true" focusable="false">
+                <line x1="4" y1="4" x2="12" y2="12" stroke-width="2" stroke-linecap="round"/>
+                <line x1="12" y1="4" x2="4" y2="12" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+              Fillers
+            </span>
+          </li>
+          <li>
+            <span class="chip s-clean__chip s-clean__chip--free">
+              <svg class="s-clean__chip-icon" viewBox="0 0 16 16" aria-hidden="true" focusable="false">
+                <line x1="4" y1="4" x2="12" y2="12" stroke-width="2" stroke-linecap="round"/>
+                <line x1="12" y1="4" x2="4" y2="12" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+              Animal Testing
+            </span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- ALWAYS -->
+      <div class="s-clean__group">
+        <p class="s-clean__group-label">
+          <span class="s-clean__group-icon" aria-hidden="true">
+            <!-- Check circle icon -->
+            <svg class="ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <circle cx="12" cy="12" r="9"/>
+              <polyline points="8.5 12 11 14.5 15.5 9.5"/>
+            </svg>
+          </span>
+          Always
+        </p>
+        <ul class="s-clean__chips" role="list" aria-label="Our always promises">
+          <li>
+            <span class="chip s-clean__chip s-clean__chip--always">
+              <svg class="s-clean__chip-icon" viewBox="0 0 16 16" aria-hidden="true" focusable="false">
+                <polyline points="3 8.5 6.5 12 13 5.5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              Vegan
+            </span>
+          </li>
+          <li>
+            <span class="chip s-clean__chip s-clean__chip--always">
+              <svg class="s-clean__chip-icon" viewBox="0 0 16 16" aria-hidden="true" focusable="false">
+                <polyline points="3 8.5 6.5 12 13 5.5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              Microbiome-friendly
+            </span>
+          </li>
+          <li>
+            <span class="chip s-clean__chip s-clean__chip--always">
+              <svg class="s-clean__chip-icon" viewBox="0 0 16 16" aria-hidden="true" focusable="false">
+                <polyline points="3 8.5 6.5 12 13 5.5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              Made in Canada
+            </span>
+          </li>
+          <li>
+            <span class="chip s-clean__chip s-clean__chip--always">
+              <svg class="s-clean__chip-icon" viewBox="0 0 16 16" aria-hidden="true" focusable="false">
+                <polyline points="3 8.5 6.5 12 13 5.5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              All skin types
+            </span>
+          </li>
+        </ul>
+      </div>
+
+    </div><!-- /.s-clean__groups -->
+
+    <!-- CTA -->
+    <div class="s-clean__cta reveal">
+      <a href="https://www.google.com" class="btn btn-light">See full ingredients</a>
+    </div>
+
+  </div><!-- /.wrap -->
+</section>
+
+<!-- 10-newsletter.html -->
+<!-- ============================================================
+     V*GAM Biome — Section 10: Newsletter Signup
+     Centered, band on --surface-2 (soft seafoam-tinted)
+     ============================================================ -->
+
+<section class="sec s-newsletter" aria-labelledby="newsletter-heading">
+  <div class="wrap s-newsletter__wrap">
+
+    <p class="eyebrow">Join the Biome</p>
+
+    <h2 id="newsletter-heading" class="s-newsletter__heading reveal">
+      Get 15% off your first routine
+    </h2>
+
+    <p class="s-newsletter__sub reveal">
+      Skin science, simplified — tips, new drops and member offers in your inbox.
+    </p>
+
+    <form class="s-newsletter__form reveal" onsubmit="return false" aria-label="Newsletter signup">
+      <label class="s-newsletter__label" for="nl-email">Email address</label>
+      <div class="s-newsletter__row">
+        <input
+          class="s-newsletter__input"
+          type="email"
+          id="nl-email"
+          name="email"
+          placeholder="your@email.com"
+          autocomplete="email"
+          required
+        />
+        <button type="submit" class="btn btn-primary s-newsletter__btn">
+          Get 15% off
+        </button>
+      </div>
+    </form>
+
+    <p class="s-newsletter__fine">Unsubscribe anytime.</p>
+
+  </div>
+</section>
+
+<!-- 11-footer.html -->
+<!-- ============================================================
+     V*GAM Biome — Section 11: Site Footer
+     Dark navy (#122B41) · light text · 4 link columns
+     ============================================================ -->
+
+<footer class="site-footer" role="contentinfo" aria-label="Site footer">
+  <div class="wrap">
+
+    <!-- ── TOP ROW: Brand + columns ───────────────────────────── -->
+    <div class="site-footer__top">
+
+      <!-- BRAND COLUMN -->
+      <div class="site-footer__brand">
+        <a href="https://www.google.com" class="site-footer__logo-link" aria-label="V*GAM Biome — Home">
+          <img
+            src="https://vgambiome.ca/cdn/shop/files/L_VGAM_Marine.png?height=120"
+            alt="V*GAM Biome"
+            height="30"
+            width="auto"
+            style="filter:brightness(0) invert(1)"
+          />
+        </a>
+        <p class="site-footer__blurb">
+          Science-based microbiome skincare.<br>
+          Clean, vegan, made in Canada.
+        </p>
+
+        <!-- SOCIAL ROW -->
+        <div class="site-footer__social" aria-label="Social media">
+          <!-- Instagram -->
+          <a href="https://www.google.com" class="site-footer__social-link" aria-label="Instagram" target="_blank" rel="noopener">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+              <circle cx="12" cy="12" r="4.5"/>
+              <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+            </svg>
+          </a>
+          <!-- Facebook -->
+          <a href="https://www.google.com" class="site-footer__social-link" aria-label="Facebook" target="_blank" rel="noopener">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/>
+            </svg>
+          </a>
+          <!-- TikTok -->
+          <a href="https://www.google.com" class="site-footer__social-link" aria-label="TikTok" target="_blank" rel="noopener">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="none" aria-hidden="true">
+              <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.17 8.17 0 004.78 1.52V6.77a4.85 4.85 0 01-1.01-.08z"/>
+            </svg>
+          </a>
+        </div>
+
+        <!-- TRUST CHIPS -->
+        <div class="site-footer__trust" aria-label="Brand certifications">
+          <span class="chip site-footer__chip">Vegan</span>
+          <span class="chip site-footer__chip">Made in Canada</span>
+          <span class="chip site-footer__chip">Microbiome-Friendly</span>
+        </div>
+      </div>
+
+      <!-- LINK COLUMNS -->
+      <nav class="site-footer__nav" aria-label="Footer navigation">
+
+        <!-- Shop -->
+        <div class="site-footer__col">
+          <p class="site-footer__col-head">Shop</p>
+          <ul class="site-footer__col-list">
+            <li><a href="https://www.google.com" class="site-footer__link">The GO2 Duo</a></li>
+            <li><a href="https://www.google.com" class="site-footer__link">Pure Artik Cleanser</a></li>
+            <li><a href="https://www.google.com" class="site-footer__link">Biotik Elements</a></li>
+            <li><a href="https://www.google.com" class="site-footer__link">Hand &amp; Body</a></li>
+            <li><a href="https://www.google.com" class="site-footer__link">Routines &amp; Packs</a></li>
+          </ul>
+        </div>
+
+        <!-- Learn -->
+        <div class="site-footer__col">
+          <p class="site-footer__col-head">Learn</p>
+          <ul class="site-footer__col-list">
+            <li><a href="https://www.google.com" class="site-footer__link">One Human Skin</a></li>
+            <li><a href="https://www.google.com" class="site-footer__link">The Science</a></li>
+            <li><a href="https://www.google.com" class="site-footer__link">How to Use</a></li>
+            <li><a href="https://www.google.com" class="site-footer__link">Journal</a></li>
+          </ul>
+        </div>
+
+        <!-- Help -->
+        <div class="site-footer__col">
+          <p class="site-footer__col-head">Help</p>
+          <ul class="site-footer__col-list">
+            <li><a href="https://www.google.com" class="site-footer__link">Contact</a></li>
+            <li><a href="https://www.google.com" class="site-footer__link">Shipping &amp; Returns</a></li>
+            <li><a href="https://www.google.com" class="site-footer__link">FAQ</a></li>
+            <li><a href="https://www.google.com" class="site-footer__link">Track Order</a></li>
+          </ul>
+        </div>
+
+        <!-- Brand -->
+        <div class="site-footer__col">
+          <p class="site-footer__col-head">Brand</p>
+          <ul class="site-footer__col-list">
+            <li><a href="https://www.google.com" class="site-footer__link">About</a></li>
+            <li><a href="https://www.google.com" class="site-footer__link">Dr. Mireille Vega</a></li>
+            <li><a href="https://www.google.com" class="site-footer__link">Ingredients</a></li>
+            <li><a href="https://www.google.com" class="site-footer__link">Wholesale</a></li>
+          </ul>
+        </div>
+
+      </nav>
+    </div><!-- /.site-footer__top -->
+
+    <!-- ── DIVIDER ─────────────────────────────────────────────── -->
+    <hr class="site-footer__rule" aria-hidden="true">
+
+    <!-- ── BOTTOM BAR ─────────────────────────────────────────── -->
+    <div class="site-footer__bottom">
+
+      <p class="site-footer__copy">
+        &copy; 2026 V*GAM Biome. All rights reserved.
+      </p>
+
+      <div class="site-footer__legal">
+        <a href="https://www.google.com" class="site-footer__legal-link">Privacy</a>
+        <span class="site-footer__dot" aria-hidden="true">&middot;</span>
+        <a href="https://www.google.com" class="site-footer__legal-link">Terms</a>
+      </div>
+
+      <!-- Payment marks (inline SVG, simplified wordmark-style) -->
+      <div class="site-footer__pay" aria-label="Accepted payment methods">
+
+        <!-- Visa -->
+        <span class="site-footer__pay-mark" aria-label="Visa">
+          <svg width="40" height="26" viewBox="0 0 40 26" fill="none" aria-hidden="true">
+            <rect width="40" height="26" rx="4" fill="rgba(255,255,255,.10)"/>
+            <text x="20" y="17" text-anchor="middle" font-family="Arial,sans-serif" font-size="11" font-weight="800" font-style="italic" fill="#D7DEE4" letter-spacing="-.5">VISA</text>
+          </svg>
+        </span>
+
+        <!-- Mastercard -->
+        <span class="site-footer__pay-mark" aria-label="Mastercard">
+          <svg width="40" height="26" viewBox="0 0 40 26" fill="none" aria-hidden="true">
+            <rect width="40" height="26" rx="4" fill="rgba(255,255,255,.10)"/>
+            <circle cx="16" cy="13" r="7" fill="rgba(215,222,228,.55)"/>
+            <circle cx="24" cy="13" r="7" fill="rgba(215,222,228,.30)"/>
+          </svg>
+        </span>
+
+        <!-- Amex -->
+        <span class="site-footer__pay-mark" aria-label="American Express">
+          <svg width="40" height="26" viewBox="0 0 40 26" fill="none" aria-hidden="true">
+            <rect width="40" height="26" rx="4" fill="rgba(255,255,255,.10)"/>
+            <text x="20" y="17" text-anchor="middle" font-family="Arial,sans-serif" font-size="8" font-weight="700" fill="#D7DEE4" letter-spacing=".5">AMEX</text>
+          </svg>
+        </span>
+
+        <!-- PayPal -->
+        <span class="site-footer__pay-mark" aria-label="PayPal">
+          <svg width="40" height="26" viewBox="0 0 40 26" fill="none" aria-hidden="true">
+            <rect width="40" height="26" rx="4" fill="rgba(255,255,255,.10)"/>
+            <text x="20" y="17" text-anchor="middle" font-family="Arial,sans-serif" font-size="8.5" font-weight="700" fill="#D7DEE4" letter-spacing="0">PayPal</text>
+          </svg>
+        </span>
+
+      </div>
+
+    </div><!-- /.site-footer__bottom -->
+
+  </div><!-- /.wrap -->
+</footer>
+
+</main>
+<script src="fx.js"></script>
+</body>
+</html>
