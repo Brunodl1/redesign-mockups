@@ -1,0 +1,1334 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Espace Oriental — Soins naturels marocains fabriqués au Québec</title>
+<meta name="description" content="Soins pour la peau naturels, bio et véganes — huiles, argiles et savons noir inspirés du rituel hammam, conçus et fabriqués au Québec. Livraison gratuite dès 70 $.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Jost:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="base.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<main>
+<!-- 01-header.html -->
+<!-- ============================================================
+     Espace Oriental — 01-header.html
+     Announcement bar + sticky header (FR)
+     ============================================================ -->
+
+<!-- ── ANNOUNCEMENT BAR ──────────────────────────────────────── -->
+<div class="announce" role="banner" aria-label="Annonces">
+  <div class="announce__inner wrap">
+    <span class="announce__item announce--primary">Livraison gratuite dès 70&nbsp;$</span>
+    <span class="announce__sep" aria-hidden="true">&nbsp;·&nbsp;</span>
+    <span class="announce__item announce--secondary">100&nbsp;% naturel &amp; végane</span>
+    <span class="announce__sep" aria-hidden="true">&nbsp;·&nbsp;</span>
+    <span class="announce__item announce--secondary">Fièrement fabriqué au Québec 🇨🇦</span>
+  </div>
+</div>
+
+<!-- ── STICKY HEADER ─────────────────────────────────────────── -->
+<header class="site-header" role="navigation" aria-label="Navigation principale">
+  <div class="site-header__inner wrap">
+
+    <!-- LEFT: hamburger (mobile) / primary nav (desktop) -->
+    <div class="site-header__left">
+
+      <!-- Hamburger — mobile only -->
+      <button class="site-header__burger" aria-label="Ouvrir le menu" aria-expanded="false">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor"
+             stroke-width="1.6" stroke-linecap="round" aria-hidden="true">
+          <line x1="2" y1="5.5"  x2="20" y2="5.5"/>
+          <line x1="2" y1="11"   x2="20" y2="11"/>
+          <line x1="2" y1="16.5" x2="20" y2="16.5"/>
+        </svg>
+      </button>
+
+      <!-- Primary nav — desktop only -->
+      <nav class="site-nav site-nav--left" aria-label="Menu principal">
+        <ul class="site-nav__list" role="list">
+          <li><a class="site-nav__link" href="https://www.google.com">Huiles</a></li>
+          <li><a class="site-nav__link" href="https://www.google.com">Gommages &amp; Masques</a></li>
+          <li><a class="site-nav__link" href="https://www.google.com">Huiles essentielles</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <!-- CENTER: logo (always) -->
+    <div class="site-header__logo">
+      <a href="https://www.google.com" aria-label="Espace Oriental — accueil">
+        <img
+          src="https://espaceoriental.com/cdn/shop/files/Espace_Oriental___Logo_1.png?width=300"
+          alt="Espace Oriental"
+          class="site-header__logo-img"
+          width="52"
+          height="52"
+          loading="eager"
+          decoding="async"
+        >
+      </a>
+    </div>
+
+    <!-- RIGHT: secondary nav + icons -->
+    <div class="site-header__right">
+
+      <!-- Secondary nav — desktop only (right of logo) -->
+      <nav class="site-nav site-nav--right" aria-label="Menu secondaire">
+        <ul class="site-nav__list" role="list">
+          <li><a class="site-nav__link" href="https://www.google.com">Rituel Hammam</a></li>
+          <li><a class="site-nav__link" href="https://www.google.com">Hydrolats</a></li>
+          <li><a class="site-nav__link" href="https://www.google.com">Savons noir</a></li>
+        </ul>
+      </nav>
+
+      <!-- Search — hidden on mobile -->
+      <a class="site-header__icon site-header__icon--search" href="https://www.google.com"
+         aria-label="Rechercher" title="Rechercher">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor"
+             stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="9.5" cy="9.5" r="6.5"/>
+          <line x1="14.5" y1="14.5" x2="20" y2="20"/>
+        </svg>
+      </a>
+
+      <!-- Account — hidden on mobile -->
+      <a class="site-header__icon site-header__icon--account" href="https://www.google.com"
+         aria-label="Mon compte" title="Mon compte">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor"
+             stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="11" cy="7" r="4"/>
+          <path d="M2 20c0-4.418 4.03-8 9-8s9 3.582 9 8"/>
+        </svg>
+      </a>
+
+      <!-- Cart — always visible -->
+      <a class="site-header__icon site-header__icon--cart" href="https://www.google.com"
+         aria-label="Panier (0 article)" title="Panier">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor"
+             stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M2 2h2.5l2 10h11l2-7H6"/>
+          <circle cx="9"  cy="19.5" r="1.2" fill="currentColor" stroke="none"/>
+          <circle cx="16" cy="19.5" r="1.2" fill="currentColor" stroke="none"/>
+        </svg>
+        <span class="site-header__cart-badge" aria-hidden="true">0</span>
+      </a>
+
+    </div>
+  </div>
+</header>
+
+<!-- 02-hero.html -->
+<section class="sec s-hero hero-fullbleed">
+  <div class="wrap">
+    <div class="hero-card">
+      <p class="eyebrow">Soins naturels · Rituel Hammam</p>
+      <h1>La nature,&nbsp;sublimée par le&nbsp;rituel.</h1>
+      <p class="hero-sub">Huiles, argiles et savon noir biologiques — conçus avec passion, fièrement fabriqués au Québec.</p>
+      <a href="https://www.google.com" class="btn btn-primary">Découvrir la collection</a>
+      <p class="hero-trust"><span class="stars">★★★★★</span>&nbsp;4,9/5 · plus de 232 avis · livraison gratuite dès 70&nbsp;$</p>
+    </div>
+  </div>
+</section>
+
+<!-- 03-trust.html -->
+<!-- ============================================================
+     Espace Oriental — 03-trust.html
+     Bande de confiance (4 piliers produit) — FR
+     ============================================================ -->
+
+<section class="sec s-trust" aria-label="Nos engagements">
+  <div class="wrap">
+    <ul class="trust__row" role="list">
+
+      <!-- 1 — 100 % Naturel & Végane -->
+      <li class="trust__item">
+        <span class="trust__icon ic" aria-hidden="true">
+          <svg width="36" height="36" viewBox="0 0 36 36" fill="none"
+               stroke="var(--green)" stroke-width="1.6"
+               stroke-linecap="round" stroke-linejoin="round"
+               xmlns="http://www.w3.org/2000/svg">
+            <!-- leaf shape -->
+            <path d="M18 30 C18 30 6 22 6 12 C6 6 12 4 18 4 C24 4 30 6 30 12 C30 22 18 30 18 30Z"/>
+            <!-- centre vein -->
+            <line x1="18" y1="30" x2="18" y2="10"/>
+            <!-- lateral veins -->
+            <line x1="18" y1="18" x2="12" y2="14"/>
+            <line x1="18" y1="22" x2="23" y2="17"/>
+          </svg>
+        </span>
+        <div class="trust__text">
+          <strong class="trust__label">100&nbsp;% Naturel &amp; Végane</strong>
+          <span class="trust__sub">Sans ingrédients de synthèse</span>
+        </div>
+      </li>
+
+      <!-- 2 — Fabriqué au Québec -->
+      <li class="trust__item">
+        <span class="trust__icon ic" aria-hidden="true">
+          <svg width="36" height="36" viewBox="0 0 36 36" fill="none"
+               stroke="var(--accent)" stroke-width="1.6"
+               stroke-linecap="round" stroke-linejoin="round"
+               xmlns="http://www.w3.org/2000/svg">
+            <!-- map pin -->
+            <path d="M18 4C13.03 4 9 8.03 9 13C9 20 18 32 18 32C18 32 27 20 27 13C27 8.03 22.97 4 18 4Z"/>
+            <!-- maple leaf simplified -->
+            <path d="M18 9 L19.5 12 L23 12.5 L20.5 15 L21.2 18.5 L18 17 L14.8 18.5 L15.5 15 L13 12.5 L16.5 12 Z" stroke-width="1.2"/>
+          </svg>
+        </span>
+        <div class="trust__text">
+          <strong class="trust__label">Fabriqué au Québec</strong>
+          <span class="trust__sub">Conçu et fabriqué localement</span>
+        </div>
+      </li>
+
+      <!-- 3 — Ingrédients bio -->
+      <li class="trust__item">
+        <span class="trust__icon ic" aria-hidden="true">
+          <svg width="36" height="36" viewBox="0 0 36 36" fill="none"
+               stroke="var(--green)" stroke-width="1.6"
+               stroke-linecap="round" stroke-linejoin="round"
+               xmlns="http://www.w3.org/2000/svg">
+            <!-- flask / erlenmeyer -->
+            <path d="M14 4 L14 16 L7 28 C6.2 29.5 7.3 31 9 31 L27 31 C28.7 31 29.8 29.5 29 28 L22 16 L22 4Z"/>
+            <line x1="13" y1="9" x2="23" y2="9"/>
+            <!-- droplet inside -->
+            <path d="M18 20 C18 20 15 23 15 25 C15 26.65 16.34 28 18 28 C19.66 28 21 26.65 21 25 C21 23 18 20 18 20Z" stroke-width="1.3"/>
+          </svg>
+        </span>
+        <div class="trust__text">
+          <strong class="trust__label">Ingrédients bio</strong>
+          <span class="trust__sub">Huiles &amp; argiles pures</span>
+        </div>
+      </li>
+
+      <!-- 4 — Éco-responsable -->
+      <li class="trust__item">
+        <span class="trust__icon ic" aria-hidden="true">
+          <svg width="36" height="36" viewBox="0 0 36 36" fill="none"
+               stroke="var(--accent)" stroke-width="1.6"
+               stroke-linecap="round" stroke-linejoin="round"
+               xmlns="http://www.w3.org/2000/svg">
+            <!-- recycle arrows (triangle of arrows) -->
+            <!-- top arrow →  right -->
+            <path d="M18 5 L24 14 L20 14"/>
+            <path d="M18 5 L12 14 L16 14"/>
+            <!-- bottom-right arrow → bottom-left -->
+            <path d="M24 14 L27 23 L23.5 21.5"/>
+            <path d="M27 23 L21 23"/>
+            <!-- bottom-left arrow → top -->
+            <path d="M15 23 L9 23 L12 14"/>
+            <path d="M9 23 L12.5 21.5"/>
+            <!-- leaf overlay -->
+            <path d="M18 16 C18 16 14 19 14 22 C14 24.2 15.8 26 18 26 C20.2 26 22 24.2 22 22 C22 19 18 16 18 16Z" stroke-width="1.3"/>
+          </svg>
+        </span>
+        <div class="trust__text">
+          <strong class="trust__label">Éco-responsable</strong>
+          <span class="trust__sub">Emballage Mono-Material breveté</span>
+        </div>
+      </li>
+
+    </ul>
+  </div>
+</section>
+
+<!-- 04-categories.html -->
+<!-- ============================================================
+     Espace Oriental — 04-categories.html
+     Grille de catégories — NOS RITUELS — FR
+     ============================================================ -->
+
+<section class="sec s-categories" aria-labelledby="cat-heading">
+  <div class="wrap">
+
+    <!-- Header -->
+    <div class="cat__header reveal">
+      <span class="eyebrow">NOS RITUELS</span>
+      <h2 id="cat-heading">Explorez par catégorie</h2>
+    </div>
+
+    <!-- Grid -->
+    <ul class="cat__grid reveal" role="list">
+
+      <!-- 1 — Huiles naturelles & pures -->
+      <li class="cat__tile">
+        <a class="cat__link" href="https://www.google.com"
+           aria-label="Découvrir les Huiles naturelles et pures">
+          <div class="cat__img-wrap">
+            <img
+              class="cat__img"
+              src="https://espaceoriental.com/cdn/shop/files/Huile-Argan-Bio-5.png?v=1721580463&width=600"
+              alt="Flacon d'huile d'argan bio Espace Oriental sur fond blanc"
+              width="600"
+              height="600"
+              loading="lazy"
+              decoding="async"
+            >
+          </div>
+          <div class="cat__caption">
+            <span class="cat__name">Huiles naturelles &amp; pures</span>
+            <span class="cat__cta" aria-hidden="true">Découvrir →</span>
+          </div>
+        </a>
+      </li>
+
+      <!-- 2 — Gommages & Masques -->
+      <li class="cat__tile">
+        <a class="cat__link" href="https://www.google.com"
+           aria-label="Découvrir les Gommages et Masques">
+          <div class="cat__img-wrap">
+            <img
+              class="cat__img"
+              src="https://espaceoriental.com/cdn/shop/files/MasqueArgileVerte_120ml.png?v=1707942298&width=600"
+              alt="Pot de masque à l'argile verte 120 ml Espace Oriental"
+              width="600"
+              height="600"
+              loading="lazy"
+              decoding="async"
+            >
+          </div>
+          <div class="cat__caption">
+            <span class="cat__name">Gommages &amp; Masques</span>
+            <span class="cat__cta" aria-hidden="true">Découvrir →</span>
+          </div>
+        </a>
+      </li>
+
+      <!-- 3 — Huiles essentielles -->
+      <li class="cat__tile">
+        <a class="cat__link" href="https://www.google.com"
+           aria-label="Découvrir les Huiles essentielles">
+          <div class="cat__img-wrap">
+            <img
+              class="cat__img"
+              src="https://espaceoriental.com/cdn/shop/files/huile-rose-musquee-15ml-pure.png?v=1740673804&width=600"
+              alt="Flacon d'huile essentielle de rose musquée 15 ml pure Espace Oriental"
+              width="600"
+              height="600"
+              loading="lazy"
+              decoding="async"
+            >
+          </div>
+          <div class="cat__caption">
+            <span class="cat__name">Huiles essentielles</span>
+            <span class="cat__cta" aria-hidden="true">Découvrir →</span>
+          </div>
+        </a>
+      </li>
+
+      <!-- 4 — Rituel Hammam -->
+      <li class="cat__tile">
+        <a class="cat__link" href="https://www.google.com"
+           aria-label="Découvrir le Rituel Hammam">
+          <div class="cat__img-wrap">
+            <img
+              class="cat__img"
+              src="https://espaceoriental.com/cdn/shop/files/gant-exfoliant-kessa-naturel.png?v=1743444936&width=600"
+              alt="Gant kessa exfoliant naturel pour rituel hammam Espace Oriental"
+              width="600"
+              height="600"
+              loading="lazy"
+              decoding="async"
+            >
+          </div>
+          <div class="cat__caption">
+            <span class="cat__name">Rituel Hammam</span>
+            <span class="cat__cta" aria-hidden="true">Découvrir →</span>
+          </div>
+        </a>
+      </li>
+
+      <!-- 5 — Hydrolats -->
+      <li class="cat__tile">
+        <a class="cat__link" href="https://www.google.com"
+           aria-label="Découvrir les Hydrolats">
+          <div class="cat__img-wrap">
+            <img
+              class="cat__img"
+              src="https://espaceoriental.com/cdn/shop/files/veritable-eau-de-rose-tonique-naturel.png?v=1740603442&width=600"
+              alt="Flacon d'eau de rose tonique naturelle Espace Oriental, véritable hydrolat"
+              width="600"
+              height="600"
+              loading="lazy"
+              decoding="async"
+            >
+          </div>
+          <div class="cat__caption">
+            <span class="cat__name">Hydrolats</span>
+            <span class="cat__cta" aria-hidden="true">Découvrir →</span>
+          </div>
+        </a>
+      </li>
+
+      <!-- 6 — Savons noir Bio -->
+      <li class="cat__tile">
+        <a class="cat__link" href="https://www.google.com"
+           aria-label="Découvrir les Savons noir Bio">
+          <div class="cat__img-wrap">
+            <img
+              class="cat__img"
+              src="https://espaceoriental.com/cdn/shop/files/SavonNoir_100gr_Avant.png?v=1723424617&width=600"
+              alt="Savon noir bio 100 g Espace Oriental, vue de face"
+              width="600"
+              height="600"
+              loading="lazy"
+              decoding="async"
+            >
+          </div>
+          <div class="cat__caption">
+            <span class="cat__name">Savons noir Bio</span>
+            <span class="cat__cta" aria-hidden="true">Découvrir →</span>
+          </div>
+        </a>
+      </li>
+
+    </ul>
+  </div>
+</section>
+
+<!-- 05-bestsellers.html -->
+<!-- ============================================================
+     Espace Oriental — 05-bestsellers.html
+     Best-sellers product grid (FR)
+     ============================================================ -->
+
+<section class="sec s-bestsellers" aria-labelledby="bs-heading">
+  <div class="wrap">
+
+    <!-- ── HEADER ROW ──────────────────────────────────────────── -->
+    <div class="s-bestsellers__header">
+      <div class="s-bestsellers__titles">
+        <p class="eyebrow">LES FAVORIS</p>
+        <h2 id="bs-heading" class="s-bestsellers__h2">Nos meilleures ventes</h2>
+      </div>
+      <a class="s-bestsellers__voir-tout" href="https://www.google.com" aria-label="Voir toutes les meilleures ventes">
+        Voir tout&nbsp;<span aria-hidden="true">→</span>
+      </a>
+    </div>
+
+    <!-- ── PRODUCT GRID ─────────────────────────────────────────── -->
+    <ul class="s-bestsellers__grid reveal" role="list" aria-label="Nos produits les plus populaires">
+
+      <!-- 1 · Huile de pépins de figue de barbarie -->
+      <li class="s-bestsellers__item">
+        <article class="s-bestsellers__card card">
+          <a class="card__img-link" href="https://www.google.com" tabindex="-1" aria-hidden="true">
+            <div class="card__img-wrap">
+              <span class="chip card__badge card__badge--accent">POPULAIRE</span>
+              <img
+                src="https://espaceoriental.com/cdn/shop/files/huile-pepins-figue-barbarie-espace-oriental-face.png?v=1752691942"
+                alt="Huile de pépins de figue de barbarie"
+                class="card__img"
+                loading="lazy"
+                decoding="async"
+                width="400"
+                height="400"
+              >
+            </div>
+          </a>
+          <div class="card__body">
+            <a class="card__name-link" href="https://www.google.com">
+              <h3 class="card__name">Huile de pépins de figue de barbarie</h3>
+            </a>
+            <p class="card__desc">Anti-âge précieux</p>
+            <div class="card__meta">
+              <span class="stars" aria-label="4,98 étoiles sur 5" title="4,98 / 5">
+                <span aria-hidden="true">★★★★★</span>
+              </span>
+              <span class="card__reviews">(47 avis)</span>
+            </div>
+            <p class="card__price">58,95&nbsp;<span class="card__currency">$</span></p>
+            <a class="btn btn-dark card__cta" href="https://www.google.com">Ajouter au panier</a>
+          </div>
+        </article>
+      </li>
+
+      <!-- 2 · Huile d'argan bio -->
+      <li class="s-bestsellers__item">
+        <article class="s-bestsellers__card card">
+          <a class="card__img-link" href="https://www.google.com" tabindex="-1" aria-hidden="true">
+            <div class="card__img-wrap">
+              <span class="chip card__badge card__badge--accent">POPULAIRE</span>
+              <img
+                src="https://espaceoriental.com/cdn/shop/files/Huile-Argan-Bio-5.png?v=1721580463"
+                alt="Huile d'argan bio"
+                class="card__img"
+                loading="lazy"
+                decoding="async"
+                width="400"
+                height="400"
+              >
+            </div>
+          </a>
+          <div class="card__body">
+            <a class="card__name-link" href="https://www.google.com">
+              <h3 class="card__name">Huile d'argan bio</h3>
+            </a>
+            <p class="card__desc">Nourrit &amp; répare</p>
+            <div class="card__meta">
+              <span class="stars" aria-label="5 étoiles sur 5" title="5 / 5">
+                <span aria-hidden="true">★★★★★</span>
+              </span>
+              <span class="card__reviews">(60 avis)</span>
+            </div>
+            <p class="card__price">24,99&nbsp;<span class="card__currency">$</span></p>
+            <a class="btn btn-dark card__cta" href="https://www.google.com">Ajouter au panier</a>
+          </div>
+        </article>
+      </li>
+
+      <!-- 3 · Huile de rose musquée -->
+      <li class="s-bestsellers__item">
+        <article class="s-bestsellers__card card">
+          <a class="card__img-link" href="https://www.google.com" tabindex="-1" aria-hidden="true">
+            <div class="card__img-wrap">
+              <img
+                src="https://espaceoriental.com/cdn/shop/files/huile-rose-musquee-15ml-pure.png?v=1740673804"
+                alt="Huile de rose musquée"
+                class="card__img"
+                loading="lazy"
+                decoding="async"
+                width="400"
+                height="400"
+              >
+            </div>
+          </a>
+          <div class="card__body">
+            <a class="card__name-link" href="https://www.google.com">
+              <h3 class="card__name">Huile de rose musquée</h3>
+            </a>
+            <p class="card__desc">Éclat &amp; cicatrisation</p>
+            <div class="card__meta">
+              <span class="stars" aria-label="4,93 étoiles sur 5" title="4,93 / 5">
+                <span aria-hidden="true">★★★★★</span>
+              </span>
+              <span class="card__reviews">(38 avis)</span>
+            </div>
+            <p class="card__price">22,99&nbsp;<span class="card__currency">$</span></p>
+            <a class="btn btn-dark card__cta" href="https://www.google.com">Ajouter au panier</a>
+          </div>
+        </article>
+      </li>
+
+      <!-- 4 · Masque à l'argile verte volcanique -->
+      <li class="s-bestsellers__item">
+        <article class="s-bestsellers__card card">
+          <a class="card__img-link" href="https://www.google.com" tabindex="-1" aria-hidden="true">
+            <div class="card__img-wrap">
+              <img
+                src="https://espaceoriental.com/cdn/shop/files/MasqueArgileVerte_120ml.png?v=1707942298"
+                alt="Masque à l'argile verte volcanique"
+                class="card__img"
+                loading="lazy"
+                decoding="async"
+                width="400"
+                height="400"
+              >
+            </div>
+          </a>
+          <div class="card__body">
+            <a class="card__name-link" href="https://www.google.com">
+              <h3 class="card__name">Masque à l'argile verte volcanique</h3>
+            </a>
+            <p class="card__desc">Purifiant en profondeur</p>
+            <div class="card__meta">
+              <span class="stars" aria-label="4,9 étoiles sur 5" title="4,9 / 5">
+                <span aria-hidden="true">★★★★★</span>
+              </span>
+              <span class="card__reviews">(25 avis)</span>
+            </div>
+            <p class="card__price">19,99&nbsp;<span class="card__currency">$</span></p>
+            <a class="btn btn-dark card__cta" href="https://www.google.com">Ajouter au panier</a>
+          </div>
+        </article>
+      </li>
+
+      <!-- 5 · Savon noir bio à l'huile d'olive -->
+      <li class="s-bestsellers__item">
+        <article class="s-bestsellers__card card">
+          <a class="card__img-link" href="https://www.google.com" tabindex="-1" aria-hidden="true">
+            <div class="card__img-wrap">
+              <span class="chip card__badge card__badge--accent">POPULAIRE</span>
+              <img
+                src="https://espaceoriental.com/cdn/shop/files/SavonNoir_100gr_Avant.png?v=1723424617"
+                alt="Savon noir bio à l'huile d'olive"
+                class="card__img"
+                loading="lazy"
+                decoding="async"
+                width="400"
+                height="400"
+              >
+            </div>
+          </a>
+          <div class="card__body">
+            <a class="card__name-link" href="https://www.google.com">
+              <h3 class="card__name">Savon noir bio à l'huile d'olive</h3>
+            </a>
+            <p class="card__desc">Rituel hammam</p>
+            <div class="card__meta">
+              <span class="stars" aria-label="4,9 étoiles sur 5" title="4,9 / 5">
+                <span aria-hidden="true">★★★★★</span>
+              </span>
+              <span class="card__reviews">(33 avis)</span>
+            </div>
+            <p class="card__price">12,99&nbsp;<span class="card__currency">$</span></p>
+            <a class="btn btn-dark card__cta" href="https://www.google.com">Ajouter au panier</a>
+          </div>
+        </article>
+      </li>
+
+      <!-- 6 · Gommage argile & miel -->
+      <li class="s-bestsellers__item">
+        <article class="s-bestsellers__card card">
+          <a class="card__img-link" href="https://www.google.com" tabindex="-1" aria-hidden="true">
+            <div class="card__img-wrap">
+              <span class="chip card__badge card__badge--green">NOUVEAU</span>
+              <img
+                src="https://espaceoriental.com/cdn/shop/files/GommageArgileetMiel_120ml.png?v=1707939646"
+                alt="Gommage argile &amp; miel"
+                class="card__img"
+                loading="lazy"
+                decoding="async"
+                width="400"
+                height="400"
+              >
+            </div>
+          </a>
+          <div class="card__body">
+            <a class="card__name-link" href="https://www.google.com">
+              <h3 class="card__name">Gommage argile &amp; miel</h3>
+            </a>
+            <p class="card__desc">Exfoliant doux</p>
+            <div class="card__meta">
+              <span class="stars" aria-label="4,8 étoiles sur 5" title="4,8 / 5">
+                <span aria-hidden="true">★★★★★</span>
+              </span>
+              <span class="card__reviews">(19 avis)</span>
+            </div>
+            <p class="card__price">21,99&nbsp;<span class="card__currency">$</span></p>
+            <a class="btn btn-dark card__cta" href="https://www.google.com">Ajouter au panier</a>
+          </div>
+        </article>
+      </li>
+
+      <!-- 7 · Eau de rose véritable -->
+      <li class="s-bestsellers__item">
+        <article class="s-bestsellers__card card">
+          <a class="card__img-link" href="https://www.google.com" tabindex="-1" aria-hidden="true">
+            <div class="card__img-wrap">
+              <img
+                src="https://espaceoriental.com/cdn/shop/files/veritable-eau-de-rose-tonique-naturel.png?v=1740603442"
+                alt="Eau de rose véritable"
+                class="card__img"
+                loading="lazy"
+                decoding="async"
+                width="400"
+                height="400"
+              >
+            </div>
+          </a>
+          <div class="card__body">
+            <a class="card__name-link" href="https://www.google.com">
+              <h3 class="card__name">Eau de rose véritable</h3>
+            </a>
+            <p class="card__desc">Tonique apaisant</p>
+            <div class="card__meta">
+              <span class="stars" aria-label="4,9 étoiles sur 5" title="4,9 / 5">
+                <span aria-hidden="true">★★★★★</span>
+              </span>
+              <span class="card__reviews">(28 avis)</span>
+            </div>
+            <p class="card__price">16,99&nbsp;<span class="card__currency">$</span></p>
+            <a class="btn btn-dark card__cta" href="https://www.google.com">Ajouter au panier</a>
+          </div>
+        </article>
+      </li>
+
+      <!-- 8 · Élixir pour barbe aux 3 huiles -->
+      <li class="s-bestsellers__item">
+        <article class="s-bestsellers__card card">
+          <a class="card__img-link" href="https://www.google.com" tabindex="-1" aria-hidden="true">
+            <div class="card__img-wrap">
+              <span class="chip card__badge card__badge--green">NOUVEAU</span>
+              <img
+                src="https://espaceoriental.com/cdn/shop/files/elixir-barbe-3-huiles-pure-biologiques.png?v=1740602270"
+                alt="Élixir pour barbe aux 3 huiles"
+                class="card__img"
+                loading="lazy"
+                decoding="async"
+                width="400"
+                height="400"
+              >
+            </div>
+          </a>
+          <div class="card__body">
+            <a class="card__name-link" href="https://www.google.com">
+              <h3 class="card__name">Élixir pour barbe aux 3 huiles</h3>
+            </a>
+            <p class="card__desc">Pour lui</p>
+            <div class="card__meta">
+              <span class="stars" aria-label="4,9 étoiles sur 5" title="4,9 / 5">
+                <span aria-hidden="true">★★★★★</span>
+              </span>
+              <span class="card__reviews">(14 avis)</span>
+            </div>
+            <p class="card__price">29,99&nbsp;<span class="card__currency">$</span></p>
+            <a class="btn btn-dark card__cta" href="https://www.google.com">Ajouter au panier</a>
+          </div>
+        </article>
+      </li>
+
+    </ul><!-- /.s-bestsellers__grid -->
+
+    <!-- ── FOOTNOTE ──────────────────────────────────────────────── -->
+    <p class="s-bestsellers__footnote">
+      * Avis à titre indicatif — non contractuels.
+    </p>
+
+  </div><!-- /.wrap -->
+</section>
+
+<!-- 06-rituel.html -->
+<!-- ============================================================
+     Espace Oriental — 06-rituel.html
+     "Notre histoire" Rituel Hammam editorial band (FR)
+     ============================================================ -->
+
+<section class="sec s-rituel reveal" aria-label="Notre histoire — Rituel Hammam">
+  <div class="wrap s-rituel__grid">
+
+    <!-- LEFT: image block -->
+    <div class="s-rituel__media">
+      <div class="s-rituel__img-wrap">
+        <img
+          class="s-rituel__img"
+          src="https://espaceoriental.com/cdn/shop/files/gant-exfoliant-kessa-naturel.png?v=1743444936&width=800"
+          alt="Gant exfoliant Kessa — rituel hammam Espace Oriental"
+          loading="lazy"
+          decoding="async"
+          width="800"
+          height="800"
+        >
+      </div>
+      <!-- Decorative accent line -->
+      <div class="s-rituel__deco" aria-hidden="true"></div>
+    </div>
+
+    <!-- RIGHT: copy block -->
+    <div class="s-rituel__copy">
+      <p class="eyebrow">Notre histoire</p>
+      <h2 class="s-rituel__h2">Le rituel hammam, réinventé&nbsp;au Québec.</h2>
+      <p class="s-rituel__body">
+        Inspirés des traditions ancestrales du hammam marocain, nous créons des soins purs —
+        huiles, argiles et savons noir — conçus et fabriqués localement au Québec. La nature,
+        le geste, la lenteur&nbsp;: un rituel de beauté qui prend soin de vous et de la planète.
+      </p>
+      <a class="btn btn-primary s-rituel__cta" href="https://www.google.com">
+        Notre histoire
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<!-- 07-ingredient.html -->
+<!-- ============================================================
+     Espace Oriental — 07-ingredient.html
+     "L'Ingrédient Star" — Huile d'argan feature section (FR)
+     Image RIGHT, copy LEFT — alternates from rituel band
+     ============================================================ -->
+
+<section class="sec s-ingredient reveal" aria-label="L'ingrédient star — Huile d'argan">
+  <div class="wrap s-ingredient__grid">
+
+    <!-- LEFT: copy block -->
+    <div class="s-ingredient__copy">
+      <p class="eyebrow">L'ingrédient star</p>
+      <h2 class="s-ingredient__h2">L'huile d'argan,<br>l'or du Maroc.</h2>
+      <p class="s-ingredient__body">
+        Pressée à froid et 100&nbsp;% biologique, notre huile d'argan nourrit, répare et protège
+        la peau et les cheveux. Riche en vitamine&nbsp;E et en acides gras essentiels —
+        un trésor de la nature, pur et sans compromis.
+      </p>
+
+      <!-- 3-bullet benefits list -->
+      <ul class="s-ingredient__list" role="list">
+        <li class="s-ingredient__list-item">
+          <span class="s-ingredient__icon" aria-hidden="true">
+            <!-- Drop / cold-press icon -->
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                 stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
+                 stroke-linejoin="round" aria-hidden="true">
+              <path d="M10 2 C10 2 4 9 4 13 a6 6 0 0 0 12 0 C16 9 10 2 10 2z"/>
+            </svg>
+          </span>
+          <span class="s-ingredient__label">Pressée à froid</span>
+        </li>
+        <li class="s-ingredient__list-item">
+          <span class="s-ingredient__icon" aria-hidden="true">
+            <!-- Leaf / organic icon -->
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                 stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
+                 stroke-linejoin="round" aria-hidden="true">
+              <path d="M3 17 C3 17 6 8 14 5 C18 4 18 4 18 4 C18 4 17 10 12 13 C8 16 3 17 3 17z"/>
+              <line x1="3" y1="17" x2="10" y2="10"/>
+            </svg>
+          </span>
+          <span class="s-ingredient__label">100&nbsp;% biologique</span>
+        </li>
+        <li class="s-ingredient__list-item">
+          <span class="s-ingredient__icon" aria-hidden="true">
+            <!-- Star / vitamin E icon -->
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                 stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
+                 stroke-linejoin="round" aria-hidden="true">
+              <polygon points="10,2 12.5,7.5 18.5,8 14,12.5 15.5,18.5 10,15.5 4.5,18.5 6,12.5 1.5,8 7.5,7.5"/>
+            </svg>
+          </span>
+          <span class="s-ingredient__label">Vitamine E + oméga</span>
+        </li>
+      </ul>
+
+      <!-- CTA row -->
+      <div class="s-ingredient__cta-row">
+        <a class="btn btn-outline s-ingredient__cta" href="https://www.google.com">
+          Découvrir l'huile d'argan
+        </a>
+        <p class="s-ingredient__meta">
+          dès 24,99&nbsp;$&nbsp;·&nbsp;<span aria-label="5 étoiles sur 5">★ 5,0</span>
+        </p>
+      </div>
+    </div>
+
+    <!-- RIGHT: image block -->
+    <div class="s-ingredient__media">
+      <div class="s-ingredient__img-wrap">
+        <img
+          class="s-ingredient__img"
+          src="https://espaceoriental.com/cdn/shop/files/Huile-Argan-Bio-5.png?v=1721580463&width=800"
+          alt="Huile d'argan bio pressée à froid — Espace Oriental"
+          loading="lazy"
+          decoding="async"
+          width="800"
+          height="800"
+        >
+      </div>
+      <!-- Decorative top-right corner accent -->
+      <div class="s-ingredient__deco" aria-hidden="true"></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- 08-avis.html -->
+<!-- ============================================================
+     Espace Oriental — 08-avis.html
+     Mur d'avis clients (FR)
+     ============================================================ -->
+
+<section class="sec s-avis" aria-labelledby="avis-heading">
+  <div class="wrap">
+
+    <!-- ── EN-TÊTE ──────────────────────────────────────────────── -->
+    <div class="s-avis__header">
+      <p class="eyebrow">ELLES &amp; ILS NOUS AIMENT</p>
+      <h2 id="avis-heading" class="s-avis__h2">Adoré partout au Québec</h2>
+
+      <!-- Note globale -->
+      <div class="s-avis__rating-summary" aria-label="Note globale 4,9 sur 5, plus de 232 avis vérifiés">
+        <span class="s-avis__big-star" aria-hidden="true">★</span>
+        <span class="s-avis__big-score">4,9<span class="s-avis__big-denom">/5</span></span>
+        <span class="s-avis__count">plus de&nbsp;<strong>232 avis vérifiés</strong></span>
+      </div>
+    </div>
+
+    <!-- ── GRILLE DE CARTES ──────────────────────────────────────── -->
+    <ul class="s-avis__grid reveal" role="list" aria-label="Avis clients">
+
+      <!-- 1 · Huile d'argan -->
+      <li class="s-avis__item">
+        <article class="s-avis__card review">
+          <header class="review__top">
+            <span class="stars" aria-label="5 étoiles sur 5" title="5 / 5">
+              <span aria-hidden="true">★★★★★</span>
+            </span>
+          </header>
+          <blockquote class="review__quote">
+            <p>« Ma peau n'a jamais été aussi douce. J'utilise l'huile d'argan chaque soir depuis deux mois et je ne peux plus m'en passer. Un vrai trésor du Maroc livré chez moi au Québec ! »</p>
+          </blockquote>
+          <footer class="review__footer">
+            <div class="review__author-row">
+              <span class="review__name">Mélanie T.</span>
+              <span class="review__verified chip">Achat vérifié</span>
+            </div>
+            <p class="review__product">HUILE D'ARGAN BIO</p>
+          </footer>
+        </article>
+      </li>
+
+      <!-- 2 · Huile de figue de barbarie -->
+      <li class="s-avis__item">
+        <article class="s-avis__card review">
+          <header class="review__top">
+            <span class="stars" aria-label="5 étoiles sur 5" title="5 / 5">
+              <span aria-hidden="true">★★★★★</span>
+            </span>
+          </header>
+          <blockquote class="review__quote">
+            <p>« J'ai adopté l'huile de figue de barbarie comme sérum visage et wow — mes ridules ont vraiment diminué. La texture est légère, ça s'absorbe super vite. Je recommande à 100&nbsp;%! »</p>
+          </blockquote>
+          <footer class="review__footer">
+            <div class="review__author-row">
+              <span class="review__name">Sandrine L.</span>
+              <span class="review__verified chip">Achat vérifié</span>
+            </div>
+            <p class="review__product">HUILE DE FIGUE DE BARBARIE</p>
+          </footer>
+        </article>
+      </li>
+
+      <!-- 3 · Masque argile verte -->
+      <li class="s-avis__item">
+        <article class="s-avis__card review">
+          <header class="review__top">
+            <span class="stars" aria-label="5 étoiles sur 5" title="5 / 5">
+              <span aria-hidden="true">★★★★★</span>
+            </span>
+          </header>
+          <blockquote class="review__quote">
+            <p>« Le masque argile verte, c'est un vrai rituel beauté pour moi. Mes pores sont nettement resserrés après quelques applications. Je commande pour la troisième fois — jamais déçue! »</p>
+          </blockquote>
+          <footer class="review__footer">
+            <div class="review__author-row">
+              <span class="review__name">Karianne B.</span>
+              <span class="review__verified chip">Achat vérifié</span>
+            </div>
+            <p class="review__product">MASQUE ARGILE VERTE</p>
+          </footer>
+        </article>
+      </li>
+
+      <!-- 4 · Savon noir -->
+      <li class="s-avis__item">
+        <article class="s-avis__card review">
+          <header class="review__top">
+            <span class="stars" aria-label="5 étoiles sur 5" title="5 / 5">
+              <span aria-hidden="true">★★★★★</span>
+            </span>
+          </header>
+          <blockquote class="review__quote">
+            <p>« J'ai grandi avec le savon noir marocain et celui-ci est exactement comme celui de ma mémé. Ça fait 6 mois que je l'utilise avec le kessa — ma peau est éclatante. Qualité irréprochable! »</p>
+          </blockquote>
+          <footer class="review__footer">
+            <div class="review__author-row">
+              <span class="review__name">Fatima H.</span>
+              <span class="review__verified chip">Achat vérifié</span>
+            </div>
+            <p class="review__product">SAVON NOIR BIO</p>
+          </footer>
+        </article>
+      </li>
+
+      <!-- 5 · Eau de rose -->
+      <li class="s-avis__item">
+        <article class="s-avis__card review">
+          <header class="review__top">
+            <span class="stars" aria-label="5 étoiles sur 5" title="5 / 5">
+              <span aria-hidden="true">★★★★★</span>
+            </span>
+          </header>
+          <blockquote class="review__quote">
+            <p>« L'eau de rose est tellement pure, ça sent divinement bon. Je l'utilise comme tonique le matin et comme brume tout au long de la journée. Ma peau est hydratée et fraîche. Je suis conquise! »</p>
+          </blockquote>
+          <footer class="review__footer">
+            <div class="review__author-row">
+              <span class="review__name">Valérie R.</span>
+              <span class="review__verified chip">Achat vérifié</span>
+            </div>
+            <p class="review__product">EAU DE ROSE VÉRITABLE</p>
+          </footer>
+        </article>
+      </li>
+
+      <!-- 6 · Élixir barbe -->
+      <li class="s-avis__item">
+        <article class="s-avis__card review">
+          <header class="review__top">
+            <span class="stars" aria-label="5 étoiles sur 5" title="5 / 5">
+              <span aria-hidden="true">★★★★★</span>
+            </span>
+          </header>
+          <blockquote class="review__quote">
+            <p>« J'ai essayé plein d'huiles pour la barbe mais l'élixir barbe d'Espace Oriental est dans une autre catégorie. Ça hydrate, ça donne une belle brillance et l'odeur est subtile. J'ai adopté pour de bon! »</p>
+          </blockquote>
+          <footer class="review__footer">
+            <div class="review__author-row">
+              <span class="review__name">Marc-André D.</span>
+              <span class="review__verified chip">Achat vérifié</span>
+            </div>
+            <p class="review__product">ÉLIXIR BARBE AUX 3 HUILES</p>
+          </footer>
+        </article>
+      </li>
+
+    </ul><!-- /.s-avis__grid -->
+
+    <!-- ── LIEN VERS TOUS LES AVIS ──────────────────────────────── -->
+    <div class="s-avis__cta-row">
+      <a class="btn btn-outline" href="https://www.google.com" aria-label="Voir tous les avis clients">
+        Voir tous les avis
+      </a>
+    </div>
+
+    <!-- ── NOTE DE BAS DE PAGE ──────────────────────────────────── -->
+    <p class="s-avis__footnote">Avis à titre indicatif. Données illustratives.</p>
+
+  </div><!-- /.wrap -->
+</section>
+
+<!-- 09-eco.html -->
+<!-- ============================================================
+     Espace Oriental — 09-eco.html
+     Bande éco-responsable / valeurs (FR)
+     ============================================================ -->
+
+<section class="sec s-eco" aria-labelledby="eco-heading">
+  <div class="wrap">
+
+    <!-- ── CONTENU PRINCIPAL ─────────────────────────────────────── -->
+    <div class="s-eco__inner reveal">
+
+      <!-- Texte -->
+      <div class="s-eco__text-col">
+        <p class="eyebrow s-eco__eyebrow">NOS ENGAGEMENTS</p>
+        <h2 id="eco-heading" class="s-eco__h2">Beau pour vous.<br>Bon pour la planète.</h2>
+        <p class="s-eco__body">
+          Nos formules sont naturelles, véganes et biologiques, et notre emballage Mono-Material
+          breveté est pensé pour réduire les déchets. Le bien-être, sans compromis pour la Terre.
+        </p>
+        <a class="btn btn-light s-eco__btn" href="https://www.google.com" aria-label="Découvrir nos engagements éco-responsables">
+          Nos engagements
+        </a>
+      </div>
+
+      <!-- Icônes valeurs -->
+      <ul class="s-eco__pillars" role="list" aria-label="Nos engagements environnementaux">
+
+        <!-- 1 · 100 % naturel &amp; végane -->
+        <li class="s-eco__pillar">
+          <div class="s-eco__icon-wrap" aria-hidden="true">
+            <svg class="ic" viewBox="0 0 40 40" fill="none" stroke="currentColor"
+                 stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+                 xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <!-- Feuille / leaf -->
+              <path d="M20 34C20 34 8 26 8 15a12 12 0 0 1 24 0c0 11-12 19-12 19Z"/>
+              <path d="M20 34V18"/>
+              <path d="M20 22l-5-5"/>
+              <path d="M20 26l5-5"/>
+            </svg>
+          </div>
+          <span class="s-eco__label">100&nbsp;% naturel<br>&amp; végane</span>
+        </li>
+
+        <!-- 2 · Ingrédients bio -->
+        <li class="s-eco__pillar">
+          <div class="s-eco__icon-wrap" aria-hidden="true">
+            <svg class="ic" viewBox="0 0 40 40" fill="none" stroke="currentColor"
+                 stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+                 xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <!-- Étoile / certif bio -->
+              <circle cx="20" cy="20" r="11"/>
+              <path d="M20 9v22"/>
+              <path d="M9 20h22"/>
+              <path d="M12.5 12.5l15 15"/>
+              <path d="M27.5 12.5l-15 15"/>
+            </svg>
+          </div>
+          <span class="s-eco__label">Ingrédients<br>bio certifiés</span>
+        </li>
+
+        <!-- 3 · Emballage Mono-Material -->
+        <li class="s-eco__pillar">
+          <div class="s-eco__icon-wrap" aria-hidden="true">
+            <svg class="ic" viewBox="0 0 40 40" fill="none" stroke="currentColor"
+                 stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+                 xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <!-- Flèche recyclage simplifiée -->
+              <path d="M13 28 8 20l5-8"/>
+              <path d="M8 20h18"/>
+              <path d="M20 12l7 4"/>
+              <path d="M27 16l-2 9"/>
+              <path d="M25 25l-7 4"/>
+              <path d="M18 29l-5-1"/>
+            </svg>
+          </div>
+          <span class="s-eco__label">Emballage<br>Mono-Material</span>
+        </li>
+
+        <!-- 4 · Fabriqué au Québec -->
+        <li class="s-eco__pillar">
+          <div class="s-eco__icon-wrap" aria-hidden="true">
+            <svg class="ic" viewBox="0 0 40 40" fill="none" stroke="currentColor"
+                 stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+                 xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <!-- Épingle carte / localisation -->
+              <path d="M20 37S9 27.5 9 18a11 11 0 0 1 22 0c0 9.5-11 19-11 19Z"/>
+              <circle cx="20" cy="18" r="4"/>
+            </svg>
+          </div>
+          <span class="s-eco__label">Fabriqué<br>au Québec</span>
+        </li>
+
+      </ul><!-- /.s-eco__pillars -->
+
+    </div><!-- /.s-eco__inner -->
+
+  </div><!-- /.wrap -->
+</section>
+
+<!-- 10-infolettre.html -->
+<!-- ============================================================
+     Espace Oriental — 10-infolettre.html
+     Newsletter signup band · FRENCH
+     ============================================================ -->
+<section class="sec s-infolettre">
+  <div class="wrap">
+
+    <div class="s-infolettre__inner">
+      <!-- Decorative arabesque motif -->
+      <div class="s-infolettre__deco" aria-hidden="true">
+        <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="32" cy="32" r="14" stroke="var(--accent)" stroke-width="1" opacity=".4"/>
+          <circle cx="32" cy="32" r="22" stroke="var(--accent)" stroke-width=".5" opacity=".25"/>
+          <path d="M32 10 C38 18, 54 18, 54 32 C54 46, 38 46, 32 54 C26 46, 10 46, 10 32 C10 18, 26 18, 32 10Z" stroke="var(--accent)" stroke-width=".6" fill="none" opacity=".2"/>
+          <circle cx="32" cy="32" r="3" fill="var(--accent)" opacity=".5"/>
+        </svg>
+      </div>
+
+      <p class="eyebrow">RESTONS EN CONTACT</p>
+
+      <h2 class="s-infolettre__title">10&nbsp;% sur votre première commande</h2>
+
+      <p class="s-infolettre__sub">
+        Rituels, nouveautés et conseils naturels —&nbsp;directement dans votre boîte courriel.
+      </p>
+
+      <form class="s-infolettre__form" onsubmit="return false" novalidate>
+        <div class="s-infolettre__field-wrap">
+          <input
+            class="s-infolettre__input"
+            type="email"
+            name="email"
+            placeholder="Votre adresse courriel"
+            aria-label="Adresse courriel"
+            autocomplete="email"
+            required
+          >
+          <button class="btn btn-primary s-infolettre__btn" type="submit">
+            Je m'inscris
+          </button>
+        </div>
+        <p class="s-infolettre__fine">Désabonnement en tout temps.</p>
+      </form>
+    </div>
+
+  </div>
+</section>
+
+<!-- 11-footer.html -->
+<!-- ============================================================
+     Espace Oriental — 11-footer.html
+     Site footer · FRENCH
+     ============================================================ -->
+<footer class="site-footer">
+  <div class="wrap">
+
+    <!-- ── TOP: logo + blurb + socials ───────────────────────── -->
+    <div class="site-footer__top">
+
+      <div class="site-footer__brand">
+        <a href="https://www.google.com" class="site-footer__logo-link" aria-label="Espace Oriental — accueil">
+          <img
+            src="https://espaceoriental.com/cdn/shop/files/Espace_Oriental___Logo_1.png?width=200"
+            alt="Espace Oriental"
+            height="70"
+            width="auto"
+            loading="lazy"
+            style="filter:brightness(0) invert(1); height:70px; width:auto;"
+          >
+        </a>
+        <p class="site-footer__blurb">
+          Soins naturels marocains, conçus et fabriqués<br>avec passion au Québec.
+        </p>
+
+        <!-- Social icons -->
+        <div class="site-footer__socials" aria-label="Réseaux sociaux">
+          <!-- Instagram -->
+          <a href="https://www.google.com" class="site-footer__social-link" aria-label="Instagram" title="Instagram">
+            <svg class="ic" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+              <circle cx="12" cy="12" r="4"/>
+              <circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/>
+            </svg>
+          </a>
+          <!-- Facebook -->
+          <a href="https://www.google.com" class="site-footer__social-link" aria-label="Facebook" title="Facebook">
+            <svg class="ic" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+            </svg>
+          </a>
+          <!-- TikTok -->
+          <a href="https://www.google.com" class="site-footer__social-link" aria-label="TikTok" title="TikTok">
+            <svg class="ic" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- ── 4 LINK COLUMNS ─────────────────────────────────── -->
+      <nav class="site-footer__nav" aria-label="Navigation du pied de page">
+
+        <!-- Boutique -->
+        <div class="site-footer__col">
+          <p class="site-footer__col-title">Boutique</p>
+          <ul class="site-footer__list">
+            <li><a href="https://www.google.com">Huiles</a></li>
+            <li><a href="https://www.google.com">Gommages &amp; Masques</a></li>
+            <li><a href="https://www.google.com">Huiles essentielles</a></li>
+            <li><a href="https://www.google.com">Rituel Hammam</a></li>
+            <li><a href="https://www.google.com">Hydrolats</a></li>
+            <li><a href="https://www.google.com">Savon noir</a></li>
+          </ul>
+        </div>
+
+        <!-- Maison -->
+        <div class="site-footer__col">
+          <p class="site-footer__col-title">Maison</p>
+          <ul class="site-footer__list">
+            <li><a href="https://www.google.com">Notre histoire</a></li>
+            <li><a href="https://www.google.com">Nos engagements</a></li>
+            <li><a href="https://www.google.com">Le blogue</a></li>
+            <li><a href="https://www.google.com">Points &amp; récompenses</a></li>
+          </ul>
+        </div>
+
+        <!-- Aide -->
+        <div class="site-footer__col">
+          <p class="site-footer__col-title">Aide</p>
+          <ul class="site-footer__list">
+            <li><a href="https://www.google.com">Nous joindre</a></li>
+            <li><a href="https://www.google.com">Livraison</a></li>
+            <li><a href="https://www.google.com">Retours</a></li>
+            <li><a href="https://www.google.com">FAQ</a></li>
+            <li><a href="https://www.google.com">Suivi de commande</a></li>
+          </ul>
+        </div>
+
+        <!-- Infos -->
+        <div class="site-footer__col">
+          <p class="site-footer__col-title">Infos</p>
+          <ul class="site-footer__list">
+            <li><a href="https://www.google.com">Ingrédients</a></li>
+            <li><a href="https://www.google.com">Fabriqué au Québec</a></li>
+            <li><a href="https://www.google.com">Cartes-cadeaux</a></li>
+            <li><a href="https://www.google.com">Grossiste</a></li>
+          </ul>
+        </div>
+
+      </nav>
+    </div>
+
+    <!-- ── TRUST CHIPS ─────────────────────────────────────────── -->
+    <div class="site-footer__trust" aria-label="Nos engagements">
+      <span class="chip site-footer__chip">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+          <circle cx="7" cy="7" r="6" stroke="currentColor" stroke-width="1.2"/>
+          <path d="M4 7l2 2 4-4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        100 % NATUREL
+      </span>
+      <span class="chip site-footer__chip">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+          <path d="M7 2C4.5 2 2.5 4 2.5 6.5c0 3 4.5 6 4.5 6s4.5-3 4.5-6C11.5 4 9.5 2 7 2z" stroke="currentColor" stroke-width="1.2"/>
+        </svg>
+        FABRIQUÉ AU QUÉBEC
+      </span>
+      <span class="chip site-footer__chip">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+          <path d="M7 1.5l1.5 3 3.5.5-2.5 2.5.6 3.5L7 9.5l-3.1 1.5.6-3.5L2 5l3.5-.5z" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/>
+        </svg>
+        VEGAN
+      </span>
+    </div>
+
+    <!-- ── BOTTOM BAR ──────────────────────────────────────────── -->
+    <div class="site-footer__bottom">
+      <p class="site-footer__copy">
+        &copy; 2026 Espace Oriental<sup>&reg;</sup>. Tous droits réservés.
+      </p>
+
+      <nav class="site-footer__legal" aria-label="Liens légaux">
+        <a href="https://www.google.com">Confidentialité</a>
+        <span aria-hidden="true">·</span>
+        <a href="https://www.google.com">Conditions d'utilisation</a>
+      </nav>
+
+      <!-- Payment marks inline SVG -->
+      <div class="site-footer__payments" aria-label="Modes de paiement acceptés">
+
+        <!-- Visa -->
+        <span class="site-footer__pay-mark" title="Visa" aria-label="Visa">
+          <svg width="40" height="26" viewBox="0 0 40 26" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Visa">
+            <rect width="40" height="26" rx="4" fill="rgba(255,255,255,0.12)"/>
+            <text x="20" y="18" font-family="Arial, sans-serif" font-size="11" font-weight="700" fill="#E6DCCB" text-anchor="middle" letter-spacing=".5">VISA</text>
+          </svg>
+        </span>
+
+        <!-- Mastercard -->
+        <span class="site-footer__pay-mark" title="Mastercard" aria-label="Mastercard">
+          <svg width="40" height="26" viewBox="0 0 40 26" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Mastercard">
+            <rect width="40" height="26" rx="4" fill="rgba(255,255,255,0.12)"/>
+            <circle cx="16" cy="13" r="7" fill="#E63B2E" opacity=".85"/>
+            <circle cx="24" cy="13" r="7" fill="#F4A223" opacity=".85"/>
+            <path d="M20 8.1a7 7 0 0 1 0 9.8A7 7 0 0 1 20 8.1z" fill="#E63B2E" opacity=".5"/>
+          </svg>
+        </span>
+
+        <!-- Amex -->
+        <span class="site-footer__pay-mark" title="American Express" aria-label="American Express">
+          <svg width="40" height="26" viewBox="0 0 40 26" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="American Express">
+            <rect width="40" height="26" rx="4" fill="rgba(255,255,255,0.12)"/>
+            <text x="20" y="18" font-family="Arial, sans-serif" font-size="8.5" font-weight="700" fill="#E6DCCB" text-anchor="middle" letter-spacing=".3">AMEX</text>
+          </svg>
+        </span>
+
+        <!-- PayPal -->
+        <span class="site-footer__pay-mark" title="PayPal" aria-label="PayPal">
+          <svg width="40" height="26" viewBox="0 0 40 26" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="PayPal">
+            <rect width="40" height="26" rx="4" fill="rgba(255,255,255,0.12)"/>
+            <text x="20" y="18" font-family="Arial, sans-serif" font-size="8" font-weight="700" fill="#E6DCCB" text-anchor="middle" letter-spacing=".3">PayPal</text>
+          </svg>
+        </span>
+
+        <!-- Interac -->
+        <span class="site-footer__pay-mark" title="Interac" aria-label="Interac">
+          <svg width="40" height="26" viewBox="0 0 40 26" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Interac">
+            <rect width="40" height="26" rx="4" fill="rgba(255,255,255,0.12)"/>
+            <text x="20" y="18" font-family="Arial, sans-serif" font-size="7.5" font-weight="700" fill="#E6DCCB" text-anchor="middle" letter-spacing=".3">Interac</text>
+          </svg>
+        </span>
+
+      </div>
+    </div>
+
+  </div>
+</footer>
+
+</main>
+<script src="fx.js"></script>
+</body>
+</html>
