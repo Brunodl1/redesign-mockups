@@ -1,0 +1,992 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hera Beauté — Wigs, Braids, Weaves & Beauty | Montréal</title>
+<meta name="description" content="Montréal's home for wigs, braiding hair, weaves, extensions and hair & skin care. Trusted brands — X-Pression, Outre, Sensationnel, ORS & more. Free shipping $75+, earn rewards.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="base.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<main>
+<!-- 01-header.html -->
+<!-- ============================================================
+     Hera Beauté — 01-header.html
+     Announcement bar + sticky site header
+     ============================================================ -->
+
+<!-- ANNOUNCEMENT BAR -->
+<div class="announce">
+  <div class="announce__inner">
+    <span class="announce__item announce__item--primary">Free shipping on orders $75+</span>
+    <span class="announce__sep" aria-hidden="true">·</span>
+    <span class="announce__item announce__item--secondary">Earn rewards on every order</span>
+    <span class="announce__sep" aria-hidden="true">·</span>
+    <span class="announce__item announce__item--secondary">Shipped fast from Québec 🇨🇦</span>
+  </div>
+</div>
+
+<!-- SITE HEADER -->
+<header class="site-header">
+  <div class="site-header__inner wrap">
+
+    <!-- LEFT: hamburger (mobile) / primary nav (desktop) -->
+    <nav class="site-header__nav" aria-label="Primary navigation">
+
+      <!-- Hamburger — mobile only -->
+      <button class="site-header__hamburger" aria-label="Open menu" aria-expanded="false">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true"
+             xmlns="http://www.w3.org/2000/svg">
+          <line x1="3" y1="5.5"  x2="19" y2="5.5"  stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+          <line x1="3" y1="11"   x2="19" y2="11"   stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+          <line x1="3" y1="16.5" x2="19" y2="16.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+        </svg>
+      </button>
+
+      <!-- Desktop nav links -->
+      <ul class="site-header__nav-list" role="list">
+        <li><a href="https://www.google.com" class="site-header__nav-link">Wigs</a></li>
+        <li><a href="https://www.google.com" class="site-header__nav-link">Braiding Hair</a></li>
+        <li><a href="https://www.google.com" class="site-header__nav-link">Weaves</a></li>
+        <li><a href="https://www.google.com" class="site-header__nav-link">Hair &amp; Skin Care</a></li>
+        <li><a href="https://www.google.com" class="site-header__nav-link">Kids</a></li>
+        <li><a href="https://www.google.com" class="site-header__nav-link">Brands</a></li>
+        <li><a href="https://www.google.com" class="site-header__nav-link site-header__nav-link--sale">Sale</a></li>
+      </ul>
+    </nav>
+
+    <!-- CENTER: logo -->
+    <a href="https://www.google.com" class="site-header__logo-link" aria-label="Hera Beauté — home">
+      <img
+        src="https://herabeauty.ca/cdn/shop/files/Logo_bdd93355-62cf-412d-81f4-6b24fc343bf7.svg?v=1761925608"
+        alt="Hera Beauté"
+        class="site-header__logo"
+        width="auto"
+        height="40"
+        loading="eager"
+        decoding="async"
+      />
+    </a>
+
+    <!-- RIGHT: utility icons -->
+    <div class="site-header__utils">
+
+      <!-- Search — hidden on mobile -->
+      <a href="https://www.google.com" class="site-header__icon site-header__icon--search" aria-label="Search">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true"
+             xmlns="http://www.w3.org/2000/svg">
+          <circle cx="9.5" cy="9.5" r="6" stroke="currentColor" stroke-width="1.8"/>
+          <line x1="14.07" y1="14.07" x2="19" y2="19" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+        </svg>
+      </a>
+
+      <!-- Account — hidden on mobile -->
+      <a href="https://www.google.com" class="site-header__icon site-header__icon--account" aria-label="My account">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true"
+             xmlns="http://www.w3.org/2000/svg">
+          <circle cx="11" cy="7.5" r="3.5" stroke="currentColor" stroke-width="1.8"/>
+          <path d="M3.5 19.5c0-4.142 3.358-7.5 7.5-7.5s7.5 3.358 7.5 7.5"
+                stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+        </svg>
+      </a>
+
+      <!-- Cart — always visible -->
+      <a href="https://www.google.com" class="site-header__icon site-header__icon--cart" aria-label="Cart, 0 items">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true"
+             xmlns="http://www.w3.org/2000/svg">
+          <path d="M2 2h2l2.5 11h10.5l2-7H6" stroke="currentColor" stroke-width="1.8"
+                stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="9.5" cy="18.5" r="1.5" stroke="currentColor" stroke-width="1.6"/>
+          <circle cx="16.5" cy="18.5" r="1.5" stroke="currentColor" stroke-width="1.6"/>
+        </svg>
+        <span class="site-header__badge" aria-hidden="true">0</span>
+      </a>
+
+    </div>
+  </div>
+</header>
+
+<!-- 02-hero.html -->
+<section class="sec s-hero hero-split">
+  <div class="hero-split__inner">
+
+    <!-- LEFT: solid brand-pink panel -->
+    <div class="hero-split__left">
+      <div class="hero-split__content">
+        <p class="eyebrow hero-eyebrow">Montréal's Home for Hair &amp; Beauty</p>
+        <h1 class="hero-headline">Your beauty,<br>celebrated.</h1>
+        <p class="hero-statement">Wigs, braids, weaves &amp; care — every texture, every length, all your favourite brands in one place.</p>
+        <a href="https://www.google.com" class="btn btn-light hero-cta">Shop the collection</a>
+        <p class="hero-trust">★ Trusted by thousands across Canada</p>
+      </div>
+    </div>
+
+    <!-- RIGHT: one editorial model image -->
+    <div class="hero-split__right">
+      <img
+        src="https://herabeauty.ca/cdn/shop/files/sensationnel-lace-front-wig-with-90s-bangs-butta-lace-unit-915-model-front-smile-black-curly.jpg?v=1755630472&width=1100"
+        alt="Smiling woman wearing a curly Sensationnel lace-front wig — Hera Beauté"
+        class="hero-model-img"
+        fetchpriority="high"
+        loading="eager"
+      >
+    </div>
+
+  </div>
+</section>
+
+<!-- 03-brands.html -->
+<!-- ============================================================
+     Hera Beauté — 03-brands.html
+     Trusted-brand marquee band
+     ============================================================ -->
+
+<section class="sec s-brands" aria-label="Trusted brands">
+  <div class="wrap">
+
+    <p class="s-brands__label" aria-label="The brands you trust, all in one place">
+      The Brands You Trust, All in One Place
+    </p>
+
+    <!-- Desktop: single justified row; Mobile: horizontal scroll -->
+    <nav class="s-brands__row" aria-label="Brand list">
+      <a href="https://www.google.com" class="s-brands__name">X-Pression</a>
+      <span class="s-brands__sep" aria-hidden="true">·</span>
+      <a href="https://www.google.com" class="s-brands__name">Outre</a>
+      <span class="s-brands__sep" aria-hidden="true">·</span>
+      <a href="https://www.google.com" class="s-brands__name">Sensationnel</a>
+      <span class="s-brands__sep" aria-hidden="true">·</span>
+      <a href="https://www.google.com" class="s-brands__name">Freetress</a>
+      <span class="s-brands__sep" aria-hidden="true">·</span>
+      <a href="https://www.google.com" class="s-brands__name">ORS</a>
+      <span class="s-brands__sep" aria-hidden="true">·</span>
+      <a href="https://www.google.com" class="s-brands__name">Ampro</a>
+      <span class="s-brands__sep" aria-hidden="true">·</span>
+      <a href="https://www.google.com" class="s-brands__name">As I Am</a>
+      <span class="s-brands__sep" aria-hidden="true">·</span>
+      <a href="https://www.google.com" class="s-brands__name">Wonder Lace Bond</a>
+    </nav>
+
+  </div>
+</section>
+
+<!-- 04-categories.html -->
+<!-- ============================================================
+     Hera Beauté — 04-categories.html
+     Shop-by-category image tile grid (6 tiles)
+     ============================================================ -->
+
+<section class="sec s-categories" aria-labelledby="cat-heading">
+  <div class="wrap">
+
+    <!-- Header -->
+    <header class="s-categories__header reveal">
+      <p class="eyebrow">Shop by Category</p>
+      <h2 id="cat-heading" class="s-categories__heading">Find your look</h2>
+    </header>
+
+    <!-- 6-tile grid -->
+    <div class="s-categories__grid reveal">
+
+      <!-- 1 · Wigs -->
+      <a href="https://www.google.com"
+         class="s-categories__tile"
+         aria-label="Shop Wigs">
+        <img
+          src="https://herabeauty.ca/cdn/shop/files/outre-12-inch-synthetic-lace-front-wig-everywear-every44-deep-auburn-front-smile-model.png?v=1756831168&width=700"
+          alt="Model smiling wearing a 12-inch Outre synthetic lace-front wig in deep auburn"
+          class="s-categories__img"
+          loading="lazy"
+          decoding="async"
+        />
+        <div class="s-categories__overlay" aria-hidden="true"></div>
+        <div class="s-categories__caption">
+          <span class="s-categories__title">Wigs</span>
+          <span class="s-categories__cta">Shop →</span>
+        </div>
+      </a>
+
+      <!-- 2 · Braiding Hair -->
+      <a href="https://www.google.com"
+         class="s-categories__tile"
+         aria-label="Shop Braiding Hair">
+        <img
+          src="https://herabeauty.ca/cdn/shop/files/xpression-pre-stretched-braiding-hair-58-inch-model-side-profile-sleek-cornrow-braids.jpg?v=1756414126&width=700"
+          alt="Side profile of a model with sleek cornrow braids using X-Pression 58-inch pre-stretched braiding hair"
+          class="s-categories__img"
+          loading="lazy"
+          decoding="async"
+        />
+        <div class="s-categories__overlay" aria-hidden="true"></div>
+        <div class="s-categories__caption">
+          <span class="s-categories__title">Braiding Hair</span>
+          <span class="s-categories__cta">Shop →</span>
+        </div>
+      </a>
+
+      <!-- 3 · Weaves & Extensions -->
+      <a href="https://www.google.com"
+         class="s-categories__tile"
+         aria-label="Shop Weaves &amp; Extensions">
+        <img
+          src="https://herabeauty.ca/cdn/shop/files/outre-x-pression-springy-afro-twist-hair-extensions-long-distressed-locs-full-length-model.jpg?v=1756414145&width=700"
+          alt="Full-length model wearing Outre X-Pression springy afro twist extensions styled as long distressed locs"
+          class="s-categories__img"
+          loading="lazy"
+          decoding="async"
+        />
+        <div class="s-categories__overlay" aria-hidden="true"></div>
+        <div class="s-categories__caption">
+          <span class="s-categories__title">Weaves &amp; Extensions</span>
+          <span class="s-categories__cta">Shop →</span>
+        </div>
+      </a>
+
+      <!-- 4 · Hair & Skin Care -->
+      <a href="https://www.google.com"
+         class="s-categories__tile"
+         aria-label="Shop Hair &amp; Skin Care">
+        <img
+          src="https://herabeauty.ca/cdn/shop/files/ORS-Olive-Oil-Moisturizing-Hair-Lotion-for-Strengthening.jpg?v=1757686494&width=700"
+          alt="ORS Olive Oil Moisturizing Hair Lotion bottle for strengthening and conditioning"
+          class="s-categories__img"
+          loading="lazy"
+          decoding="async"
+        />
+        <div class="s-categories__overlay" aria-hidden="true"></div>
+        <div class="s-categories__caption">
+          <span class="s-categories__title">Hair &amp; Skin Care</span>
+          <span class="s-categories__cta">Shop →</span>
+        </div>
+      </a>
+
+      <!-- 5 · Kids -->
+      <a href="https://www.google.com"
+         class="s-categories__tile"
+         aria-label="Shop Kids">
+        <img
+          src="https://herabeauty.ca/cdn/shop/files/freetress-pre-fluffed-poppin-twist-braiding-hair-model-black.jpg?v=1754321455&width=700"
+          alt="Young model wearing Freetress pre-fluffed poppin twist braiding hair in black"
+          class="s-categories__img"
+          loading="lazy"
+          decoding="async"
+        />
+        <div class="s-categories__overlay" aria-hidden="true"></div>
+        <div class="s-categories__caption">
+          <span class="s-categories__title">Kids</span>
+          <span class="s-categories__cta">Shop →</span>
+        </div>
+      </a>
+
+      <!-- 6 · Makeup & Nails -->
+      <a href="https://www.google.com"
+         class="s-categories__tile"
+         aria-label="Shop Makeup &amp; Nails">
+        <img
+          src="https://herabeauty.ca/cdn/shop/files/Lip_Gel_1.png?v=1764696820&width=700"
+          alt="Lip gel product shot for the Makeup &amp; Nails category"
+          class="s-categories__img"
+          loading="lazy"
+          decoding="async"
+        />
+        <div class="s-categories__overlay" aria-hidden="true"></div>
+        <div class="s-categories__caption">
+          <span class="s-categories__title">Makeup &amp; Nails</span>
+          <span class="s-categories__cta">Shop →</span>
+        </div>
+      </a>
+
+    </div><!-- /.s-categories__grid -->
+  </div><!-- /.wrap -->
+</section>
+
+<!-- 05-bestsellers.html -->
+<!-- ============================================================
+     Hera Beauté — 05-bestsellers.html
+     Fan Favourites / Bestsellers product grid (8 cards)
+     ============================================================ -->
+
+<section class="sec s-bestsellers">
+  <div class="wrap">
+
+    <!-- ── Section header ──────────────────────────────────────── -->
+    <div class="s-bestsellers__head">
+      <div class="s-bestsellers__head-left">
+        <p class="eyebrow">Fan Favourites</p>
+        <h2 class="s-bestsellers__title">Bestsellers</h2>
+      </div>
+      <a href="https://www.google.com" class="s-bestsellers__shop-all">Shop all →</a>
+    </div>
+
+    <!-- ── Product grid ────────────────────────────────────────── -->
+    <ul class="s-bestsellers__grid reveal" role="list">
+
+      <!-- 1. X-Pression Pre-Stretched Ultra Braid -->
+      <li class="s-bestsellers__item">
+        <a href="https://www.google.com" class="card" aria-label="X-Pression Pre-Stretched Ultra Braid 52&quot; 3X — $12.00 CAD">
+          <div class="card__img-wrap card__img-wrap--surface2">
+            <span class="card__badge card__badge--bestseller">Bestseller</span>
+            <img
+              src="https://herabeauty.ca/cdn/shop/files/X-Pression-Pre-Stretched-Ultra-Braid-1_73729e62-2c12-47c1-9bae-3438b70c3a4a.png?v=1772743478"
+              alt="X-Pression Pre-Stretched Ultra Braid 52 inch 3X"
+              class="card__img card__img--contain"
+              loading="lazy"
+              decoding="async"
+            >
+          </div>
+          <div class="card__body">
+            <p class="card__brand">X-Pression</p>
+            <p class="card__name">Pre-Stretched Ultra Braid 52" 3X</p>
+            <p class="card__type">Braiding hair</p>
+            <div class="card__meta">
+              <span class="stars" aria-label="4.9 out of 5 stars">★★★★★</span>
+              <span class="card__count">(1,320)</span>
+            </div>
+            <p class="card__price">$12.00 <abbr title="Canadian dollars">CAD</abbr></p>
+          </div>
+          <div class="card__footer">
+            <span class="btn btn-primary card__atc">Add to bag</span>
+          </div>
+        </a>
+      </li>
+
+      <!-- 2. Sensationnel Butta Lace Wig Unit 915 -->
+      <li class="s-bestsellers__item">
+        <a href="https://www.google.com" class="card" aria-label="Sensationnel Butta Lace Wig Unit 915 — $55.00 CAD">
+          <div class="card__img-wrap card__img-wrap--pink">
+            <span class="card__badge card__badge--bestseller">Bestseller</span>
+            <img
+              src="https://herabeauty.ca/cdn/shop/files/sensationnel-lace-front-wig-with-90s-bangs-butta-lace-unit-915-model-front-smile-black-curly.jpg?v=1755630472"
+              alt="Sensationnel Butta Lace Unit 915 — model wearing black curly lace-front wig"
+              class="card__img card__img--cover card__img--top"
+              loading="lazy"
+              decoding="async"
+            >
+          </div>
+          <div class="card__body">
+            <p class="card__brand">Sensationnel</p>
+            <p class="card__name">Butta Lace Wig Unit 915</p>
+            <p class="card__type">Lace wig</p>
+            <div class="card__meta">
+              <span class="stars" aria-label="4.8 out of 5 stars">★★★★★</span>
+              <span class="card__count">(210)</span>
+            </div>
+            <p class="card__price">$55.00 <abbr title="Canadian dollars">CAD</abbr></p>
+          </div>
+          <div class="card__footer">
+            <span class="btn btn-primary card__atc">Add to bag</span>
+          </div>
+        </a>
+      </li>
+
+      <!-- 3. Outre Springy Afro Twist -->
+      <li class="s-bestsellers__item">
+        <a href="https://www.google.com" class="card" aria-label="Outre Springy Afro Twist — $15.00 CAD">
+          <div class="card__img-wrap card__img-wrap--surface2">
+            <span class="card__badge card__badge--bestseller">Bestseller</span>
+            <img
+              src="https://herabeauty.ca/cdn/shop/files/outre-x-pression-springy-afro-twist-hair-extensions-shoulder-length-model-1b-natural.jpg?v=1756414145"
+              alt="Outre X-Pression Springy Afro Twist — model wearing natural black afro twists"
+              class="card__img card__img--cover card__img--top"
+              loading="lazy"
+              decoding="async"
+            >
+          </div>
+          <div class="card__body">
+            <p class="card__brand">Outre</p>
+            <p class="card__name">Springy Afro Twist</p>
+            <p class="card__type">Extensions</p>
+            <div class="card__meta">
+              <span class="stars" aria-label="4.9 out of 5 stars">★★★★★</span>
+              <span class="card__count">(480)</span>
+            </div>
+            <p class="card__price">$15.00 <abbr title="Canadian dollars">CAD</abbr></p>
+          </div>
+          <div class="card__footer">
+            <span class="btn btn-primary card__atc">Add to bag</span>
+          </div>
+        </a>
+      </li>
+
+      <!-- 4. Freetress 3X Braid 301 56" -->
+      <li class="s-bestsellers__item">
+        <a href="https://www.google.com" class="card" aria-label="Freetress 3X Braid 301 56 inch — $13.00 CAD">
+          <div class="card__img-wrap card__img-wrap--pink">
+            <img
+              src="https://herabeauty.ca/cdn/shop/files/freetress-freetress-3x-braid-301-hair-extensions-model-long-box-braids-ash-blonde-highlights.jpg?v=1756414147"
+              alt="Freetress 3X Braid 301 — model with long box braids and ash blonde highlights"
+              class="card__img card__img--cover card__img--top"
+              loading="lazy"
+              decoding="async"
+            >
+          </div>
+          <div class="card__body">
+            <p class="card__brand">Freetress</p>
+            <p class="card__name">3X Braid 301 56"</p>
+            <p class="card__type">Braiding hair</p>
+            <div class="card__meta">
+              <span class="stars" aria-label="4.7 out of 5 stars">★★★★☆</span>
+              <span class="card__count">(190)</span>
+            </div>
+            <p class="card__price">$13.00 <abbr title="Canadian dollars">CAD</abbr></p>
+          </div>
+          <div class="card__footer">
+            <span class="btn btn-primary card__atc">Add to bag</span>
+          </div>
+        </a>
+      </li>
+
+      <!-- 5. Outre EveryWear Every44 Lace Wig -->
+      <li class="s-bestsellers__item">
+        <a href="https://www.google.com" class="card" aria-label="Outre EveryWear Every44 Lace Wig — $48.00 CAD">
+          <div class="card__img-wrap card__img-wrap--surface2">
+            <span class="card__badge card__badge--new">New</span>
+            <img
+              src="https://herabeauty.ca/cdn/shop/files/outre-12-inch-synthetic-lace-front-wig-everywear-every44-deep-auburn-front-smile-model.png?v=1756831168"
+              alt="Outre EveryWear Every44 — model smiling in deep auburn 12-inch synthetic lace-front wig"
+              class="card__img card__img--cover card__img--top"
+              loading="lazy"
+              decoding="async"
+            >
+          </div>
+          <div class="card__body">
+            <p class="card__brand">Outre</p>
+            <p class="card__name">EveryWear Every44 Lace Wig</p>
+            <p class="card__type">Lace wig</p>
+            <div class="card__meta">
+              <span class="stars" aria-label="4.8 out of 5 stars">★★★★★</span>
+              <span class="card__count">(156)</span>
+            </div>
+            <p class="card__price">$48.00 <abbr title="Canadian dollars">CAD</abbr></p>
+          </div>
+          <div class="card__footer">
+            <span class="btn btn-primary card__atc">Add to bag</span>
+          </div>
+        </a>
+      </li>
+
+      <!-- 6. ORS Olive Oil Moisturizing Hair Lotion -->
+      <li class="s-bestsellers__item">
+        <a href="https://www.google.com" class="card" aria-label="ORS Olive Oil Moisturizing Hair Lotion — $11.00 CAD">
+          <div class="card__img-wrap card__img-wrap--warm">
+            <img
+              src="https://herabeauty.ca/cdn/shop/files/ORS-Olive-Oil-Moisturizing-Hair-Lotion-for-Strengthening.jpg?v=1757686494"
+              alt="ORS Olive Oil Moisturizing Hair Lotion for strengthening"
+              class="card__img card__img--contain"
+              loading="lazy"
+              decoding="async"
+            >
+          </div>
+          <div class="card__body">
+            <p class="card__brand">ORS</p>
+            <p class="card__name">Olive Oil Moisturizing Hair Lotion</p>
+            <p class="card__type">Hair care</p>
+            <div class="card__meta">
+              <span class="stars" aria-label="4.8 out of 5 stars">★★★★★</span>
+              <span class="card__count">(360)</span>
+            </div>
+            <p class="card__price">$11.00 <abbr title="Canadian dollars">CAD</abbr></p>
+          </div>
+          <div class="card__footer">
+            <span class="btn btn-primary card__atc">Add to bag</span>
+          </div>
+        </a>
+      </li>
+
+      <!-- 7. Ampro Shine 'n Jam Gel Extra Hold 8oz -->
+      <li class="s-bestsellers__item">
+        <a href="https://www.google.com" class="card" aria-label="Ampro Shine 'n Jam Gel Extra Hold 8oz — $9.00 CAD">
+          <div class="card__img-wrap card__img-wrap--surface2">
+            <span class="card__badge card__badge--bestseller">Bestseller</span>
+            <img
+              src="https://herabeauty.ca/cdn/shop/files/ampro_Shine_N_Jam_Conditioning_Gel_Extra_Hold_8oz.png?v=1772212413"
+              alt="Ampro Shine n Jam Conditioning Gel Extra Hold 8oz"
+              class="card__img card__img--contain"
+              loading="lazy"
+              decoding="async"
+            >
+          </div>
+          <div class="card__body">
+            <p class="card__brand">Ampro</p>
+            <p class="card__name">Shine 'n Jam Gel Extra Hold 8oz</p>
+            <p class="card__type">Edge &amp; styling</p>
+            <div class="card__meta">
+              <span class="stars" aria-label="4.9 out of 5 stars">★★★★★</span>
+              <span class="card__count">(540)</span>
+            </div>
+            <p class="card__price">$9.00 <abbr title="Canadian dollars">CAD</abbr></p>
+          </div>
+          <div class="card__footer">
+            <span class="btn btn-primary card__atc">Add to bag</span>
+          </div>
+        </a>
+      </li>
+
+      <!-- 8. Wigpop Synthetic Full Wig Cedora -->
+      <li class="s-bestsellers__item">
+        <a href="https://www.google.com" class="card" aria-label="Wigpop Synthetic Full Wig Cedora — $42.00 CAD">
+          <div class="card__img-wrap card__img-wrap--pink">
+            <span class="card__badge card__badge--new">New</span>
+            <img
+              src="https://herabeauty.ca/cdn/shop/files/Wigpop-Synthetic-Full-Wig-Cedora.jpg?v=1757960682"
+              alt="Wigpop Synthetic Full Wig Cedora"
+              class="card__img card__img--cover card__img--top"
+              loading="lazy"
+              decoding="async"
+            >
+          </div>
+          <div class="card__body">
+            <p class="card__brand">Wigpop</p>
+            <p class="card__name">Synthetic Full Wig Cedora</p>
+            <p class="card__type">Wig</p>
+            <div class="card__meta">
+              <span class="stars" aria-label="4.6 out of 5 stars">★★★★☆</span>
+              <span class="card__count">(88)</span>
+            </div>
+            <p class="card__price">$42.00 <abbr title="Canadian dollars">CAD</abbr></p>
+          </div>
+          <div class="card__footer">
+            <span class="btn btn-primary card__atc">Add to bag</span>
+          </div>
+        </a>
+      </li>
+
+    </ul><!-- /.s-bestsellers__grid -->
+
+    <!-- ── Footnote ─────────────────────────────────────────────── -->
+    <p class="s-bestsellers__footnote">* Star ratings and review counts shown are illustrative.</p>
+
+  </div><!-- /.wrap -->
+</section>
+
+<!-- 06-editorial.html -->
+<!-- ============================================================
+     Hera Beauté — 06-editorial.html
+     "Celebrate Your Beauty" editorial brand band
+     2-column: image LEFT (rounded, tint block) / content RIGHT
+     ============================================================ -->
+
+<section class="sec s-editorial">
+  <div class="wrap">
+    <div class="s-editorial__inner reveal">
+
+      <!-- LEFT: model image in a warm tinted frame -->
+      <div class="s-editorial__img-col">
+        <div class="s-editorial__img-frame">
+          <img
+            src="https://herabeauty.ca/cdn/shop/files/outre-x-pression-springy-afro-twist-hair-extensions-long-distressed-locs-full-length-model.jpg?v=1756414145&width=900"
+            alt="Woman with long distressed locs wearing Outre Springy Afro Twist extensions — Hera Beauté"
+            class="s-editorial__img"
+            loading="lazy"
+            decoding="async"
+          >
+        </div>
+      </div>
+
+      <!-- RIGHT: brand statement content -->
+      <div class="s-editorial__content">
+        <p class="eyebrow">WHO WE ARE</p>
+        <h2 class="s-editorial__headline">Beauty for every crown.</h2>
+        <p class="s-editorial__body">
+          Hera Beauté is Montréal's destination for wigs, braids, weaves and care — bringing you the textures, lengths and trusted brands you love, with the warmth of a shop that truly gets your hair. Every length, every texture, every you.
+        </p>
+        <a href="https://www.google.com" class="btn btn-primary s-editorial__cta">About Hera Beauté</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- 07-reviews.html -->
+<!-- ============================================================
+     Hera Beauté — 07-reviews.html
+     Community Reviews wall — 6 cards, 2 rows × 3 (desktop)
+     ============================================================ -->
+
+<section class="sec s-reviews">
+  <div class="wrap">
+
+    <!-- ── Section header ──────────────────────────────────────── -->
+    <div class="s-reviews__head">
+      <p class="eyebrow">LOVED BY OUR COMMUNITY</p>
+      <h2 class="s-reviews__title">Real reviews, real results.</h2>
+
+      <!-- Rating summary bar -->
+      <div class="s-reviews__summary">
+        <span class="s-reviews__big-star" aria-label="4.9 out of 5 stars">★ 4.9/5</span>
+        <span class="s-reviews__summary-sep" aria-hidden="true">·</span>
+        <span class="s-reviews__summary-count">based on 4,200+ reviews</span>
+      </div>
+    </div>
+
+    <!-- ── Review cards grid ───────────────────────────────────── -->
+    <ul class="s-reviews__grid reveal" role="list">
+
+      <!-- 1. Sensationnel lace wig -->
+      <li class="s-reviews__item">
+        <article class="review" aria-label="Review by Khadija M.">
+          <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <blockquote class="review__quote">
+            "The lace melted perfectly — I styled it straight out of the box and got compliments all night. Best wig I've bought in years."
+          </blockquote>
+          <footer class="review__footer">
+            <span class="review__name">Khadija M.</span>
+            <span class="review__verified">Verified buyer</span>
+          </footer>
+          <p class="review__product">SENSATIONNEL BUTTA LACE UNIT 915</p>
+        </article>
+      </li>
+
+      <!-- 2. X-Pression braiding hair -->
+      <li class="s-reviews__item">
+        <article class="review" aria-label="Review by Nadège T.">
+          <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <blockquote class="review__quote">
+            "Super soft, no shedding at all. I did box braids that lasted my whole vacation in Jamaica — still looked fresh coming home. Will buy again!"
+          </blockquote>
+          <footer class="review__footer">
+            <span class="review__name">Nadège T.</span>
+            <span class="review__verified">Verified buyer</span>
+          </footer>
+          <p class="review__product">X-PRESSION PRE-STRETCHED ULTRA BRAID 52" 3X</p>
+        </article>
+      </li>
+
+      <!-- 3. Outre Springy Afro Twist -->
+      <li class="s-reviews__item">
+        <article class="review" aria-label="Review by Destiny R.">
+          <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <blockquote class="review__quote">
+            "So voluminous and natural-looking. I got so many people asking if it was my real hair. The twist-out effect is *chef's kiss*."
+          </blockquote>
+          <footer class="review__footer">
+            <span class="review__name">Destiny R.</span>
+            <span class="review__verified">Verified buyer</span>
+          </footer>
+          <p class="review__product">OUTRE SPRINGY AFRO TWIST EXTENSIONS</p>
+        </article>
+      </li>
+
+      <!-- 4. ORS hair lotion -->
+      <li class="s-reviews__item">
+        <article class="review" aria-label="Review by Marlène B.">
+          <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <blockquote class="review__quote">
+            "My natural hair has never felt this moisturized. I use it every wash day and my shrinkage is finally manageable. I'm obsessed."
+          </blockquote>
+          <footer class="review__footer">
+            <span class="review__name">Marlène B.</span>
+            <span class="review__verified">Verified buyer</span>
+          </footer>
+          <p class="review__product">ORS OLIVE OIL HAIR LOTION</p>
+        </article>
+      </li>
+
+      <!-- 5. Ampro edge gel -->
+      <li class="s-reviews__item">
+        <article class="review" aria-label="Review by Jasmine O.">
+          <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <blockquote class="review__quote">
+            "My edges stayed all day — through a whole outdoor wedding in the heat. No flaking, no white cast. This is now a permanent staple."
+          </blockquote>
+          <footer class="review__footer">
+            <span class="review__name">Jasmine O.</span>
+            <span class="review__verified">Verified buyer</span>
+          </footer>
+          <p class="review__product">AMPRO PRO STYL PROTEIN STYLING GEL</p>
+        </article>
+      </li>
+
+      <!-- 6. Kids braiding set -->
+      <li class="s-reviews__item">
+        <article class="review" aria-label="Review by Fatoumata D.">
+          <div class="stars" aria-label="4 out of 5 stars">★★★★☆</div>
+          <blockquote class="review__quote">
+            "Bought this for my daughter's back-to-school braids. It was so gentle on her scalp and the colours are adorable. She loves her hair!"
+          </blockquote>
+          <footer class="review__footer">
+            <span class="review__name">Fatoumata D.</span>
+            <span class="review__verified">Verified buyer</span>
+          </footer>
+          <p class="review__product">KIDS BRAIDING STARTER SET</p>
+        </article>
+      </li>
+
+    </ul>
+
+    <!-- ── Footnote ─────────────────────────────────────────────── -->
+    <p class="s-reviews__footnote">Reviews are illustrative.</p>
+
+  </div>
+</section>
+
+<!-- 08-rewards.html -->
+<section class="sec s-rewards">
+  <div class="wrap">
+
+    <p class="eyebrow">WHY SHOP WITH HERA</p>
+    <h2 class="s-rewards__title">More reasons to love us</h2>
+
+    <div class="s-rewards__grid">
+
+      <!-- Hera Rewards -->
+      <div class="s-rewards__card reveal">
+        <span class="ic" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="20 12 20 22 4 22 4 12"/>
+            <rect x="2" y="7" width="20" height="5" rx="1"/>
+            <line x1="12" y1="22" x2="12" y2="7"/>
+            <path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/>
+            <path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/>
+          </svg>
+        </span>
+        <h3 class="s-rewards__card-title">Hera Rewards</h3>
+        <p class="s-rewards__card-desc">Earn points on every order, redeem for $ off.</p>
+      </div>
+
+      <!-- Free Shipping $75+ -->
+      <div class="s-rewards__card reveal">
+        <span class="ic" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="1" y="3" width="15" height="13" rx="1"/>
+            <path d="M16 8h4l3 5v3h-7V8z"/>
+            <circle cx="5.5" cy="18.5" r="2.5"/>
+            <circle cx="18.5" cy="18.5" r="2.5"/>
+          </svg>
+        </span>
+        <h3 class="s-rewards__card-title">Free Shipping $75+</h3>
+        <p class="s-rewards__card-desc">Fast, tracked delivery across Canada.</p>
+      </div>
+
+      <!-- Shipped from Québec -->
+      <div class="s-rewards__card reveal">
+        <span class="ic" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/>
+            <circle cx="12" cy="10" r="3"/>
+          </svg>
+        </span>
+        <h3 class="s-rewards__card-title">Shipped from Québec</h3>
+        <p class="s-rewards__card-desc">Local, trusted, ships same/next day.</p>
+      </div>
+
+      <!-- Trusted Brands -->
+      <div class="s-rewards__card reveal">
+        <span class="ic" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            <polyline points="9 12 11 14 15 10"/>
+          </svg>
+        </span>
+        <h3 class="s-rewards__card-title">Trusted Brands</h3>
+        <p class="s-rewards__card-desc">100% authentic X-Pression, Outre, ORS &amp; more.</p>
+      </div>
+
+    </div><!-- /.s-rewards__grid -->
+  </div><!-- /.wrap -->
+</section>
+
+<!-- 09-newsletter.html -->
+<section class="sec s-newsletter">
+  <div class="wrap s-newsletter__inner">
+
+    <p class="eyebrow s-newsletter__eyebrow">JOIN THE HERA FAM</p>
+    <h2 class="s-newsletter__title">Get 10% off your first order</h2>
+    <p class="s-newsletter__sub">New wig drops, restocks &amp; beauty tips — straight to your inbox.</p>
+
+    <form class="s-newsletter__form" onsubmit="return false" novalidate>
+      <div class="s-newsletter__fields">
+        <label for="nl-email" class="sr-only">Email address</label>
+        <input
+          id="nl-email"
+          class="s-newsletter__input"
+          type="email"
+          name="email"
+          placeholder="Your email address"
+          autocomplete="email"
+          required
+        />
+        <button type="submit" class="btn s-newsletter__btn">Get 10% off</button>
+      </div>
+      <p class="s-newsletter__fine">Unsubscribe anytime.</p>
+    </form>
+
+  </div><!-- /.wrap -->
+</section>
+
+<!-- 10-footer.html -->
+<footer class="site-footer">
+  <div class="wrap">
+
+    <!-- ── TOP ROW: logo + blurb ── -->
+    <div class="site-footer__top">
+      <div class="site-footer__brand">
+        <a href="https://www.google.com" class="site-footer__logo-link" aria-label="Hera Beauté home">
+          <img
+            src="https://herabeauty.ca/cdn/shop/files/Logo_bdd93355-62cf-412d-81f4-6b24fc343bf7.svg?v=1761925608"
+            alt="Hera Beauté"
+            class="site-footer__logo"
+            height="38"
+            loading="lazy"
+          />
+        </a>
+        <p class="site-footer__blurb">
+          Montréal's home for wigs, braids, weaves &amp; beauty. 💖
+        </p>
+        <!-- Social icons -->
+        <div class="site-footer__socials" aria-label="Follow us">
+          <!-- Instagram -->
+          <a href="https://www.google.com" class="site-footer__social-link" aria-label="Instagram">
+            <svg class="ic" viewBox="0 0 24 24" aria-hidden="true">
+              <rect x="2" y="2" width="20" height="20" rx="5.5" ry="5.5"/>
+              <circle cx="12" cy="12" r="4.3"/>
+              <circle cx="17.5" cy="6.5" r="1.1" fill="currentColor" stroke="none"/>
+            </svg>
+          </a>
+          <!-- TikTok -->
+          <a href="https://www.google.com" class="site-footer__social-link" aria-label="TikTok">
+            <svg class="ic" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M19 3h-3v9.75A3.25 3.25 0 1 1 12.75 9.5V6.25A6.25 6.25 0 1 0 19 12.25V3z" stroke="none" fill="currentColor"/>
+            </svg>
+          </a>
+          <!-- Facebook -->
+          <a href="https://www.google.com" class="site-footer__social-link" aria-label="Facebook">
+            <svg class="ic" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- ── 4 LINK COLUMNS ── -->
+      <nav class="site-footer__nav" aria-label="Footer navigation">
+        <!-- Shop -->
+        <div class="site-footer__col">
+          <h3 class="site-footer__col-head eyebrow">Shop</h3>
+          <ul class="site-footer__links">
+            <li><a href="https://www.google.com">Wigs</a></li>
+            <li><a href="https://www.google.com">Braiding Hair</a></li>
+            <li><a href="https://www.google.com">Weaves &amp; Extensions</a></li>
+            <li><a href="https://www.google.com">Hair &amp; Skin Care</a></li>
+            <li><a href="https://www.google.com">Kids</a></li>
+            <li><a href="https://www.google.com">Sale</a></li>
+          </ul>
+        </div>
+        <!-- Brands -->
+        <div class="site-footer__col">
+          <h3 class="site-footer__col-head eyebrow">Brands</h3>
+          <ul class="site-footer__links">
+            <li><a href="https://www.google.com">X-Pression</a></li>
+            <li><a href="https://www.google.com">Outre</a></li>
+            <li><a href="https://www.google.com">Sensationnel</a></li>
+            <li><a href="https://www.google.com">Freetress</a></li>
+            <li><a href="https://www.google.com">ORS</a></li>
+            <li><a href="https://www.google.com">As I Am</a></li>
+          </ul>
+        </div>
+        <!-- Help -->
+        <div class="site-footer__col">
+          <h3 class="site-footer__col-head eyebrow">Help</h3>
+          <ul class="site-footer__links">
+            <li><a href="https://www.google.com">Contact</a></li>
+            <li><a href="https://www.google.com">Shipping</a></li>
+            <li><a href="https://www.google.com">Returns</a></li>
+            <li><a href="https://www.google.com">FAQ</a></li>
+            <li><a href="https://www.google.com">Track Order</a></li>
+          </ul>
+        </div>
+        <!-- Hera -->
+        <div class="site-footer__col">
+          <h3 class="site-footer__col-head eyebrow">Hera</h3>
+          <ul class="site-footer__links">
+            <li><a href="https://www.google.com">About Us</a></li>
+            <li><a href="https://www.google.com">Hera Rewards</a></li>
+            <li><a href="https://www.google.com">Store Locator</a></li>
+            <li><a href="https://www.google.com">Blog</a></li>
+            <li><a href="https://www.google.com">Wholesale</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+
+    <!-- ── TRUST CHIPS ── -->
+    <div class="site-footer__trust" aria-label="Trust marks">
+      <span class="chip site-footer__chip">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        Authentic Brands
+      </span>
+      <span class="chip site-footer__chip">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 1 0 20 14.5 14.5 0 0 1 0-20"/><path d="M2 12h20"/></svg>
+        Québec-Based
+      </span>
+      <span class="chip site-footer__chip">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        Rewards
+      </span>
+    </div>
+
+    <!-- ── DIVIDER ── -->
+    <hr class="site-footer__rule" aria-hidden="true"/>
+
+    <!-- ── BOTTOM BAR ── -->
+    <div class="site-footer__bottom">
+      <p class="site-footer__copy">© 2026 Hera Beauté. All rights reserved.</p>
+
+      <nav class="site-footer__legal" aria-label="Legal links">
+        <a href="https://www.google.com">Privacy</a>
+        <span aria-hidden="true">·</span>
+        <a href="https://www.google.com">Terms</a>
+      </nav>
+
+      <!-- Payment icons -->
+      <div class="site-footer__payments" aria-label="Accepted payment methods">
+        <!-- Visa -->
+        <span class="site-footer__pay-badge" aria-label="Visa">
+          <svg width="38" height="24" viewBox="0 0 38 24" aria-hidden="true">
+            <rect width="38" height="24" rx="4" fill="#1A1D6B"/>
+            <text x="19" y="16.5" text-anchor="middle" font-family="Arial,sans-serif" font-size="10" font-weight="700" fill="#fff" letter-spacing=".5">VISA</text>
+          </svg>
+        </span>
+        <!-- Mastercard -->
+        <span class="site-footer__pay-badge" aria-label="Mastercard">
+          <svg width="38" height="24" viewBox="0 0 38 24" aria-hidden="true">
+            <rect width="38" height="24" rx="4" fill="#252525"/>
+            <circle cx="15" cy="12" r="7" fill="#EB001B" opacity=".9"/>
+            <circle cx="23" cy="12" r="7" fill="#F79E1B" opacity=".9"/>
+          </svg>
+        </span>
+        <!-- Amex -->
+        <span class="site-footer__pay-badge" aria-label="American Express">
+          <svg width="38" height="24" viewBox="0 0 38 24" aria-hidden="true">
+            <rect width="38" height="24" rx="4" fill="#2E77BC"/>
+            <text x="19" y="16.5" text-anchor="middle" font-family="Arial,sans-serif" font-size="7.5" font-weight="700" fill="#fff" letter-spacing=".3">AMEX</text>
+          </svg>
+        </span>
+        <!-- PayPal -->
+        <span class="site-footer__pay-badge" aria-label="PayPal">
+          <svg width="38" height="24" viewBox="0 0 38 24" aria-hidden="true">
+            <rect width="38" height="24" rx="4" fill="#F5F5F5"/>
+            <text x="19" y="16.5" text-anchor="middle" font-family="Arial,sans-serif" font-size="7" font-weight="700" fill="#003087" letter-spacing=".2">PayPal</text>
+          </svg>
+        </span>
+        <!-- Interac -->
+        <span class="site-footer__pay-badge" aria-label="Interac">
+          <svg width="38" height="24" viewBox="0 0 38 24" aria-hidden="true">
+            <rect width="38" height="24" rx="4" fill="#FFD400"/>
+            <text x="19" y="16.5" text-anchor="middle" font-family="Arial,sans-serif" font-size="6.5" font-weight="700" fill="#1A1413" letter-spacing=".2">INTERAC</text>
+          </svg>
+        </span>
+      </div>
+    </div>
+
+  </div><!-- /.wrap -->
+</footer>
+
+</main>
+<script src="fx.js"></script>
+</body>
+</html>

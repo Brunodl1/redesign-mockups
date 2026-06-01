@@ -1,0 +1,2009 @@
+/* ===== 01-header.css ===== */
+/* ============================================================
+   Hera Beauté — 01-header.css
+   Announcement bar + sticky site header
+   ============================================================ */
+
+/* ── ANNOUNCEMENT BAR ────────────────────────────────────────── */
+.announce {
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-family: var(--font-display);
+  font-size: var(--s--1);
+  font-weight: 600;
+  letter-spacing: .03em;
+  line-height: 1;
+  padding-block: var(--sp-2);
+  text-align: center;
+  position: relative;
+  z-index: 200;
+}
+
+.announce__inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sp-3);
+  max-width: var(--maxw);
+  margin-inline: auto;
+  padding-inline: var(--sp-4);
+  flex-wrap: nowrap;
+  white-space: nowrap;
+}
+
+.announce__sep {
+  opacity: .55;
+  flex-shrink: 0;
+}
+
+/* ── Mobile: hide secondary bits, keep only first item ────────── */
+@media (max-width: 780px) {
+  .announce__item--secondary,
+  .announce__sep {
+    display: none;
+  }
+  .announce__inner {
+    justify-content: center;
+    white-space: nowrap;
+  }
+}
+
+
+/* ── SITE HEADER ─────────────────────────────────────────────── */
+.site-header {
+  background: var(--surface);
+  border-bottom: 1px solid var(--line);
+  box-shadow: 0 2px 16px rgba(26,20,19,.06);
+  position: sticky;
+  top: 0;
+  z-index: 190;
+  /* Ensure the announcement bar appears above on scroll */
+}
+
+.site-header__inner {
+  display: grid;
+  /* three equal zones: nav / logo / utils */
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  column-gap: var(--sp-3);
+  padding-block: var(--sp-3);
+  min-height: 68px;
+}
+
+
+/* ── LEFT zone: nav ──────────────────────────────────────────── */
+.site-header__nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+/* hamburger — hidden on desktop */
+.site-header__hamburger {
+  display: none;
+  background: none;
+  border: none;
+  padding: var(--sp-1);
+  cursor: pointer;
+  color: var(--ink);
+  line-height: 0;
+  border-radius: var(--radius);
+  transition: background .15s;
+}
+.site-header__hamburger:hover {
+  background: var(--surface-2);
+}
+
+/* nav list */
+.site-header__nav-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  gap: var(--sp-4);
+  flex-wrap: nowrap;
+  white-space: nowrap;
+}
+
+.site-header__nav-link {
+  font-family: var(--font-display);
+  font-size: .78rem;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--ink);
+  line-height: 1;
+  padding-block: var(--sp-1);
+  position: relative;
+  transition: color .18s;
+}
+
+.site-header__nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  border-radius: 1px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .22s cubic-bezier(.4,0,.2,1);
+}
+
+.site-header__nav-link:hover {
+  color: var(--accent);
+}
+
+.site-header__nav-link:hover::after {
+  transform: scaleX(1);
+}
+
+/* Sale link — always pink */
+.site-header__nav-link--sale {
+  color: var(--accent);
+}
+.site-header__nav-link--sale::after {
+  background: var(--accent);
+}
+
+
+/* ── CENTER zone: logo ───────────────────────────────────────── */
+.site-header__logo-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  grid-column: 2;
+  line-height: 0;
+}
+
+.site-header__logo {
+  height: 40px;
+  width: auto;
+  display: block;
+  object-fit: contain;
+}
+
+
+/* ── RIGHT zone: utility icons ───────────────────────────────── */
+.site-header__utils {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--sp-2);
+}
+
+.site-header__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius);
+  color: var(--ink);
+  transition: background .15s, color .18s;
+}
+
+.site-header__icon:hover {
+  background: var(--surface-2);
+  color: var(--accent);
+}
+
+/* Cart badge */
+.site-header__badge {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-family: var(--font-display);
+  font-size: .6rem;
+  font-weight: 700;
+  line-height: 1;
+  min-width: 16px;
+  height: 16px;
+  padding-inline: 3px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* ── MOBILE (≤ 780px) ────────────────────────────────────────── */
+@media (max-width: 780px) {
+  .site-header__inner {
+    /* hamburger | logo | cart — single row */
+    grid-template-columns: 1fr auto 1fr;
+    padding-block: var(--sp-2);
+    min-height: 56px;
+  }
+
+  /* Show hamburger */
+  .site-header__hamburger {
+    display: flex;
+  }
+
+  /* Hide desktop nav links */
+  .site-header__nav-list {
+    display: none;
+  }
+
+  /* Logo smaller */
+  .site-header__logo {
+    height: 32px;
+  }
+
+  /* Hide search + account; keep cart */
+  .site-header__icon--search,
+  .site-header__icon--account {
+    display: none;
+  }
+}
+
+/* ===== 02-hero.css ===== */
+/* ============================================================
+   Hera Beauté — 02-hero.css
+   Variant: bold two-tone color-block SPLIT
+   LEFT = solid --accent (brand pink) · RIGHT = editorial model image
+   All rules scoped under .s-hero
+   ============================================================ */
+
+/* ----- Section shell: full-bleed, no inherited .sec padding ----- */
+.s-hero {
+  padding-block: 0;
+  overflow: hidden;
+}
+
+/* ----- Two-column inner band ----- */
+.s-hero .hero-split__inner {
+  display: flex;
+  min-height: 600px;
+  width: 100%;
+}
+
+/* ----- LEFT: solid pink panel ----- */
+.s-hero .hero-split__left {
+  flex: 0 0 48%;
+  background: var(--accent);
+  display: flex;
+  align-items: center;
+  padding: var(--sp-7) var(--sp-6);
+}
+
+/* Constrain text column width for readability */
+.s-hero .hero-split__content {
+  max-width: 480px;
+  width: 100%;
+}
+
+/* Eyebrow: white tracked caps (override base .eyebrow color) */
+.s-hero .hero-eyebrow {
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: var(--sp-4);
+}
+
+/* Headline: Instrument Sans, large, white */
+.s-hero .hero-headline {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(2.4rem, 4vw, var(--s-5));
+  line-height: 1.04;
+  letter-spacing: -0.025em;
+  color: #fff;
+  margin-bottom: var(--sp-4);
+}
+
+/* Brand statement: white */
+.s-hero .hero-statement {
+  font-family: var(--font-body);
+  font-size: var(--s-1);
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.92);
+  margin-bottom: var(--sp-5);
+}
+
+/* Single CTA: white pill */
+.s-hero .hero-cta {
+  display: inline-flex;
+  margin-bottom: var(--sp-4);
+}
+
+/* Hover: ghost-white (reverse) — already handled by .btn-light in base.css */
+
+/* Trust note: understated, white-70%, small */
+.s-hero .hero-trust {
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  color: rgba(255, 255, 255, 0.70);
+  margin: 0;
+  letter-spacing: 0.02em;
+}
+
+/* ----- RIGHT: model image ----- */
+.s-hero .hero-split__right {
+  flex: 1 1 52%;
+  background: var(--tint-pink);  /* warm blush if image letterboxes */
+  position: relative;
+  overflow: hidden;
+}
+
+.s-hero .hero-model-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  max-width: none; /* override base img rule */
+}
+
+/* ----- Mobile: image on top, pink panel below ----- */
+@media (max-width: 780px) {
+  .s-hero .hero-split__inner {
+    flex-direction: column;
+    min-height: unset;
+  }
+
+  /* Image on top, visible above the fold */
+  .s-hero .hero-split__right {
+    order: -1;
+    flex: 0 0 440px;
+    height: 440px;
+  }
+
+  .s-hero .hero-model-img {
+    position: relative; /* reflow naturally */
+    inset: auto;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 12%;
+  }
+
+  /* Pink panel below */
+  .s-hero .hero-split__left {
+    flex: unset;
+    padding: var(--sp-5) var(--sp-4);
+    justify-content: center;
+  }
+
+  .s-hero .hero-split__content {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .s-hero .hero-eyebrow {
+    margin-bottom: var(--sp-3);
+    letter-spacing: .08em;
+    overflow-wrap: break-word;
+  }
+
+  .s-hero .hero-statement {
+    margin-bottom: var(--sp-4);
+  }
+
+  /* Single CTA: full-width pill on mobile */
+  .s-hero .hero-cta {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* ----- Narrow clamp for very small phones ----- */
+@media (max-width: 400px) {
+  .s-hero .hero-split__right {
+    height: 380px;
+  }
+
+  .s-hero .hero-headline {
+    font-size: 2rem;
+  }
+}
+
+/* ===== 03-brands.css ===== */
+/* ============================================================
+   Hera Beauté — 03-brands.css
+   Trusted-brand marquee band
+   All rules scoped to .s-brands
+   ============================================================ */
+
+/* ── Band wrapper ── */
+.s-brands {
+  background: var(--surface);
+  border-block: 1px solid var(--line);
+  padding-block: var(--sp-4);   /* slim band */
+}
+
+/* ── Centered label ── */
+.s-brands__label {
+  font-family: var(--font-display);
+  font-size: var(--s--1);
+  font-weight: 700;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  text-align: center;
+  margin: 0 0 var(--sp-3);
+  line-height: 1;
+}
+
+/* ── Brand name row ── */
+.s-brands__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-3);
+  flex-wrap: nowrap;
+}
+
+/* ── Individual name wordmark ── */
+.s-brands__name {
+  font-family: var(--font-display);
+  font-size: var(--s-1);
+  font-weight: 700;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--ink);
+  white-space: nowrap;
+  transition: color .2s ease;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.s-brands__name:hover {
+  color: var(--accent);
+}
+
+/* ── Separator dot ── */
+.s-brands__sep {
+  color: var(--line);
+  font-size: var(--s-1);
+  font-weight: 400;
+  flex-shrink: 0;
+  user-select: none;
+}
+
+/* ── Mobile: horizontal scroll row ── */
+@media (max-width: 900px) {
+  .s-brands__row {
+    overflow-x: auto;
+    justify-content: flex-start;
+    gap: var(--sp-4);
+    padding-block: var(--sp-2);
+    padding-inline: var(--sp-1);
+    /* hide scrollbar cross-browser */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .s-brands__row::-webkit-scrollbar {
+    display: none;
+  }
+
+  .s-brands__sep {
+    display: none;   /* dots clutter tight scroll; names are self-separating */
+  }
+
+  .s-brands__name {
+    font-size: var(--s-0);
+  }
+}
+
+/* ===== 04-categories.css ===== */
+/* ============================================================
+   Hera Beauté — 04-categories.css
+   Shop-by-category image tile grid
+   All rules scoped to .s-categories
+   ============================================================ */
+
+/* ── Section wrapper ── */
+.s-categories {
+  background: var(--bg);
+}
+
+/* ── Header block ── */
+.s-categories__header {
+  text-align: center;
+  margin-bottom: var(--sp-5);
+}
+
+.s-categories__heading {
+  margin: 0;
+}
+
+/* ── 6-tile responsive grid ── */
+/* Desktop: 3 columns × 2 rows */
+.s-categories__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-3);
+}
+
+/* ── Individual tile ── */
+.s-categories__tile {
+  position: relative;
+  display: block;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  aspect-ratio: 4 / 5;
+  background: var(--surface-2);
+  cursor: pointer;
+  text-decoration: none;
+  /* subtle lift on hover — handled via child zoom */
+  box-shadow: 0 4px 18px rgba(26, 20, 19, .08);
+  transition: box-shadow .3s ease;
+}
+
+.s-categories__tile:hover {
+  box-shadow: var(--shadow);
+}
+
+/* ── Cover image with zoom on hover ── */
+.s-categories__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  transition: transform .5s cubic-bezier(.25, .8, .25, 1);
+  will-change: transform;
+}
+
+.s-categories__tile:hover .s-categories__img {
+  transform: scale(1.06);
+}
+
+/* ── Bottom-up dark scrim gradient ── */
+.s-categories__overlay {
+  position: absolute;
+  inset: 0;
+  /* scrim: opaque at bottom (45%), transparent at top */
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, .76) 0%,
+    rgba(0, 0, 0, .40) 38%,
+    rgba(0, 0, 0, 0)   66%
+  );
+  pointer-events: none;
+}
+
+/* ── Text caption overlaid at tile bottom ── */
+.s-categories__caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: var(--sp-4) var(--sp-4) var(--sp-3);
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--sp-2);
+  pointer-events: none;
+}
+
+.s-categories__title {
+  font-family: var(--font-display);
+  font-size: var(--s-1);
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.1;
+  letter-spacing: -.01em;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, .35);
+}
+
+.s-categories__cta {
+  font-family: var(--font-display);
+  font-size: var(--s--1);
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, .85);
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: color .2s ease, letter-spacing .2s ease;
+}
+
+.s-categories__tile:hover .s-categories__cta {
+  color: #fff;
+  letter-spacing: .13em;
+}
+
+/* ── Tablet: 2-column ── */
+@media (max-width: 900px) {
+  .s-categories__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--sp-2);
+  }
+
+  .s-categories__tile {
+    aspect-ratio: 1 / 1;
+  }
+}
+
+/* ── Mobile: 2-column stays, but tighten ── */
+@media (max-width: 520px) {
+  .s-categories__grid {
+    gap: var(--sp-2);
+  }
+
+  .s-categories__tile {
+    border-radius: var(--radius);
+    aspect-ratio: 4 / 5;
+  }
+
+  .s-categories__title {
+    font-size: var(--s-0);
+  }
+
+  .s-categories__caption {
+    padding: var(--sp-3) var(--sp-3) var(--sp-2);
+  }
+}
+
+/* ── Reduced motion: disable image zoom ── */
+@media (prefers-reduced-motion: reduce) {
+  .s-categories__img {
+    transition: none;
+  }
+  .s-categories__tile:hover .s-categories__img {
+    transform: none;
+  }
+  .s-categories__cta {
+    transition: none;
+  }
+}
+
+/* ===== 05-bestsellers.css ===== */
+/* ============================================================
+   Hera Beauté — 05-bestsellers.css
+   Fan Favourites / Bestsellers product grid
+   All rules scoped under .s-bestsellers
+   ============================================================ */
+
+/* ── Section wrapper ─────────────────────────────────────────── */
+.s-bestsellers {
+  background: var(--bg);
+  padding-block: var(--sp-12, 5rem) var(--sp-10, 4rem);
+}
+
+
+/* ── Header row ──────────────────────────────────────────────── */
+.s-bestsellers__head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--sp-4);
+  margin-bottom: var(--sp-8, 2.5rem);
+}
+
+.s-bestsellers__head-left {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-1);
+}
+
+.s-bestsellers__title {
+  font-family: var(--font-display);
+  font-size: var(--s-4, 2.25rem);
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.1;
+  margin: 0;
+}
+
+.s-bestsellers__shop-all {
+  font-family: var(--font-display);
+  font-size: var(--s-0, 1rem);
+  font-weight: 700;
+  color: var(--accent);
+  letter-spacing: .02em;
+  white-space: nowrap;
+  padding-bottom: 1px;
+  border-bottom: 1.5px solid transparent;
+  transition: border-color .18s;
+  line-height: 1;
+  /* align to baseline of h2 */
+  align-self: flex-end;
+  margin-bottom: .2em;
+}
+
+.s-bestsellers__shop-all:hover {
+  border-color: var(--accent);
+}
+
+
+/* ── Grid ────────────────────────────────────────────────────── */
+.s-bestsellers__grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  /* 4 columns desktop */
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--sp-5, 1.5rem);
+}
+
+.s-bestsellers__item {
+  display: flex;
+  min-width: 0;
+}
+
+
+/* ── Card ────────────────────────────────────────────────────── */
+.s-bestsellers .card {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  transition: transform .22s cubic-bezier(.4,0,.2,1), box-shadow .22s cubic-bezier(.4,0,.2,1);
+  cursor: pointer;
+}
+
+.s-bestsellers .card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow);
+}
+
+.s-bestsellers .card:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+
+/* ── Image wrapper ───────────────────────────────────────────── */
+.s-bestsellers .card__img-wrap {
+  position: relative;
+  width: 100%;
+  /* 4:3 aspect for cover shots; allow contain products to sit taller */
+  aspect-ratio: 4 / 3.6;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+/* Colour variants for the image bg */
+.s-bestsellers .card__img-wrap--surface2 {
+  background: var(--surface-2);
+}
+
+.s-bestsellers .card__img-wrap--pink {
+  background: var(--tint-pink);
+}
+
+.s-bestsellers .card__img-wrap--warm {
+  /* very light warm cream, different from the main --surface-2 */
+  background: #FAF3E7;
+}
+
+
+/* ── Image ───────────────────────────────────────────────────── */
+.s-bestsellers .card__img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  transition: transform .38s cubic-bezier(.4,0,.2,1);
+}
+
+.s-bestsellers .card__img--cover {
+  object-fit: cover;
+  object-position: center;
+}
+
+.s-bestsellers .card__img--cover.card__img--top {
+  object-position: top center;
+}
+
+.s-bestsellers .card__img--contain {
+  object-fit: contain;
+  object-position: center;
+  padding: var(--sp-3, .75rem);
+}
+
+.s-bestsellers .card:hover .card__img--cover {
+  transform: scale(1.04);
+}
+
+
+/* ── Badge ───────────────────────────────────────────────────── */
+.s-bestsellers .card__badge {
+  position: absolute;
+  top: var(--sp-2, .5rem);
+  left: var(--sp-2, .5rem);
+  font-family: var(--font-display);
+  font-size: .62rem;
+  font-weight: 700;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+  line-height: 1;
+  padding: .3em .65em;
+  border-radius: 4px;
+  z-index: 2;
+  /* prevent badge from scaling with image zoom */
+  transform-origin: top left;
+}
+
+.s-bestsellers .card__badge--bestseller {
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+
+.s-bestsellers .card__badge--sale {
+  background: var(--warm);
+  color: #fff;
+}
+
+.s-bestsellers .card__badge--new {
+  background: var(--ink);
+  color: #fff;
+}
+
+
+/* ── Card body ───────────────────────────────────────────────── */
+.s-bestsellers .card__body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-1, .25rem);
+  padding: var(--sp-3, .75rem) var(--sp-3, .75rem) var(--sp-2, .5rem);
+  flex: 1;
+}
+
+.s-bestsellers .card__brand {
+  font-family: var(--font-body);
+  font-size: .65rem;
+  font-weight: 600;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin: 0;
+  line-height: 1;
+}
+
+.s-bestsellers .card__name {
+  font-family: var(--font-display);
+  font-size: var(--s-0, 1rem);
+  font-weight: 600;
+  color: var(--ink);
+  margin: 0;
+  line-height: 1.3;
+  /* clamp to 2 lines */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+.s-bestsellers .card__type {
+  font-family: var(--font-body);
+  font-size: var(--s--1, .8125rem);
+  color: var(--ink-soft);
+  margin: 0;
+  line-height: 1;
+}
+
+.s-bestsellers .card__meta {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-1);
+  margin-top: var(--sp-1, .25rem);
+}
+
+/* Stars — inherit .stars from base but can override size */
+.s-bestsellers .card__meta .stars {
+  font-size: .75rem;
+  color: var(--warm);
+  letter-spacing: -.02em;
+}
+
+.s-bestsellers .card__count {
+  font-family: var(--font-body);
+  font-size: var(--s--1, .8125rem);
+  color: var(--ink-soft);
+  line-height: 1;
+}
+
+.s-bestsellers .card__price {
+  font-family: var(--font-display);
+  font-size: var(--s-1, 1.125rem);
+  font-weight: 700;
+  color: var(--ink);
+  margin: var(--sp-1) 0 0;
+  line-height: 1;
+}
+
+.s-bestsellers .card__price abbr {
+  font-size: .7em;
+  font-weight: 500;
+  color: var(--ink-soft);
+  text-decoration: none;
+  letter-spacing: .04em;
+}
+
+
+/* ── Card footer (CTA) ───────────────────────────────────────── */
+.s-bestsellers .card__footer {
+  padding: var(--sp-2, .5rem) var(--sp-3, .75rem) var(--sp-3, .75rem);
+}
+
+.s-bestsellers .card__atc {
+  display: block;
+  width: 100%;
+  text-align: center;
+  /* pointer-events on <span> inside <a> — ensure correct cursor */
+  pointer-events: none;
+}
+
+
+/* ── Footnote ────────────────────────────────────────────────── */
+.s-bestsellers__footnote {
+  margin-top: var(--sp-6, 2rem);
+  font-family: var(--font-body);
+  font-size: var(--s--1, .8125rem);
+  color: var(--ink-soft);
+  text-align: center;
+  opacity: .7;
+}
+
+
+/* ── Tablet: 3 columns (≤ 1060px) ───────────────────────────── */
+@media (max-width: 1060px) {
+  .s-bestsellers__grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--sp-4, 1.25rem);
+  }
+}
+
+
+/* ── Mobile: 2 columns (≤ 640px) ────────────────────────────── */
+@media (max-width: 640px) {
+  .s-bestsellers {
+    padding-block: var(--sp-10, 4rem) var(--sp-8, 2.5rem);
+  }
+
+  .s-bestsellers__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--sp-3, .75rem);
+  }
+
+  .s-bestsellers__title {
+    font-size: var(--s-3, 1.75rem);
+  }
+
+  .s-bestsellers__shop-all {
+    font-size: var(--s--1, .8125rem);
+  }
+
+  .s-bestsellers .card__name {
+    font-size: var(--s--1, .8125rem);
+  }
+
+  .s-bestsellers .card__price {
+    font-size: var(--s-0, 1rem);
+  }
+
+  .s-bestsellers .card__body {
+    padding: var(--sp-2) var(--sp-2) var(--sp-1);
+  }
+
+  .s-bestsellers .card__footer {
+    padding: var(--sp-1) var(--sp-2) var(--sp-2);
+  }
+}
+
+/* ===== 06-editorial.css ===== */
+/* ============================================================
+   Hera Beauté — 06-editorial.css
+   "Celebrate Your Beauty" editorial brand band
+   Image LEFT · Content RIGHT · All rules scoped under .s-editorial
+   ============================================================ */
+
+/* ── Section shell ───────────────────────────────────────────── */
+.s-editorial {
+  background: var(--surface-2);
+  padding-block: var(--sp-12, 5rem);
+  overflow: hidden;
+}
+
+
+/* ── Two-column inner ────────────────────────────────────────── */
+.s-editorial__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-10, 4rem);
+  align-items: center;
+}
+
+
+/* ── LEFT: image column ──────────────────────────────────────── */
+.s-editorial__img-col {
+  /* slight upward offset for visual rhythm */
+  padding-block: var(--sp-2) 0;
+}
+
+.s-editorial__img-frame {
+  background: var(--tint-pink);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  aspect-ratio: 4 / 5;
+  position: relative;
+  box-shadow: var(--shadow);
+}
+
+.s-editorial__img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  max-width: none;
+  /* Subtle warm-to-transparent scrim at the bottom for polish */
+  -webkit-mask-image: linear-gradient(to bottom, #000 70%, rgba(0,0,0,0.82) 100%);
+  mask-image: linear-gradient(to bottom, #000 70%, rgba(0,0,0,0.82) 100%);
+}
+
+
+/* ── RIGHT: content column ───────────────────────────────────── */
+.s-editorial__content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-5, 1.5rem);
+  /* nudge text away from frame edge */
+  padding-left: var(--sp-4, 1.25rem);
+}
+
+/* Eyebrow — inherits .eyebrow from base; tighten gap only */
+.s-editorial__content .eyebrow {
+  margin-bottom: 0;
+}
+
+.s-editorial__headline {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 3.6vw, var(--s-5, 3rem));
+  font-weight: 700;
+  line-height: 1.06;
+  letter-spacing: -0.025em;
+  color: var(--ink);
+  margin: 0;
+}
+
+/* Accent underline on "crown" via a wrapper span */
+.s-editorial__headline em {
+  font-style: normal;
+  color: var(--accent);
+}
+
+.s-editorial__body {
+  font-family: var(--font-body);
+  font-size: var(--s-1, 1.125rem);
+  line-height: 1.65;
+  color: var(--ink-soft);
+  margin: 0;
+  max-width: 44ch;
+}
+
+.s-editorial__cta {
+  align-self: flex-start;
+}
+
+
+/* ── Reveal animation (base class adds opacity/translate) ─────── */
+.s-editorial__inner.reveal {
+  /* base .reveal handles the animation; nothing extra needed */
+}
+
+
+/* ── Tablet: tighten gap ─────────────────────────────────────── */
+@media (max-width: 960px) {
+  .s-editorial__inner {
+    gap: var(--sp-7, 2.25rem);
+  }
+
+  .s-editorial__content {
+    padding-left: var(--sp-2, .5rem);
+  }
+}
+
+
+/* ── Mobile: stack — image above, text below ─────────────────── */
+@media (max-width: 680px) {
+  .s-editorial {
+    padding-block: var(--sp-10, 4rem) var(--sp-8, 2.5rem);
+  }
+
+  .s-editorial__inner {
+    grid-template-columns: 1fr;
+    gap: var(--sp-6, 2rem);
+  }
+
+  .s-editorial__img-col {
+    padding-block: 0;
+    /* On mobile, image naturally comes first in DOM — correct order */
+  }
+
+  .s-editorial__img-frame {
+    aspect-ratio: 3 / 2.6;
+    max-height: 340px;
+  }
+
+  .s-editorial__content {
+    padding-left: 0;
+    gap: var(--sp-4, 1.25rem);
+    text-align: center;
+    align-items: center;
+  }
+
+  .s-editorial__body {
+    max-width: 100%;
+  }
+
+  .s-editorial__cta {
+    align-self: stretch;
+    text-align: center;
+    justify-content: center;
+  }
+}
+
+
+/* ── Very small phones ───────────────────────────────────────── */
+@media (max-width: 400px) {
+  .s-editorial__headline {
+    font-size: 2rem;
+  }
+}
+
+/* ===== 07-reviews.css ===== */
+/* ============================================================
+   Hera Beauté — 07-reviews.css
+   Community Reviews wall — 6-card grid
+   All rules scoped under .s-reviews
+   ============================================================ */
+
+/* ── Section shell ───────────────────────────────────────────── */
+.s-reviews {
+  background: var(--bg);
+  padding-block: var(--sp-12, 5rem);
+}
+
+
+/* ── Section header ──────────────────────────────────────────── */
+.s-reviews__head {
+  text-align: center;
+  margin-bottom: var(--sp-10, 4rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sp-3, .75rem);
+}
+
+.s-reviews__head .eyebrow {
+  margin-bottom: 0;
+}
+
+.s-reviews__title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 3.4vw, var(--s-5, 3rem));
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin: 0;
+}
+
+
+/* ── Rating summary ──────────────────────────────────────────── */
+.s-reviews__summary {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2, .5rem);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.s-reviews__big-star {
+  font-family: var(--font-display);
+  font-size: var(--s-3, 1.75rem);
+  font-weight: 700;
+  color: var(--warm);
+  letter-spacing: -0.01em;
+  line-height: 1;
+}
+
+.s-reviews__summary-sep {
+  color: var(--line);
+  font-size: var(--s-1, 1.125rem);
+  line-height: 1;
+}
+
+.s-reviews__summary-count {
+  font-family: var(--font-body);
+  font-size: var(--s-0, 1rem);
+  color: var(--ink-soft);
+  line-height: 1;
+}
+
+
+/* ── Reviews grid ────────────────────────────────────────────── */
+.s-reviews__grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-5, 1.5rem);
+}
+
+.s-reviews__item {
+  display: flex;
+}
+
+
+/* ── Individual review card ──────────────────────────────────── */
+.s-reviews .review {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3, .75rem);
+  width: 100%;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: var(--sp-5, 1.5rem);
+  transition: transform .22s cubic-bezier(.4,0,.2,1), box-shadow .22s cubic-bezier(.4,0,.2,1);
+}
+
+.s-reviews .review:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow);
+}
+
+
+/* Stars row ─ pink, inherits .stars from base */
+.s-reviews .review .stars {
+  font-size: 1.05rem;
+  color: var(--accent);
+  letter-spacing: .04em;
+  line-height: 1;
+}
+
+
+/* Quote ─────────────────────────────────────────────────────── */
+.s-reviews .review__quote {
+  font-family: var(--font-body);
+  font-size: var(--s-0, 1rem);
+  line-height: 1.6;
+  color: var(--ink);
+  margin: 0;
+  flex: 1;
+  /* Subtle opening quote visual weight */
+  position: relative;
+}
+
+.s-reviews .review__quote::before {
+  content: "\201C";
+  font-family: var(--font-display);
+  font-size: 3rem;
+  line-height: 0;
+  color: var(--tint-pink);
+  position: absolute;
+  top: .4rem;
+  left: -.2rem;
+  z-index: 0;
+  pointer-events: none;
+}
+
+
+/* Footer: name + verified ────────────────────────────────────── */
+.s-reviews .review__footer {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2, .5rem);
+  flex-wrap: wrap;
+  margin-top: auto;
+  padding-top: var(--sp-2, .5rem);
+  border-top: 1px solid var(--line);
+}
+
+.s-reviews .review__name {
+  font-family: var(--font-display);
+  font-size: var(--s-0, 1rem);
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1;
+}
+
+.s-reviews .review__verified {
+  font-family: var(--font-body);
+  font-size: .65rem;
+  font-weight: 600;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  background: var(--tint-pink);
+  border-radius: 4px;
+  padding: .2em .55em;
+  line-height: 1.4;
+}
+
+
+/* Product name — tracked caps, small, muted ─────────────────── */
+.s-reviews .review__product {
+  font-family: var(--font-body);
+  font-size: .64rem;
+  font-weight: 600;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin: 0;
+  line-height: 1.3;
+  opacity: .8;
+}
+
+
+/* ── Footnote ────────────────────────────────────────────────── */
+.s-reviews__footnote {
+  margin-top: var(--sp-6, 2rem);
+  font-family: var(--font-body);
+  font-size: var(--s--1, .8125rem);
+  color: var(--ink-soft);
+  text-align: center;
+  opacity: .6;
+}
+
+
+/* ── Tablet: 2 columns (≤ 1000px) ───────────────────────────── */
+@media (max-width: 1000px) {
+  .s-reviews__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--sp-4, 1.25rem);
+  }
+}
+
+
+/* ── Mobile: horizontal scroll (≤ 640px) ────────────────────── */
+@media (max-width: 640px) {
+  .s-reviews {
+    padding-block: var(--sp-10, 4rem) var(--sp-8, 2.5rem);
+  }
+
+  .s-reviews__head {
+    margin-bottom: var(--sp-7, 2.25rem);
+  }
+
+  .s-reviews__title {
+    font-size: var(--s-3, 1.75rem);
+  }
+
+  /* Horizontal scroll strip on small phones */
+  .s-reviews__grid {
+    grid-template-columns: repeat(6, 80vw);
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    /* Pull to bleed slightly past the .wrap padding */
+    padding-bottom: var(--sp-3, .75rem);
+    gap: var(--sp-3, .75rem);
+    /* Hide scrollbar — decorative */
+    scrollbar-width: none;
+  }
+
+  .s-reviews__grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .s-reviews__item {
+    scroll-snap-align: start;
+  }
+
+  .s-reviews .review {
+    padding: var(--sp-4, 1.25rem);
+  }
+}
+
+
+/* ── Very small phones ───────────────────────────────────────── */
+@media (max-width: 380px) {
+  .s-reviews__grid {
+    grid-template-columns: repeat(6, 88vw);
+  }
+}
+
+/* ===== 08-rewards.css ===== */
+/* ============================================================
+   Hera Beauté — 08-rewards.css
+   Rewards / Value-props strip
+   All rules scoped under .s-rewards
+   ============================================================ */
+
+/* ── Section wrapper ─────────────────────────────────────────── */
+.s-rewards {
+  background: var(--surface-2);
+  padding-block: var(--sp-12, 5rem);
+}
+
+/* ── Header ──────────────────────────────────────────────────── */
+.s-rewards .eyebrow {
+  text-align: center;
+  margin-bottom: var(--sp-2, 0.5rem);
+}
+
+.s-rewards__title {
+  font-family: var(--font-display);
+  font-size: var(--s-4, 2.25rem);
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.15;
+  text-align: center;
+  margin: 0 0 var(--sp-10, 3.5rem);
+}
+
+/* ── 4-column grid ───────────────────────────────────────────── */
+.s-rewards__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--sp-6, 1.75rem);
+}
+
+/* ── Individual card ─────────────────────────────────────────── */
+.s-rewards__card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg, 1rem);
+  padding: var(--sp-7, 2rem) var(--sp-6, 1.75rem);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--sp-3, 0.75rem);
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.s-rewards__card:hover {
+  box-shadow: var(--shadow);
+  transform: translateY(-2px);
+}
+
+/* ── Icon ────────────────────────────────────────────────────── */
+.s-rewards__card .ic {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  background: var(--tint-pink);
+  border-radius: var(--radius, 0.5rem);
+  flex-shrink: 0;
+}
+
+.s-rewards__card .ic svg {
+  display: block;
+}
+
+/* ── Card text ───────────────────────────────────────────────── */
+.s-rewards__card-title {
+  font-family: var(--font-display);
+  font-size: var(--s-1, 1.125rem);
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin: 0;
+}
+
+.s-rewards__card-desc {
+  font-family: var(--font-body);
+  font-size: var(--s-0, 1rem);
+  color: var(--ink-soft);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* ── Reveal animation hook ───────────────────────────────────── */
+.s-rewards__card.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.5s ease, transform 0.5s ease, box-shadow 0.2s ease;
+}
+
+.s-rewards__card.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.s-rewards__card.reveal.is-visible:hover {
+  transform: translateY(-2px);
+}
+
+/* ── Stagger delay ───────────────────────────────────────────── */
+.s-rewards__card.reveal:nth-child(1) { transition-delay: 0.05s; }
+.s-rewards__card.reveal:nth-child(2) { transition-delay: 0.12s; }
+.s-rewards__card.reveal:nth-child(3) { transition-delay: 0.19s; }
+.s-rewards__card.reveal:nth-child(4) { transition-delay: 0.26s; }
+
+/* ── Responsive: 2×2 on mobile ───────────────────────────────── */
+@media (max-width: 768px) {
+  .s-rewards__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--sp-4, 1rem);
+  }
+
+  .s-rewards__title {
+    font-size: var(--s-3, 1.75rem);
+    margin-bottom: var(--sp-8, 2.5rem);
+  }
+
+  .s-rewards__card {
+    padding: var(--sp-5, 1.5rem) var(--sp-4, 1.25rem);
+  }
+}
+
+@media (max-width: 480px) {
+  .s-rewards {
+    padding-block: var(--sp-10, 3.5rem);
+  }
+
+  .s-rewards__grid {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--sp-3, 0.75rem);
+  }
+}
+
+/* ===== 09-newsletter.css ===== */
+/* ============================================================
+   Hera Beauté — 09-newsletter.css
+   Newsletter signup — bold accent-pink band
+   All rules scoped under .s-newsletter
+   ============================================================ */
+
+/* ── Section wrapper ─────────────────────────────────────────── */
+.s-newsletter {
+  background: var(--accent);
+  padding-block: var(--sp-14, 6rem);
+}
+
+/* ── Inner layout (centered column) ─────────────────────────── */
+.s-newsletter__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--sp-4, 1.25rem);
+}
+
+/* ── Eyebrow ─────────────────────────────────────────────────── */
+.s-newsletter .s-newsletter__eyebrow,
+.s-newsletter__eyebrow {
+  /* override base .eyebrow which may set --ink color */
+  color: rgba(255, 255, 255, 0.8) !important;
+  letter-spacing: 0.1em;
+  font-size: var(--s--1, 0.8125rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  font-family: var(--font-display);
+  margin: 0;
+}
+
+/* ── Headline ────────────────────────────────────────────────── */
+.s-newsletter__title {
+  font-family: var(--font-display);
+  font-size: var(--s-5, 2.75rem);
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.1;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+/* ── Subline ─────────────────────────────────────────────────── */
+.s-newsletter__sub {
+  font-family: var(--font-body);
+  font-size: var(--s-0, 1rem);
+  color: #ffffff;
+  line-height: 1.55;
+  margin: 0;
+  max-width: 38ch;
+}
+
+/* ── Form container ──────────────────────────────────────────── */
+.s-newsletter__form {
+  width: 100%;
+  max-width: 520px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sp-3, 0.75rem);
+  margin-top: var(--sp-2, 0.5rem);
+}
+
+/* ── Input + button row ──────────────────────────────────────── */
+.s-newsletter__fields {
+  display: flex;
+  width: 100%;
+  gap: 0;
+  border-radius: var(--radius-lg, 1rem);
+  overflow: hidden;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.18);
+}
+
+/* ── Email input ─────────────────────────────────────────────── */
+.s-newsletter__input {
+  flex: 1 1 0;
+  min-width: 0;
+  padding: var(--sp-4, 1rem) var(--sp-5, 1.25rem);
+  font-family: var(--font-body);
+  font-size: var(--s-0, 1rem);
+  color: var(--ink);
+  background: #ffffff;
+  border: none;
+  outline: none;
+  border-radius: 0;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.s-newsletter__input::placeholder {
+  color: var(--ink-soft);
+}
+
+.s-newsletter__input:focus {
+  outline: 2px solid rgba(255, 255, 255, 0.6);
+  outline-offset: -2px;
+}
+
+/* ── Submit button ───────────────────────────────────────────── */
+.s-newsletter__btn {
+  flex-shrink: 0;
+  padding: var(--sp-4, 1rem) var(--sp-6, 1.75rem);
+  font-family: var(--font-display);
+  font-size: var(--s-0, 1rem);
+  font-weight: 700;
+  color: var(--accent);
+  background: #ffffff;
+  border: none;
+  border-radius: 0;
+  cursor: pointer;
+  white-space: nowrap;
+  letter-spacing: 0.01em;
+  transition: background 0.18s ease, color 0.18s ease;
+}
+
+.s-newsletter__btn:hover,
+.s-newsletter__btn:focus-visible {
+  background: var(--ink);
+  color: #ffffff;
+  outline: none;
+}
+
+/* ── Fine print ──────────────────────────────────────────────── */
+.s-newsletter__fine {
+  font-family: var(--font-body);
+  font-size: var(--s--1, 0.8125rem);
+  color: rgba(255, 255, 255, 0.65);
+  margin: 0;
+}
+
+/* ── Screen-reader only ──────────────────────────────────────── */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ── Mobile: stack full-width ────────────────────────────────── */
+@media (max-width: 600px) {
+  .s-newsletter {
+    padding-block: var(--sp-12, 5rem);
+  }
+
+  .s-newsletter__title {
+    font-size: var(--s-4, 2.25rem);
+  }
+
+  .s-newsletter__fields {
+    flex-direction: column;
+    border-radius: var(--radius, 0.5rem);
+    overflow: visible;
+    box-shadow: none;
+    gap: var(--sp-3, 0.75rem);
+  }
+
+  .s-newsletter__input {
+    width: 100%;
+    border-radius: var(--radius, 0.5rem);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+  }
+
+  .s-newsletter__btn {
+    width: 100%;
+    border-radius: var(--radius, 0.5rem);
+    padding-block: var(--sp-4, 1rem);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+  }
+}
+
+/* ===== 10-footer.css ===== */
+/* ============================================================
+   10-footer.css — Hera Beauté site footer
+   Dark band (#1A1413), pink accent columns, light links.
+   All rules scoped under .site-footer.
+   ============================================================ */
+
+/* ── Shell ── */
+.site-footer {
+  background: var(--dark);
+  color: #ECE5E0;
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  padding-block: var(--sp-7) var(--sp-5);
+}
+
+/* ── Top layout: brand col + 4 nav cols ── */
+.site-footer__top {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  gap: var(--sp-5) var(--sp-4);
+  align-items: start;
+  padding-bottom: var(--sp-5);
+}
+
+/* ── Brand column (logo + blurb + socials) ── */
+.site-footer__brand {
+  grid-column: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+}
+
+.site-footer__logo-link {
+  display: inline-block;
+  line-height: 0;
+}
+
+.site-footer__logo {
+  height: 38px;
+  width: auto;
+  /* Pink SVG on dark bg reads well; leave colour as-is */
+}
+
+.site-footer__blurb {
+  margin: 0;
+  color: #D4CBC3;
+  font-size: var(--s--1);
+  line-height: 1.65;
+  max-width: 22ch;
+}
+
+/* ── Social icons ── */
+.site-footer__socials {
+  display: flex;
+  gap: var(--sp-3);
+  align-items: center;
+}
+
+.site-footer__social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #ECE5E0;
+  transition: color .18s ease, transform .15s ease;
+}
+
+.site-footer__social-link:hover {
+  color: var(--accent);
+  transform: translateY(-2px);
+}
+
+.site-footer__social-link .ic {
+  width: 22px;
+  height: 22px;
+  stroke-width: 1.7;
+}
+
+/* ── Nav 4-column block ── */
+.site-footer__nav {
+  grid-column: 2 / -1;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--sp-4);
+}
+
+/* ── Individual column ── */
+.site-footer__col {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+}
+
+.site-footer__col-head {
+  /* Reuse .eyebrow class — already tracked caps, accent pink */
+  font-size: var(--s--1);
+  letter-spacing: .14em;
+  color: var(--accent);
+  margin: 0 0 var(--sp-2);
+}
+
+.site-footer__links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+}
+
+.site-footer__links a {
+  color: #ECE5E0;
+  font-size: var(--s--1);
+  line-height: 1.4;
+  text-decoration: none;
+  transition: color .15s ease;
+}
+
+.site-footer__links a:hover {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* ── Trust chips strip ── */
+.site-footer__trust {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+  padding-bottom: var(--sp-4);
+}
+
+/* Override base .chip to work on dark bg */
+.site-footer .chip.site-footer__chip {
+  background: rgba(255 255 255 / .06);
+  border-color: rgba(255 255 255 / .14);
+  color: #ECE5E0;
+}
+
+/* ── Rule ── */
+.site-footer__rule {
+  border: none;
+  border-top: 1px solid rgba(255 255 255 / .10);
+  margin: 0 0 var(--sp-4);
+}
+
+/* ── Bottom bar ── */
+.site-footer__bottom {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--sp-3) var(--sp-4);
+  justify-content: space-between;
+}
+
+.site-footer__copy {
+  margin: 0;
+  color: #D4CBC3;
+  font-size: var(--s--1);
+  white-space: nowrap;
+}
+
+.site-footer__legal {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  color: #D4CBC3;
+  font-size: var(--s--1);
+}
+
+.site-footer__legal a {
+  color: #ECE5E0;
+  text-decoration: none;
+  transition: color .15s;
+}
+
+.site-footer__legal a:hover {
+  color: var(--accent);
+}
+
+/* ── Payment badges ── */
+.site-footer__payments {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  flex-wrap: wrap;
+}
+
+.site-footer__pay-badge {
+  display: inline-flex;
+  border-radius: 4px;
+  overflow: hidden;
+  opacity: .85;
+  transition: opacity .15s;
+}
+
+.site-footer__pay-badge:hover {
+  opacity: 1;
+}
+
+/* ══════════════════════════════════════════
+   RESPONSIVE
+══════════════════════════════════════════ */
+
+/* Tablet: 2-col nav + narrower brand col */
+@media (max-width: 1024px) {
+  .site-footer__top {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--sp-5) var(--sp-4);
+  }
+
+  .site-footer__brand {
+    grid-column: 1 / -1;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: var(--sp-4);
+  }
+
+  .site-footer__blurb {
+    max-width: 30ch;
+  }
+
+  .site-footer__nav {
+    grid-column: 1 / -1;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--sp-4);
+  }
+}
+
+/* Mobile: single column */
+@media (max-width: 600px) {
+  .site-footer {
+    padding-block: var(--sp-6) var(--sp-5);
+  }
+
+  .site-footer__top {
+    grid-template-columns: 1fr;
+  }
+
+  .site-footer__brand {
+    flex-direction: column;
+    gap: var(--sp-3);
+  }
+
+  .site-footer__blurb {
+    max-width: none;
+  }
+
+  .site-footer__nav {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--sp-4) var(--sp-3);
+  }
+
+  .site-footer__bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--sp-3);
+  }
+
+  .site-footer__payments {
+    order: -1; /* payments above copyright on mobile */
+  }
+}
+
+/* Very narrow: nav stacks to 1 col */
+@media (max-width: 380px) {
+  .site-footer__nav {
+    grid-template-columns: 1fr;
+  }
+}
+
