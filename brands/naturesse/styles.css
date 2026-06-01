@@ -298,8 +298,8 @@ p{margin:0 0 var(--sp-3)}
 }
 
 .site-header__logo-img {
-  width: 92px;
-  max-width: 92px;
+  width: 118px;
+  max-width: 118px;
   height: auto;
   display: block;
   object-fit: contain;
@@ -379,8 +379,8 @@ p{margin:0 0 var(--sp-3)}
 
   /* Logo slightly smaller on mobile */
   .site-header__logo-img {
-    width: 78px;
-    max-width: 78px;
+    width: 100px;
+    max-width: 100px;
   }
 
   /* Hide boutique CTA, search, account on mobile */
@@ -569,28 +569,6 @@ p{margin:0 0 var(--sp-3)}
   text-align: center;
   box-shadow: 0 4px 14px rgba(79, 124, 41, .28);
   pointer-events: none;
-}
-
-/* ── Desktop (≥ 781px): text + visual side-by-side on one row ── */
-@media (min-width: 781px) {
-  .s-hero__inner {
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    gap: var(--sp-7);
-    text-align: left;
-  }
-
-  .s-hero__text {
-    align-items: flex-start;
-    flex: 1 1 auto;
-  }
-
-  .s-hero__cta-row,
-  .s-hero__chips,
-  .s-hero__rating {
-    justify-content: flex-start;
-  }
 }
 
 /* ── Mobile (≤ 780px) ───────────────────────────────────────── */
