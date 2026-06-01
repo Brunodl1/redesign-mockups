@@ -1,0 +1,206 @@
+/* ============================================================
+   02-hero.css — Full-bleed flatlay hero, contained text card
+   Scoped under .s-hero. FRENCH. ONE CTA. No .reveal.
+   ============================================================ */
+
+/* ---------- section shell ---------- */
+.s-hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: min(80vh, 720px);
+  overflow: hidden;
+  padding-block: 0; /* override .sec padding — the card handles spacing */
+  background: var(--ink); /* fallback while image loads */
+}
+
+/* ---------- full-bleed bg image ---------- */
+.s-hero .hero-bg-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center bottom; /* keep the 3 tins visible */
+  display: block;
+  max-width: 100%;
+  min-width: 0;
+  z-index: 0;
+  user-select: none;
+  pointer-events: none;
+}
+
+/* ---------- light full-bleed scrim (edge legibility) ---------- */
+.s-hero .hero-scrim {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: rgba(52, 48, 58, 0.14); /* subtle dark wash so raw edges read */
+  pointer-events: none;
+}
+
+/* ---------- wrap (layout context) ---------- */
+.s-hero .wrap {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  padding-block: var(--sp-6);
+  min-width: 0;
+  width: 100%;
+}
+
+/* ---------- contained text card ---------- */
+.s-hero .hero-card {
+  background: rgba(250, 249, 241, 0.88); /* warm cream at 88% alpha */
+  border-radius: var(--radius-lg);
+  padding: var(--sp-5) var(--sp-5);
+  max-width: 520px;
+  min-width: 0;
+  box-shadow: 0 8px 40px rgba(52, 48, 58, 0.18);
+  /* sits on the left side where image has negative space */
+  margin-inline-end: auto;
+}
+
+/* ---------- eyebrow (inherited from base, explicit sage) ---------- */
+.s-hero .hero-card .eyebrow {
+  color: var(--sage);
+  margin-bottom: var(--sp-2);
+}
+
+/* ---------- headline ---------- */
+.s-hero .hero-card h1 {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: var(--s-5);
+  line-height: 1.02;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin: 0 0 var(--sp-3);
+  min-width: 0;
+  max-width: 100%;
+}
+
+/* ---------- subhead ---------- */
+.s-hero .hero-sub {
+  font-family: var(--font-body);
+  font-size: var(--s-0);
+  font-weight: 400;
+  line-height: 1.55;
+  color: var(--ink-soft);
+  margin: 0 0 var(--sp-4);
+  min-width: 0;
+  max-width: 100%;
+}
+
+/* ---------- CTA ---------- */
+.s-hero .hero-cta {
+  display: inline-flex;
+  margin-bottom: var(--sp-4);
+  /* btn / btn-primary styles come from base.css */
+}
+
+/* ---------- proof chips row ---------- */
+.s-hero .hero-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+  margin-bottom: var(--sp-3);
+  min-width: 0;
+}
+
+/* chip background reinforced for legibility on card */
+.s-hero .hero-chips .chip {
+  background: rgba(255, 255, 255, 0.72);
+  border-color: var(--line);
+  color: var(--ink);
+  font-size: .8rem;
+}
+
+/* ---------- rating line ---------- */
+.s-hero .hero-rating {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  flex-wrap: wrap;
+  margin: 0;
+  min-width: 0;
+}
+
+.s-hero .hero-rating-label {
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  font-weight: 400;
+  color: var(--ink-soft);
+  min-width: 0;
+}
+
+/* ---------- MOBILE ≤ 780px ---------- */
+@media (max-width: 780px) {
+  .s-hero {
+    min-height: 78vh;
+    align-items: flex-end; /* card pinned toward bottom */
+  }
+
+  /* stronger bottom gradient scrim so top of image shows clearly */
+  .s-hero .hero-scrim {
+    background: linear-gradient(
+      to bottom,
+      rgba(52, 48, 58, 0.06) 0%,
+      rgba(52, 48, 58, 0.06) 42%,
+      rgba(52, 48, 58, 0.28) 62%,
+      rgba(52, 48, 58, 0.42) 100%
+    );
+  }
+
+  .s-hero .wrap {
+    padding-block: var(--sp-4) var(--sp-5);
+    align-items: flex-end;
+  }
+
+  /* card spans most width, anchored to bottom */
+  .s-hero .hero-card {
+    max-width: 100%;
+    width: 100%;
+    padding: var(--sp-4);
+    border-radius: var(--radius-lg);
+    margin-inline-end: 0;
+    background: rgba(250, 249, 241, 0.92); /* slightly more opaque on mobile */
+  }
+
+  .s-hero .hero-card h1 {
+    font-size: var(--s-4); /* responsive var from base.css already → 2.3rem */
+  }
+
+  /* CTA full-width on mobile */
+  .s-hero .hero-cta {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin-bottom: var(--sp-3);
+  }
+
+  .s-hero .hero-chips {
+    gap: var(--sp-2);
+  }
+
+  .s-hero .hero-chips .chip {
+    font-size: .75rem;
+    padding: .45em .85em;
+  }
+}
+
+/* ---------- very small screens ≤ 400px ---------- */
+@media (max-width: 400px) {
+  .s-hero .hero-card {
+    padding: var(--sp-3) var(--sp-3);
+  }
+
+  .s-hero .hero-card h1 {
+    font-size: var(--s-3); /* 1.85rem from base responsive override */
+  }
+
+  .s-hero .hero-sub {
+    font-size: var(--s--1);
+  }
+}

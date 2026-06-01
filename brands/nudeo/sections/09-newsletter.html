@@ -1,0 +1,46 @@
+<!-- ============================================================
+     NU-DEO · Newsletter Signup
+     09-newsletter.html
+     ============================================================ -->
+
+<section class="sec s-newsletter" aria-labelledby="newsletter-heading">
+  <div class="wrap s-newsletter__wrap">
+
+    <!-- Eyebrow -->
+    <p class="eyebrow s-newsletter__eyebrow">REJOIGNEZ NU</p>
+
+    <!-- Heading -->
+    <h2 class="s-newsletter__heading" id="newsletter-heading">
+      Obtenez&nbsp;10&nbsp;% sur votre première commande
+    </h2>
+
+    <!-- Sub-copy -->
+    <p class="s-newsletter__sub">
+      Conseils peau, nouveautés et offres&nbsp;— directement dans votre boîte courriel.
+    </p>
+
+    <!-- Inline form -->
+    <form class="s-newsletter__form" onsubmit="return false" novalidate aria-label="Abonnement à l'infolettre">
+      <div class="s-newsletter__field-row">
+        <label for="nl-email" class="sr-only">Adresse courriel</label>
+        <input
+          id="nl-email"
+          class="s-newsletter__input"
+          type="email"
+          name="email"
+          placeholder="votre@courriel.com"
+          autocomplete="email"
+          required
+          aria-required="true"
+        >
+        <button type="submit" class="btn btn-light s-newsletter__btn">
+          S'abonner
+        </button>
+      </div>
+    </form>
+
+    <!-- Fine print -->
+    <p class="s-newsletter__fine">Désabonnement en tout temps.</p>
+
+  </div>
+</section>

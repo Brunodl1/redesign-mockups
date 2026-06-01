@@ -1,0 +1,160 @@
+/* ============================================================
+   NU-DEO · Badge Strip
+   03-badges.css — scoped to .s-badges
+   ============================================================ */
+
+/* ---------- tokens (local echo so section is self-contained) ---------- */
+.s-badges {
+  --bg:          #FAF9F1;
+  --surface:     #FFFFFF;
+  --surface-2:   #F1EDE7;
+  --ink:         #34303A;
+  --ink-soft:    #6E687A;
+  --accent:      #927FBC;
+  --accent-ink:  #FFFFFF;
+  --accent-deep: #6F5BA0;
+  --sage:        #8E9A6E;
+  --sage-soft:   #C3CCA6;
+  --lav-soft:    #C5BADC;
+  --gold:        #FDC656;
+  --line:        #E6E1D8;
+  --star:        #FDC656;
+  --radius:      10px;
+  --radius-lg:   20px;
+  --radius-pill: 100px;
+  --shadow:      0 12px 38px rgba(52,48,58,.10);
+  --maxw:        1280px;
+  --font-display:"Barlow Condensed", "Helvetica Neue", Arial, sans-serif;
+  --s--1:        .92rem;
+  --s-0:         1.12rem;
+  --s-1:         1.3rem;
+  --s-2:         1.7rem;
+  --s-3:         2.3rem;
+  --s-4:         3.2rem;
+  --s-5:         4.6rem;
+  --sp-1:        .25rem;
+  --sp-2:        .5rem;
+  --sp-3:        1rem;
+  --sp-4:        1.5rem;
+  --sp-5:        2.5rem;
+  --sp-6:        4rem;
+  --sp-7:        6rem;
+}
+
+/* ---------- section shell ---------- */
+.s-badges {
+  background: var(--surface-2);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  /* slim band: override .sec's generous padding-block */
+  padding-block: var(--sp-4);
+}
+
+/* ---------- list ---------- */
+.s-badges__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sp-5);
+  flex-wrap: wrap;
+}
+
+/* ---------- each badge item ---------- */
+.s-badges__item {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  flex-shrink: 0;
+}
+
+/* ---------- icon ---------- */
+.s-badges__icon {
+  width: 30px;
+  height: 30px;
+  flex-shrink: 0;
+  display: block;
+  color: var(--sage);
+  stroke: var(--sage);
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* ---------- label ---------- */
+.s-badges__label {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: var(--s--1);
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  white-space: nowrap;
+  line-height: 1;
+}
+
+/* ---------- divider dots between items (desktop) ---------- */
+.s-badges__item + .s-badges__item::before {
+  content: "·";
+  display: block;
+  margin-right: var(--sp-5);
+  color: var(--line);
+  font-size: 1.2rem;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+/* ---------- tablet ---------- */
+@media (max-width: 900px) {
+  .s-badges__list {
+    gap: var(--sp-4);
+  }
+  .s-badges__item + .s-badges__item::before {
+    margin-right: var(--sp-4);
+  }
+}
+
+/* ---------- mobile (≤ 780px): 2–3 per row, centred wrap ---------- */
+@media (max-width: 780px) {
+  .s-badges {
+    padding-block: var(--sp-3) var(--sp-4);
+  }
+  .s-badges__list {
+    gap: var(--sp-3) var(--sp-4);
+    justify-content: center;
+  }
+  /* hide dot dividers on mobile — wrapping makes them awkward */
+  .s-badges__item + .s-badges__item::before {
+    display: none;
+  }
+  .s-badges__label {
+    font-size: .82rem;
+    letter-spacing: .10em;
+  }
+}
+
+/* ---------- very small screens: horizontal scroll fallback ---------- */
+@media (max-width: 420px) {
+  .s-badges .wrap {
+    padding-inline: 0;
+  }
+  .s-badges__list {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    justify-content: flex-start;
+    padding-inline: var(--sp-4);
+    padding-block: var(--sp-2);
+    gap: var(--sp-3);
+  }
+  .s-badges__item {
+    scroll-snap-align: start;
+  }
+  /* subtle fade on right edge to hint scroll */
+  .s-badges .wrap {
+    position: relative;
+  }
+}

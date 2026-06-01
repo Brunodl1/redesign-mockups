@@ -1,0 +1,201 @@
+/* ============================================================
+   NU-DEO · 09-newsletter.css
+   Newsletter signup band — all rules scoped to .s-newsletter
+   ============================================================ */
+
+/* ── Band ──────────────────────────────────────────────────── */
+
+.s-newsletter {
+  --bg:           #FAF9F1;
+  --surface:      #fff;
+  --surface-2:    #F1EDE7;
+  --ink:          #34303A;
+  --ink-soft:     #6E687A;
+  --accent:       #927FBC;
+  --accent-ink:   #fff;
+  --accent-deep:  #6F5BA0;
+  --sage:         #8E9A6E;
+  --sage-soft:    #C3CCA6;
+  --lav-soft:     #C5BADC;
+  --gold:         #FDC656;
+  --line:         #E6E1D8;
+  --font-display: "Barlow Condensed", sans-serif;
+  --s--1:         0.8125rem;
+  --s-0:          1rem;
+  --s-1:          1.25rem;
+  --s-2:          1.5625rem;
+  --s-3:          1.953rem;
+  --s-4:          2.441rem;
+  --s-5:          3.052rem;
+  --sp-1:         0.25rem;
+  --sp-2:         0.5rem;
+  --sp-3:         0.75rem;
+  --sp-4:         1rem;
+  --sp-6:         1.5rem;
+  --sp-8:         2rem;
+  --sp-10:        2.5rem;
+  --sp-12:        3rem;
+  --sp-16:        4rem;
+  --radius:       10px;
+  --radius-lg:    20px;
+  --radius-pill:  100px;
+  --shadow:       0 4px 24px rgba(52,48,58,.10);
+  --maxw:         1200px;
+
+  background: var(--accent);
+  color: var(--accent-ink);
+  padding-block: var(--sp-16);
+}
+
+/* ── Wrap ──────────────────────────────────────────────────── */
+
+.s-newsletter__wrap {
+  max-width: var(--maxw);
+  margin-inline: auto;
+  padding-inline: var(--sp-6);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--sp-6);
+}
+
+/* ── Eyebrow ───────────────────────────────────────────────── */
+
+.s-newsletter__eyebrow.eyebrow {
+  color: rgba(255, 255, 255, 0.75);
+  border-color: rgba(255, 255, 255, 0.40);
+}
+
+/* ── Heading ───────────────────────────────────────────────── */
+
+.s-newsletter__heading {
+  font-family: var(--font-display);
+  font-size: clamp(var(--s-3), 5vw, var(--s-5));
+  font-weight: 300;
+  line-height: 1.1;
+  color: var(--accent-ink);
+  margin: 0;
+  max-width: 22ch;
+}
+
+/* ── Sub copy ──────────────────────────────────────────────── */
+
+.s-newsletter__sub {
+  font-family: var(--font-display);
+  font-size: var(--s-1);
+  font-weight: 400;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.88);
+  margin: 0;
+  max-width: 44ch;
+}
+
+/* ── Form ──────────────────────────────────────────────────── */
+
+.s-newsletter__form {
+  width: 100%;
+  max-width: 540px;
+}
+
+.s-newsletter__field-row {
+  display: flex;
+  gap: var(--sp-3);
+  align-items: stretch;
+}
+
+/* ── Input ─────────────────────────────────────────────────── */
+
+.s-newsletter__input {
+  flex: 1 1 0;
+  min-width: 0;
+  padding-block: var(--sp-3);
+  padding-inline: var(--sp-6);
+  border-radius: var(--radius-pill);
+  border: 2px solid transparent;
+  background: var(--surface);
+  color: var(--ink);
+  font-family: var(--font-display);
+  font-size: var(--s-0);
+  font-weight: 400;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.s-newsletter__input::placeholder {
+  color: var(--ink-soft);
+}
+
+.s-newsletter__input:focus {
+  border-color: var(--accent-deep);
+  box-shadow: 0 0 0 3px rgba(146, 127, 188, 0.25);
+}
+
+/* ── Subscribe button ──────────────────────────────────────── */
+
+.s-newsletter__btn.btn {
+  flex-shrink: 0;
+  background: var(--surface);
+  color: var(--accent-deep);
+  border: 2px solid var(--surface);
+  font-family: var(--font-display);
+  font-size: var(--s-0);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  padding-block: var(--sp-3);
+  padding-inline: var(--sp-8);
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.18s, color 0.18s, border-color 0.18s;
+}
+
+.s-newsletter__btn.btn:hover,
+.s-newsletter__btn.btn:focus-visible {
+  background: var(--accent-deep);
+  color: var(--accent-ink);
+  border-color: var(--accent-deep);
+  outline: 3px solid rgba(255, 255, 255, 0.5);
+  outline-offset: 2px;
+}
+
+/* ── Fine print ────────────────────────────────────────────── */
+
+.s-newsletter__fine {
+  font-family: var(--font-display);
+  font-size: var(--s--1);
+  color: rgba(255, 255, 255, 0.65);
+  margin: 0;
+}
+
+/* ── Visually hidden (for the label) ──────────────────────── */
+
+.s-newsletter .sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ── Mobile ────────────────────────────────────────────────── */
+
+@media (max-width: 540px) {
+  .s-newsletter__field-row {
+    flex-direction: column;
+    gap: var(--sp-3);
+  }
+
+  .s-newsletter__input,
+  .s-newsletter__btn.btn {
+    width: 100%;
+  }
+
+  .s-newsletter__btn.btn {
+    padding-block: var(--sp-4);
+  }
+}

@@ -1,0 +1,914 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NU-DEO — Déodorant naturel en baume · Sans aluminium, sans bicarbonate</title>
+<meta name="description" content="NU-DEO : déodorant naturel en baume, sans aluminium, sans bicarbonate et sans plastique. Léger, respirant, doux pour les peaux sensibles. Fait main au Québec.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<!-- ============================================================
+     NU-DEO · Header + Announcement Bar
+     01-header.html
+     ============================================================ -->
+
+<!-- Announcement bar -->
+<div class="announce" role="complementary" aria-label="Informations de livraison">
+  <div class="announce__inner">
+    <span class="announce__full">
+      <span>Livraison gratuite dès 50&nbsp;$</span>
+      <span class="announce__dot" aria-hidden="true">&nbsp;·&nbsp;</span>
+      <span>Sans aluminium, sans bicarbonate</span>
+      <span class="announce__dot" aria-hidden="true">&nbsp;·&nbsp;</span>
+      <span>Fait main au Québec</span>
+    </span>
+    <span class="announce__short" aria-hidden="true">Livraison gratuite dès 50&nbsp;$</span>
+  </div>
+</div>
+
+<!-- Site header -->
+<header class="site-header" role="banner">
+  <div class="wrap site-header__inner">
+
+    <!-- LEFT: hamburger (mobile) / nav links (desktop) -->
+    <nav class="site-header__nav" aria-label="Navigation principale">
+      <!-- Hamburger: mobile only -->
+      <button class="site-header__burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobile-nav">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true">
+          <line x1="2" y1="6"  x2="20" y2="6"/>
+          <line x1="2" y1="11" x2="20" y2="11"/>
+          <line x1="2" y1="16" x2="20" y2="16"/>
+        </svg>
+      </button>
+      <!-- Desktop nav links -->
+      <ul class="site-header__links" role="list">
+        <li><a href="https://www.google.com">Boutique</a></li>
+        <li><a href="https://www.google.com">Nos parfums</a></li>
+        <li><a href="https://www.google.com">Ingrédients</a></li>
+        <li><a href="https://www.google.com">Notre histoire</a></li>
+        <li><a href="https://www.google.com">FAQ</a></li>
+      </ul>
+    </nav>
+
+    <!-- CENTER: logo -->
+    <a href="https://www.google.com" class="site-header__logo" aria-label="NU-DEO — Accueil">
+      <img
+        src="assets/logo.png"
+        alt="NU-DEO"
+        class="site-header__logo-img"
+        width="auto"
+        height="30"
+        loading="eager"
+        decoding="async"
+      >
+    </a>
+
+    <!-- RIGHT: actions cluster -->
+    <div class="site-header__actions">
+      <!-- Magasiner pill — desktop only -->
+      <a href="https://www.google.com" class="btn btn-primary site-header__cta" aria-label="Magasiner la boutique">Magasiner</a>
+
+      <!-- Search — desktop only -->
+      <button class="site-header__icon site-header__icon--desktop" aria-label="Rechercher">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="9.5" cy="9.5" r="6.5"/>
+          <line x1="14.5" y1="14.5" x2="20" y2="20"/>
+        </svg>
+      </button>
+
+      <!-- Account — desktop only -->
+      <button class="site-header__icon site-header__icon--desktop" aria-label="Mon compte">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="11" cy="7.5" r="4"/>
+          <path d="M3 20c0-4.418 3.582-8 8-8s8 3.582 8 8"/>
+        </svg>
+      </button>
+
+      <!-- Cart — always visible -->
+      <button class="site-header__icon site-header__cart" aria-label="Panier, 0 article">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M6 2L3 6v14a2 2 0 002 2h12a2 2 0 002-2V6l-3-4z"/>
+          <line x1="3" y1="6" x2="21" y2="6"/>
+          <path d="M16 10a4 4 0 01-8 0"/>
+        </svg>
+        <span class="site-header__badge" aria-hidden="true">0</span>
+      </button>
+    </div>
+
+  </div>
+</header>
+
+<!-- Mobile nav drawer (hidden by default) -->
+<nav class="site-header__mobile-nav" id="mobile-nav" aria-label="Menu mobile" aria-hidden="true">
+  <ul role="list">
+    <li><a href="https://www.google.com">Boutique</a></li>
+    <li><a href="https://www.google.com">Nos parfums</a></li>
+    <li><a href="https://www.google.com">Ingrédients</a></li>
+    <li><a href="https://www.google.com">Notre histoire</a></li>
+    <li><a href="https://www.google.com">FAQ</a></li>
+    <li class="site-header__mobile-cta">
+      <a href="https://www.google.com" class="btn btn-primary btn-block">Magasiner</a>
+    </li>
+  </ul>
+</nav>
+
+<section class="sec s-hero hero-fullbleed">
+  <!-- Full-bleed image layer -->
+  <img
+    class="hero-bg-img"
+    src="https://www.nu-deo.ca/cdn/shop/files/NU-DEO_3DEO_FP-16-9-rectangle.jpg?v=1775334487&width=2000"
+    alt="Les trois déodorants naturels NU-DEO en boîtier métal"
+    fetchpriority="high"
+    decoding="async"
+  >
+  <!-- Light scrim over entire image for edge legibility -->
+  <div class="hero-scrim" aria-hidden="true"></div>
+
+  <div class="wrap">
+    <!-- Contained text card sitting over the image -->
+    <div class="hero-card">
+      <p class="eyebrow">Déodorant naturel · Fait au Québec</p>
+
+      <h1>La fraîcheur,<br>à nu.</h1>
+
+      <p class="hero-sub">
+        Un baume déodorant sans aluminium, sans bicarbonate et sans plastique — léger, respirant, et doux même pour les peaux sensibles.
+      </p>
+
+      <a href="https://www.google.com" class="btn btn-primary hero-cta">
+        Magasiner NU-DEO
+      </a>
+
+      <!-- Proof chips -->
+      <div class="hero-chips">
+        <span class="chip">Sans aluminium</span>
+        <span class="chip">Sans bicarbonate</span>
+        <span class="chip">100&nbsp;% végane</span>
+      </div>
+
+      <!-- Rating line -->
+      <p class="hero-rating">
+        <span class="stars">★★★★★</span>
+        <span class="hero-rating-label">4,9/5 · adoré pour les peaux sensibles</span>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     NU-DEO · Badge Strip — Free-From Claims
+     03-badges.html
+     ============================================================ -->
+
+<section class="sec s-badges" aria-label="Certifications sans">
+  <div class="wrap">
+    <ul class="s-badges__list" role="list" aria-label="Ingrédients absents">
+
+      <!-- Sans bicarbonate -->
+      <li class="s-badges__item">
+        <svg class="s-badges__icon" viewBox="0 0 30 30" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <!-- flask / chemistry -->
+          <path d="M11 4v8L5 22h20L19 12V4"/>
+          <line x1="11" y1="4" x2="19" y2="4"/>
+          <line x1="8" y1="18" x2="13" y2="15"/>
+        </svg>
+        <span class="s-badges__label">Sans bicarbonate</span>
+      </li>
+
+      <!-- Sans aluminium -->
+      <li class="s-badges__item">
+        <svg class="s-badges__icon" viewBox="0 0 30 30" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <!-- atom / element -->
+          <circle cx="15" cy="15" r="2.5"/>
+          <ellipse cx="15" cy="15" rx="11" ry="5" transform="rotate(0 15 15)"/>
+          <ellipse cx="15" cy="15" rx="11" ry="5" transform="rotate(60 15 15)"/>
+          <ellipse cx="15" cy="15" rx="11" ry="5" transform="rotate(120 15 15)"/>
+        </svg>
+        <span class="s-badges__label">Sans aluminium</span>
+      </li>
+
+      <!-- Sans cire -->
+      <li class="s-badges__item">
+        <svg class="s-badges__icon" viewBox="0 0 30 30" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <!-- candle / wax flame -->
+          <rect x="10" y="16" width="10" height="10" rx="2"/>
+          <path d="M15 16V10"/>
+          <path d="M12 10c0-2 3-5 3-5s3 3 3 5a3 3 0 01-6 0z"/>
+        </svg>
+        <span class="s-badges__label">Sans cire</span>
+      </li>
+
+      <!-- Sans parfum synthétique -->
+      <li class="s-badges__item">
+        <svg class="s-badges__icon" viewBox="0 0 30 30" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <!-- perfume bottle crossed -->
+          <rect x="9" y="11" width="12" height="15" rx="2"/>
+          <path d="M12 11V8h6v3"/>
+          <path d="M15 8V5"/>
+          <line x1="7" y1="7" x2="23" y2="23" stroke-width="1.8"/>
+        </svg>
+        <span class="s-badges__label">Sans parfum synthétique</span>
+      </li>
+
+      <!-- Sans plastique -->
+      <li class="s-badges__item">
+        <svg class="s-badges__icon" viewBox="0 0 30 30" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <!-- leaf / eco -->
+          <path d="M6 24c0 0 6-10 18-18C24 6 10 8 6 24z"/>
+          <path d="M6 24c3-4 6-7 10-10"/>
+        </svg>
+        <span class="s-badges__label">Sans plastique</span>
+      </li>
+
+    </ul>
+  </div>
+</section>
+
+<!-- ============================================================
+     NU-DEO · 3 Scents / Bestsellers Grid
+     04-scents.html
+     ============================================================ -->
+
+<section class="sec s-scents" aria-labelledby="scents-heading">
+  <div class="wrap">
+
+    <!-- Section header -->
+    <header class="s-scents__header">
+      <p class="eyebrow">Nos trois parfums</p>
+      <h2 id="scents-heading">Un seul format.<br>Trois signatures.</h2>
+      <p class="s-scents__intro">
+        Même base crème-baume artisanale, fabriquée à la main au Québec — déclinée en trois univers olfactifs distinctifs. Trouvez le vôtre.
+      </p>
+    </header>
+
+    <!-- 3-up product grid -->
+    <ul class="s-scents__grid" role="list">
+
+      <!-- Card 1 · ORIGINAL -->
+      <li class="s-scents__card card reveal" style="--delay:.05s" aria-label="Déodorant NU-DEO ORIGINAL">
+        <a href="https://www.google.com" class="card__img-wrap" tabindex="-1" aria-hidden="true">
+          <img
+            src="https://www.nu-deo.ca/cdn/shop/files/NU-DEO_ORG_WEB.jpg?v=1775340033&width=800"
+            alt="Déodorant NU-DEO ORIGINAL"
+            class="card__img"
+            loading="lazy"
+            decoding="async"
+            width="800"
+            height="800"
+          >
+        </a>
+        <div class="card__body">
+          <div class="card__badge chip">Meilleure vente</div>
+          <h3 class="card__name"><a href="https://www.google.com">ORIGINAL</a></h3>
+          <p class="card__desc">Litsée, bergamote, lavande &amp; clou de girofle — frais, lumineux, unisexe.</p>
+          <div class="card__meta">
+            <span class="card__price">14,99 $</span>
+            <span class="card__weight">/ 60 g</span>
+          </div>
+          <div class="stars card__stars" aria-label="4,8 étoiles sur 5">
+            ★★★★★
+          </div>
+          <a href="https://www.google.com" class="btn btn-primary btn-block card__cta">Ajouter au panier</a>
+          <p class="card__note">60 g · ~2 mois d'utilisation</p>
+        </div>
+      </li>
+
+      <!-- Card 2 · BLACK LABEL -->
+      <li class="s-scents__card card reveal" style="--delay:.18s" aria-label="Déodorant NU-DEO BLACK LABEL">
+        <a href="https://www.google.com" class="card__img-wrap" tabindex="-1" aria-hidden="true">
+          <img
+            src="https://www.nu-deo.ca/cdn/shop/files/NU-DEO_BLK_WEB.jpg?v=1775340033&width=800"
+            alt="Déodorant NU-DEO BLACK LABEL"
+            class="card__img"
+            loading="lazy"
+            decoding="async"
+            width="800"
+            height="800"
+          >
+        </a>
+        <div class="card__body">
+          <div class="card__badge chip card__badge--dark">Édition signature</div>
+          <h3 class="card__name"><a href="https://www.google.com">BLACK LABEL</a></h3>
+          <p class="card__desc">Patchouli, cèdre de Virginie &amp; poivre noir — cuir fumé, résineux, intense.</p>
+          <div class="card__meta">
+            <span class="card__price">14,99 $</span>
+            <span class="card__weight">/ 60 g</span>
+          </div>
+          <div class="stars card__stars" aria-label="4,9 étoiles sur 5">
+            ★★★★★
+          </div>
+          <a href="https://www.google.com" class="btn btn-primary btn-block card__cta">Ajouter au panier</a>
+          <p class="card__note">60 g · ~2 mois d'utilisation</p>
+        </div>
+      </li>
+
+      <!-- Card 3 · PINK LABEL -->
+      <li class="s-scents__card card reveal" style="--delay:.31s" aria-label="Déodorant NU-DEO PINK LABEL">
+        <a href="https://www.google.com" class="card__img-wrap" tabindex="-1" aria-hidden="true">
+          <img
+            src="https://www.nu-deo.ca/cdn/shop/files/NU-DEO_PNK_WEB.jpg?v=1775340033&width=800"
+            alt="Déodorant NU-DEO PINK LABEL"
+            class="card__img"
+            loading="lazy"
+            decoding="async"
+            width="800"
+            height="800"
+          >
+        </a>
+        <div class="card__body">
+          <div class="card__badge chip card__badge--pink">Coup de cœur</div>
+          <h3 class="card__name"><a href="https://www.google.com">PINK LABEL</a></h3>
+          <p class="card__desc">Palmarosa, ylang-ylang &amp; pamplemousse rose — floral, aérien, sophistiqué.</p>
+          <div class="card__meta">
+            <span class="card__price">14,99 $</span>
+            <span class="card__weight">/ 60 g</span>
+          </div>
+          <div class="stars card__stars" aria-label="4,8 étoiles sur 5">
+            ★★★★★
+          </div>
+          <a href="https://www.google.com" class="btn btn-primary btn-block card__cta">Ajouter au panier</a>
+          <p class="card__note">60 g · ~2 mois d'utilisation</p>
+        </div>
+      </li>
+
+    </ul>
+
+    <!-- CTA below grid -->
+    <div class="s-scents__footer">
+      <a href="https://www.google.com" class="btn btn-outline">Voir tous les parfums</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============================================================
+     NU-DEO · Pourquoi NU — Benefits Band
+     05-why.html
+     ============================================================ -->
+
+<section class="sec s-why" aria-labelledby="why-heading">
+  <div class="wrap">
+
+    <!-- Section header -->
+    <header class="s-why__header">
+      <p class="eyebrow s-why__eyebrow">POURQUOI NU</p>
+      <h2 id="why-heading">Ce qu'on laisse de côté compte<br>autant que ce qu'on y met.</h2>
+      <p class="s-why__intro">
+        Une formule crémeuse, minimaliste, pensée pour les peaux qui méritent mieux que des compromis.
+      </p>
+    </header>
+
+    <!-- 4-up benefit grid -->
+    <ul class="s-why__grid" role="list">
+
+      <!-- Benefit 1 · Sans bicarbonate -->
+      <li class="s-why__item reveal" style="--delay:.05s">
+        <div class="s-why__icon-wrap s-why__icon-wrap--lav">
+          <span class="ic" aria-hidden="true">
+            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+              <!-- shield with leaf -->
+              <path d="M20 4 L34 10 L34 22 C34 30 20 36 20 36 C20 36 6 30 6 22 L6 10 Z"/>
+              <path d="M20 14 C20 14 15 18 15 22 C15 25.3 17.2 28 20 28 C22.8 28 25 25.3 25 22 C25 18 20 14 20 14Z"/>
+              <line x1="20" y1="28" x2="20" y2="22"/>
+            </svg>
+          </span>
+        </div>
+        <h3 class="s-why__title">Sans bicarbonate</h3>
+        <p class="s-why__desc">Fini la « réaction au déo naturel » : une formule légère et respirante, douce pour les aisselles sensibles.</p>
+      </li>
+
+      <!-- Benefit 2 · 100% actifs, zéro charge -->
+      <li class="s-why__item reveal" style="--delay:.12s">
+        <div class="s-why__icon-wrap s-why__icon-wrap--sage">
+          <span class="ic" aria-hidden="true">
+            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+              <!-- drop with 100 checkmark -->
+              <path d="M20 6 C20 6 10 18 10 25 C10 30.5 14.5 35 20 35 C25.5 35 30 30.5 30 25 C30 18 20 6 20 6Z"/>
+              <polyline points="15,25 18.5,28.5 26,21"/>
+            </svg>
+          </span>
+        </div>
+        <h3 class="s-why__title">100 % actifs, zéro charge</h3>
+        <p class="s-why__desc">Chaque ingrédient a un rôle : protéger, apaiser ou nourrir la peau. Rien de superflu.</p>
+      </li>
+
+      <!-- Benefit 3 · Le magnésium en vedette -->
+      <li class="s-why__item reveal" style="--delay:.19s">
+        <div class="s-why__icon-wrap s-why__icon-wrap--lav">
+          <span class="ic" aria-hidden="true">
+            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+              <!-- atom / sparkle orbits -->
+              <circle cx="20" cy="20" r="4"/>
+              <ellipse cx="20" cy="20" rx="13" ry="6" transform="rotate(0 20 20)"/>
+              <ellipse cx="20" cy="20" rx="13" ry="6" transform="rotate(60 20 20)"/>
+              <ellipse cx="20" cy="20" rx="13" ry="6" transform="rotate(120 20 20)"/>
+            </svg>
+          </span>
+        </div>
+        <h3 class="s-why__title">Le magnésium en vedette</h3>
+        <p class="s-why__desc">L'hydroxyde de magnésium équilibre le pH et neutralise les odeurs sans irriter.</p>
+      </li>
+
+      <!-- Benefit 4 · Sans aluminium, sans plastique -->
+      <li class="s-why__item reveal" style="--delay:.26s">
+        <div class="s-why__icon-wrap s-why__icon-wrap--sage">
+          <span class="ic" aria-hidden="true">
+            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+              <!-- recycle arrows -->
+              <path d="M20 7 L24 13 L16 13 Z"/>
+              <path d="M16 13 C11 13 7 17 7 22 C7 25.6 9 28.8 12 30.4"/>
+              <path d="M28 30.4 C31 28.8 33 25.6 33 22 C33 17 29 13 24 13"/>
+              <path d="M10 33 L14 27 L18 33 Z" transform="rotate(120 14 30)"/>
+              <path d="M22 33 L26 27 L30 33 Z" transform="rotate(240 26 30)"/>
+              <circle cx="20" cy="22" r="3"/>
+            </svg>
+          </span>
+        </div>
+        <h3 class="s-why__title">Sans aluminium, sans plastique</h3>
+        <p class="s-why__desc">Boîtier métal recyclable à l'infini, étiquettes papier. Naturel jusque dans l'emballage.</p>
+      </li>
+
+    </ul>
+
+    <!-- CTA -->
+    <div class="s-why__cta">
+      <a href="https://www.google.com" class="btn btn-outline">Découvrir la formule</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============================================================
+     NU-DEO · Ingrédients — Quatre héros
+     06-ingredients.html
+     ============================================================ -->
+
+<section class="sec s-ingredients" aria-labelledby="ingredients-heading">
+  <div class="wrap">
+
+    <!-- Section header -->
+    <header class="s-ingredients__header">
+      <p class="eyebrow s-ingredients__eyebrow">LA FORMULE</p>
+      <h2 id="ingredients-heading">Quatre ingrédients héros.</h2>
+      <p class="s-ingredients__intro">Vegane, fait main à Saint-Lazare, QC.</p>
+    </header>
+
+    <!-- 4-up ingredient card grid -->
+    <ul class="s-ingredients__grid" role="list">
+
+      <!-- Card 1 · Karité -->
+      <li class="s-ingredients__card reveal" style="--delay:.05s">
+        <a href="https://www.google.com" class="s-ingredients__img-wrap" tabindex="-1" aria-hidden="true">
+          <img
+            src="https://www.nu-deo.ca/cdn/shop/files/shea_sq_e0b6e8b8-af3a-4c19-b1d0-78043a0335f4.png?v=1777931485&width=800"
+            alt="Beurre de karité"
+            class="s-ingredients__img"
+            loading="lazy"
+            decoding="async"
+            width="800"
+            height="800"
+          />
+        </a>
+        <div class="s-ingredients__body">
+          <h3 class="s-ingredients__name">Karité</h3>
+          <p class="s-ingredients__role">Beurre de karité bio <em>(Butyrospermum Parkii)</em> — nourrit et apaise.</p>
+        </div>
+      </li>
+
+      <!-- Card 2 · Arrow-root -->
+      <li class="s-ingredients__card reveal" style="--delay:.12s">
+        <a href="https://www.google.com" class="s-ingredients__img-wrap" tabindex="-1" aria-hidden="true">
+          <img
+            src="https://www.nu-deo.ca/cdn/shop/files/arrowroot_sq_ebee3fce-f159-4944-8192-312c2ad7c236.png?v=1777931516&width=800"
+            alt="Poudre d'arrow-root"
+            class="s-ingredients__img"
+            loading="lazy"
+            decoding="async"
+            width="800"
+            height="800"
+          />
+        </a>
+        <div class="s-ingredients__body">
+          <h3 class="s-ingredients__name">Arrow-root</h3>
+          <p class="s-ingredients__role">Poudre d'arrow-root <em>(Maranta)</em> — absorbe l'humidité, fini soyeux.</p>
+        </div>
+      </li>
+
+      <!-- Card 3 · Coco -->
+      <li class="s-ingredients__card reveal" style="--delay:.19s">
+        <a href="https://www.google.com" class="s-ingredients__img-wrap" tabindex="-1" aria-hidden="true">
+          <img
+            src="https://www.nu-deo.ca/cdn/shop/files/coconut_sq_0e1bbd33-1c43-408a-9db0-12833b7f383a.png?v=1777931543&width=800"
+            alt="Huile de coco"
+            class="s-ingredients__img"
+            loading="lazy"
+            decoding="async"
+            width="800"
+            height="800"
+          />
+        </a>
+        <div class="s-ingredients__body">
+          <h3 class="s-ingredients__name">Coco</h3>
+          <p class="s-ingredients__role">Huile de coco bio <em>(Cocos Nucifera)</em> — hydrate et adoucit.</p>
+        </div>
+      </li>
+
+      <!-- Card 4 · Magnésium -->
+      <li class="s-ingredients__card reveal" style="--delay:.26s">
+        <a href="https://www.google.com" class="s-ingredients__img-wrap" tabindex="-1" aria-hidden="true">
+          <img
+            src="https://www.nu-deo.ca/cdn/shop/files/magnesium_sq_15e6ae9b-71e4-4278-ad6e-de1c71c9dbea.png?v=1777931573&width=800"
+            alt="Hydroxyde de magnésium"
+            class="s-ingredients__img"
+            loading="lazy"
+            decoding="async"
+            width="800"
+            height="800"
+          />
+        </a>
+        <div class="s-ingredients__body">
+          <h3 class="s-ingredients__name">Magnésium</h3>
+          <p class="s-ingredients__role">Hydroxyde de magnésium — neutralise les odeurs, équilibre le pH.</p>
+        </div>
+      </li>
+
+    </ul>
+
+  </div>
+</section>
+
+<!-- ============================================================
+     NU-DEO · Rituel + Fondatrice band
+     07-ritual.html
+     ============================================================ -->
+
+<section class="sec s-ritual" aria-labelledby="ritual-heading">
+  <div class="wrap">
+    <div class="s-ritual__cols">
+
+      <!-- LEFT: founder portrait -->
+      <div class="s-ritual__visual reveal" style="--delay:.05s">
+        <div class="s-ritual__halo" aria-hidden="true"></div>
+        <img
+          class="s-ritual__portrait"
+          src="https://www.nu-deo.ca/cdn/shop/files/Oti_png.webp?v=1774405261&width=600"
+          alt="Otilia, fondatrice de NU-DEO"
+          loading="lazy"
+          decoding="async"
+          width="600"
+          height="600"
+        >
+        <p class="s-ritual__caption">Otilia — fondatrice&nbsp;·&nbsp;esthéticienne &amp; ingénieure</p>
+      </div>
+
+      <!-- RIGHT: story text -->
+      <div class="s-ritual__text reveal" style="--delay:.18s">
+        <p class="eyebrow">Notre histoire</p>
+        <h2 id="ritual-heading">Un geste simple,<br>devenu un rituel.</h2>
+
+        <p class="s-ritual__body">
+          Esthéticienne et ingénieure, Otilia a créé NU pour sa famille — un déodorant vraiment naturel <em>et</em> efficace, sans le compromis des irritations ni la liste d'ingrédients impossibles. Un produit qu'elle voulait utiliser elle-même, chaque jour, en toute confiance.
+        </p>
+        <p class="s-ritual__body">
+          S'appliquer le baume à la main, chaque matin, c'est un moment de contact avec son corps — un petit rituel d'attention autant qu'un geste de fraîcheur. Fait main au Québec, dans un pot en métal que l'on garde.
+        </p>
+
+        <div class="s-ritual__actions">
+          <a href="https://www.google.com" class="btn btn-primary">Lire notre histoire</a>
+        </div>
+
+        <div class="s-ritual__chips">
+          <span class="chip">Fait main au Québec</span>
+          <span class="chip">Végane</span>
+          <span class="chip">Sans cruauté</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     NU-DEO · Avis clients / Reviews wall
+     08-reviews.html
+     ============================================================ -->
+
+<section class="sec s-reviews" aria-labelledby="reviews-heading">
+  <div class="wrap">
+
+    <!-- Section header -->
+    <header class="s-reviews__header reveal">
+      <p class="eyebrow">Ils ont adopté NU</p>
+      <h2 id="reviews-heading">Des aisselles (enfin) heureuses.</h2>
+
+      <!-- Rating summary -->
+      <div class="s-reviews__summary" aria-label="Note moyenne 4,9 sur 5, plus de 600 avis">
+        <span class="s-reviews__big-star">★ 4,9<span class="s-reviews__slash">/5</span></span>
+        <span class="s-reviews__count">plus de 600&nbsp;avis vérifiés</span>
+      </div>
+    </header>
+
+    <!-- 6 review cards: desktop 3-up, tablet 2-up, mobile 1-up -->
+    <ul class="s-reviews__grid" role="list">
+
+      <!-- Review 1 — ORIGINAL, peau sensible -->
+      <li class="s-reviews__item review reveal" style="--delay:.06s">
+        <div class="stars s-reviews__stars" aria-label="5 étoiles sur 5">★★★★★</div>
+        <blockquote class="s-reviews__quote">
+          "J'ai la peau ultra-sensible et chaque déo conventionnel me laissait des rougeurs pendant des jours. Avec ORIGINAL, plus aucune irritation — et ça tient facilement toute la journée, même lors de mes cours de yoga."
+        </blockquote>
+        <footer class="s-reviews__meta">
+          <strong class="s-reviews__name">Marie-Ève</strong>
+          <span class="chip s-reviews__tag">Peau sensible</span>
+        </footer>
+      </li>
+
+      <!-- Review 2 — BLACK LABEL, converti antisudorifique -->
+      <li class="s-reviews__item review reveal" style="--delay:.14s">
+        <div class="stars s-reviews__stars" aria-label="5 étoiles sur 5">★★★★★</div>
+        <blockquote class="s-reviews__quote">
+          "J'utilisais un antisudorifique depuis 15 ans. Mon chum m'a convaincu d'essayer le BLACK LABEL — et je ne suis jamais retourné en arrière. Sans aluminium, sans odeur suspecte le soir, et ce parfum boisé est franchement excellent."
+        </blockquote>
+        <footer class="s-reviews__meta">
+          <strong class="s-reviews__name">Thomas</strong>
+          <span class="chip s-reviews__tag">Converti de l'antisudorifique</span>
+        </footer>
+      </li>
+
+      <!-- Review 3 — PINK LABEL, pot en métal -->
+      <li class="s-reviews__item review reveal" style="--delay:.22s">
+        <div class="stars s-reviews__stars" aria-label="5 étoiles sur 5">★★★★★</div>
+        <blockquote class="s-reviews__quote">
+          "Le petit pot en métal est tellement beau sur ma commode — zéro plastique, ça fait plaisir. Le PINK LABEL sent le ciel. Mais surtout : plus d'irritations sous les bras depuis 4 mois. Incroyable."
+        </blockquote>
+        <footer class="s-reviews__meta">
+          <strong class="s-reviews__name">Laurie</strong>
+          <span class="chip s-reviews__tag">Acheteur vérifié</span>
+        </footer>
+      </li>
+
+      <!-- Review 4 — ORIGINAL, fait au QC -->
+      <li class="s-reviews__item review reveal" style="--delay:.30s">
+        <div class="stars s-reviews__stars" aria-label="5 étoiles sur 5">★★★★★</div>
+        <blockquote class="s-reviews__quote">
+          "Savoir que c'est fait main au Québec, ça change tout pour moi. L'ORIGINAL sent propre et frais sans être agressif. Après une journée de travail en entrepôt, ça tient encore. Je commande en pack de 3."
+        </blockquote>
+        <footer class="s-reviews__meta">
+          <strong class="s-reviews__name">Sébastien</strong>
+          <span class="chip s-reviews__tag">Acheteur vérifié</span>
+        </footer>
+      </li>
+
+      <!-- Review 5 — BLACK LABEL, sans aluminium -->
+      <li class="s-reviews__item review reveal" style="--delay:.38s">
+        <div class="stars s-reviews__stars" aria-label="5 étoiles sur 5">★★★★★</div>
+        <blockquote class="s-reviews__quote">
+          "Ça fait deux ans que je cherchais un naturel sans aluminium qui ne me laisse pas avec des auréoles après 3 heures. Le BLACK LABEL, c'est la première fois que je dis : c'est aussi bon qu'un conventionnel, sinon meilleur."
+        </blockquote>
+        <footer class="s-reviews__meta">
+          <strong class="s-reviews__name">Nadia</strong>
+          <span class="chip s-reviews__tag">Peau sensible</span>
+        </footer>
+      </li>
+
+      <!-- Review 6 — PINK LABEL, converti -->
+      <li class="s-reviews__item review reveal" style="--delay:.46s">
+        <div class="stars s-reviews__stars" aria-label="4 étoiles sur 5">★★★★★</div>
+        <blockquote class="s-reviews__quote">
+          "J'avais peur de la transition vers le naturel — on m'avait dit que c'était compliqué. Avec PINK LABEL, aucun problème dès le premier jour. Le parfum reste doux toute la journée et le pot dure vraiment deux mois. 10/10."
+        </blockquote>
+        <footer class="s-reviews__meta">
+          <strong class="s-reviews__name">Chloé</strong>
+          <span class="chip s-reviews__tag">Converti de l'antisudorifique</span>
+        </footer>
+      </li>
+
+    </ul>
+
+    <!-- footnote -->
+    <p class="s-reviews__footnote">Avis représentatifs (maquette).</p>
+
+  </div>
+</section>
+
+<!-- ============================================================
+     NU-DEO · Newsletter Signup
+     09-newsletter.html
+     ============================================================ -->
+
+<section class="sec s-newsletter" aria-labelledby="newsletter-heading">
+  <div class="wrap s-newsletter__wrap">
+
+    <!-- Eyebrow -->
+    <p class="eyebrow s-newsletter__eyebrow">REJOIGNEZ NU</p>
+
+    <!-- Heading -->
+    <h2 class="s-newsletter__heading" id="newsletter-heading">
+      Obtenez&nbsp;10&nbsp;% sur votre première commande
+    </h2>
+
+    <!-- Sub-copy -->
+    <p class="s-newsletter__sub">
+      Conseils peau, nouveautés et offres&nbsp;— directement dans votre boîte courriel.
+    </p>
+
+    <!-- Inline form -->
+    <form class="s-newsletter__form" onsubmit="return false" novalidate aria-label="Abonnement à l'infolettre">
+      <div class="s-newsletter__field-row">
+        <label for="nl-email" class="sr-only">Adresse courriel</label>
+        <input
+          id="nl-email"
+          class="s-newsletter__input"
+          type="email"
+          name="email"
+          placeholder="votre@courriel.com"
+          autocomplete="email"
+          required
+          aria-required="true"
+        >
+        <button type="submit" class="btn btn-light s-newsletter__btn">
+          S'abonner
+        </button>
+      </div>
+    </form>
+
+    <!-- Fine print -->
+    <p class="s-newsletter__fine">Désabonnement en tout temps.</p>
+
+  </div>
+</section>
+
+<!-- ============================================================
+     NU-DEO · Site Footer
+     10-footer.html
+     ============================================================ -->
+
+<footer class="site-footer" role="contentinfo">
+
+  <!-- ── Top row: logo + blurb ────────────────────────────── -->
+  <div class="wrap site-footer__top">
+    <div class="site-footer__brand">
+      <a href="https://www.google.com" class="site-footer__logo-link" aria-label="NU-DEO — Accueil">
+        <img
+          src="assets/logo.png"
+          alt="NU-DEO"
+          class="site-footer__logo"
+          height="30"
+          width="auto"
+          loading="lazy"
+          decoding="async"
+        >
+      </a>
+      <p class="site-footer__blurb">
+        Déodorant naturel en baume. Sans aluminium, sans bicarbonate, sans plastique.<br>
+        Fait main à Saint-Lazare, QC.
+      </p>
+
+      <!-- Social icons -->
+      <div class="site-footer__socials" aria-label="Réseaux sociaux">
+        <!-- Instagram -->
+        <a href="https://www.google.com" class="site-footer__social-link" aria-label="Instagram">
+          <svg class="site-footer__social-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+            <circle cx="12" cy="12" r="4"/>
+            <circle cx="17.5" cy="6.5" r="0.8" fill="currentColor" stroke="none"/>
+          </svg>
+        </a>
+        <!-- Facebook -->
+        <a href="https://www.google.com" class="site-footer__social-link" aria-label="Facebook">
+          <svg class="site-footer__social-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/>
+          </svg>
+        </a>
+        <!-- TikTok -->
+        <a href="https://www.google.com" class="site-footer__social-link" aria-label="TikTok">
+          <svg class="site-footer__social-icon" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="none" aria-hidden="true">
+            <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.85a8.18 8.18 0 004.79 1.52V6.92a4.85 4.85 0 01-1.02-.23z"/>
+          </svg>
+        </a>
+        <!-- Pinterest -->
+        <a href="https://www.google.com" class="site-footer__social-link" aria-label="Pinterest">
+          <svg class="site-footer__social-icon" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="none" aria-hidden="true">
+            <path d="M12 2C6.48 2 2 6.48 2 12c0 4.24 2.65 7.86 6.39 9.29-.09-.78-.17-1.98.04-2.83.18-.76 1.22-5.14 1.22-5.14s-.31-.62-.31-1.54c0-1.45.84-2.53 1.88-2.53.89 0 1.32.67 1.32 1.47 0 .9-.57 2.24-.87 3.48-.25 1.04.52 1.88 1.54 1.88 1.85 0 3.09-2.37 3.09-5.16 0-2.13-1.44-3.76-4.08-3.76-2.97 0-4.8 2.21-4.8 4.68 0 .85.24 1.44.62 1.9.17.2.19.28.13.51-.04.17-.14.57-.18.73-.06.24-.24.32-.44.23-1.25-.51-1.83-1.88-1.83-3.42 0-2.54 2.15-5.6 6.42-5.6 3.43 0 5.69 2.48 5.69 5.14 0 3.52-1.96 6.16-4.84 6.16-.97 0-1.88-.52-2.19-1.11l-.6 2.28c-.22.84-.8 1.89-1.19 2.53.9.27 1.85.42 2.83.42 5.52 0 10-4.48 10-10S17.52 2 12 2z"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- ── 4 link columns ─────────────────────────────────── -->
+    <nav class="site-footer__nav" aria-label="Pied de page">
+
+      <div class="site-footer__col">
+        <h3 class="site-footer__col-head">Boutique</h3>
+        <ul class="site-footer__col-list" role="list">
+          <li><a href="https://www.google.com">Original</a></li>
+          <li><a href="https://www.google.com">Black Label</a></li>
+          <li><a href="https://www.google.com">Pink Label</a></li>
+          <li><a href="https://www.google.com">Coffrets</a></li>
+        </ul>
+      </div>
+
+      <div class="site-footer__col">
+        <h3 class="site-footer__col-head">À propos</h3>
+        <ul class="site-footer__col-list" role="list">
+          <li><a href="https://www.google.com">Notre histoire</a></li>
+          <li><a href="https://www.google.com">Ingrédients</a></li>
+          <li><a href="https://www.google.com">Fait au Québec</a></li>
+          <li><a href="https://www.google.com">FAQ</a></li>
+        </ul>
+      </div>
+
+      <div class="site-footer__col">
+        <h3 class="site-footer__col-head">Aide</h3>
+        <ul class="site-footer__col-list" role="list">
+          <li><a href="https://www.google.com">Livraison &amp; retours</a></li>
+          <li><a href="https://www.google.com">Suivi de commande</a></li>
+          <li><a href="https://www.google.com">Nous joindre</a></li>
+          <li><a href="https://www.google.com">Mon compte</a></li>
+        </ul>
+      </div>
+
+      <div class="site-footer__col">
+        <h3 class="site-footer__col-head">Suivez-nous</h3>
+        <ul class="site-footer__col-list" role="list">
+          <li><a href="https://www.google.com">Instagram</a></li>
+          <li><a href="https://www.google.com">Facebook</a></li>
+          <li><a href="https://www.google.com">TikTok</a></li>
+          <li><a href="https://www.google.com">Pinterest</a></li>
+        </ul>
+      </div>
+
+    </nav>
+  </div><!-- /.site-footer__top -->
+
+  <!-- ── Trust chips ─────────────────────────────────────── -->
+  <div class="wrap site-footer__trust-row" aria-label="Certifications">
+    <span class="chip site-footer__chip">FAIT AU QUÉBEC</span>
+    <span class="chip site-footer__chip">VÉGANE</span>
+    <span class="chip site-footer__chip">SANS CRUAUTÉ</span>
+    <span class="chip site-footer__chip">SANS PLASTIQUE</span>
+  </div>
+
+  <!-- ── Bottom bar ─────────────────────────────────────── -->
+  <div class="site-footer__bottom-bar">
+    <div class="wrap site-footer__bottom-inner">
+
+      <!-- Left: copyright + legal links -->
+      <div class="site-footer__legal">
+        <span class="site-footer__copy">&copy;&nbsp;2026 NU-DEO. Tous droits réservés.</span>
+        <a href="https://www.google.com" class="site-footer__legal-link">Politique de confidentialité</a>
+        <span class="site-footer__legal-sep" aria-hidden="true">&middot;</span>
+        <a href="https://www.google.com" class="site-footer__legal-link">Conditions</a>
+      </div>
+
+      <!-- Right: payment marks -->
+      <div class="site-footer__payments" aria-label="Modes de paiement acceptés">
+
+        <!-- Visa -->
+        <span class="site-footer__pay-mark" aria-label="Visa">
+          <svg width="38" height="24" viewBox="0 0 38 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect width="38" height="24" rx="4" fill="#fff" stroke="#E6E1D8" stroke-width="1"/>
+            <text x="7" y="16" font-family="Barlow Condensed, sans-serif" font-weight="700" font-size="11" fill="#1A1F71" letter-spacing="0">VISA</text>
+          </svg>
+        </span>
+
+        <!-- Mastercard -->
+        <span class="site-footer__pay-mark" aria-label="Mastercard">
+          <svg width="38" height="24" viewBox="0 0 38 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect width="38" height="24" rx="4" fill="#fff" stroke="#E6E1D8" stroke-width="1"/>
+            <circle cx="15" cy="12" r="6" fill="#EB001B"/>
+            <circle cx="23" cy="12" r="6" fill="#F79E1B"/>
+            <path d="M19 7.7a6 6 0 010 8.6A6 6 0 0119 7.7z" fill="#FF5F00"/>
+          </svg>
+        </span>
+
+        <!-- Amex -->
+        <span class="site-footer__pay-mark" aria-label="American Express">
+          <svg width="38" height="24" viewBox="0 0 38 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect width="38" height="24" rx="4" fill="#2E77BC"/>
+            <text x="5" y="16" font-family="Barlow Condensed, sans-serif" font-weight="700" font-size="9" fill="#fff" letter-spacing="0.03em">AMEX</text>
+          </svg>
+        </span>
+
+        <!-- PayPal -->
+        <span class="site-footer__pay-mark" aria-label="PayPal">
+          <svg width="38" height="24" viewBox="0 0 38 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect width="38" height="24" rx="4" fill="#fff" stroke="#E6E1D8" stroke-width="1"/>
+            <text x="5" y="16" font-family="Barlow Condensed, sans-serif" font-weight="700" font-size="10" fill="#003087" letter-spacing="0">Pay</text>
+            <text x="18" y="16" font-family="Barlow Condensed, sans-serif" font-weight="700" font-size="10" fill="#009CDE" letter-spacing="0">Pal</text>
+          </svg>
+        </span>
+
+      </div>
+    </div>
+  </div><!-- /.site-footer__bottom-bar -->
+
+</footer>
+
+<script src="fx.js"></script>
+</body>
+</html>

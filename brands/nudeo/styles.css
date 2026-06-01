@@ -1,0 +1,2559 @@
+/* ============================================================
+   NU-DEO — base.css (foundation)
+   Natural cream-balm deodorant · "Naturally Uncomplicated" · QC · FR
+   Soft clean beauty: warm cream + dusty lavender + sage botanical. Barlow Condensed.
+   ============================================================ */
+:root{
+  /* color */
+  --bg:        #FAF9F1;   /* warm cream page */
+  --surface:   #FFFFFF;   /* cards */
+  --surface-2: #F1EDE7;   /* warm cream alt band */
+  --ink:       #34303A;   /* charcoal-plum ink (legible, harmonizes w/ lavender) */
+  --ink-soft:  #6E687A;   /* muted mauve-grey — secondary text */
+  --accent:    #927FBC;   /* dusty lavender — brand / headings accent / primary CTA */
+  --accent-ink:#FFFFFF;
+  --accent-deep:#6F5BA0;  /* deeper lavender — hover / strong */
+  --sage:      #8E9A6E;   /* botanical sage (eyebrows/icons — deepened for contrast) */
+  --sage-soft: #C3CCA6;   /* their light sage (chips / soft fills) */
+  --lav-soft:  #C5BADC;   /* soft lavender (footer / soft band) */
+  --gold:      #FDC656;   /* warm yellow badge (sparing) */
+  --dark:      #34303A;   /* dark band if needed */
+  --line:      #E6E1D8;   /* warm hairline */
+  --star:      #FDC656;   /* gold stars */
+  --btn:       #927FBC;
+  --btn-ink:   #FFFFFF;
+  /* type */
+  --font-display: "Barlow Condensed", "Helvetica Neue", Arial, sans-serif;
+  --font-body:    "Barlow Condensed", "Helvetica Neue", Arial, sans-serif;
+  --s--1: .92rem;
+  --s-0:  1.12rem;   /* body 18px-ish (condensed reads small) */
+  --s-1:  1.3rem;
+  --s-2:  1.7rem;
+  --s-3:  2.3rem;
+  --s-4:  3.2rem;
+  --s-5:  4.6rem;
+  /* space */
+  --sp-1:.25rem; --sp-2:.5rem; --sp-3:1rem; --sp-4:1.5rem;
+  --sp-5:2.5rem; --sp-6:4rem; --sp-7:6rem;
+  --sp-8:2rem; --sp-10:2.5rem; --sp-12:3rem; --sp-16:4rem;
+  /* shape */
+  --radius:10px; --radius-lg:20px; --radius-pill:100px;
+  --shadow:0 12px 38px rgba(52,48,58,.10);
+  --maxw:1280px;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html,body{overflow-x:clip}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--ink);
+  font-family:var(--font-body);
+  font-size:var(--s-0);
+  line-height:1.6;
+  font-weight:400;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+
+/* headings — Barlow Condensed, light + airy, no uppercase (their signature) */
+h1,h2,h3{font-family:var(--font-display);font-weight:300;line-height:1.06;letter-spacing:-.01em;margin:0 0 var(--sp-3);color:var(--ink)}
+h1{font-size:var(--s-5)}
+h2{font-size:var(--s-4)}
+h3{font-size:var(--s-2);font-weight:400}
+p{margin:0 0 var(--sp-3)}
+
+/* layout */
+.wrap{max-width:var(--maxw);margin:0 auto;padding-inline:var(--sp-4);width:100%}
+.sec{position:relative;padding-block:var(--sp-7)}
+.section{position:relative}
+
+/* eyebrow — sage tracked caps (subtle elevation) */
+.eyebrow{
+  display:inline-block;font-family:var(--font-display);font-weight:600;
+  font-size:var(--s--1);letter-spacing:.22em;text-transform:uppercase;
+  color:var(--sage);margin:0 0 var(--sp-3)
+}
+
+/* buttons — full pill, sentence case, soft (their style) */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:.5em;
+  font-family:var(--font-display);font-weight:600;font-size:var(--s-1);
+  letter-spacing:.01em;
+  padding:.7em 1.7em;border-radius:var(--radius-pill);border:1.5px solid transparent;
+  cursor:pointer;transition:background .2s,color .2s,border-color .2s,transform .15s,box-shadow .2s;
+  line-height:1;white-space:nowrap;box-shadow:0 2px 3px rgba(52,48,58,.12)
+}
+.btn:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
+.btn-primary{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.btn-primary:hover{background:var(--accent-deep);border-color:var(--accent-deep)}
+.btn-sage{background:var(--sage-soft);color:var(--ink);border-color:var(--sage-soft)}
+.btn-sage:hover{background:var(--sage);color:#fff;border-color:var(--sage)}
+.btn-outline{background:transparent;color:var(--accent);border-color:var(--accent)}
+.btn-outline:hover{background:var(--accent);color:#fff}
+.btn-light{background:#fff;color:var(--accent);border-color:#fff}
+.btn-light:hover{background:transparent;color:#fff;border-color:#fff}
+.btn-block{display:flex;width:100%}
+
+/* rating stars */
+.stars{color:var(--star);letter-spacing:.04em;font-size:var(--s-0)}
+
+/* chips */
+.chip{
+  display:inline-flex;align-items:center;gap:.45em;
+  font-family:var(--font-display);font-weight:500;font-size:var(--s--1);
+  letter-spacing:.08em;text-transform:uppercase;
+  padding:.5em 1em;border-radius:var(--radius-pill);border:1.5px solid var(--line);
+  background:var(--surface);color:var(--ink);line-height:1
+}
+
+/* section icons */
+.ic{width:40px;height:40px;display:block;stroke:currentColor;stroke-width:1.5;fill:none}
+
+/* floats — static, hidden mobile */
+.float{position:absolute;pointer-events:none;z-index:5}
+.float img{width:100%;transform:rotate(var(--rot,0deg));
+  filter:drop-shadow(0 24px 22px rgba(52,48,58,.18))}
+@media(max-width:1000px){.float{display:none}}
+
+/* scroll-reveal (3D) — NOT on hero */
+.reveal{opacity:0;transform:perspective(900px) rotateX(8deg) translateY(26px);
+  transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+
+/* responsive type */
+@media(max-width:780px){
+  :root{--s-5:3rem;--s-4:2.3rem;--s-3:1.85rem;--s-2:1.45rem}
+  .sec{padding-block:var(--sp-6)}
+}
+/* ============================================================
+   NU-DEO · 01-header.css
+   Announcement bar + sticky site header
+   All rules scoped to .announce / .site-header / .site-header__mobile-nav
+   ============================================================ */
+
+/* ── Announcement bar ─────────────────────────────────────── */
+
+.announce {
+  background: var(--accent);
+  color: var(--accent-ink);
+  text-align: center;
+  padding-block: var(--sp-2);
+  position: relative;
+  z-index: 200;
+}
+
+.announce__inner {
+  max-width: var(--maxw);
+  margin-inline: auto;
+  padding-inline: var(--sp-4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 0;
+}
+
+.announce__full,
+.announce__short {
+  font-family: var(--font-display);
+  font-size: var(--s--1);
+  font-weight: 500;
+  letter-spacing: .12em;
+  text-transform: none;
+  line-height: 1.4;
+  white-space: nowrap;
+}
+
+.announce__full {
+  display: inline-flex;
+  align-items: center;
+  gap: 0;
+  flex-wrap: nowrap;
+}
+
+.announce__dot {
+  color: rgba(255,255,255,.55);
+  margin-inline: .2em;
+}
+
+.announce__short {
+  display: none;
+}
+
+/* ── Site header shell ───────────────────────────────────── */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--bg);
+  border-bottom: 1px solid var(--line);
+  box-shadow: 0 2px 12px rgba(52,48,58,.06);
+}
+
+.site-header__inner {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: var(--sp-3);
+  min-height: 68px;
+  /* min-width:0 on all children keeps center column truly centered */
+}
+
+.site-header__inner > * {
+  min-width: 0;
+}
+
+/* ── Nav (left column) ───────────────────────────────────── */
+
+.site-header__nav {
+  display: flex;
+  align-items: center;
+}
+
+.site-header__burger {
+  display: none; /* hidden desktop */
+  background: none;
+  border: none;
+  padding: var(--sp-2);
+  cursor: pointer;
+  color: var(--ink);
+  line-height: 0;
+  border-radius: var(--radius);
+  transition: color .2s, background .2s;
+}
+
+.site-header__burger:hover {
+  color: var(--accent);
+  background: var(--surface-2);
+}
+
+.site-header__links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  gap: var(--sp-4);
+}
+
+.site-header__links a {
+  font-family: var(--font-display);
+  font-size: var(--s-1);
+  font-weight: 500;
+  color: var(--ink);
+  letter-spacing: .01em;
+  white-space: nowrap;
+  position: relative;
+  padding-block: .25em;
+  transition: color .2s;
+}
+
+.site-header__links a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1.5px;
+  background: var(--accent);
+  border-radius: var(--radius-pill);
+  transition: width .25s cubic-bezier(.4,0,.2,1);
+}
+
+.site-header__links a:hover {
+  color: var(--accent);
+}
+
+.site-header__links a:hover::after {
+  width: 100%;
+}
+
+/* ── Logo (center column) ────────────────────────────────── */
+
+.site-header__logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 0;
+}
+
+.site-header__logo-img {
+  height: 30px;
+  width: auto;
+  display: block;
+  /* dark wordmark on transparent — shows naturally on --bg cream */
+}
+
+/* ── Right actions cluster ───────────────────────────────── */
+
+.site-header__actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--sp-2);
+}
+
+/* Magasiner CTA pill — desktop only */
+.site-header__cta {
+  font-size: var(--s--1);
+  padding: .55em 1.3em;
+  letter-spacing: .04em;
+  margin-right: var(--sp-2);
+}
+
+/* Icon buttons */
+.site-header__icon {
+  background: none;
+  border: none;
+  padding: var(--sp-2);
+  cursor: pointer;
+  color: var(--ink);
+  line-height: 0;
+  border-radius: var(--radius);
+  transition: color .2s, background .2s;
+  position: relative;
+}
+
+.site-header__icon:hover {
+  color: var(--accent);
+  background: var(--surface-2);
+}
+
+/* Cart badge */
+.site-header__cart {
+  position: relative;
+}
+
+.site-header__badge {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  min-width: 16px;
+  height: 16px;
+  padding-inline: 3px;
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-family: var(--font-display);
+  font-size: .62rem;
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 16px;
+  text-align: center;
+  border-radius: var(--radius-pill);
+  pointer-events: none;
+}
+
+/* ── Mobile nav drawer ───────────────────────────────────── */
+
+.site-header__mobile-nav {
+  display: none; /* shown only by JS toggle on mobile */
+  position: sticky;
+  top: 68px; /* sit directly below header */
+  z-index: 99;
+  background: var(--bg);
+  border-bottom: 1px solid var(--line);
+  box-shadow: 0 4px 20px rgba(52,48,58,.10);
+}
+
+.site-header__mobile-nav[aria-hidden="false"] {
+  display: block;
+}
+
+.site-header__mobile-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: var(--sp-3) 0 var(--sp-4);
+  display: flex;
+  flex-direction: column;
+}
+
+.site-header__mobile-nav a {
+  display: block;
+  font-family: var(--font-display);
+  font-size: var(--s-2);
+  font-weight: 400;
+  color: var(--ink);
+  padding: var(--sp-2) var(--sp-4);
+  letter-spacing: .01em;
+  transition: color .18s, background .18s;
+}
+
+.site-header__mobile-nav a:hover {
+  color: var(--accent);
+  background: var(--surface-2);
+}
+
+.site-header__mobile-cta {
+  padding: var(--sp-3) var(--sp-4) 0;
+}
+
+/* ── Mobile breakpoint ≤ 780px ──────────────────────────── */
+
+@media (max-width: 780px) {
+
+  /* Announcement: show only first bit */
+  .announce__full {
+    display: none;
+  }
+  .announce__short {
+    display: inline;
+    white-space: nowrap;
+  }
+
+  /* Header grid: hamburger | logo | cart — single row, no wrap */
+  .site-header__inner {
+    grid-template-columns: auto 1fr auto;
+    min-height: 56px;
+    gap: var(--sp-2);
+  }
+
+  /* Left: show hamburger, hide desktop nav links */
+  .site-header__burger {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .site-header__links {
+    display: none;
+  }
+
+  /* Center: logo scales down */
+  .site-header__logo-img {
+    height: 24px;
+  }
+
+  /* Right: hide search, account, and cta pill; show cart only */
+  .site-header__cta {
+    display: none;
+  }
+
+  .site-header__icon--desktop {
+    display: none;
+  }
+
+  /* Keep cart visible, no extra margin */
+  .site-header__cart {
+    flex-shrink: 0;
+  }
+
+  /* Mobile nav drawer top offset matches smaller header */
+  .site-header__mobile-nav {
+    top: 56px;
+  }
+}
+/* ============================================================
+   02-hero.css — Full-bleed flatlay hero, contained text card
+   Scoped under .s-hero. FRENCH. ONE CTA. No .reveal.
+   ============================================================ */
+
+/* ---------- section shell ---------- */
+.s-hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: min(80vh, 720px);
+  overflow: hidden;
+  padding-block: 0; /* override .sec padding — the card handles spacing */
+  background: var(--ink); /* fallback while image loads */
+}
+
+/* ---------- full-bleed bg image ---------- */
+.s-hero .hero-bg-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center bottom; /* keep the 3 tins visible */
+  display: block;
+  max-width: 100%;
+  min-width: 0;
+  z-index: 0;
+  user-select: none;
+  pointer-events: none;
+}
+
+/* ---------- light full-bleed scrim (edge legibility) ---------- */
+.s-hero .hero-scrim {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: rgba(52, 48, 58, 0.14); /* subtle dark wash so raw edges read */
+  pointer-events: none;
+}
+
+/* ---------- wrap (layout context) ---------- */
+.s-hero .wrap {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  padding-block: var(--sp-6);
+  min-width: 0;
+  width: 100%;
+}
+
+/* ---------- contained text card ---------- */
+.s-hero .hero-card {
+  background: rgba(250, 249, 241, 0.88); /* warm cream at 88% alpha */
+  border-radius: var(--radius-lg);
+  padding: var(--sp-5) var(--sp-5);
+  max-width: 520px;
+  min-width: 0;
+  box-shadow: 0 8px 40px rgba(52, 48, 58, 0.18);
+  /* sits on the left side where image has negative space */
+  margin-inline-end: auto;
+}
+
+/* ---------- eyebrow (inherited from base, explicit sage) ---------- */
+.s-hero .hero-card .eyebrow {
+  color: var(--sage);
+  margin-bottom: var(--sp-2);
+}
+
+/* ---------- headline ---------- */
+.s-hero .hero-card h1 {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: var(--s-5);
+  line-height: 1.02;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin: 0 0 var(--sp-3);
+  min-width: 0;
+  max-width: 100%;
+}
+
+/* ---------- subhead ---------- */
+.s-hero .hero-sub {
+  font-family: var(--font-body);
+  font-size: var(--s-0);
+  font-weight: 400;
+  line-height: 1.55;
+  color: var(--ink-soft);
+  margin: 0 0 var(--sp-4);
+  min-width: 0;
+  max-width: 100%;
+}
+
+/* ---------- CTA ---------- */
+.s-hero .hero-cta {
+  display: inline-flex;
+  margin-bottom: var(--sp-4);
+  /* btn / btn-primary styles come from base.css */
+}
+
+/* ---------- proof chips row ---------- */
+.s-hero .hero-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+  margin-bottom: var(--sp-3);
+  min-width: 0;
+}
+
+/* chip background reinforced for legibility on card */
+.s-hero .hero-chips .chip {
+  background: rgba(255, 255, 255, 0.72);
+  border-color: var(--line);
+  color: var(--ink);
+  font-size: .8rem;
+}
+
+/* ---------- rating line ---------- */
+.s-hero .hero-rating {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  flex-wrap: wrap;
+  margin: 0;
+  min-width: 0;
+}
+
+.s-hero .hero-rating-label {
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  font-weight: 400;
+  color: var(--ink-soft);
+  min-width: 0;
+}
+
+/* ---------- MOBILE ≤ 780px ---------- */
+@media (max-width: 780px) {
+  .s-hero {
+    min-height: 78vh;
+    align-items: flex-end; /* card pinned toward bottom */
+  }
+
+  /* stronger bottom gradient scrim so top of image shows clearly */
+  .s-hero .hero-scrim {
+    background: linear-gradient(
+      to bottom,
+      rgba(52, 48, 58, 0.06) 0%,
+      rgba(52, 48, 58, 0.06) 42%,
+      rgba(52, 48, 58, 0.28) 62%,
+      rgba(52, 48, 58, 0.42) 100%
+    );
+  }
+
+  .s-hero .wrap {
+    padding-block: var(--sp-4) var(--sp-5);
+    align-items: flex-end;
+  }
+
+  /* card spans most width, anchored to bottom */
+  .s-hero .hero-card {
+    max-width: 100%;
+    width: 100%;
+    padding: var(--sp-4);
+    border-radius: var(--radius-lg);
+    margin-inline-end: 0;
+    background: rgba(250, 249, 241, 0.92); /* slightly more opaque on mobile */
+  }
+
+  .s-hero .hero-card h1 {
+    font-size: var(--s-4); /* responsive var from base.css already → 2.3rem */
+  }
+
+  /* CTA full-width on mobile */
+  .s-hero .hero-cta {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin-bottom: var(--sp-3);
+  }
+
+  .s-hero .hero-chips {
+    gap: var(--sp-2);
+  }
+
+  .s-hero .hero-chips .chip {
+    font-size: .75rem;
+    padding: .45em .85em;
+  }
+}
+
+/* ---------- very small screens ≤ 400px ---------- */
+@media (max-width: 400px) {
+  .s-hero .hero-card {
+    padding: var(--sp-3) var(--sp-3);
+  }
+
+  .s-hero .hero-card h1 {
+    font-size: var(--s-3); /* 1.85rem from base responsive override */
+  }
+
+  .s-hero .hero-sub {
+    font-size: var(--s--1);
+  }
+}
+/* ============================================================
+   NU-DEO · Badge Strip
+   03-badges.css — scoped to .s-badges
+   ============================================================ */
+
+/* ---------- tokens (local echo so section is self-contained) ---------- */
+.s-badges {
+  --bg:          #FAF9F1;
+  --surface:     #FFFFFF;
+  --surface-2:   #F1EDE7;
+  --ink:         #34303A;
+  --ink-soft:    #6E687A;
+  --accent:      #927FBC;
+  --accent-ink:  #FFFFFF;
+  --accent-deep: #6F5BA0;
+  --sage:        #8E9A6E;
+  --sage-soft:   #C3CCA6;
+  --lav-soft:    #C5BADC;
+  --gold:        #FDC656;
+  --line:        #E6E1D8;
+  --star:        #FDC656;
+  --radius:      10px;
+  --radius-lg:   20px;
+  --radius-pill: 100px;
+  --shadow:      0 12px 38px rgba(52,48,58,.10);
+  --maxw:        1280px;
+  --font-display:"Barlow Condensed", "Helvetica Neue", Arial, sans-serif;
+  --s--1:        .92rem;
+  --s-0:         1.12rem;
+  --s-1:         1.3rem;
+  --s-2:         1.7rem;
+  --s-3:         2.3rem;
+  --s-4:         3.2rem;
+  --s-5:         4.6rem;
+  --sp-1:        .25rem;
+  --sp-2:        .5rem;
+  --sp-3:        1rem;
+  --sp-4:        1.5rem;
+  --sp-5:        2.5rem;
+  --sp-6:        4rem;
+  --sp-7:        6rem;
+}
+
+/* ---------- section shell ---------- */
+.s-badges {
+  background: var(--surface-2);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  /* slim band: override .sec's generous padding-block */
+  padding-block: var(--sp-4);
+}
+
+/* ---------- list ---------- */
+.s-badges__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sp-5);
+  flex-wrap: wrap;
+}
+
+/* ---------- each badge item ---------- */
+.s-badges__item {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  flex-shrink: 0;
+}
+
+/* ---------- icon ---------- */
+.s-badges__icon {
+  width: 30px;
+  height: 30px;
+  flex-shrink: 0;
+  display: block;
+  color: var(--sage);
+  stroke: var(--sage);
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* ---------- label ---------- */
+.s-badges__label {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: var(--s--1);
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  white-space: nowrap;
+  line-height: 1;
+}
+
+/* ---------- divider dots between items (desktop) ---------- */
+.s-badges__item + .s-badges__item::before {
+  content: "·";
+  display: block;
+  margin-right: var(--sp-5);
+  color: var(--line);
+  font-size: 1.2rem;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+/* ---------- tablet ---------- */
+@media (max-width: 900px) {
+  .s-badges__list {
+    gap: var(--sp-4);
+  }
+  .s-badges__item + .s-badges__item::before {
+    margin-right: var(--sp-4);
+  }
+}
+
+/* ---------- mobile (≤ 780px): 2–3 per row, centred wrap ---------- */
+@media (max-width: 780px) {
+  .s-badges {
+    padding-block: var(--sp-3) var(--sp-4);
+  }
+  .s-badges__list {
+    gap: var(--sp-3) var(--sp-4);
+    justify-content: center;
+  }
+  /* hide dot dividers on mobile — wrapping makes them awkward */
+  .s-badges__item + .s-badges__item::before {
+    display: none;
+  }
+  .s-badges__label {
+    font-size: .82rem;
+    letter-spacing: .10em;
+  }
+}
+
+/* ---------- very small screens: horizontal scroll fallback ---------- */
+@media (max-width: 420px) {
+  .s-badges .wrap {
+    padding-inline: 0;
+  }
+  .s-badges__list {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    justify-content: flex-start;
+    padding-inline: var(--sp-4);
+    padding-block: var(--sp-2);
+    gap: var(--sp-3);
+  }
+  .s-badges__item {
+    scroll-snap-align: start;
+  }
+  /* subtle fade on right edge to hint scroll */
+  .s-badges .wrap {
+    position: relative;
+  }
+}
+/* ============================================================
+   NU-DEO · 3 Scents / Bestsellers Grid
+   04-scents.css — scoped to .s-scents
+   ============================================================ */
+
+/* ---------- tokens (local echo so section is self-contained) ---------- */
+.s-scents {
+  --bg:          #FAF9F1;
+  --surface:     #FFFFFF;
+  --surface-2:   #F1EDE7;
+  --ink:         #34303A;
+  --ink-soft:    #6E687A;
+  --accent:      #927FBC;
+  --accent-ink:  #FFFFFF;
+  --accent-deep: #6F5BA0;
+  --sage:        #8E9A6E;
+  --sage-soft:   #C3CCA6;
+  --lav-soft:    #C5BADC;
+  --gold:        #FDC656;
+  --line:        #E6E1D8;
+  --star:        #FDC656;
+  --radius:      10px;
+  --radius-lg:   20px;
+  --radius-pill: 100px;
+  --shadow:      0 12px 38px rgba(52,48,58,.10);
+  --maxw:        1280px;
+  --font-display:"Barlow Condensed", "Helvetica Neue", Arial, sans-serif;
+  --s--1:        .92rem;
+  --s-0:         1.12rem;
+  --s-1:         1.3rem;
+  --s-2:         1.7rem;
+  --s-3:         2.3rem;
+  --s-4:         3.2rem;
+  --s-5:         4.6rem;
+  --sp-1:        .25rem;
+  --sp-2:        .5rem;
+  --sp-3:        1rem;
+  --sp-4:        1.5rem;
+  --sp-5:        2.5rem;
+  --sp-6:        4rem;
+  --sp-7:        6rem;
+}
+
+/* ---------- section shell ---------- */
+.s-scents {
+  background: var(--bg);
+}
+
+/* ---------- section header ---------- */
+.s-scents__header {
+  text-align: center;
+  max-width: 52ch;
+  margin: 0 auto var(--sp-6);
+}
+
+.s-scents__header h2 {
+  color: var(--ink);
+  margin-bottom: var(--sp-3);
+}
+
+.s-scents__intro {
+  font-size: var(--s-1);
+  color: var(--ink-soft);
+  line-height: 1.55;
+  margin: 0;
+}
+
+/* ---------- grid ---------- */
+.s-scents__grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-4);
+  align-items: start;
+}
+
+/* ---------- card ---------- */
+.s-scents .card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform .25s cubic-bezier(.2,.7,.2,1), box-shadow .25s;
+}
+
+.s-scents .card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow);
+}
+
+/* ---------- staggered reveal ---------- */
+.s-scents .card.reveal {
+  transition-delay: var(--delay, 0s);
+}
+
+/* ---------- image wrapper ---------- */
+.s-scents .card__img-wrap {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  background: var(--surface-2);
+  border-radius: var(--radius) var(--radius) 0 0;
+}
+
+.s-scents .card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform .4s ease;
+}
+
+.s-scents .card:hover .card__img {
+  transform: scale(1.04);
+}
+
+/* ---------- card body ---------- */
+.s-scents .card__body {
+  padding: var(--sp-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+  flex: 1;
+}
+
+/* ---------- badge / chip ---------- */
+.s-scents .card__badge {
+  align-self: flex-start;
+  font-size: .78rem;
+  letter-spacing: .12em;
+  padding: .35em .9em;
+  border-color: var(--sage-soft);
+  background: var(--surface-2);
+  color: var(--sage);
+}
+
+.s-scents .card__badge--dark {
+  border-color: var(--ink);
+  background: var(--ink);
+  color: var(--accent-ink);
+}
+
+.s-scents .card__badge--pink {
+  border-color: #E8C5CF;
+  background: #F8EEF0;
+  color: #A0607A;
+}
+
+/* ---------- product name ---------- */
+.s-scents .card__name {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--s-2);
+  letter-spacing: .04em;
+  color: var(--ink);
+  margin: 0;
+  line-height: 1.1;
+}
+
+.s-scents .card__name a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.s-scents .card__name a:hover {
+  color: var(--accent);
+}
+
+/* ---------- scent description ---------- */
+.s-scents .card__desc {
+  font-size: var(--s-0);
+  color: var(--ink-soft);
+  line-height: 1.45;
+  margin: 0;
+  font-style: italic;
+}
+
+/* ---------- price ---------- */
+.s-scents .card__meta {
+  display: flex;
+  align-items: baseline;
+  gap: .25em;
+  margin-top: var(--sp-1);
+}
+
+.s-scents .card__price {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: var(--s-2);
+  color: var(--ink);
+  letter-spacing: -.01em;
+}
+
+.s-scents .card__weight {
+  font-size: var(--s-0);
+  color: var(--ink-soft);
+}
+
+/* ---------- stars ---------- */
+.s-scents .card__stars {
+  font-size: var(--s-1);
+  color: var(--star);
+  letter-spacing: .04em;
+  line-height: 1;
+}
+
+/* ---------- CTA button ---------- */
+.s-scents .card__cta {
+  margin-top: var(--sp-2);
+  font-size: var(--s-1);
+  border-radius: var(--radius-pill);
+  /* pill full-width */
+}
+
+/* ---------- weight / duration note ---------- */
+.s-scents .card__note {
+  font-size: var(--s--1);
+  color: var(--ink-soft);
+  text-align: center;
+  margin: 0;
+  letter-spacing: .04em;
+}
+
+/* ---------- footer CTA ---------- */
+.s-scents__footer {
+  text-align: center;
+  margin-top: var(--sp-6);
+}
+
+/* ---------- tablet (≤ 960px): 2 cols ---------- */
+@media (max-width: 960px) {
+  .s-scents__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  /* third card spans full width to stay centred */
+  .s-scents__grid > li:nth-child(3) {
+    grid-column: 1 / -1;
+    max-width: calc(50% - var(--sp-2));
+    margin-inline: auto;
+  }
+}
+
+/* ---------- mobile (≤ 780px): snap carousel or single col ---------- */
+@media (max-width: 780px) {
+  .s-scents__header {
+    margin-bottom: var(--sp-5);
+  }
+
+  /* horizontal snap scroll on mobile */
+  .s-scents .wrap {
+    overflow-x: visible;
+  }
+
+  .s-scents__grid {
+    grid-template-columns: 1fr;
+    gap: var(--sp-3);
+  }
+
+  /* undo the 2-col third-card centering */
+  .s-scents__grid > li:nth-child(3) {
+    grid-column: auto;
+    max-width: none;
+    margin-inline: 0;
+  }
+
+  .s-scents .card__img-wrap {
+    aspect-ratio: 4 / 3;
+  }
+}
+
+/* ---------- tiny screens: horizontal snap ---------- */
+@media (max-width: 520px) {
+  .s-scents .wrap {
+    padding-inline: 0;
+  }
+
+  .s-scents__header,
+  .s-scents__footer {
+    padding-inline: var(--sp-4);
+  }
+
+  .s-scents__grid {
+    grid-template-columns: 80vw;
+    grid-auto-flow: column;
+    grid-auto-columns: 80vw;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    padding-inline: var(--sp-4);
+    padding-bottom: var(--sp-3);
+    gap: var(--sp-3);
+  }
+
+  .s-scents__grid > li {
+    scroll-snap-align: start;
+  }
+
+  /* undo centering on mobile snap */
+  .s-scents__grid > li:nth-child(3) {
+    grid-column: auto;
+    max-width: none;
+    margin-inline: 0;
+  }
+}
+/* ============================================================
+   NU-DEO · Pourquoi NU — Benefits Band
+   05-why.css — scoped to .s-why
+   ============================================================ */
+
+/* ---------- tokens (local echo so section is self-contained) ---------- */
+.s-why {
+  --bg:          #FAF9F1;
+  --surface:     #FFFFFF;
+  --surface-2:   #F1EDE7;
+  --ink:         #34303A;
+  --ink-soft:    #6E687A;
+  --accent:      #927FBC;
+  --accent-ink:  #FFFFFF;
+  --accent-deep: #6F5BA0;
+  --sage:        #8E9A6E;
+  --sage-soft:   #C3CCA6;
+  --lav-soft:    #C5BADC;
+  --gold:        #FDC656;
+  --line:        #E6E1D8;
+  --star:        #FDC656;
+  --radius:      10px;
+  --radius-lg:   20px;
+  --radius-pill: 100px;
+  --shadow:      0 12px 38px rgba(52,48,58,.10);
+  --maxw:        1280px;
+  --font-display:"Barlow Condensed", "Helvetica Neue", Arial, sans-serif;
+  --s--1:        .92rem;
+  --s-0:         1.12rem;
+  --s-1:         1.3rem;
+  --s-2:         1.7rem;
+  --s-3:         2.3rem;
+  --s-4:         3.2rem;
+  --s-5:         4.6rem;
+  --sp-1:        .25rem;
+  --sp-2:        .5rem;
+  --sp-3:        1rem;
+  --sp-4:        1.5rem;
+  --sp-5:        2.5rem;
+  --sp-6:        4rem;
+  --sp-7:        6rem;
+}
+
+/* ---------- section shell ---------- */
+.s-why {
+  background: var(--bg);
+  padding-block: var(--sp-7);
+}
+
+/* ---------- section header ---------- */
+.s-why__header {
+  text-align: center;
+  max-width: 56ch;
+  margin: 0 auto var(--sp-6);
+}
+
+.s-why__eyebrow {
+  color: var(--sage);
+}
+
+.s-why__header h2 {
+  color: var(--ink);
+  font-family: var(--font-display);
+  font-size: var(--s-4);
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: -.01em;
+  margin-bottom: var(--sp-3);
+}
+
+.s-why__intro {
+  font-size: var(--s-1);
+  color: var(--ink-soft);
+  line-height: 1.55;
+  margin: 0;
+}
+
+/* ---------- 4-up grid ---------- */
+.s-why__grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--sp-4);
+  align-items: start;
+}
+
+/* ---------- individual benefit item ---------- */
+.s-why__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--sp-3);
+  padding: var(--sp-5) var(--sp-4);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  transition: transform .25s cubic-bezier(.2,.7,.2,1), box-shadow .25s;
+}
+
+.s-why__item:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow);
+}
+
+/* ---------- icon wrap ---------- */
+.s-why__icon-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.s-why__icon-wrap--lav {
+  background: color-mix(in srgb, var(--lav-soft) 30%, transparent);
+  color: var(--accent-deep);
+}
+
+.s-why__icon-wrap--sage {
+  background: color-mix(in srgb, var(--sage-soft) 35%, transparent);
+  color: var(--sage);
+}
+
+/* Fallback for browsers without color-mix */
+@supports not (background: color-mix(in srgb, red 50%, blue)) {
+  .s-why__icon-wrap--lav {
+    background: rgba(197,186,220,.28);
+    color: var(--accent-deep);
+  }
+  .s-why__icon-wrap--sage {
+    background: rgba(195,204,166,.30);
+    color: var(--sage);
+  }
+}
+
+.s-why__icon-wrap .ic {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+}
+
+.s-why__icon-wrap .ic svg {
+  display: block;
+}
+
+/* ---------- text ---------- */
+.s-why__title {
+  font-family: var(--font-display);
+  font-size: var(--s-2);
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.15;
+  margin: 0;
+  letter-spacing: -.01em;
+}
+
+.s-why__desc {
+  font-size: var(--s-0);
+  color: var(--ink-soft);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ---------- staggered reveal ---------- */
+.s-why__item.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity .5s ease, transform .5s cubic-bezier(.2,.7,.2,1);
+  transition-delay: var(--delay, 0s);
+}
+
+.s-why__item.reveal.in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ---------- CTA ---------- */
+.s-why__cta {
+  text-align: center;
+  margin-top: var(--sp-6);
+}
+
+/* ---------- responsive ---------- */
+@media (max-width: 960px) {
+  .s-why__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .s-why__header h2 {
+    font-size: var(--s-3);
+  }
+}
+
+@media (max-width: 540px) {
+  .s-why {
+    padding-block: var(--sp-6);
+  }
+
+  .s-why__grid {
+    grid-template-columns: 1fr;
+    max-width: 360px;
+    margin-inline: auto;
+  }
+
+  .s-why__header h2 {
+    font-size: var(--s-2);
+  }
+
+  .s-why__item {
+    padding: var(--sp-4) var(--sp-3);
+  }
+}
+/* ============================================================
+   NU-DEO · Ingrédients — Quatre héros
+   06-ingredients.css — scoped to .s-ingredients
+   ============================================================ */
+
+/* ---------- tokens (local echo so section is self-contained) ---------- */
+.s-ingredients {
+  --bg:          #FAF9F1;
+  --surface:     #FFFFFF;
+  --surface-2:   #F1EDE7;
+  --ink:         #34303A;
+  --ink-soft:    #6E687A;
+  --accent:      #927FBC;
+  --accent-ink:  #FFFFFF;
+  --accent-deep: #6F5BA0;
+  --sage:        #8E9A6E;
+  --sage-soft:   #C3CCA6;
+  --lav-soft:    #C5BADC;
+  --gold:        #FDC656;
+  --line:        #E6E1D8;
+  --star:        #FDC656;
+  --radius:      10px;
+  --radius-lg:   20px;
+  --radius-pill: 100px;
+  --shadow:      0 12px 38px rgba(52,48,58,.10);
+  --maxw:        1280px;
+  --font-display:"Barlow Condensed", "Helvetica Neue", Arial, sans-serif;
+  --s--1:        .92rem;
+  --s-0:         1.12rem;
+  --s-1:         1.3rem;
+  --s-2:         1.7rem;
+  --s-3:         2.3rem;
+  --s-4:         3.2rem;
+  --s-5:         2.5rem;
+  --sp-1:        .25rem;
+  --sp-2:        .5rem;
+  --sp-3:        1rem;
+  --sp-4:        1.5rem;
+  --sp-5:        2.5rem;
+  --sp-6:        4rem;
+  --sp-7:        6rem;
+}
+
+/* ---------- section shell ---------- */
+.s-ingredients {
+  background: var(--surface-2);
+  padding-block: var(--sp-7);
+}
+
+/* ---------- section header ---------- */
+.s-ingredients__header {
+  text-align: center;
+  max-width: 50ch;
+  margin: 0 auto var(--sp-6);
+}
+
+.s-ingredients__eyebrow {
+  color: var(--sage);
+}
+
+.s-ingredients__header h2 {
+  color: var(--ink);
+  font-family: var(--font-display);
+  font-size: var(--s-4);
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: -.01em;
+  margin-bottom: var(--sp-2);
+}
+
+.s-ingredients__intro {
+  font-size: var(--s-1);
+  color: var(--ink-soft);
+  line-height: 1.5;
+  margin: 0;
+  font-style: italic;
+}
+
+/* ---------- 4-up grid ---------- */
+.s-ingredients__grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--sp-4);
+  align-items: start;
+}
+
+/* ---------- ingredient card ---------- */
+.s-ingredients__card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform .25s cubic-bezier(.2,.7,.2,1), box-shadow .25s;
+}
+
+.s-ingredients__card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow);
+}
+
+/* ---------- image wrapper ---------- */
+.s-ingredients__img-wrap {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  background: var(--bg);
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+}
+
+.s-ingredients__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform .4s ease;
+}
+
+.s-ingredients__card:hover .s-ingredients__img {
+  transform: scale(1.04);
+}
+
+/* ---------- card body ---------- */
+.s-ingredients__body {
+  padding: var(--sp-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-1);
+  flex: 1;
+}
+
+.s-ingredients__name {
+  font-family: var(--font-display);
+  font-size: var(--s-2);
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.1;
+  margin: 0;
+  letter-spacing: -.01em;
+}
+
+.s-ingredients__role {
+  font-size: var(--s-0);
+  color: var(--ink-soft);
+  line-height: 1.55;
+  margin: 0;
+}
+
+.s-ingredients__role em {
+  font-style: italic;
+  color: var(--accent-deep);
+  font-size: var(--s--1);
+}
+
+/* ---------- staggered reveal ---------- */
+.s-ingredients__card.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity .5s ease, transform .5s cubic-bezier(.2,.7,.2,1);
+  transition-delay: var(--delay, 0s);
+}
+
+.s-ingredients__card.reveal.in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ---------- responsive ---------- */
+@media (max-width: 960px) {
+  .s-ingredients__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .s-ingredients__header h2 {
+    font-size: var(--s-3);
+  }
+}
+
+@media (max-width: 540px) {
+  .s-ingredients {
+    padding-block: var(--sp-6);
+  }
+
+  .s-ingredients__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--sp-3);
+  }
+
+  .s-ingredients__header h2 {
+    font-size: var(--s-2);
+  }
+
+  .s-ingredients__body {
+    padding: var(--sp-3) var(--sp-3);
+  }
+
+  .s-ingredients__name {
+    font-size: var(--s-1);
+  }
+
+  .s-ingredients__role {
+    font-size: var(--s--1);
+  }
+}
+
+@media (max-width: 360px) {
+  .s-ingredients__grid {
+    grid-template-columns: 1fr;
+    max-width: 320px;
+    margin-inline: auto;
+  }
+}
+/* ============================================================
+   NU-DEO · Rituel + Fondatrice band
+   07-ritual.css — scoped to .s-ritual
+   ============================================================ */
+
+/* ---------- tokens (local echo so section is self-contained) ---------- */
+.s-ritual {
+  --bg:          #FAF9F1;
+  --surface:     #FFFFFF;
+  --surface-2:   #F1EDE7;
+  --ink:         #34303A;
+  --ink-soft:    #6E687A;
+  --accent:      #927FBC;
+  --accent-ink:  #FFFFFF;
+  --accent-deep: #6F5BA0;
+  --sage:        #8E9A6E;
+  --sage-soft:   #C3CCA6;
+  --lav-soft:    #C5BADC;
+  --gold:        #FDC656;
+  --line:        #E6E1D8;
+  --star:        #FDC656;
+  --radius:      10px;
+  --radius-lg:   20px;
+  --radius-pill: 100px;
+  --shadow:      0 12px 38px rgba(52,48,58,.10);
+  --maxw:        1280px;
+  --font-display:"Barlow Condensed", "Helvetica Neue", Arial, sans-serif;
+  --s--1:        .92rem;
+  --s-0:         1.12rem;
+  --s-1:         1.3rem;
+  --s-2:         1.7rem;
+  --s-3:         2.3rem;
+  --s-4:         3.2rem;
+  --s-5:         4.6rem;
+  --sp-1:        .25rem;
+  --sp-2:        .5rem;
+  --sp-3:        1rem;
+  --sp-4:        1.5rem;
+  --sp-5:        2.5rem;
+  --sp-6:        4rem;
+  --sp-7:        6rem;
+}
+
+/* ---------- section shell ---------- */
+.s-ritual {
+  background: var(--surface-2);
+}
+
+/* ---------- 2-column layout ---------- */
+.s-ritual__cols {
+  display: grid;
+  grid-template-columns: minmax(0, 320px) 1fr;
+  gap: var(--sp-6) var(--sp-7);
+  align-items: center;
+  justify-content: center;
+}
+
+/* ---------- visual side (LEFT) ---------- */
+.s-ritual__visual {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sp-3);
+  position: relative;
+}
+
+/* soft lavender halo ring behind portrait */
+.s-ritual__halo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -55%);
+  width: 260px;
+  height: 260px;
+  border-radius: 100%;
+  background: radial-gradient(
+    circle at center,
+    rgba(197, 186, 220, 0.55) 0%,
+    rgba(197, 186, 220, 0.18) 60%,
+    transparent 80%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* portrait — circular, modest size */
+.s-ritual__portrait {
+  position: relative;
+  z-index: 1;
+  width: 220px;
+  height: 220px;
+  border-radius: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  border: 3px solid rgba(197, 186, 220, 0.6);
+  box-shadow: 0 8px 32px rgba(52, 48, 58, 0.12);
+}
+
+/* caption under portrait */
+.s-ritual__caption {
+  position: relative;
+  z-index: 1;
+  font-family: var(--font-display);
+  font-size: var(--s--1);
+  color: var(--ink-soft);
+  letter-spacing: .06em;
+  text-align: center;
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* ---------- text side (RIGHT) ---------- */
+.s-ritual__text {
+  max-width: 52ch;
+}
+
+.s-ritual__text h2 {
+  color: var(--ink);
+  margin-bottom: var(--sp-4);
+  font-weight: 300;
+}
+
+/* body paragraphs */
+.s-ritual__body {
+  font-size: var(--s-1);
+  color: var(--ink-soft);
+  line-height: 1.6;
+  margin: 0 0 var(--sp-3);
+}
+
+.s-ritual__body em {
+  font-style: italic;
+  color: var(--ink);
+}
+
+/* CTA */
+.s-ritual__actions {
+  margin: var(--sp-4) 0 var(--sp-4);
+}
+
+/* chips row */
+.s-ritual__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+}
+
+.s-ritual__chips .chip {
+  background: var(--surface);
+  border-color: var(--line);
+  color: var(--ink);
+  font-size: var(--s--1);
+}
+
+/* ---------- staggered reveal ---------- */
+.s-ritual__visual.reveal,
+.s-ritual__text.reveal {
+  transition-delay: var(--delay, 0s);
+}
+
+/* ---------- tablet (≤ 900px): tighten gap ---------- */
+@media (max-width: 900px) {
+  .s-ritual__cols {
+    grid-template-columns: minmax(0, 260px) 1fr;
+    gap: var(--sp-5) var(--sp-5);
+  }
+
+  .s-ritual__portrait {
+    width: 180px;
+    height: 180px;
+  }
+
+  .s-ritual__halo {
+    width: 220px;
+    height: 220px;
+  }
+}
+
+/* ---------- mobile (≤ 680px): stack vertically ---------- */
+@media (max-width: 680px) {
+  .s-ritual__cols {
+    grid-template-columns: 1fr;
+    gap: var(--sp-5);
+    justify-items: center;
+    text-align: center;
+  }
+
+  .s-ritual__visual {
+    width: 100%;
+  }
+
+  .s-ritual__portrait {
+    width: 200px;
+    height: 200px;
+  }
+
+  .s-ritual__halo {
+    width: 240px;
+    height: 240px;
+  }
+
+  .s-ritual__text {
+    max-width: 100%;
+    text-align: left;
+  }
+
+  .s-ritual__chips {
+    justify-content: flex-start;
+  }
+}
+/* ============================================================
+   NU-DEO · Avis clients / Reviews wall
+   08-reviews.css — scoped to .s-reviews
+   ============================================================ */
+
+/* ---------- tokens (local echo so section is self-contained) ---------- */
+.s-reviews {
+  --bg:          #FAF9F1;
+  --surface:     #FFFFFF;
+  --surface-2:   #F1EDE7;
+  --ink:         #34303A;
+  --ink-soft:    #6E687A;
+  --accent:      #927FBC;
+  --accent-ink:  #FFFFFF;
+  --accent-deep: #6F5BA0;
+  --sage:        #8E9A6E;
+  --sage-soft:   #C3CCA6;
+  --lav-soft:    #C5BADC;
+  --gold:        #FDC656;
+  --line:        #E6E1D8;
+  --star:        #FDC656;
+  --radius:      10px;
+  --radius-lg:   20px;
+  --radius-pill: 100px;
+  --shadow:      0 12px 38px rgba(52,48,58,.10);
+  --maxw:        1280px;
+  --font-display:"Barlow Condensed", "Helvetica Neue", Arial, sans-serif;
+  --s--1:        .92rem;
+  --s-0:         1.12rem;
+  --s-1:         1.3rem;
+  --s-2:         1.7rem;
+  --s-3:         2.3rem;
+  --s-4:         3.2rem;
+  --s-5:         4.6rem;
+  --sp-1:        .25rem;
+  --sp-2:        .5rem;
+  --sp-3:        1rem;
+  --sp-4:        1.5rem;
+  --sp-5:        2.5rem;
+  --sp-6:        4rem;
+  --sp-7:        6rem;
+}
+
+/* ---------- section shell ---------- */
+.s-reviews {
+  background: var(--bg);
+}
+
+/* ---------- section header ---------- */
+.s-reviews__header {
+  text-align: center;
+  max-width: 56ch;
+  margin: 0 auto var(--sp-6);
+}
+
+.s-reviews__header h2 {
+  color: var(--ink);
+  font-weight: 300;
+  margin-bottom: var(--sp-4);
+}
+
+/* ---------- rating summary ---------- */
+.s-reviews__summary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sp-3);
+  flex-wrap: wrap;
+}
+
+.s-reviews__big-star {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--s-3);
+  color: var(--gold);
+  line-height: 1;
+  letter-spacing: -.01em;
+}
+
+.s-reviews__slash {
+  font-size: var(--s-2);
+  font-weight: 400;
+  color: var(--ink-soft);
+}
+
+.s-reviews__count {
+  font-family: var(--font-display);
+  font-size: var(--s-1);
+  color: var(--ink-soft);
+  letter-spacing: .04em;
+  border-left: 1.5px solid var(--line);
+  padding-left: var(--sp-3);
+}
+
+/* ---------- reviews grid: 3-up desktop ---------- */
+.s-reviews__grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-4);
+  align-items: start;
+}
+
+/* ---------- review card ---------- */
+.s-reviews .review {
+  background: var(--surface);
+  border: 1.5px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: var(--sp-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+  transition: transform .25s cubic-bezier(.2,.7,.2,1), box-shadow .25s;
+}
+
+.s-reviews .review:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow);
+}
+
+/* ---------- staggered reveal ---------- */
+.s-reviews .review.reveal {
+  transition-delay: var(--delay, 0s);
+}
+
+/* ---------- stars ---------- */
+.s-reviews__stars {
+  font-size: var(--s-1);
+  color: var(--star);
+  letter-spacing: .06em;
+  line-height: 1;
+}
+
+/* ---------- quote ---------- */
+.s-reviews__quote {
+  font-size: var(--s-0);
+  color: var(--ink);
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  font-style: normal;
+  flex: 1;
+  position: relative;
+}
+
+/* decorative leading quote mark */
+.s-reviews__quote::before {
+  content: "\201C";
+  font-family: Georgia, serif;
+  font-size: 3.5rem;
+  color: var(--lav-soft);
+  line-height: 0;
+  position: absolute;
+  top: .45rem;
+  left: -.2rem;
+  opacity: .55;
+  pointer-events: none;
+}
+
+.s-reviews__quote {
+  padding-left: 1.6rem;
+}
+
+/* ---------- meta: name + tag ---------- */
+.s-reviews__meta {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  flex-wrap: wrap;
+  border-top: 1px solid var(--line);
+  padding-top: var(--sp-3);
+  margin-top: auto;
+}
+
+.s-reviews__name {
+  font-family: var(--font-display);
+  font-size: var(--s-1);
+  font-weight: 600;
+  color: var(--ink);
+  letter-spacing: .02em;
+}
+
+/* tag chip — slightly smaller, sage tint */
+.s-reviews__tag {
+  font-size: .75rem;
+  letter-spacing: .1em;
+  padding: .3em .85em;
+  border-color: var(--sage-soft);
+  background: rgba(195, 204, 166, 0.18);
+  color: var(--sage);
+  border-radius: var(--radius-pill);
+}
+
+/* ---------- footnote ---------- */
+.s-reviews__footnote {
+  text-align: center;
+  margin: var(--sp-5) 0 0;
+  font-size: var(--s--1);
+  color: var(--ink-soft);
+  letter-spacing: .04em;
+  opacity: .7;
+}
+
+/* ---------- tablet (≤ 960px): 2-up ---------- */
+@media (max-width: 960px) {
+  .s-reviews__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ---------- mobile (≤ 640px): 1-up or horizontal snap ---------- */
+@media (max-width: 640px) {
+  .s-reviews__header {
+    margin-bottom: var(--sp-5);
+  }
+
+  .s-reviews__count {
+    border-left: none;
+    padding-left: 0;
+    border-top: 1.5px solid var(--line);
+    padding-top: var(--sp-2);
+    width: 100%;
+    text-align: center;
+  }
+
+  .s-reviews__summary {
+    flex-direction: column;
+    gap: var(--sp-2);
+  }
+
+  .s-reviews__grid {
+    grid-template-columns: 86vw;
+    grid-auto-flow: column;
+    grid-auto-columns: 86vw;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    padding-inline: var(--sp-4);
+    padding-bottom: var(--sp-3);
+    gap: var(--sp-3);
+  }
+
+  .s-reviews .wrap {
+    padding-inline: 0;
+  }
+
+  .s-reviews__header,
+  .s-reviews__footnote {
+    padding-inline: var(--sp-4);
+  }
+
+  .s-reviews__grid > li {
+    scroll-snap-align: start;
+  }
+}
+/* ============================================================
+   NU-DEO · 09-newsletter.css
+   Newsletter signup band — all rules scoped to .s-newsletter
+   ============================================================ */
+
+/* ── Band ──────────────────────────────────────────────────── */
+
+.s-newsletter {
+  --bg:           #FAF9F1;
+  --surface:      #fff;
+  --surface-2:    #F1EDE7;
+  --ink:          #34303A;
+  --ink-soft:     #6E687A;
+  --accent:       #927FBC;
+  --accent-ink:   #fff;
+  --accent-deep:  #6F5BA0;
+  --sage:         #8E9A6E;
+  --sage-soft:    #C3CCA6;
+  --lav-soft:     #C5BADC;
+  --gold:         #FDC656;
+  --line:         #E6E1D8;
+  --font-display: "Barlow Condensed", sans-serif;
+  --s--1:         0.8125rem;
+  --s-0:          1rem;
+  --s-1:          1.25rem;
+  --s-2:          1.5625rem;
+  --s-3:          1.953rem;
+  --s-4:          2.441rem;
+  --s-5:          3.052rem;
+  --sp-1:         0.25rem;
+  --sp-2:         0.5rem;
+  --sp-3:         0.75rem;
+  --sp-4:         1rem;
+  --sp-6:         1.5rem;
+  --sp-8:         2rem;
+  --sp-10:        2.5rem;
+  --sp-12:        3rem;
+  --sp-16:        4rem;
+  --radius:       10px;
+  --radius-lg:    20px;
+  --radius-pill:  100px;
+  --shadow:       0 4px 24px rgba(52,48,58,.10);
+  --maxw:         1200px;
+
+  background: var(--accent);
+  color: var(--accent-ink);
+  padding-block: var(--sp-16);
+}
+
+/* ── Wrap ──────────────────────────────────────────────────── */
+
+.s-newsletter__wrap {
+  max-width: var(--maxw);
+  margin-inline: auto;
+  padding-inline: var(--sp-6);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--sp-6);
+}
+
+/* ── Eyebrow ───────────────────────────────────────────────── */
+
+.s-newsletter__eyebrow.eyebrow {
+  color: rgba(255, 255, 255, 0.75);
+  border-color: rgba(255, 255, 255, 0.40);
+}
+
+/* ── Heading ───────────────────────────────────────────────── */
+
+.s-newsletter__heading {
+  font-family: var(--font-display);
+  font-size: clamp(var(--s-3), 5vw, var(--s-5));
+  font-weight: 300;
+  line-height: 1.1;
+  color: var(--accent-ink);
+  margin: 0;
+  max-width: 22ch;
+}
+
+/* ── Sub copy ──────────────────────────────────────────────── */
+
+.s-newsletter__sub {
+  font-family: var(--font-display);
+  font-size: var(--s-1);
+  font-weight: 400;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.88);
+  margin: 0;
+  max-width: 44ch;
+}
+
+/* ── Form ──────────────────────────────────────────────────── */
+
+.s-newsletter__form {
+  width: 100%;
+  max-width: 540px;
+}
+
+.s-newsletter__field-row {
+  display: flex;
+  gap: var(--sp-3);
+  align-items: stretch;
+}
+
+/* ── Input ─────────────────────────────────────────────────── */
+
+.s-newsletter__input {
+  flex: 1 1 0;
+  min-width: 0;
+  padding-block: var(--sp-3);
+  padding-inline: var(--sp-6);
+  border-radius: var(--radius-pill);
+  border: 2px solid transparent;
+  background: var(--surface);
+  color: var(--ink);
+  font-family: var(--font-display);
+  font-size: var(--s-0);
+  font-weight: 400;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.s-newsletter__input::placeholder {
+  color: var(--ink-soft);
+}
+
+.s-newsletter__input:focus {
+  border-color: var(--accent-deep);
+  box-shadow: 0 0 0 3px rgba(146, 127, 188, 0.25);
+}
+
+/* ── Subscribe button ──────────────────────────────────────── */
+
+.s-newsletter__btn.btn {
+  flex-shrink: 0;
+  background: var(--surface);
+  color: var(--accent-deep);
+  border: 2px solid var(--surface);
+  font-family: var(--font-display);
+  font-size: var(--s-0);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  padding-block: var(--sp-3);
+  padding-inline: var(--sp-8);
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.18s, color 0.18s, border-color 0.18s;
+}
+
+.s-newsletter__btn.btn:hover,
+.s-newsletter__btn.btn:focus-visible {
+  background: var(--accent-deep);
+  color: var(--accent-ink);
+  border-color: var(--accent-deep);
+  outline: 3px solid rgba(255, 255, 255, 0.5);
+  outline-offset: 2px;
+}
+
+/* ── Fine print ────────────────────────────────────────────── */
+
+.s-newsletter__fine {
+  font-family: var(--font-display);
+  font-size: var(--s--1);
+  color: rgba(255, 255, 255, 0.65);
+  margin: 0;
+}
+
+/* ── Visually hidden (for the label) ──────────────────────── */
+
+.s-newsletter .sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ── Mobile ────────────────────────────────────────────────── */
+
+@media (max-width: 540px) {
+  .s-newsletter__field-row {
+    flex-direction: column;
+    gap: var(--sp-3);
+  }
+
+  .s-newsletter__input,
+  .s-newsletter__btn.btn {
+    width: 100%;
+  }
+
+  .s-newsletter__btn.btn {
+    padding-block: var(--sp-4);
+  }
+}
+/* ============================================================
+   NU-DEO · 10-footer.css
+   Site footer — all rules scoped to .site-footer
+   Light background (#C5BADC lav-soft) so the dark logo reads.
+   ============================================================ */
+
+/* ── Token redeclaration (self-contained) ──────────────────── */
+
+.site-footer {
+  --bg:           #FAF9F1;
+  --surface:      #fff;
+  --surface-2:    #F1EDE7;
+  --ink:          #34303A;
+  --ink-soft:     #6E687A;
+  --accent:       #927FBC;
+  --accent-ink:   #fff;
+  --accent-deep:  #6F5BA0;
+  --sage:         #8E9A6E;
+  --sage-soft:    #C3CCA6;
+  --lav-soft:     #C5BADC;
+  --gold:         #FDC656;
+  --line:         #E6E1D8;
+  --font-display: "Barlow Condensed", sans-serif;
+  --s--1:         0.8125rem;
+  --s-0:          1rem;
+  --s-1:          1.25rem;
+  --s-2:          1.5625rem;
+  --s-3:          1.953rem;
+  --s-4:          2.441rem;
+  --s-5:          3.052rem;
+  --sp-1:         0.25rem;
+  --sp-2:         0.5rem;
+  --sp-3:         0.75rem;
+  --sp-4:         1rem;
+  --sp-5:         1.25rem;
+  --sp-6:         1.5rem;
+  --sp-8:         2rem;
+  --sp-10:        2.5rem;
+  --sp-12:        3rem;
+  --sp-16:        4rem;
+  --radius:       10px;
+  --radius-lg:    20px;
+  --radius-pill:  100px;
+  --shadow:       0 4px 24px rgba(52,48,58,.10);
+  --maxw:         1200px;
+
+  background: var(--lav-soft);
+  color: var(--ink);
+  font-family: var(--font-display);
+}
+
+/* ── Shared wrap (mirrors base.css .wrap) ──────────────────── */
+
+.site-footer .wrap {
+  max-width: var(--maxw);
+  margin-inline: auto;
+  padding-inline: var(--sp-6);
+}
+
+/* ── Top section: brand col + nav columns ──────────────────── */
+
+.site-footer__top {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  gap: var(--sp-12);
+  padding-block: var(--sp-12);
+  border-bottom: 1px solid rgba(52, 48, 58, 0.15);
+}
+
+/* ── Brand column ──────────────────────────────────────────── */
+
+.site-footer__brand {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-5);
+}
+
+.site-footer__logo-link {
+  display: inline-block;
+  text-decoration: none;
+}
+
+.site-footer__logo {
+  height: 30px;
+  width: auto;
+  display: block;
+  filter: brightness(0) saturate(0);
+}
+
+.site-footer__blurb {
+  font-size: var(--s-0);
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--ink-soft);
+  margin: 0;
+  max-width: 26ch;
+}
+
+/* ── Social icon cluster ───────────────────────────────────── */
+
+.site-footer__socials {
+  display: flex;
+  gap: var(--sp-3);
+  flex-wrap: wrap;
+}
+
+.site-footer__social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius);
+  background: rgba(52, 48, 58, 0.08);
+  color: var(--ink);
+  text-decoration: none;
+  transition: background 0.18s, color 0.18s;
+}
+
+.site-footer__social-link:hover,
+.site-footer__social-link:focus-visible {
+  background: var(--accent);
+  color: var(--accent-ink);
+  outline: 3px solid rgba(146, 127, 188, 0.4);
+  outline-offset: 2px;
+}
+
+.site-footer__social-icon {
+  display: block;
+  flex-shrink: 0;
+}
+
+/* ── Nav columns grid ──────────────────────────────────────── */
+
+.site-footer__nav {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--sp-8);
+}
+
+/* ── Individual column ─────────────────────────────────────── */
+
+.site-footer__col {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+}
+
+.site-footer__col-head {
+  font-family: var(--font-display);
+  font-size: var(--s-1);
+  font-weight: 700;
+  /* Title case — NOT uppercase */
+  text-transform: none;
+  letter-spacing: 0.01em;
+  color: var(--accent);
+  margin: 0;
+}
+
+.site-footer__col-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+}
+
+.site-footer__col-list a {
+  font-family: var(--font-display);
+  font-size: var(--s-0);
+  font-weight: 400;
+  color: var(--ink);
+  text-decoration: none;
+  transition: color 0.15s;
+  line-height: 1.3;
+}
+
+.site-footer__col-list a:hover,
+.site-footer__col-list a:focus-visible {
+  color: var(--accent-deep);
+  text-decoration: underline;
+}
+
+/* ── Trust chips row ───────────────────────────────────────── */
+
+.site-footer__trust-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-3);
+  padding-block: var(--sp-8);
+  border-bottom: 1px solid rgba(52, 48, 58, 0.15);
+}
+
+/* Chips override — dark ink on lav-soft bg */
+.site-footer__chip.chip {
+  background: rgba(52, 48, 58, 0.08);
+  color: var(--ink);
+  border-color: rgba(52, 48, 58, 0.18);
+  font-family: var(--font-display);
+  font-size: var(--s--1);
+  font-weight: 600;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  padding-block: var(--sp-2);
+  padding-inline: var(--sp-4);
+  border-radius: var(--radius-pill);
+  border: 1px solid;
+  display: inline-flex;
+  align-items: center;
+}
+
+/* ── Bottom bar ────────────────────────────────────────────── */
+
+.site-footer__bottom-bar {
+  background: rgba(52, 48, 58, 0.07);
+}
+
+.site-footer__bottom-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--sp-4);
+  padding-block: var(--sp-5);
+}
+
+/* ── Legal cluster ─────────────────────────────────────────── */
+
+.site-footer__legal {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--sp-3);
+  font-family: var(--font-display);
+  font-size: var(--s--1);
+  color: var(--ink-soft);
+}
+
+.site-footer__copy {
+  color: var(--ink-soft);
+}
+
+.site-footer__legal-sep {
+  color: var(--ink-soft);
+  opacity: 0.5;
+}
+
+.site-footer__legal-link {
+  color: var(--ink-soft);
+  text-decoration: none;
+  transition: color 0.15s;
+}
+
+.site-footer__legal-link:hover,
+.site-footer__legal-link:focus-visible {
+  color: var(--accent-deep);
+  text-decoration: underline;
+}
+
+/* ── Payment marks ─────────────────────────────────────────── */
+
+.site-footer__payments {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  flex-wrap: wrap;
+}
+
+.site-footer__pay-mark {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 4px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+/* ── Responsive: tablet ────────────────────────────────────── */
+
+@media (max-width: 900px) {
+  .site-footer__top {
+    grid-template-columns: 1fr;
+    gap: var(--sp-10);
+  }
+
+  .site-footer__nav {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--sp-8) var(--sp-6);
+  }
+
+  .site-footer__blurb {
+    max-width: 40ch;
+  }
+}
+
+/* ── Responsive: mobile ────────────────────────────────────── */
+
+@media (max-width: 540px) {
+  .site-footer__top {
+    padding-block: var(--sp-10);
+    gap: var(--sp-8);
+  }
+
+  .site-footer__nav {
+    grid-template-columns: 1fr;
+    gap: var(--sp-6);
+  }
+
+  .site-footer__trust-row {
+    gap: var(--sp-2);
+  }
+
+  .site-footer__bottom-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--sp-4);
+  }
+
+  .site-footer__legal {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--sp-2);
+  }
+
+  .site-footer__legal-sep {
+    display: none;
+  }
+}

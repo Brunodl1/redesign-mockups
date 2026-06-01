@@ -1,0 +1,211 @@
+/* ============================================================
+   NU-DEO · Rituel + Fondatrice band
+   07-ritual.css — scoped to .s-ritual
+   ============================================================ */
+
+/* ---------- tokens (local echo so section is self-contained) ---------- */
+.s-ritual {
+  --bg:          #FAF9F1;
+  --surface:     #FFFFFF;
+  --surface-2:   #F1EDE7;
+  --ink:         #34303A;
+  --ink-soft:    #6E687A;
+  --accent:      #927FBC;
+  --accent-ink:  #FFFFFF;
+  --accent-deep: #6F5BA0;
+  --sage:        #8E9A6E;
+  --sage-soft:   #C3CCA6;
+  --lav-soft:    #C5BADC;
+  --gold:        #FDC656;
+  --line:        #E6E1D8;
+  --star:        #FDC656;
+  --radius:      10px;
+  --radius-lg:   20px;
+  --radius-pill: 100px;
+  --shadow:      0 12px 38px rgba(52,48,58,.10);
+  --maxw:        1280px;
+  --font-display:"Barlow Condensed", "Helvetica Neue", Arial, sans-serif;
+  --s--1:        .92rem;
+  --s-0:         1.12rem;
+  --s-1:         1.3rem;
+  --s-2:         1.7rem;
+  --s-3:         2.3rem;
+  --s-4:         3.2rem;
+  --s-5:         4.6rem;
+  --sp-1:        .25rem;
+  --sp-2:        .5rem;
+  --sp-3:        1rem;
+  --sp-4:        1.5rem;
+  --sp-5:        2.5rem;
+  --sp-6:        4rem;
+  --sp-7:        6rem;
+}
+
+/* ---------- section shell ---------- */
+.s-ritual {
+  background: var(--surface-2);
+}
+
+/* ---------- 2-column layout ---------- */
+.s-ritual__cols {
+  display: grid;
+  grid-template-columns: minmax(0, 320px) 1fr;
+  gap: var(--sp-6) var(--sp-7);
+  align-items: center;
+  justify-content: center;
+}
+
+/* ---------- visual side (LEFT) ---------- */
+.s-ritual__visual {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sp-3);
+  position: relative;
+}
+
+/* soft lavender halo ring behind portrait */
+.s-ritual__halo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -55%);
+  width: 260px;
+  height: 260px;
+  border-radius: 100%;
+  background: radial-gradient(
+    circle at center,
+    rgba(197, 186, 220, 0.55) 0%,
+    rgba(197, 186, 220, 0.18) 60%,
+    transparent 80%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* portrait — circular, modest size */
+.s-ritual__portrait {
+  position: relative;
+  z-index: 1;
+  width: 220px;
+  height: 220px;
+  border-radius: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  border: 3px solid rgba(197, 186, 220, 0.6);
+  box-shadow: 0 8px 32px rgba(52, 48, 58, 0.12);
+}
+
+/* caption under portrait */
+.s-ritual__caption {
+  position: relative;
+  z-index: 1;
+  font-family: var(--font-display);
+  font-size: var(--s--1);
+  color: var(--ink-soft);
+  letter-spacing: .06em;
+  text-align: center;
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* ---------- text side (RIGHT) ---------- */
+.s-ritual__text {
+  max-width: 52ch;
+}
+
+.s-ritual__text h2 {
+  color: var(--ink);
+  margin-bottom: var(--sp-4);
+  font-weight: 300;
+}
+
+/* body paragraphs */
+.s-ritual__body {
+  font-size: var(--s-1);
+  color: var(--ink-soft);
+  line-height: 1.6;
+  margin: 0 0 var(--sp-3);
+}
+
+.s-ritual__body em {
+  font-style: italic;
+  color: var(--ink);
+}
+
+/* CTA */
+.s-ritual__actions {
+  margin: var(--sp-4) 0 var(--sp-4);
+}
+
+/* chips row */
+.s-ritual__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+}
+
+.s-ritual__chips .chip {
+  background: var(--surface);
+  border-color: var(--line);
+  color: var(--ink);
+  font-size: var(--s--1);
+}
+
+/* ---------- staggered reveal ---------- */
+.s-ritual__visual.reveal,
+.s-ritual__text.reveal {
+  transition-delay: var(--delay, 0s);
+}
+
+/* ---------- tablet (≤ 900px): tighten gap ---------- */
+@media (max-width: 900px) {
+  .s-ritual__cols {
+    grid-template-columns: minmax(0, 260px) 1fr;
+    gap: var(--sp-5) var(--sp-5);
+  }
+
+  .s-ritual__portrait {
+    width: 180px;
+    height: 180px;
+  }
+
+  .s-ritual__halo {
+    width: 220px;
+    height: 220px;
+  }
+}
+
+/* ---------- mobile (≤ 680px): stack vertically ---------- */
+@media (max-width: 680px) {
+  .s-ritual__cols {
+    grid-template-columns: 1fr;
+    gap: var(--sp-5);
+    justify-items: center;
+    text-align: center;
+  }
+
+  .s-ritual__visual {
+    width: 100%;
+  }
+
+  .s-ritual__portrait {
+    width: 200px;
+    height: 200px;
+  }
+
+  .s-ritual__halo {
+    width: 240px;
+    height: 240px;
+  }
+
+  .s-ritual__text {
+    max-width: 100%;
+    text-align: left;
+  }
+
+  .s-ritual__chips {
+    justify-content: flex-start;
+  }
+}

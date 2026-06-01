@@ -1,0 +1,310 @@
+/* ============================================================
+   NU-DEO · 3 Scents / Bestsellers Grid
+   04-scents.css — scoped to .s-scents
+   ============================================================ */
+
+/* ---------- tokens (local echo so section is self-contained) ---------- */
+.s-scents {
+  --bg:          #FAF9F1;
+  --surface:     #FFFFFF;
+  --surface-2:   #F1EDE7;
+  --ink:         #34303A;
+  --ink-soft:    #6E687A;
+  --accent:      #927FBC;
+  --accent-ink:  #FFFFFF;
+  --accent-deep: #6F5BA0;
+  --sage:        #8E9A6E;
+  --sage-soft:   #C3CCA6;
+  --lav-soft:    #C5BADC;
+  --gold:        #FDC656;
+  --line:        #E6E1D8;
+  --star:        #FDC656;
+  --radius:      10px;
+  --radius-lg:   20px;
+  --radius-pill: 100px;
+  --shadow:      0 12px 38px rgba(52,48,58,.10);
+  --maxw:        1280px;
+  --font-display:"Barlow Condensed", "Helvetica Neue", Arial, sans-serif;
+  --s--1:        .92rem;
+  --s-0:         1.12rem;
+  --s-1:         1.3rem;
+  --s-2:         1.7rem;
+  --s-3:         2.3rem;
+  --s-4:         3.2rem;
+  --s-5:         4.6rem;
+  --sp-1:        .25rem;
+  --sp-2:        .5rem;
+  --sp-3:        1rem;
+  --sp-4:        1.5rem;
+  --sp-5:        2.5rem;
+  --sp-6:        4rem;
+  --sp-7:        6rem;
+}
+
+/* ---------- section shell ---------- */
+.s-scents {
+  background: var(--bg);
+}
+
+/* ---------- section header ---------- */
+.s-scents__header {
+  text-align: center;
+  max-width: 52ch;
+  margin: 0 auto var(--sp-6);
+}
+
+.s-scents__header h2 {
+  color: var(--ink);
+  margin-bottom: var(--sp-3);
+}
+
+.s-scents__intro {
+  font-size: var(--s-1);
+  color: var(--ink-soft);
+  line-height: 1.55;
+  margin: 0;
+}
+
+/* ---------- grid ---------- */
+.s-scents__grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-4);
+  align-items: start;
+}
+
+/* ---------- card ---------- */
+.s-scents .card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform .25s cubic-bezier(.2,.7,.2,1), box-shadow .25s;
+}
+
+.s-scents .card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow);
+}
+
+/* ---------- staggered reveal ---------- */
+.s-scents .card.reveal {
+  transition-delay: var(--delay, 0s);
+}
+
+/* ---------- image wrapper ---------- */
+.s-scents .card__img-wrap {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  background: var(--surface-2);
+  border-radius: var(--radius) var(--radius) 0 0;
+}
+
+.s-scents .card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform .4s ease;
+}
+
+.s-scents .card:hover .card__img {
+  transform: scale(1.04);
+}
+
+/* ---------- card body ---------- */
+.s-scents .card__body {
+  padding: var(--sp-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+  flex: 1;
+}
+
+/* ---------- badge / chip ---------- */
+.s-scents .card__badge {
+  align-self: flex-start;
+  font-size: .78rem;
+  letter-spacing: .12em;
+  padding: .35em .9em;
+  border-color: var(--sage-soft);
+  background: var(--surface-2);
+  color: var(--sage);
+}
+
+.s-scents .card__badge--dark {
+  border-color: var(--ink);
+  background: var(--ink);
+  color: var(--accent-ink);
+}
+
+.s-scents .card__badge--pink {
+  border-color: #E8C5CF;
+  background: #F8EEF0;
+  color: #A0607A;
+}
+
+/* ---------- product name ---------- */
+.s-scents .card__name {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--s-2);
+  letter-spacing: .04em;
+  color: var(--ink);
+  margin: 0;
+  line-height: 1.1;
+}
+
+.s-scents .card__name a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.s-scents .card__name a:hover {
+  color: var(--accent);
+}
+
+/* ---------- scent description ---------- */
+.s-scents .card__desc {
+  font-size: var(--s-0);
+  color: var(--ink-soft);
+  line-height: 1.45;
+  margin: 0;
+  font-style: italic;
+}
+
+/* ---------- price ---------- */
+.s-scents .card__meta {
+  display: flex;
+  align-items: baseline;
+  gap: .25em;
+  margin-top: var(--sp-1);
+}
+
+.s-scents .card__price {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: var(--s-2);
+  color: var(--ink);
+  letter-spacing: -.01em;
+}
+
+.s-scents .card__weight {
+  font-size: var(--s-0);
+  color: var(--ink-soft);
+}
+
+/* ---------- stars ---------- */
+.s-scents .card__stars {
+  font-size: var(--s-1);
+  color: var(--star);
+  letter-spacing: .04em;
+  line-height: 1;
+}
+
+/* ---------- CTA button ---------- */
+.s-scents .card__cta {
+  margin-top: var(--sp-2);
+  font-size: var(--s-1);
+  border-radius: var(--radius-pill);
+  /* pill full-width */
+}
+
+/* ---------- weight / duration note ---------- */
+.s-scents .card__note {
+  font-size: var(--s--1);
+  color: var(--ink-soft);
+  text-align: center;
+  margin: 0;
+  letter-spacing: .04em;
+}
+
+/* ---------- footer CTA ---------- */
+.s-scents__footer {
+  text-align: center;
+  margin-top: var(--sp-6);
+}
+
+/* ---------- tablet (≤ 960px): 2 cols ---------- */
+@media (max-width: 960px) {
+  .s-scents__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  /* third card spans full width to stay centred */
+  .s-scents__grid > li:nth-child(3) {
+    grid-column: 1 / -1;
+    max-width: calc(50% - var(--sp-2));
+    margin-inline: auto;
+  }
+}
+
+/* ---------- mobile (≤ 780px): snap carousel or single col ---------- */
+@media (max-width: 780px) {
+  .s-scents__header {
+    margin-bottom: var(--sp-5);
+  }
+
+  /* horizontal snap scroll on mobile */
+  .s-scents .wrap {
+    overflow-x: visible;
+  }
+
+  .s-scents__grid {
+    grid-template-columns: 1fr;
+    gap: var(--sp-3);
+  }
+
+  /* undo the 2-col third-card centering */
+  .s-scents__grid > li:nth-child(3) {
+    grid-column: auto;
+    max-width: none;
+    margin-inline: 0;
+  }
+
+  .s-scents .card__img-wrap {
+    aspect-ratio: 4 / 3;
+  }
+}
+
+/* ---------- tiny screens: horizontal snap ---------- */
+@media (max-width: 520px) {
+  .s-scents .wrap {
+    padding-inline: 0;
+  }
+
+  .s-scents__header,
+  .s-scents__footer {
+    padding-inline: var(--sp-4);
+  }
+
+  .s-scents__grid {
+    grid-template-columns: 80vw;
+    grid-auto-flow: column;
+    grid-auto-columns: 80vw;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    padding-inline: var(--sp-4);
+    padding-bottom: var(--sp-3);
+    gap: var(--sp-3);
+  }
+
+  .s-scents__grid > li {
+    scroll-snap-align: start;
+  }
+
+  /* undo centering on mobile snap */
+  .s-scents__grid > li:nth-child(3) {
+    grid-column: auto;
+    max-width: none;
+    margin-inline: 0;
+  }
+}
