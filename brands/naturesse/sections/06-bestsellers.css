@@ -1,0 +1,368 @@
+/* ============================================================
+   Section 06 — Nos Meilleurs Vendeurs (.s-bestsellers)
+   Naturesse Cosmetics — 3×2 product card grid, FR
+   ============================================================ */
+
+/* --- token declarations (mirror base.css for standalone use) --- */
+.s-bestsellers {
+  --bg:          #FCFBF6;
+  --surface:     #fff;
+  --surface-2:   #EEF2E6;
+  --sand:        #F3ECDF;
+  --ink:         #1C1E18;
+  --ink-soft:    #5C5E54;
+  --accent:      #4F7C29;
+  --accent-ink:  #fff;
+  --accent-deep: #3C611E;
+  --gold:        #E4A92B;
+  --gold-soft:   #FBE6BC;
+  --tan:         #BBA783;
+  --dark:        #33322C;
+  --line:        #E6E0D2;
+  --star:        #E4A92B;
+  --font-display:"Poppins","Helvetica Neue",Arial,sans-serif;
+  --font-body:   "Lato","Helvetica Neue",Arial,sans-serif;
+  --s--1:  .82rem;
+  --s-0:   1.05rem;
+  --s-1:   1.25rem;
+  --s-2:   1.6rem;
+  --s-3:   2.15rem;
+  --s-4:   3rem;
+  --s-5:   3.9rem;
+  --sp-1:  .25rem;
+  --sp-2:  .5rem;
+  --sp-3:  1rem;
+  --sp-4:  1.5rem;
+  --sp-5:  2.5rem;
+  --sp-6:  4rem;
+  --sp-7:  6rem;
+  --sp-8:  8rem;
+  --radius:     10px;
+  --radius-lg:  18px;
+  --radius-pill:50px;
+  --shadow:     0 16px 44px rgba(28,30,24,.10);
+  --maxw:       1280px;
+}
+
+/* --- section background: warm cream --- */
+.s-bestsellers {
+  background: var(--bg);
+}
+
+/* -------------------------------------------------------
+   Header block
+   ------------------------------------------------------- */
+.s-bestsellers .bestsellers-hd {
+  text-align: center;
+  max-width: 620px;
+  margin: 0 auto var(--sp-7);
+}
+
+.s-bestsellers .eyebrow {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: var(--s--1);
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 0 0 var(--sp-3);
+}
+
+.s-bestsellers .bestsellers-heading {
+  font-family: var(--font-display);
+  font-size: var(--s-4);
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: -.015em;
+  color: var(--ink);
+  margin: 0 0 var(--sp-3);
+}
+
+.s-bestsellers .bestsellers-intro {
+  font-family: var(--font-body);
+  font-size: var(--s-0);
+  color: var(--ink-soft);
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* -------------------------------------------------------
+   3-up grid, 2 rows
+   ------------------------------------------------------- */
+.s-bestsellers .bestsellers-grid {
+  list-style: none;
+  margin: 0 0 var(--sp-7);
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-5);
+}
+
+/* -------------------------------------------------------
+   Product card
+   ------------------------------------------------------- */
+.s-bestsellers .card {
+  display: flex;
+  flex-direction: column;
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  border: 1.5px solid var(--line);
+  overflow: hidden;
+  transition: box-shadow .25s, transform .22s;
+}
+
+.s-bestsellers .card:hover {
+  box-shadow: var(--shadow);
+  transform: translateY(-5px);
+}
+
+/* Staggered reveal delays */
+.s-bestsellers .card:nth-child(1) { transition-delay: .05s; }
+.s-bestsellers .card:nth-child(2) { transition-delay: .12s; }
+.s-bestsellers .card:nth-child(3) { transition-delay: .19s; }
+.s-bestsellers .card:nth-child(4) { transition-delay: .26s; }
+.s-bestsellers .card:nth-child(5) { transition-delay: .33s; }
+.s-bestsellers .card:nth-child(6) { transition-delay: .40s; }
+
+/* -------------------------------------------------------
+   Card image tile — soft surface-2/white tile, radius top
+   ------------------------------------------------------- */
+.s-bestsellers .card-img-link {
+  display: block;
+  flex-shrink: 0;
+}
+
+.s-bestsellers .card-img-tile {
+  background: var(--surface-2);
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* top corners rounded, bottom flush with card border */
+  border-radius: calc(var(--radius-lg) - 1.5px) calc(var(--radius-lg) - 1.5px) 0 0;
+}
+
+.s-bestsellers .card-img-tile img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  transition: transform .4s cubic-bezier(.25,.46,.45,.94);
+}
+
+.s-bestsellers .card:hover .card-img-tile img {
+  transform: scale(1.04);
+}
+
+/* -------------------------------------------------------
+   Card body
+   ------------------------------------------------------- */
+.s-bestsellers .card-body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+  padding: var(--sp-4);
+  flex: 1;
+}
+
+/* Stars */
+.s-bestsellers .card-stars {
+  color: var(--star);
+  font-size: var(--s-0);
+  letter-spacing: .06em;
+  line-height: 1;
+}
+
+/* Product name */
+.s-bestsellers .card-name {
+  font-family: var(--font-display);
+  font-size: var(--s-1);
+  font-weight: 600;
+  line-height: 1.25;
+  color: var(--ink);
+  margin: 0;
+}
+
+.s-bestsellers .card-name a {
+  color: inherit;
+  text-decoration: none;
+  transition: color .18s;
+}
+
+.s-bestsellers .card-name a:hover {
+  color: var(--accent);
+}
+
+/* Descriptor */
+.s-bestsellers .card-desc {
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  color: var(--ink-soft);
+  line-height: 1.55;
+  margin: 0;
+  flex: 1;
+}
+
+/* Footer row: price + CTA */
+.s-bestsellers .card-footer {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+  margin-top: auto;
+  padding-top: var(--sp-3);
+}
+
+.s-bestsellers .card-price {
+  font-family: var(--font-display);
+  font-size: var(--s-2);
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1;
+}
+
+/* btn — scoped (inherits base if loaded) */
+.s-bestsellers .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: var(--s--1);
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  padding: 1.05em 2.2em;
+  border-radius: var(--radius-pill);
+  border: 1.5px solid transparent;
+  cursor: pointer;
+  transition: background .22s, color .22s, border-color .22s, transform .15s, box-shadow .2s;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.s-bestsellers .btn:hover {
+  transform: translateY(-2px);
+}
+
+.s-bestsellers .btn-primary {
+  background: var(--accent);
+  color: var(--accent-ink);
+  border-color: var(--accent);
+}
+
+.s-bestsellers .btn-primary:hover {
+  background: var(--accent-deep);
+  border-color: var(--accent-deep);
+}
+
+.s-bestsellers .btn-block {
+  display: flex;
+  width: 100%;
+}
+
+.s-bestsellers .btn-outline {
+  background: transparent;
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+.s-bestsellers .btn-outline:hover {
+  background: var(--accent);
+  color: #fff;
+}
+
+/* -------------------------------------------------------
+   CTA row
+   ------------------------------------------------------- */
+.s-bestsellers .bestsellers-cta-wrap {
+  display: flex;
+  justify-content: center;
+}
+
+/* -------------------------------------------------------
+   Reveal
+   ------------------------------------------------------- */
+.s-bestsellers .reveal {
+  opacity: 0;
+  transform: perspective(900px) rotateX(8deg) translateY(26px);
+  transition: opacity .7s ease, transform .7s cubic-bezier(.2,.7,.2,1);
+}
+
+.s-bestsellers .reveal.in {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .s-bestsellers .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* -------------------------------------------------------
+   Responsive — tablet 2-up (≤ 960px)
+   ------------------------------------------------------- */
+@media (max-width: 960px) {
+  .s-bestsellers .bestsellers-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--sp-4);
+  }
+
+  .s-bestsellers .bestsellers-heading {
+    font-size: var(--s-3);
+  }
+}
+
+/* -------------------------------------------------------
+   Mobile (≤ 600px): 1-up
+   ------------------------------------------------------- */
+@media (max-width: 600px) {
+  .s-bestsellers .bestsellers-grid {
+    grid-template-columns: 1fr;
+    gap: var(--sp-4);
+  }
+
+  .s-bestsellers .bestsellers-hd {
+    margin-bottom: var(--sp-6);
+  }
+
+  .s-bestsellers .bestsellers-heading {
+    font-size: 2.05rem;
+  }
+
+  .s-bestsellers .card-img-tile {
+    aspect-ratio: 4 / 3;
+  }
+}
+
+/* -------------------------------------------------------
+   Mobile narrow (≤ 480px): 2-up horizontal scroll snap
+   as fallback for very small screens — or remain 1-up
+   ------------------------------------------------------- */
+@media (max-width: 480px) {
+  .s-bestsellers .bestsellers-grid {
+    /* horizontal snap on very small viewports */
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    gap: var(--sp-3);
+    padding-bottom: var(--sp-3);
+    /* hide scrollbar visually */
+    scrollbar-width: none;
+  }
+
+  .s-bestsellers .bestsellers-grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .s-bestsellers .card {
+    flex: 0 0 80vw;
+    max-width: 320px;
+    scroll-snap-align: start;
+  }
+}

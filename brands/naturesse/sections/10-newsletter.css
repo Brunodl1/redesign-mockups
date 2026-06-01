@@ -1,0 +1,198 @@
+/* ============================================================
+   Naturesse Cosmetics — 10-newsletter.css
+   Section: .s-newsletter · Band verte accent avec texte blanc
+   ============================================================ */
+
+/* ── CSS custom property anchoring ──────────────────────────── */
+.s-newsletter {
+  --bg:          #FCFBF6;
+  --surface:     #FFFFFF;
+  --surface-2:   #EEF2E6;
+  --sand:        #F3ECDF;
+  --ink:         #1C1E18;
+  --ink-soft:    #5C5E54;
+  --accent:      #4F7C29;
+  --accent-ink:  #FFFFFF;
+  --accent-deep: #3C611E;
+  --gold:        #E4A92B;
+  --gold-soft:   #FBE6BC;
+  --tan:         #BBA783;
+  --dark:        #33322C;
+  --line:        #E6E0D2;
+  --font-display:"Poppins", "Helvetica Neue", Arial, sans-serif;
+  --font-body:   "Lato", "Helvetica Neue", Arial, sans-serif;
+  --s--1: .82rem;
+  --s-0:  1.05rem;
+  --s-1:  1.25rem;
+  --s-2:  1.6rem;
+  --s-3:  2.15rem;
+  --s-4:  3rem;
+  --s-5:  3.9rem;
+  --sp-1: .25rem;  --sp-2: .5rem;   --sp-3: 1rem;
+  --sp-4: 1.5rem;  --sp-5: 2.5rem;  --sp-6: 4rem;
+  --sp-7: 6rem;    --sp-8: 8rem;
+  --radius:      10px;
+  --radius-lg:   18px;
+  --radius-pill: 50px;
+  --shadow:      0 16px 44px rgba(28,30,24,.10);
+  --maxw:        1280px;
+}
+
+/* ── Section band ────────────────────────────────────────────── */
+.s-newsletter {
+  position: relative;
+  overflow: hidden;
+  background: var(--accent);
+  padding-block: var(--sp-7);
+}
+
+/* ── Floating leaf accents ───────────────────────────────────── */
+.s-newsletter__leaf {
+  position: absolute;
+  pointer-events: none;
+  z-index: 0;
+}
+.s-newsletter__leaf--l {
+  left: -16px;
+  top: 50%;
+  transform: translateY(-60%) rotate(-18deg);
+}
+.s-newsletter__leaf--r {
+  right: -10px;
+  bottom: 10%;
+  transform: rotate(22deg);
+}
+@media (max-width: 780px) {
+  .s-newsletter__leaf { display: none; }
+}
+
+/* ── Inner wrap ──────────────────────────────────────────────── */
+.s-newsletter__wrap {
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Body — centered column ─────────────────────────────────── */
+.s-newsletter__body {
+  max-width: 620px;
+  margin-inline: auto;
+  text-align: center;
+}
+
+/* ── Eyebrow override — white on green ──────────────────────── */
+.s-newsletter .eyebrow,
+.s-newsletter__eyebrow {
+  color: rgba(255, 255, 255, 0.78);
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: var(--s--1);
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  display: inline-block;
+  margin-bottom: var(--sp-3);
+}
+
+/* ── Heading ────────────────────────────────────────────────── */
+.s-newsletter__heading {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: var(--s-3);
+  line-height: 1.12;
+  letter-spacing: -.015em;
+  color: #ffffff;
+  margin: 0 0 var(--sp-3);
+}
+
+/* ── Sub line ────────────────────────────────────────────────── */
+.s-newsletter__sub {
+  font-family: var(--font-body);
+  font-size: var(--s-0);
+  color: rgba(255, 255, 255, 0.82);
+  margin: 0 0 var(--sp-5);
+  line-height: 1.65;
+}
+
+/* ── Form ────────────────────────────────────────────────────── */
+.s-newsletter__form {
+  width: 100%;
+}
+
+.s-newsletter__form-row {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  background: #fff;
+  border-radius: var(--radius-pill);
+  padding: 5px 5px 5px var(--sp-4);
+  box-shadow: 0 4px 22px rgba(0,0,0,0.14);
+  max-width: 540px;
+  margin-inline: auto;
+}
+
+/* ── Email input ─────────────────────────────────────────────── */
+.s-newsletter__input {
+  flex: 1 1 0;
+  min-width: 0;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-family: var(--font-body);
+  font-size: var(--s-0);
+  color: var(--ink);
+  padding-block: .6em;
+  line-height: 1;
+}
+.s-newsletter__input::placeholder {
+  color: var(--tan);
+}
+
+/* ── Submit button — pill gold inside the field ──────────────── */
+.s-newsletter__btn {
+  flex-shrink: 0;
+  /* inherits .btn .btn-gold from base.css */
+  padding: .9em 1.8em;
+  font-size: var(--s--1);
+}
+
+/* ── Fine print ──────────────────────────────────────────────── */
+.s-newsletter__fine {
+  margin: var(--sp-3) 0 0;
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  color: rgba(255, 255, 255, 0.55);
+  letter-spacing: .02em;
+}
+
+/* ── SR-only ─────────────────────────────────────────────────── */
+.s-newsletter .sr-only {
+  position: absolute;
+  width: 1px; height: 1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+}
+
+/* ── Mobile stacking ─────────────────────────────────────────── */
+@media (max-width: 600px) {
+  .s-newsletter {
+    padding-block: var(--sp-6);
+  }
+  .s-newsletter__form-row {
+    flex-direction: column;
+    align-items: stretch;
+    border-radius: var(--radius-lg);
+    padding: var(--sp-3);
+    gap: var(--sp-3);
+  }
+  .s-newsletter__input {
+    text-align: center;
+    padding-block: .55em;
+  }
+  .s-newsletter__btn {
+    width: 100%;
+    justify-content: center;
+  }
+  .s-newsletter__heading {
+    font-size: var(--s-2);
+  }
+}

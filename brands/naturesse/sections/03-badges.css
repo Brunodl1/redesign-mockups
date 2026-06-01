@@ -1,0 +1,154 @@
+/* ============================================================
+   Section 03 — Badge Strip (.s-badges)
+   Naturesse Cosmetics — natural soft-luxe, FR
+   ============================================================ */
+
+/* --- token declarations (mirror base.css for standalone use) --- */
+.s-badges {
+  --bg:          #FCFBF6;
+  --surface:     #fff;
+  --surface-2:   #EEF2E6;
+  --sand:        #F3ECDF;
+  --ink:         #1C1E18;
+  --ink-soft:    #5C5E54;
+  --accent:      #4F7C29;
+  --accent-ink:  #fff;
+  --accent-deep: #3C611E;
+  --gold:        #E4A92B;
+  --gold-soft:   #FBE6BC;
+  --tan:         #BBA783;
+  --dark:        #33322C;
+  --line:        #E6E0D2;
+  --star:        #E4A92B;
+  --font-display:"Poppins","Helvetica Neue",Arial,sans-serif;
+  --font-body:   "Lato","Helvetica Neue",Arial,sans-serif;
+  --s--1:  .82rem;
+  --s-0:   1.05rem;
+  --sp-1:  .25rem;
+  --sp-2:  .5rem;
+  --sp-3:  1rem;
+  --sp-4:  1.5rem;
+  --sp-5:  2.5rem;
+  --radius-pill: 50px;
+}
+
+/* --- band layout --- */
+.s-badges {
+  background: var(--surface-2);
+  padding-block: var(--sp-4);   /* slim — intentionally reduced */
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+/* --- badge list row --- */
+.s-badges .badges-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-3);
+  flex-wrap: wrap;
+}
+
+/* --- individual badge --- */
+.s-badges .badge-item {
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+  flex: 1 1 auto;
+  min-width: 140px;
+  max-width: 220px;
+}
+
+/* --- icon wrapper --- */
+.s-badges .badge-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent);
+  flex-shrink: 0;
+  width: 30px;
+  height: 30px;
+}
+
+.s-badges .badge-icon svg {
+  display: block;
+  stroke: currentColor;
+}
+
+/* --- label text --- */
+.s-badges .badge-label {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: .72rem;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+  color: var(--ink);
+  line-height: 1.25;
+}
+
+/* --- vertical divider between items (desktop) --- */
+.s-badges .badge-item + .badge-item {
+  border-left: 1px solid var(--line);
+  padding-left: var(--sp-3);
+}
+
+/* -------------------------------------------------------
+   Mobile (≤ 780px): 2-per-row grid, tidy wrap
+   ------------------------------------------------------- */
+@media (max-width: 780px) {
+  .s-badges {
+    padding-block: var(--sp-3) var(--sp-4);
+  }
+
+  .s-badges .badges-list {
+    justify-content: flex-start;
+    gap: var(--sp-3) var(--sp-4);
+  }
+
+  .s-badges .badge-item {
+    flex: 0 0 calc(50% - var(--sp-4));
+    min-width: 0;
+    max-width: none;
+    border-left: none !important;
+    padding-left: 0 !important;
+  }
+
+  /* last item alone on its row → centre it */
+  .s-badges .badge-item:last-child:nth-child(odd) {
+    flex: 0 0 100%;
+    justify-content: center;
+  }
+}
+
+/* -------------------------------------------------------
+   Very small (≤ 480px): horizontal scroll fallback
+   ------------------------------------------------------- */
+@media (max-width: 480px) {
+  .s-badges .wrap {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-inline: var(--sp-3);
+  }
+
+  .s-badges .badges-list {
+    flex-wrap: nowrap;
+    width: max-content;
+    gap: var(--sp-4);
+    padding-bottom: var(--sp-2); /* space for scrollbar */
+  }
+
+  .s-badges .badge-item {
+    flex: 0 0 auto;
+    min-width: 140px;
+    border-left: none !important;
+    padding-left: 0 !important;
+  }
+
+  .s-badges .badge-item:last-child:nth-child(odd) {
+    flex: 0 0 auto;
+    justify-content: flex-start;
+  }
+}

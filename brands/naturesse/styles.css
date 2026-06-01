@@ -1,0 +1,3206 @@
+/* ============================================================
+   Naturesse Cosmetics — base.css (foundation)
+   Argan-oil clean beauty · bio/équitable · "Naturez-vous la vie!" · QC/Canada · FR
+   Natural soft-luxe: warm cream + sauge green + signature gold pill. Poppins.
+   ============================================================ */
+:root{
+  /* color */
+  --bg:        #FCFBF6;   /* warm cream-white page */
+  --surface:   #FFFFFF;   /* cards */
+  --surface-2: #EEF2E6;   /* pale sage band */
+  --sand:      #F3ECDF;   /* warm sand alt band */
+  --ink:       #1C1E18;   /* near-black green-ink */
+  --ink-soft:  #5C5E54;   /* warm olive-grey — secondary text */
+  --accent:    #4F7C29;   /* brand sauge/olive green — CTAs, eyebrows, links */
+  --accent-ink:#FFFFFF;
+  --accent-deep:#3C611E;  /* hover */
+  --gold:      #E4A92B;   /* warm gold — signature pill CTA (dark ink on it) */
+  --gold-soft: #FBE6BC;   /* pale gold tint */
+  --tan:       #BBA783;   /* warm sand/tan — links, dividers */
+  --dark:      #33322C;   /* warm charcoal footer/band */
+  --line:      #E6E0D2;   /* warm hairline */
+  --star:      #E4A92B;   /* gold stars */
+  --btn:       #4F7C29;
+  --btn-ink:   #FFFFFF;
+  /* type */
+  --font-display: "Poppins", "Helvetica Neue", Arial, sans-serif;
+  --font-body:    "Lato", "Helvetica Neue", Arial, sans-serif;
+  --s--1: .82rem;
+  --s-0:  1.05rem;
+  --s-1:  1.25rem;
+  --s-2:  1.6rem;
+  --s-3:  2.15rem;
+  --s-4:  3rem;
+  --s-5:  3.9rem;
+  /* space */
+  --sp-1:.25rem; --sp-2:.5rem; --sp-3:1rem; --sp-4:1.5rem;
+  --sp-5:2.5rem; --sp-6:4rem; --sp-7:6rem;
+  --sp-8:8rem;
+  /* shape */
+  --radius:10px; --radius-lg:18px; --radius-pill:50px;
+  --shadow:0 16px 44px rgba(28,30,24,.10);
+  --maxw:1280px;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html,body{overflow-x:clip}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--ink);
+  font-family:var(--font-body);
+  font-size:var(--s-0);
+  line-height:1.65;
+  font-weight:400;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+
+/* headings — Poppins, clean + soft */
+h1,h2,h3{font-family:var(--font-display);font-weight:600;line-height:1.12;letter-spacing:-.015em;margin:0 0 var(--sp-3);color:var(--ink)}
+h1{font-size:var(--s-5);font-weight:600}
+h2{font-size:var(--s-4);font-weight:500}
+h3{font-size:var(--s-2);font-weight:500}
+p{margin:0 0 var(--sp-3)}
+
+/* layout */
+.wrap{max-width:var(--maxw);margin:0 auto;padding-inline:var(--sp-4);width:100%}
+.sec{position:relative;padding-block:var(--sp-7)}
+.section{position:relative}
+
+/* eyebrow — green tracked caps */
+.eyebrow{
+  display:inline-block;font-family:var(--font-display);font-weight:600;
+  font-size:var(--s--1);letter-spacing:.18em;text-transform:uppercase;
+  color:var(--accent);margin:0 0 var(--sp-3)
+}
+
+/* buttons — PILL, uppercase light-tracked */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:.55em;
+  font-family:var(--font-display);font-weight:600;font-size:var(--s--1);
+  letter-spacing:.08em;text-transform:uppercase;
+  padding:1.05em 2.2em;border-radius:var(--radius-pill);border:1.5px solid transparent;
+  cursor:pointer;transition:background .22s,color .22s,border-color .22s,transform .15s,box-shadow .2s;
+  line-height:1;white-space:nowrap
+}
+.btn:hover{transform:translateY(-2px)}
+.btn-primary{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.btn-primary:hover{background:var(--accent-deep);border-color:var(--accent-deep)}
+.btn-gold{background:var(--gold);color:var(--ink);border-color:var(--gold)}
+.btn-gold:hover{background:var(--accent);color:#fff;border-color:var(--accent)}
+.btn-outline{background:transparent;color:var(--accent);border-color:var(--accent)}
+.btn-outline:hover{background:var(--accent);color:#fff}
+.btn-light{background:#fff;color:var(--accent);border-color:#fff}
+.btn-light:hover{background:transparent;color:#fff;border-color:#fff}
+.btn-block{display:flex;width:100%}
+
+/* rating stars */
+.stars{color:var(--star);letter-spacing:.06em;font-size:var(--s-0)}
+
+/* chips */
+.chip{
+  display:inline-flex;align-items:center;gap:.45em;
+  font-family:var(--font-display);font-weight:600;font-size:var(--s--1);
+  letter-spacing:.06em;text-transform:uppercase;
+  padding:.5em 1em;border-radius:var(--radius-pill);border:1.5px solid var(--line);
+  background:var(--surface);color:var(--ink);line-height:1
+}
+
+/* section icons */
+.ic{width:40px;height:40px;display:block;stroke:currentColor;stroke-width:1.5;fill:none}
+
+/* floats — static, hidden mobile */
+.float{position:absolute;pointer-events:none;z-index:5}
+.float img{width:100%;transform:rotate(var(--rot,0deg));
+  filter:drop-shadow(0 24px 22px rgba(28,30,24,.18))}
+@media(max-width:1000px){.float{display:none}}
+
+/* scroll-reveal (3D) — NOT on hero */
+.reveal{opacity:0;transform:perspective(900px) rotateX(8deg) translateY(26px);
+  transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+
+/* responsive type */
+@media(max-width:780px){
+  :root{--s-5:2.6rem;--s-4:2.05rem;--s-3:1.7rem;--s-2:1.35rem}
+  .sec{padding-block:var(--sp-6)}
+}
+/* ============================================================
+   Naturesse Cosmetics — Section 01: Announcement bar + Header
+   Natural soft-luxe · ECOCERT bio · Québec/Canada · FR
+   All rules scoped to .announce / .site-header
+   ============================================================ */
+
+/* ── Announcement bar ─────────────────────────────────────── */
+.announce {
+  background: var(--accent);
+  color: var(--accent-ink);
+  width: 100%;
+  padding-block: .55rem;
+}
+
+.announce__inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.announce__items {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+  gap: 0;
+  white-space: nowrap;
+  font-family: var(--font-display);
+  font-size: var(--s--1);
+  font-weight: 500;
+  letter-spacing: .055em;
+  line-height: 1.4;
+}
+
+.announce__item a,
+.announce__item {
+  color: var(--accent-ink);
+  opacity: .93;
+  text-decoration: none;
+  transition: opacity .18s;
+}
+
+.announce__item a:hover {
+  opacity: 1;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.announce__sep {
+  color: var(--accent-ink);
+  opacity: .55;
+  padding-inline: .25em;
+}
+
+/* Mobile: keep only the first bit */
+@media (max-width: 780px) {
+  .announce__items {
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  .announce__item:not(.announce__item--primary),
+  .announce__sep {
+    display: none;
+  }
+  .announce__item--primary {
+    display: inline;
+  }
+}
+
+/* ── Site header ─────────────────────────────────────────── */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 900;
+  background: var(--bg);
+  border-bottom: 1px solid var(--line);
+  box-shadow: 0 2px 16px rgba(28, 30, 24, .05);
+}
+
+.site-header__inner {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: var(--sp-3);
+  height: 72px;
+}
+
+/* ── LEFT — nav / hamburger ──────────────────────────────── */
+.site-header__left {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  min-width: 0;
+}
+
+/* Hamburger — hidden on desktop */
+.site-header__hamburger {
+  display: none;
+  background: none;
+  border: none;
+  padding: .35rem;
+  cursor: pointer;
+  color: var(--ink);
+  border-radius: var(--radius);
+  transition: color .18s, background .18s;
+  flex-shrink: 0;
+  line-height: 0;
+}
+.site-header__hamburger:hover {
+  color: var(--accent);
+  background: var(--surface-2);
+}
+
+/* Desktop nav */
+.site-header__nav {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  flex-wrap: nowrap;
+  white-space: nowrap;
+}
+
+.site-header__nav-link {
+  font-family: var(--font-display);
+  font-size: var(--s--1);
+  font-weight: 500;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--ink);
+  text-decoration: none;
+  padding-block: .25rem;
+  position: relative;
+  transition: color .18s;
+}
+.site-header__nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 1.5px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .22s cubic-bezier(.4, 0, .2, 1);
+  border-radius: 2px;
+}
+.site-header__nav-link:hover {
+  color: var(--accent);
+}
+.site-header__nav-link:hover::after {
+  transform: scaleX(1);
+}
+
+/* ── CENTER — logo ───────────────────────────────────────── */
+.site-header__logo-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.site-header__logo-link {
+  display: block;
+  line-height: 0;
+}
+
+.site-header__logo-img {
+  width: 118px;
+  max-width: 118px;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
+/* ── RIGHT — actions ─────────────────────────────────────── */
+.site-header__actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--sp-2);
+  min-width: 0;
+}
+
+/* Boutique pill CTA — desktop only */
+.site-header__cta {
+  padding: .65em 1.4em;
+  font-size: calc(var(--s--1) * .9);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* Icon buttons */
+.site-header__icon-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  padding: .45rem;
+  cursor: pointer;
+  color: var(--ink);
+  border-radius: var(--radius);
+  transition: color .18s, background .18s;
+  line-height: 0;
+  flex-shrink: 0;
+}
+.site-header__icon-btn:hover {
+  color: var(--accent);
+  background: var(--surface-2);
+}
+
+/* Cart badge */
+.site-header__cart-badge {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  min-width: 16px;
+  height: 16px;
+  padding: 0 .3em;
+  border-radius: var(--radius-pill);
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-family: var(--font-display);
+  font-size: .6rem;
+  font-weight: 700;
+  line-height: 16px;
+  text-align: center;
+  pointer-events: none;
+}
+
+/* ── Mobile (≤780px) ─────────────────────────────────────── */
+@media (max-width: 780px) {
+  .site-header__inner {
+    height: 60px;
+    gap: var(--sp-2);
+  }
+
+  /* Show hamburger, hide desktop nav */
+  .site-header__hamburger {
+    display: inline-flex;
+  }
+  .site-header__nav {
+    display: none;
+  }
+
+  /* Logo slightly smaller on mobile */
+  .site-header__logo-img {
+    width: 100px;
+    max-width: 100px;
+  }
+
+  /* Hide boutique CTA, search, account on mobile */
+  .site-header__cta,
+  .site-header__icon-btn--search,
+  .site-header__icon-btn--account {
+    display: none;
+  }
+
+  /* Right side: cart only — no shrink */
+  .site-header__actions {
+    gap: 0;
+  }
+}
+/* ============================================================
+   02-hero.css — Naturesse · CENTERED EDITORIAL hero
+   All rules scoped under .s-hero
+   ============================================================ */
+
+/* ── Section shell ──────────────────────────────────────────── */
+.s-hero {
+  background:
+    radial-gradient(ellipse 70% 60% at 50% 0%,
+      var(--surface-2) 0%,
+      var(--bg) 72%);
+  padding-block: var(--sp-7) calc(var(--sp-7) + var(--sp-4));
+  overflow: hidden;
+  position: relative;
+}
+
+/* ── Inner layout: column stack, centered ───────────────────── */
+.s-hero__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sp-6);
+  text-align: center;
+}
+
+/* ── Text column ────────────────────────────────────────────── */
+.s-hero__text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 760px;
+  min-width: 0;
+  width: 100%;
+}
+
+/* Eyebrow already styled by base; just add bottom spacing */
+.s-hero .eyebrow {
+  margin-bottom: var(--sp-3);
+}
+
+/* Headline */
+.s-hero__h1 {
+  font-family: var(--font-display);
+  font-size: var(--s-5);
+  font-weight: 600;
+  line-height: 1.08;
+  letter-spacing: -.022em;
+  color: var(--ink);
+  margin: 0 0 var(--sp-4);
+  min-width: 0;
+  max-width: 100%;
+}
+
+/* Green accent word */
+.s-hero__accent {
+  color: var(--accent);
+}
+
+/* Subheading / value-prop */
+.s-hero__sub {
+  font-family: var(--font-body);
+  font-size: var(--s-1);
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--ink-soft);
+  max-width: 600px;
+  min-width: 0;
+  margin: 0 0 var(--sp-5);
+}
+
+/* CTA row — single gold pill */
+.s-hero__cta-row {
+  display: flex;
+  justify-content: center;
+  margin-bottom: var(--sp-5);
+  min-width: 0;
+  max-width: 100%;
+}
+
+/* Chips row */
+.s-hero__chips {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--sp-2);
+  margin-bottom: var(--sp-4);
+  min-width: 0;
+  max-width: 100%;
+}
+
+/* Rating line */
+.s-hero__rating {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sp-2);
+  margin: 0;
+  min-width: 0;
+}
+
+.s-hero__rating-label {
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  color: var(--ink-soft);
+  letter-spacing: .04em;
+}
+
+/* ── Product visual ─────────────────────────────────────────── */
+.s-hero__visual {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* give enough room for the halo + badge */
+  width: 320px;
+  height: 420px;
+  min-width: 0;
+  flex-shrink: 0;
+}
+
+/* Soft circular halo — CSS radial disc, no baked shadow */
+.s-hero__halo {
+  position: absolute;
+  inset: 50% auto auto 50%;
+  transform: translate(-50%, -50%);
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at center,
+    var(--gold-soft) 0%,
+    var(--surface-2) 55%,
+    transparent 80%
+  );
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Bottle image */
+.s-hero__bottle {
+  position: relative;
+  z-index: 1;
+  height: 340px;
+  width: auto;
+  max-width: 100%;
+  min-width: 0;
+  object-fit: contain;
+  /* Subtle lift shadow via filter instead of box-shadow */
+  filter: drop-shadow(0 18px 32px rgba(28, 30, 24, .13));
+}
+
+/* Round "100% bio" badge */
+.s-hero__badge {
+  position: absolute;
+  top: 30px;
+  right: -4px;
+  z-index: 2;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-family: var(--font-display);
+  font-size: .62rem;
+  font-weight: 700;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  line-height: 1.25;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  box-shadow: 0 4px 14px rgba(79, 124, 41, .28);
+  pointer-events: none;
+}
+
+/* ── Mobile (≤ 780px) ───────────────────────────────────────── */
+@media (max-width: 780px) {
+  .s-hero {
+    padding-block: var(--sp-6) var(--sp-6);
+  }
+
+  .s-hero__inner {
+    gap: var(--sp-4);
+  }
+
+  .s-hero__h1 {
+    font-size: var(--s-4); /* 2.05rem from base mobile override */
+    margin-bottom: var(--sp-3);
+  }
+
+  .s-hero__sub {
+    font-size: var(--s-0);
+    margin-bottom: var(--sp-4);
+  }
+
+  .s-hero__cta-row {
+    margin-bottom: var(--sp-4);
+  }
+
+  /* Gold pill stretches to touch on small screens */
+  .s-hero__cta-row .btn {
+    width: 100%;
+    max-width: 360px;
+  }
+
+  .s-hero__visual {
+    width: 260px;
+    height: 340px;
+  }
+
+  .s-hero__halo {
+    width: 240px;
+    height: 240px;
+  }
+
+  .s-hero__bottle {
+    height: 260px;
+  }
+
+  .s-hero__badge {
+    width: 52px;
+    height: 52px;
+    font-size: .55rem;
+    top: 22px;
+    right: 0;
+  }
+}
+
+/* ── Tiny screens (≤ 420px) ─────────────────────────────────── */
+@media (max-width: 420px) {
+  .s-hero__chips {
+    gap: var(--sp-2);
+  }
+
+  .s-hero .chip {
+    font-size: .68rem;
+  }
+}
+/* ============================================================
+   Section 03 — Badge Strip (.s-badges)
+   Naturesse Cosmetics — natural soft-luxe, FR
+   ============================================================ */
+
+/* --- token declarations (mirror base.css for standalone use) --- */
+.s-badges {
+  --bg:          #FCFBF6;
+  --surface:     #fff;
+  --surface-2:   #EEF2E6;
+  --sand:        #F3ECDF;
+  --ink:         #1C1E18;
+  --ink-soft:    #5C5E54;
+  --accent:      #4F7C29;
+  --accent-ink:  #fff;
+  --accent-deep: #3C611E;
+  --gold:        #E4A92B;
+  --gold-soft:   #FBE6BC;
+  --tan:         #BBA783;
+  --dark:        #33322C;
+  --line:        #E6E0D2;
+  --star:        #E4A92B;
+  --font-display:"Poppins","Helvetica Neue",Arial,sans-serif;
+  --font-body:   "Lato","Helvetica Neue",Arial,sans-serif;
+  --s--1:  .82rem;
+  --s-0:   1.05rem;
+  --sp-1:  .25rem;
+  --sp-2:  .5rem;
+  --sp-3:  1rem;
+  --sp-4:  1.5rem;
+  --sp-5:  2.5rem;
+  --radius-pill: 50px;
+}
+
+/* --- band layout --- */
+.s-badges {
+  background: var(--surface-2);
+  padding-block: var(--sp-4);   /* slim — intentionally reduced */
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+/* --- badge list row --- */
+.s-badges .badges-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-3);
+  flex-wrap: wrap;
+}
+
+/* --- individual badge --- */
+.s-badges .badge-item {
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+  flex: 1 1 auto;
+  min-width: 140px;
+  max-width: 220px;
+}
+
+/* --- icon wrapper --- */
+.s-badges .badge-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent);
+  flex-shrink: 0;
+  width: 30px;
+  height: 30px;
+}
+
+.s-badges .badge-icon svg {
+  display: block;
+  stroke: currentColor;
+}
+
+/* --- label text --- */
+.s-badges .badge-label {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: .72rem;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+  color: var(--ink);
+  line-height: 1.25;
+}
+
+/* --- vertical divider between items (desktop) --- */
+.s-badges .badge-item + .badge-item {
+  border-left: 1px solid var(--line);
+  padding-left: var(--sp-3);
+}
+
+/* -------------------------------------------------------
+   Mobile (≤ 780px): 2-per-row grid, tidy wrap
+   ------------------------------------------------------- */
+@media (max-width: 780px) {
+  .s-badges {
+    padding-block: var(--sp-3) var(--sp-4);
+  }
+
+  .s-badges .badges-list {
+    justify-content: flex-start;
+    gap: var(--sp-3) var(--sp-4);
+  }
+
+  .s-badges .badge-item {
+    flex: 0 0 calc(50% - var(--sp-4));
+    min-width: 0;
+    max-width: none;
+    border-left: none !important;
+    padding-left: 0 !important;
+  }
+
+  /* last item alone on its row → centre it */
+  .s-badges .badge-item:last-child:nth-child(odd) {
+    flex: 0 0 100%;
+    justify-content: center;
+  }
+}
+
+/* -------------------------------------------------------
+   Very small (≤ 480px): horizontal scroll fallback
+   ------------------------------------------------------- */
+@media (max-width: 480px) {
+  .s-badges .wrap {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-inline: var(--sp-3);
+  }
+
+  .s-badges .badges-list {
+    flex-wrap: nowrap;
+    width: max-content;
+    gap: var(--sp-4);
+    padding-bottom: var(--sp-2); /* space for scrollbar */
+  }
+
+  .s-badges .badge-item {
+    flex: 0 0 auto;
+    min-width: 140px;
+    border-left: none !important;
+    padding-left: 0 !important;
+  }
+
+  .s-badges .badge-item:last-child:nth-child(odd) {
+    flex: 0 0 auto;
+    justify-content: flex-start;
+  }
+}
+/* ============================================================
+   Section 04 — Le Secret (.s-secret)
+   Naturesse Cosmetics — two hero ingredients, FR
+   ============================================================ */
+
+/* --- token declarations (mirror base.css for standalone use) --- */
+.s-secret {
+  --bg:          #FCFBF6;
+  --surface:     #fff;
+  --surface-2:   #EEF2E6;
+  --sand:        #F3ECDF;
+  --ink:         #1C1E18;
+  --ink-soft:    #5C5E54;
+  --accent:      #4F7C29;
+  --accent-ink:  #fff;
+  --accent-deep: #3C611E;
+  --gold:        #E4A92B;
+  --gold-soft:   #FBE6BC;
+  --tan:         #BBA783;
+  --dark:        #33322C;
+  --line:        #E6E0D2;
+  --star:        #E4A92B;
+  --font-display:"Poppins","Helvetica Neue",Arial,sans-serif;
+  --font-body:   "Lato","Helvetica Neue",Arial,sans-serif;
+  --s--1:  .82rem;
+  --s-0:   1.05rem;
+  --s-1:   1.25rem;
+  --s-2:   1.6rem;
+  --s-3:   2.15rem;
+  --s-4:   3rem;
+  --s-5:   3.9rem;
+  --sp-1:  .25rem;
+  --sp-2:  .5rem;
+  --sp-3:  1rem;
+  --sp-4:  1.5rem;
+  --sp-5:  2.5rem;
+  --sp-6:  4rem;
+  --sp-7:  6rem;
+  --sp-8:  8rem;
+  --radius:     10px;
+  --radius-lg:  18px;
+  --radius-pill:50px;
+  --shadow:     0 16px 44px rgba(28,30,24,.10);
+  --maxw:       1280px;
+}
+
+/* --- section background --- */
+.s-secret {
+  background: var(--bg);
+}
+
+/* --- 2-column grid --- */
+.s-secret .secret-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 500px) minmax(0, 1fr);
+  gap: var(--sp-7);           /* generous column gap */
+  align-items: center;
+}
+
+/* -------------------------------------------------------
+   Image column
+   ------------------------------------------------------- */
+.s-secret .secret-img-col {
+  /* reveal delay slightly behind text */
+  transition-delay: 0s;
+}
+
+.s-secret .secret-img-wrap {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  max-width: 500px;
+  width: 100%;
+  aspect-ratio: 2 / 3;        /* portrait shape */
+}
+
+.s-secret .secret-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+
+/* -------------------------------------------------------
+   Text column
+   ------------------------------------------------------- */
+.s-secret .secret-text-col {
+  transition-delay: .12s;
+}
+
+/* eyebrow — inherits from base .eyebrow; ensure margin */
+.s-secret .eyebrow {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: var(--s--1);
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 0 0 var(--sp-3);
+}
+
+/* heading */
+.s-secret .secret-heading {
+  font-family: var(--font-display);
+  font-size: var(--s-4);
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: -.015em;
+  color: var(--ink);
+  margin: 0 0 var(--sp-4);
+}
+
+/* lead paragraph */
+.s-secret .secret-lead {
+  font-family: var(--font-body);
+  font-size: var(--s-0);
+  color: var(--ink-soft);
+  line-height: 1.7;
+  margin: 0 0 var(--sp-5);
+}
+
+/* -------------------------------------------------------
+   Ingredient list
+   ------------------------------------------------------- */
+.s-secret .ingredient-list {
+  list-style: none;
+  margin: 0 0 var(--sp-5);
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+}
+
+.s-secret .ingredient-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--sp-3);
+}
+
+.s-secret .ingredient-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--accent);
+  width: 42px;
+  height: 42px;
+  background: var(--surface-2);
+  border-radius: var(--radius);
+  margin-top: .1em;
+}
+
+.s-secret .ingredient-icon svg {
+  display: block;
+  stroke: currentColor;
+}
+
+.s-secret .ingredient-body {
+  display: flex;
+  flex-direction: column;
+  gap: .25rem;
+}
+
+.s-secret .ingredient-name {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: var(--s-0);
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+.s-secret .ingredient-desc {
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  color: var(--ink-soft);
+  line-height: 1.55;
+}
+
+/* -------------------------------------------------------
+   Chips row
+   ------------------------------------------------------- */
+.s-secret .secret-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+  margin-bottom: var(--sp-5);
+}
+
+/* chip — inherits base .chip styles; scoped background tweak */
+.s-secret .chip {
+  display: inline-flex;
+  align-items: center;
+  gap: .45em;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: var(--s--1);
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  padding: .5em 1em;
+  border-radius: var(--radius-pill);
+  border: 1.5px solid var(--line);
+  background: var(--surface);
+  color: var(--ink);
+  line-height: 1;
+}
+
+/* -------------------------------------------------------
+   CTA button
+   ------------------------------------------------------- */
+.s-secret .secret-cta {
+  /* .btn + .btn-primary styles from base; no extra needed */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: var(--s--1);
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  padding: 1.05em 2.2em;
+  border-radius: var(--radius-pill);
+  border: 1.5px solid var(--accent);
+  background: var(--accent);
+  color: var(--accent-ink);
+  cursor: pointer;
+  transition: background .22s, color .22s, border-color .22s, transform .15s, box-shadow .2s;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.s-secret .secret-cta:hover {
+  background: var(--accent-deep);
+  border-color: var(--accent-deep);
+  transform: translateY(-2px);
+}
+
+/* -------------------------------------------------------
+   Reveal — scoped under s-secret (uses base classes)
+   ------------------------------------------------------- */
+.s-secret .reveal {
+  opacity: 0;
+  transform: perspective(900px) rotateX(8deg) translateY(26px);
+  transition: opacity .7s ease, transform .7s cubic-bezier(.2,.7,.2,1);
+}
+
+.s-secret .reveal.in {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .s-secret .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* -------------------------------------------------------
+   Responsive — tablet (≤ 960px): narrow gap, smaller img
+   ------------------------------------------------------- */
+@media (max-width: 960px) {
+  .s-secret .secret-grid {
+    gap: var(--sp-6);
+  }
+
+  .s-secret .secret-heading {
+    font-size: var(--s-3);
+  }
+}
+
+/* -------------------------------------------------------
+   Mobile (≤ 780px): stack image ABOVE text
+   ------------------------------------------------------- */
+@media (max-width: 780px) {
+  .s-secret .secret-grid {
+    grid-template-columns: 1fr;
+    gap: var(--sp-5);
+  }
+
+  .s-secret .secret-img-col {
+    order: -1;                    /* image above text */
+  }
+
+  .s-secret .secret-img-wrap {
+    max-width: 100%;
+    aspect-ratio: 3 / 2;         /* landscape on mobile */
+  }
+
+  .s-secret .secret-img-wrap img {
+    object-position: center 20%; /* keep face/product in frame */
+  }
+
+  .s-secret .secret-heading {
+    font-size: 2.05rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .s-secret .secret-chips {
+    gap: var(--sp-2) var(--sp-2);
+  }
+}
+/* ============================================================
+   Section 05 — Nos Engagements (.s-engagements)
+   Naturesse Cosmetics — 4-up icon grid, FR
+   ============================================================ */
+
+/* --- token declarations (mirror base.css for standalone use) --- */
+.s-engagements {
+  --bg:          #FCFBF6;
+  --surface:     #fff;
+  --surface-2:   #EEF2E6;
+  --sand:        #F3ECDF;
+  --ink:         #1C1E18;
+  --ink-soft:    #5C5E54;
+  --accent:      #4F7C29;
+  --accent-ink:  #fff;
+  --accent-deep: #3C611E;
+  --gold:        #E4A92B;
+  --gold-soft:   #FBE6BC;
+  --tan:         #BBA783;
+  --dark:        #33322C;
+  --line:        #E6E0D2;
+  --star:        #E4A92B;
+  --font-display:"Poppins","Helvetica Neue",Arial,sans-serif;
+  --font-body:   "Lato","Helvetica Neue",Arial,sans-serif;
+  --s--1:  .82rem;
+  --s-0:   1.05rem;
+  --s-1:   1.25rem;
+  --s-2:   1.6rem;
+  --s-3:   2.15rem;
+  --s-4:   3rem;
+  --s-5:   3.9rem;
+  --sp-1:  .25rem;
+  --sp-2:  .5rem;
+  --sp-3:  1rem;
+  --sp-4:  1.5rem;
+  --sp-5:  2.5rem;
+  --sp-6:  4rem;
+  --sp-7:  6rem;
+  --sp-8:  8rem;
+  --radius:     10px;
+  --radius-lg:  18px;
+  --radius-pill:50px;
+  --shadow:     0 16px 44px rgba(28,30,24,.10);
+  --maxw:       1280px;
+}
+
+/* --- section background: pale sage band --- */
+.s-engagements {
+  background: var(--surface-2);
+}
+
+/* -------------------------------------------------------
+   Header block
+   ------------------------------------------------------- */
+.s-engagements .engagements-hd {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto var(--sp-7);
+}
+
+.s-engagements .eyebrow {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: var(--s--1);
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 0 0 var(--sp-3);
+}
+
+.s-engagements .engagements-heading {
+  font-family: var(--font-display);
+  font-size: var(--s-4);
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: -.015em;
+  color: var(--ink);
+  margin: 0 0 var(--sp-3);
+}
+
+.s-engagements .engagements-intro {
+  font-family: var(--font-body);
+  font-size: var(--s-0);
+  color: var(--ink-soft);
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* -------------------------------------------------------
+   4-up icon grid
+   ------------------------------------------------------- */
+.s-engagements .engagements-grid {
+  list-style: none;
+  margin: 0 0 var(--sp-7);
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--sp-5);
+}
+
+/* -------------------------------------------------------
+   Individual card
+   ------------------------------------------------------- */
+.s-engagements .engagement-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--sp-3);
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  border: 1.5px solid var(--line);
+  padding: var(--sp-6) var(--sp-4) var(--sp-5);
+  transition: box-shadow .25s, transform .22s;
+}
+
+.s-engagements .engagement-card:hover {
+  box-shadow: var(--shadow);
+  transform: translateY(-4px);
+}
+
+/* Staggered reveal delays */
+.s-engagements .engagement-card:nth-child(1) { transition-delay: .05s; }
+.s-engagements .engagement-card:nth-child(2) { transition-delay: .15s; }
+.s-engagements .engagement-card:nth-child(3) { transition-delay: .25s; }
+.s-engagements .engagement-card:nth-child(4) { transition-delay: .35s; }
+
+/* -------------------------------------------------------
+   Circular icon wrap — sage tint
+   ------------------------------------------------------- */
+.s-engagements .engagement-icon-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 76px;
+  height: 76px;
+  border-radius: 50%;
+  background: var(--surface-2);
+  color: var(--accent);
+  margin-bottom: var(--sp-2);
+  border: 2px solid rgba(79,124,41,.12);
+}
+
+/* Gold tint on hover */
+.s-engagements .engagement-card:hover .engagement-icon-wrap {
+  background: var(--gold-soft);
+  color: var(--accent-deep);
+  border-color: rgba(228,169,43,.25);
+}
+
+/* .ic SVG — 40px, line icon */
+.s-engagements .engagement-icon-wrap .ic {
+  width: 40px;
+  height: 40px;
+  stroke: currentColor;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none;
+  display: block;
+  transition: color .22s;
+}
+
+/* -------------------------------------------------------
+   Card text
+   ------------------------------------------------------- */
+.s-engagements .engagement-title {
+  font-family: var(--font-display);
+  font-size: var(--s-1);
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1.25;
+  margin: 0;
+}
+
+.s-engagements .engagement-desc {
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  color: var(--ink-soft);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* -------------------------------------------------------
+   CTA row
+   ------------------------------------------------------- */
+.s-engagements .engagements-cta-wrap {
+  display: flex;
+  justify-content: center;
+}
+
+/* btn-outline — scoped (inherits base styles if loaded) */
+.s-engagements .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: var(--s--1);
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  padding: 1.05em 2.6em;
+  border-radius: var(--radius-pill);
+  border: 1.5px solid transparent;
+  cursor: pointer;
+  transition: background .22s, color .22s, border-color .22s, transform .15s, box-shadow .2s;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.s-engagements .btn-outline {
+  background: transparent;
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+.s-engagements .btn-outline:hover {
+  background: var(--accent);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+/* -------------------------------------------------------
+   Reveal
+   ------------------------------------------------------- */
+.s-engagements .reveal {
+  opacity: 0;
+  transform: perspective(900px) rotateX(8deg) translateY(26px);
+  transition: opacity .7s ease, transform .7s cubic-bezier(.2,.7,.2,1);
+}
+
+.s-engagements .reveal.in {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .s-engagements .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* -------------------------------------------------------
+   Responsive — tablet 2-up (≤ 960px)
+   ------------------------------------------------------- */
+@media (max-width: 960px) {
+  .s-engagements .engagements-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--sp-4);
+  }
+
+  .s-engagements .engagements-heading {
+    font-size: var(--s-3);
+  }
+}
+
+/* -------------------------------------------------------
+   Mobile (≤ 540px): 1-column, compact padding
+   ------------------------------------------------------- */
+@media (max-width: 540px) {
+  .s-engagements .engagements-grid {
+    grid-template-columns: 1fr;
+    gap: var(--sp-3);
+  }
+
+  .s-engagements .engagement-card {
+    padding: var(--sp-5) var(--sp-4);
+    flex-direction: row;
+    align-items: flex-start;
+    text-align: left;
+    gap: var(--sp-4);
+  }
+
+  .s-engagements .engagement-icon-wrap {
+    flex-shrink: 0;
+    margin-bottom: 0;
+  }
+
+  .s-engagements .engagements-hd {
+    margin-bottom: var(--sp-5);
+  }
+
+  .s-engagements .engagements-heading {
+    font-size: 2.05rem;
+  }
+}
+
+@media (max-width: 780px) {
+  .s-engagements .engagements-hd {
+    margin-bottom: var(--sp-6);
+  }
+}
+/* ============================================================
+   Section 06 — Nos Meilleurs Vendeurs (.s-bestsellers)
+   Naturesse Cosmetics — 3×2 product card grid, FR
+   ============================================================ */
+
+/* --- token declarations (mirror base.css for standalone use) --- */
+.s-bestsellers {
+  --bg:          #FCFBF6;
+  --surface:     #fff;
+  --surface-2:   #EEF2E6;
+  --sand:        #F3ECDF;
+  --ink:         #1C1E18;
+  --ink-soft:    #5C5E54;
+  --accent:      #4F7C29;
+  --accent-ink:  #fff;
+  --accent-deep: #3C611E;
+  --gold:        #E4A92B;
+  --gold-soft:   #FBE6BC;
+  --tan:         #BBA783;
+  --dark:        #33322C;
+  --line:        #E6E0D2;
+  --star:        #E4A92B;
+  --font-display:"Poppins","Helvetica Neue",Arial,sans-serif;
+  --font-body:   "Lato","Helvetica Neue",Arial,sans-serif;
+  --s--1:  .82rem;
+  --s-0:   1.05rem;
+  --s-1:   1.25rem;
+  --s-2:   1.6rem;
+  --s-3:   2.15rem;
+  --s-4:   3rem;
+  --s-5:   3.9rem;
+  --sp-1:  .25rem;
+  --sp-2:  .5rem;
+  --sp-3:  1rem;
+  --sp-4:  1.5rem;
+  --sp-5:  2.5rem;
+  --sp-6:  4rem;
+  --sp-7:  6rem;
+  --sp-8:  8rem;
+  --radius:     10px;
+  --radius-lg:  18px;
+  --radius-pill:50px;
+  --shadow:     0 16px 44px rgba(28,30,24,.10);
+  --maxw:       1280px;
+}
+
+/* --- section background: warm cream --- */
+.s-bestsellers {
+  background: var(--bg);
+}
+
+/* -------------------------------------------------------
+   Header block
+   ------------------------------------------------------- */
+.s-bestsellers .bestsellers-hd {
+  text-align: center;
+  max-width: 620px;
+  margin: 0 auto var(--sp-7);
+}
+
+.s-bestsellers .eyebrow {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: var(--s--1);
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 0 0 var(--sp-3);
+}
+
+.s-bestsellers .bestsellers-heading {
+  font-family: var(--font-display);
+  font-size: var(--s-4);
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: -.015em;
+  color: var(--ink);
+  margin: 0 0 var(--sp-3);
+}
+
+.s-bestsellers .bestsellers-intro {
+  font-family: var(--font-body);
+  font-size: var(--s-0);
+  color: var(--ink-soft);
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* -------------------------------------------------------
+   3-up grid, 2 rows
+   ------------------------------------------------------- */
+.s-bestsellers .bestsellers-grid {
+  list-style: none;
+  margin: 0 0 var(--sp-7);
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-5);
+}
+
+/* -------------------------------------------------------
+   Product card
+   ------------------------------------------------------- */
+.s-bestsellers .card {
+  display: flex;
+  flex-direction: column;
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  border: 1.5px solid var(--line);
+  overflow: hidden;
+  transition: box-shadow .25s, transform .22s;
+}
+
+.s-bestsellers .card:hover {
+  box-shadow: var(--shadow);
+  transform: translateY(-5px);
+}
+
+/* Staggered reveal delays */
+.s-bestsellers .card:nth-child(1) { transition-delay: .05s; }
+.s-bestsellers .card:nth-child(2) { transition-delay: .12s; }
+.s-bestsellers .card:nth-child(3) { transition-delay: .19s; }
+.s-bestsellers .card:nth-child(4) { transition-delay: .26s; }
+.s-bestsellers .card:nth-child(5) { transition-delay: .33s; }
+.s-bestsellers .card:nth-child(6) { transition-delay: .40s; }
+
+/* -------------------------------------------------------
+   Card image tile — soft surface-2/white tile, radius top
+   ------------------------------------------------------- */
+.s-bestsellers .card-img-link {
+  display: block;
+  flex-shrink: 0;
+}
+
+.s-bestsellers .card-img-tile {
+  background: var(--surface-2);
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* top corners rounded, bottom flush with card border */
+  border-radius: calc(var(--radius-lg) - 1.5px) calc(var(--radius-lg) - 1.5px) 0 0;
+}
+
+.s-bestsellers .card-img-tile img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  transition: transform .4s cubic-bezier(.25,.46,.45,.94);
+}
+
+.s-bestsellers .card:hover .card-img-tile img {
+  transform: scale(1.04);
+}
+
+/* -------------------------------------------------------
+   Card body
+   ------------------------------------------------------- */
+.s-bestsellers .card-body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+  padding: var(--sp-4);
+  flex: 1;
+}
+
+/* Stars */
+.s-bestsellers .card-stars {
+  color: var(--star);
+  font-size: var(--s-0);
+  letter-spacing: .06em;
+  line-height: 1;
+}
+
+/* Product name */
+.s-bestsellers .card-name {
+  font-family: var(--font-display);
+  font-size: var(--s-1);
+  font-weight: 600;
+  line-height: 1.25;
+  color: var(--ink);
+  margin: 0;
+}
+
+.s-bestsellers .card-name a {
+  color: inherit;
+  text-decoration: none;
+  transition: color .18s;
+}
+
+.s-bestsellers .card-name a:hover {
+  color: var(--accent);
+}
+
+/* Descriptor */
+.s-bestsellers .card-desc {
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  color: var(--ink-soft);
+  line-height: 1.55;
+  margin: 0;
+  flex: 1;
+}
+
+/* Footer row: price + CTA */
+.s-bestsellers .card-footer {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+  margin-top: auto;
+  padding-top: var(--sp-3);
+}
+
+.s-bestsellers .card-price {
+  font-family: var(--font-display);
+  font-size: var(--s-2);
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1;
+}
+
+/* btn — scoped (inherits base if loaded) */
+.s-bestsellers .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: var(--s--1);
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  padding: 1.05em 2.2em;
+  border-radius: var(--radius-pill);
+  border: 1.5px solid transparent;
+  cursor: pointer;
+  transition: background .22s, color .22s, border-color .22s, transform .15s, box-shadow .2s;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.s-bestsellers .btn:hover {
+  transform: translateY(-2px);
+}
+
+.s-bestsellers .btn-primary {
+  background: var(--accent);
+  color: var(--accent-ink);
+  border-color: var(--accent);
+}
+
+.s-bestsellers .btn-primary:hover {
+  background: var(--accent-deep);
+  border-color: var(--accent-deep);
+}
+
+.s-bestsellers .btn-block {
+  display: flex;
+  width: 100%;
+}
+
+.s-bestsellers .btn-outline {
+  background: transparent;
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+.s-bestsellers .btn-outline:hover {
+  background: var(--accent);
+  color: #fff;
+}
+
+/* -------------------------------------------------------
+   CTA row
+   ------------------------------------------------------- */
+.s-bestsellers .bestsellers-cta-wrap {
+  display: flex;
+  justify-content: center;
+}
+
+/* -------------------------------------------------------
+   Reveal
+   ------------------------------------------------------- */
+.s-bestsellers .reveal {
+  opacity: 0;
+  transform: perspective(900px) rotateX(8deg) translateY(26px);
+  transition: opacity .7s ease, transform .7s cubic-bezier(.2,.7,.2,1);
+}
+
+.s-bestsellers .reveal.in {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .s-bestsellers .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* -------------------------------------------------------
+   Responsive — tablet 2-up (≤ 960px)
+   ------------------------------------------------------- */
+@media (max-width: 960px) {
+  .s-bestsellers .bestsellers-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--sp-4);
+  }
+
+  .s-bestsellers .bestsellers-heading {
+    font-size: var(--s-3);
+  }
+}
+
+/* -------------------------------------------------------
+   Mobile (≤ 600px): 1-up
+   ------------------------------------------------------- */
+@media (max-width: 600px) {
+  .s-bestsellers .bestsellers-grid {
+    grid-template-columns: 1fr;
+    gap: var(--sp-4);
+  }
+
+  .s-bestsellers .bestsellers-hd {
+    margin-bottom: var(--sp-6);
+  }
+
+  .s-bestsellers .bestsellers-heading {
+    font-size: 2.05rem;
+  }
+
+  .s-bestsellers .card-img-tile {
+    aspect-ratio: 4 / 3;
+  }
+}
+
+/* -------------------------------------------------------
+   Mobile narrow (≤ 480px): 2-up horizontal scroll snap
+   as fallback for very small screens — or remain 1-up
+   ------------------------------------------------------- */
+@media (max-width: 480px) {
+  .s-bestsellers .bestsellers-grid {
+    /* horizontal snap on very small viewports */
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    gap: var(--sp-3);
+    padding-bottom: var(--sp-3);
+    /* hide scrollbar visually */
+    scrollbar-width: none;
+  }
+
+  .s-bestsellers .bestsellers-grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .s-bestsellers .card {
+    flex: 0 0 80vw;
+    max-width: 320px;
+    scroll-snap-align: start;
+  }
+}
+/* ============================================================
+   Section 07 — Rituel + Fondatrice (.s-rituel)
+   Naturesse Cosmetics — story band, image right / text left, FR
+   ============================================================ */
+
+/* --- token declarations (mirror base.css for standalone use) --- */
+.s-rituel {
+  --bg:          #FCFBF6;
+  --surface:     #fff;
+  --surface-2:   #EEF2E6;
+  --sand:        #F3ECDF;
+  --ink:         #1C1E18;
+  --ink-soft:    #5C5E54;
+  --accent:      #4F7C29;
+  --accent-ink:  #fff;
+  --accent-deep: #3C611E;
+  --gold:        #E4A92B;
+  --gold-soft:   #FBE6BC;
+  --tan:         #BBA783;
+  --dark:        #33322C;
+  --line:        #E6E0D2;
+  --star:        #E4A92B;
+  --font-display:"Poppins","Helvetica Neue",Arial,sans-serif;
+  --font-body:   "Lato","Helvetica Neue",Arial,sans-serif;
+  --s--1:  .82rem;
+  --s-0:   1.05rem;
+  --s-1:   1.25rem;
+  --s-2:   1.6rem;
+  --s-3:   2.15rem;
+  --s-4:   3rem;
+  --s-5:   3.9rem;
+  --sp-1:  .25rem;
+  --sp-2:  .5rem;
+  --sp-3:  1rem;
+  --sp-4:  1.5rem;
+  --sp-5:  2.5rem;
+  --sp-6:  4rem;
+  --sp-7:  6rem;
+  --sp-8:  8rem;
+  --radius:      10px;
+  --radius-lg:   18px;
+  --radius-pill: 50px;
+  --shadow:      0 16px 44px rgba(28,30,24,.10);
+  --maxw:        1280px;
+}
+
+/* --- section background & spacing --- */
+.s-rituel {
+  background: var(--bg);
+  padding-block: var(--sp-7);
+}
+
+/* --- 2-column grid: text left, image right --- */
+.s-rituel .rituel-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 520px) minmax(0, 520px);
+  gap: var(--sp-7);
+  align-items: center;
+  justify-content: center;
+}
+
+/* -------------------------------------------------------
+   Text column
+   ------------------------------------------------------- */
+.s-rituel .rituel-text-col {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+  max-width: 520px;
+}
+
+.s-rituel .rituel-heading {
+  font-family: var(--font-display);
+  font-size: var(--s-3);
+  font-weight: 700;
+  line-height: 1.18;
+  color: var(--ink);
+  margin: 0;
+}
+
+.s-rituel .rituel-lead {
+  font-family: var(--font-body);
+  font-size: var(--s-1);
+  line-height: 1.72;
+  color: var(--ink-soft);
+  margin: 0;
+}
+
+.s-rituel .rituel-body {
+  font-family: var(--font-body);
+  font-size: var(--s-0);
+  line-height: 1.72;
+  color: var(--ink-soft);
+  margin: 0;
+}
+
+/* chips row */
+.s-rituel .rituel-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+}
+
+/* CTA */
+.s-rituel .rituel-cta {
+  align-self: flex-start;
+  margin-top: var(--sp-2);
+}
+
+/* -------------------------------------------------------
+   Image column
+   ------------------------------------------------------- */
+.s-rituel .rituel-img-col {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.s-rituel .rituel-img-wrap {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  max-width: 520px;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+}
+
+.s-rituel .rituel-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* -------------------------------------------------------
+   Reveal animation
+   ------------------------------------------------------- */
+.s-rituel .reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity .65s ease, transform .65s ease;
+}
+
+.s-rituel .reveal.in {
+  opacity: 1;
+  transform: none;
+}
+
+.s-rituel .rituel-img-col.reveal {
+  transition-delay: .15s;
+}
+
+/* -------------------------------------------------------
+   Shared utility overrides scoped to section
+   ------------------------------------------------------- */
+.s-rituel .eyebrow {
+  font-family: var(--font-display);
+  font-size: var(--s--1);
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 0;
+}
+
+.s-rituel .chip {
+  display: inline-flex;
+  align-items: center;
+  gap: .35em;
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  font-weight: 600;
+  color: var(--accent-deep);
+  background: var(--surface-2);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-pill);
+  padding: .3em .9em;
+  white-space: nowrap;
+}
+
+.s-rituel .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .45em;
+  font-family: var(--font-display);
+  font-size: var(--s-0);
+  font-weight: 600;
+  letter-spacing: .03em;
+  border-radius: var(--radius-pill);
+  border: 2px solid transparent;
+  padding: .7em 2em;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background .22s, color .22s, border-color .22s, box-shadow .22s, transform .18s;
+}
+
+.s-rituel .btn-primary {
+  background: var(--accent);
+  color: var(--accent-ink);
+  border-color: var(--accent);
+}
+
+.s-rituel .btn-primary:hover {
+  background: var(--accent-deep);
+  border-color: var(--accent-deep);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(79,124,41,.22);
+}
+
+/* -------------------------------------------------------
+   Mobile: stack image above text
+   ------------------------------------------------------- */
+@media (max-width: 820px) {
+  .s-rituel {
+    padding-block: var(--sp-6);
+  }
+
+  .s-rituel .rituel-grid {
+    grid-template-columns: 1fr;
+    gap: var(--sp-5);
+  }
+
+  /* Move image first on mobile */
+  .s-rituel .rituel-text-col {
+    order: 2;
+    max-width: 100%;
+  }
+
+  .s-rituel .rituel-img-col {
+    order: 1;
+    justify-content: center;
+  }
+
+  .s-rituel .rituel-img-wrap {
+    max-width: 100%;
+    aspect-ratio: 4 / 3;
+  }
+
+  .s-rituel .rituel-heading {
+    font-size: var(--s-2);
+  }
+}
+
+@media (max-width: 480px) {
+  .s-rituel .rituel-cta {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .s-rituel .rituel-chips {
+    gap: var(--sp-2);
+  }
+}
+/* ============================================================
+   Section 08 — Coffrets cadeaux (.s-coffrets)
+   Naturesse Cosmetics — gifting band, FR
+   ============================================================ */
+
+/* --- token declarations (mirror base.css for standalone use) --- */
+.s-coffrets {
+  --bg:          #FCFBF6;
+  --surface:     #fff;
+  --surface-2:   #EEF2E6;
+  --sand:        #F3ECDF;
+  --ink:         #1C1E18;
+  --ink-soft:    #5C5E54;
+  --accent:      #4F7C29;
+  --accent-ink:  #fff;
+  --accent-deep: #3C611E;
+  --gold:        #E4A92B;
+  --gold-soft:   #FBE6BC;
+  --tan:         #BBA783;
+  --dark:        #33322C;
+  --line:        #E6E0D2;
+  --star:        #E4A92B;
+  --font-display:"Poppins","Helvetica Neue",Arial,sans-serif;
+  --font-body:   "Lato","Helvetica Neue",Arial,sans-serif;
+  --s--1:  .82rem;
+  --s-0:   1.05rem;
+  --s-1:   1.25rem;
+  --s-2:   1.6rem;
+  --s-3:   2.15rem;
+  --s-4:   3rem;
+  --s-5:   3.9rem;
+  --sp-1:  .25rem;
+  --sp-2:  .5rem;
+  --sp-3:  1rem;
+  --sp-4:  1.5rem;
+  --sp-5:  2.5rem;
+  --sp-6:  4rem;
+  --sp-7:  6rem;
+  --sp-8:  8rem;
+  --radius:      10px;
+  --radius-lg:   18px;
+  --radius-pill: 50px;
+  --shadow:      0 16px 44px rgba(28,30,24,.10);
+  --maxw:        1280px;
+}
+
+/* --- section background & spacing --- */
+.s-coffrets {
+  background: var(--sand);
+  padding-block: var(--sp-7);
+}
+
+/* -------------------------------------------------------
+   Section header (centered)
+   ------------------------------------------------------- */
+.s-coffrets .coffrets-header {
+  text-align: center;
+  max-width: 620px;
+  margin: 0 auto var(--sp-6);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sp-3);
+}
+
+.s-coffrets .coffrets-heading {
+  font-family: var(--font-display);
+  font-size: var(--s-3);
+  font-weight: 700;
+  line-height: 1.18;
+  color: var(--ink);
+  margin: 0;
+}
+
+.s-coffrets .coffrets-intro {
+  font-family: var(--font-body);
+  font-size: var(--s-1);
+  line-height: 1.7;
+  color: var(--ink-soft);
+  margin: 0;
+}
+
+/* -------------------------------------------------------
+   Gift cards grid
+   ------------------------------------------------------- */
+.s-coffrets .coffrets-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-5);
+  align-items: stretch;
+}
+
+/* -------------------------------------------------------
+   Gift card base
+   ------------------------------------------------------- */
+.s-coffrets .gift {
+  border-radius: var(--radius-lg);
+  padding: var(--sp-6) var(--sp-5);
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--sp-4);
+  transition: transform .28s ease, box-shadow .28s ease;
+}
+
+.s-coffrets .gift:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 24px 56px rgba(28,30,24,.15);
+}
+
+/* Pour Elle — sage/gold gradient on surface-2 */
+.s-coffrets .gift--elle {
+  background: linear-gradient(145deg, var(--surface-2) 0%, var(--gold-soft) 100%);
+  border: 1px solid var(--line);
+}
+
+/* Pour Lui — deeper, dark-tinted surface */
+.s-coffrets .gift--lui {
+  background: linear-gradient(145deg, #2c2b25 0%, #3d3b31 100%);
+  border: 1px solid rgba(255,255,255,.06);
+}
+
+.s-coffrets .gift--lui .gift__title,
+.s-coffrets .gift--lui .gift__desc,
+.s-coffrets .gift--lui .gift__price {
+  color: rgba(255,255,255,.92);
+}
+
+.s-coffrets .gift--lui .gift__price strong {
+  color: var(--gold);
+}
+
+.s-coffrets .gift--lui .gift__icon {
+  color: var(--gold);
+}
+
+/* -------------------------------------------------------
+   Gift card internals
+   ------------------------------------------------------- */
+.s-coffrets .gift__icon {
+  color: var(--accent);
+  line-height: 1;
+}
+
+.s-coffrets .gift__title {
+  font-family: var(--font-display);
+  font-size: var(--s-2);
+  font-weight: 700;
+  color: var(--ink);
+  margin: 0;
+}
+
+.s-coffrets .gift__desc {
+  font-family: var(--font-body);
+  font-size: var(--s-1);
+  line-height: 1.68;
+  color: var(--ink-soft);
+  margin: 0;
+}
+
+.s-coffrets .gift__price {
+  font-family: var(--font-body);
+  font-size: var(--s-0);
+  color: var(--ink-soft);
+  margin: 0;
+}
+
+.s-coffrets .gift__price strong {
+  font-size: var(--s-1);
+  color: var(--accent-deep);
+  font-weight: 700;
+}
+
+/* Push CTA to bottom */
+.s-coffrets .gift .btn {
+  margin-top: auto;
+}
+
+/* -------------------------------------------------------
+   Reveal animation
+   ------------------------------------------------------- */
+.s-coffrets .reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity .65s ease, transform .65s ease;
+}
+
+.s-coffrets .reveal.in {
+  opacity: 1;
+  transform: none;
+}
+
+.s-coffrets .gift--elle.reveal {
+  transition-delay: .1s;
+}
+
+.s-coffrets .gift--lui.reveal {
+  transition-delay: .22s;
+}
+
+/* -------------------------------------------------------
+   Shared utility overrides scoped to section
+   ------------------------------------------------------- */
+.s-coffrets .eyebrow {
+  font-family: var(--font-display);
+  font-size: var(--s--1);
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 0;
+}
+
+.s-coffrets .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .45em;
+  font-family: var(--font-display);
+  font-size: var(--s-0);
+  font-weight: 600;
+  letter-spacing: .03em;
+  border-radius: var(--radius-pill);
+  border: 2px solid transparent;
+  padding: .7em 2em;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background .22s, color .22s, border-color .22s, box-shadow .22s, transform .18s;
+}
+
+.s-coffrets .btn-primary {
+  background: var(--accent);
+  color: var(--accent-ink);
+  border-color: var(--accent);
+}
+
+.s-coffrets .btn-primary:hover {
+  background: var(--accent-deep);
+  border-color: var(--accent-deep);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(79,124,41,.22);
+}
+
+.s-coffrets .btn-gold {
+  background: var(--gold);
+  color: var(--dark);
+  border-color: var(--gold);
+}
+
+.s-coffrets .btn-gold:hover {
+  background: #d49a22;
+  border-color: #d49a22;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(228,169,43,.30);
+}
+
+/* -------------------------------------------------------
+   Mobile: stack cards
+   ------------------------------------------------------- */
+@media (max-width: 720px) {
+  .s-coffrets {
+    padding-block: var(--sp-6);
+  }
+
+  .s-coffrets .coffrets-grid {
+    grid-template-columns: 1fr;
+    gap: var(--sp-4);
+  }
+
+  .s-coffrets .coffrets-heading {
+    font-size: var(--s-2);
+  }
+
+  .s-coffrets .gift {
+    padding: var(--sp-5) var(--sp-4);
+  }
+}
+
+@media (max-width: 480px) {
+  .s-coffrets .gift .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+/* ============================================================
+   Section 09 — Avis clients (.s-reviews)
+   Naturesse Cosmetics — reviews wall, FR, natural soft-luxe
+   ============================================================ */
+
+/* --- token declarations (mirror base.css for standalone use) --- */
+.s-reviews {
+  --bg:          #FCFBF6;
+  --surface:     #fff;
+  --surface-2:   #EEF2E6;
+  --sand:        #F3ECDF;
+  --ink:         #1C1E18;
+  --ink-soft:    #5C5E54;
+  --accent:      #4F7C29;
+  --accent-ink:  #fff;
+  --accent-deep: #3C611E;
+  --gold:        #E4A92B;
+  --gold-soft:   #FBE6BC;
+  --tan:         #BBA783;
+  --dark:        #33322C;
+  --line:        #E6E0D2;
+  --star:        #E4A92B;
+  --font-display:"Poppins","Helvetica Neue",Arial,sans-serif;
+  --font-body:   "Lato","Helvetica Neue",Arial,sans-serif;
+  --s--1:  .82rem;
+  --s-0:   1.05rem;
+  --s-1:   1.25rem;
+  --s-2:   1.6rem;
+  --s-3:   2.15rem;
+  --s-4:   3rem;
+  --s-5:   3.9rem;
+  --sp-1:  .25rem;
+  --sp-2:  .5rem;
+  --sp-3:  1rem;
+  --sp-4:  1.5rem;
+  --sp-5:  2.5rem;
+  --sp-6:  4rem;
+  --sp-7:  6rem;
+  --sp-8:  8rem;
+  --radius:      10px;
+  --radius-lg:   18px;
+  --radius-pill: 50px;
+  --shadow:      0 16px 44px rgba(28,30,24,.10);
+  --maxw:        1280px;
+}
+
+/* -------------------------------------------------------
+   Section shell — warm sand band for contrast
+   ------------------------------------------------------- */
+.s-reviews {
+  background: var(--sand);
+}
+
+/* -------------------------------------------------------
+   Header block — centered
+   ------------------------------------------------------- */
+.s-reviews__header {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto var(--sp-6);
+}
+
+.s-reviews__header .eyebrow {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: var(--s--1);
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 0 0 var(--sp-3);
+}
+
+.s-reviews__header h2 {
+  font-family: var(--font-display);
+  font-size: var(--s-4);
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: -.015em;
+  color: var(--ink);
+  margin: 0 0 var(--sp-5);
+}
+
+/* -------------------------------------------------------
+   Rating summary pill
+   ------------------------------------------------------- */
+.s-reviews__summary {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-3);
+  background: var(--surface);
+  border: 1.5px solid var(--line);
+  border-radius: var(--radius-pill);
+  padding: .7em 1.6em .7em 1.1em;
+  box-shadow: 0 4px 18px rgba(228,169,43,.12);
+}
+
+.s-reviews__big-star {
+  font-size: 2rem;
+  color: var(--star);
+  line-height: 1;
+  display: block;
+}
+
+.s-reviews__summary-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: .1em;
+}
+
+.s-reviews__score {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--s-2);
+  color: var(--ink);
+  line-height: 1;
+}
+
+.s-reviews__denom {
+  font-size: var(--s-0);
+  font-weight: 500;
+  color: var(--ink-soft);
+}
+
+.s-reviews__label {
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  color: var(--ink-soft);
+  line-height: 1.3;
+}
+
+/* -------------------------------------------------------
+   Cards grid — 3-up desktop, 2-up tablet, 1-up / scroll mobile
+   ------------------------------------------------------- */
+.s-reviews__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--sp-4);
+  margin-bottom: var(--sp-5);
+}
+
+/* -------------------------------------------------------
+   Individual review card
+   ------------------------------------------------------- */
+.s-reviews .review {
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  border: 1.5px solid var(--line);
+  padding: var(--sp-4) var(--sp-4) var(--sp-3);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+  box-shadow: 0 4px 16px rgba(28,30,24,.06);
+  transition:
+    transform .22s cubic-bezier(.2,.7,.2,1),
+    box-shadow .22s ease;
+  /* stagger via inline custom prop */
+  transition-delay: var(--delay, 0s);
+}
+
+.s-reviews .review:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow);
+}
+
+/* card top: stars + chip row */
+.s-reviews__card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-2);
+  flex-wrap: wrap;
+}
+
+.s-reviews__card-top .stars {
+  color: var(--star);
+  font-size: var(--s-1);
+  letter-spacing: .04em;
+  line-height: 1;
+}
+
+/* chip scoped under s-reviews */
+.s-reviews .chip {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: .72rem;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  padding: .38em .9em;
+  border-radius: var(--radius-pill);
+  border: 1.5px solid var(--line);
+  background: var(--gold-soft);
+  color: var(--ink);
+  line-height: 1;
+  white-space: nowrap;
+}
+
+/* quote block */
+.s-reviews__quote {
+  margin: 0;
+  padding: 0;
+  flex: 1;
+}
+
+.s-reviews__quote p {
+  font-family: var(--font-body);
+  font-size: var(--s-0);
+  color: var(--ink-soft);
+  line-height: 1.65;
+  margin: 0;
+  font-style: italic;
+}
+
+/* card footer */
+.s-reviews__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-2);
+  padding-top: var(--sp-3);
+  border-top: 1px solid var(--line);
+  flex-wrap: wrap;
+}
+
+.s-reviews__name {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: var(--s--1);
+  color: var(--ink);
+}
+
+.s-reviews__tag {
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  color: var(--accent);
+  font-style: normal;
+  display: inline-flex;
+  align-items: center;
+  gap: .3em;
+}
+
+.s-reviews__tag::before {
+  content: "✓";
+  font-weight: 700;
+  font-size: .78rem;
+}
+
+/* -------------------------------------------------------
+   CTA row — centered
+   ------------------------------------------------------- */
+.s-reviews__cta-wrap {
+  text-align: center;
+  margin-bottom: var(--sp-4);
+}
+
+/* btn-outline scoped (inherits base) */
+.s-reviews .btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: var(--s--1);
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  padding: 1.05em 2.2em;
+  border-radius: var(--radius-pill);
+  border: 1.5px solid var(--accent);
+  background: transparent;
+  color: var(--accent);
+  cursor: pointer;
+  transition: background .22s, color .22s, border-color .22s, transform .15s;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.s-reviews .btn-outline:hover {
+  background: var(--accent);
+  color: var(--accent-ink);
+  transform: translateY(-2px);
+}
+
+/* -------------------------------------------------------
+   Footnote
+   ------------------------------------------------------- */
+.s-reviews__footnote {
+  text-align: center;
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  color: var(--ink-soft);
+  margin: 0;
+  opacity: .7;
+}
+
+/* -------------------------------------------------------
+   Reveal — scoped (uses base .reveal + .in classes)
+   ------------------------------------------------------- */
+.s-reviews .reveal {
+  opacity: 0;
+  transform: perspective(900px) rotateX(8deg) translateY(26px);
+  transition:
+    opacity .7s ease,
+    transform .7s cubic-bezier(.2,.7,.2,1);
+  transition-delay: var(--delay, 0s);
+}
+
+.s-reviews .reveal.in {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .s-reviews .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* -------------------------------------------------------
+   Tablet — 2-up grid (≤ 960px)
+   ------------------------------------------------------- */
+@media (max-width: 960px) {
+  .s-reviews__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--sp-3);
+  }
+
+  .s-reviews__header h2 {
+    font-size: var(--s-3);
+  }
+}
+
+/* -------------------------------------------------------
+   Mobile — horizontal scroll strip (≤ 640px)
+   ------------------------------------------------------- */
+@media (max-width: 640px) {
+  .s-reviews__grid {
+    /* override grid → horizontal scroll */
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    gap: var(--sp-3);
+    padding-bottom: var(--sp-3);  /* space for scrollbar */
+    /* remove grid gap-induced margin */
+    margin-inline: calc(-1 * var(--sp-4)); /* bleed to edges */
+    padding-inline: var(--sp-4);
+  }
+
+  .s-reviews .review {
+    flex-shrink: 0;
+    width: min(80vw, 320px);
+    scroll-snap-align: start;
+  }
+
+  .s-reviews__header h2 {
+    font-size: 2.05rem;
+  }
+
+  .s-reviews__big-star {
+    font-size: 1.6rem;
+  }
+
+  .s-reviews__score {
+    font-size: var(--s-1);
+  }
+}
+
+/* -------------------------------------------------------
+   Very small mobile — tighter header
+   ------------------------------------------------------- */
+@media (max-width: 420px) {
+  .s-reviews__summary {
+    padding: .6em 1.2em .6em .9em;
+    gap: var(--sp-2);
+  }
+}
+/* ============================================================
+   Naturesse Cosmetics — 10-newsletter.css
+   Section: .s-newsletter · Band verte accent avec texte blanc
+   ============================================================ */
+
+/* ── CSS custom property anchoring ──────────────────────────── */
+.s-newsletter {
+  --bg:          #FCFBF6;
+  --surface:     #FFFFFF;
+  --surface-2:   #EEF2E6;
+  --sand:        #F3ECDF;
+  --ink:         #1C1E18;
+  --ink-soft:    #5C5E54;
+  --accent:      #4F7C29;
+  --accent-ink:  #FFFFFF;
+  --accent-deep: #3C611E;
+  --gold:        #E4A92B;
+  --gold-soft:   #FBE6BC;
+  --tan:         #BBA783;
+  --dark:        #33322C;
+  --line:        #E6E0D2;
+  --font-display:"Poppins", "Helvetica Neue", Arial, sans-serif;
+  --font-body:   "Lato", "Helvetica Neue", Arial, sans-serif;
+  --s--1: .82rem;
+  --s-0:  1.05rem;
+  --s-1:  1.25rem;
+  --s-2:  1.6rem;
+  --s-3:  2.15rem;
+  --s-4:  3rem;
+  --s-5:  3.9rem;
+  --sp-1: .25rem;  --sp-2: .5rem;   --sp-3: 1rem;
+  --sp-4: 1.5rem;  --sp-5: 2.5rem;  --sp-6: 4rem;
+  --sp-7: 6rem;    --sp-8: 8rem;
+  --radius:      10px;
+  --radius-lg:   18px;
+  --radius-pill: 50px;
+  --shadow:      0 16px 44px rgba(28,30,24,.10);
+  --maxw:        1280px;
+}
+
+/* ── Section band ────────────────────────────────────────────── */
+.s-newsletter {
+  position: relative;
+  overflow: hidden;
+  background: var(--accent);
+  padding-block: var(--sp-7);
+}
+
+/* ── Floating leaf accents ───────────────────────────────────── */
+.s-newsletter__leaf {
+  position: absolute;
+  pointer-events: none;
+  z-index: 0;
+}
+.s-newsletter__leaf--l {
+  left: -16px;
+  top: 50%;
+  transform: translateY(-60%) rotate(-18deg);
+}
+.s-newsletter__leaf--r {
+  right: -10px;
+  bottom: 10%;
+  transform: rotate(22deg);
+}
+@media (max-width: 780px) {
+  .s-newsletter__leaf { display: none; }
+}
+
+/* ── Inner wrap ──────────────────────────────────────────────── */
+.s-newsletter__wrap {
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Body — centered column ─────────────────────────────────── */
+.s-newsletter__body {
+  max-width: 620px;
+  margin-inline: auto;
+  text-align: center;
+}
+
+/* ── Eyebrow override — white on green ──────────────────────── */
+.s-newsletter .eyebrow,
+.s-newsletter__eyebrow {
+  color: rgba(255, 255, 255, 0.78);
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: var(--s--1);
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  display: inline-block;
+  margin-bottom: var(--sp-3);
+}
+
+/* ── Heading ────────────────────────────────────────────────── */
+.s-newsletter__heading {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: var(--s-3);
+  line-height: 1.12;
+  letter-spacing: -.015em;
+  color: #ffffff;
+  margin: 0 0 var(--sp-3);
+}
+
+/* ── Sub line ────────────────────────────────────────────────── */
+.s-newsletter__sub {
+  font-family: var(--font-body);
+  font-size: var(--s-0);
+  color: rgba(255, 255, 255, 0.82);
+  margin: 0 0 var(--sp-5);
+  line-height: 1.65;
+}
+
+/* ── Form ────────────────────────────────────────────────────── */
+.s-newsletter__form {
+  width: 100%;
+}
+
+.s-newsletter__form-row {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  background: #fff;
+  border-radius: var(--radius-pill);
+  padding: 5px 5px 5px var(--sp-4);
+  box-shadow: 0 4px 22px rgba(0,0,0,0.14);
+  max-width: 540px;
+  margin-inline: auto;
+}
+
+/* ── Email input ─────────────────────────────────────────────── */
+.s-newsletter__input {
+  flex: 1 1 0;
+  min-width: 0;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-family: var(--font-body);
+  font-size: var(--s-0);
+  color: var(--ink);
+  padding-block: .6em;
+  line-height: 1;
+}
+.s-newsletter__input::placeholder {
+  color: var(--tan);
+}
+
+/* ── Submit button — pill gold inside the field ──────────────── */
+.s-newsletter__btn {
+  flex-shrink: 0;
+  /* inherits .btn .btn-gold from base.css */
+  padding: .9em 1.8em;
+  font-size: var(--s--1);
+}
+
+/* ── Fine print ──────────────────────────────────────────────── */
+.s-newsletter__fine {
+  margin: var(--sp-3) 0 0;
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  color: rgba(255, 255, 255, 0.55);
+  letter-spacing: .02em;
+}
+
+/* ── SR-only ─────────────────────────────────────────────────── */
+.s-newsletter .sr-only {
+  position: absolute;
+  width: 1px; height: 1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+}
+
+/* ── Mobile stacking ─────────────────────────────────────────── */
+@media (max-width: 600px) {
+  .s-newsletter {
+    padding-block: var(--sp-6);
+  }
+  .s-newsletter__form-row {
+    flex-direction: column;
+    align-items: stretch;
+    border-radius: var(--radius-lg);
+    padding: var(--sp-3);
+    gap: var(--sp-3);
+  }
+  .s-newsletter__input {
+    text-align: center;
+    padding-block: .55em;
+  }
+  .s-newsletter__btn {
+    width: 100%;
+    justify-content: center;
+  }
+  .s-newsletter__heading {
+    font-size: var(--s-2);
+  }
+}
+/* ============================================================
+   Naturesse Cosmetics — 11-footer.css
+   Element: .site-footer · Fond --dark (#33322C) · Texte clair
+   ============================================================ */
+
+/* ── CSS custom property anchoring ──────────────────────────── */
+.site-footer {
+  --bg:          #FCFBF6;
+  --surface:     #FFFFFF;
+  --surface-2:   #EEF2E6;
+  --sand:        #F3ECDF;
+  --ink:         #1C1E18;
+  --ink-soft:    #5C5E54;
+  --accent:      #4F7C29;
+  --accent-ink:  #FFFFFF;
+  --accent-deep: #3C611E;
+  --gold:        #E4A92B;
+  --gold-soft:   #FBE6BC;
+  --tan:         #BBA783;
+  --dark:        #33322C;
+  --line:        #E6E0D2;
+  --font-display:"Poppins", "Helvetica Neue", Arial, sans-serif;
+  --font-body:   "Lato", "Helvetica Neue", Arial, sans-serif;
+  --s--1: .82rem;
+  --s-0:  1.05rem;
+  --s-1:  1.25rem;
+  --s-2:  1.6rem;
+  --s-3:  2.15rem;
+  --s-4:  3rem;
+  --s-5:  3.9rem;
+  --sp-1: .25rem;  --sp-2: .5rem;   --sp-3: 1rem;
+  --sp-4: 1.5rem;  --sp-5: 2.5rem;  --sp-6: 4rem;
+  --sp-7: 6rem;    --sp-8: 8rem;
+  --radius:      10px;
+  --radius-lg:   18px;
+  --radius-pill: 50px;
+  --shadow:      0 16px 44px rgba(28,30,24,.10);
+  --maxw:        1280px;
+
+  /* Footer-specific light tones */
+  --footer-text:    #D8D3C7;    /* main light text */
+  --footer-muted:   #A09A8E;    /* secondary / fine print */
+  --footer-head:    #B5C9A0;    /* column headings — light sage */
+  --footer-link-hv: #E4A92B;   /* link hover — gold */
+  --footer-divider: rgba(255,255,255,0.10);
+}
+
+/* ── Root element ────────────────────────────────────────────── */
+.site-footer {
+  background: var(--dark);
+  color: var(--footer-text);
+  font-family: var(--font-body);
+  font-size: var(--s-0);
+  line-height: 1.65;
+}
+
+.site-footer__wrap {
+  padding-block: var(--sp-7) var(--sp-5);
+}
+
+/* ── TOP: brand + nav grid ───────────────────────────────────── */
+.site-footer__top {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: var(--sp-6);
+  margin-bottom: var(--sp-6);
+  align-items: start;
+}
+
+/* ── Brand column ────────────────────────────────────────────── */
+.site-footer__brand {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+}
+
+.site-footer__logo-link {
+  display: inline-block;
+  line-height: 0;
+}
+
+.site-footer__logo {
+  width: 120px;
+  height: auto;
+  display: block;
+  filter: brightness(0) invert(1);
+}
+
+.site-footer__tagline {
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  color: var(--footer-muted);
+  line-height: 1.65;
+  margin: 0;
+  max-width: 220px;
+}
+
+/* ── Social icons ────────────────────────────────────────────── */
+.site-footer__socials {
+  display: flex;
+  gap: var(--sp-3);
+  align-items: center;
+}
+
+.site-footer__social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(255,255,255,0.18);
+  color: var(--footer-text);
+  transition: color .2s, border-color .2s, background .2s;
+}
+.site-footer__social-link:hover {
+  color: var(--footer-link-hv);
+  border-color: var(--footer-link-hv);
+  background: rgba(228,169,43,0.08);
+}
+
+.site-footer__social-icon {
+  width: 18px;
+  height: 18px;
+  display: block;
+  stroke: currentColor;
+  stroke-width: 1.6;
+  fill: none;
+  flex-shrink: 0;
+}
+
+/* ── Nav: 4 columns ──────────────────────────────────────────── */
+.site-footer__nav {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--sp-4);
+}
+
+.site-footer__col {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+}
+
+.site-footer__col-head {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: var(--s--1);
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--footer-head);
+  margin: 0 0 var(--sp-2);
+  line-height: 1.2;
+}
+
+.site-footer__links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+}
+
+.site-footer__link {
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  color: var(--footer-text);
+  text-decoration: none;
+  transition: color .18s;
+  line-height: 1.5;
+}
+.site-footer__link:hover {
+  color: var(--footer-link-hv);
+}
+
+/* ── Trust marks band ────────────────────────────────────────── */
+.site-footer__trust {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--sp-3) var(--sp-4);
+  padding-block: var(--sp-4);
+  border-top: 1px solid var(--footer-divider);
+  border-bottom: 1px solid var(--footer-divider);
+  margin-bottom: var(--sp-4);
+}
+
+.site-footer__trust-item {
+  display: inline-flex;
+  align-items: center;
+  gap: .5em;
+  font-family: var(--font-display);
+  font-size: var(--s--1);
+  font-weight: 600;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--footer-muted);
+}
+
+.site-footer__trust-icon {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  stroke: var(--footer-head);
+  stroke-width: 1.5;
+  fill: none;
+  display: block;
+}
+
+.site-footer__trust-sep {
+  color: var(--footer-divider);
+  font-size: var(--s-0);
+  user-select: none;
+}
+
+/* ── Divider ─────────────────────────────────────────────────── */
+.site-footer__divider {
+  border: none;
+  border-top: 1px solid var(--footer-divider);
+  margin: 0 0 var(--sp-4);
+}
+
+/* ── Bottom bar ──────────────────────────────────────────────── */
+.site-footer__bottom {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-3);
+}
+
+.site-footer__copy {
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  color: var(--footer-muted);
+  margin: 0;
+  flex-shrink: 0;
+}
+
+/* ── Legal links ─────────────────────────────────────────────── */
+.site-footer__legal {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+}
+
+.site-footer__legal-link {
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  color: var(--footer-muted);
+  text-decoration: none;
+  transition: color .18s;
+}
+.site-footer__legal-link:hover {
+  color: var(--footer-link-hv);
+}
+.site-footer__legal-sep {
+  color: var(--footer-divider);
+  user-select: none;
+}
+
+/* ── Payment marks ───────────────────────────────────────────── */
+.site-footer__payments {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  flex-wrap: wrap;
+}
+
+.site-footer__pay-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.site-footer__pay-icon {
+  width: 48px;
+  height: 32px;
+  display: block;
+}
+
+/* ── Responsive: 4-col nav → 2-col → 1-col ──────────────────── */
+@media (max-width: 1100px) {
+  .site-footer__top {
+    grid-template-columns: 220px 1fr;
+    gap: var(--sp-5);
+  }
+  .site-footer__nav {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--sp-4) var(--sp-5);
+  }
+}
+
+@media (max-width: 780px) {
+  .site-footer__top {
+    grid-template-columns: 1fr;
+    gap: var(--sp-5);
+  }
+  .site-footer__brand {
+    align-items: flex-start;
+  }
+  .site-footer__tagline {
+    max-width: 100%;
+  }
+  .site-footer__nav {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .site-footer__nav {
+    grid-template-columns: 1fr;
+  }
+  .site-footer__bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--sp-3);
+  }
+  .site-footer__trust {
+    gap: var(--sp-2) var(--sp-3);
+  }
+  .site-footer__trust-sep {
+    display: none;
+  }
+  .site-footer__wrap {
+    padding-block: var(--sp-6) var(--sp-4);
+  }
+}

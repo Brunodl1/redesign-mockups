@@ -1,0 +1,266 @@
+/* ============================================================
+   Naturesse Cosmetics — Section 01: Announcement bar + Header
+   Natural soft-luxe · ECOCERT bio · Québec/Canada · FR
+   All rules scoped to .announce / .site-header
+   ============================================================ */
+
+/* ── Announcement bar ─────────────────────────────────────── */
+.announce {
+  background: var(--accent);
+  color: var(--accent-ink);
+  width: 100%;
+  padding-block: .55rem;
+}
+
+.announce__inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.announce__items {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+  gap: 0;
+  white-space: nowrap;
+  font-family: var(--font-display);
+  font-size: var(--s--1);
+  font-weight: 500;
+  letter-spacing: .055em;
+  line-height: 1.4;
+}
+
+.announce__item a,
+.announce__item {
+  color: var(--accent-ink);
+  opacity: .93;
+  text-decoration: none;
+  transition: opacity .18s;
+}
+
+.announce__item a:hover {
+  opacity: 1;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.announce__sep {
+  color: var(--accent-ink);
+  opacity: .55;
+  padding-inline: .25em;
+}
+
+/* Mobile: keep only the first bit */
+@media (max-width: 780px) {
+  .announce__items {
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  .announce__item:not(.announce__item--primary),
+  .announce__sep {
+    display: none;
+  }
+  .announce__item--primary {
+    display: inline;
+  }
+}
+
+/* ── Site header ─────────────────────────────────────────── */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 900;
+  background: var(--bg);
+  border-bottom: 1px solid var(--line);
+  box-shadow: 0 2px 16px rgba(28, 30, 24, .05);
+}
+
+.site-header__inner {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: var(--sp-3);
+  height: 72px;
+}
+
+/* ── LEFT — nav / hamburger ──────────────────────────────── */
+.site-header__left {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  min-width: 0;
+}
+
+/* Hamburger — hidden on desktop */
+.site-header__hamburger {
+  display: none;
+  background: none;
+  border: none;
+  padding: .35rem;
+  cursor: pointer;
+  color: var(--ink);
+  border-radius: var(--radius);
+  transition: color .18s, background .18s;
+  flex-shrink: 0;
+  line-height: 0;
+}
+.site-header__hamburger:hover {
+  color: var(--accent);
+  background: var(--surface-2);
+}
+
+/* Desktop nav */
+.site-header__nav {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  flex-wrap: nowrap;
+  white-space: nowrap;
+}
+
+.site-header__nav-link {
+  font-family: var(--font-display);
+  font-size: var(--s--1);
+  font-weight: 500;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--ink);
+  text-decoration: none;
+  padding-block: .25rem;
+  position: relative;
+  transition: color .18s;
+}
+.site-header__nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 1.5px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .22s cubic-bezier(.4, 0, .2, 1);
+  border-radius: 2px;
+}
+.site-header__nav-link:hover {
+  color: var(--accent);
+}
+.site-header__nav-link:hover::after {
+  transform: scaleX(1);
+}
+
+/* ── CENTER — logo ───────────────────────────────────────── */
+.site-header__logo-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.site-header__logo-link {
+  display: block;
+  line-height: 0;
+}
+
+.site-header__logo-img {
+  width: 118px;
+  max-width: 118px;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
+/* ── RIGHT — actions ─────────────────────────────────────── */
+.site-header__actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--sp-2);
+  min-width: 0;
+}
+
+/* Boutique pill CTA — desktop only */
+.site-header__cta {
+  padding: .65em 1.4em;
+  font-size: calc(var(--s--1) * .9);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* Icon buttons */
+.site-header__icon-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  padding: .45rem;
+  cursor: pointer;
+  color: var(--ink);
+  border-radius: var(--radius);
+  transition: color .18s, background .18s;
+  line-height: 0;
+  flex-shrink: 0;
+}
+.site-header__icon-btn:hover {
+  color: var(--accent);
+  background: var(--surface-2);
+}
+
+/* Cart badge */
+.site-header__cart-badge {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  min-width: 16px;
+  height: 16px;
+  padding: 0 .3em;
+  border-radius: var(--radius-pill);
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-family: var(--font-display);
+  font-size: .6rem;
+  font-weight: 700;
+  line-height: 16px;
+  text-align: center;
+  pointer-events: none;
+}
+
+/* ── Mobile (≤780px) ─────────────────────────────────────── */
+@media (max-width: 780px) {
+  .site-header__inner {
+    height: 60px;
+    gap: var(--sp-2);
+  }
+
+  /* Show hamburger, hide desktop nav */
+  .site-header__hamburger {
+    display: inline-flex;
+  }
+  .site-header__nav {
+    display: none;
+  }
+
+  /* Logo slightly smaller on mobile */
+  .site-header__logo-img {
+    width: 100px;
+    max-width: 100px;
+  }
+
+  /* Hide boutique CTA, search, account on mobile */
+  .site-header__cta,
+  .site-header__icon-btn--search,
+  .site-header__icon-btn--account {
+    display: none;
+  }
+
+  /* Right side: cart only — no shrink */
+  .site-header__actions {
+    gap: 0;
+  }
+}
