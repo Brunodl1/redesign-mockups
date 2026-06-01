@@ -1214,14 +1214,16 @@
 /* ── Inner 2-col grid ─────────────────────────────────────── */
 .s-founder__inner {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   gap: clamp(var(--sp-6), 6vw, var(--sp-7));
   align-items: center;
 }
 
 /* ── Media (photo) column ─────────────────────────────────── */
 .s-founder__media {
-  /* image is LEFT — no reorder needed */
+  /* image is LEFT — cap its width so it never sprawls into the text */
+  display: flex;
+  justify-content: flex-start;
 }
 
 .s-founder__img-wrap {
@@ -1230,6 +1232,8 @@
   aspect-ratio: 4 / 5;
   background: var(--surface-2);
   box-shadow: var(--shadow);
+  width: 100%;
+  max-width: 480px;
 }
 
 .s-founder__img {
@@ -1246,6 +1250,7 @@
   flex-direction: column;
   gap: var(--sp-4);
   align-items: flex-start;
+  max-width: 520px;
 }
 
 /* ── Eyebrow ──────────────────────────────────────────────── */
@@ -1319,9 +1324,12 @@
   }
 
   /* image stays first in DOM → renders above text naturally */
+  .s-founder__media { justify-content: stretch; }
   .s-founder__img-wrap {
     aspect-ratio: 3 / 2;     /* landscape crop on mobile */
+    max-width: none;         /* full width when stacked */
   }
+  .s-founder__content { max-width: none; }
 
   .s-founder__img {
     object-position: center 20%;
