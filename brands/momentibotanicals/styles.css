@@ -1,0 +1,1879 @@
+/* ===== 01-header.css ===== */
+/* ============================================================
+   01-header.css — Momenti Botanicals
+   Announcement bar + sticky site header
+   All selectors scoped to .announce / .site-header
+   ============================================================ */
+
+/* ── Google Fonts ── */
+@import url('https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,500;1,7..72,400&family=Inter:wght@400;500;600&display=swap');
+
+/* ============================================================
+   ANNOUNCEMENT BAR
+   ============================================================ */
+.announce {
+  background: var(--dark);
+  color: var(--accent-ink);
+  padding-block: .55rem;
+  width: 100%;
+  position: relative;
+  z-index: 200;
+}
+
+.announce__inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .75rem;
+  text-align: center;
+}
+
+.announce__bit {
+  font-family: var(--font-body);
+  font-size: .72rem;
+  font-weight: 500;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: var(--accent-ink);
+  opacity: .92;
+}
+
+.announce__sep {
+  color: var(--accent-ink);
+  opacity: .38;
+  font-size: .72rem;
+  line-height: 1;
+  user-select: none;
+}
+
+/* ============================================================
+   SITE HEADER
+   ============================================================ */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 190;
+  background: var(--bg);
+  border-bottom: 1px solid var(--line);
+  box-shadow: 0 1px 18px rgba(47, 48, 53, .06);
+  width: 100%;
+}
+
+.site-header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-4);
+  height: 68px;
+}
+
+/* ── Logo Lockup ── */
+.site-header__logo {
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+  flex-shrink: 0;
+  text-decoration: none;
+}
+
+.site-header__logo-img {
+  display: block;
+  height: 38px;
+  width: auto;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.site-header__wordmark {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 500;
+  letter-spacing: .025em;
+  color: var(--ink);
+  line-height: 1;
+  white-space: nowrap;
+}
+
+/* ── Desktop Nav ── */
+.site-header__nav {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.site-header__nav-list {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-4);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.site-header__nav-link {
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  font-weight: 500;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--ink);
+  text-decoration: none;
+  white-space: nowrap;
+  position: relative;
+  padding-block: .25rem;
+  transition: color .2s;
+}
+
+.site-header__nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: var(--sage-deep);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform .25s cubic-bezier(.4, 0, .2, 1);
+}
+
+.site-header__nav-link:hover {
+  color: var(--sage-deep);
+}
+
+.site-header__nav-link:hover::after {
+  transform: scaleX(1);
+}
+
+/* ── Right Actions ── */
+.site-header__actions {
+  display: flex;
+  align-items: center;
+  gap: .2rem;
+  flex-shrink: 0;
+}
+
+.site-header__action {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--ink);
+  padding: .5rem;
+  border-radius: var(--radius);
+  transition: color .2s, background .2s;
+  line-height: 0;
+}
+
+.site-header__action:hover {
+  color: var(--sage-deep);
+  background: rgba(124, 135, 104, .08);
+}
+
+/* Cart wrapper + badge */
+.site-header__cart-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.site-header__cart-badge {
+  position: absolute;
+  top: -7px;
+  right: -7px;
+  min-width: 16px;
+  height: 16px;
+  padding: 0 .25rem;
+  background: var(--sage-deep);
+  color: #fff;
+  font-family: var(--font-body);
+  font-size: .6rem;
+  font-weight: 700;
+  letter-spacing: .02em;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  pointer-events: none;
+}
+
+/* ── Hamburger (hidden on desktop) ── */
+.site-header__hamburger {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--ink);
+  padding: .5rem;
+  border-radius: var(--radius);
+  flex-shrink: 0;
+  transition: color .2s;
+  line-height: 0;
+}
+
+.site-header__hamburger:hover {
+  color: var(--sage-deep);
+}
+
+/* ============================================================
+   MOBILE — <= 780px
+   ============================================================ */
+@media (max-width: 780px) {
+
+  /* Announcement: show only first bit, no wrapping */
+  .announce__bit--hide-mobile,
+  .announce__sep--hide-mobile {
+    display: none;
+  }
+
+  .announce__inner {
+    justify-content: center;
+  }
+
+  /* Header layout: hamburger left | logo center | cart right */
+  .site-header__inner {
+    display: grid;
+    grid-template-columns: 44px 1fr 44px;
+    align-items: center;
+    gap: 0;
+    height: 60px;
+    padding-inline: var(--sp-3);
+  }
+
+  /* Show hamburger */
+  .site-header__hamburger {
+    display: flex;
+    justify-self: start;
+  }
+
+  /* Logo centered */
+  .site-header__logo {
+    justify-self: center;
+  }
+
+  /* Hide wordmark on mobile — monogram only */
+  .site-header__wordmark {
+    display: none;
+  }
+
+  /* Shrink monogram slightly */
+  .site-header__logo-img {
+    height: 32px;
+  }
+
+  /* Hide desktop nav entirely */
+  .site-header__nav {
+    display: none;
+  }
+
+  /* Actions: show only cart, right-aligned */
+  .site-header__actions {
+    justify-self: end;
+  }
+
+  .site-header__action--search,
+  .site-header__action--account {
+    display: none;
+  }
+}
+
+/* ===== 02-hero.css ===== */
+/* ============================================================
+   02-hero.css — full-bleed using-soap hero
+   Scoped under .s-hero. Cream panel left, charcoal text, one CTA.
+   ============================================================ */
+
+/* --- section shell --- */
+.s-hero {
+  position: relative;
+  min-height: 620px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  padding-block: 0; /* override .sec padding — image is full-bleed */
+}
+
+/* --- background image --- */
+.s-hero__bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: right center; /* hands + bar on right, empty zone left */
+  z-index: 0;
+}
+
+/* --- very-light left scrim for panel separation --- */
+.s-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    90deg,
+    rgba(250, 246, 236, 0.55) 0%,
+    rgba(250, 246, 236, 0) 55%
+  );
+  pointer-events: none;
+}
+
+/* --- wrap: sit above scrim & image --- */
+.s-hero .wrap {
+  position: relative;
+  z-index: 2;
+  /* allow full viewport height alignment */
+  display: flex;
+  align-items: center;
+  min-height: inherit;
+  padding-block: var(--sp-7);
+}
+
+/* --- contained panel --- */
+.s-hero__panel {
+  background: rgba(250, 246, 236, 0.86);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: var(--sp-6);
+  max-width: 480px;
+  display: flex;
+  flex-direction: column;
+  gap: 0; /* controlled by child margins */
+}
+/* opaque fallback where backdrop-filter is unsupported, so text never washes out */
+@supports not ((backdrop-filter: blur(4px)) or (-webkit-backdrop-filter: blur(4px))) {
+  .s-hero__panel { background: rgba(250, 246, 236, 0.97); }
+}
+
+/* --- eyebrow --- */
+.s-hero__panel .eyebrow {
+  color: var(--sage-deep);
+  margin-bottom: var(--sp-3);
+}
+
+/* --- headline --- */
+.s-hero__panel h1 {
+  font-family: var(--font-display);
+  font-size: var(--s-4);
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin-bottom: var(--sp-4);
+}
+
+/* --- subhead --- */
+.s-hero__sub {
+  font-family: var(--font-body);
+  font-size: var(--s-0);
+  line-height: 1.65;
+  color: var(--ink-soft);
+  margin: 0 0 var(--sp-5);
+}
+
+/* --- CTA --- */
+.s-hero__panel .btn {
+  align-self: flex-start;
+  margin-bottom: var(--sp-4);
+}
+
+/* --- proof chips row --- */
+.s-hero__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+  margin-top: 0;
+}
+
+.s-hero__chips .chip {
+  background: rgba(250, 246, 236, 0.72);
+  border-color: var(--line);
+  color: var(--ink-soft);
+}
+
+/* ============================================================
+   MOBILE — ≤780px
+   Panel drops to the bottom so the soap image is visible above
+   ============================================================ */
+@media (max-width: 780px) {
+  .s-hero {
+    min-height: 560px;
+    align-items: flex-end; /* panel anchors to bottom */
+  }
+
+  .s-hero .wrap {
+    align-items: flex-end;
+    padding-block: var(--sp-4);
+    width: 100%;
+  }
+
+  .s-hero__panel {
+    max-width: 100%;
+    width: 100%;
+    padding: var(--sp-4);
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+    border-bottom: none;
+    /* slightly more opaque on small screens for legibility */
+    background: rgba(250, 246, 236, 0.93);
+  }
+
+  .s-hero__panel h1 {
+    font-size: var(--s-3);
+  }
+
+  .s-hero__sub {
+    font-size: var(--s--1);
+    margin-bottom: var(--sp-4);
+  }
+
+  .s-hero__panel .btn {
+    align-self: stretch;
+    width: 100%;
+    display: flex;
+  }
+
+  .s-hero__chips {
+    gap: var(--sp-2);
+  }
+
+  /* lighten the left scrim on mobile — not needed as much */
+  .s-hero::before {
+    background: linear-gradient(
+      180deg,
+      rgba(250, 246, 236, 0) 30%,
+      rgba(250, 246, 236, 0.25) 100%
+    );
+  }
+}
+
+/* ===== 03-trust.css ===== */
+/* ============================================================
+   03-trust.css — Momenti Botanicals
+   Trust strip: slim band, 4-item row
+   ============================================================ */
+
+/* Band */
+.s-trust {
+  background: var(--surface-2);
+  padding-block: var(--sp-4);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+/* Row */
+.s-trust__row {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--sp-4);
+  align-items: start;
+}
+
+/* Single item */
+.s-trust__item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--sp-3);
+}
+
+/* Icon */
+.s-trust__icon {
+  flex-shrink: 0;
+  width: 34px;
+  height: 34px;
+  color: var(--sage-deep);
+  stroke: var(--sage-deep);
+  fill: none;
+  margin-top: .1em;
+}
+
+/* Text block */
+.s-trust__text {
+  display: flex;
+  flex-direction: column;
+  gap: .18em;
+}
+
+.s-trust__label {
+  font-family: var(--font-body);
+  font-size: var(--s-0);
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1.25;
+}
+
+.s-trust__sub {
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  color: var(--ink-soft);
+  line-height: 1.4;
+}
+
+/* Mobile: 2×2 grid */
+@media (max-width: 780px) {
+  .s-trust {
+    padding-block: var(--sp-4);
+  }
+
+  .s-trust__row {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--sp-4) var(--sp-3);
+  }
+
+  .s-trust__item {
+    gap: var(--sp-2);
+  }
+
+  .s-trust__icon {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+/* ===== 04-bestsellers.css ===== */
+/* ============================================================
+   04-bestsellers.css — Momenti Botanicals
+   Bestseller soap-bar grid section
+   ============================================================ */
+
+/* Section band */
+.s-bestsellers {
+  background: var(--bg);
+}
+
+/* Section header row */
+.s-bestsellers__hd {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--sp-3);
+  margin-bottom: var(--sp-5);
+}
+
+.s-bestsellers__hd-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.s-bestsellers__hd-left .eyebrow {
+  margin-bottom: var(--sp-2);
+}
+
+.s-bestsellers__hd-left h2 {
+  margin: 0;
+}
+
+/* "Shop all →" link */
+.s-bestsellers__all {
+  font-family: var(--font-body);
+  font-size: var(--s-0);
+  font-weight: 600;
+  color: var(--sage-deep);
+  letter-spacing: .04em;
+  white-space: nowrap;
+  padding-bottom: .15em;
+  border-bottom: 1.5px solid var(--sage-deep);
+  transition: color .2s, border-color .2s;
+  flex-shrink: 0;
+  align-self: flex-end;
+  margin-bottom: .3em;
+}
+
+.s-bestsellers__all:hover {
+  color: var(--sage);
+  border-color: var(--sage);
+}
+
+/* Product grid */
+.s-bestsellers__grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-4);
+}
+
+/* Individual list item */
+.s-bestsellers__item {
+  display: flex;
+}
+
+/* ---- Card ---- */
+.s-bestsellers .card {
+  display: flex;
+  flex-direction: column;
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--line);
+  overflow: hidden;
+  width: 100%;
+  transition: transform .25s cubic-bezier(.2,.7,.2,1), box-shadow .25s cubic-bezier(.2,.7,.2,1);
+}
+
+.s-bestsellers .card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow);
+}
+
+/* Image wrapper */
+.s-bestsellers .card__img-wrap {
+  position: relative;
+  display: block;
+  background: var(--surface-2);
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.s-bestsellers .card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform .4s cubic-bezier(.2,.7,.2,1);
+}
+
+.s-bestsellers .card:hover .card__img {
+  transform: scale(1.03);
+}
+
+/* Badge */
+.s-bestsellers .card__badge {
+  position: absolute;
+  top: var(--sp-2);
+  left: var(--sp-2);
+  font-family: var(--font-body);
+  font-size: .64rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  padding: .35em .7em;
+  border-radius: var(--radius);
+  line-height: 1;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.s-bestsellers .card__badge--accent {
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+
+.s-bestsellers .card__badge--sage {
+  background: var(--sage-deep);
+  color: #fff;
+}
+
+/* Card body */
+.s-bestsellers .card__body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+  padding: var(--sp-3);
+  flex: 1;
+}
+
+/* Product name */
+.s-bestsellers .card__name {
+  font-family: var(--font-display);
+  font-size: var(--s-1);
+  font-weight: 500;
+  color: var(--ink);
+  margin: 0;
+  line-height: 1.2;
+}
+
+.s-bestsellers .card__name a {
+  color: inherit;
+  text-decoration: none;
+  transition: color .15s;
+}
+
+.s-bestsellers .card__name a:hover {
+  color: var(--sage-deep);
+}
+
+/* Descriptor */
+.s-bestsellers .card__desc {
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  color: var(--ink-soft);
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* Stars + review count */
+.s-bestsellers .card__meta {
+  display: flex;
+  align-items: center;
+  gap: .4em;
+}
+
+.s-bestsellers .card__meta .stars {
+  font-size: .9rem;
+  color: var(--star);
+  line-height: 1;
+}
+
+.s-bestsellers .card__reviews {
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  color: var(--ink-soft);
+  line-height: 1;
+}
+
+/* Price */
+.s-bestsellers .card__price {
+  font-family: var(--font-body);
+  font-size: var(--s-1);
+  font-weight: 700;
+  color: var(--ink);
+  margin: 0;
+  line-height: 1;
+}
+
+.s-bestsellers .card__price abbr {
+  font-size: var(--s--1);
+  font-weight: 400;
+  color: var(--ink-soft);
+  text-decoration: none;
+}
+
+/* Add to cart button */
+.s-bestsellers .card__body .btn {
+  margin-top: auto;
+  font-size: var(--s--1);
+  padding: .85em 1.5em;
+}
+
+/* Illustrative ratings footnote */
+.s-bestsellers__note {
+  margin-top: var(--sp-4);
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  color: var(--ink-soft);
+  text-align: center;
+  opacity: .7;
+}
+
+/* ---- Responsive ---- */
+
+/* Tablet: 2 cols */
+@media (max-width: 960px) {
+  .s-bestsellers__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile */
+@media (max-width: 780px) {
+  .s-bestsellers__hd {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--sp-2);
+    margin-bottom: var(--sp-4);
+  }
+
+  .s-bestsellers__all {
+    align-self: flex-start;
+  }
+
+  .s-bestsellers__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--sp-3);
+  }
+
+  .s-bestsellers .card__body {
+    padding: var(--sp-2) var(--sp-2) var(--sp-3);
+    gap: var(--sp-1);
+  }
+
+  .s-bestsellers .card__name {
+    font-size: var(--s-0);
+  }
+
+  .s-bestsellers .card__body .btn {
+    font-size: .72rem;
+    padding: .8em 1em;
+    letter-spacing: .06em;
+  }
+}
+
+/* ===== 05-ritual.css ===== */
+/* ============================================================
+   05-ritual.css — Momenti Botanicals
+   Editorial 2-column ritual band
+   All selectors scoped to .s-ritual
+   ============================================================ */
+
+/* Band */
+.s-ritual {
+  background: var(--surface-2);
+}
+
+/* 2-col layout: text left / image right */
+.s-ritual__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-7);
+  align-items: center;
+}
+
+/* Text column */
+.s-ritual__text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.s-ritual__text .eyebrow {
+  margin-bottom: var(--sp-3);
+}
+
+.s-ritual__text h2 {
+  margin: 0 0 var(--sp-4) 0;
+  font-size: clamp(var(--s-3), 4vw, var(--s-5));
+  line-height: 1.15;
+  color: var(--ink);
+}
+
+.s-ritual__body {
+  font-family: var(--font-body);
+  font-size: var(--s-0);
+  line-height: 1.75;
+  color: var(--ink-soft);
+  margin: 0 0 var(--sp-5) 0;
+  max-width: 46ch;
+}
+
+/* Image column */
+.s-ritual__img-wrap {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  max-width: 500px;
+  width: 100%;
+  justify-self: end;
+  box-shadow: var(--shadow);
+  line-height: 0; /* remove inline-block gap */
+}
+
+.s-ritual__img {
+  display: block;
+  width: 100%;
+  height: 480px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: var(--radius-lg);
+}
+
+/* Reveal animation */
+.s-ritual.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity .65s ease, transform .65s ease;
+}
+
+.s-ritual.reveal.in {
+  opacity: 1;
+  transform: none;
+}
+
+/* ── Mobile: stack image above text ── */
+@media (max-width: 767px) {
+  .s-ritual__inner {
+    grid-template-columns: 1fr;
+    gap: var(--sp-6);
+  }
+
+  /* image goes first (top) */
+  .s-ritual__img-wrap {
+    order: -1;
+    max-width: 100%;
+    justify-self: stretch;
+  }
+
+  .s-ritual__img {
+    height: 280px;
+  }
+
+  .s-ritual__text h2 {
+    font-size: var(--s-3);
+  }
+}
+
+/* ===== 06-clean.css ===== */
+/* ============================================================
+   06-clean.css — Momenti Botanicals
+   Clean-ingredients / our promise band
+   All selectors scoped to .s-clean
+   ============================================================ */
+
+/* Band */
+.s-clean {
+  background: var(--surface);
+}
+
+/* Header block */
+.s-clean__hd {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: var(--sp-7);
+}
+
+.s-clean__hd .eyebrow {
+  margin-bottom: var(--sp-3);
+}
+
+.s-clean__hd h2 {
+  margin: 0 0 var(--sp-3) 0;
+  font-size: clamp(var(--s-3), 3.5vw, var(--s-4));
+  line-height: 1.2;
+  color: var(--ink);
+}
+
+.s-clean__sub {
+  font-family: var(--font-body);
+  font-size: var(--s-0);
+  line-height: 1.65;
+  color: var(--ink-soft);
+  margin: 0;
+  max-width: 52ch;
+}
+
+/* 4-col icon grid */
+.s-clean__grid {
+  list-style: none;
+  margin: 0 0 var(--sp-6) 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--sp-5);
+}
+
+.s-clean__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--sp-3);
+  padding: var(--sp-5) var(--sp-3);
+  border-radius: var(--radius-lg);
+  background: var(--bg);
+  transition: box-shadow .2s;
+}
+
+.s-clean__item:hover {
+  box-shadow: var(--shadow);
+}
+
+/* Icon wrapper: circular tinted bg */
+.s-clean__icon-wrap {
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--sage-deep) 10%, transparent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.s-clean__icon {
+  width: 44px;
+  height: 44px;
+  color: var(--sage-deep);
+  stroke: currentColor;
+}
+
+.s-clean__title {
+  font-family: var(--font-display);
+  font-size: var(--s-1);
+  font-weight: 500;
+  color: var(--ink);
+  margin: 0;
+  line-height: 1.3;
+}
+
+.s-clean__desc {
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  color: var(--ink-soft);
+  margin: 0;
+  line-height: 1.55;
+}
+
+/* Free-from chip row */
+.s-clean__chips {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+  margin-bottom: var(--sp-6);
+}
+
+.s-clean__dot {
+  color: var(--line);
+  font-size: var(--s-1);
+  line-height: 1;
+  user-select: none;
+}
+
+/* CTA row */
+.s-clean__cta {
+  display: flex;
+  justify-content: center;
+}
+
+/* Reveal animation */
+.s-clean.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity .65s ease, transform .65s ease;
+}
+
+.s-clean.reveal.in {
+  opacity: 1;
+  transform: none;
+}
+
+/* ── Mobile: 2×2 grid ── */
+@media (max-width: 767px) {
+  .s-clean__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--sp-4);
+  }
+
+  .s-clean__hd h2 {
+    font-size: var(--s-3);
+  }
+
+  .s-clean__chips {
+    gap: var(--sp-2);
+  }
+
+  .s-clean__dot {
+    display: none;
+  }
+
+  .s-clean__chips {
+    row-gap: var(--sp-2);
+    column-gap: var(--sp-2);
+  }
+}
+
+/* ===== 07-reviews.css ===== */
+/* ============================================================
+   07-reviews.css — Momenti Botanicals
+   Reviews wall — scoped to .s-reviews
+   ============================================================ */
+
+/* Band */
+.s-reviews {
+  background: var(--bg);
+}
+
+/* Section header */
+.s-reviews__hd {
+  text-align: center;
+  margin-bottom: var(--sp-5);
+}
+
+.s-reviews__hd .eyebrow {
+  margin-bottom: var(--sp-2);
+}
+
+.s-reviews__hd h2 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: var(--s-4);
+  font-weight: 500;
+  color: var(--ink);
+  line-height: 1.12;
+  letter-spacing: -.01em;
+}
+
+/* Rating summary */
+.s-reviews__summary {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sp-2);
+  margin-bottom: var(--sp-6);
+}
+
+.s-reviews__score {
+  display: flex;
+  align-items: baseline;
+  gap: .2em;
+  line-height: 1;
+}
+
+.s-reviews__big-star {
+  font-size: 2.6rem;
+  color: var(--star);
+  line-height: 1;
+}
+
+.s-reviews__score-num {
+  font-family: var(--font-display);
+  font-size: var(--s-4);
+  font-weight: 500;
+  color: var(--ink);
+  letter-spacing: -.02em;
+  line-height: 1;
+}
+
+.s-reviews__score-denom {
+  font-family: var(--font-body);
+  font-size: var(--s-1);
+  font-weight: 400;
+  color: var(--ink-soft);
+  line-height: 1;
+}
+
+.s-reviews__count {
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  color: var(--ink-soft);
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin: 0;
+}
+
+/* Grid */
+.s-reviews__grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-4);
+}
+
+.s-reviews__item {
+  display: flex;
+}
+
+/* Individual card */
+.s-reviews .review {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+  padding: var(--sp-4);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  width: 100%;
+  transition: transform .25s cubic-bezier(.2,.7,.2,1), box-shadow .25s cubic-bezier(.2,.7,.2,1);
+}
+
+.s-reviews .review:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow);
+}
+
+/* Stars row */
+.s-reviews .review__stars {
+  line-height: 1;
+}
+
+.s-reviews .review__stars .stars {
+  font-size: var(--s-1);
+  color: var(--sage);
+  letter-spacing: .06em;
+}
+
+/* Quote */
+.s-reviews .review__quote {
+  margin: 0;
+  padding: 0;
+  border: none;
+  flex: 1;
+}
+
+.s-reviews .review__quote p {
+  font-family: var(--font-body);
+  font-size: var(--s-0);
+  line-height: 1.7;
+  color: var(--ink);
+  margin: 0;
+  font-style: italic;
+}
+
+/* Footer: name + verified */
+.s-reviews .review__footer {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  flex-wrap: wrap;
+}
+
+.s-reviews .review__name {
+  font-family: var(--font-body);
+  font-size: var(--s-0);
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1;
+}
+
+.s-reviews .review__verified {
+  font-family: var(--font-body);
+  font-size: .72rem;
+  font-weight: 600;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--sage-deep);
+  line-height: 1;
+  padding: .3em .65em;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--bg);
+}
+
+/* Product label */
+.s-reviews .review__product {
+  font-family: var(--font-body);
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin: 0;
+  line-height: 1;
+}
+
+/* Footnote */
+.s-reviews__note {
+  margin-top: var(--sp-5);
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  color: var(--ink-soft);
+  text-align: center;
+  opacity: .65;
+}
+
+/* ---- Responsive ---- */
+
+/* Tablet: 2-up */
+@media (max-width: 960px) {
+  .s-reviews__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile: horizontal scroll (1-up feel, peek at next card) */
+@media (max-width: 640px) {
+  .s-reviews__hd h2 {
+    font-size: var(--s-3);
+  }
+
+  .s-reviews__big-star {
+    font-size: 2rem;
+  }
+
+  .s-reviews__score-num {
+    font-size: var(--s-3);
+  }
+
+  .s-reviews__grid {
+    grid-template-columns: unset;
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    gap: var(--sp-3);
+    padding-bottom: var(--sp-3);
+    /* Hide scrollbar */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .s-reviews__grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .s-reviews__item {
+    flex-shrink: 0;
+    width: 82vw;
+    scroll-snap-align: start;
+  }
+
+  .s-reviews .review {
+    padding: var(--sp-3);
+    gap: var(--sp-2);
+  }
+}
+
+/* ===== 08-gift.css ===== */
+/* ============================================================
+   08-gift.css — Momenti Botanicals
+   Sets & Gifting band — scoped to .s-gift
+   ============================================================ */
+
+/* Band */
+.s-gift {
+  background: var(--surface-2);
+}
+
+/* 2-column inner layout */
+.s-gift__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-6);
+  align-items: center;
+}
+
+/* ---- Image column ---- */
+.s-gift__img-col {
+  flex-shrink: 0;
+}
+
+.s-gift__img-wrap {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  aspect-ratio: 3 / 4;
+  background: var(--line);
+  max-width: 500px;
+}
+
+.s-gift__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform .5s cubic-bezier(.2,.7,.2,1);
+}
+
+.s-gift__img-wrap:hover .s-gift__img {
+  transform: scale(1.03);
+}
+
+/* ---- Text column ---- */
+.s-gift__text-col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--sp-4);
+}
+
+.s-gift__text-col .eyebrow {
+  margin: 0;
+}
+
+.s-gift__text-col h2 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: var(--s-4);
+  font-weight: 500;
+  color: var(--ink);
+  line-height: 1.1;
+  letter-spacing: -.01em;
+}
+
+.s-gift__body {
+  font-family: var(--font-body);
+  font-size: var(--s-1);
+  color: var(--ink-soft);
+  line-height: 1.65;
+  margin: 0;
+  max-width: 38ch;
+}
+
+/* Chip row */
+.s-gift__chips {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+}
+
+.s-gift__chips .chip {
+  background: var(--surface);
+  border-color: var(--line);
+  color: var(--ink);
+}
+
+/* CTA button */
+.s-gift__cta {
+  margin-top: var(--sp-1);
+}
+
+/* ---- Responsive ---- */
+
+/* Tablet: tighten gap, scale heading */
+@media (max-width: 900px) {
+  .s-gift__inner {
+    gap: var(--sp-5);
+  }
+
+  .s-gift__text-col h2 {
+    font-size: var(--s-3);
+  }
+
+  .s-gift__body {
+    font-size: var(--s-0);
+  }
+}
+
+/* Mobile: stack (image first, text below) */
+@media (max-width: 640px) {
+  .s-gift__inner {
+    grid-template-columns: 1fr;
+    gap: var(--sp-4);
+  }
+
+  .s-gift__img-wrap {
+    aspect-ratio: 4 / 3;
+    max-width: 100%;
+  }
+
+  .s-gift__text-col {
+    gap: var(--sp-3);
+    align-items: flex-start;
+  }
+
+  .s-gift__text-col h2 {
+    font-size: var(--s-3);
+  }
+
+  .s-gift__body {
+    max-width: none;
+  }
+
+  .s-gift__cta {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* ===== 09-newsletter.css ===== */
+/* ============================================================
+   09-newsletter.css — Momenti Botanicals
+   Newsletter signup band
+   All selectors scoped to .s-newsletter
+   ============================================================ */
+
+/* ── Token aliases ── */
+.s-newsletter {
+  --_bg:         var(--sage-deep);   /* #5E6A4E — deep sage */
+  --_text:       #EDE9DE;            /* cream — explicit, contrast >4.5:1 on sage-deep */
+  --_text-soft:  rgba(237,233,222,.72);
+  --_input-bg:   #FAFAF7;
+  --_input-text: var(--ink);
+  --_input-border: rgba(237,233,222,.30);
+}
+
+/* ── Section shell ── */
+.s-newsletter {
+  background: var(--_bg);
+  padding-block: var(--space-xl, 5rem);
+  text-align: center;
+}
+
+/* ── Inner wrap ── */
+.s-newsletter__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-sm, 1rem);
+  max-width: 560px;
+  margin-inline: auto;
+}
+
+/* ── Eyebrow ── */
+.s-newsletter__eyebrow {
+  color: var(--_text);
+  opacity: .7;
+  letter-spacing: .2em;
+  font-size: var(--s--1, .75rem);
+  font-family: var(--font-body, 'Inter', sans-serif);
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+/* ── Heading ── */
+.s-newsletter__heading {
+  font-family: var(--font-display, 'Literata', Georgia, serif);
+  font-size: clamp(1.9rem, 4vw, 2.7rem);
+  font-weight: 400;
+  line-height: 1.18;
+  color: var(--_text);
+  margin: 0;
+  letter-spacing: -.01em;
+}
+
+/* ── Sub copy ── */
+.s-newsletter__sub {
+  font-family: var(--font-body, 'Inter', sans-serif);
+  font-size: var(--s-0, 1rem);
+  line-height: 1.6;
+  color: var(--_text-soft);
+  margin: 0;
+  max-width: 440px;
+}
+
+/* ── Form row ── */
+.s-newsletter__form {
+  width: 100%;
+}
+
+.s-newsletter__form-row {
+  display: flex;
+  align-items: stretch;
+  gap: .6rem;
+  width: 100%;
+  max-width: 480px;
+  margin-inline: auto;
+}
+
+/* ── Email input ── */
+.s-newsletter__input {
+  flex: 1 1 0;
+  min-width: 0;
+  padding: .75rem 1.1rem;
+  border-radius: var(--radius, 4px);
+  border: 1.5px solid var(--_input-border);
+  background: var(--_input-bg);
+  color: var(--_input-text);
+  font-family: var(--font-body, 'Inter', sans-serif);
+  font-size: var(--s-0, 1rem);
+  outline-offset: 2px;
+  transition: border-color .18s, box-shadow .18s;
+}
+
+.s-newsletter__input::placeholder {
+  color: var(--ink-soft, #6E6C68);
+  opacity: 1;
+}
+
+.s-newsletter__input:focus {
+  border-color: rgba(237,233,222,.75);
+  box-shadow: 0 0 0 3px rgba(237,233,222,.22);
+  outline: none;
+}
+
+/* ── Subscribe button ── */
+.s-newsletter__btn {
+  white-space: nowrap;
+  flex-shrink: 0;
+  padding-inline: 1.5rem;
+}
+
+/* ── Fine print ── */
+.s-newsletter__fine {
+  font-family: var(--font-body, 'Inter', sans-serif);
+  font-size: var(--s--1, .75rem);
+  color: var(--_text-soft);
+  margin: 0;
+}
+
+/* ── Screen-reader-only utility ── */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ── Mobile: stack form full-width ── */
+@media (max-width: 520px) {
+  .s-newsletter__form-row {
+    flex-direction: column;
+  }
+
+  .s-newsletter__input,
+  .s-newsletter__btn {
+    width: 100%;
+  }
+}
+
+/* ===== 10-footer.css ===== */
+/* ============================================================
+   10-footer.css — Momenti Botanicals
+   Site footer
+   All selectors scoped to .site-footer
+   ============================================================ */
+
+/* ── Token aliases ── */
+.site-footer {
+  --_bg:          var(--dark);         /* #2A2B2F */
+  --_text:        #D9D4C8;             /* warm cream — explicit, contrast >4.5:1 on #2A2B2F */
+  --_text-soft:   rgba(217,212,200,.55);
+  --_link:        #D9D4C8;
+  --_link-hover:  var(--sage);         /* #7C8768 */
+  --_col-head:    var(--sage);         /* #7C8768 — light sage on dark */
+  --_divider:     rgba(217,212,200,.12);
+  --_chip-bg:     rgba(217,212,200,.10);
+  --_chip-text:   #D9D4C8;
+}
+
+/* ── Shell ── */
+.site-footer {
+  background: var(--_bg);
+  color: var(--_text);
+  padding-top: var(--space-xl, 5rem);
+  padding-bottom: 0;
+}
+
+/* ── TOP: brand + nav grid ── */
+.site-footer__top {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 3rem 4rem;
+  align-items: start;
+}
+
+/* ── Brand column ── */
+.site-footer__brand {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.site-footer__logo-link {
+  display: inline-block;
+  line-height: 0;
+}
+
+.site-footer__logo-img {
+  display: block;
+  width: auto;
+  height: 46px;
+  /* brightness(0) invert(1) applied inline in HTML — explicit light on dark */
+}
+
+.site-footer__wordmark {
+  font-family: var(--font-display, 'Literata', Georgia, serif);
+  font-size: 1.15rem;
+  font-weight: 400;
+  letter-spacing: .01em;
+  color: var(--_text);
+  margin: 0;
+  margin-top: -.35rem;
+}
+
+.site-footer__blurb {
+  font-family: var(--font-body, 'Inter', sans-serif);
+  font-size: .875rem;
+  line-height: 1.65;
+  color: var(--_text-soft);
+  margin: 0;
+  max-width: 240px;
+}
+
+/* ── Social icons ── */
+.site-footer__socials {
+  display: flex;
+  gap: .75rem;
+  align-items: center;
+}
+
+.site-footer__social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--_link);
+  transition: color .18s;
+  line-height: 0;
+}
+
+.site-footer__social-link:hover,
+.site-footer__social-link:focus-visible {
+  color: var(--_link-hover);
+}
+
+.site-footer__social-icon {
+  display: block;
+}
+
+/* ── Trust chips ── */
+.site-footer__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .45rem;
+}
+
+/* Override .chip for dark context */
+.site-footer .chip {
+  background: var(--_chip-bg);
+  color: var(--_chip-text);
+  border-color: rgba(217,212,200,.18);
+  font-size: .65rem;
+  letter-spacing: .12em;
+}
+
+/* ── Nav columns ── */
+.site-footer__nav {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+.site-footer__col {
+  display: flex;
+  flex-direction: column;
+  gap: .85rem;
+}
+
+.site-footer__col-heading {
+  font-family: var(--font-display, 'Literata', Georgia, serif);
+  font-size: .8rem;
+  font-weight: 500;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  color: var(--_col-head);
+  margin: 0;
+}
+
+.site-footer__link-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: .6rem;
+}
+
+.site-footer__link {
+  font-family: var(--font-body, 'Inter', sans-serif);
+  font-size: .875rem;
+  line-height: 1.4;
+  color: var(--_link);
+  text-decoration: none;
+  transition: color .18s;
+}
+
+.site-footer__link:hover,
+.site-footer__link:focus-visible {
+  color: var(--_link-hover);
+}
+
+/* ── Divider ── */
+.site-footer__divider {
+  height: 1px;
+  background: var(--_divider);
+  margin-top: 3.5rem;
+}
+
+/* ── Bottom bar ── */
+.site-footer__bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding-block: 1.25rem;
+}
+
+.site-footer__copy {
+  font-family: var(--font-body, 'Inter', sans-serif);
+  font-size: .78rem;
+  color: var(--_text-soft);
+  margin: 0;
+  white-space: nowrap;
+}
+
+.site-footer__legal-links {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+}
+
+.site-footer__legal-link {
+  font-family: var(--font-body, 'Inter', sans-serif);
+  font-size: .78rem;
+  color: var(--_text-soft);
+  text-decoration: none;
+  transition: color .18s;
+}
+
+.site-footer__legal-link:hover,
+.site-footer__legal-link:focus-visible {
+  color: var(--_link-hover);
+}
+
+.site-footer__legal-sep {
+  font-size: .78rem;
+  color: var(--_divider);
+  user-select: none;
+}
+
+/* ── Payment marks ── */
+.site-footer__payment {
+  display: flex;
+  align-items: center;
+  gap: .45rem;
+}
+
+.site-footer__pay-mark {
+  display: block;
+  flex-shrink: 0;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+/* ── Responsive: md breakpoint (1100px): nav 2×2 ── */
+@media (max-width: 1100px) {
+  .site-footer__top {
+    grid-template-columns: 1fr;
+  }
+
+  .site-footer__nav {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ── Responsive: sm breakpoint (600px): nav 1-col, bottom stacked ── */
+@media (max-width: 600px) {
+  .site-footer__nav {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .site-footer__blurb {
+    max-width: 100%;
+  }
+
+  .site-footer__bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: .75rem;
+  }
+
+  .site-footer__payment {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 360px) {
+  .site-footer__nav {
+    grid-template-columns: 1fr;
+  }
+}
+

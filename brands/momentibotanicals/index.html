@@ -1,0 +1,929 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Momenti Botanicals — Handmade botanical soap | Made in Canada</title>
+<meta name="description" content="Pure essences. Delicate practices. Handmade botanical soap bars in small batches — virgin olive oil, shea butter & fresh botanicals. Palm-free, cruelty-free, kind to sensitive skin. Made in Canada.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,500;0,7..72,600;1,7..72,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="base.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<main>
+<!-- 01-header.html -->
+<!-- ============================================================
+   01-header.html — Momenti Botanicals
+   Announcement bar + sticky site header
+   ============================================================ -->
+
+<!-- ANNOUNCEMENT BAR -->
+<div class="announce">
+  <div class="announce__inner wrap">
+    <span class="announce__bit">Free shipping over $65</span>
+    <span class="announce__sep" aria-hidden="true">·</span>
+    <span class="announce__bit announce__bit--hide-mobile">Handmade in Canada</span>
+    <span class="announce__sep announce__sep--hide-mobile" aria-hidden="true">·</span>
+    <span class="announce__bit announce__bit--hide-mobile">15% off your first order</span>
+  </div>
+</div>
+
+<!-- SITE HEADER -->
+<header class="site-header" role="banner">
+  <div class="site-header__inner wrap">
+
+    <!-- MOBILE: Hamburger (left) -->
+    <button class="site-header__hamburger" aria-label="Open menu" aria-expanded="false">
+      <svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true">
+        <line x1="3" y1="6"  x2="19" y2="6"/>
+        <line x1="3" y1="11" x2="19" y2="11"/>
+        <line x1="3" y1="16" x2="19" y2="16"/>
+      </svg>
+    </button>
+
+    <!-- LOGO LOCKUP (left on desktop, center on mobile) -->
+    <a class="site-header__logo" href="https://www.google.com" aria-label="Momenti Botanicals — home">
+      <img
+        src="assets/logo.png"
+        alt="Momenti Botanicals monogram"
+        class="site-header__logo-img"
+        width="38"
+        height="38"
+      >
+      <span class="site-header__wordmark">Momenti Botanicals</span>
+    </a>
+
+    <!-- DESKTOP NAV -->
+    <nav class="site-header__nav" aria-label="Main navigation">
+      <ul class="site-header__nav-list" role="list">
+        <li><a class="site-header__nav-link" href="https://www.google.com">Shop</a></li>
+        <li class="site-header__nav-item--has-dropdown">
+          <a class="site-header__nav-link" href="https://www.google.com">Soap Bars</a>
+        </li>
+        <li><a class="site-header__nav-link" href="https://www.google.com">Body Milk</a></li>
+        <li><a class="site-header__nav-link" href="https://www.google.com">Sets &amp; Gifts</a></li>
+        <li><a class="site-header__nav-link" href="https://www.google.com">Our Story</a></li>
+        <li><a class="site-header__nav-link" href="https://www.google.com">Journal</a></li>
+      </ul>
+    </nav>
+
+    <!-- RIGHT ICONS -->
+    <div class="site-header__actions">
+
+      <!-- Search -->
+      <button class="site-header__action site-header__action--search" aria-label="Search">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="9.5" cy="9.5" r="6"/>
+          <line x1="14.2" y1="14.2" x2="19" y2="19"/>
+        </svg>
+      </button>
+
+      <!-- Account -->
+      <button class="site-header__action site-header__action--account" aria-label="My account">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="11" cy="7.5" r="3.5"/>
+          <path d="M3.5 19c0-4.14 3.36-7.5 7.5-7.5s7.5 3.36 7.5 7.5"/>
+        </svg>
+      </button>
+
+      <!-- Cart -->
+      <button class="site-header__action site-header__action--cart" aria-label="Cart — 0 items">
+        <span class="site-header__cart-wrap">
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M3 3h2l.6 3"/>
+            <path d="M5.6 6h13.8l-1.8 8H7L5.6 6z"/>
+            <circle cx="8.5" cy="18" r="1.2" fill="currentColor" stroke="none"/>
+            <circle cx="15.5" cy="18" r="1.2" fill="currentColor" stroke="none"/>
+          </svg>
+          <span class="site-header__cart-badge" aria-hidden="true">0</span>
+        </span>
+      </button>
+
+    </div><!-- /.site-header__actions -->
+
+  </div><!-- /.site-header__inner -->
+</header>
+
+<!-- 02-hero.html -->
+<section class="sec s-hero hero-fullbleed">
+  <img
+    class="s-hero__bg"
+    src="assets/hero.jpg"
+    alt="Hands lathering a Momenti Botanicals handmade soap bar"
+  >
+  <div class="wrap">
+    <div class="s-hero__panel">
+      <p class="eyebrow">Handmade Botanical Soap&nbsp;&middot;&nbsp;Canada</p>
+      <h1>Pure essences.<br>Delicate practices.</h1>
+      <p class="s-hero__sub">Small-batch soap bars made with virgin olive oil, shea butter and fresh botanicals — palm-free, cruelty-free, and kind to sensitive skin. This is your moment.</p>
+      <a class="btn btn-primary" href="https://www.google.com">Shop the soaps</a>
+      <div class="s-hero__chips">
+        <span class="chip">&#9733;&nbsp;5.0</span>
+        <span class="chip">Palm-Free</span>
+        <span class="chip">Made in Canada</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 03-trust.html -->
+<!-- ============================================================
+   03-trust.html — Momenti Botanicals
+   Trust strip: 4 trust pillars, slim band, instant (no reveal)
+   ============================================================ -->
+
+<section class="sec s-trust" aria-label="Trust signals">
+  <div class="wrap">
+    <ul class="s-trust__row" role="list">
+
+      <!-- Handmade in Canada -->
+      <li class="s-trust__item">
+        <svg class="ic s-trust__icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M20 34s-12-8.5-12-17a12 12 0 0 1 24 0c0 8.5-12 17-12 17z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+          <path d="M20 21a4 4 0 1 0 0-8 4 4 0 0 0 0 8z" stroke="currentColor" stroke-width="1.5"/>
+        </svg>
+        <div class="s-trust__text">
+          <span class="s-trust__label">Handmade in Canada</span>
+          <span class="s-trust__sub">Small batches, cold-process</span>
+        </div>
+      </li>
+
+      <!-- Palm-Free & Botanical -->
+      <li class="s-trust__item">
+        <svg class="ic s-trust__icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M20 35V18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          <path d="M20 18c0-4.5-5-9-5-9s0 6 5 9z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+          <path d="M20 22c0-4.5 5-9 5-9s0 6-5 9z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+          <path d="M20 26c-2.5-3-7-4-7-4s2 5 7 4z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+          <path d="M20 28c2.5-3 7-4 7-4s-2 5-7 4z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+        </svg>
+        <div class="s-trust__text">
+          <span class="s-trust__label">Palm-Free &amp; Botanical</span>
+          <span class="s-trust__sub">Olive oil, shea, real botanicals</span>
+        </div>
+      </li>
+
+      <!-- Cruelty-Free -->
+      <li class="s-trust__item">
+        <svg class="ic s-trust__icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <ellipse cx="20" cy="23" rx="10" ry="8" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M14 23c0-1.1.4-2.1 1-2.9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          <!-- ears -->
+          <path d="M13 15c-1-3-2-5.5-1-7s4 0 4.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M27 15c1-3 2-5.5 1-7s-4 0-4.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <!-- tail -->
+          <circle cx="31" cy="26" r="2.5" stroke="currentColor" stroke-width="1.5"/>
+          <!-- eyes -->
+          <circle cx="17" cy="22" r="1" fill="currentColor"/>
+          <circle cx="23" cy="22" r="1" fill="currentColor"/>
+        </svg>
+        <div class="s-trust__text">
+          <span class="s-trust__label">Cruelty-Free</span>
+          <span class="s-trust__sub">Never tested on animals</span>
+        </div>
+      </li>
+
+      <!-- Kind to Sensitive Skin -->
+      <li class="s-trust__item">
+        <svg class="ic s-trust__icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <!-- open hand / palm -->
+          <path d="M20 32c-4.5 0-8-3.5-8-7.5V14a1.5 1.5 0 0 1 3 0v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M15 14v-2a1.5 1.5 0 0 1 3 0v2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          <path d="M18 12v-1.5a1.5 1.5 0 0 1 3 0V12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          <path d="M21 12v-1a1.5 1.5 0 0 1 3 0v1.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          <path d="M24 12.5v2c0 0 4 1 4 5v5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          <!-- small sparkle -->
+          <path d="M28 10v-2M28 10l1.4-1.4M28 10l-1.4-1.4M28 10l1.4 1.4M28 10l-1.4 1.4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+        </svg>
+        <div class="s-trust__text">
+          <span class="s-trust__label">Kind to Sensitive Skin</span>
+          <span class="s-trust__sub">Gentle, no harsh additives</span>
+        </div>
+      </li>
+
+    </ul>
+  </div>
+</section>
+
+<!-- 04-bestsellers.html -->
+<!-- ============================================================
+   04-bestsellers.html — Momenti Botanicals
+   Bestseller soap-bar grid: 6 products, 3-col desktop / 2-col tablet+mobile
+   ============================================================ -->
+
+<section class="sec s-bestsellers" aria-labelledby="bestsellers-heading">
+  <div class="wrap">
+
+    <!-- Section header -->
+    <div class="s-bestsellers__hd">
+      <div class="s-bestsellers__hd-left">
+        <p class="eyebrow">Beloved Bars</p>
+        <h2 id="bestsellers-heading">Our bestselling soaps</h2>
+      </div>
+      <a class="s-bestsellers__all" href="https://www.google.com" aria-label="Shop all soap bars">
+        Shop all&nbsp;<span aria-hidden="true">→</span>
+      </a>
+    </div>
+
+    <!-- Product grid -->
+    <ul class="s-bestsellers__grid reveal" role="list">
+
+      <!-- 1. Eden -->
+      <li class="s-bestsellers__item">
+        <article class="card" aria-label="Eden soap bar">
+          <a class="card__img-wrap" href="https://www.google.com" tabindex="-1" aria-hidden="true">
+            <span class="card__badge card__badge--accent">Bestseller</span>
+            <img
+              class="card__img"
+              src="https://www.momentibotanicals.com/cdn/shop/files/Eden-soap-bar-2-web.jpg?v=1758650322&width=700"
+              alt="Eden soap bar — fresh green and floral"
+              loading="lazy"
+              decoding="async"
+              width="700"
+              height="875"
+            >
+          </a>
+          <div class="card__body">
+            <h3 class="card__name"><a href="https://www.google.com">Eden</a></h3>
+            <p class="card__desc">Fresh green &amp; floral</p>
+            <div class="card__meta">
+              <span class="stars" aria-label="5.0 out of 5 stars">★★★★★</span>
+              <span class="card__reviews">(24)</span>
+            </div>
+            <p class="card__price">$14 <abbr title="Canadian dollars">CAD</abbr></p>
+            <a class="btn btn-primary btn-block" href="https://www.google.com">Add to cart</a>
+          </div>
+        </article>
+      </li>
+
+      <!-- 2. Solstice -->
+      <li class="s-bestsellers__item">
+        <article class="card" aria-label="Solstice soap bar">
+          <a class="card__img-wrap" href="https://www.google.com" tabindex="-1" aria-hidden="true">
+            <span class="card__badge card__badge--accent">Bestseller</span>
+            <img
+              class="card__img"
+              src="https://www.momentibotanicals.com/cdn/shop/files/Solstice-soap-bar-04-web.jpg?v=1761177186&width=700"
+              alt="Solstice soap bar — warm amber and spice"
+              loading="lazy"
+              decoding="async"
+              width="700"
+              height="875"
+            >
+          </a>
+          <div class="card__body">
+            <h3 class="card__name"><a href="https://www.google.com">Solstice</a></h3>
+            <p class="card__desc">Warm amber &amp; spice</p>
+            <div class="card__meta">
+              <span class="stars" aria-label="5.0 out of 5 stars">★★★★★</span>
+              <span class="card__reviews">(18)</span>
+            </div>
+            <p class="card__price">$14 <abbr title="Canadian dollars">CAD</abbr></p>
+            <a class="btn btn-primary btn-block" href="https://www.google.com">Add to cart</a>
+          </div>
+        </article>
+      </li>
+
+      <!-- 3. Aura -->
+      <li class="s-bestsellers__item">
+        <article class="card" aria-label="Aura soap bar">
+          <a class="card__img-wrap" href="https://www.google.com" tabindex="-1" aria-hidden="true">
+            <img
+              class="card__img"
+              src="https://www.momentibotanicals.com/cdn/shop/files/aura-soap-bar-1858345.jpg?v=1756239827&width=700"
+              alt="Aura soap bar — soft musk and petals"
+              loading="lazy"
+              decoding="async"
+              width="700"
+              height="875"
+            >
+          </a>
+          <div class="card__body">
+            <h3 class="card__name"><a href="https://www.google.com">Aura</a></h3>
+            <p class="card__desc">Soft musk &amp; petals</p>
+            <div class="card__meta">
+              <span class="stars" aria-label="4.9 out of 5 stars">★★★★★</span>
+              <span class="card__reviews">(15)</span>
+            </div>
+            <p class="card__price">$14 <abbr title="Canadian dollars">CAD</abbr></p>
+            <a class="btn btn-primary btn-block" href="https://www.google.com">Add to cart</a>
+          </div>
+        </article>
+      </li>
+
+      <!-- 4. Costiera -->
+      <li class="s-bestsellers__item">
+        <article class="card" aria-label="Costiera soap bar">
+          <a class="card__img-wrap" href="https://www.google.com" tabindex="-1" aria-hidden="true">
+            <img
+              class="card__img"
+              src="https://www.momentibotanicals.com/cdn/shop/files/Momenti-costiera-soap-bar-1.jpg?v=1756347344&width=700"
+              alt="Costiera soap bar — Mediterranean citrus"
+              loading="lazy"
+              decoding="async"
+              width="700"
+              height="875"
+            >
+          </a>
+          <div class="card__body">
+            <h3 class="card__name"><a href="https://www.google.com">Costiera</a></h3>
+            <p class="card__desc">Mediterranean citrus</p>
+            <div class="card__meta">
+              <span class="stars" aria-label="4.9 out of 5 stars">★★★★★</span>
+              <span class="card__reviews">(12)</span>
+            </div>
+            <p class="card__price">$14 <abbr title="Canadian dollars">CAD</abbr></p>
+            <a class="btn btn-primary btn-block" href="https://www.google.com">Add to cart</a>
+          </div>
+        </article>
+      </li>
+
+      <!-- 5. Rosemary Garden -->
+      <li class="s-bestsellers__item">
+        <article class="card" aria-label="Rosemary Garden soap bar">
+          <a class="card__img-wrap" href="https://www.google.com" tabindex="-1" aria-hidden="true">
+            <img
+              class="card__img"
+              src="https://www.momentibotanicals.com/cdn/shop/files/Momenti-rosemary-natural-soap-bar.jpg?v=1756347231&width=700"
+              alt="Rosemary Garden soap bar — herbaceous and fresh"
+              loading="lazy"
+              decoding="async"
+              width="700"
+              height="875"
+            >
+          </a>
+          <div class="card__body">
+            <h3 class="card__name"><a href="https://www.google.com">Rosemary Garden</a></h3>
+            <p class="card__desc">Herbaceous &amp; fresh</p>
+            <div class="card__meta">
+              <span class="stars" aria-label="5.0 out of 5 stars">★★★★★</span>
+              <span class="card__reviews">(16)</span>
+            </div>
+            <p class="card__price">$14 <abbr title="Canadian dollars">CAD</abbr></p>
+            <a class="btn btn-primary btn-block" href="https://www.google.com">Add to cart</a>
+          </div>
+        </article>
+      </li>
+
+      <!-- 6. Angeletto -->
+      <li class="s-bestsellers__item">
+        <article class="card" aria-label="Angeletto soap bar">
+          <a class="card__img-wrap" href="https://www.google.com" tabindex="-1" aria-hidden="true">
+            <span class="card__badge card__badge--sage">Fragrance-Free</span>
+            <img
+              class="card__img"
+              src="https://www.momentibotanicals.com/cdn/shop/files/Angeletto-soap-bar-1-web.jpg?v=1758658231&width=700"
+              alt="Angeletto soap bar — pure, fragrance-free"
+              loading="lazy"
+              decoding="async"
+              width="700"
+              height="875"
+            >
+          </a>
+          <div class="card__body">
+            <h3 class="card__name"><a href="https://www.google.com">Angeletto</a></h3>
+            <p class="card__desc">Pure, fragrance-free</p>
+            <div class="card__meta">
+              <span class="stars" aria-label="5.0 out of 5 stars">★★★★★</span>
+              <span class="card__reviews">(21)</span>
+            </div>
+            <p class="card__price">$14 <abbr title="Canadian dollars">CAD</abbr></p>
+            <a class="btn btn-primary btn-block" href="https://www.google.com">Add to cart</a>
+          </div>
+        </article>
+      </li>
+
+    </ul><!-- /.s-bestsellers__grid -->
+
+    <p class="s-bestsellers__note">Ratings and review counts are illustrative.</p>
+
+  </div><!-- /.wrap -->
+</section>
+
+<!-- 05-ritual.html -->
+<!-- ============================================================
+   05-ritual.html — Momenti Botanicals
+   Editorial 2-column "slow down" band: text left, image right
+   ============================================================ -->
+
+<section class="sec s-ritual reveal" aria-labelledby="ritual-heading">
+  <div class="wrap">
+    <div class="s-ritual__inner">
+
+      <!-- Text column (left) -->
+      <div class="s-ritual__text">
+        <p class="eyebrow">The Moment</p>
+        <h2 id="ritual-heading">Less clutter,<br>more calm.</h2>
+        <p class="s-ritual__body">
+          We make soap the slow way — small batches, cold-process, virgin olive oil and
+          fresh botanicals. No rush, no excess. Just a quiet daily ritual that's good
+          for your skin and your senses.
+        </p>
+        <a class="btn btn-outline" href="https://www.google.com">Read the Ritual Journal</a>
+      </div>
+
+      <!-- Image column (right) -->
+      <div class="s-ritual__img-wrap">
+        <img
+          class="s-ritual__img"
+          src="https://www.momentibotanicals.com/cdn/shop/files/Momenti_6-soaps.jpg?v=1756244020&width=900"
+          alt="A collection of six Momenti Botanicals handmade soap bars"
+          loading="lazy"
+          width="900"
+        />
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- 06-clean.html -->
+<!-- ============================================================
+   06-clean.html — Momenti Botanicals
+   Clean-ingredients / our promise band: icon grid, no photo
+   ============================================================ -->
+
+<section class="sec s-clean reveal" aria-labelledby="clean-heading">
+  <div class="wrap">
+
+    <!-- Header -->
+    <div class="s-clean__hd">
+      <p class="eyebrow">Pure Essences</p>
+      <h2 id="clean-heading">Made with the good stuff.<br>Nothing else.</h2>
+      <p class="s-clean__sub">Every bar starts with real, recognisable ingredients — chosen because they work.</p>
+    </div>
+
+    <!-- 4-col icon grid -->
+    <ul class="s-clean__grid" role="list">
+
+      <!-- Virgin Olive Oil -->
+      <li class="s-clean__item">
+        <div class="s-clean__icon-wrap" aria-hidden="true">
+          <svg class="s-clean__icon" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- olive branch + droplet -->
+            <ellipse cx="22" cy="27" rx="7" ry="11" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+            <path d="M22 16V9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M22 14c0-3 3-6 3-6s1 4-3 6z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+            <path d="M22 17c0-3-3-6-3-6s-1 4 3 6z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <h3 class="s-clean__title">Virgin Olive Oil</h3>
+        <p class="s-clean__desc">Gentle, moisturizing base</p>
+      </li>
+
+      <!-- Shea Butter -->
+      <li class="s-clean__item">
+        <div class="s-clean__icon-wrap" aria-hidden="true">
+          <svg class="s-clean__icon" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- shea nut + butter swirl -->
+            <circle cx="22" cy="20" r="9" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M18 20c0-2.2 1.8-4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M22 34v-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M17 32c2.5 1.5 7.5 1.5 10 0" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h3 class="s-clean__title">Shea Butter</h3>
+        <p class="s-clean__desc">Rich, skin-softening care</p>
+      </li>
+
+      <!-- Fresh Botanicals -->
+      <li class="s-clean__item">
+        <div class="s-clean__icon-wrap" aria-hidden="true">
+          <svg class="s-clean__icon" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- leaf + stem -->
+            <path d="M22 36V16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M22 22c0-5-6-10-6-10s0 7 6 10z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+            <path d="M22 27c0-5 6-10 6-10s0 7-6 10z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+            <!-- small flower hint at top -->
+            <circle cx="22" cy="12" r="2.5" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M22 9.5V8M24.2 10.3l1.1-1.1M22 14.5V16M19.8 10.3l-1.1-1.1" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h3 class="s-clean__title">Fresh Botanicals</h3>
+        <p class="s-clean__desc">Real plants &amp; essential oils</p>
+      </li>
+
+      <!-- Palm-Free, Always -->
+      <li class="s-clean__item">
+        <div class="s-clean__icon-wrap" aria-hidden="true">
+          <svg class="s-clean__icon" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- earth outline + leaf check -->
+            <circle cx="22" cy="22" r="11" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M11 22h22M22 11c-3 4-3 14 0 22M22 11c3 4 3 14 0 22" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+            <!-- small check badge -->
+            <circle cx="32" cy="13" r="5.5" fill="var(--surface)" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M29.5 13l1.8 1.8 2.7-2.7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <h3 class="s-clean__title">Palm-Free, Always</h3>
+        <p class="s-clean__desc">Better for skin &amp; planet</p>
+      </li>
+
+    </ul>
+
+    <!-- Free-from chip row -->
+    <div class="s-clean__chips" aria-label="Free-from claims">
+      <span class="chip">No Palm Oil</span>
+      <span class="s-clean__dot" aria-hidden="true">·</span>
+      <span class="chip">No Harsh Detergents</span>
+      <span class="s-clean__dot" aria-hidden="true">·</span>
+      <span class="chip">No Cruelty</span>
+    </div>
+
+    <!-- CTA -->
+    <div class="s-clean__cta">
+      <a class="btn btn-sage" href="https://www.google.com">Our ingredients</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- 07-reviews.html -->
+<!-- ============================================================
+   07-reviews.html — Momenti Botanicals
+   Reviews wall: rating summary + 6 cards (3-up desktop, 2-up tablet, 1-up mobile)
+   ============================================================ -->
+
+<section class="sec s-reviews" aria-labelledby="reviews-heading">
+  <div class="wrap">
+
+    <!-- Section header -->
+    <div class="s-reviews__hd reveal">
+      <p class="eyebrow">Loved &amp; Lathered</p>
+      <h2 id="reviews-heading">Adored by sensitive skin</h2>
+    </div>
+
+    <!-- Rating summary -->
+    <div class="s-reviews__summary reveal">
+      <div class="s-reviews__score">
+        <span class="s-reviews__big-star" aria-hidden="true">★</span>
+        <span class="s-reviews__score-num">5.0</span>
+        <span class="s-reviews__score-denom">/5</span>
+      </div>
+      <p class="s-reviews__count">Based on 20+ verified reviews</p>
+    </div>
+
+    <!-- Review cards grid -->
+    <ul class="s-reviews__grid" role="list">
+
+      <!-- Card 1 — Eden bar -->
+      <li class="s-reviews__item">
+        <article class="review reveal" aria-label="Review by Margaux T.">
+          <div class="review__stars">
+            <span class="stars" aria-label="5 out of 5 stars">★★★★★</span>
+          </div>
+          <blockquote class="review__quote">
+            <p>"The Eden bar is everything I hoped for. The lather is so creamy and rich — it rinses completely clean, yet my skin feels soft, never tight. I keep it by the sink and it's become my little daily ritual."</p>
+          </blockquote>
+          <footer class="review__footer">
+            <span class="review__name">Margaux T.</span>
+            <span class="review__verified">Verified buyer</span>
+          </footer>
+          <p class="review__product">Eden Soap Bar</p>
+        </article>
+      </li>
+
+      <!-- Card 2 — Solstice -->
+      <li class="s-reviews__item">
+        <article class="review reveal" aria-label="Review by Clara R.">
+          <div class="review__stars">
+            <span class="stars" aria-label="5 out of 5 stars">★★★★★</span>
+          </div>
+          <blockquote class="review__quote">
+            <p>"Solstice has such a beautiful, warm scent — earthy and grounding without being heavy. I use it every evening and my skin has never looked better. A genuine moment of calm at the end of a long day."</p>
+          </blockquote>
+          <footer class="review__footer">
+            <span class="review__name">Clara R.</span>
+            <span class="review__verified">Verified buyer</span>
+          </footer>
+          <p class="review__product">Solstice Soap Bar</p>
+        </article>
+      </li>
+
+      <!-- Card 3 — Angeletto, sensitive skin -->
+      <li class="s-reviews__item">
+        <article class="review reveal" aria-label="Review by Simone L.">
+          <div class="review__stars">
+            <span class="stars" aria-label="5 out of 5 stars">★★★★★</span>
+          </div>
+          <blockquote class="review__quote">
+            <p>"I have very reactive skin and Angeletto is the first fragrance-free bar that my skin actually loves. No redness, no dryness — just clean, quiet, happy skin. I've already ordered my third bar."</p>
+          </blockquote>
+          <footer class="review__footer">
+            <span class="review__name">Simone L.</span>
+            <span class="review__verified">Verified buyer</span>
+          </footer>
+          <p class="review__product">Angeletto — Fragrance Free</p>
+        </article>
+      </li>
+
+      <!-- Card 4 — Body milk -->
+      <li class="s-reviews__item">
+        <article class="review reveal" aria-label="Review by Daphné M.">
+          <div class="review__stars">
+            <span class="stars" aria-label="5 out of 5 stars">★★★★★</span>
+          </div>
+          <blockquote class="review__quote">
+            <p>"The body milk is a dream — lightweight but truly nourishing. I layer it right after the Eden bar and the combination is heavenly. My skin stays soft and hydrated all day without any heaviness."</p>
+          </blockquote>
+          <footer class="review__footer">
+            <span class="review__name">Daphné M.</span>
+            <span class="review__verified">Verified buyer</span>
+          </footer>
+          <p class="review__product">Botanical Body Milk</p>
+        </article>
+      </li>
+
+      <!-- Card 5 — Soap set / gift -->
+      <li class="s-reviews__item">
+        <article class="review reveal" aria-label="Review by Ines F.">
+          <div class="review__stars">
+            <span class="stars" aria-label="5 out of 5 stars">★★★★★</span>
+          </div>
+          <blockquote class="review__quote">
+            <p>"Gifted the soap set to my mother for her birthday and she was genuinely moved by the packaging. The cotton bag, the little card — it felt so considered and personal. She called me to say the Solstice bar is her new favourite."</p>
+          </blockquote>
+          <footer class="review__footer">
+            <span class="review__name">Ines F.</span>
+            <span class="review__verified">Verified buyer</span>
+          </footer>
+          <p class="review__product">Soap Set — Gift</p>
+        </article>
+      </li>
+
+      <!-- Card 6 — lather / Angeletto repurchase -->
+      <li class="s-reviews__item">
+        <article class="review reveal" aria-label="Review by Nora K.">
+          <div class="review__stars">
+            <span class="stars" aria-label="5 out of 5 stars">★★★★★</span>
+          </div>
+          <blockquote class="review__quote">
+            <p>"I was sceptical that a handmade bar could lather as well as commercial soap — I was so wrong. Angeletto whips into the most pillowy foam and my sensitive skin stays perfectly calm. I'll never go back."</p>
+          </blockquote>
+          <footer class="review__footer">
+            <span class="review__name">Nora K.</span>
+            <span class="review__verified">Verified buyer</span>
+          </footer>
+          <p class="review__product">Angeletto — Fragrance Free</p>
+        </article>
+      </li>
+
+    </ul><!-- /.s-reviews__grid -->
+
+    <!-- Footnote -->
+    <p class="s-reviews__note" aria-label="Disclaimer">Reviews are illustrative.</p>
+
+  </div><!-- /.wrap -->
+</section>
+
+<!-- 08-gift.html -->
+<!-- ============================================================
+   08-gift.html — Momenti Botanicals
+   Sets & Gifting band — 2-col layout on --surface-2
+   ============================================================ -->
+
+<section class="sec s-gift" aria-labelledby="gift-heading">
+  <div class="wrap">
+    <div class="s-gift__inner">
+
+      <!-- Image column -->
+      <div class="s-gift__img-col reveal">
+        <div class="s-gift__img-wrap">
+          <img
+            src="https://www.momentibotanicals.com/cdn/shop/files/Momenti-organic-cotton-gift-bag.jpg?v=1756347941&width=900"
+            alt="Momenti Botanicals soap set in an organic cotton gift bag"
+            class="s-gift__img"
+            loading="lazy"
+            decoding="async"
+          >
+        </div>
+      </div>
+
+      <!-- Text column -->
+      <div class="s-gift__text-col reveal">
+        <p class="eyebrow">The Perfect Little Gift</p>
+        <h2 id="gift-heading">Soap sets, beautifully given</h2>
+        <p class="s-gift__body">Build a set of bars in an organic cotton bag — boxed and ready to gift, or to keep all for yourself.</p>
+
+        <!-- Chips -->
+        <ul class="s-gift__chips" role="list" aria-label="Gift set details">
+          <li><span class="chip">Organic cotton bag</span></li>
+          <li><span class="chip">Up to 20% off sets</span></li>
+          <li><span class="chip">Free CA shipping $65+</span></li>
+        </ul>
+
+        <!-- CTA -->
+        <a href="https://www.google.com" class="btn btn-primary s-gift__cta">Shop sets &amp; gifts</a>
+      </div>
+
+    </div><!-- /.s-gift__inner -->
+  </div><!-- /.wrap -->
+</section>
+
+<!-- 09-newsletter.html -->
+<!-- ============================================================
+   09-newsletter.html — Momenti Botanicals
+   Newsletter signup band
+   ============================================================ -->
+
+<section class="sec s-newsletter">
+  <div class="s-newsletter__inner wrap">
+
+    <span class="eyebrow s-newsletter__eyebrow">Join the Ritual</span>
+
+    <h2 class="s-newsletter__heading">15% off your first moment</h2>
+
+    <p class="s-newsletter__sub">
+      Slow beauty, new bars and quiet notes — to your inbox.
+    </p>
+
+    <form class="s-newsletter__form" onsubmit="return false" novalidate>
+      <div class="s-newsletter__form-row">
+        <label for="nl-email" class="sr-only">Email address</label>
+        <input
+          id="nl-email"
+          class="s-newsletter__input"
+          type="email"
+          name="email"
+          placeholder="your@email.com"
+          autocomplete="email"
+          required
+        >
+        <button class="btn btn-light s-newsletter__btn" type="submit">
+          Subscribe
+        </button>
+      </div>
+    </form>
+
+    <p class="s-newsletter__fine">Unsubscribe anytime.</p>
+
+  </div>
+</section>
+
+<!-- 10-footer.html -->
+<!-- ============================================================
+   10-footer.html — Momenti Botanicals
+   Site footer
+   ============================================================ -->
+
+<footer class="site-footer" role="contentinfo">
+
+  <!-- ── TOP GRID ── -->
+  <div class="site-footer__top wrap">
+
+    <!-- Brand column -->
+    <div class="site-footer__brand">
+      <a class="site-footer__logo-link" href="https://www.google.com" aria-label="Momenti Botanicals — home">
+        <img
+          src="assets/logo.png"
+          alt="Momenti Botanicals"
+          class="site-footer__logo-img"
+          height="46"
+          width="46"
+          style="filter:brightness(0) invert(1);"
+        >
+      </a>
+      <p class="site-footer__wordmark">Momenti Botanicals</p>
+      <p class="site-footer__blurb">
+        Handmade botanical soap, made slowly in small batches in Canada.
+      </p>
+
+      <!-- Social icons -->
+      <div class="site-footer__socials" aria-label="Social media">
+
+        <!-- Instagram -->
+        <a class="site-footer__social-link" href="https://www.google.com" aria-label="Momenti Botanicals on Instagram" target="_blank" rel="noopener">
+          <svg class="site-footer__social-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+            <circle cx="12" cy="12" r="4"/>
+            <circle cx="17.5" cy="6.5" r=".8" fill="currentColor" stroke="none"/>
+          </svg>
+        </a>
+
+        <!-- Pinterest -->
+        <a class="site-footer__social-link" href="https://www.google.com" aria-label="Momenti Botanicals on Pinterest" target="_blank" rel="noopener">
+          <svg class="site-footer__social-icon" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M12 2C6.477 2 2 6.477 2 12c0 4.235 2.636 7.855 6.356 9.312-.088-.791-.167-2.005.034-2.868.181-.78 1.172-4.97 1.172-4.97s-.299-.598-.299-1.482c0-1.388.806-2.428 1.808-2.428.853 0 1.267.641 1.267 1.408 0 .858-.546 2.14-.828 3.33-.235.994.499 1.803 1.476 1.803 1.772 0 3.135-1.867 3.135-4.563 0-2.386-1.715-4.054-4.163-4.054-2.836 0-4.497 2.127-4.497 4.326 0 .857.33 1.775.742 2.276a.297.297 0 0 1 .069.285c-.076.312-.244.994-.277 1.133-.044.183-.147.222-.338.134-1.249-.581-2.03-2.407-2.03-3.874 0-3.154 2.292-6.052 6.608-6.052 3.469 0 6.165 2.473 6.165 5.776 0 3.447-2.173 6.22-5.19 6.22-1.013 0-1.967-.527-2.292-1.148l-.623 2.378c-.226.869-.835 1.958-1.244 2.621.937.29 1.931.446 2.962.446 5.523 0 10-4.477 10-10S17.523 2 12 2z"/>
+          </svg>
+        </a>
+
+      </div><!-- /.site-footer__socials -->
+
+      <!-- Trust chips -->
+      <div class="site-footer__chips" aria-label="Product certifications">
+        <span class="chip">Handmade</span>
+        <span class="chip">Palm-Free</span>
+        <span class="chip">Made in Canada</span>
+      </div>
+
+    </div><!-- /.site-footer__brand -->
+
+    <!-- Link columns -->
+    <nav class="site-footer__nav" aria-label="Footer navigation">
+
+      <!-- Shop -->
+      <div class="site-footer__col">
+        <h3 class="site-footer__col-heading">Shop</h3>
+        <ul class="site-footer__link-list" role="list">
+          <li><a class="site-footer__link" href="https://www.google.com">Soap Bars</a></li>
+          <li><a class="site-footer__link" href="https://www.google.com">Body Milk</a></li>
+          <li><a class="site-footer__link" href="https://www.google.com">Sets</a></li>
+          <li><a class="site-footer__link" href="https://www.google.com">Gifts</a></li>
+          <li><a class="site-footer__link" href="https://www.google.com">Gift Bag</a></li>
+        </ul>
+      </div>
+
+      <!-- Bars -->
+      <div class="site-footer__col">
+        <h3 class="site-footer__col-heading">Bars</h3>
+        <ul class="site-footer__link-list" role="list">
+          <li><a class="site-footer__link" href="https://www.google.com">Eden</a></li>
+          <li><a class="site-footer__link" href="https://www.google.com">Solstice</a></li>
+          <li><a class="site-footer__link" href="https://www.google.com">Aura</a></li>
+          <li><a class="site-footer__link" href="https://www.google.com">Angeletto</a></li>
+          <li><a class="site-footer__link" href="https://www.google.com">View All</a></li>
+        </ul>
+      </div>
+
+      <!-- About -->
+      <div class="site-footer__col">
+        <h3 class="site-footer__col-heading">About</h3>
+        <ul class="site-footer__link-list" role="list">
+          <li><a class="site-footer__link" href="https://www.google.com">Our Story</a></li>
+          <li><a class="site-footer__link" href="https://www.google.com">Ingredients</a></li>
+          <li><a class="site-footer__link" href="https://www.google.com">The Ritual Journal</a></li>
+        </ul>
+      </div>
+
+      <!-- Help -->
+      <div class="site-footer__col">
+        <h3 class="site-footer__col-heading">Help</h3>
+        <ul class="site-footer__link-list" role="list">
+          <li><a class="site-footer__link" href="https://www.google.com">Contact</a></li>
+          <li><a class="site-footer__link" href="https://www.google.com">Shipping &amp; Returns</a></li>
+          <li><a class="site-footer__link" href="https://www.google.com">FAQ</a></li>
+          <li><a class="site-footer__link" href="https://www.google.com">Wholesale</a></li>
+        </ul>
+      </div>
+
+    </nav><!-- /.site-footer__nav -->
+
+  </div><!-- /.site-footer__top -->
+
+  <!-- ── DIVIDER ── -->
+  <div class="site-footer__divider wrap" aria-hidden="true"></div>
+
+  <!-- ── BOTTOM BAR ── -->
+  <div class="site-footer__bottom wrap">
+
+    <p class="site-footer__copy">
+      &copy; 2026 Momenti Botanicals. All rights reserved.
+    </p>
+
+    <div class="site-footer__legal-links">
+      <a class="site-footer__legal-link" href="https://www.google.com">Privacy</a>
+      <span class="site-footer__legal-sep" aria-hidden="true">·</span>
+      <a class="site-footer__legal-link" href="https://www.google.com">Terms</a>
+    </div>
+
+    <!-- Payment marks -->
+    <div class="site-footer__payment" aria-label="Accepted payment methods">
+
+      <!-- Visa -->
+      <svg class="site-footer__pay-mark" width="38" height="24" viewBox="0 0 38 24" role="img" aria-label="Visa">
+        <rect width="38" height="24" rx="4" fill="rgba(255,255,255,.10)"/>
+        <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="#D9D4C8" font-family="Arial,sans-serif" font-size="9" font-weight="700" letter-spacing="1">VISA</text>
+      </svg>
+
+      <!-- Mastercard -->
+      <svg class="site-footer__pay-mark" width="38" height="24" viewBox="0 0 38 24" role="img" aria-label="Mastercard">
+        <rect width="38" height="24" rx="4" fill="rgba(255,255,255,.10)"/>
+        <circle cx="14" cy="12" r="6" fill="rgba(217,85,85,.55)"/>
+        <circle cx="24" cy="12" r="6" fill="rgba(217,154,44,.55)"/>
+        <path d="M19 8.2a6 6 0 0 1 0 7.6A6 6 0 0 1 19 8.2z" fill="rgba(217,120,44,.6)"/>
+      </svg>
+
+      <!-- Amex -->
+      <svg class="site-footer__pay-mark" width="38" height="24" viewBox="0 0 38 24" role="img" aria-label="American Express">
+        <rect width="38" height="24" rx="4" fill="rgba(255,255,255,.10)"/>
+        <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="#D9D4C8" font-family="Arial,sans-serif" font-size="7.5" font-weight="700" letter-spacing=".5">AMEX</text>
+      </svg>
+
+      <!-- PayPal -->
+      <svg class="site-footer__pay-mark" width="38" height="24" viewBox="0 0 38 24" role="img" aria-label="PayPal">
+        <rect width="38" height="24" rx="4" fill="rgba(255,255,255,.10)"/>
+        <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="#D9D4C8" font-family="Arial,sans-serif" font-size="7.5" font-weight="700" letter-spacing=".5">PayPal</text>
+      </svg>
+
+    </div><!-- /.site-footer__payment -->
+
+  </div><!-- /.site-footer__bottom -->
+
+</footer>
+
+</main>
+<script src="fx.js"></script>
+</body>
+</html>
