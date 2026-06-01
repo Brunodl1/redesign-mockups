@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gloomie Chérie — Apothecary for the darkly inclined | Gothic luxury beauty</title>
+<meta name="description" content="Handcrafted gothic-luxury beauty for bold souls. Small-batch, cruelty-free, vegan skincare, makeup & body care from Montréal. Join La Voûte — our monthly subscription.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="base.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<main>
+<!-- 01-header.html -->
+<!-- ============================================================
+     Gloomie Chérie — 01-header.html
+     Announcement bar + sticky dark gothic-luxe header
+     ============================================================ -->
+
+<!-- ANNOUNCEMENT BAR -->
+<div class="announce" role="region" aria-label="Site announcement">
+  <div class="announce__inner wrap">
+    <span class="announce__item">Free shipping on Canadian orders $200+</span>
+    <span class="announce__sep" aria-hidden="true">·</span>
+    <span class="announce__item announce__item--hide-mobile">Cruelty-free &amp; vegan</span>
+    <span class="announce__sep announce__sep--hide-mobile" aria-hidden="true">·</span>
+    <span class="announce__item announce__item--hide-mobile">10% off your first spell ✦</span>
+  </div>
+</div>
+
+<!-- STICKY HEADER -->
+<header class="site-header" role="banner">
+  <div class="site-header__inner wrap">
+
+    <!-- MOBILE: Hamburger -->
+    <button class="site-header__hamburger" aria-label="Open menu" aria-expanded="false">
+      <svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true">
+        <line x1="3" y1="6" x2="19" y2="6"/>
+        <line x1="3" y1="11" x2="19" y2="11"/>
+        <line x1="3" y1="16" x2="19" y2="16"/>
+      </svg>
+    </button>
+
+    <!-- LOGO — left-aligned wordmark, bone on dark -->
+    <a class="site-header__logo" href="https://www.google.com" aria-label="Gloomie Chérie — home">
+      <img src="assets/logo.png" alt="Gloomie Chérie" class="site-header__logo-img">
+    </a>
+
+    <!-- PRIMARY NAV — desktop only -->
+    <nav class="site-header__nav" aria-label="Primary navigation">
+      <ul class="site-header__nav-list" role="list">
+        <li><a class="site-header__nav-link" href="https://www.google.com">The Shop</a></li>
+        <li><a class="site-header__nav-link" href="https://www.google.com">Face</a></li>
+        <li><a class="site-header__nav-link" href="https://www.google.com">Makeup</a></li>
+        <li><a class="site-header__nav-link" href="https://www.google.com">Body</a></li>
+        <li><a class="site-header__nav-link" href="https://www.google.com">Gifts</a></li>
+        <li><a class="site-header__nav-link" href="https://www.google.com">La&nbsp;Voûte</a></li>
+        <li><a class="site-header__nav-link" href="https://www.google.com">Journal</a></li>
+      </ul>
+    </nav>
+
+    <!-- ICONS: search + account + cart -->
+    <div class="site-header__icons">
+
+      <!-- Search — hidden on mobile -->
+      <a class="site-header__icon-btn site-header__icon-btn--hide-mobile" href="https://www.google.com" aria-label="Search">
+        <svg class="ic" width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="9.5" cy="9.5" r="6.5"/>
+          <line x1="14.5" y1="14.5" x2="19.5" y2="19.5"/>
+        </svg>
+      </a>
+
+      <!-- Account — hidden on mobile -->
+      <a class="site-header__icon-btn site-header__icon-btn--hide-mobile" href="https://www.google.com" aria-label="Account">
+        <svg class="ic" width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="11" cy="7.5" r="3.5"/>
+          <path d="M3.5 19c0-4.142 3.358-7.5 7.5-7.5s7.5 3.358 7.5 7.5"/>
+        </svg>
+      </a>
+
+      <!-- Cart — always visible -->
+      <a class="site-header__icon-btn site-header__cart" href="https://www.google.com" aria-label="Cart (0 items)">
+        <svg class="ic" width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M1 1h3l2.4 10.5a2 2 0 0 0 2 1.5h8.2a2 2 0 0 0 2-1.6L20.5 5H5.5"/>
+          <circle cx="8.5" cy="19.5" r="1.5"/>
+          <circle cx="16.5" cy="19.5" r="1.5"/>
+        </svg>
+        <span class="site-header__cart-badge" aria-hidden="true">0</span>
+      </a>
+
+    </div><!-- /.site-header__icons -->
+
+  </div><!-- /.site-header__inner -->
+</header>
+
+<!-- 02-hero.html -->
+<section class="sec s-hero hero-fullbleed">
+
+  <img
+    class="s-hero__bg"
+    src="https://www.gloomiecherie.com/cdn/shop/files/Audrey_makeup-look_gloomie-cherie_vertical.png?v=1769105690&width=1600"
+    alt="Gloomie Chérie gothic glam beauty look"
+    fetchpriority="high"
+    decoding="async"
+  >
+
+  <div class="s-hero__scrim"></div>
+
+  <div class="wrap">
+    <div class="s-hero__content">
+
+      <p class="eyebrow">Apothecary for the darkly inclined</p>
+
+      <h1>Premium beauty<br>for bold souls.</h1>
+
+      <p class="s-hero__sub">Handcrafted, small-batch skincare &amp; makeup — cruelty-free, vegan, and unapologetically extra.</p>
+
+      <a class="btn btn-primary s-hero__cta" href="https://www.google.com">Shop the apothecary</a>
+
+      <div class="s-hero__chips">
+        <span class="chip">✦ Small-batch</span>
+        <span class="chip">Cruelty-free &amp; Vegan</span>
+        <span class="chip">Made in Montréal</span>
+      </div>
+
+    </div>
+  </div>
+
+</section>
+
+<!-- 03-trust.html -->
+<!-- ============================================================
+     Gloomie Chérie — 03-trust.html
+     Trust strip: 4 brand pillars, icon + label + sub-label
+     ============================================================ -->
+
+<section class="sec s-trust" aria-label="Brand trust signals">
+  <div class="wrap">
+    <ul class="s-trust__row" role="list">
+
+      <!-- Small-Batch -->
+      <li class="s-trust__item">
+        <svg class="ic s-trust__icon" viewBox="0 0 34 34" fill="none"
+             stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+             aria-hidden="true" focusable="false">
+          <!-- Erlenmeyer flask body -->
+          <path d="M12 4h10M13 4v8L6 26a2 2 0 0 0 1.7 3h18.6a2 2 0 0 0 1.7-3L21 12V4"/>
+          <!-- liquid level line inside flask -->
+          <line x1="8.5" y1="22" x2="25.5" y2="22"/>
+          <!-- crescent moon inside flask -->
+          <path d="M14 25.5a4 4 0 0 0 5.5-5.5 4 4 0 0 1-5.5 5.5z" fill="var(--gold)" stroke="none"/>
+        </svg>
+        <span class="s-trust__label">Small-Batch</span>
+        <span class="s-trust__sub">Handcrafted in limited runs</span>
+      </li>
+
+      <!-- Cruelty-Free & Vegan -->
+      <li class="s-trust__item">
+        <svg class="ic s-trust__icon" viewBox="0 0 34 34" fill="none"
+             stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+             aria-hidden="true" focusable="false">
+          <!-- rabbit silhouette (outline style) -->
+          <ellipse cx="17" cy="21" rx="7" ry="6"/>
+          <!-- left ear -->
+          <path d="M12 15c-1-4-2-7 0-10 1.5 2.5 1.5 6.5 0 10"/>
+          <!-- right ear -->
+          <path d="M22 15c1-4 2-7 0-10-1.5 2.5-1.5 6.5 0 10"/>
+          <!-- leaf -->
+          <path d="M22 27c3-3 3-7 0-7-3 0-3 4 0 7z"/>
+        </svg>
+        <span class="s-trust__label">Cruelty-Free &amp; Vegan</span>
+        <span class="s-trust__sub">Always (honey aside)</span>
+      </li>
+
+      <!-- Carbon-Neutral -->
+      <li class="s-trust__item">
+        <svg class="ic s-trust__icon" viewBox="0 0 34 34" fill="none"
+             stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+             aria-hidden="true" focusable="false">
+          <!-- globe -->
+          <circle cx="17" cy="17" r="11"/>
+          <!-- latitude lines -->
+          <path d="M6 17h22"/>
+          <!-- longitude ellipse -->
+          <ellipse cx="17" cy="17" rx="5.5" ry="11"/>
+          <!-- leaf overlay -->
+          <path d="M21 11c-6 0-8 5-4 9 2 2 5 2 7-1-3 0-5-2-3-8z" fill="var(--gold)" fill-opacity=".18" stroke="var(--gold)" stroke-width="1.2"/>
+        </svg>
+        <span class="s-trust__label">Carbon-Neutral</span>
+        <span class="s-trust__sub">On every order</span>
+      </li>
+
+      <!-- Made in Montréal -->
+      <li class="s-trust__item">
+        <svg class="ic s-trust__icon" viewBox="0 0 34 34" fill="none"
+             stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+             aria-hidden="true" focusable="false">
+          <!-- map pin -->
+          <path d="M17 3a9 9 0 0 1 9 9c0 6-9 19-9 19S8 18 8 12a9 9 0 0 1 9-9z"/>
+          <circle cx="17" cy="12" r="3.2"/>
+        </svg>
+        <span class="s-trust__label">Made in Montréal</span>
+        <span class="s-trust__sub">Indie &amp; intentional</span>
+      </li>
+
+    </ul>
+  </div>
+</section>
+
+<!-- 04-bestsellers.html -->
+<!-- ============================================================
+     Gloomie Chérie — 04-bestsellers.html
+     Bestsellers product grid — 4 cult-favourite potions
+     ============================================================ -->
+
+<section class="sec s-bestsellers" aria-labelledby="bs-heading">
+  <div class="wrap">
+
+    <!-- Section header row -->
+    <div class="s-bestsellers__header">
+      <div class="s-bestsellers__header-left">
+        <p class="eyebrow">Cult Favourites</p>
+        <h2 id="bs-heading">Best-loved potions</h2>
+      </div>
+      <a class="s-bestsellers__shop-all" href="https://www.google.com" aria-label="Shop all products">
+        Shop all <span aria-hidden="true">→</span>
+      </a>
+    </div>
+
+    <!-- Product grid -->
+    <ul class="s-bestsellers__grid reveal" role="list">
+
+      <!-- Card 1: Eternal Serum -->
+      <li class="s-bestsellers__card card" role="listitem">
+        <a class="card__img-wrap" href="https://www.google.com" aria-label="View Eternal Serum">
+          <span class="card__badge card__badge--bestseller">Bestseller</span>
+          <img
+            src="https://www.gloomiecherie.com/cdn/shop/files/84F2EF26-8386-449A-B6BD-4627E9312503.jpg?v=1776463714&width=700"
+            alt="Eternal Serum — ageless glow elixir"
+            class="card__img"
+            loading="lazy"
+            width="700"
+          >
+        </a>
+        <div class="card__body">
+          <h3 class="card__name">
+            <a href="https://www.google.com">Eternal Serum</a>
+          </h3>
+          <p class="card__descriptor">Ageless glow elixir</p>
+          <div class="card__meta">
+            <span class="stars" aria-label="4.9 out of 5 stars">★★★★★</span>
+            <span class="card__reviews">(88)</span>
+          </div>
+          <p class="card__price">$54 <abbr title="Canadian dollars">CAD</abbr></p>
+          <a href="https://www.google.com" class="btn btn-primary btn-block card__cta">Add to cart</a>
+        </div>
+      </li>
+
+      <!-- Card 2: Slay to Rest Palette -->
+      <li class="s-bestsellers__card card" role="listitem">
+        <a class="card__img-wrap" href="https://www.google.com" aria-label="View Slay to Rest Palette">
+          <span class="card__badge card__badge--bestseller">Bestseller</span>
+          <img
+            src="https://www.gloomiecherie.com/cdn/shop/files/A9428FDC-F279-4430-8B73-9F79B964036C.jpg?v=1776363946&width=700"
+            alt="Slay to Rest Palette — 12-shade coffin palette"
+            class="card__img"
+            loading="lazy"
+            width="700"
+          >
+        </a>
+        <div class="card__body">
+          <h3 class="card__name">
+            <a href="https://www.google.com">Slay to Rest Palette</a>
+          </h3>
+          <p class="card__descriptor">12-shade coffin palette</p>
+          <div class="card__meta">
+            <span class="stars" aria-label="4.8 out of 5 stars">★★★★★</span>
+            <span class="card__reviews">(64)</span>
+          </div>
+          <p class="card__price">$48 <abbr title="Canadian dollars">CAD</abbr></p>
+          <a href="https://www.google.com" class="btn btn-primary btn-block card__cta">Add to cart</a>
+        </div>
+      </li>
+
+      <!-- Card 3: Fresa Macabra Lip Oil -->
+      <li class="s-bestsellers__card card" role="listitem">
+        <a class="card__img-wrap" href="https://www.google.com" aria-label="View Fresa Macabra Lip Oil">
+          <span class="card__badge card__badge--new">New</span>
+          <img
+            src="https://www.gloomiecherie.com/cdn/shop/files/Fresa-Macabra_lip-oil_gloomie-cherie.jpg?v=1775228429&width=700"
+            alt="Fresa Macabra Lip Oil — soothing tinted gloss"
+            class="card__img"
+            loading="lazy"
+            width="700"
+          >
+        </a>
+        <div class="card__body">
+          <h3 class="card__name">
+            <a href="https://www.google.com">Fresa Macabra Lip Oil</a>
+          </h3>
+          <p class="card__descriptor">Soothing tinted gloss</p>
+          <div class="card__meta">
+            <span class="stars" aria-label="4.9 out of 5 stars">★★★★★</span>
+            <span class="card__reviews">(51)</span>
+          </div>
+          <p class="card__price">$22 <abbr title="Canadian dollars">CAD</abbr></p>
+          <a href="https://www.google.com" class="btn btn-primary btn-block card__cta">Add to cart</a>
+        </div>
+      </li>
+
+      <!-- Card 4: Lilith Cleansing Balm -->
+      <li class="s-bestsellers__card card" role="listitem">
+        <a class="card__img-wrap" href="https://www.google.com" aria-label="View Lilith Cleansing Balm">
+          <!-- no badge -->
+          <img
+            src="https://www.gloomiecherie.com/cdn/shop/files/07FBDD26-FF4F-4D2D-8327-4C54D8BCBD94.jpg?v=1774289879&width=700"
+            alt="Lilith Cleansing Balm — volcanic-ash melt"
+            class="card__img"
+            loading="lazy"
+            width="700"
+          >
+        </a>
+        <div class="card__body">
+          <h3 class="card__name">
+            <a href="https://www.google.com">Lilith Cleansing Balm</a>
+          </h3>
+          <p class="card__descriptor">Volcanic-ash melt</p>
+          <div class="card__meta">
+            <span class="stars" aria-label="4.8 out of 5 stars">★★★★★</span>
+            <span class="card__reviews">(39)</span>
+          </div>
+          <p class="card__price">$42 <abbr title="Canadian dollars">CAD</abbr></p>
+          <a href="https://www.google.com" class="btn btn-primary btn-block card__cta">Add to cart</a>
+        </div>
+      </li>
+
+    </ul><!-- /.s-bestsellers__grid -->
+
+    <!-- Ratings footnote -->
+    <p class="s-bestsellers__footnote">
+      * Ratings and review counts shown are illustrative for design purposes.
+    </p>
+
+  </div><!-- /.wrap -->
+</section>
+
+<!-- 05-voute.html -->
+<!-- ============================================================
+     Gloomie Chérie — 05-voute.html
+     La Voûte subscription feature — 2-column, image right
+     ============================================================ -->
+
+<section class="sec s-voute" aria-labelledby="voute-heading">
+  <div class="wrap">
+    <div class="s-voute__inner">
+
+      <!-- LEFT: text content -->
+      <div class="s-voute__text reveal">
+        <p class="eyebrow">The Monthly Ritual</p>
+        <h2 id="voute-heading">Enter La Voûte</h2>
+        <p class="s-voute__lead">Our monthly subscription box — a curated coven of full-size and exclusive gothic-luxe treasures, wrapped in themed artwork, delivered to your door. Members unlock The Vault: early access, secret drops and ritual perks.</p>
+
+        <ul class="s-voute__perks" role="list" aria-label="Subscription perks">
+
+          <li class="s-voute__perk">
+            <span class="s-voute__perk-icon" aria-hidden="true">
+              <!-- box/gift icon -->
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="2" y="7" width="16" height="11" rx="1.5"/>
+                <path d="M10 7V18"/>
+                <path d="M2 11.5h16"/>
+                <path d="M6.5 7C5 7 3.5 6 3.5 4.5S5 2 6.5 3C8 4 10 7 10 7s-2-4-1-5.5S12 .5 12.5 2 13 5.5 10 7"/>
+                <path d="M13.5 7C15 7 16.5 6 16.5 4.5S15 2 13.5 3C12 4 10 7 10 7s2-4 1-5.5S8 .5 7.5 2 7 5.5 10 7"/>
+              </svg>
+            </span>
+            <span>Full-size + exclusive products</span>
+          </li>
+
+          <li class="s-voute__perk">
+            <span class="s-voute__perk-icon" aria-hidden="true">
+              <!-- lock/key icon -->
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="4" y="9" width="12" height="9" rx="1.5"/>
+                <path d="M7 9V6.5a3 3 0 0 1 6 0V9"/>
+                <circle cx="10" cy="14" r="1.2" fill="currentColor" stroke="none"/>
+              </svg>
+            </span>
+            <span>Members-only early access</span>
+          </li>
+
+          <li class="s-voute__perk">
+            <span class="s-voute__perk-icon" aria-hidden="true">
+              <!-- price tag icon -->
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M10.5 2H4a2 2 0 0 0-2 2v6.5a1 1 0 0 0 .3.71l7 7a1 1 0 0 0 1.4 0l6-6a1 1 0 0 0 0-1.42l-7-7A1 1 0 0 0 10.5 2Z"/>
+                <circle cx="6.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+              </svg>
+            </span>
+            <span>From $20/month · cancel anytime</span>
+          </li>
+
+        </ul><!-- /.s-voute__perks -->
+
+        <div class="s-voute__cta-row">
+          <a href="https://www.google.com" class="btn btn-primary">Join La Voûte</a>
+          <p class="s-voute__social-proof" aria-label="Adored by our coven">
+            <span class="stars" aria-hidden="true">★★★★★</span>
+            adored by our coven
+          </p>
+        </div>
+      </div><!-- /.s-voute__text -->
+
+      <!-- RIGHT: image -->
+      <div class="s-voute__img-wrap reveal">
+        <div class="s-voute__img-tint" aria-hidden="true"></div>
+        <img
+          class="s-voute__img"
+          src="https://www.gloomiecherie.com/cdn/shop/files/Boo-Box-Packaging-Mockup_gloomie-cherie.png?v=1757483496&width=900"
+          alt="La Voûte monthly subscription box by Gloomie Chérie"
+          loading="lazy"
+          width="900"
+        >
+      </div><!-- /.s-voute__img-wrap -->
+
+    </div><!-- /.s-voute__inner -->
+  </div><!-- /.wrap -->
+</section>
+
+<!-- 06-editorial.html -->
+<!-- ============================================================
+     Gloomie Chérie — 06-editorial.html
+     Editorial manifesto band — full-bleed lifestyle photo
+     ============================================================ -->
+
+<section class="sec s-editorial" aria-labelledby="editorial-heading">
+
+  <!-- Full-bleed background scrim (gradient) -->
+  <div class="s-editorial__scrim" aria-hidden="true"></div>
+
+  <div class="wrap s-editorial__wrap">
+
+    <!-- Contained text card with semi-opaque dark panel -->
+    <div class="s-editorial__card reveal" role="article">
+      <p class="eyebrow s-editorial__eyebrow">Indulgent · Rebellious · Extra</p>
+      <h2 id="editorial-heading" class="s-editorial__heading">Beauty is a ritual.<br>Make yours unforgettable.</h2>
+      <p class="s-editorial__body">Dark elegance meets playful romance — clean, effective formulas for those who refuse to blend in.</p>
+      <a href="https://www.google.com" class="btn btn-light s-editorial__cta">Discover the world of Gloomie</a>
+    </div><!-- /.s-editorial__card -->
+
+  </div><!-- /.wrap -->
+
+</section>
+
+<!-- 07-clean.html -->
+<!-- ============================================================
+     Gloomie Chérie — 07-clean.html
+     Clean-Promise / Coven Values band
+     ============================================================ -->
+
+<section class="sec s-clean" aria-labelledby="clean-heading">
+  <div class="wrap">
+
+    <!-- Section header -->
+    <div class="s-clean__header reveal">
+      <p class="eyebrow">The Coven Promise</p>
+      <h2 id="clean-heading">Wickedly clean. Always.</h2>
+      <p class="s-clean__sub">Every potion we brew is formulated without compromise — for your skin, your conscience, and the earth beneath our boots.</p>
+    </div>
+
+    <!-- Value chips row -->
+    <ul class="s-clean__chips reveal" role="list" aria-label="Brand values">
+
+      <!-- Cruelty-Free -->
+      <li class="chip s-clean__chip" role="listitem">
+        <svg class="ic s-clean__check" viewBox="0 0 20 20" fill="none"
+             aria-hidden="true" focusable="false">
+          <circle cx="10" cy="10" r="9" stroke="var(--accent)" stroke-width="1.4"/>
+          <polyline points="5.5,10.5 8.5,13.5 14.5,7" stroke="var(--accent)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span>Cruelty-Free</span>
+      </li>
+
+      <!-- Vegan (honey aside) -->
+      <li class="chip s-clean__chip" role="listitem">
+        <svg class="ic s-clean__check" viewBox="0 0 20 20" fill="none"
+             aria-hidden="true" focusable="false">
+          <circle cx="10" cy="10" r="9" stroke="var(--gold)" stroke-width="1.4"/>
+          <polyline points="5.5,10.5 8.5,13.5 14.5,7" stroke="var(--gold)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span>Vegan (honey aside)</span>
+      </li>
+
+      <!-- Small-Batch & Fresh -->
+      <li class="chip s-clean__chip" role="listitem">
+        <svg class="ic s-clean__check" viewBox="0 0 20 20" fill="none"
+             aria-hidden="true" focusable="false">
+          <circle cx="10" cy="10" r="9" stroke="var(--accent)" stroke-width="1.4"/>
+          <polyline points="5.5,10.5 8.5,13.5 14.5,7" stroke="var(--accent)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span>Small-Batch &amp; Fresh</span>
+      </li>
+
+      <!-- Carbon-Neutral Shipping -->
+      <li class="chip s-clean__chip" role="listitem">
+        <svg class="ic s-clean__check" viewBox="0 0 20 20" fill="none"
+             aria-hidden="true" focusable="false">
+          <circle cx="10" cy="10" r="9" stroke="var(--gold)" stroke-width="1.4"/>
+          <polyline points="5.5,10.5 8.5,13.5 14.5,7" stroke="var(--gold)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span>Carbon-Neutral Shipping</span>
+      </li>
+
+      <!-- Ethically Sourced -->
+      <li class="chip s-clean__chip" role="listitem">
+        <svg class="ic s-clean__check" viewBox="0 0 20 20" fill="none"
+             aria-hidden="true" focusable="false">
+          <circle cx="10" cy="10" r="9" stroke="var(--accent)" stroke-width="1.4"/>
+          <polyline points="5.5,10.5 8.5,13.5 14.5,7" stroke="var(--accent)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span>Ethically Sourced</span>
+      </li>
+
+    </ul>
+
+    <!-- CTA -->
+    <div class="s-clean__cta reveal">
+      <a class="btn btn-outline" href="https://www.google.com">Our ingredients</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- 08-reviews.html -->
+<!-- ============================================================
+     Gloomie Chérie — 08-reviews.html
+     Reviews wall — "From the Coven"
+     ============================================================ -->
+
+<section class="sec s-reviews" aria-labelledby="reviews-heading">
+  <div class="wrap">
+
+    <!-- Section header -->
+    <div class="s-reviews__header reveal">
+      <p class="eyebrow">From the Coven</p>
+      <h2 id="reviews-heading">Adored by bold souls</h2>
+
+      <!-- Rating summary -->
+      <div class="s-reviews__summary" aria-label="Overall rating: 4.9 out of 5, loved by 1,200+ customers">
+        <span class="s-reviews__big-rating">&#9733; 4.9<span class="s-reviews__big-rating-denom">/5</span></span>
+        <span class="s-reviews__count">loved by 1,200+ darklings</span>
+      </div>
+    </div>
+
+    <!-- Review grid -->
+    <ul class="s-reviews__grid reveal" role="list" aria-label="Customer reviews">
+
+      <!-- Review 1 — Eternal Serum -->
+      <li class="s-reviews__review review" role="listitem">
+        <div class="stars s-reviews__stars" aria-label="5 out of 5 stars">
+          <span aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+        </div>
+        <blockquote class="s-reviews__quote">
+          "My skin has never been so hauntingly good. The Eternal Serum sank in like a whisper and left me glowing like a Victorian ghost at a candlelit ball. I've already ordered three more."
+        </blockquote>
+        <footer class="s-reviews__footer">
+          <span class="s-reviews__name">Margaux D.</span>
+          <span class="s-reviews__verified">Verified darkling &mdash; Montréal, QC</span>
+          <span class="s-reviews__product">ETERNAL SERUM</span>
+        </footer>
+      </li>
+
+      <!-- Review 2 — Slay to Rest palette -->
+      <li class="s-reviews__review review" role="listitem">
+        <div class="stars s-reviews__stars" aria-label="5 out of 5 stars">
+          <span aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+        </div>
+        <blockquote class="s-reviews__quote">
+          "The Slay to Rest palette is a dream dressed in shadows. Every shade blends like smoke and stays on through rituals, concerts, and questionable life choices. Obsessed doesn't even cover it."
+        </blockquote>
+        <footer class="s-reviews__footer">
+          <span class="s-reviews__name">Céleste R.</span>
+          <span class="s-reviews__verified">Verified darkling &mdash; Vancouver, BC</span>
+          <span class="s-reviews__product">SLAY TO REST PALETTE</span>
+        </footer>
+      </li>
+
+      <!-- Review 3 — Fresa Macabra lip oil -->
+      <li class="s-reviews__review review" role="listitem">
+        <div class="stars s-reviews__stars" aria-label="5 out of 5 stars">
+          <span aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+        </div>
+        <blockquote class="s-reviews__quote">
+          "Fresa Macabra lip oil is what strawberries would taste like if they were brewed by a benevolent witch at midnight. My lips feel incredible and the tint is criminally flattering. Worth every soul I sold."
+        </blockquote>
+        <footer class="s-reviews__footer">
+          <span class="s-reviews__name">Isadora V.</span>
+          <span class="s-reviews__verified">Verified darkling &mdash; Québec City, QC</span>
+          <span class="s-reviews__product">FRESA MACABRA LIP OIL</span>
+        </footer>
+      </li>
+
+      <!-- Review 4 — Lilith cleansing balm -->
+      <li class="s-reviews__review review" role="listitem">
+        <div class="stars s-reviews__stars" aria-label="5 out of 5 stars">
+          <span aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+        </div>
+        <blockquote class="s-reviews__quote">
+          "The Lilith cleansing balm melts makeup like it has a personal vendetta against mascara — and I mean that as the highest compliment. My skin looks rested, dewy, and mildly supernatural. Fully enchanted."
+        </blockquote>
+        <footer class="s-reviews__footer">
+          <span class="s-reviews__name">Ophélie B.</span>
+          <span class="s-reviews__verified">Verified darkling &mdash; Toronto, ON</span>
+          <span class="s-reviews__product">LILITH CLEANSING BALM</span>
+        </footer>
+      </li>
+
+      <!-- Review 5 — La Voûte box -->
+      <li class="s-reviews__review review" role="listitem">
+        <div class="stars s-reviews__stars" aria-label="5 out of 5 stars">
+          <span aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+        </div>
+        <blockquote class="s-reviews__quote">
+          "La Voûte box arrived like a gift from the beyond — impeccably wrapped, smelling divine, and stuffed with things I didn't know I desperately needed. Gloomie Chérie has ruined every other subscription for me forever."
+        </blockquote>
+        <footer class="s-reviews__footer">
+          <span class="s-reviews__name">Naomi L.</span>
+          <span class="s-reviews__verified">Verified darkling &mdash; Ottawa, ON</span>
+          <span class="s-reviews__product">LA VOÛTE BOX</span>
+        </footer>
+      </li>
+
+      <!-- Review 6 — Black Velvet eyeliner -->
+      <li class="s-reviews__review review" role="listitem">
+        <div class="stars s-reviews__stars" aria-label="5 out of 5 stars">
+          <span aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+        </div>
+        <blockquote class="s-reviews__quote">
+          "Black Velvet eyeliner lays down like liquid midnight — precise, matte, and absolutely unshakeable. I wore it through a thunderstorm and it didn't budge. Neither did my devotion to this brand."
+        </blockquote>
+        <footer class="s-reviews__footer">
+          <span class="s-reviews__name">Raven M.</span>
+          <span class="s-reviews__verified">Verified darkling &mdash; Calgary, AB</span>
+          <span class="s-reviews__product">BLACK VELVET EYELINER</span>
+        </footer>
+      </li>
+
+    </ul>
+
+    <!-- Footnote -->
+    <p class="s-reviews__footnote" aria-hidden="true">Reviews are illustrative.</p>
+
+  </div>
+</section>
+
+<!-- 09-newsletter.html -->
+<!-- ============================================================
+     Gloomie Chérie — 09-newsletter.html
+     Newsletter signup band — cherry-red (#accent), bone text
+     ============================================================ -->
+
+<section class="sec s-newsletter" aria-labelledby="newsletter-heading">
+
+  <!-- decorative bats -->
+  <span class="s-newsletter__bat s-newsletter__bat--l" aria-hidden="true">🦇</span>
+  <span class="s-newsletter__bat s-newsletter__bat--r" aria-hidden="true">🦇</span>
+
+  <div class="wrap s-newsletter__wrap">
+
+    <p class="eyebrow s-newsletter__eyebrow">Join the Coven</p>
+
+    <h2 class="s-newsletter__heading" id="newsletter-heading">
+      10% off your first spell
+    </h2>
+
+    <p class="s-newsletter__sub">
+      Secret drops, dark rituals and members-only magic&nbsp;— to your inbox.
+    </p>
+
+    <form class="s-newsletter__form" onsubmit="return false" novalidate>
+      <label class="s-newsletter__label" for="nl-email">Email address</label>
+      <div class="s-newsletter__row">
+        <input
+          class="s-newsletter__input"
+          id="nl-email"
+          type="email"
+          name="email"
+          placeholder="your@coven.com"
+          autocomplete="email"
+          required
+        >
+        <button type="submit" class="btn btn-light s-newsletter__btn">Subscribe</button>
+      </div>
+      <p class="s-newsletter__fine">Unsubscribe anytime. No dark magic required.</p>
+    </form>
+
+  </div><!-- /.wrap -->
+
+</section><!-- /.s-newsletter -->
+
+<!-- 10-footer.html -->
+<!-- ============================================================
+     Gloomie Chérie — 10-footer.html
+     Site footer — gothic-luxe, dark, bone text, 4-col nav
+     ============================================================ -->
+
+<footer class="site-footer" role="contentinfo">
+
+  <!-- ── TOP: logo + blurb + socials ── -->
+  <div class="site-footer__top">
+    <div class="wrap site-footer__top-inner">
+
+      <!-- logo -->
+      <a class="site-footer__logo-link" href="https://www.google.com" aria-label="Gloomie Chérie — home">
+        <img
+          src="assets/logo.png"
+          alt="Gloomie Chérie"
+          class="site-footer__logo"
+          height="30"
+          width="auto"
+          loading="lazy"
+        >
+      </a>
+
+      <!-- blurb -->
+      <p class="site-footer__blurb">
+        Apothecary for the darkly inclined.<br>
+        Handcrafted gothic-luxe beauty, made in Montréal. 🦇
+      </p>
+
+      <!-- social icons -->
+      <nav class="site-footer__socials" aria-label="Social media">
+        <!-- Instagram -->
+        <a class="site-footer__social-link" href="https://www.google.com" aria-label="Instagram" rel="noopener">
+          <svg class="site-footer__social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+            <circle cx="12" cy="12" r="5"/>
+            <circle cx="17.5" cy="6.5" r=".8" fill="currentColor" stroke="none"/>
+          </svg>
+        </a>
+        <!-- TikTok -->
+        <a class="site-footer__social-link" href="https://www.google.com" aria-label="TikTok" rel="noopener">
+          <svg class="site-footer__social-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+        <!-- Pinterest -->
+        <a class="site-footer__social-link" href="https://www.google.com" aria-label="Pinterest" rel="noopener">
+          <svg class="site-footer__social-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M12 2C6.477 2 2 6.477 2 12c0 4.236 2.636 7.855 6.356 9.312-.088-.791-.167-2.005.035-2.868.181-.78 1.172-4.97 1.172-4.97s-.299-.598-.299-1.482c0-1.388.806-2.428 1.808-2.428.853 0 1.267.641 1.267 1.408 0 .858-.546 2.14-.828 3.33-.236.994.499 1.806 1.476 1.806 1.772 0 3.137-1.868 3.137-4.56 0-2.384-1.714-4.052-4.163-4.052-2.834 0-4.497 2.126-4.497 4.32 0 .855.329 1.771.74 2.27a.297.297 0 0 1 .069.284c-.076.312-.244.994-.276 1.134-.044.183-.146.222-.336.134-1.249-.581-2.03-2.407-2.03-3.874 0-3.154 2.292-6.052 6.608-6.052 3.469 0 6.165 2.472 6.165 5.776 0 3.447-2.173 6.22-5.19 6.22-1.013 0-1.966-.527-2.292-1.148l-.623 2.378c-.226.869-.835 1.958-1.244 2.621.937.29 1.931.446 2.962.446 5.523 0 10-4.477 10-10S17.523 2 12 2z" fill="currentColor"/>
+          </svg>
+        </a>
+      </nav>
+
+    </div><!-- /.site-footer__top-inner -->
+  </div><!-- /.site-footer__top -->
+
+  <!-- ── DIVIDER ── -->
+  <div class="wrap"><div class="site-footer__rule" role="separator" aria-hidden="true"></div></div>
+
+  <!-- ── LINK COLUMNS ── -->
+  <div class="site-footer__cols">
+    <div class="wrap site-footer__cols-inner">
+
+      <!-- Shop -->
+      <nav class="site-footer__col" aria-label="Shop navigation">
+        <h3 class="site-footer__col-heading">Shop</h3>
+        <ul class="site-footer__links" role="list">
+          <li><a class="site-footer__link" href="https://www.google.com">Face</a></li>
+          <li><a class="site-footer__link" href="https://www.google.com">Makeup</a></li>
+          <li><a class="site-footer__link" href="https://www.google.com">Body</a></li>
+          <li><a class="site-footer__link" href="https://www.google.com">Hair</a></li>
+          <li><a class="site-footer__link" href="https://www.google.com">Candles</a></li>
+          <li><a class="site-footer__link" href="https://www.google.com">Gifts</a></li>
+        </ul>
+      </nav>
+
+      <!-- La Voûte -->
+      <nav class="site-footer__col" aria-label="La Voûte navigation">
+        <h3 class="site-footer__col-heading">La&nbsp;Voûte</h3>
+        <ul class="site-footer__links" role="list">
+          <li><a class="site-footer__link" href="https://www.google.com">Subscription</a></li>
+          <li><a class="site-footer__link" href="https://www.google.com">The Vault</a></li>
+          <li><a class="site-footer__link" href="https://www.google.com">How it Works</a></li>
+        </ul>
+      </nav>
+
+      <!-- Coven -->
+      <nav class="site-footer__col" aria-label="Coven navigation">
+        <h3 class="site-footer__col-heading">Coven</h3>
+        <ul class="site-footer__links" role="list">
+          <li><a class="site-footer__link" href="https://www.google.com">Our Story</a></li>
+          <li><a class="site-footer__link" href="https://www.google.com">Journal</a></li>
+          <li><a class="site-footer__link" href="https://www.google.com">Events</a></li>
+          <li><a class="site-footer__link" href="https://www.google.com">Ingredients</a></li>
+        </ul>
+      </nav>
+
+      <!-- Help -->
+      <nav class="site-footer__col" aria-label="Help navigation">
+        <h3 class="site-footer__col-heading">Help</h3>
+        <ul class="site-footer__links" role="list">
+          <li><a class="site-footer__link" href="https://www.google.com">Contact</a></li>
+          <li><a class="site-footer__link" href="https://www.google.com">Shipping &amp; Returns</a></li>
+          <li><a class="site-footer__link" href="https://www.google.com">FAQ</a></li>
+          <li><a class="site-footer__link" href="https://www.google.com">Track Order</a></li>
+        </ul>
+      </nav>
+
+    </div><!-- /.site-footer__cols-inner -->
+  </div><!-- /.site-footer__cols -->
+
+  <!-- ── TRUST BADGES ── -->
+  <div class="site-footer__trust">
+    <div class="wrap site-footer__trust-inner">
+      <span class="chip site-footer__chip">Cruelty-Free</span>
+      <span class="chip site-footer__chip">Vegan</span>
+      <span class="chip site-footer__chip">Made in Montréal</span>
+    </div>
+  </div>
+
+  <!-- ── DIVIDER ── -->
+  <div class="wrap"><div class="site-footer__rule" role="separator" aria-hidden="true"></div></div>
+
+  <!-- ── BOTTOM BAR ── -->
+  <div class="site-footer__bottom">
+    <div class="wrap site-footer__bottom-inner">
+
+      <!-- copyright + legal links -->
+      <p class="site-footer__copy">
+        &copy; 2026 Gloomie Chérie. All rights reserved.
+        <span class="site-footer__copy-sep" aria-hidden="true">·</span>
+        <a class="site-footer__legal-link" href="https://www.google.com">Privacy</a>
+        <span class="site-footer__copy-sep" aria-hidden="true">·</span>
+        <a class="site-footer__legal-link" href="https://www.google.com">Terms</a>
+      </p>
+
+      <!-- payment marks -->
+      <div class="site-footer__payments" aria-label="Accepted payment methods">
+
+        <!-- Visa -->
+        <svg class="site-footer__pay-icon" viewBox="0 0 38 24" aria-label="Visa" role="img">
+          <rect width="38" height="24" rx="4" fill="#1A1F71"/>
+          <text x="6" y="17" font-family="Arial, sans-serif" font-weight="700" font-size="11" fill="#FFFFFF" letter-spacing=".5">VISA</text>
+        </svg>
+
+        <!-- Mastercard -->
+        <svg class="site-footer__pay-icon" viewBox="0 0 38 24" aria-label="Mastercard" role="img">
+          <rect width="38" height="24" rx="4" fill="#252525"/>
+          <circle cx="14" cy="12" r="7" fill="#EB001B"/>
+          <circle cx="24" cy="12" r="7" fill="#F79E1B"/>
+          <path d="M19 6.8a7 7 0 0 1 0 10.4A7 7 0 0 1 19 6.8z" fill="#FF5F00"/>
+        </svg>
+
+        <!-- Amex -->
+        <svg class="site-footer__pay-icon" viewBox="0 0 38 24" aria-label="American Express" role="img">
+          <rect width="38" height="24" rx="4" fill="#2E77BC"/>
+          <text x="5" y="17" font-family="Arial, sans-serif" font-weight="700" font-size="8.5" fill="#FFFFFF" letter-spacing=".3">AMEX</text>
+        </svg>
+
+        <!-- PayPal -->
+        <svg class="site-footer__pay-icon" viewBox="0 0 38 24" aria-label="PayPal" role="img">
+          <rect width="38" height="24" rx="4" fill="#F5F5F5"/>
+          <text x="5" y="16" font-family="Arial, sans-serif" font-weight="700" font-size="9" fill="#003087" letter-spacing=".2">Pay</text>
+          <text x="18" y="16" font-family="Arial, sans-serif" font-weight="700" font-size="9" fill="#009CDE" letter-spacing=".2">Pal</text>
+        </svg>
+
+      </div><!-- /.site-footer__payments -->
+
+    </div><!-- /.site-footer__bottom-inner -->
+  </div><!-- /.site-footer__bottom -->
+
+</footer><!-- /.site-footer -->
+
+</main>
+<script src="fx.js"></script>
+</body>
+</html>
