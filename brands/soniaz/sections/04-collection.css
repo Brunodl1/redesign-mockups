@@ -1,0 +1,242 @@
+/* ============================================================
+   04-collection.css — Shop the Collection product grid
+   Scoped under .s-collection
+   ============================================================ */
+
+/* -- local token re-declarations (base.css contract) -- */
+.s-collection {
+  --bg:          #FBF6F3;
+  --surface:     #FFFFFF;
+  --surface-2:   #F6EAE6;
+  --cream:       #F5F4F0;
+  --ink:         #2A1014;
+  --ink-soft:    #6E535A;
+  --accent:      #710F39;
+  --accent-ink:  #FFFFFF;
+  --accent-deep: #560B2C;
+  --crimson:     #761322;
+  --wine:        #67373C;
+  --mahogany:    #491508;
+  --gold:        #C9A24E;
+  --line:        #ECDDD8;
+  --star:        #C9A24E;
+  --font-display:"Ovo", "Georgia", serif;
+  --font-body:   "Instrument Sans", "Helvetica Neue", Arial, sans-serif;
+  --s--1:  .82rem;
+  --s-0:   1.05rem;
+  --s-1:   1.25rem;
+  --s-2:   1.6rem;
+  --s-3:   2.15rem;
+  --s-4:   3rem;
+  --s-5:   3.9rem;
+  --sp-1: .25rem; --sp-2: .5rem; --sp-3: 1rem;  --sp-4: 1.5rem;
+  --sp-5: 2.5rem; --sp-6: 4rem;  --sp-7: 6rem;  --sp-8: 8rem;
+  --radius: 4px; --radius-lg: 16px; --radius-pill: 50px;
+  --shadow: 0 16px 44px rgba(42,16,20,.12);
+  --maxw: 1320px;
+}
+
+/* Section shell */
+.s-collection {
+  background: var(--bg);
+}
+
+/* --- Header block --- */
+.s-collection__hd {
+  text-align: center;
+  max-width: 620px;
+  margin: 0 auto var(--sp-6);
+}
+
+.s-collection__h2 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: var(--s-4);
+  color: var(--ink);
+  margin: 0 0 var(--sp-3);
+  line-height: 1.12;
+  letter-spacing: -.01em;
+}
+
+.s-collection__intro {
+  font-family: var(--font-body);
+  font-size: var(--s-0);
+  color: var(--ink-soft);
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* --- Grid --- */
+.s-collection__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-4);
+  list-style: none;
+  margin: 0 0 var(--sp-6);
+  padding: 0;
+}
+
+/* Stagger reveal delay */
+.s-collection__card-wrap.reveal:nth-child(2) { transition-delay: .12s; }
+.s-collection__card-wrap.reveal:nth-child(3) { transition-delay: .24s; }
+
+/* --- Card --- */
+.s-collection .card {
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  border: 1.5px solid var(--line);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  transition: transform .25s cubic-bezier(.2,.7,.2,1), box-shadow .25s ease;
+}
+
+.s-collection .card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow);
+}
+
+/* Image tile */
+.s-collection .card__img-link {
+  display: block;
+  text-decoration: none;
+}
+
+.s-collection .card__img-tile {
+  background: var(--surface-2);
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  overflow: hidden;
+  aspect-ratio: 1 / 1;
+}
+
+.s-collection .card__img-tile img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform .35s ease;
+}
+
+.s-collection .card:hover .card__img-tile img {
+  transform: scale(1.04);
+}
+
+/* Card body */
+.s-collection .card__body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: var(--sp-4);
+  gap: var(--sp-2);
+}
+
+/* Product name */
+.s-collection .card__name {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: var(--s-2);
+  color: var(--ink);
+  margin: 0;
+  line-height: 1.2;
+}
+
+/* Descriptor */
+.s-collection .card__desc {
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  color: var(--ink-soft);
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Shades */
+.s-collection .card__shades {
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  color: var(--ink-soft);
+  margin: 0;
+  line-height: 1.5;
+}
+
+.s-collection .card__shades-label {
+  font-weight: 600;
+  color: var(--ink);
+}
+
+/* Footer row: price + stars */
+.s-collection .card__foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+  padding-top: var(--sp-2);
+}
+
+.s-collection .card__price {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: var(--s-1);
+  color: var(--ink);
+  margin: 0;
+}
+
+.s-collection .card__stars {
+  font-size: var(--s--1);
+  color: var(--star);
+  letter-spacing: .06em;
+  margin: 0;
+}
+
+/* CTA button — full width, above foot */
+.s-collection .card__body .btn {
+  margin-top: var(--sp-3);
+}
+
+/* --- Shop-all CTA --- */
+.s-collection__cta {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--sp-2);
+}
+
+/* --- Tablet: keep 3-up or 2-up --- */
+@media (max-width: 1024px) and (min-width: 601px) {
+  .s-collection__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* --- Mobile: horizontal snap on very small, else 1-up --- */
+@media (max-width: 600px) {
+  .s-collection__hd {
+    margin-bottom: var(--sp-5);
+  }
+
+  .s-collection__grid {
+    grid-template-columns: repeat(2, minmax(260px, 1fr));
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: var(--sp-3);
+    gap: var(--sp-3);
+    /* hide scrollbar */
+    scrollbar-width: none;
+  }
+
+  .s-collection__grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .s-collection__card-wrap {
+    scroll-snap-align: start;
+    min-width: 260px;
+  }
+}
+
+@media (max-width: 780px) {
+  .s-collection__h2 {
+    font-size: var(--s-3);
+  }
+}

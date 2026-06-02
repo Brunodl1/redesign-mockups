@@ -1,0 +1,226 @@
+/* ============================================================
+   Soniaz — 02-hero.css
+   Split hero: text LEFT (warm panel) / model photo RIGHT
+   All rules scoped under .s-hero
+   ============================================================ */
+
+/* ---- section shell ---- */
+.s-hero {
+  background: var(--bg);
+  padding-block: 0;          /* grid manages vertical space */
+  overflow: hidden;
+}
+
+/* ---- two-column grid ---- */
+.s-hero__grid {
+  display: grid;
+  grid-template-columns: 1fr 1.02fr;
+  gap: var(--sp-5);
+  align-items: stretch;
+  min-height: 600px;
+}
+
+/* ---- LEFT — text panel ---- */
+.s-hero__text {
+  background: var(--surface-2);  /* soft blush — text fully off the photo */
+  padding: var(--sp-7) var(--sp-6) var(--sp-7) var(--sp-5);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--sp-3);
+  min-width: 0;
+  border-radius: var(--radius-lg) 0 0 var(--radius-lg);
+}
+
+.s-hero__text .eyebrow {
+  margin: 0;
+}
+
+.s-hero__h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 4.2vw, var(--s-5));
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -.015em;
+  color: var(--ink);
+  margin: 0;
+}
+
+.s-hero__accent {
+  color: var(--accent);
+}
+
+.s-hero__sub {
+  font-family: var(--font-body);
+  font-size: var(--s-0);
+  line-height: 1.7;
+  color: var(--ink-soft);
+  margin: 0;
+  max-width: 46ch;
+}
+
+/* chip row — wraps on small screens */
+.s-hero__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+}
+
+.s-hero__chips .chip {
+  background: var(--surface);
+  color: var(--ink);
+  border-color: var(--line);
+}
+
+/* CTA */
+.s-hero__cta {
+  align-self: flex-start;
+}
+
+/* rating */
+.s-hero__rating {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  font-size: var(--s--1);
+  color: var(--ink-soft);
+  margin: 0;
+}
+
+.s-hero__rating .stars {
+  font-size: var(--s-0);
+}
+
+.s-hero__rating-text {
+  font-family: var(--font-body);
+  font-weight: 500;
+}
+
+/* ---- RIGHT — model image ---- */
+.s-hero__media {
+  position: relative;
+  min-width: 0;
+  max-width: 100%;
+  overflow: hidden;
+  border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+}
+
+.s-hero__img {
+  width: 100%;
+  height: 100%;
+  max-height: 660px;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  min-width: 0;
+  max-width: 100%;
+}
+
+/* ---- floating halal badge (bottom-left of photo) ---- */
+.s-hero__badge {
+  position: absolute;
+  bottom: var(--sp-4);
+  left: var(--sp-4);
+  width: 76px;
+  height: 76px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: var(--accent-ink);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  box-shadow: var(--shadow);
+  text-align: center;
+  z-index: 2;
+}
+
+.s-hero__badge-star {
+  font-size: var(--s-0);
+  color: var(--gold);
+  line-height: 1;
+}
+
+.s-hero__badge-label {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: .6rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  line-height: 1.2;
+}
+
+/* ============================================================
+   MOBILE — ≤780px: image ABOVE, text below, full-width CTA
+   ============================================================ */
+@media (max-width: 780px) {
+
+  .s-hero {
+    padding-block: 0;
+  }
+
+  .s-hero__grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+    gap: 0;
+    min-height: unset;
+  }
+
+  /* image row — first visually */
+  .s-hero__media {
+    order: -1;
+    border-radius: 0;
+  }
+
+  .s-hero__img {
+    max-height: 340px;
+    object-position: center 15%;
+    height: 340px;
+  }
+
+  .s-hero__badge {
+    bottom: var(--sp-3);
+    left: var(--sp-3);
+    width: 64px;
+    height: 64px;
+  }
+
+  /* text panel stacks below */
+  .s-hero__text {
+    border-radius: 0;
+    padding: var(--sp-5) var(--sp-4);
+    gap: var(--sp-3);
+  }
+
+  .s-hero__h1 {
+    font-size: clamp(1.8rem, 7vw, 2.4rem);
+  }
+
+  .s-hero__sub {
+    font-size: var(--s-0);
+    max-width: 100%;
+  }
+
+  .s-hero__cta {
+    align-self: stretch;          /* full-width on mobile */
+    justify-content: center;
+  }
+
+  .s-hero__chips {
+    gap: var(--sp-2);
+  }
+}
+
+/* ============================================================
+   TABLET — 781px–1100px: keep split but tighter padding
+   ============================================================ */
+@media (min-width: 781px) and (max-width: 1100px) {
+  .s-hero__text {
+    padding: var(--sp-6) var(--sp-5) var(--sp-6) var(--sp-4);
+  }
+
+  .s-hero__h1 {
+    font-size: clamp(1.9rem, 3.5vw, 2.8rem);
+  }
+}

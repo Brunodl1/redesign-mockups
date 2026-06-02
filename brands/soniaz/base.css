@@ -1,0 +1,132 @@
+/* ============================================================
+   Soniaz Cosmetics — base.css (foundation)
+   Makeup for South-Asian / melanin-rich skin · Halal · vegan · high-pigment · EN
+   Glam editorial: warm cream + magenta-burgundy + jewel tones. Ovo serif + Instrument Sans.
+   ============================================================ */
+:root{
+  /* color */
+  --bg:        #FBF6F3;   /* warm blush-cream page */
+  --surface:   #FFFFFF;   /* cards */
+  --surface-2: #F6EAE6;   /* soft blush surface */
+  --cream:     #F5F4F0;   /* warm off-white (text on dark) */
+  --ink:       #2A1014;   /* near-black plum — body/headings */
+  --ink-soft:  #6E535A;   /* muted mauve-grey — secondary text */
+  --accent:    #710F39;   /* magenta-burgundy — primary CTAs/links */
+  --accent-ink:#FFFFFF;
+  --accent-deep:#560B2C;  /* hover */
+  --crimson:   #761322;   /* deep crimson — secondary accent / footer */
+  --wine:      #67373C;   /* dusty wine mauve — bands/cards */
+  --mahogany:  #491508;   /* deep mahogany — dark band */
+  --gold:      #C9A24E;   /* soft gold — stars / fine accents */
+  --dark:      #3A0E18;   /* dark plum footer */
+  --line:      #ECDDD8;   /* warm hairline */
+  --star:      #C9A24E;   /* gold stars */
+  --btn:       #710F39;
+  --btn-ink:   #FFFFFF;
+  /* type */
+  --font-display: "Ovo", "Georgia", "Times New Roman", serif;
+  --font-body:    "Instrument Sans", "Helvetica Neue", Arial, sans-serif;
+  --s--1: .82rem;
+  --s-0:  1.05rem;
+  --s-1:  1.25rem;
+  --s-2:  1.6rem;
+  --s-3:  2.15rem;
+  --s-4:  3rem;
+  --s-5:  3.9rem;
+  /* space */
+  --sp-1:.25rem; --sp-2:.5rem; --sp-3:1rem; --sp-4:1.5rem;
+  --sp-5:2.5rem; --sp-6:4rem; --sp-7:6rem;
+  --sp-8:8rem;
+  /* shape */
+  --radius:4px; --radius-lg:16px; --radius-pill:50px;
+  --shadow:0 16px 44px rgba(42,16,20,.12);
+  --maxw:1320px;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html,body{overflow-x:clip}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--ink);
+  font-family:var(--font-body);
+  font-size:var(--s-0);
+  line-height:1.65;
+  font-weight:400;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+
+/* headings — Ovo serif, elegant editorial (Ovo is 400 only) */
+h1,h2,h3{font-family:var(--font-display);font-weight:400;line-height:1.12;letter-spacing:-.01em;margin:0 0 var(--sp-3);color:var(--ink)}
+h1{font-size:var(--s-5)}
+h2{font-size:var(--s-4)}
+h3{font-size:var(--s-2)}
+p{margin:0 0 var(--sp-3)}
+
+/* layout */
+.wrap{max-width:var(--maxw);margin:0 auto;padding-inline:var(--sp-4);width:100%}
+.sec{position:relative;padding-block:var(--sp-7)}
+.section{position:relative}
+
+/* eyebrow — burgundy tracked caps */
+.eyebrow{
+  display:inline-block;font-family:var(--font-body);font-weight:600;
+  font-size:var(--s--1);letter-spacing:.2em;text-transform:uppercase;
+  color:var(--accent);margin:0 0 var(--sp-3)
+}
+
+/* buttons — near-square, uppercase tracked (glam editorial) */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:.55em;
+  font-family:var(--font-body);font-weight:600;font-size:var(--s--1);
+  letter-spacing:.14em;text-transform:uppercase;
+  padding:1.05em 2.3em;border-radius:var(--radius);border:1.5px solid transparent;
+  cursor:pointer;transition:background .22s,color .22s,border-color .22s,transform .15s,box-shadow .2s;
+  line-height:1;white-space:nowrap
+}
+.btn:hover{transform:translateY(-2px)}
+.btn-primary{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.btn-primary:hover{background:var(--accent-deep);border-color:var(--accent-deep);box-shadow:var(--shadow)}
+.btn-dark{background:var(--ink);color:#fff;border-color:var(--ink)}
+.btn-dark:hover{background:#000}
+.btn-outline{background:transparent;color:var(--accent);border-color:var(--accent)}
+.btn-outline:hover{background:var(--accent);color:#fff}
+.btn-light{background:var(--cream);color:var(--accent);border-color:var(--cream)}
+.btn-light:hover{background:transparent;color:var(--cream);border-color:var(--cream)}
+.btn-block{display:flex;width:100%}
+
+/* rating stars */
+.stars{color:var(--star);letter-spacing:.06em;font-size:var(--s-0)}
+
+/* chips */
+.chip{
+  display:inline-flex;align-items:center;gap:.45em;
+  font-family:var(--font-body);font-weight:600;font-size:var(--s--1);
+  letter-spacing:.1em;text-transform:uppercase;
+  padding:.5em 1em;border-radius:var(--radius-pill);border:1.5px solid var(--line);
+  background:var(--surface);color:var(--ink);line-height:1
+}
+
+/* section icons */
+.ic{width:40px;height:40px;display:block;stroke:currentColor;stroke-width:1.5;fill:none}
+
+/* floats — static, hidden mobile */
+.float{position:absolute;pointer-events:none;z-index:5}
+.float img{width:100%;transform:rotate(var(--rot,0deg));
+  filter:drop-shadow(0 24px 22px rgba(42,16,20,.20))}
+@media(max-width:1000px){.float{display:none}}
+
+/* scroll-reveal (3D) — NOT on hero */
+.reveal{opacity:0;transform:perspective(900px) rotateX(8deg) translateY(26px);
+  transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+
+/* responsive type */
+@media(max-width:780px){
+  :root{--s-5:2.6rem;--s-4:2.05rem;--s-3:1.7rem;--s-2:1.35rem}
+  .sec{padding-block:var(--sp-6)}
+}

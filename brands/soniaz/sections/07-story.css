@@ -1,0 +1,178 @@
+/* ============================================================
+   07-story.css — OUR STORY founder band
+   Scoped under .s-story
+   ============================================================ */
+
+/* -- local token re-declarations (base.css contract) -- */
+.s-story {
+  --bg:          #FBF6F3;
+  --surface:     #FFFFFF;
+  --surface-2:   #F6EAE6;
+  --cream:       #F5F4F0;
+  --ink:         #2A1014;
+  --ink-soft:    #6E535A;
+  --accent:      #710F39;
+  --accent-ink:  #FFFFFF;
+  --accent-deep: #560B2C;
+  --crimson:     #761322;
+  --wine:        #67373C;
+  --mahogany:    #491508;
+  --gold:        #C9A24E;
+  --line:        #ECDDD8;
+  --star:        #C9A24E;
+  --font-display:"Ovo", "Georgia", serif;
+  --font-body:   "Instrument Sans", "Helvetica Neue", Arial, sans-serif;
+  --s--1:  .82rem;
+  --s-0:   1.05rem;
+  --s-1:   1.25rem;
+  --s-2:   1.6rem;
+  --s-3:   2.15rem;
+  --s-4:   3rem;
+  --s-5:   3.9rem;
+  --sp-1: .25rem; --sp-2: .5rem; --sp-3: 1rem;  --sp-4: 1.5rem;
+  --sp-5: 2.5rem; --sp-6: 4rem;  --sp-7: 6rem;  --sp-8: 8rem;
+  --radius: 4px; --radius-lg: 16px; --radius-pill: 50px;
+  --shadow: 0 16px 44px rgba(42,16,20,.12);
+  --maxw: 1320px;
+}
+
+/* Section shell */
+.s-story {
+  background: var(--bg);
+  overflow: hidden;
+}
+
+/* 2-column grid: text left, image right */
+.s-story__grid {
+  display: grid;
+  grid-template-columns: 1fr minmax(0, 500px);
+  gap: clamp(var(--sp-6), 8vw, var(--sp-8));
+  align-items: center;
+}
+
+/* ── Text column ── */
+.s-story__text {
+  max-width: 520px;
+}
+
+.s-story__eyebrow {
+  /* .eyebrow already provides color:var(--accent); override nothing */
+  display: inline-block;
+}
+
+.s-story__heading {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(var(--s-3), 4vw, var(--s-4));
+  line-height: 1.1;
+  color: var(--ink);
+  margin: 0 0 var(--sp-4);
+  letter-spacing: -.02em;
+}
+
+.s-story__body {
+  font-family: var(--font-body);
+  font-size: var(--s-0);
+  color: var(--ink-soft);
+  line-height: 1.7;
+  margin: 0 0 var(--sp-3);
+}
+
+/* Chips row */
+.s-story__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+  margin: var(--sp-4) 0 var(--sp-5);
+}
+
+/* CTA */
+.s-story__cta {
+  /* .btn .btn-primary provides all styles */
+}
+
+/* ── Image column ── */
+.s-story__media {
+  /* push stagger on reveal */
+  transition-delay: .15s;
+}
+
+.s-story__img-wrap {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  max-width: 500px;
+  width: 100%;
+  /* decorative gold border offset */
+  box-shadow:
+    var(--shadow),
+    inset 0 0 0 1px rgba(201,162,78,.18);
+}
+
+/* Decorative corner accent — thin gold L-frame */
+.s-story__img-accent {
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius-lg);
+  border: 2px solid rgba(201,162,78,.30);
+  pointer-events: none;
+  z-index: 2;
+}
+
+.s-story__img {
+  display: block;
+  width: 100%;
+  height: 600px;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: var(--radius-lg);
+}
+
+/* ── Reveal stagger ── */
+.s-story__text.reveal   { transition-delay: 0s; }
+.s-story__media.reveal  { transition-delay: .18s; }
+
+/* ── Mobile: single column, image above text ── */
+@media (max-width: 780px) {
+  .s-story__grid {
+    grid-template-columns: 1fr;
+    gap: var(--sp-5);
+  }
+
+  /* swap order: image on top */
+  .s-story__media {
+    order: -1;
+  }
+
+  .s-story__img-wrap {
+    max-width: 100%;
+  }
+
+  .s-story__img {
+    height: 340px;
+    object-position: center 20%;
+  }
+
+  .s-story__text {
+    max-width: 100%;
+  }
+
+  .s-story__heading {
+    font-size: var(--s-3);
+  }
+
+  .s-story__chips {
+    gap: var(--sp-2);
+  }
+}
+
+@media (max-width: 500px) {
+  .s-story__img {
+    height: 280px;
+  }
+
+  .s-story__chips {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
