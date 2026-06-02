@@ -1,0 +1,81 @@
+/* Honey Sparkle — base foundation. Reproduces the REAL brand:
+   warm brown #72513c + blush pink + cream + near-black + honey-gold sparkle.
+   Petrona (serif display) + Karla (sans body). Warm, cozy, affordable-luxury. */
+:root{
+  /* color */
+  --bg:        #fdfbf6;   /* warm cream page */
+  --surface:   #ffffff;   /* white card */
+  --surface-2: #f9e7ea;   /* blush pink band / hero */
+  --warm:      #f4ece1;   /* soft sand band */
+  --ink:       #231f20;   /* near-black — headings/body */
+  --ink-soft:  #6b5d54;   /* warm taupe secondary text */
+  --accent:    #72513c;   /* warm brown — header, buttons, accents */
+  --accent-2:  #553a29;   /* deep brown (hover / dark) */
+  --accent-ink:#fdfbf6;   /* cream text on brown */
+  --gold:      #d9a441;   /* honey-gold sparkle accent */
+  --pop:       #c9707a;   /* dusty rose — badges/sale */
+  --line:      #ece4d8;   /* warm hairline */
+  --star:      #d9a441;   /* honey-gold stars */
+  --scrim:     rgba(35,31,32,.46);
+  --btn:       #72513c; --btn-ink:#fdfbf6;
+  /* type */
+  --font-display:"Petrona","Georgia",serif;
+  --font-body:"Karla","Helvetica Neue",Arial,sans-serif;
+  --s--1:.84rem; --s-0:1rem; --s-1:1.2rem; --s-2:1.55rem; --s-3:2.1rem; --s-4:3rem; --s-5:4.1rem;
+  /* space */
+  --sp-1:.25rem; --sp-2:.5rem; --sp-3:1rem; --sp-4:1.5rem; --sp-5:2.5rem; --sp-6:4rem; --sp-7:6rem;
+  /* radius + shadow */
+  --radius:10px; --radius-lg:22px; --radius-pill:999px;
+  --shadow:0 14px 40px rgba(114,81,60,.12);
+  --shadow-soft:0 6px 22px rgba(114,81,60,.08);
+  --maxw:1240px;
+}
+*{box-sizing:border-box}
+html,body{overflow-x:clip}
+html{scroll-behavior:smooth}
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font-family:var(--font-body); font-size:var(--s-0); line-height:1.6;
+  -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+}
+img{max-width:100%; display:block}
+a{color:inherit; text-decoration:none}
+
+h1,h2,h3{font-family:var(--font-display); color:var(--ink); margin:0; line-height:1.06; font-weight:700; letter-spacing:-.01em}
+h1{font-size:clamp(2.4rem,5.2vw,var(--s-5)); font-weight:700; text-transform:uppercase; letter-spacing:.01em}
+h2{font-size:clamp(1.9rem,3.6vw,var(--s-4)); font-weight:700}
+h3{font-size:var(--s-2); font-weight:700}
+p{margin:0}
+
+.wrap{max-width:var(--maxw); margin-inline:auto; padding-inline:clamp(1.1rem,4vw,2.4rem); width:100%}
+.section{padding-block:clamp(3.2rem,7vw,var(--sp-7))}
+
+.eyebrow{font-family:var(--font-body); font-weight:700; font-size:var(--s--1);
+  letter-spacing:.2em; text-transform:uppercase; color:var(--accent)}
+
+/* buttons — warm brown primary, gently rounded; elegant */
+.btn{display:inline-flex; align-items:center; justify-content:center; gap:.5rem;
+  font-family:var(--font-body); font-weight:700; font-size:var(--s--1);
+  letter-spacing:.1em; text-transform:uppercase; cursor:pointer; border:1.5px solid transparent;
+  padding:.95rem 1.8rem; border-radius:var(--radius-pill); transition:.22s ease; white-space:nowrap}
+.btn-primary{background:var(--btn); color:var(--btn-ink)}
+.btn-primary:hover{background:var(--accent-2)}
+.btn-outline{background:transparent; color:var(--accent); border-color:var(--accent)}
+.btn-outline:hover{background:var(--accent); color:var(--accent-ink)}
+.btn-light{background:var(--bg); color:var(--accent); border-color:var(--bg)}
+.btn-light:hover{background:transparent; color:var(--bg); border-color:var(--bg)}
+.btn-block{width:100%}
+
+/* depth */
+.float{position:absolute; pointer-events:none; z-index:2}
+.float img{width:100%; height:auto; transform:rotate(var(--rot,0deg));
+  filter:drop-shadow(0 16px 28px rgba(114,81,60,.18))}
+.reveal{opacity:0; transform:perspective(900px) rotateX(8deg) translateY(26px);
+  transition:.7s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1; transform:none}
+@media(prefers-reduced-motion:reduce){ .reveal{opacity:1; transform:none; transition:none} }
+@media print{ .reveal{opacity:1!important; transform:none!important} }
+@media(max-width:1000px){ .float{display:none} }
+
+/* shared inline icon */
+.ic{width:38px; height:38px; flex:none; stroke:var(--accent); stroke-width:1.6; fill:none}
