@@ -1,0 +1,134 @@
+/* ── s-instagram ─────────────────────────────────────────── */
+
+.s-instagram {
+  background: var(--bg);
+  padding-block: var(--sp-7);
+}
+
+/* Header */
+.s-instagram__header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--sp-2);
+  margin-bottom: var(--sp-5);
+}
+
+.s-instagram__header .eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.s-instagram__glyph {
+  width: 1em;
+  height: 1em;
+  fill: var(--warm);
+  flex-shrink: 0;
+}
+
+.s-instagram__header h2 {
+  margin: 0;
+}
+
+.s-instagram__handle {
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: var(--warm);
+  text-decoration: none;
+  border-bottom: 1px solid var(--warm);
+  padding-bottom: 1px;
+  transition: opacity 0.2s ease;
+}
+
+.s-instagram__handle:hover {
+  opacity: 0.7;
+}
+
+/* Grid */
+.s-instagram__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2px;
+  max-width: var(--maxw);
+  margin-inline: auto;
+}
+
+/* Tile */
+.s-instagram__tile {
+  display: block;
+  position: relative;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  background: var(--surface);
+  border-radius: var(--radius);
+  text-decoration: none;
+}
+
+.s-instagram__tile img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.s-instagram__tile:hover img {
+  transform: scale(1.04);
+}
+
+/* Overlay */
+.s-instagram__overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0);
+  transition: background 0.3s ease;
+  border-radius: var(--radius);
+}
+
+.s-instagram__overlay svg {
+  width: 2rem;
+  height: 2rem;
+  fill: rgba(255, 255, 255, 0);
+  transition: fill 0.3s ease, transform 0.3s ease;
+  transform: scale(0.7);
+}
+
+.s-instagram__tile:hover .s-instagram__overlay {
+  background: rgba(0, 0, 0, 0.42);
+}
+
+.s-instagram__tile:hover .s-instagram__overlay svg {
+  fill: rgba(255, 255, 255, 0.92);
+  transform: scale(1);
+}
+
+/* CTA */
+.s-instagram__cta {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--sp-5);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .s-instagram__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .s-instagram__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .s-instagram {
+    padding-block: var(--sp-5);
+  }
+}

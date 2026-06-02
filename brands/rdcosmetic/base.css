@@ -1,30 +1,34 @@
-/* RD Cosmetic — base foundation. Tokens reproduce the real brand:
-   signature teal #108474, charcoal ink, Jost (display) + Nunito (body),
-   clean medico-esthetic premium. Sections consume these vars only. */
+/* RD Cosmetic — base foundation. Tokens reproduce the REAL brand:
+   black + warm taupe #9B8E72 + white + cool-grey cards, charcoal ink,
+   black buttons/badges, Jost (display) + Nunito (body). Editorial, minimal.
+   Teal is NOT a brand color — only neutral/warm tones. */
 :root{
   /* color */
-  --bg:        #ffffff;   /* clean clinical white page */
-  --surface:   #f7faf9;   /* faint teal-tinted raised surface */
-  --surface-2: #edf5f3;   /* soft teal band fill */
-  --ink:       #1d2422;   /* near-black charcoal — headings/body */
-  --ink-soft:  #5d6b67;   /* secondary text */
-  --accent:    #108474;   /* signature RD teal — buttons, marks */
-  --accent-2:  #0c6a5d;   /* deep teal (hover / dark band) */
-  --accent-ink:#ffffff;   /* text on accent */
-  --pop:       #c98a3a;   /* warm gold pop — badges/sale (echoes site #F1C814 toned) */
-  --line:      #e3eae8;   /* hairline borders */
-  --star:      #c98a3a;   /* rating stars */
-  --scrim:     rgba(18,30,28,.46);
+  --bg:        #ffffff;   /* white page */
+  --surface:   #f3f4f6;   /* light cool-grey card / raised surface */
+  --surface-2: #e8eaee;   /* cool grey-lavender band fill */
+  --warm:      #f3efe8;   /* warm sand band (echoes taupe, soft) */
+  --ink:       #1a1a1a;   /* near-black — headings/body */
+  --ink-soft:  #62656b;   /* secondary text */
+  --accent:    #9b8e72;   /* signature WARM TAUPE — eyebrows, accents, links */
+  --accent-2:  #1a1a1a;   /* brand black — dark bands / button hover */
+  --accent-ink:#ffffff;   /* text on dark */
+  --pop:       #9b8e72;   /* taupe pop */
+  --line:      #e4e4e7;   /* hairline borders */
+  --star:      #b9925a;   /* warm gold rating stars */
+  --scrim:     rgba(20,18,15,.5);
+  --btn:       #1a1a1a;   /* black button */
+  --btn-ink:   #ffffff;
   /* type */
   --font-display:"Jost","Helvetica Neue",Arial,sans-serif;
   --font-body:"Nunito","Helvetica Neue",Arial,sans-serif;
   --s--1:.82rem; --s-0:1rem; --s-1:1.18rem; --s-2:1.5rem; --s-3:2.1rem; --s-4:3rem; --s-5:4.1rem;
   /* space */
   --sp-1:.25rem; --sp-2:.5rem; --sp-3:1rem; --sp-4:1.5rem; --sp-5:2.5rem; --sp-6:4rem; --sp-7:6rem;
-  /* radius + shadow */
-  --radius:10px; --radius-lg:22px; --radius-pill:999px;
-  --shadow:0 14px 40px rgba(16,132,116,.10);
-  --shadow-soft:0 6px 22px rgba(29,36,34,.07);
+  /* radius + shadow (squarer, editorial — closer to real site) */
+  --radius:6px; --radius-lg:10px; --radius-pill:999px;
+  --shadow:0 14px 40px rgba(26,26,26,.08);
+  --shadow-soft:0 6px 22px rgba(26,26,26,.06);
   --maxw:1240px;
 }
 *{box-sizing:border-box}
@@ -38,35 +42,35 @@ body{
 img{max-width:100%; display:block}
 a{color:inherit; text-decoration:none}
 
-h1,h2,h3{font-family:var(--font-display); color:var(--ink); margin:0; line-height:1.08; font-weight:600; letter-spacing:-.01em}
-h1{font-size:clamp(2.3rem,5.2vw,var(--s-5)); font-weight:500}
-h2{font-size:clamp(1.9rem,3.6vw,var(--s-4)); font-weight:500}
-h3{font-size:var(--s-2); font-weight:600}
+h1,h2,h3{font-family:var(--font-display); color:var(--ink); margin:0; line-height:1.1; font-weight:400; letter-spacing:-.005em}
+h1{font-size:clamp(2.3rem,5.2vw,var(--s-5)); font-weight:300}
+h2{font-size:clamp(1.9rem,3.6vw,var(--s-4)); font-weight:300}
+h3{font-size:var(--s-2); font-weight:500}
 p{margin:0}
 
 .wrap{max-width:var(--maxw); margin-inline:auto; padding-inline:clamp(1.1rem,4vw,2.4rem); width:100%}
 .section{padding-block:clamp(3.2rem,7vw,var(--sp-7))}
 
-.eyebrow{font-family:var(--font-display); font-weight:600; font-size:var(--s--1);
-  letter-spacing:.22em; text-transform:uppercase; color:var(--accent)}
+.eyebrow{font-family:var(--font-display); font-weight:500; font-size:var(--s--1);
+  letter-spacing:.2em; text-transform:uppercase; color:var(--accent)}
 
-/* buttons */
+/* buttons — black, squared, uppercase (matches real EN SAVOIR PLUS) */
 .btn{display:inline-flex; align-items:center; justify-content:center; gap:.5rem;
-  font-family:var(--font-display); font-weight:500; font-size:var(--s-0);
-  letter-spacing:.04em; text-transform:uppercase; cursor:pointer; border:1.5px solid transparent;
-  padding:.92rem 1.7rem; border-radius:var(--radius-pill); transition:.22s ease; white-space:nowrap}
-.btn-primary{background:var(--accent); color:var(--accent-ink)}
-.btn-primary:hover{background:var(--accent-2)}
+  font-family:var(--font-display); font-weight:500; font-size:var(--s--1);
+  letter-spacing:.14em; text-transform:uppercase; cursor:pointer; border:1.5px solid transparent;
+  padding:1rem 1.8rem; border-radius:4px; transition:.22s ease; white-space:nowrap}
+.btn-primary{background:var(--btn); color:var(--btn-ink)}
+.btn-primary:hover{background:#000}
 .btn-outline{background:transparent; color:var(--ink); border-color:var(--ink)}
 .btn-outline:hover{background:var(--ink); color:#fff}
-.btn-light{background:#fff; color:var(--accent-2); border-color:#fff}
+.btn-light{background:#fff; color:var(--ink); border-color:#fff}
 .btn-light:hover{background:transparent; color:#fff; border-color:#fff}
 .btn-block{width:100%}
 
 /* depth */
 .float{position:absolute; pointer-events:none; z-index:2; will-change:transform}
 .float img{width:100%; height:auto; transform:rotate(var(--rot,0deg));
-  filter:drop-shadow(0 18px 30px rgba(16,132,116,.20)) drop-shadow(0 4px 8px rgba(0,0,0,.10))}
+  filter:drop-shadow(0 18px 30px rgba(26,26,26,.16)) drop-shadow(0 4px 8px rgba(0,0,0,.10))}
 .reveal{opacity:0; transform:perspective(900px) rotateX(8deg) translateY(26px);
   transition:.7s cubic-bezier(.2,.7,.2,1)}
 .reveal.in{opacity:1; transform:none}

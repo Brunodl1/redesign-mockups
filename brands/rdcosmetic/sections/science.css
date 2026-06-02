@@ -1,0 +1,109 @@
+/* ─── s-science ─── Ce qui nous différencie ─────────────────────────── */
+
+.s-science {
+  background: var(--bg);
+  text-align: center;
+}
+
+/* ── Intro block ── */
+.s-science__intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sp-3);
+  margin-bottom: var(--sp-6);
+}
+
+.s-science__intro .eyebrow {
+  margin-bottom: calc(var(--sp-2) * -1);
+}
+
+.s-science__lead {
+  max-width: 62ch;
+  color: var(--ink-soft);
+  font-size: var(--s-0);
+  line-height: 1.7;
+}
+
+/* ── Feature grid ── */
+.s-science__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-5);
+  text-align: left;
+}
+
+/* ── Card ── */
+.s-science__card {
+  display: flex;
+  flex-direction: column;
+  background: var(--bg);
+}
+
+/* ── Image ── */
+.s-science__img-link {
+  display: block;
+  overflow: hidden;
+  border-radius: var(--radius);
+  background: var(--surface);
+  flex: none;
+}
+
+.s-science__img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  display: block;
+  transition: transform .45s cubic-bezier(.2,.7,.2,1);
+}
+
+.s-science__img-link:hover .s-science__img {
+  transform: scale(1.03);
+}
+
+/* ── Card body ── */
+.s-science__body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+  padding-top: var(--sp-4);
+  flex: 1;
+}
+
+.s-science__body h3 {
+  font-size: var(--s-1);
+  font-weight: 500;
+  line-height: 1.25;
+  color: var(--ink);
+}
+
+.s-science__body p {
+  color: var(--ink-soft);
+  font-size: var(--s--1);
+  line-height: 1.65;
+  flex: 1;
+}
+
+.s-science__body .btn {
+  align-self: flex-start;
+  margin-top: auto;
+}
+
+/* ── Responsive ── */
+@media (max-width: 860px) {
+  .s-science__grid {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--sp-4);
+  }
+}
+
+@media (max-width: 540px) {
+  .s-science__grid {
+    grid-template-columns: 1fr;
+    gap: var(--sp-5);
+  }
+
+  .s-science__body .btn {
+    width: 100%;
+  }
+}
