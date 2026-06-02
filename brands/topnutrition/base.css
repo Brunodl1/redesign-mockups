@@ -1,0 +1,86 @@
+/* Top Nutrition and Fitness — base foundation. Reproduces the REAL brand:
+   brand blue #006FDB + navy #1E2D7D + YELLOW deal/CTA + white/grey, athletic.
+   Barlow (real site font) for UI/body; Anton (bold condensed) for big headlines.
+   DENSE retail rhythm — tighter spacing, wide grids. */
+:root{
+  /* color */
+  --bg:        #ffffff;
+  --surface:   #f3f5f6;   /* light grey card / band */
+  --surface-2: #e9eef6;   /* cool blue-grey fill */
+  --ink:       #11203a;   /* near-navy ink */
+  --ink-soft:  #5a6675;   /* secondary text */
+  --accent:    #006fdb;   /* TNF brand blue */
+  --accent-2:  #1e2d7d;   /* deep navy — dark bands / hover */
+  --accent-ink:#ffffff;
+  --deal:      #ffd200;   /* YELLOW deal / primary CTA */
+  --deal-ink:  #11203a;   /* ink on yellow */
+  --deal-2:    #f5c400;   /* yellow hover */
+  --pop:       #e23a2e;   /* sale/urgency red */
+  --line:      #e1e3e4;   /* hairline borders */
+  --star:      #f5a623;   /* rating stars */
+  --scrim:     rgba(17,32,58,.5);
+  /* type */
+  --font-display:"Anton","Arial Narrow",system-ui,sans-serif; /* bold condensed */
+  --font-body:"Barlow","Helvetica Neue",Arial,sans-serif;
+  --s--1:.82rem; --s-0:1rem; --s-1:1.2rem; --s-2:1.55rem; --s-3:2.2rem; --s-4:3.2rem; --s-5:4.6rem;
+  /* space — tighter (density) */
+  --sp-1:.25rem; --sp-2:.5rem; --sp-3:1rem; --sp-4:1.5rem; --sp-5:2.25rem; --sp-6:3.25rem; --sp-7:5rem;
+  /* radius + shadow */
+  --radius:8px; --radius-lg:16px; --radius-pill:999px;
+  --shadow:0 8px 26px rgba(17,32,58,.10);
+  --shadow-soft:0 4px 16px rgba(17,32,58,.07);
+  --maxw:1320px;
+}
+*{box-sizing:border-box}
+html,body{overflow-x:clip}
+html{scroll-behavior:smooth}
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font-family:var(--font-body); font-size:var(--s-0); line-height:1.55;
+  -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+}
+img{max-width:100%; display:block}
+a{color:inherit; text-decoration:none}
+
+h1,h2,h3{font-family:var(--font-display); color:var(--ink); margin:0; line-height:1.0;
+  font-weight:400; letter-spacing:.005em; text-transform:uppercase}
+h1{font-size:clamp(2.6rem,6vw,var(--s-5))}
+h2{font-size:clamp(1.8rem,3.4vw,var(--s-4))}
+h3{font-size:var(--s-2)}
+p{margin:0}
+
+.wrap{max-width:var(--maxw); margin-inline:auto; padding-inline:clamp(1rem,3.5vw,2rem); width:100%}
+.section{padding-block:clamp(2.6rem,5vw,var(--sp-7))}
+
+.eyebrow{font-family:var(--font-body); font-weight:800; font-size:var(--s--1);
+  letter-spacing:.14em; text-transform:uppercase; color:var(--accent)}
+
+/* buttons — yellow deal primary, blue/navy secondary; bold uppercase */
+.btn{display:inline-flex; align-items:center; justify-content:center; gap:.45rem;
+  font-family:var(--font-body); font-weight:800; font-size:var(--s--1);
+  letter-spacing:.06em; text-transform:uppercase; cursor:pointer; border:2px solid transparent;
+  padding:.85rem 1.6rem; border-radius:var(--radius); transition:.18s ease; white-space:nowrap}
+.btn-primary{background:var(--deal); color:var(--deal-ink)}
+.btn-primary:hover{background:var(--deal-2)}
+.btn-blue{background:var(--accent); color:#fff}
+.btn-blue:hover{background:var(--accent-2)}
+.btn-outline{background:transparent; color:var(--ink); border-color:var(--ink)}
+.btn-outline:hover{background:var(--ink); color:#fff}
+.btn-light{background:#fff; color:var(--accent); border-color:#fff}
+.btn-light:hover{background:transparent; color:#fff; border-color:#fff}
+.btn-block{width:100%}
+
+/* depth */
+.float{position:absolute; pointer-events:none; z-index:2}
+.float img{width:100%; height:auto; transform:rotate(var(--rot,0deg));
+  filter:drop-shadow(0 16px 28px rgba(17,32,58,.18))}
+.reveal{opacity:0; transform:perspective(900px) rotateX(8deg) translateY(24px);
+  transition:.6s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1; transform:none}
+@media(prefers-reduced-motion:reduce){ .reveal{opacity:1; transform:none; transition:none} }
+@media print{ .reveal{opacity:1!important; transform:none!important} }
+.no-js .reveal{opacity:1; transform:none}
+@media(max-width:1000px){ .float{display:none} }
+
+/* shared inline icon */
+.ic{width:34px; height:34px; flex:none; stroke:var(--accent); stroke-width:1.7; fill:none}
