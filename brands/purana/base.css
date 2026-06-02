@@ -1,0 +1,80 @@
+/* Purana Skincare — base foundation. Reproduces the REAL brand:
+   DARK WARM-EARTH / botanical apothecary luxury — deep espresso bg, cream text,
+   GOLD accents, Montserrat type (uppercase headings, generous tracking).
+   Moody, premium, science-meets-botanical. */
+:root{
+  /* color (dark theme) */
+  --bg:        #2c2318;   /* deep espresso page */
+  --surface:   #38301f;   /* raised warm-brown card */
+  --surface-2: #463a27;   /* lighter band */
+  --ink:       #f4ece0;   /* warm cream — primary text */
+  --ink-soft:  #c8b9a4;   /* muted taupe secondary */
+  --accent:    #c4a06a;   /* gold — buttons, accents, award */
+  --accent-2:  #a98750;   /* deeper gold (hover) */
+  --accent-ink:#2c2318;   /* dark espresso text on gold */
+  --gold:      #c4a06a;
+  --pop:       #c4a06a;
+  --line:      rgba(244,236,224,.14);  /* hairline on dark */
+  --star:      #d7b878;   /* gold stars */
+  --scrim:     rgba(20,15,9,.5);
+  --btn:       #c4a06a; --btn-ink:#2c2318;
+  /* type */
+  --font-display:"Montserrat","Helvetica Neue",Arial,sans-serif;
+  --font-body:"Montserrat","Helvetica Neue",Arial,sans-serif;
+  --s--1:.82rem; --s-0:1rem; --s-1:1.18rem; --s-2:1.5rem; --s-3:2rem; --s-4:2.7rem; --s-5:3.6rem;
+  /* space */
+  --sp-1:.25rem; --sp-2:.5rem; --sp-3:1rem; --sp-4:1.5rem; --sp-5:2.5rem; --sp-6:4rem; --sp-7:6rem;
+  /* radius + shadow */
+  --radius:6px; --radius-lg:14px; --radius-pill:999px;
+  --shadow:0 18px 44px rgba(0,0,0,.34);
+  --shadow-soft:0 8px 24px rgba(0,0,0,.24);
+  --maxw:1280px;
+}
+*{box-sizing:border-box}
+html,body{overflow-x:clip}
+html{scroll-behavior:smooth}
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font-family:var(--font-body); font-size:var(--s-0); line-height:1.62; font-weight:400;
+  -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+}
+img{max-width:100%; display:block}
+a{color:inherit; text-decoration:none}
+
+h1,h2,h3{font-family:var(--font-display); color:var(--ink); margin:0; line-height:1.16;
+  font-weight:500; letter-spacing:.05em; text-transform:uppercase}
+h1{font-size:clamp(1.7rem,3vw,var(--s-3)); font-weight:500; letter-spacing:.06em}
+h2{font-size:clamp(1.6rem,3vw,var(--s-4)); font-weight:400; letter-spacing:.07em}
+h3{font-size:var(--s-1); font-weight:600; letter-spacing:.05em}
+p{margin:0}
+
+.wrap{max-width:var(--maxw); margin-inline:auto; padding-inline:clamp(1.1rem,4vw,2.4rem); width:100%}
+.section{padding-block:clamp(3.4rem,7vw,var(--sp-7))}
+
+.eyebrow{font-family:var(--font-body); font-weight:600; font-size:var(--s--1);
+  letter-spacing:.28em; text-transform:uppercase; color:var(--gold)}
+
+/* buttons — gold primary on dark, cream outline secondary */
+.btn{display:inline-flex; align-items:center; justify-content:center; gap:.5rem;
+  font-family:var(--font-body); font-weight:600; font-size:var(--s--1);
+  letter-spacing:.18em; text-transform:uppercase; cursor:pointer; border:1px solid transparent;
+  padding:1.05rem 2rem; border-radius:var(--radius); transition:.22s ease; white-space:nowrap}
+.btn-primary{background:var(--btn); color:var(--btn-ink)}
+.btn-primary:hover{background:var(--accent-2)}
+.btn-outline{background:transparent; color:var(--ink); border-color:var(--ink)}
+.btn-outline:hover{background:var(--ink); color:var(--bg)}
+.btn-light{background:var(--ink); color:var(--bg); border-color:var(--ink)}
+.btn-light:hover{background:transparent; color:var(--ink)}
+.btn-block{width:100%}
+
+/* depth */
+.float{position:absolute; pointer-events:none; z-index:2}
+.float img{width:100%; height:auto; transform:rotate(var(--rot,0deg)); filter:drop-shadow(0 18px 30px rgba(0,0,0,.4))}
+.reveal{opacity:0; transform:perspective(900px) rotateX(7deg) translateY(24px); transition:.7s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1; transform:none}
+@media(prefers-reduced-motion:reduce){ .reveal{opacity:1; transform:none; transition:none} }
+@media print{ .reveal{opacity:1!important; transform:none!important} }
+@media(max-width:1000px){ .float{display:none} }
+
+/* shared inline icon */
+.ic{width:38px; height:38px; flex:none; stroke:var(--gold); stroke-width:1.3; fill:none}
