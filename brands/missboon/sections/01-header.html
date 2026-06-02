@@ -1,0 +1,87 @@
+<!-- ============================================================
+     Miss Boon — 01-header.html
+     Announcement bar + sticky header (FRENCH)
+     ============================================================ -->
+
+<!-- Announcement Bar -->
+<div class="announce">
+  <div class="wrap">
+    <div class="announce__inner">
+      <span class="announce__bit announce__bit--1">Plantes de qualité garantie ou remboursé</span>
+      <span class="announce__sep">·</span>
+      <span class="announce__bit announce__bit--2">Livraison partout au Canada</span>
+      <span class="announce__sep">·</span>
+      <span class="announce__bit announce__bit--3">Boutique végétale de Montréal</span>
+    </div>
+  </div>
+</div>
+
+<!-- Sticky Header -->
+<header class="site-header">
+  <div class="wrap">
+    <div class="site-header__inner">
+
+      <!-- LEFT: hamburger (mobile) + nav (desktop) -->
+      <nav class="site-header__nav" aria-label="Navigation principale">
+        <!-- Hamburger button — mobile only -->
+        <button class="site-header__hamburger" aria-label="Ouvrir le menu" aria-expanded="false">
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+            <line x1="2" y1="5.5" x2="20" y2="5.5"/>
+            <line x1="2" y1="11" x2="20" y2="11"/>
+            <line x1="2" y1="16.5" x2="20" y2="16.5"/>
+          </svg>
+        </button>
+
+        <!-- Nav links — desktop -->
+        <a href="https://www.google.com" class="site-header__nav-link">Boutique</a>
+        <a href="https://www.google.com" class="site-header__nav-link">Plantes</a>
+        <a href="https://www.google.com" class="site-header__nav-link">Ateliers</a>
+        <a href="https://www.google.com" class="site-header__nav-link">Parlons vert</a>
+        <a href="https://www.google.com" class="site-header__nav-link">À propos</a>
+      </nav>
+
+      <!-- CENTER: Logo lockup -->
+      <a href="https://www.google.com" class="site-header__logo" aria-label="Miss Boon - Boutique Végétale, retour à l'accueil">
+        <img
+          src="assets/logo.png"
+          alt="Miss Boon - Boutique Végétale"
+          class="site-header__logo-img"
+        />
+        <span class="site-header__logo-wordmark">Miss Boon</span>
+      </a>
+
+      <!-- RIGHT: actions -->
+      <div class="site-header__actions">
+        <!-- Magasiner CTA — desktop only -->
+        <a href="https://www.google.com" class="btn btn-primary site-header__magasiner" aria-label="Magasiner">Magasiner</a>
+
+        <!-- Search -->
+        <button class="site-header__action-btn site-header__action-search" aria-label="Rechercher">
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="9.5" cy="9.5" r="6.5"/>
+            <line x1="14.5" y1="14.5" x2="20" y2="20"/>
+          </svg>
+        </button>
+
+        <!-- Account -->
+        <button class="site-header__action-btn site-header__action-account" aria-label="Mon compte">
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="7.5" r="3.5"/>
+            <path d="M3 19c0-4.4 3.6-8 8-8s8 3.6 8 8"/>
+          </svg>
+        </button>
+
+        <!-- Cart -->
+        <button class="site-header__action-btn site-header__action-cart" aria-label="Panier (0 article)">
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M2 3h2.5l2.5 10h10l2-6.5H6.5"/>
+            <circle cx="8.5" cy="17.5" r="1.3"/>
+            <circle cx="16.5" cy="17.5" r="1.3"/>
+          </svg>
+          <span class="site-header__cart-badge" aria-hidden="true">0</span>
+        </button>
+      </div>
+
+    </div>
+  </div>
+</header>

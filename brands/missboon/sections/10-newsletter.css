@@ -1,0 +1,197 @@
+/* ============================================================
+   Miss Boon — 10-newsletter.css
+   Newsletter signup band — forest green (FRENCH)
+   ============================================================ */
+
+/* ── Tokens (redeclare so section is self-contained) ── */
+.s-newsletter {
+  --bg:         #F4F1EA;
+  --surface:    #FFFFFF;
+  --surface-2:  #EBE6DA;
+  --ink:        #252525;
+  --ink-soft:   #5A5F55;
+  --accent:     #4F7355;
+  --accent-ink: #FFFFFF;
+  --accent-deep:#3B5740;
+  --sage:       #6B926B;
+  --forest:     #2C332F;
+  --clay:       #C9826A;
+  --taupe:      #716A56;
+  --line:       #E2DCCE;
+  --font-display:"Trirong", "Georgia", "Times New Roman", serif;
+  --font-body:  "Quattrocento Sans", "Helvetica Neue", Arial, sans-serif;
+  --s--1:  .84rem;
+  --s-0:   1.05rem;
+  --s-1:   1.25rem;
+  --s-2:   1.6rem;
+  --s-3:   2.2rem;
+  --s-4:   3rem;
+  --s-5:   3.9rem;
+  --sp-1:  .25rem;  --sp-2: .5rem;  --sp-3: 1rem;   --sp-4: 1.5rem;
+  --sp-5:  2.5rem;  --sp-6: 4rem;   --sp-7: 6rem;   --sp-8: 8rem;
+  --radius:     6px;
+  --radius-lg:  12px;
+  --radius-pill:999px;
+  --shadow:     0 14px 40px rgba(44,51,47,.12);
+  --maxw:       1200px;
+}
+
+/* ── Band ── */
+.s-newsletter {
+  position: relative;
+  background: var(--forest);
+  overflow: hidden;
+  padding-block: var(--sp-7);
+}
+
+/* ── Inner ── */
+.s-newsletter__inner {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  z-index: 2;
+}
+
+/* ── Decorative leaf SVGs ── */
+.s-newsletter__deco {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 140px;
+  pointer-events: none;
+  opacity: .9;
+}
+.s-newsletter__deco--left  { left: -20px; }
+.s-newsletter__deco--right { right: -20px; transform: translateY(-50%) scaleX(-1); }
+
+@media (max-width: 900px) {
+  .s-newsletter__deco { display: none; }
+}
+
+/* ── Eyebrow — cream tint on forest ── */
+.s-newsletter__eyebrow.eyebrow {
+  color: var(--sage);
+}
+
+/* ── Heading — Trirong, cream ── */
+.s-newsletter__heading {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: var(--s-4);
+  line-height: 1.12;
+  color: #EFECEC;
+  margin: 0 0 var(--sp-3);
+  max-width: 600px;
+}
+
+/* ── Lead text ── */
+.s-newsletter__lead {
+  font-family: var(--font-body);
+  font-size: var(--s-0);
+  color: #C8CCC4;
+  line-height: 1.7;
+  max-width: 520px;
+  margin: 0 auto var(--sp-5);
+}
+
+/* ── Form ── */
+.s-newsletter__form {
+  width: 100%;
+  max-width: 540px;
+}
+
+.s-newsletter__field-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+  align-items: center;
+}
+
+.s-newsletter__label {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.s-newsletter__row {
+  display: flex;
+  width: 100%;
+  gap: var(--sp-2);
+  align-items: stretch;
+}
+
+.s-newsletter__input {
+  flex: 1 1 0;
+  min-width: 0;
+  font-family: var(--font-body);
+  font-size: var(--s-0);
+  color: var(--ink);
+  background: #FFFFFF;
+  border: 1.5px solid transparent;
+  border-radius: var(--radius);
+  padding: .8em 1.1em;
+  outline: none;
+  transition: border-color .2s, box-shadow .2s;
+  line-height: 1.4;
+}
+.s-newsletter__input::placeholder {
+  color: #9E9A94;
+}
+.s-newsletter__input:focus {
+  border-color: var(--sage);
+  box-shadow: 0 0 0 3px rgba(107,146,107,.22);
+}
+
+/* btn-light override (already defined in base, re-assert context) */
+.s-newsletter .btn-light {
+  background: #FFFFFF;
+  color: var(--forest);
+  border: 1.5px solid #FFFFFF;
+  flex-shrink: 0;
+}
+.s-newsletter .btn-light:hover {
+  background: transparent;
+  color: #FFFFFF;
+  border-color: #FFFFFF;
+}
+
+/* ── Fine print ── */
+.s-newsletter__fine {
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  color: rgba(200,204,196,.6);
+  margin: var(--sp-3) 0 0;
+  letter-spacing: .02em;
+}
+
+/* ── Mobile: stack full-width ── */
+@media (max-width: 600px) {
+  .s-newsletter {
+    padding-block: var(--sp-6);
+  }
+
+  .s-newsletter__heading {
+    font-size: var(--s-3);
+  }
+
+  .s-newsletter__row {
+    flex-direction: column;
+  }
+
+  .s-newsletter__input,
+  .s-newsletter__submit {
+    width: 100%;
+  }
+
+  .s-newsletter .btn-light {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+}

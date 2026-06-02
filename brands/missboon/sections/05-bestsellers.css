@@ -1,0 +1,292 @@
+/* ============================================================
+   05-bestsellers.css — Coups de cœur product grid · Miss Boon
+   Scoped to .s-bestsellers
+   ============================================================ */
+
+/* ── Local token aliases (already on :root via base.css) ── */
+.s-bestsellers {
+  --bg:          #F4F1EA;
+  --surface:     #fff;
+  --surface-2:   #EBE6DA;
+  --ink:         #252525;
+  --ink-soft:    #5A5F55;
+  --accent:      #4F7355;
+  --accent-ink:  #fff;
+  --accent-deep: #3B5740;
+  --sage:        #6B926B;
+  --forest:      #2C332F;
+  --clay:        #C9826A;
+  --taupe:       #716A56;
+  --line:        #E2DCCE;
+  --star:        #C9826A;
+  --font-display:"Trirong","Georgia","Times New Roman",serif;
+  --font-body:   "Quattrocento Sans","Helvetica Neue",Arial,sans-serif;
+  --s--1:  .84rem;
+  --s-0:   1.05rem;
+  --s-1:   1.25rem;
+  --s-2:   1.6rem;
+  --s-3:   2.2rem;
+  --s-4:   3rem;
+  --s-5:   3.9rem;
+  --sp-1:  .25rem;
+  --sp-2:  .5rem;
+  --sp-3:  1rem;
+  --sp-4:  1.5rem;
+  --sp-5:  2.5rem;
+  --sp-6:  4rem;
+  --sp-7:  6rem;
+  --sp-8:  8rem;
+  --radius:6px;
+  --radius-lg:12px;
+  --radius-pill:999px;
+  --shadow:0 14px 40px rgba(44,51,47,.13);
+  --maxw:1200px;
+}
+
+/* ── Section wrapper ───────────────────────────────────── */
+.s-bestsellers {
+  background: var(--surface);
+  padding-block: var(--sp-7);
+}
+
+/* ── Section header ────────────────────────────────────── */
+.s-bestsellers__header {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto var(--sp-6);
+}
+
+.s-bestsellers__header h2 {
+  font-family: var(--font-display);
+  font-size: var(--s-4);
+  font-weight: 400;
+  color: var(--ink);
+  margin-bottom: var(--sp-3);
+  line-height: 1.14;
+  letter-spacing: -.01em;
+}
+
+.s-bestsellers__intro {
+  font-family: var(--font-body);
+  font-size: var(--s-0);
+  color: var(--ink-soft);
+  line-height: 1.75;
+  margin: 0;
+}
+
+/* ── Product grid ──────────────────────────────────────── */
+.s-bestsellers__grid {
+  list-style: none;
+  margin: 0 0 var(--sp-5);
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-4);
+}
+
+/* Stagger passthrough */
+.s-bestsellers__item {
+  transition-delay: var(--delay, 0s);
+}
+
+/* ── Card ──────────────────────────────────────────────── */
+.s-bestsellers .card {
+  display: flex;
+  flex-direction: column;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  height: 100%;
+  transition: box-shadow .3s ease, transform .3s cubic-bezier(.2,.7,.2,1);
+}
+
+.s-bestsellers .card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow);
+}
+
+/* ── Card media ────────────────────────────────────────── */
+.s-bestsellers .card__media-link {
+  display: block;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.s-bestsellers .card__media {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  background: var(--surface-2);
+}
+
+.s-bestsellers .card__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform .5s cubic-bezier(.2,.7,.2,1);
+}
+
+.s-bestsellers .card:hover .card__media img {
+  transform: scale(1.05);
+}
+
+/* ── Care-cue chip on image ──────────────────────────── */
+.s-bestsellers .card__chip {
+  position: absolute;
+  top: var(--sp-3);
+  left: var(--sp-3);
+  font-family: var(--font-body);
+  font-size: .75rem;
+  font-weight: 700;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+  padding: .28em .75em;
+  border-radius: var(--radius-pill);
+  background: rgba(79, 115, 85, .88);
+  color: #fff;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  line-height: 1.6;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+/* Alternate chip colour for "Humidité" */
+.s-bestsellers .card__chip--clay {
+  background: rgba(201, 130, 106, .88);
+}
+
+/* ── Card body ─────────────────────────────────────────── */
+.s-bestsellers .card__body {
+  padding: var(--sp-3) var(--sp-4) var(--sp-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+  flex: 1;
+  border-top: 1px solid var(--line);
+}
+
+/* ── Plant names ───────────────────────────────────────── */
+.s-bestsellers .card__names {
+  flex: 1;
+}
+
+.s-bestsellers .card__name {
+  font-family: var(--font-display);
+  font-size: var(--s-1);
+  font-weight: 400;
+  color: var(--ink);
+  margin: 0 0 .2em;
+  line-height: 1.2;
+  letter-spacing: .005em;
+}
+
+.s-bestsellers .card__name a {
+  color: inherit;
+  text-decoration: none;
+  transition: color .2s;
+}
+
+.s-bestsellers .card__name a:hover {
+  color: var(--accent-deep);
+}
+
+.s-bestsellers .card__latin {
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  color: var(--ink-soft);
+  margin: 0;
+  line-height: 1.4;
+  min-height: 1.2em; /* preserve layout when empty */
+}
+
+/* ── Price ─────────────────────────────────────────────── */
+.s-bestsellers .card__price {
+  font-family: var(--font-body);
+  font-size: var(--s-1);
+  font-weight: 700;
+  color: var(--ink);
+  margin: 0;
+  letter-spacing: .01em;
+}
+
+/* ── CTA button (full-width) ───────────────────────────── */
+.s-bestsellers .card__cta {
+  display: block;
+  width: 100%;
+  text-align: center;
+  margin-top: auto;
+}
+
+/* ── Bottom CTA ────────────────────────────────────────── */
+.s-bestsellers__footer {
+  text-align: center;
+  transition-delay: var(--delay, 0s);
+}
+
+/* ── Reveal stagger passthrough ────────────────────────── */
+.s-bestsellers .reveal {
+  transition-delay: var(--delay, 0s);
+}
+
+/* ── Responsive ────────────────────────────────────────── */
+
+/* Tablet: 2-column */
+@media (max-width: 960px) {
+  .s-bestsellers__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--sp-4);
+  }
+}
+
+/* Tablet small / mobile landscape: 2-up, tighter */
+@media (max-width: 780px) {
+  .s-bestsellers {
+    padding-block: var(--sp-6);
+  }
+  .s-bestsellers__header {
+    margin-bottom: var(--sp-5);
+  }
+  .s-bestsellers__header h2 {
+    font-size: var(--s-3);
+  }
+  .s-bestsellers__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--sp-3);
+  }
+}
+
+/* Mobile portrait: horizontal snap then 1-col */
+@media (max-width: 540px) {
+  .s-bestsellers__grid {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    gap: var(--sp-3);
+    padding-bottom: var(--sp-2);
+    scrollbar-width: none;
+    /* negative margin trick so cards bleed to edge */
+    margin-inline: calc(-1 * var(--sp-3));
+    padding-inline: var(--sp-3);
+  }
+  .s-bestsellers__grid::-webkit-scrollbar {
+    display: none;
+  }
+  .s-bestsellers__item {
+    flex: 0 0 78vw;
+    max-width: 300px;
+    scroll-snap-align: start;
+  }
+}
+
+/* Responsive type scale (mirrors base.css) */
+@media (max-width: 780px) {
+  .s-bestsellers {
+    --s-4: 2.1rem;
+    --s-3: 1.75rem;
+    --s-2: 1.4rem;
+  }
+}

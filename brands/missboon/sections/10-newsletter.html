@@ -1,0 +1,58 @@
+<!-- ============================================================
+     Miss Boon — 10-newsletter.html
+     Newsletter signup band — forest green background (FRENCH)
+     ============================================================ -->
+
+<section class="sec s-newsletter">
+  <div class="wrap">
+    <div class="s-newsletter__inner">
+
+      <!-- Leaf deco left -->
+      <svg class="s-newsletter__deco s-newsletter__deco--left" viewBox="0 0 120 200" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M60 190 C20 150 0 100 10 50 C20 10 50 0 60 10 C70 0 100 10 110 50 C120 100 100 150 60 190Z" fill="rgba(107,146,107,0.18)"/>
+        <line x1="60" y1="190" x2="60" y2="10" stroke="rgba(107,146,107,0.25)" stroke-width="1.2"/>
+        <path d="M60 80 C45 65 35 55 38 40" stroke="rgba(107,146,107,0.22)" stroke-width="1" fill="none"/>
+        <path d="M60 110 C75 95 85 85 82 70" stroke="rgba(107,146,107,0.22)" stroke-width="1" fill="none"/>
+        <path d="M60 140 C45 125 38 115 40 100" stroke="rgba(107,146,107,0.22)" stroke-width="1" fill="none"/>
+      </svg>
+
+      <!-- Leaf deco right -->
+      <svg class="s-newsletter__deco s-newsletter__deco--right" viewBox="0 0 120 200" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M60 190 C20 150 0 100 10 50 C20 10 50 0 60 10 C70 0 100 10 110 50 C120 100 100 150 60 190Z" fill="rgba(107,146,107,0.18)"/>
+        <line x1="60" y1="190" x2="60" y2="10" stroke="rgba(107,146,107,0.25)" stroke-width="1.2"/>
+        <path d="M60 80 C75 65 85 55 82 40" stroke="rgba(107,146,107,0.22)" stroke-width="1" fill="none"/>
+        <path d="M60 110 C45 95 35 85 38 70" stroke="rgba(107,146,107,0.22)" stroke-width="1" fill="none"/>
+        <path d="M60 140 C75 125 82 115 80 100" stroke="rgba(107,146,107,0.22)" stroke-width="1" fill="none"/>
+      </svg>
+
+      <!-- Content -->
+      <div class="s-newsletter__content reveal">
+        <p class="eyebrow s-newsletter__eyebrow">PARLONS VERT</p>
+        <h2 class="s-newsletter__heading">10 % sur votre première plante.</h2>
+        <p class="s-newsletter__lead">Conseils d'entretien, nouveautés et raretés en primeur — directement dans votre boîte courriel.</p>
+
+        <!-- Inline email form -->
+        <form class="s-newsletter__form" onsubmit="return false" novalidate>
+          <div class="s-newsletter__field-wrap">
+            <label for="nl-email" class="s-newsletter__label">Adresse courriel</label>
+            <div class="s-newsletter__row">
+              <input
+                type="email"
+                id="nl-email"
+                name="email"
+                class="s-newsletter__input"
+                placeholder="votre@courriel.com"
+                autocomplete="email"
+                required
+              />
+              <button type="submit" class="btn btn-light s-newsletter__submit">S'abonner</button>
+            </div>
+          </div>
+        </form>
+
+        <p class="s-newsletter__fine">Désabonnement en tout temps.</p>
+      </div>
+
+    </div>
+  </div>
+</section>

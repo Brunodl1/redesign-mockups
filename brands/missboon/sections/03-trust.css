@@ -1,0 +1,153 @@
+/* ============================================================
+   03-trust.css — Trust strip · Miss Boon Boutique Végétale
+   Scoped to .s-trust
+   ============================================================ */
+
+/* local token aliases (already on :root via base.css) */
+.s-trust {
+  --bg:         #F4F1EA;
+  --surface:    #fff;
+  --surface-2:  #EBE6DA;
+  --ink:        #252525;
+  --ink-soft:   #5A5F55;
+  --accent:     #4F7355;
+  --accent-ink: #fff;
+  --accent-deep:#3B5740;
+  --sage:       #6B926B;
+  --forest:     #2C332F;
+  --clay:       #C9826A;
+  --taupe:      #716A56;
+  --line:       #E2DCCE;
+  --star:       #C9826A;
+  --font-display:"Trirong","Georgia","Times New Roman",serif;
+  --font-body:  "Quattrocento Sans","Helvetica Neue",Arial,sans-serif;
+  --s--1:  .84rem;
+  --s-0:   1.05rem;
+  --s-1:   1.25rem;
+  --sp-2:  .5rem;
+  --sp-3:  1rem;
+  --sp-4:  1.5rem;
+  --sp-5:  2.5rem;
+  --radius:6px;
+  --radius-lg:12px;
+  --radius-pill:999px;
+  --maxw:1200px;
+}
+
+/* Band */
+.s-trust {
+  background: var(--surface-2);
+  padding-block: var(--sp-4);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  overflow: hidden;
+}
+
+/* Row of 4 */
+.s-trust__row {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: var(--sp-3);
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+/* Single item */
+.s-trust__item {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+/* Icon */
+.s-trust__ic {
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  color: var(--accent);
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 1.6;
+  display: block;
+}
+
+/* Text block */
+.s-trust__body {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.s-trust__label {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: var(--s-0);
+  color: var(--ink);
+  letter-spacing: .01em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.s-trust__sub {
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  color: var(--ink-soft);
+  line-height: 1.45;
+}
+
+/* Subtle vertical dividers between items */
+.s-trust__item + .s-trust__item {
+  padding-left: var(--sp-3);
+  border-left: 1px solid var(--line);
+}
+
+/* ── Responsive ─────────────────────────────── */
+
+/* Tablet: allow wrapping, slightly smaller gap */
+@media (max-width: 900px) {
+  .s-trust__item + .s-trust__item {
+    border-left: none;
+    padding-left: 0;
+  }
+  .s-trust__row {
+    flex-wrap: wrap;
+    gap: var(--sp-4) var(--sp-5);
+    justify-content: flex-start;
+  }
+  .s-trust__item {
+    flex: 1 1 calc(50% - var(--sp-5));
+    max-width: calc(50% - var(--sp-5) / 2);
+  }
+}
+
+/* Mobile: 2×2 grid, compact */
+@media (max-width: 780px) {
+  .s-trust {
+    padding-block: var(--sp-4);
+  }
+  .s-trust__row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--sp-4) var(--sp-3);
+  }
+  .s-trust__item {
+    flex: unset;
+    max-width: unset;
+  }
+  .s-trust__label {
+    white-space: normal;
+  }
+}
+
+/* Very small screens: single column */
+@media (max-width: 400px) {
+  .s-trust__row {
+    grid-template-columns: 1fr;
+  }
+}

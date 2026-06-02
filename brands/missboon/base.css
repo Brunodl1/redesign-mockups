@@ -1,0 +1,134 @@
+/* ============================================================
+   Miss Boon - Boutique Végétale — base.css (foundation)
+   Online houseplant boutique · "Inspirée par la nature" · Montréal · FR
+   Lush botanical editorial: warm cream + sage/forest green + terracotta. Trirong + Quattrocento Sans.
+   ============================================================ */
+:root{
+  /* color */
+  --bg:        #F4F1EA;   /* warm cream ground */
+  --surface:   #FFFFFF;   /* cards */
+  --surface-2: #EBE6DA;   /* soft greige band */
+  --ink:       #252525;   /* near-black */
+  --ink-soft:  #5A5F55;   /* warm olive-grey — secondary text */
+  --accent:    #4F7355;   /* sage-forest green — CTAs, eyebrows, links (deepened for contrast) */
+  --accent-ink:#FFFFFF;
+  --accent-deep:#3B5740;  /* hover */
+  --sage:      #6B926B;   /* lighter sage (their CTA green) — soft fills/accents */
+  --forest:    #2C332F;   /* deep forest — dark bands/footer */
+  --clay:      #C9826A;   /* terracotta/clay accent (sparing) */
+  --taupe:     #716A56;   /* warm taupe */
+  --gold:      #C9826A;   /* alias → clay for warm marks */
+  --dark:      #2C332F;   /* footer */
+  --line:      #E2DCCE;   /* warm hairline */
+  --star:      #C9826A;   /* terracotta stars */
+  --btn:       #4F7355;
+  --btn-ink:   #FFFFFF;
+  /* type */
+  --font-display: "Trirong", "Georgia", "Times New Roman", serif;
+  --font-body:    "Quattrocento Sans", "Helvetica Neue", Arial, sans-serif;
+  --s--1: .84rem;
+  --s-0:  1.05rem;
+  --s-1:  1.25rem;
+  --s-2:  1.6rem;
+  --s-3:  2.2rem;
+  --s-4:  3rem;
+  --s-5:  3.9rem;
+  /* space */
+  --sp-1:.25rem; --sp-2:.5rem; --sp-3:1rem; --sp-4:1.5rem;
+  --sp-5:2.5rem; --sp-6:4rem; --sp-7:6rem;
+  --sp-8:8rem;
+  /* shape — soft, near-square (their 6px) */
+  --radius:6px; --radius-lg:12px; --radius-pill:999px;
+  --shadow:0 14px 40px rgba(44,51,47,.12);
+  --maxw:1200px;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html,body{overflow-x:clip}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--ink);
+  font-family:var(--font-body);
+  font-size:var(--s-0);
+  line-height:1.75;
+  font-weight:400;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+
+/* headings — Trirong, warm oldstyle serif */
+h1,h2,h3{font-family:var(--font-display);font-weight:400;line-height:1.14;letter-spacing:.005em;margin:0 0 var(--sp-3);color:var(--ink)}
+h1{font-size:var(--s-5)}
+h2{font-size:var(--s-4)}
+h3{font-size:var(--s-2)}
+p{margin:0 0 var(--sp-3)}
+
+/* layout */
+.wrap{max-width:var(--maxw);margin:0 auto;padding-inline:var(--sp-4);width:100%}
+.sec{position:relative;padding-block:var(--sp-7)}
+.section{position:relative}
+
+/* eyebrow — green tracked caps */
+.eyebrow{
+  display:inline-block;font-family:var(--font-body);font-weight:700;
+  font-size:var(--s--1);letter-spacing:.18em;text-transform:uppercase;
+  color:var(--accent);margin:0 0 var(--sp-3)
+}
+
+/* buttons — soft 6px, sentence-ish caps, no shadow (their style) */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:.5em;
+  font-family:var(--font-body);font-weight:700;font-size:var(--s--1);
+  letter-spacing:.1em;text-transform:uppercase;
+  padding:1em 2.1em;border-radius:var(--radius);border:1.5px solid transparent;
+  cursor:pointer;transition:background .2s,color .2s,border-color .2s,transform .15s,box-shadow .2s;
+  line-height:1;white-space:nowrap
+}
+.btn:hover{transform:translateY(-2px)}
+.btn-primary{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.btn-primary:hover{background:var(--accent-deep);border-color:var(--accent-deep)}
+.btn-forest{background:var(--forest);color:#fff;border-color:var(--forest)}
+.btn-forest:hover{background:#1f2421;border-color:#1f2421}
+.btn-clay{background:var(--clay);color:#fff;border-color:var(--clay)}
+.btn-clay:hover{background:#b06b54;border-color:#b06b54}
+.btn-outline{background:transparent;color:var(--accent);border-color:var(--accent)}
+.btn-outline:hover{background:var(--accent);color:#fff}
+.btn-light{background:#fff;color:var(--forest);border-color:#fff}
+.btn-light:hover{background:transparent;color:#fff;border-color:#fff}
+.btn-block{display:flex;width:100%}
+
+/* rating stars */
+.stars{color:var(--star);letter-spacing:.06em;font-size:var(--s-0)}
+
+/* chips */
+.chip{
+  display:inline-flex;align-items:center;gap:.45em;
+  font-family:var(--font-body);font-weight:700;font-size:var(--s--1);
+  letter-spacing:.08em;text-transform:uppercase;
+  padding:.5em 1em;border-radius:var(--radius-pill);border:1.5px solid var(--line);
+  background:var(--surface);color:var(--ink);line-height:1
+}
+
+/* section icons */
+.ic{width:40px;height:40px;display:block;stroke:currentColor;stroke-width:1.5;fill:none}
+
+/* floats — static, hidden mobile */
+.float{position:absolute;pointer-events:none;z-index:5}
+.float img{width:100%;transform:rotate(var(--rot,0deg));
+  filter:drop-shadow(0 24px 22px rgba(44,51,47,.20))}
+@media(max-width:1000px){.float{display:none}}
+
+/* scroll-reveal (3D) — NOT on hero */
+.reveal{opacity:0;transform:perspective(900px) rotateX(8deg) translateY(26px);
+  transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+
+/* responsive type */
+@media(max-width:780px){
+  :root{--s-5:2.7rem;--s-4:2.1rem;--s-3:1.75rem;--s-2:1.4rem}
+  .sec{padding-block:var(--sp-6)}
+}
