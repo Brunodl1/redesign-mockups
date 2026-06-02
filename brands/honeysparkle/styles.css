@@ -81,217 +81,268 @@ p{margin:0}
 .ic{width:38px; height:38px; flex:none; stroke:var(--accent); stroke-width:1.6; fill:none}
 
 /* === hero === */
-/* ─── HERO SPLIT ─────────────────────────────────────────── */
+/* ============================================================
+   Honey Sparkle — Hero: full-bleed still-life + cream text panel
+   All rules scoped under .s-hero
+   ============================================================ */
 
-/* Desktop layout: two columns, text left / image right */
+/* ── Section shell ───────────────────────────────────────── */
 .s-hero {
-  background: var(--surface-2);
-  overflow: hidden;
   position: relative;
-}
-
-.s-hero__inner {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--sp-6);
-  align-items: center;
-  min-height: clamp(560px, 82vh, 860px);
-  padding-block: var(--sp-6);
-}
-
-/* ── LEFT: text panel ── */
-.s-hero__text {
+  min-height: 84vh;
   display: flex;
-  flex-direction: column;
-  gap: var(--sp-4);
-  padding-block: var(--sp-5);
-  z-index: 2;
+  align-items: center;
+  overflow: hidden;
+  /* remove any default .section block-padding */
+  padding-block: 0;
 }
 
+/* ── Full-bleed background image ─────────────────────────── */
+.s-hero__bg {
+  position: absolute;
+  inset: 0;
+  background: url('assets/hero.jpg') center / cover no-repeat;
+  z-index: 0;
+  /* Subtle warm fallback while image loads */
+  background-color: var(--warm);
+}
+
+/* ── Left-to-right soft cream scrim ──────────────────────── */
+/* Blends the panel edge into the light negative-space area;
+   kept very subtle because the image already has light tones left */
+.s-hero__scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(253, 251, 246, 0.42) 0%,
+    rgba(253, 251, 246, 0.18) 46%,
+    transparent 70%
+  );
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* ── Wrap — flex container to position panel left ────────── */
+.s-hero__wrap {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  padding-block: clamp(3rem, 7vw, 5.5rem);
+  width: 100%;
+}
+
+/* ── Cream text panel ────────────────────────────────────── */
+.s-hero__panel {
+  position: relative;
+  width: clamp(320px, 46%, 560px);
+  background: rgba(253, 251, 246, 0.86);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: var(--radius-lg);
+  padding: clamp(2rem, 4vw, 3rem) clamp(1.8rem, 3.5vw, 2.8rem);
+  box-shadow: var(--shadow);
+  /* Ensure all text is dark — panel is light */
+  color: var(--ink);
+}
+
+/* ── Eyebrow ─────────────────────────────────────────────── */
 .s-hero__eyebrow {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   gap: var(--sp-2);
+  color: var(--accent);
+  margin-bottom: var(--sp-3);
 }
 
-.s-hero__spark {
-  flex: none;
+.s-hero__spark-sm {
+  flex-shrink: 0;
 }
 
+/* ── H1 ──────────────────────────────────────────────────── */
 .s-hero__h1 {
   position: relative;
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 4.6vw, var(--s-5));
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+  line-height: 1.05;
   color: var(--ink);
-  line-height: 1.04;
-  font-size: clamp(2.6rem, 5vw, var(--s-5));
+  margin-bottom: var(--sp-4);
 }
 
-.s-hero__sparkle-h1 {
+/* Italic second line — "EN PLUS DOUX" keeps serif italic warmth */
+.s-hero__h1 em {
+  font-style: italic;
+  font-weight: 600;
+  color: var(--accent);
+  text-transform: uppercase;
+}
+
+/* Sparkle pinned near the H1 heading */
+.s-hero__spark-h1 {
   position: absolute;
   top: -0.5rem;
-  right: -1.2rem;
-  opacity: .85;
+  right: -0.5rem;
+  opacity: 0.85;
 }
 
+/* ── Subhead ─────────────────────────────────────────────── */
 .s-hero__sub {
-  color: var(--ink-soft);
-  font-size: clamp(var(--s--1), 1.5vw, var(--s-1));
+  font-family: var(--font-body);
+  font-size: var(--s-0);
   line-height: 1.65;
-  max-width: 38ch;
+  color: var(--ink-soft);
+  margin-bottom: var(--sp-5);
 }
 
+/* ── CTAs ────────────────────────────────────────────────── */
 .s-hero__ctas {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
   gap: var(--sp-4);
+  margin-bottom: var(--sp-4);
 }
 
-.s-hero__link {
+/* Primary button — inherits .btn .btn-primary from base.css */
+.s-hero__btn-primary {
+  /* Ensure dark-text override doesn't leak in from panel color context */
+  color: var(--btn-ink);
+}
+
+/* Secondary text link */
+.s-hero__link-secondary {
   font-family: var(--font-body);
   font-weight: 700;
   font-size: var(--s--1);
-  letter-spacing: .06em;
+  letter-spacing: 0.04em;
   color: var(--accent);
-  transition: color .2s;
-}
-.s-hero__link:hover {
-  color: var(--accent-2);
+  text-decoration: none;
+  border-bottom: 1.5px solid var(--accent);
+  padding-bottom: 1px;
+  transition: color 0.2s ease, border-color 0.2s ease;
 }
 
+.s-hero__link-secondary:hover {
+  color: var(--accent-2);
+  border-color: var(--accent-2);
+}
+
+/* ── Trust line ──────────────────────────────────────────── */
 .s-hero__trust {
+  font-family: var(--font-body);
   font-size: var(--s--1);
   color: var(--ink-soft);
   display: flex;
   align-items: center;
   gap: var(--sp-2);
   flex-wrap: wrap;
-  margin-top: -.25rem;
+  margin-bottom: 0;
 }
 
 .s-hero__stars {
   color: var(--star);
-  font-size: .9rem;
-  letter-spacing: .04em;
+  letter-spacing: 0.06em;
+  font-size: 0.92rem;
 }
 
-/* ── RIGHT: image frame ── */
-.s-hero__frame {
-  position: relative;
-  align-self: stretch;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.s-hero__img {
-  width: 100%;
-  height: clamp(420px, 70vh, 760px);
-  object-fit: cover;
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow);
-  display: block;
-}
-
-.s-hero__sparkle-frame {
+/* ── Decorative corner sparkle inside panel ──────────────── */
+.s-hero__spark-deco {
   position: absolute;
-  top: 1.2rem;
-  right: 1rem;
-  z-index: 3;
-  opacity: .9;
-  pointer-events: none;
+  bottom: var(--sp-3);
+  right: var(--sp-3);
+  opacity: 0.55;
 }
 
-/* ── Mobile overlay panel (hidden on desktop) ── */
-.s-hero__mobile-panel {
-  display: none;
-}
-
-/* ─── MOBILE ≤1000px ─────────────────────────────────────── */
-@media (max-width: 1000px) {
+/* ── MOBILE (≤ 900px) ────────────────────────────────────── */
+@media (max-width: 900px) {
   .s-hero {
-    background: none;
+    /* Let the still-life stay visible behind everything;
+       section min-height creates enough space */
+    min-height: unset;
+    align-items: flex-end;
+    padding-bottom: 0;
+  }
+
+  /* The bg image shows behind the panel — keep it visible */
+  .s-hero__bg {
     position: relative;
-    min-height: 100svh;
+    /* On mobile the bg div becomes a tall image strip above the panel */
+    height: 52vw;
+    min-height: 240px;
+    max-height: 380px;
+    border-radius: 0;
   }
 
-  /* Hide desktop two-column layout */
-  .s-hero__inner {
-    display: none;
+  /* Re-stack: bg on top, scrim + wrap below */
+  .s-hero {
+    display: block;
+    position: relative;
   }
 
-  /* Full-bleed hero image as background */
-  .s-hero::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: url('../assets/hero.jpg') center/cover no-repeat;
-    z-index: 0;
+  .s-hero__scrim {
+    display: none; /* Not needed at mobile — image is above, panel below */
   }
 
-  /* Dark scrim from bottom */
-  .s-hero::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-      to top,
-      rgba(35, 31, 32, .72) 0%,
-      rgba(35, 31, 32, .48) 40%,
-      rgba(35, 31, 32, .06) 75%,
-      transparent 100%
-    );
-    z-index: 1;
-  }
-
-  /* Show mobile text panel */
-  .s-hero__mobile-panel {
-    display: flex;
-    flex-direction: column;
-    gap: var(--sp-3);
+  .s-hero__wrap {
     position: relative;
     z-index: 2;
-    padding: var(--sp-6) clamp(1.1rem, 5vw, 2rem) var(--sp-5);
-    margin-top: calc(100svh - clamp(380px, 58vh, 460px));
-    color: var(--bg);
+    padding-block: 0 var(--sp-6);
+    /* Overlap the panel slightly over the image bottom edge */
+    margin-top: -2.4rem;
   }
 
-  .s-hero__mob-eyebrow {
-    display: inline-flex;
-    align-items: center;
-    gap: var(--sp-2);
-    font-family: var(--font-body);
-    font-weight: 700;
+  .s-hero__panel {
+    width: 100%;
+    max-width: 100%;
+    background: rgba(253, 251, 246, 0.97);
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    padding: clamp(1.5rem, 5vw, 2.2rem) clamp(1.2rem, 5vw, 2rem);
+  }
+
+  .s-hero__h1 {
+    font-size: clamp(2rem, 8vw, 2.8rem);
+    margin-bottom: var(--sp-3);
+  }
+
+  .s-hero__sub {
     font-size: var(--s--1);
-    letter-spacing: .2em;
-    text-transform: uppercase;
-    color: rgba(253, 251, 246, .88);
+    margin-bottom: var(--sp-4);
   }
 
-  .s-hero__mob-h1 {
-    font-family: var(--font-display);
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: .01em;
-    line-height: 1.06;
-    font-size: clamp(2rem, 9vw, 2.8rem);
-    color: var(--bg);
+  .s-hero__ctas {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--sp-3);
   }
 
-  .s-hero__mob-sub {
-    font-size: var(--s--1);
-    color: rgba(253, 251, 246, .82);
-    line-height: 1.6;
-    max-width: 38ch;
+  .s-hero__btn-primary {
+    width: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
   }
 
-  .s-hero__mob-btn {
-    align-self: flex-start;
+  .s-hero__spark-h1 {
+    display: none;
+  }
+}
+
+/* ── Very small screens (≤ 480px) ───────────────────────── */
+@media (max-width: 480px) {
+  .s-hero__bg {
+    height: 62vw;
+    min-height: 200px;
   }
 
-  .s-hero__mob-trust {
-    font-size: var(--s--1);
-    color: rgba(253, 251, 246, .7);
-    margin-top: var(--sp-1);
+  .s-hero__eyebrow {
+    font-size: 0.72rem;
+    letter-spacing: 0.16em;
   }
 }
 

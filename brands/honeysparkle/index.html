@@ -33,69 +33,60 @@
   </div>
 </header>
 
-<section class="sec s-hero hero-split">
-  <div class="s-hero__inner wrap">
+<section class="sec s-hero hero-fullbleed">
 
-    <!-- LEFT: text panel -->
-    <div class="s-hero__text">
+  <!-- Full-bleed still-life background -->
+  <div class="s-hero__bg" aria-hidden="true"></div>
+
+  <!-- Soft left-to-right cream scrim — blends panel edge into the image -->
+  <div class="s-hero__scrim" aria-hidden="true"></div>
+
+  <!-- Contained cream text panel (left ~46%) -->
+  <div class="wrap s-hero__wrap">
+    <div class="s-hero__panel">
+
+      <!-- Eyebrow with sparkle -->
       <p class="eyebrow s-hero__eyebrow">
-        <svg class="s-hero__spark" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+        <svg class="s-hero__spark-sm" width="12" height="12" viewBox="0 0 14 14" fill="none" aria-hidden="true">
           <path d="M7 0 L7.8 5.8 L14 7 L7.8 8.2 L7 14 L6.2 8.2 L0 7 L6.2 5.8 Z" fill="var(--gold)"/>
         </svg>
-        Beauté &amp; Bien-être
+        BEAUTÉ &amp; BIEN-ÊTRE EN HARMONIE
       </p>
 
+      <!-- H1 with decorative sparkle -->
       <h1 class="s-hero__h1">
-        La beauté<br>
-        rencontre<br>
-        le bien-être
-        <svg class="s-hero__sparkle-h1" width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
-          <path d="M9 0 L10.2 7.2 L18 9 L10.2 10.8 L9 18 L7.8 10.8 L0 9 L7.8 7.2 Z" fill="var(--gold)"/>
+        LE SELF-CARE,<br>
+        <em>EN PLUS DOUX</em>
+        <svg class="s-hero__spark-h1" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+          <path d="M10 0 L11.8 7.6 L20 10 L11.8 12.4 L10 20 L8.2 12.4 L0 10 L8.2 7.6 Z" fill="var(--gold)"/>
         </svg>
       </h1>
 
+      <!-- Subhead -->
       <p class="s-hero__sub">
-        Bougies coulées à la main, soins de la peau et corps&nbsp;—<br>un luxe abordable pour rayonner chaque jour.
+        Bougies coulées à la main &amp; soins qui font rayonner&nbsp;— un luxe abordable, fièrement montréalais.
       </p>
 
+      <!-- CTAs -->
       <div class="s-hero__ctas">
-        <a href="https://www.google.com" class="btn btn-primary">Magasiner</a>
-        <a href="https://www.google.com" class="s-hero__link">Découvrir les bougies →</a>
+        <a href="https://www.google.com" class="btn btn-primary s-hero__btn-primary">MAGASINER</a>
+        <a href="https://www.google.com" class="s-hero__link-secondary">Découvrir les bougies <span aria-hidden="true">→</span></a>
       </div>
 
+      <!-- Trust line -->
       <p class="s-hero__trust">
-        <span class="s-hero__stars">★★★★★</span> 4,9 &nbsp;·&nbsp; livraison gratuite dès 99&nbsp;$ &nbsp;·&nbsp; fièrement montréalais
+        <span class="s-hero__stars">★★★★★</span>
+        4,9&nbsp;·&nbsp;livraison gratuite dès 99&nbsp;$&nbsp;·&nbsp;fièrement montréalais
       </p>
-    </div><!-- /text -->
 
-    <!-- RIGHT: image frame -->
-    <div class="s-hero__frame">
-      <svg class="s-hero__sparkle-frame" width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
-        <path d="M11 0 L13 8.4 L22 11 L13 13.6 L11 22 L9 13.6 L0 11 L9 8.4 Z" fill="var(--gold)"/>
+      <!-- Extra decorative sparkle bottom-right of panel -->
+      <svg class="s-hero__spark-deco" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+        <path d="M8 0 L9.2 5.6 L16 8 L9.2 10.4 L8 16 L6.8 10.4 L0 8 L6.8 5.6 Z" fill="var(--gold)"/>
       </svg>
-      <img
-        src="assets/hero.jpg"
-        alt="Honey Sparkle — bougies de soja et soins naturels, Montréal"
-        class="s-hero__img"
-        width="620" height="780"
-        loading="eager"
-        fetchpriority="high"
-      />
-    </div><!-- /frame -->
 
-  </div><!-- /inner -->
+    </div><!-- /.s-hero__panel -->
+  </div><!-- /.wrap -->
 
-  <!-- MOBILE scrim overlay (visible ≤1000px) -->
-  <div class="s-hero__mobile-panel" aria-hidden="true">
-    <p class="eyebrow s-hero__mob-eyebrow">
-      <svg width="11" height="11" viewBox="0 0 14 14" fill="none"><path d="M7 0 L7.8 5.8 L14 7 L7.8 8.2 L7 14 L6.2 8.2 L0 7 L6.2 5.8 Z" fill="var(--gold)"/></svg>
-      Beauté &amp; Bien-être
-    </p>
-    <h1 class="s-hero__mob-h1">La beauté rencontre le bien-être</h1>
-    <p class="s-hero__mob-sub">Bougies coulées à la main, soins peau &amp; corps — un luxe abordable pour rayonner.</p>
-    <a href="https://www.google.com" class="btn btn-light s-hero__mob-btn">Magasiner</a>
-    <p class="s-hero__mob-trust">★ 4,9 · livraison gratuite dès 99&nbsp;$</p>
-  </div>
 </section>
 
 <section class="sec s-trust">
