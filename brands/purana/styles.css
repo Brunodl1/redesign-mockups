@@ -1870,3 +1870,19 @@ p{margin:0}
   .footer-grid{grid-template-columns:1fr 1fr;gap:1.5rem}
   .footer-brand{grid-column:1 / -1}
 }
+
+/* === PDP interactivity: carousel arrows + cursors === */
+.s-pdp .pdp-main-wrap{position:relative}
+.s-pdp .pdp-nav{position:absolute;top:50%;transform:translateY(-50%);z-index:3;
+  width:42px;height:42px;border-radius:var(--radius-pill);border:1px solid var(--line);
+  background:rgba(44,35,24,.62);backdrop-filter:blur(6px);color:var(--ink);
+  font-size:1.5rem;line-height:1;display:flex;align-items:center;justify-content:center;
+  cursor:pointer;transition:.2s ease;opacity:.85}
+.s-pdp .pdp-nav:hover{background:var(--gold);color:var(--accent-ink);border-color:var(--gold);opacity:1}
+.s-pdp .pdp-nav--prev{left:14px}
+.s-pdp .pdp-nav--next{right:14px}
+.s-pdp .pdp-main-wrap:focus{outline:none}
+.s-pdp .pdp-main-wrap:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.s-pdp .pdp-variant,.s-pdp .pdp-ptype,.s-pdp .pdp-thumb{cursor:pointer}
+.s-pdp .pdp-main-img{transition:opacity .25s ease}
+@media(max-width:700px){ .s-pdp .pdp-nav{width:36px;height:36px;font-size:1.3rem} }
