@@ -1,0 +1,166 @@
+/* ============================================================
+   Caprice & Co — 08-about.css
+   About / Founder band — 2-column layout
+   All rules scoped under .s-about
+   ============================================================ */
+
+/* ── Section shell ─────────────────────────────────────────── */
+.s-about {
+  background: var(--surface-2);   /* --surface-2: #FCE3DC blush */
+  padding-block: var(--sp-8);
+}
+
+/* ── 2-column band ─────────────────────────────────────────── */
+.s-about__band {
+  display: grid;
+  grid-template-columns: minmax(0, 360px) 1fr;
+  gap: var(--sp-7);
+  align-items: center;
+}
+
+/* ── Portrait column ────────────────────────────────────────── */
+.s-about__portrait-col {
+  display: flex;
+  justify-content: center;
+}
+
+.s-about__portrait-frame {
+  position: relative;
+  width: 100%;
+  max-width: 360px;
+}
+
+/* Decorative ring — offset rose/coral glow behind portrait */
+.s-about__portrait-ring {
+  position: absolute;
+  inset: -10px;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(
+    135deg,
+    rgba(219, 92, 123, .22) 0%,
+    rgba(232, 149, 107, .16) 100%
+  );
+  z-index: 0;
+}
+
+.s-about__portrait-img {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+}
+
+/* ── Story column ───────────────────────────────────────────── */
+.s-about__story {
+  max-width: 560px;
+}
+
+.s-about__eyebrow {
+  color: var(--accent);
+  margin-bottom: var(--sp-2);
+}
+
+.s-about__heading {
+  font-family: var(--font-display);
+  font-size: var(--s-4);
+  color: var(--ink);
+  line-height: 1.15;
+  margin: 0 0 var(--sp-4);
+}
+
+.s-about__body {
+  font-family: var(--font-body);
+  font-size: var(--s-1);
+  color: var(--ink-soft);
+  line-height: 1.7;
+  margin: 0 0 var(--sp-3);
+}
+
+.s-about__body:last-of-type {
+  margin-bottom: var(--sp-4);
+}
+
+/* ── Chip row ───────────────────────────────────────────────── */
+.s-about__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+  margin-bottom: var(--sp-5);
+}
+
+/* Inherit .chip from base but override colours for blush bg */
+.s-about .chip {
+  background: rgba(255, 255, 255, .72);
+  color: var(--ink);
+  border: 1px solid var(--line);
+  backdrop-filter: blur(4px);
+}
+
+/* ── CTA ────────────────────────────────────────────────────── */
+.s-about__cta {
+  display: inline-flex;
+}
+
+/* ── Staggered reveal ──────────────────────────────────────── */
+.s-about .reveal {
+  transition-delay: var(--delay, 0s);
+}
+
+/* ── Tablet: narrow columns, slightly reduce portrait ───────── */
+@media (max-width: 900px) {
+  .s-about__band {
+    grid-template-columns: minmax(0, 300px) 1fr;
+    gap: var(--sp-5);
+  }
+
+  .s-about__portrait-frame {
+    max-width: 300px;
+  }
+
+  .s-about__heading {
+    font-size: var(--s-3);
+  }
+}
+
+/* ── Mobile: stack portrait above text ──────────────────────── */
+@media (max-width: 680px) {
+  .s-about {
+    padding-block: var(--sp-6);
+  }
+
+  .s-about__band {
+    grid-template-columns: 1fr;
+    gap: var(--sp-5);
+  }
+
+  .s-about__portrait-col {
+    justify-content: center;
+  }
+
+  .s-about__portrait-frame {
+    max-width: 260px;
+  }
+
+  .s-about__story {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .s-about__chips {
+    justify-content: center;
+  }
+
+  .s-about__cta {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .s-about__heading {
+    font-size: var(--s-2);
+  }
+}

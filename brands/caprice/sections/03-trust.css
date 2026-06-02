@@ -1,0 +1,134 @@
+/* ============================================================
+   Caprice & Co — 03-trust.css
+   Trust strip — slim band, 4 icons + labels
+   ============================================================ */
+
+/* ── Section shell ─────────────────────────────────────────── */
+.s-trust {
+  background: var(--cream);
+  padding-block: var(--sp-5);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+/* ── Row ───────────────────────────────────────────────────── */
+.s-trust__row {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--sp-4) var(--sp-5);
+  align-items: start;
+}
+
+/* ── Single item ───────────────────────────────────────────── */
+.s-trust__item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--sp-3);
+}
+
+/* ── Icon wrapper ──────────────────────────────────────────── */
+.s-trust__icon {
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.s-trust__icon .ic {
+  width: 32px;
+  height: 32px;
+}
+
+/* ── Copy block ────────────────────────────────────────────── */
+.s-trust__copy {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-1);
+}
+
+.s-trust__label {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: var(--s-0);
+  color: var(--ink);
+  line-height: 1.2;
+  letter-spacing: .01em;
+}
+
+.s-trust__sub {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: var(--s--1);
+  color: var(--ink-soft);
+  line-height: 1.45;
+}
+
+/* ── Dividers between items (desktop) ─────────────────────── */
+.s-trust__item + .s-trust__item {
+  padding-left: var(--sp-5);
+  border-left: 1px solid var(--line);
+}
+
+/* ── Tablet: 2×2 ──────────────────────────────────────────── */
+@media (max-width: 960px) {
+  .s-trust__row {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--sp-4);
+  }
+
+  /* Remove left-border divider on tablet — reset all, re-add only col-2 */
+  .s-trust__item + .s-trust__item {
+    border-left: none;
+    padding-left: 0;
+  }
+
+  /* items at positions 2 and 4 (right column) get a left border */
+  .s-trust__item:nth-child(2n) {
+    padding-left: var(--sp-4);
+    border-left: 1px solid var(--line);
+  }
+}
+
+/* ── Mobile (≤ 520px): keep 2-up but tighter ──────────────── */
+@media (max-width: 520px) {
+  .s-trust {
+    padding-block: var(--sp-4);
+  }
+
+  .s-trust__row {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--sp-3) var(--sp-3);
+  }
+
+  .s-trust__item {
+    gap: var(--sp-2);
+  }
+
+  .s-trust__icon {
+    width: 28px;
+    height: 28px;
+  }
+
+  .s-trust__icon .ic {
+    width: 26px;
+    height: 26px;
+  }
+
+  .s-trust__label {
+    font-size: var(--s--1);
+  }
+
+  .s-trust__sub {
+    font-size: .72rem;
+  }
+
+  .s-trust__item:nth-child(2n) {
+    padding-left: var(--sp-2);
+    border-left: 1px solid var(--line);
+  }
+}

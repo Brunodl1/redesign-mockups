@@ -1,0 +1,41 @@
+<!-- ============================================================
+     Caprice & Co — 10-newsletter.html
+     Newsletter signup band — coral background, light text
+     ============================================================ -->
+<section class="sec s-newsletter">
+  <!-- decorative tropical leaves -->
+  <span class="s-newsletter__leaf s-newsletter__leaf--l" aria-hidden="true">
+    <svg width="120" height="160" viewBox="0 0 120 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M60 155 C60 155 5 100 10 45 C15 -10 60 5 60 5 C60 5 105 -10 110 45 C115 100 60 155 60 155Z" fill="rgba(255,255,255,.10)"/>
+      <path d="M60 155 L60 5" stroke="rgba(255,255,255,.14)" stroke-width="1.5"/>
+    </svg>
+  </span>
+  <span class="s-newsletter__leaf s-newsletter__leaf--r" aria-hidden="true">
+    <svg width="90" height="130" viewBox="0 0 90 130" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M45 125 C45 125 2 78 6 35 C10 -8 45 4 45 4 C45 4 80 -8 84 35 C88 78 45 125 45 125Z" fill="rgba(255,255,255,.08)"/>
+    </svg>
+  </span>
+
+  <div class="wrap s-newsletter__wrap">
+    <p class="eyebrow s-newsletter__eyebrow">Join the Getaway</p>
+    <h2 class="s-newsletter__heading">Get 10% off your first escape.</h2>
+    <p class="s-newsletter__sub">New scents, restocks and dreamy offers — straight to your inbox ✨</p>
+
+    <form class="s-newsletter__form" onsubmit="return false" novalidate>
+      <div class="s-newsletter__field-wrap">
+        <input
+          class="s-newsletter__input"
+          type="email"
+          name="email"
+          placeholder="your@email.com"
+          autocomplete="email"
+          aria-label="Email address"
+          required
+        />
+        <button type="submit" class="btn btn-light s-newsletter__btn">Subscribe</button>
+      </div>
+    </form>
+
+    <p class="s-newsletter__fine">Unsubscribe anytime.</p>
+  </div>
+</section>

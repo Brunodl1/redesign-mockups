@@ -1,0 +1,192 @@
+/* ============================================================
+   Caprice & Co — 07-categories.css
+   Shop by Category — 4-tile grid
+   All rules scoped under .s-categories
+   ============================================================ */
+
+/* ── Section shell ─────────────────────────────────────────── */
+.s-categories {
+  background: var(--bg);
+  padding-block: var(--sp-7);
+}
+
+/* ── Header ────────────────────────────────────────────────── */
+.s-categories__header {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto var(--sp-6);
+}
+
+.s-categories__eyebrow {
+  color: var(--accent);
+  margin-bottom: var(--sp-2);
+}
+
+.s-categories__heading {
+  font-family: var(--font-display);
+  font-size: var(--s-4);
+  color: var(--ink);
+  margin: 0 0 var(--sp-3);
+  line-height: 1.15;
+}
+
+.s-categories__intro {
+  font-family: var(--font-body);
+  font-size: var(--s-1);
+  color: var(--ink-soft);
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* ── Tile grid ─────────────────────────────────────────────── */
+.s-categories__grid {
+  list-style: none;
+  margin: 0 0 var(--sp-6);
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--sp-4);
+}
+
+/* ── Individual tile ───────────────────────────────────────── */
+.s-categories .tile {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+  transition: transform .28s ease, box-shadow .28s ease;
+}
+
+.s-categories .tile:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px rgba(74, 34, 48, .14);
+}
+
+.s-categories .tile__link {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: inherit;
+  height: 100%;
+}
+
+/* ── Tile image wrapper (4/5 aspect) ───────────────────────── */
+.s-categories .tile__img-wrap {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+}
+
+.s-categories .tile__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform .38s ease;
+}
+
+.s-categories .tile:hover .tile__img {
+  transform: scale(1.06);
+}
+
+/* ── Bottom scrim over image ───────────────────────────────── */
+.s-categories .tile__img-wrap::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(58, 26, 38, .42) 0%,
+    rgba(58, 26, 38, .10) 40%,
+    transparent 70%
+  );
+  pointer-events: none;
+}
+
+/* ── Tile body (label + cta) ───────────────────────────────── */
+.s-categories .tile__body {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  padding: var(--sp-3) var(--sp-3) var(--sp-3);
+  gap: var(--sp-2);
+  background: var(--surface);
+}
+
+.s-categories .tile__name {
+  font-family: var(--font-display);
+  font-size: var(--s-2);
+  color: var(--ink);
+  margin: 0;
+  line-height: 1.2;
+}
+
+.s-categories .tile__cta {
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  font-weight: 600;
+  color: var(--accent);
+  white-space: nowrap;
+  transition: color .2s;
+}
+
+.s-categories .tile:hover .tile__cta {
+  color: var(--accent-deep);
+}
+
+/* ── Staggered reveal ──────────────────────────────────────── */
+.s-categories .tile.reveal {
+  transition-delay: var(--delay, 0s);
+}
+
+/* ── Footer CTA row ────────────────────────────────────────── */
+.s-categories__footer {
+  display: flex;
+  justify-content: center;
+}
+
+/* ── Tablet: 2-column grid ─────────────────────────────────── */
+@media (max-width: 900px) {
+  .s-categories__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--sp-3);
+  }
+
+  .s-categories__heading {
+    font-size: var(--s-3);
+  }
+}
+
+/* ── Mobile: 2-up → 1-up with optional horizontal snap ─────── */
+@media (max-width: 540px) {
+  .s-categories {
+    padding-block: var(--sp-6);
+  }
+
+  .s-categories__grid {
+    /* 2-up tight on small phones, scrollable */
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--sp-2);
+  }
+
+  .s-categories .tile__img-wrap {
+    aspect-ratio: 3 / 4;
+  }
+
+  .s-categories .tile__body {
+    flex-direction: column;
+    gap: var(--sp-1);
+    padding: var(--sp-2);
+  }
+
+  .s-categories .tile__name {
+    font-size: var(--s-1);
+  }
+}
+
+@media (max-width: 360px) {
+  .s-categories__grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,211 @@
+/* ============================================================
+   Caprice & Co — 05-bestsellers.css
+   Best Sellers product grid
+   ============================================================ */
+
+/* ── Section shell ─────────────────────────────────────────── */
+.s-bestsellers {
+  background: var(--cream);
+  padding-block: var(--sp-7);
+}
+
+/* ── Header ────────────────────────────────────────────────── */
+.s-bestsellers__header {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto var(--sp-6);
+}
+
+.s-bestsellers__header h2 {
+  margin-bottom: var(--sp-3);
+}
+
+.s-bestsellers__intro {
+  font-size: var(--s-1);
+  color: var(--ink-soft);
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* ── Grid — 3-up desktop ───────────────────────────────────── */
+.s-bestsellers__grid {
+  list-style: none;
+  margin: 0 0 var(--sp-6);
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-4);
+}
+
+/* ── Stagger reveals ───────────────────────────────────────── */
+.s-bestsellers__grid .reveal {
+  transition-delay: var(--delay, 0s);
+}
+
+/* ── Card shell ────────────────────────────────────────────── */
+.s-bestsellers .card {
+  background: var(--surface);
+  border: 1.5px solid var(--line);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  transition: transform .3s cubic-bezier(.2,.7,.2,1), box-shadow .3s ease;
+}
+
+.s-bestsellers .card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow);
+}
+
+/* ── Product image tile ────────────────────────────────────── */
+.s-bestsellers .card__img-wrap {
+  background: linear-gradient(160deg, var(--cream) 0%, var(--blush) 100%);
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  overflow: hidden;
+  aspect-ratio: 1 / 1;
+  flex-shrink: 0;
+}
+
+.s-bestsellers .card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform .5s cubic-bezier(.2,.7,.2,1);
+}
+
+.s-bestsellers .card:hover .card__img {
+  transform: scale(1.04);
+}
+
+/* ── Card body ─────────────────────────────────────────────── */
+.s-bestsellers .card__body {
+  padding: var(--sp-4) var(--sp-4) var(--sp-4);
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: var(--sp-2);
+}
+
+/* product name */
+.s-bestsellers .card__name {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: var(--s-2);
+  color: var(--ink);
+  line-height: 1.1;
+  margin: 0;
+}
+
+/* product type label */
+.s-bestsellers .card__type {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: var(--s--1);
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin: 0;
+}
+
+/* scent descriptor */
+.s-bestsellers .card__scent {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: var(--s-0);
+  color: var(--ink-soft);
+  font-style: italic;
+  line-height: 1.4;
+  margin: 0;
+  flex: 1;
+}
+
+/* price + stars row */
+.s-bestsellers .card__meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-2);
+  margin-top: auto;
+}
+
+.s-bestsellers .card__price {
+  font-family: var(--font-display);
+  font-size: var(--s-2);
+  color: var(--ink);
+  line-height: 1;
+}
+
+.s-bestsellers .card__meta .stars {
+  font-size: var(--s-0);
+  color: var(--gold);
+  letter-spacing: .04em;
+}
+
+/* CTA button — full width */
+.s-bestsellers .card__cta {
+  margin-top: var(--sp-3);
+}
+
+/* ── Shop-all footer ───────────────────────────────────────── */
+.s-bestsellers__footer {
+  text-align: center;
+  transition-delay: var(--delay, 0s);
+}
+
+/* ── Tablet: 2-up ──────────────────────────────────────────── */
+@media (max-width: 960px) {
+  .s-bestsellers__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--sp-3);
+  }
+}
+
+/* ── Mobile ────────────────────────────────────────────────── */
+@media (max-width: 600px) {
+  .s-bestsellers {
+    padding-block: var(--sp-6);
+  }
+
+  .s-bestsellers__header {
+    margin-bottom: var(--sp-5);
+  }
+
+  .s-bestsellers__intro {
+    font-size: var(--s-0);
+  }
+
+  /* 2-up on mobile */
+  .s-bestsellers__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--sp-2);
+  }
+
+  .s-bestsellers .card__body {
+    padding: var(--sp-3);
+    gap: var(--sp-1);
+  }
+
+  .s-bestsellers .card__name {
+    font-size: var(--s-1);
+  }
+
+  .s-bestsellers .card__price {
+    font-size: var(--s-1);
+  }
+
+  .s-bestsellers .card__cta {
+    margin-top: var(--sp-2);
+    padding: .8em 1em;
+    font-size: .72rem;
+  }
+}
+
+/* ── Very small mobile: 1-up ───────────────────────────────── */
+@media (max-width: 360px) {
+  .s-bestsellers__grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,210 @@
+/* ============================================================
+   Caprice & Co — 06-ritual.css
+   "The Ritual" layering-system band
+   ============================================================ */
+
+/* ── Section shell ─────────────────────────────────────────── */
+.s-ritual {
+  background: var(--surface-2);
+  padding-block: var(--sp-7);
+  overflow: hidden;
+}
+
+/* ── Two-column layout ─────────────────────────────────────── */
+.s-ritual__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-7);
+  align-items: center;
+}
+
+/* ── Image column ──────────────────────────────────────────── */
+.s-ritual__img-col {
+  display: flex;
+  justify-content: flex-end; /* push image toward center gap */
+}
+
+.s-ritual__img-frame {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  max-width: 520px;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  flex-shrink: 0;
+  position: relative;
+  box-shadow: var(--shadow);
+}
+
+.s-ritual__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ── Text column ───────────────────────────────────────────── */
+.s-ritual__text-col {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-5);
+  max-width: 480px; /* keeps columns from touching */
+}
+
+.s-ritual__text-inner h2 {
+  margin-bottom: var(--sp-3);
+}
+
+.s-ritual__lead {
+  font-size: var(--s-1);
+  color: var(--ink-soft);
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* ── Steps list ────────────────────────────────────────────── */
+.s-ritual__steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+/* stagger */
+.s-ritual__steps .reveal {
+  transition-delay: var(--delay, 0s);
+}
+
+.s-ritual__step {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--sp-4);
+  padding-block: var(--sp-3);
+  border-bottom: 1.5px solid var(--line);
+}
+
+.s-ritual__step:first-child {
+  border-top: 1.5px solid var(--line);
+}
+
+/* gold/coral serif step number */
+.s-ritual__step-num {
+  font-family: var(--font-display);
+  font-size: var(--s-3);
+  font-weight: 400;
+  line-height: 1;
+  color: var(--coral);
+  min-width: 2.6rem;
+  flex-shrink: 0;
+  letter-spacing: -.01em;
+}
+
+.s-ritual__step-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-1);
+  padding-top: .3em; /* optical alignment with number baseline */
+}
+
+.s-ritual__step-title {
+  font-family: var(--font-display);
+  font-size: var(--s-2);
+  font-weight: 400;
+  color: var(--ink);
+  line-height: 1.1;
+  letter-spacing: .005em;
+}
+
+.s-ritual__step-desc {
+  font-family: var(--font-body);
+  font-size: var(--s-0);
+  font-weight: 300;
+  color: var(--ink-soft);
+  line-height: 1.5;
+}
+
+/* ── CTA block ─────────────────────────────────────────────── */
+.s-ritual__cta-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--sp-3);
+  transition-delay: var(--delay, 0s);
+}
+
+.s-ritual__note {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: var(--s--1);
+  color: var(--ink-soft);
+  font-style: italic;
+  margin: 0;
+  letter-spacing: .02em;
+}
+
+/* ── Tablet ────────────────────────────────────────────────── */
+@media (max-width: 960px) {
+  .s-ritual__inner {
+    gap: var(--sp-5);
+  }
+
+  .s-ritual__text-col {
+    gap: var(--sp-4);
+    max-width: 420px;
+  }
+
+  .s-ritual__step-num {
+    font-size: var(--s-2);
+    min-width: 2.2rem;
+  }
+
+  .s-ritual__step-title {
+    font-size: var(--s-1);
+  }
+}
+
+/* ── Mobile: stack image above steps ──────────────────────── */
+@media (max-width: 720px) {
+  .s-ritual {
+    padding-block: var(--sp-6);
+  }
+
+  .s-ritual__inner {
+    grid-template-columns: 1fr;
+    gap: var(--sp-5);
+  }
+
+  .s-ritual__img-col {
+    justify-content: center;
+  }
+
+  .s-ritual__img-frame {
+    max-width: 100%;
+    aspect-ratio: 3 / 2;
+  }
+
+  .s-ritual__text-col {
+    max-width: 100%;
+    gap: var(--sp-4);
+  }
+
+  .s-ritual__lead {
+    font-size: var(--s-0);
+  }
+
+  .s-ritual__step {
+    gap: var(--sp-3);
+    padding-block: var(--sp-3);
+  }
+
+  .s-ritual__step-num {
+    font-size: var(--s-2);
+    min-width: 2rem;
+  }
+
+  .s-ritual__cta-wrap {
+    align-items: center;
+    text-align: center;
+  }
+}
