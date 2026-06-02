@@ -1,0 +1,131 @@
+/* ============================================================
+   F. Miller — base.css (foundation)
+   Botanical oils-led skincare · "All you need, for any time." · Toronto · EN
+   Clean-luxe minimal: warm near-white + dark olive + cream/sage. Hanken Grotesk + Inter. Square, airy.
+   ============================================================ */
+:root{
+  /* color */
+  --bg:        #FDFBF6;   /* warm near-white page */
+  --surface:   #FFFFFF;   /* cards */
+  --surface-2: #F8F1E1;   /* warm cream/tan band */
+  --sage:      #F2F4E5;   /* light sage tint band */
+  --ink:       #3A3F31;   /* dark olive — headings/text */
+  --ink-soft:  #6B6F5C;   /* muted olive-grey — secondary text */
+  --accent:    #3F4536;   /* dark olive green — CTAs, links, footer */
+  --accent-ink:#F8F1E1;   /* warm cream text on olive */
+  --accent-deep:#2A2E22;  /* hover */
+  --olive:     #3F4536;
+  --dark:      #2E332708; /* (unused placeholder) */
+  --footer:    #3F4536;   /* dark olive footer */
+  --line:      #DCD7C4;   /* warm hairline */
+  --line-ink:  #3F4536;   /* sharp olive border */
+  --gold:      #B9923F;   /* warm oil/amber accent (sparing — stars) */
+  --star:      #B9923F;
+  --btn:       #3F4536;
+  --btn-ink:   #F8F1E1;
+  /* type */
+  --font-display: "Hanken Grotesk", "Helvetica Neue", Arial, sans-serif;
+  --font-body:    "Inter", "Helvetica Neue", Arial, sans-serif;
+  --s--1: .8rem;
+  --s-0:  1.02rem;
+  --s-1:  1.2rem;
+  --s-2:  1.5rem;
+  --s-3:  2rem;
+  --s-4:  2.7rem;
+  --s-5:  3.5rem;
+  /* space */
+  --sp-1:.25rem; --sp-2:.5rem; --sp-3:1rem; --sp-4:1.5rem;
+  --sp-5:2.5rem; --sp-6:4rem; --sp-7:6rem;
+  --sp-8:8rem;
+  /* shape — square, minimal, no shadow */
+  --radius:2px; --radius-lg:2px; --radius-pill:2px;
+  --shadow:0 12px 36px rgba(63,69,54,.10);
+  --maxw:1240px;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html,body{overflow-x:clip}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--ink);
+  font-family:var(--font-body);
+  font-size:var(--s-0);
+  line-height:1.6;
+  font-weight:400;
+  letter-spacing:.01em;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+
+/* headings — Hanken Grotesk, quiet + light */
+h1,h2,h3{font-family:var(--font-display);font-weight:500;line-height:1.12;letter-spacing:-.005em;margin:0 0 var(--sp-3);color:var(--ink)}
+h1{font-size:var(--s-5);font-weight:500}
+h2{font-size:var(--s-4);font-weight:500}
+h3{font-size:var(--s-2);font-weight:500}
+p{margin:0 0 var(--sp-3)}
+
+/* layout */
+.wrap{max-width:var(--maxw);margin:0 auto;padding-inline:var(--sp-4);width:100%}
+.sec{position:relative;padding-block:var(--sp-7)}
+.section{position:relative}
+
+/* eyebrow — olive tracked caps (minimal) */
+.eyebrow{
+  display:inline-block;font-family:var(--font-body);font-weight:600;
+  font-size:var(--s--1);letter-spacing:.2em;text-transform:uppercase;
+  color:var(--accent);margin:0 0 var(--sp-3)
+}
+
+/* buttons — square, uppercase, tracked (their style) */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:.5em;
+  font-family:var(--font-body);font-weight:600;font-size:var(--s--1);
+  letter-spacing:.13em;text-transform:uppercase;
+  padding:1.05em 2.2em;border-radius:var(--radius);border:1px solid transparent;
+  cursor:pointer;transition:background .25s,color .25s,border-color .25s,transform .15s;
+  line-height:1;white-space:nowrap
+}
+.btn:hover{transform:translateY(-1px)}
+.btn-primary{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.btn-primary:hover{background:var(--accent-deep);border-color:var(--accent-deep)}
+.btn-outline{background:transparent;color:var(--accent);border-color:var(--accent)}
+.btn-outline:hover{background:var(--accent);color:var(--accent-ink)}
+.btn-light{background:var(--surface-2);color:var(--accent);border-color:var(--surface-2)}
+.btn-light:hover{background:transparent;color:var(--accent-ink);border-color:var(--accent-ink)}
+.btn-block{display:flex;width:100%}
+
+/* rating stars */
+.stars{color:var(--star);letter-spacing:.06em;font-size:var(--s-0)}
+
+/* chips */
+.chip{
+  display:inline-flex;align-items:center;gap:.45em;
+  font-family:var(--font-body);font-weight:600;font-size:var(--s--1);
+  letter-spacing:.12em;text-transform:uppercase;
+  padding:.5em 1em;border-radius:var(--radius);border:1px solid var(--line-ink);
+  background:transparent;color:var(--ink);line-height:1
+}
+
+/* section icons */
+.ic{width:38px;height:38px;display:block;stroke:currentColor;stroke-width:1.3;fill:none}
+
+/* floats — static, hidden mobile */
+.float{position:absolute;pointer-events:none;z-index:5}
+.float img{width:100%;transform:rotate(var(--rot,0deg));
+  filter:drop-shadow(0 24px 22px rgba(63,69,54,.18))}
+@media(max-width:1000px){.float{display:none}}
+
+/* scroll-reveal (3D) — NOT on hero */
+.reveal{opacity:0;transform:perspective(900px) rotateX(8deg) translateY(26px);
+  transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+
+/* responsive type */
+@media(max-width:780px){
+  :root{--s-5:2.5rem;--s-4:2rem;--s-3:1.6rem;--s-2:1.3rem}
+  .sec{padding-block:var(--sp-6)}
+}

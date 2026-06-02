@@ -1,0 +1,180 @@
+/* ============================================================
+   F. MILLER — 10-newsletter.css
+   Newsletter signup band
+   ============================================================ */
+
+/* --- tokens (mirrors base.css) --- */
+.s-newsletter {
+  --bg:          #FDFBF6;
+  --surface:     #FFFFFF;
+  --surface-2:   #F8F1E1;
+  --sage:        #F2F4E5;
+  --ink:         #3A3F31;
+  --ink-soft:    #6B6F5C;
+  --accent:      #3F4536;
+  --accent-ink:  #F8F1E1;
+  --accent-deep: #2A2E22;
+  --line:        #DCD7C4;
+  --line-ink:    #3F4536;
+  --font-display:"Hanken Grotesk", "Helvetica Neue", Arial, sans-serif;
+  --font-body:   "Inter", "Helvetica Neue", Arial, sans-serif;
+  --s--1:  .8rem;
+  --s-0:   1.02rem;
+  --s-1:   1.2rem;
+  --s-2:   1.5rem;
+  --s-3:   2rem;
+  --s-4:   2.7rem;
+  --sp-1:  .25rem;
+  --sp-2:  .5rem;
+  --sp-3:  1rem;
+  --sp-4:  1.5rem;
+  --sp-5:  2.5rem;
+  --sp-6:  4rem;
+  --sp-7:  6rem;
+  --radius:2px;
+  --maxw:  1240px;
+}
+
+/* --- section shell --- */
+.s-newsletter {
+  background: var(--surface-2);
+  color: var(--ink);
+  padding-block: var(--sp-7);
+}
+
+/* --- inner (centered column) --- */
+.s-newsletter__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 640px;
+  margin-inline: auto;
+}
+
+/* --- eyebrow override: already scoped in base, but ensure color --- */
+.s-newsletter .eyebrow,
+.s-newsletter__eyebrow {
+  color: var(--accent);
+  margin-bottom: var(--sp-3);
+}
+
+/* --- heading --- */
+.s-newsletter__heading {
+  font-family: var(--font-display);
+  font-size: var(--s-4);
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: -.01em;
+  color: var(--ink);
+  margin: 0 0 var(--sp-3);
+}
+
+/* --- supporting line --- */
+.s-newsletter__sub {
+  font-family: var(--font-body);
+  font-size: var(--s-0);
+  color: var(--ink-soft);
+  line-height: 1.65;
+  margin: 0 0 var(--sp-5);
+  max-width: 480px;
+}
+
+/* --- form wrapper --- */
+.s-newsletter__form {
+  width: 100%;
+}
+
+.s-newsletter__row {
+  display: flex;
+  align-items: stretch;
+  gap: 0;
+  width: 100%;
+  max-width: 520px;
+  margin-inline: auto;
+}
+
+/* visually hidden label — accessible */
+.s-newsletter__label {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* --- email input --- */
+.s-newsletter__input {
+  flex: 1 1 auto;
+  min-width: 0;
+  background: var(--surface);
+  color: var(--ink);
+  border: 1px solid var(--line-ink);
+  border-right: none;
+  border-radius: var(--radius) 0 0 var(--radius);
+  padding: 1.05em 1.3em;
+  font-family: var(--font-body);
+  font-size: var(--s-0);
+  line-height: 1;
+  outline: none;
+  transition: border-color .2s;
+  appearance: none;
+  -webkit-appearance: none;
+}
+.s-newsletter__input::placeholder {
+  color: var(--ink-soft);
+  opacity: .65;
+}
+.s-newsletter__input:focus {
+  border-color: var(--accent);
+  box-shadow: inset 0 0 0 1px var(--accent);
+  z-index: 1;
+}
+
+/* --- subscribe button (uses base .btn .btn-primary) --- */
+.s-newsletter__btn {
+  border-radius: 0 var(--radius) var(--radius) 0;
+  flex-shrink: 0;
+}
+
+/* --- fine print --- */
+.s-newsletter__fine {
+  margin-top: var(--sp-3);
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  color: var(--ink-soft);
+  letter-spacing: .02em;
+}
+
+/* --- mobile: stack full-width --- */
+@media (max-width: 580px) {
+  .s-newsletter {
+    padding-block: var(--sp-6);
+  }
+
+  .s-newsletter__heading {
+    font-size: var(--s-3);
+  }
+
+  .s-newsletter__row {
+    flex-direction: column;
+    gap: var(--sp-2);
+  }
+
+  .s-newsletter__input {
+    border-right: 1px solid var(--line-ink);
+    border-radius: var(--radius);
+    width: 100%;
+  }
+
+  .s-newsletter__btn {
+    border-radius: var(--radius);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+}

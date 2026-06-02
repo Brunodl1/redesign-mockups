@@ -1,0 +1,149 @@
+/* ============================================================
+   F. MILLER — 08-press.css
+   Press "as seen in" strip — elegant text wordmarks
+   All rules scoped under .s-press
+   ============================================================ */
+
+/* ── tokens (re-declare for self-containment) ─────────────── */
+.s-press {
+  --bg:          #FDFBF6;
+  --surface:     #FFFFFF;
+  --surface-2:   #F8F1E1;
+  --sage:        #F2F4E5;
+  --ink:         #3A3F31;
+  --ink-soft:    #6B6F5C;
+  --accent:      #3F4536;
+  --accent-ink:  #F8F1E1;
+  --accent-deep: #2A2E22;
+  --line:        #DCD7C4;
+  --line-ink:    #3F4536;
+  --gold:        #B9923F;
+  --font-display:"Hanken Grotesk","Helvetica Neue",Arial,sans-serif;
+  --font-body:   "Inter","Helvetica Neue",Arial,sans-serif;
+  --s--1: .8rem;
+  --s-0:  1.02rem;
+  --s-1:  1.2rem;
+  --s-2:  1.5rem;
+  --s-3:  2rem;
+  --s-4:  2.7rem;
+  --s-5:  3.5rem;
+  --sp-1: .25rem;
+  --sp-2: .5rem;
+  --sp-3: 1rem;
+  --sp-4: 1.5rem;
+  --sp-5: 2.5rem;
+  --sp-6: 4rem;
+  --sp-7: 6rem;
+  --sp-8: 8rem;
+  --radius: 2px;
+  --shadow: 0 12px 36px rgba(63,69,54,.10);
+  --maxw: 1240px;
+}
+
+/* ── section shell ──────────────────────────────────────────── */
+.s-press {
+  background: var(--surface);
+  padding-block: var(--sp-6);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+/* ── inner wrap ─────────────────────────────────────────────── */
+.s-press__wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sp-4);
+  max-width: var(--maxw);
+  margin-inline: auto;
+  padding-inline: var(--sp-5);
+}
+
+/* ── eyebrow ────────────────────────────────────────────────── */
+.s-press__eyebrow {
+  /* inherits .eyebrow */
+  color: var(--accent);
+}
+
+/* ── wordmark list ──────────────────────────────────────────── */
+.s-press__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+}
+
+/* ── individual publication item ────────────────────────────── */
+.s-press__item {
+  display: flex;
+  align-items: center;
+}
+
+/* ── wordmark link ──────────────────────────────────────────── */
+.s-press__wordmark {
+  font-family: var(--font-display);
+  font-size: var(--s-1);
+  font-weight: 400;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  text-decoration: none;
+  padding: var(--sp-2) var(--sp-4);
+  transition: color .25s ease;
+  white-space: nowrap;
+}
+
+.s-press__wordmark:hover,
+.s-press__wordmark:focus-visible {
+  color: var(--accent);
+  outline: none;
+}
+
+/* ── subtle vertical divider between items ──────────────────── */
+.s-press__divider {
+  width: 1px;
+  height: 1.1em;
+  background: var(--line);
+  flex-shrink: 0;
+}
+
+/* ── reveal animation ───────────────────────────────────────── */
+.s-press .reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity .65s ease, transform .65s ease;
+}
+.s-press .reveal.in {
+  opacity: 1;
+  transform: none;
+}
+.s-press__list.reveal {
+  transition-delay: .1s;
+}
+
+/* ── mobile: 2-3 per row, hide dividers that would orphan ───── */
+@media (max-width: 640px) {
+  .s-press__wrap {
+    padding-inline: var(--sp-3);
+    gap: var(--sp-3);
+  }
+
+  .s-press__list {
+    row-gap: var(--sp-2);
+  }
+
+  /* hide vertical dividers on small screens; rely on gap only */
+  .s-press__divider {
+    display: none;
+  }
+
+  .s-press__wordmark {
+    font-size: var(--s-0);
+    letter-spacing: .09em;
+    padding: var(--sp-2) var(--sp-3);
+  }
+}

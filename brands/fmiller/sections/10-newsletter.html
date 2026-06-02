@@ -1,0 +1,41 @@
+<!-- ============================================================
+   F. MILLER — 10-newsletter.html
+   Newsletter signup band — cream bg, centered, inline form
+   ============================================================ -->
+
+<section class="sec s-newsletter" aria-labelledby="newsletter-heading">
+  <div class="wrap">
+    <div class="s-newsletter__inner">
+
+      <span class="eyebrow s-newsletter__eyebrow">Stay in Touch</span>
+
+      <h2 class="s-newsletter__heading" id="newsletter-heading">
+        Considered skincare,<br>in your inbox.
+      </h2>
+
+      <p class="s-newsletter__sub">
+        Formulations, restocks, and the occasional note from the studio. No noise.
+      </p>
+
+      <form class="s-newsletter__form" onsubmit="return false" novalidate aria-label="Newsletter signup">
+        <div class="s-newsletter__row">
+          <label class="s-newsletter__label" for="nl-email">Email address</label>
+          <input
+            class="s-newsletter__input"
+            id="nl-email"
+            type="email"
+            name="email"
+            placeholder="your@email.com"
+            autocomplete="email"
+            required
+            aria-required="true"
+          />
+          <button class="btn btn-primary s-newsletter__btn" type="submit">Subscribe</button>
+        </div>
+      </form>
+
+      <p class="s-newsletter__fine">Unsubscribe anytime.</p>
+
+    </div>
+  </div>
+</section>

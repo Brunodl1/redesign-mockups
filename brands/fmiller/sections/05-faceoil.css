@@ -1,0 +1,298 @@
+/* ============================================================
+   F. MILLER — 05-faceoil.css
+   Face Oil flagship feature section
+   ============================================================ */
+
+/* ── tokens (re-declare for self-containment) ─────────────── */
+.s-faceoil {
+  --bg:          #FDFBF6;
+  --surface:     #FFFFFF;
+  --surface-2:   #F8F1E1;
+  --sage:        #F2F4E5;
+  --ink:         #3A3F31;
+  --ink-soft:    #6B6F5C;
+  --accent:      #3F4536;
+  --accent-ink:  #F8F1E1;
+  --accent-deep: #2A2E22;
+  --line:        #DCD7C4;
+  --line-ink:    #3F4536;
+  --gold:        #B9923F;
+  --star:        #B9923F;
+  --font-display: "Hanken Grotesk","Helvetica Neue",Arial,sans-serif;
+  --font-body:    "Inter","Helvetica Neue",Arial,sans-serif;
+  --s--1: .8rem;
+  --s-0:  1.02rem;
+  --s-1:  1.2rem;
+  --s-2:  1.5rem;
+  --s-3:  2rem;
+  --s-4:  2.7rem;
+  --s-5:  3.5rem;
+  --sp-1: .25rem;
+  --sp-2: .5rem;
+  --sp-3: 1rem;
+  --sp-4: 1.5rem;
+  --sp-5: 2.5rem;
+  --sp-6: 4rem;
+  --sp-7: 6rem;
+  --sp-8: 8rem;
+  --radius: 2px;
+  --shadow: 0 12px 36px rgba(63,69,54,.10);
+  --maxw:  1240px;
+}
+
+/* ── section shell ────────────────────────────────────────── */
+.s-faceoil {
+  background: var(--bg);
+}
+
+/* ── 2-col grid ───────────────────────────────────────────── */
+.s-faceoil__inner {
+  display: grid;
+  grid-template-columns: minmax(0, 540px) minmax(0, 560px);
+  gap: clamp(var(--sp-5), 6vw, var(--sp-7));
+  align-items: center;
+  justify-content: center;
+}
+
+/* ── LEFT: media block ────────────────────────────────────── */
+.s-faceoil__img-frame {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  max-width: 540px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: visible; /* let inset bleed out */
+  background: var(--surface-2);
+}
+
+.s-faceoil__hero-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--radius);
+}
+
+/* bottle inset — bottom-right corner, overlapping */
+.s-faceoil__bottle-inset {
+  position: absolute;
+  bottom: -var(--sp-4);   /* ~24px bleed out */
+  bottom: calc(-1 * var(--sp-4));
+  right:  calc(-1 * var(--sp-4));
+  width:  clamp(100px, 22%, 148px);
+  aspect-ratio: 1 / 1;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.s-faceoil__bottle-img {
+  width: 90%;
+  height: 90%;
+  object-fit: contain;
+  display: block;
+}
+
+/* ── RIGHT: copy ──────────────────────────────────────────── */
+.s-faceoil__copy {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+  max-width: 520px;
+}
+
+/* eyebrow — olive */
+.s-faceoil__eyebrow {
+  color: var(--accent);
+}
+
+/* heading */
+.s-faceoil__heading {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(var(--s-3), 3.6vw, var(--s-4));
+  line-height: 1.12;
+  letter-spacing: -.02em;
+  color: var(--ink);
+  margin: 0;
+}
+
+/* lead paragraph */
+.s-faceoil__lead {
+  font-family: var(--font-body);
+  font-size: var(--s-0);
+  line-height: 1.7;
+  color: var(--ink-soft);
+  margin: 0;
+  max-width: 44ch;
+}
+
+/* ── feature list ─────────────────────────────────────────── */
+.s-faceoil__feats {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+  border-top: 1px solid var(--line);
+  padding-top: var(--sp-4);
+}
+
+.s-faceoil__feat {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--sp-3);
+}
+
+.s-faceoil__feat-icon {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  color: var(--accent);
+  /* no background — thin inline icon only */
+}
+
+.s-faceoil__feat-text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-1);
+}
+
+.s-faceoil__feat-text strong {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: var(--s-0);
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+.s-faceoil__feat-text span {
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  color: var(--ink-soft);
+  line-height: 1.55;
+}
+
+/* ── CTA row ──────────────────────────────────────────────── */
+.s-faceoil__cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--sp-3);
+  border-top: 1px solid var(--line);
+  padding-top: var(--sp-4);
+}
+
+.s-faceoil__price {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: var(--s-1);
+  color: var(--ink);
+  letter-spacing: .01em;
+  white-space: nowrap;
+}
+
+.s-faceoil__btns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+}
+
+/* ── stars row ────────────────────────────────────────────── */
+.s-faceoil__stars {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+}
+
+.s-faceoil__stars .stars {
+  font-size: var(--s-0);
+  color: var(--star);
+  line-height: 1;
+  letter-spacing: .04em;
+}
+
+.s-faceoil__rating-text {
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  color: var(--ink-soft);
+  letter-spacing: .01em;
+}
+
+/* ── reveal animation ─────────────────────────────────────── */
+.s-faceoil .reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition:
+    opacity .55s cubic-bezier(.2,.7,.2,1),
+    transform .55s cubic-bezier(.2,.7,.2,1);
+}
+
+.s-faceoil .reveal.in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── tablet: narrow gap ───────────────────────────────────── */
+@media (max-width: 960px) {
+  .s-faceoil__inner {
+    gap: var(--sp-5);
+  }
+
+  .s-faceoil__heading {
+    font-size: var(--s-3);
+  }
+}
+
+/* ── mobile: stack image above text ──────────────────────── */
+@media (max-width: 720px) {
+  .s-faceoil__inner {
+    grid-template-columns: 1fr;
+    gap: var(--sp-5);
+  }
+
+  .s-faceoil__img-frame {
+    max-width: 100%;
+  }
+
+  .s-faceoil__copy {
+    max-width: 100%;
+    gap: var(--sp-3);
+  }
+
+  .s-faceoil__cta-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+  .s-faceoil__heading {
+    font-size: var(--s-2);
+  }
+
+  .s-faceoil__bottle-inset {
+    width: 90px;
+    right: calc(-1 * var(--sp-3));
+    bottom: calc(-1 * var(--sp-3));
+  }
+
+  .s-faceoil__btns {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .s-faceoil__btns .btn {
+    width: 100%;
+    text-align: center;
+  }
+}

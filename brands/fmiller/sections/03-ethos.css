@@ -1,0 +1,142 @@
+/* ============================================================
+   F. MILLER — 03-ethos.css
+   Ethos / trust strip
+   ============================================================ */
+
+/* ── tokens (re-declare for self-containment) ─────────────── */
+.s-ethos {
+  --bg:         #FDFBF6;
+  --surface:    #FFFFFF;
+  --surface-2:  #F8F1E1;
+  --sage:       #F2F4E5;
+  --ink:        #3A3F31;
+  --ink-soft:   #6B6F5C;
+  --accent:     #3F4536;
+  --accent-ink: #F8F1E1;
+  --accent-deep:#2A2E22;
+  --line:       #DCD7C4;
+  --line-ink:   #3F4536;
+  --gold:       #B9923F;
+  --star:       #B9923F;
+  --font-display:"Hanken Grotesk","Helvetica Neue",Arial,sans-serif;
+  --font-body:   "Inter","Helvetica Neue",Arial,sans-serif;
+  --s--1: .8rem;
+  --s-0:  1.02rem;
+  --s-1:  1.2rem;
+  --s-2:  1.5rem;
+  --s-3:  2rem;
+  --s-4:  2.7rem;
+  --s-5:  3.5rem;
+  --sp-1:.25rem; --sp-2:.5rem; --sp-3:1rem; --sp-4:1.5rem;
+  --sp-5:2.5rem; --sp-6:4rem; --sp-7:6rem; --sp-8:8rem;
+  --radius:2px;
+  --shadow:0 12px 36px rgba(63,69,54,.10);
+  --maxw:1240px;
+}
+
+/* ── section shell ────────────────────────────────────────── */
+.s-ethos {
+  background: var(--surface-2);
+  padding-block: var(--sp-5);       /* slim — less than default .sec sp-7 */
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+/* ── grid: 4-up row on desktop ───────────────────────────── */
+.s-ethos__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--sp-4) var(--sp-5);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  align-items: start;
+}
+
+/* ── single pillar item ───────────────────────────────────── */
+.s-ethos__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--sp-3);
+  padding: var(--sp-3) var(--sp-2);
+}
+
+/* divider between items (vertical hairline, desktop only) */
+.s-ethos__item + .s-ethos__item {
+  border-left: 1px solid var(--line);
+}
+
+/* ── icon ─────────────────────────────────────────────────── */
+.s-ethos__icon {
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  color: var(--accent);
+}
+
+/* ── text block ───────────────────────────────────────────── */
+.s-ethos__copy {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-1);
+}
+
+.s-ethos__label {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: var(--s-0);
+  color: var(--ink);
+  line-height: 1.2;
+  letter-spacing: .01em;
+}
+
+.s-ethos__sub {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: var(--s--1);
+  color: var(--ink-soft);
+  line-height: 1.45;
+  letter-spacing: .01em;
+}
+
+/* ── mobile: 2×2 grid ─────────────────────────────────────── */
+@media (max-width: 780px) {
+  .s-ethos {
+    padding-block: var(--sp-4);
+  }
+
+  .s-ethos__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--sp-4);
+  }
+
+  /* reset vertical dividers on mobile */
+  .s-ethos__item + .s-ethos__item {
+    border-left: none;
+  }
+
+  /* re-add dividers only between left/right pairs */
+  .s-ethos__item:nth-child(even) {
+    border-left: 1px solid var(--line);
+  }
+
+  /* bottom border between rows */
+  .s-ethos__item:nth-child(1),
+  .s-ethos__item:nth-child(2) {
+    border-bottom: 1px solid var(--line);
+    padding-bottom: var(--sp-4);
+  }
+}
+
+@media (max-width: 480px) {
+  .s-ethos__label {
+    font-size: var(--s--1);
+  }
+
+  .s-ethos__item {
+    gap: var(--sp-2);
+    padding: var(--sp-2) var(--sp-1);
+  }
+}

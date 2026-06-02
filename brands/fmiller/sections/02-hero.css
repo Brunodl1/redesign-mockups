@@ -1,0 +1,173 @@
+/* ============================================================
+   F. Miller — 02-hero.css
+   SPLIT hero: text LEFT · editorial image RIGHT
+   All styles scoped under .s-hero
+   ============================================================ */
+
+/* ── Section shell ─────────────────────────────────────────── */
+.s-hero {
+  background: var(--bg);
+  padding-block: 0;            /* grid controls vertical rhythm */
+  overflow: hidden;
+}
+
+/* ── Two-column grid ───────────────────────────────────────── */
+.s-hero .hero-split__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-7);
+  align-items: center;
+  min-height: 620px;
+}
+
+/* ── LEFT: text panel ──────────────────────────────────────── */
+.s-hero .hero-split__text {
+  padding-block: var(--sp-7);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0;
+  min-width: 0;
+  max-width: 100%;
+}
+
+/* eyebrow inherited from base — spacing tweak */
+.s-hero .eyebrow {
+  margin-bottom: var(--sp-4);
+}
+
+/* Headline — quiet, not huge, weight 500 */
+.s-hero .hero-split__headline {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(2rem, 3.5vw, 2.8rem);
+  line-height: 1.08;
+  letter-spacing: -.02em;
+  color: var(--ink);
+  margin: 0 0 var(--sp-4);
+  min-width: 0;
+  max-width: 100%;
+}
+
+/* Subhead — one line (wraps naturally), muted */
+.s-hero .hero-split__subhead {
+  font-family: var(--font-body);
+  font-size: var(--s-0);
+  font-weight: 400;
+  line-height: 1.65;
+  color: var(--ink-soft);
+  margin: 0 0 var(--sp-5);
+  max-width: 38ch;
+  min-width: 0;
+}
+
+/* ── Chips row ─────────────────────────────────────────────── */
+.s-hero .hero-split__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+  margin-bottom: var(--sp-5);
+  min-width: 0;
+  max-width: 100%;
+}
+
+/* Chips inherit .chip from base; tone them down on --bg */
+.s-hero .chip {
+  border-color: var(--line);
+  color: var(--ink-soft);
+  background: transparent;
+  font-size: calc(var(--s--1) * .95);
+  letter-spacing: .1em;
+}
+
+/* ── CTA ───────────────────────────────────────────────────── */
+.s-hero .hero-split__cta {
+  margin-bottom: var(--sp-4);
+  min-width: 0;
+  max-width: 100%;
+}
+
+/* ── Rating line ───────────────────────────────────────────── */
+.s-hero .hero-split__rating {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  min-width: 0;
+  max-width: 100%;
+}
+
+.s-hero .hero-split__rating .stars {
+  font-size: .9rem;
+  letter-spacing: .04em;
+  line-height: 1;
+}
+
+.s-hero .hero-split__rating-text {
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  font-weight: 400;
+  color: var(--ink-soft);
+  letter-spacing: .02em;
+}
+
+/* ── RIGHT: image container ────────────────────────────────── */
+.s-hero .hero-split__media {
+  position: relative;
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  min-width: 0;
+  max-width: 100%;
+}
+
+.s-hero .hero-split__img {
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  max-height: 620px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+  display: block;
+  min-width: 0;
+}
+
+/* ── Mobile: stack — image ABOVE text ─────────────────────── */
+@media (max-width: 780px) {
+  .s-hero .hero-split__grid {
+    grid-template-columns: 1fr;
+    gap: 0;
+    min-height: unset;
+  }
+
+  /* Image first in visual order */
+  .s-hero .hero-split__media {
+    order: -1;
+  }
+
+  .s-hero .hero-split__img {
+    max-height: 360px;
+    width: 100%;
+    border-radius: var(--radius);
+    border-left: none;
+    border-right: none;
+    border-top: none;
+  }
+
+  .s-hero .hero-split__text {
+    padding-block: var(--sp-6) var(--sp-5);
+    align-items: flex-start;
+  }
+
+  .s-hero .hero-split__subhead {
+    max-width: 100%;
+  }
+
+  /* CTA full-width on mobile */
+  .s-hero .hero-split__cta .btn {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+}

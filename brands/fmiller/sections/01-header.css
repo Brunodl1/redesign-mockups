@@ -1,0 +1,268 @@
+/* ============================================================
+   F. MILLER — 01-header.css
+   Announcement bar + sticky site header
+   All rules scoped to .announce / .site-header
+   ============================================================ */
+
+/* ─── ANNOUNCEMENT BAR ─────────────────────────────────────── */
+
+.announce {
+  background: var(--accent);
+  color: var(--accent-ink);
+  width: 100%;
+}
+
+.announce__inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sp-3);
+  padding: var(--sp-2) var(--sp-4);
+  min-height: 36px;
+}
+
+.announce__item {
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  font-weight: 500;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--accent-ink);
+  white-space: nowrap;
+  line-height: 1;
+}
+
+.announce__sep {
+  color: var(--accent-ink);
+  opacity: .45;
+  font-size: var(--s--1);
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+/* Mobile: hide secondary items + separators */
+@media (max-width: 780px) {
+  .announce__item--secondary,
+  .announce__sep {
+    display: none;
+  }
+  .announce__inner {
+    justify-content: center;
+  }
+  .announce__item--primary {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+  }
+}
+
+
+/* ─── SITE HEADER ───────────────────────────────────────────── */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 200;
+  background: var(--bg);
+  border-bottom: 1px solid var(--line-ink);
+  /* flat — no shadow */
+}
+
+.site-header__inner {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  min-height: 56px;
+  gap: 0;
+}
+
+/* LEFT column */
+.site-header__left {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+  justify-content: flex-start;
+}
+
+/* CENTER column */
+.site-header__center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* RIGHT column */
+.site-header__right {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--sp-1);
+  min-width: 0;
+}
+
+
+/* ─── WORDMARK ─────────────────────────────────────────────── */
+
+.site-header__logo {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: var(--s-1);
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: var(--ink);
+  white-space: nowrap;
+  text-decoration: none;
+  line-height: 1;
+  display: block;
+  padding-inline: .11em; /* optical balance for trailing letter-spacing */
+}
+
+.site-header__logo:hover {
+  color: var(--accent);
+}
+
+
+/* ─── DESKTOP NAV ───────────────────────────────────────────── */
+
+.site-header__nav {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-4);
+}
+
+.site-header__nav-link {
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  font-weight: 500;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--ink);
+  text-decoration: none;
+  white-space: nowrap;
+  position: relative;
+  line-height: 1;
+  padding-block: var(--sp-2);
+  transition: color .2s;
+}
+
+.site-header__nav-link::after {
+  content: '';
+  position: absolute;
+  inset-inline: 0;
+  bottom: 0;
+  height: 1px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .25s cubic-bezier(.4,0,.2,1);
+}
+
+.site-header__nav-link:hover {
+  color: var(--accent);
+}
+
+.site-header__nav-link:hover::after {
+  transform: scaleX(1);
+}
+
+
+/* ─── HAMBURGER (mobile only) ───────────────────────────────── */
+
+.site-header__hamburger {
+  display: none;
+  background: none;
+  border: none;
+  padding: var(--sp-2);
+  margin-inline-start: calc(var(--sp-2) * -1);
+  cursor: pointer;
+  color: var(--ink);
+  line-height: 0;
+  flex-shrink: 0;
+}
+
+.site-header__hamburger:hover {
+  color: var(--accent);
+}
+
+
+/* ─── ACTION BUTTONS (icons) ────────────────────────────────── */
+
+.site-header__action {
+  background: none;
+  border: none;
+  padding: var(--sp-2);
+  cursor: pointer;
+  color: var(--ink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 0;
+  border-radius: var(--radius);
+  transition: color .2s;
+  flex-shrink: 0;
+}
+
+.site-header__action:hover {
+  color: var(--accent);
+}
+
+/* Cart icon + badge wrapper */
+.site-header__cart-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.site-header__cart-badge {
+  position: absolute;
+  top: -7px;
+  right: -8px;
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-family: var(--font-body);
+  font-size: .62rem;
+  font-weight: 600;
+  letter-spacing: 0;
+  min-width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  padding: 0 3px;
+}
+
+
+/* ─── MOBILE BREAKPOINT (≤780px) ──────────────────────────── */
+
+@media (max-width: 780px) {
+  /* Show hamburger, hide desktop nav */
+  .site-header__hamburger {
+    display: flex;
+  }
+
+  .site-header__nav {
+    display: none;
+  }
+
+  /* Hide search + account, keep cart */
+  .site-header__action--search,
+  .site-header__action--account {
+    display: none;
+  }
+
+  /* Shrink wordmark so it never wraps */
+  .site-header__logo {
+    font-size: .95rem;
+    letter-spacing: .18em;
+  }
+
+  /* Tighten inner padding on mobile */
+  .site-header__inner {
+    min-height: 52px;
+  }
+}
