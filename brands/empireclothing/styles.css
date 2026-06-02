@@ -422,13 +422,15 @@ p{margin:0 0 var(--sp-3)}
 .s-hero__photo {
   position: absolute;
   inset: 0;
-  width: 100%;
+  left: 0;
+  right: auto;
+  width: 140%;
   height: 100%;
   object-fit: cover;
-  object-position: center right;
+  object-position: left center;
   display: block;
   min-width: 0;
-  max-width: 100%;
+  max-width: 140%;
   z-index: 0;
 }
 
@@ -474,10 +476,10 @@ p{margin:0 0 var(--sp-3)}
 
 /* ── Eyebrow (or héritage, clair) ── */
 .s-hero__eyebrow {
-  /* hérite de .eyebrow — on surcharge la couleur pour l'or sur fond sombre */
-  color: var(--gold) !important;
+  /* hérite de .eyebrow — or pâle (champagne) pour un meilleur contraste sur le navy */
+  color: #E8D5A2 !important;
   margin-bottom: var(--sp-4);
-  opacity: 0.92;
+  opacity: 1;
 }
 
 /* ── H1 ── */
@@ -493,7 +495,7 @@ p{margin:0 0 var(--sp-3)}
 
 /* ── Accentuation en or ── */
 .s-hero__accent {
-  color: var(--gold);
+  color: #E8D5A2;
   display: inline;
 }
 
@@ -541,7 +543,7 @@ p{margin:0 0 var(--sp-3)}
   font-weight: 500;
   letter-spacing: .14em;
   text-transform: uppercase;
-  color: rgba(231, 220, 196, 0.80);    /* gold-soft atténué */
+  color: rgba(232, 213, 162, 0.95);    /* or pâle champagne — contraste relevé */
 }
 
 .s-hero__proof-sep {
@@ -581,6 +583,10 @@ p{margin:0 0 var(--sp-3)}
 
   .s-hero__photo {
     object-position: center top;
+    left: 0;
+    right: 0;
+    width: 100%;
+    max-width: 100%;
   }
 
   .s-hero__card {
