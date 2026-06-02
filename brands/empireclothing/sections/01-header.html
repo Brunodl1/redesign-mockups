@@ -1,0 +1,92 @@
+<!-- ============================================================
+     01-header.html — Empire 1917 · Barre d'annonce + En-tête collant
+     Heritage tailored menswear Montréal · FRENCH · Quiet-luxury
+     ============================================================ -->
+
+<!-- ANNOUNCEMENT BAR -->
+<div class="announce">
+  <div class="announce__inner">
+    <span class="announce__item announce__item--always">Maison fondée en 1917</span>
+    <span class="announce__sep" aria-hidden="true">·</span>
+    <span class="announce__item announce__item--desktop">Confectionné à Montréal</span>
+    <span class="announce__sep announce__sep--desktop" aria-hidden="true">·</span>
+    <span class="announce__item announce__item--desktop">Étoffes des plus belles filatures d'Europe</span>
+  </div>
+</div>
+
+<!-- STICKY HEADER -->
+<header class="site-header" role="banner">
+  <div class="site-header__wrap wrap">
+
+    <!-- LEFT: Nav (desktop) / Hamburger (mobile) -->
+    <div class="site-header__left" aria-label="Navigation principale">
+
+      <!-- Desktop nav -->
+      <nav class="site-header__nav" aria-label="Navigation principale">
+        <a href="https://www.google.com" class="site-header__nav-link">Collections</a>
+        <a href="https://www.google.com" class="site-header__nav-link">Sur-Mesure</a>
+        <a href="https://www.google.com" class="site-header__nav-link">Savoir-faire</a>
+        <a href="https://www.google.com" class="site-header__nav-link">Histoire</a>
+        <a href="https://www.google.com" class="site-header__nav-link">Contact</a>
+      </nav>
+
+      <!-- Mobile hamburger -->
+      <button class="site-header__hamburger" aria-label="Ouvrir le menu" aria-expanded="false">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="square" aria-hidden="true">
+          <line x1="2" y1="5"  x2="20" y2="5"/>
+          <line x1="2" y1="11" x2="20" y2="11"/>
+          <line x1="2" y1="17" x2="20" y2="17"/>
+        </svg>
+      </button>
+
+    </div>
+
+    <!-- CENTER: Logo -->
+    <div class="site-header__logo-wrap">
+      <a href="https://www.google.com" class="site-header__logo-link" aria-label="Empire 1917 — Accueil">
+        <img
+          src="assets/logo.png"
+          alt="Empire 1917"
+          class="site-header__logo-img"
+          width="auto"
+          height="44"
+        >
+      </a>
+    </div>
+
+    <!-- RIGHT: CTA + Icons -->
+    <div class="site-header__actions">
+
+      <!-- "Collections" pill CTA (desktop only) -->
+      <a href="https://www.google.com" class="btn btn-primary site-header__cta" aria-label="Voir les collections">Collections</a>
+
+      <!-- Search icon (desktop only) -->
+      <button class="site-header__icon-btn site-header__icon-btn--desktop" aria-label="Rechercher">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square" aria-hidden="true">
+          <circle cx="9.5" cy="9.5" r="6.5"/>
+          <line x1="14.5" y1="14.5" x2="20" y2="20"/>
+        </svg>
+      </button>
+
+      <!-- Account icon (desktop only) -->
+      <button class="site-header__icon-btn site-header__icon-btn--desktop" aria-label="Mon compte">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square" aria-hidden="true">
+          <circle cx="11" cy="7" r="4"/>
+          <path d="M2 20c0-4 4-7 9-7s9 3 9 7"/>
+        </svg>
+      </button>
+
+      <!-- Cart icon (always visible) -->
+      <button class="site-header__icon-btn site-header__cart" aria-label="Panier (0 article)">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square" aria-hidden="true">
+          <path d="M4 4h2l2.4 10H16l2-7H7"/>
+          <circle cx="9.5" cy="17.5" r="1.5" fill="currentColor" stroke="none"/>
+          <circle cx="15.5" cy="17.5" r="1.5" fill="currentColor" stroke="none"/>
+        </svg>
+        <span class="site-header__cart-count" aria-label="0 article dans le panier">0</span>
+      </button>
+
+    </div>
+
+  </div>
+</header>

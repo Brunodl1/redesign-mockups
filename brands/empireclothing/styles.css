@@ -1,0 +1,2938 @@
+/* ============================================================
+   Empire Clothing (Empire 1917) — base.css (foundation)
+   Heritage Montréal tailored menswear · "L'élégance depuis 1917" · FR
+   Quiet-luxury editorial: warm ivory + deep navy + heritage gold. Cormorant Garamond + Inter.
+   ============================================================ */
+:root{
+  /* color */
+  --bg:        #FBFAF7;   /* warm ivory page */
+  --surface:   #FFFFFF;   /* cards */
+  --surface-2: #F1EEE6;   /* warm greige band */
+  --ink:       #1E2638;   /* deep navy-charcoal — text/headings */
+  --ink-soft:  #5A6072;   /* muted slate — secondary text */
+  --accent:    #2C365E;   /* deep navy/indigo — CTAs, links (their brand) */
+  --accent-ink:#FFFFFF;
+  --accent-deep:#1B2340;  /* hover */
+  --gold:      #B08D4C;   /* warm heritage gold — eyebrows/hairlines (sparing) */
+  --gold-soft: #E7DCC4;   /* pale gold tint */
+  --navy-deep: #161C2C;   /* dark navy band/footer */
+  --dark:      #161C2C;
+  --line:      #E4DFD4;   /* warm hairline */
+  --star:      #B08D4C;
+  --btn:       #2C365E;
+  --btn-ink:   #FFFFFF;
+  /* type */
+  --font-display: "Cormorant Garamond", "Georgia", "Times New Roman", serif;
+  --font-body:    "Inter", "Helvetica Neue", Arial, sans-serif;
+  --s--1: .82rem;
+  --s-0:  1.06rem;
+  --s-1:  1.25rem;
+  --s-2:  1.7rem;
+  --s-3:  2.4rem;
+  --s-4:  3.4rem;
+  --s-5:  4.6rem;
+  /* space */
+  --sp-1:.25rem; --sp-2:.5rem; --sp-3:1rem; --sp-4:1.5rem;
+  --sp-5:2.5rem; --sp-6:4rem; --sp-7:6rem;
+  --sp-8:8rem;
+  /* shape — SQUARE, structured */
+  --radius:0px; --radius-lg:0px; --radius-pill:0px;
+  --shadow:0 18px 50px rgba(30,38,56,.13);
+  --maxw:1280px;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html,body{overflow-x:clip}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--ink);
+  font-family:var(--font-body);
+  font-size:var(--s-0);
+  line-height:1.65;
+  font-weight:400;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+
+/* headings — Cormorant Garamond, elegant heritage serif */
+h1,h2,h3{font-family:var(--font-display);font-weight:600;line-height:1.08;letter-spacing:0;margin:0 0 var(--sp-3);color:var(--ink)}
+h1{font-size:var(--s-5);font-weight:600}
+h2{font-size:var(--s-4);font-weight:500}
+h3{font-size:var(--s-2);font-weight:500}
+p{margin:0 0 var(--sp-3)}
+
+/* layout */
+.wrap{max-width:var(--maxw);margin:0 auto;padding-inline:var(--sp-4);width:100%}
+.sec{position:relative;padding-block:var(--sp-7)}
+.section{position:relative}
+
+/* eyebrow — gold tracked caps (heritage) */
+.eyebrow{
+  display:inline-block;font-family:var(--font-body);font-weight:600;
+  font-size:var(--s--1);letter-spacing:.26em;text-transform:uppercase;
+  color:var(--gold);margin:0 0 var(--sp-3)
+}
+
+/* buttons — SQUARE, uppercase tracked (sartorial) */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:.55em;
+  font-family:var(--font-body);font-weight:600;font-size:var(--s--1);
+  letter-spacing:.16em;text-transform:uppercase;
+  padding:1.05em 2.4em;border-radius:0;border:1.5px solid transparent;
+  cursor:pointer;transition:background .22s,color .22s,border-color .22s,transform .15s;
+  line-height:1;white-space:nowrap
+}
+.btn:hover{transform:translateY(-2px)}
+.btn-primary{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.btn-primary:hover{background:var(--accent-deep);border-color:var(--accent-deep)}
+.btn-dark{background:var(--ink);color:#fff;border-color:var(--ink)}
+.btn-dark:hover{background:#000}
+.btn-outline{background:transparent;color:var(--ink);border-color:var(--ink)}
+.btn-outline:hover{background:var(--ink);color:#fff}
+.btn-light{background:#fff;color:var(--ink);border-color:#fff}
+.btn-light:hover{background:transparent;color:#fff;border-color:#fff}
+.btn-gold{background:var(--gold);color:#fff;border-color:var(--gold)}
+.btn-gold:hover{background:#96763b;border-color:#96763b}
+.btn-block{display:flex;width:100%}
+
+/* rating stars */
+.stars{color:var(--star);letter-spacing:.06em;font-size:var(--s-0)}
+
+/* chips */
+.chip{
+  display:inline-flex;align-items:center;gap:.45em;
+  font-family:var(--font-body);font-weight:600;font-size:var(--s--1);
+  letter-spacing:.12em;text-transform:uppercase;
+  padding:.5em 1em;border-radius:0;border:1.5px solid var(--line);
+  background:var(--surface);color:var(--ink);line-height:1
+}
+
+/* section icons */
+.ic{width:40px;height:40px;display:block;stroke:currentColor;stroke-width:1.4;fill:none}
+
+/* floats — static, hidden mobile */
+.float{position:absolute;pointer-events:none;z-index:5}
+.float img{width:100%;transform:rotate(var(--rot,0deg));
+  filter:drop-shadow(0 24px 22px rgba(30,38,56,.20))}
+@media(max-width:1000px){.float{display:none}}
+
+/* scroll-reveal (3D) — NOT on hero */
+.reveal{opacity:0;transform:perspective(900px) rotateX(8deg) translateY(26px);
+  transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+
+/* responsive type */
+@media(max-width:780px){
+  :root{--s-5:3rem;--s-4:2.4rem;--s-3:1.9rem;--s-2:1.45rem}
+  .sec{padding-block:var(--sp-6)}
+}
+/* ============================================================
+   01-header.css — Empire 1917 · Barre d'annonce + En-tête collant
+   Heritage tailored menswear Montréal · FRENCH · Quiet-luxury
+   All selectors scoped to .announce / .site-header
+   ============================================================ */
+
+/* ── ANNOUNCEMENT BAR ─────────────────────────────────────── */
+
+.announce {
+  background: var(--navy-deep);
+  color: rgba(255,255,255,.88);
+  width: 100%;
+  z-index: 200;
+}
+
+.announce__inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sp-3);
+  padding-block: .65em;
+  padding-inline: var(--sp-4);
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  font-weight: 500;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.announce__item {
+  flex-shrink: 0;
+}
+
+.announce__sep {
+  color: rgba(255,255,255,.38);
+  font-weight: 300;
+  letter-spacing: 0;
+  flex-shrink: 0;
+}
+
+/* Mobile: hide everything except first item + its separators */
+@media (max-width: 780px) {
+  .announce__inner {
+    gap: 0;
+  }
+  .announce__item--desktop,
+  .announce__sep--desktop {
+    display: none;
+  }
+  .announce__sep:not(.announce__sep--desktop) {
+    display: none;
+  }
+}
+
+
+/* ── STICKY SITE HEADER ───────────────────────────────────── */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--bg);
+  border-bottom: 1px solid var(--line);
+  /* Subtle understated shadow — quiet luxury */
+  box-shadow: 0 2px 18px rgba(30,38,56,.07);
+  width: 100%;
+}
+
+/* 3-column balanced grid: left | logo | right — logo stays truly centred */
+.site-header__wrap {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  padding-block: var(--sp-3);
+  gap: var(--sp-3);
+  min-height: 72px;
+}
+
+/* ── LEFT COLUMN ────────────────────────────────────────────── */
+
+.site-header__left {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+}
+
+/* Desktop nav */
+.site-header__nav {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-4);
+  flex-wrap: nowrap;
+}
+
+.site-header__nav-link {
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  font-weight: 500;
+  letter-spacing: .20em;
+  text-transform: uppercase;
+  color: var(--ink);
+  white-space: nowrap;
+  position: relative;
+  transition: color .2s;
+}
+
+.site-header__nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--gold);
+  transition: width .25s cubic-bezier(.4,0,.2,1);
+}
+
+.site-header__nav-link:hover {
+  color: var(--gold);
+}
+
+.site-header__nav-link:hover::after {
+  width: 100%;
+}
+
+/* Mobile hamburger — hidden on desktop */
+.site-header__hamburger {
+  display: none;
+  background: none;
+  border: none;
+  padding: var(--sp-2);
+  cursor: pointer;
+  color: var(--ink);
+  flex-shrink: 0;
+  line-height: 0;
+  margin-left: calc(-1 * var(--sp-2)); /* align to grid edge */
+}
+
+.site-header__hamburger:hover {
+  color: var(--accent);
+}
+
+
+/* ── CENTER COLUMN — LOGO ────────────────────────────────── */
+
+.site-header__logo-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.site-header__logo-link {
+  display: block;
+  line-height: 0;
+}
+
+.site-header__logo-img {
+  display: block;
+  height: 44px;
+  width: auto;
+  /* Logo is transparent black wordmark on ivory bg — preserve black */
+  filter: none;
+  object-fit: contain;
+}
+
+
+/* ── RIGHT COLUMN — ACTIONS ──────────────────────────────── */
+
+.site-header__actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--sp-2);
+  min-width: 0;
+}
+
+/* Desktop CTA button */
+.site-header__cta {
+  /* override .btn padding slightly for header context */
+  padding: .75em 1.6em;
+  font-size: var(--s--1);
+  letter-spacing: .18em;
+  margin-right: var(--sp-2);
+}
+
+/* Icon buttons — shared */
+.site-header__icon-btn {
+  background: none;
+  border: none;
+  padding: var(--sp-2);
+  cursor: pointer;
+  color: var(--ink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: color .2s;
+  flex-shrink: 0;
+}
+
+.site-header__icon-btn:hover {
+  color: var(--accent);
+}
+
+/* Cart badge */
+.site-header__cart {
+  /* inherits icon-btn */
+}
+
+.site-header__cart-count {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  min-width: 16px;
+  height: 16px;
+  border-radius: 0; /* square, sartorial */
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-family: var(--font-body);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 16px;
+  text-align: center;
+  padding-inline: 3px;
+  pointer-events: none;
+}
+
+
+/* ── MOBILE ≤ 780px ─────────────────────────────────────── */
+
+@media (max-width: 780px) {
+
+  .site-header__wrap {
+    padding-block: var(--sp-2);
+    min-height: 58px;
+    gap: var(--sp-2);
+  }
+
+  /* Show hamburger, hide nav links */
+  .site-header__hamburger {
+    display: flex;
+  }
+
+  .site-header__nav {
+    display: none;
+  }
+
+  /* Logo smaller on mobile */
+  .site-header__logo-img {
+    height: 36px;
+  }
+
+  /* Hide CTA, search & account on mobile */
+  .site-header__cta {
+    display: none;
+  }
+
+  .site-header__icon-btn--desktop {
+    display: none;
+  }
+
+  /* Keep cart visible, no extra right gap */
+  .site-header__actions {
+    gap: 0;
+  }
+
+}
+/* ============================================================
+   Empire 1917 · 02-hero.css — Full-bleed éditorial, carte contenue
+   Scoped entirely to .s-hero · FR · Quiet-luxury sartorial
+   ============================================================ */
+
+/* ── Section shell ── */
+.s-hero {
+  /* Override .sec padding → vraie pleine-plage */
+  padding-block: 0;
+  position: relative;
+  overflow: hidden;
+  min-height: 86vh;
+  max-height: 760px;
+  display: flex;
+  align-items: stretch;
+}
+
+/* ── Photo de fond ── */
+.s-hero__photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center right;
+  display: block;
+  min-width: 0;
+  max-width: 100%;
+  z-index: 0;
+}
+
+/* ── Voile directionnel (gauche plus dense, droit transparent) ── */
+.s-hero__scrim {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    to right,
+    rgba(22, 28, 44, 0.22) 0%,
+    rgba(22, 28, 44, 0.10) 50%,
+    rgba(22, 28, 44, 0.00) 100%
+  );
+  pointer-events: none;
+}
+
+/* ── Wrap en colonne pleine hauteur ── */
+.s-hero .wrap {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-height: 86vh;
+  max-height: 760px;
+  padding-block: var(--sp-7);
+}
+
+/* ── Carte de texte contenue (gauche, espace négatif du modèle) ── */
+.s-hero__card {
+  background: rgba(22, 28, 44, 0.50);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  padding: var(--sp-6) var(--sp-5);
+  max-width: 520px;
+  min-width: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+/* ── Eyebrow (or héritage, clair) ── */
+.s-hero__eyebrow {
+  /* hérite de .eyebrow — on surcharge la couleur pour l'or sur fond sombre */
+  color: var(--gold) !important;
+  margin-bottom: var(--sp-4);
+  opacity: 0.92;
+}
+
+/* ── H1 ── */
+.s-hero__h1 {
+  font-family: var(--font-display);
+  font-size: var(--s-4);
+  font-weight: 600;
+  line-height: 1.06;
+  color: #F5F1E8;       /* crème ivoire — contraste fort sur navy */
+  margin: 0 0 var(--sp-4);
+  letter-spacing: -0.01em;
+}
+
+/* ── Accentuation en or ── */
+.s-hero__accent {
+  color: var(--gold);
+  display: inline;
+}
+
+/* ── Sous-titre valeur ── */
+.s-hero__sub {
+  font-family: var(--font-body);
+  font-size: var(--s-0);
+  font-weight: 400;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.90);
+  margin: 0 0 var(--sp-5);
+  max-width: 44ch;
+}
+
+/* ── Rangée CTA ── */
+.s-hero__cta-row {
+  margin-bottom: var(--sp-5);
+}
+
+/* Surcharge .btn-light pour s'assurer que le texte est bien --ink (navy) sur fond crème */
+.s-hero .s-hero__cta.btn.btn-light {
+  background: #F5F1E8;
+  color: var(--ink);
+  border-color: #F5F1E8;
+}
+.s-hero .s-hero__cta.btn.btn-light:hover {
+  background: transparent;
+  color: #F5F1E8;
+  border-color: #F5F1E8;
+}
+
+/* ── Marques de confiance ── */
+.s-hero__proof {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--sp-2) var(--sp-3);
+  border-top: 1px solid rgba(176, 141, 76, 0.35);
+  padding-top: var(--sp-3);
+}
+
+.s-hero__proof-mark {
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  font-weight: 500;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: rgba(231, 220, 196, 0.80);    /* gold-soft atténué */
+}
+
+.s-hero__proof-sep {
+  color: rgba(176, 141, 76, 0.45);
+  font-size: var(--s--1);
+  line-height: 1;
+}
+
+/* ────────────────────────────────────────────
+   MOBILE ≤ 780px
+   Carte ancrée vers le BAS, image visible en haut
+   ──────────────────────────────────────────── */
+@media (max-width: 780px) {
+
+  .s-hero {
+    min-height: 80vh;
+    max-height: none;
+    align-items: flex-end;
+  }
+
+  /* Voile plus fort en bas sur mobile */
+  .s-hero__scrim {
+    background: linear-gradient(
+      to top,
+      rgba(22, 28, 44, 0.68) 0%,
+      rgba(22, 28, 44, 0.28) 45%,
+      rgba(22, 28, 44, 0.04) 100%
+    );
+  }
+
+  .s-hero .wrap {
+    align-items: flex-end;
+    min-height: 80vh;
+    max-height: none;
+    padding-block: 0 var(--sp-5);
+  }
+
+  .s-hero__photo {
+    object-position: center top;
+  }
+
+  .s-hero__card {
+    max-width: 100%;
+    padding: var(--sp-5) var(--sp-4);
+    background: rgba(22, 28, 44, 0.55);
+    gap: 0;
+  }
+
+  .s-hero__h1 {
+    font-size: var(--s-3);
+  }
+
+  .s-hero__sub {
+    font-size: var(--s--1);
+    max-width: 100%;
+  }
+
+  /* CTA pleine largeur mobile */
+  .s-hero__cta-row {
+    width: 100%;
+  }
+  .s-hero .s-hero__cta.btn.btn-light {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .s-hero__proof {
+    gap: var(--sp-2);
+    flex-wrap: wrap;
+  }
+}
+/* ============================================================
+   03-heritage.css — Empire 1917 · Bandeau héritage & confiance
+   Dark navy bg · Gold icons · 4 piliers · 2×2 mobile
+   ============================================================ */
+
+/* --- local tokens (mirror base.css — no external dep needed) --- */
+.s-heritage {
+  --bg:          #FBFAF7;
+  --surface:     #fff;
+  --surface-2:   #F1EEE6;
+  --ink:         #1E2638;
+  --ink-soft:    #5A6072;
+  --accent:      #2C365E;
+  --accent-ink:  #fff;
+  --accent-deep: #1B2340;
+  --gold:        #B08D4C;
+  --gold-soft:   #E7DCC4;
+  --navy-deep:   #161C2C;
+  --line:        #E4DFD4;
+  --star:        #B08D4C;
+  --font-display:"Cormorant Garamond","Georgia","Times New Roman",serif;
+  --font-body:   "Inter","Helvetica Neue",Arial,sans-serif;
+  --s--1:        .82rem;
+  --s-0:         1.06rem;
+  --s-1:         1.25rem;
+  --sp-2:        .5rem;
+  --sp-3:        1rem;
+  --sp-4:        1.5rem;
+  --sp-5:        2.5rem;
+  --sp-6:        4rem;
+  --maxw:        1280px;
+  --radius:      0px;
+}
+
+/* --- Section shell --- */
+.s-heritage {
+  background: var(--navy-deep);
+  padding-block: var(--sp-5);  /* slim band */
+  border-top: 1px solid rgba(176,141,76,.18);
+  border-bottom: 1px solid rgba(176,141,76,.18);
+}
+
+/* wrap already defined in base.css; restate only what's needed */
+.s-heritage .wrap {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding-inline: var(--sp-4);
+  width: 100%;
+}
+
+/* --- 4-column row --- */
+.s-heritage__row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Hairline dividers between items */
+.s-heritage__item + .s-heritage__item {
+  border-left: 1px solid rgba(228,223,212,.15);
+}
+
+/* --- Individual item --- */
+.s-heritage__item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--sp-3);
+  padding-inline: var(--sp-4);
+}
+
+/* first item flush left */
+.s-heritage__item:first-child {
+  padding-left: 0;
+}
+
+/* last item: no right padding */
+.s-heritage__item:last-child {
+  padding-right: 0;
+}
+
+/* --- Icon --- */
+.s-heritage__ic {
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  stroke: var(--gold);
+  stroke-width: 1.35;
+  fill: none;
+  margin-top: 2px;
+}
+
+/* --- Text block --- */
+.s-heritage__text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+}
+
+.s-heritage__label {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: var(--s-1);
+  color: #fff;
+  line-height: 1.1;
+  letter-spacing: .01em;
+}
+
+.s-heritage__sub {
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  color: rgba(255,255,255,.52);
+  line-height: 1.5;
+  letter-spacing: .01em;
+}
+
+/* ============================================================
+   Responsive
+   ============================================================ */
+
+/* Tablet: tighten gaps */
+@media (max-width: 1000px) {
+  .s-heritage__item {
+    padding-inline: var(--sp-3);
+  }
+  .s-heritage__item:first-child {
+    padding-left: 0;
+  }
+}
+
+/* Mobile: 2×2 grid */
+@media (max-width: 780px) {
+  .s-heritage {
+    padding-block: var(--sp-4);
+  }
+
+  .s-heritage__row {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--sp-4) var(--sp-2);
+  }
+
+  /* Reset left-border on new-row starters */
+  .s-heritage__item + .s-heritage__item {
+    border-left: none;
+  }
+
+  /* Subtle internal separator: right border on col-1 items */
+  .s-heritage__item:nth-child(odd) {
+    border-right: 1px solid rgba(228,223,212,.15);
+    padding-right: var(--sp-3);
+  }
+
+  .s-heritage__item:nth-child(even) {
+    padding-left: var(--sp-3);
+  }
+
+  .s-heritage__item:first-child,
+  .s-heritage__item:nth-child(3) {
+    padding-left: 0;
+  }
+
+  .s-heritage__item:nth-child(2),
+  .s-heritage__item:nth-child(4) {
+    padding-right: 0;
+  }
+}
+
+/* Very narrow: stack fully */
+@media (max-width: 400px) {
+  .s-heritage__row {
+    grid-template-columns: 1fr;
+  }
+
+  .s-heritage__item:nth-child(odd) {
+    border-right: none;
+    padding-right: 0;
+  }
+
+  .s-heritage__item + .s-heritage__item {
+    border-left: none;
+    border-top: 1px solid rgba(228,223,212,.15);
+    padding-top: var(--sp-3);
+  }
+
+  .s-heritage__item {
+    padding-inline: 0;
+  }
+}
+/* ============================================================
+   04-collections.css — Empire 1917 · Grille des collections
+   Ivory bg · 4-up portrait tiles · hover zoom+lift · reveal stagger
+   ============================================================ */
+
+/* --- Local tokens (mirror base.css) --- */
+.s-collections {
+  --bg:          #FBFAF7;
+  --surface:     #fff;
+  --surface-2:   #F1EEE6;
+  --ink:         #1E2638;
+  --ink-soft:    #5A6072;
+  --accent:      #2C365E;
+  --accent-ink:  #fff;
+  --accent-deep: #1B2340;
+  --gold:        #B08D4C;
+  --gold-soft:   #E7DCC4;
+  --navy-deep:   #161C2C;
+  --line:        #E4DFD4;
+  --star:        #B08D4C;
+  --font-display:"Cormorant Garamond","Georgia","Times New Roman",serif;
+  --font-body:   "Inter","Helvetica Neue",Arial,sans-serif;
+  --s--1:        .82rem;
+  --s-0:         1.06rem;
+  --s-1:         1.25rem;
+  --s-2:         1.7rem;
+  --s-3:         2.4rem;
+  --s-4:         3.4rem;
+  --s-5:         4.6rem;
+  --sp-1:        .25rem;
+  --sp-2:        .5rem;
+  --sp-3:        1rem;
+  --sp-4:        1.5rem;
+  --sp-5:        2.5rem;
+  --sp-6:        4rem;
+  --sp-7:        6rem;
+  --sp-8:        8rem;
+  --radius:      0px;
+  --shadow:      0 18px 50px rgba(30,38,56,.13);
+  --maxw:        1280px;
+}
+
+/* ============================================================
+   Section shell
+   ============================================================ */
+.s-collections {
+  background: var(--bg);
+  padding-block: var(--sp-7);
+}
+
+.s-collections .wrap {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding-inline: var(--sp-4);
+  width: 100%;
+}
+
+/* ============================================================
+   Reveal — staggered (delay via inline --delay)
+   ============================================================ */
+.s-collections .reveal {
+  opacity: 0;
+  transform: perspective(900px) rotateX(8deg) translateY(26px);
+  transition:
+    opacity .7s ease,
+    transform .7s cubic-bezier(.2,.7,.2,1);
+  transition-delay: var(--delay, 0s);
+}
+
+.s-collections .reveal.in {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .s-collections .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* ============================================================
+   Section header
+   ============================================================ */
+.s-collections__header {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto var(--sp-6);
+}
+
+.s-collections__eyebrow {
+  /* .eyebrow already in base; restate for scoping */
+  display: inline-block;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: var(--s--1);
+  letter-spacing: .26em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin: 0 0 var(--sp-3);
+}
+
+.s-collections__h2 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: var(--s-4);
+  color: var(--ink);
+  line-height: 1.05;
+  margin: 0 0 var(--sp-3);
+  letter-spacing: -.01em;
+}
+
+.s-collections__intro {
+  font-family: var(--font-body);
+  font-size: var(--s-0);
+  color: var(--ink-soft);
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* ============================================================
+   Tile grid — 4 columns desktop
+   ============================================================ */
+.s-collections__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--sp-3);
+  list-style: none;
+  margin: 0 0 var(--sp-6);
+  padding: 0;
+}
+
+/* ============================================================
+   Individual tile
+   ============================================================ */
+.s-collections .tile {
+  position: relative;
+  overflow: hidden; /* clip the lifted card */
+  background: var(--surface);
+  border: 1px solid var(--line);
+  transition: box-shadow .3s ease, transform .3s cubic-bezier(.2,.7,.2,1);
+}
+
+.s-collections .tile:hover {
+  box-shadow: var(--shadow);
+  transform: translateY(-4px);
+}
+
+/* The anchor wraps everything — full-tile click target */
+.s-collections .tile__inner {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: inherit;
+  height: 100%;
+}
+
+/* ============================================================
+   Tile image
+   ============================================================ */
+.s-collections .tile__img-wrap {
+  overflow: hidden;
+  aspect-ratio: 3 / 4;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.s-collections .tile__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform .55s cubic-bezier(.2,.7,.2,1);
+}
+
+.s-collections .tile:hover .tile__img {
+  transform: scale(1.06);
+}
+
+/* ============================================================
+   Tile body
+   ============================================================ */
+.s-collections .tile__body {
+  padding: var(--sp-4) var(--sp-4) var(--sp-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+  flex: 1;
+  position: relative;
+}
+
+/* Gold hairline accent top of body */
+.s-collections .tile__body::before {
+  content: '';
+  display: block;
+  height: 1px;
+  width: 32px;
+  background: var(--gold);
+  margin-bottom: var(--sp-2);
+}
+
+.s-collections .tile__name {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: var(--s-2);
+  color: var(--ink);
+  line-height: 1.05;
+  margin: 0;
+  letter-spacing: .01em;
+}
+
+.s-collections .tile__desc {
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  color: var(--ink-soft);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Gold discover link */
+.s-collections .tile__cta {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: var(--s--1);
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-top: auto;
+  padding-top: var(--sp-2);
+  transition: color .2s, letter-spacing .2s;
+}
+
+.s-collections .tile:hover .tile__cta {
+  color: var(--accent);
+  letter-spacing: .18em;
+}
+
+/* ============================================================
+   Footer CTA — centered
+   ============================================================ */
+.s-collections__footer {
+  display: flex;
+  justify-content: center;
+}
+
+.s-collections__btn {
+  /* Inherits .btn .btn-primary from base.css */
+  /* Ensure square uppercase tracked */
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: var(--s--1);
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  padding: 1.05em 2.8em;
+  border-radius: 0;
+  background: var(--accent);
+  color: var(--accent-ink);
+  border: 1.5px solid var(--accent);
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  transition: background .22s, color .22s, border-color .22s, transform .15s;
+  white-space: nowrap;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.s-collections__btn:hover {
+  background: var(--accent-deep);
+  border-color: var(--accent-deep);
+  transform: translateY(-2px);
+}
+
+/* ============================================================
+   Responsive
+   ============================================================ */
+
+/* Tablet: 2-up */
+@media (max-width: 900px) {
+  .s-collections__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .s-collections__h2 {
+    font-size: var(--s-3);
+  }
+}
+
+/* Mobile: prefer horizontal snap (2-up visible, scrollable) */
+@media (max-width: 600px) {
+  .s-collections {
+    padding-block: var(--sp-6);
+  }
+
+  .s-collections__header {
+    margin-bottom: var(--sp-5);
+  }
+
+  /* 2-up snap scroll on narrow */
+  .s-collections__grid {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    gap: var(--sp-3);
+    margin-left: calc(var(--sp-4) * -1);
+    margin-right: calc(var(--sp-4) * -1);
+    padding-inline: var(--sp-4);
+    margin-bottom: var(--sp-5);
+    /* hide scrollbar visually */
+    scrollbar-width: none;
+  }
+
+  .s-collections__grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .s-collections .tile {
+    flex: 0 0 calc(72vw);
+    max-width: 320px;
+    scroll-snap-align: start;
+  }
+}
+
+/* Very narrow: single-column */
+@media (max-width: 400px) {
+  .s-collections .tile {
+    flex: 0 0 82vw;
+  }
+}
+
+/* Large screens: breathe a bit more */
+@media (min-width: 1200px) {
+  .s-collections__grid {
+    gap: var(--sp-4);
+  }
+}
+/* ============================================================
+   05-savoirfaire.css — Empire 1917 · Savoir-faire / qualité
+   Ivory bg · 2 colonnes (img gauche, texte droite) · Reveal
+   ============================================================ */
+
+/* --- Local tokens (mirror base.css) --- */
+.s-savoirfaire {
+  --bg:          #FBFAF7;
+  --surface:     #fff;
+  --surface-2:   #F1EEE6;
+  --ink:         #1E2638;
+  --ink-soft:    #5A6072;
+  --accent:      #2C365E;
+  --accent-ink:  #fff;
+  --accent-deep: #1B2340;
+  --gold:        #B08D4C;
+  --gold-soft:   #E7DCC4;
+  --navy-deep:   #161C2C;
+  --line:        #E4DFD4;
+  --star:        #B08D4C;
+  --font-display:"Cormorant Garamond","Georgia","Times New Roman",serif;
+  --font-body:   "Inter","Helvetica Neue",Arial,sans-serif;
+  --s--1:        .82rem;
+  --s-0:         1.06rem;
+  --s-1:         1.25rem;
+  --s-2:         1.7rem;
+  --s-3:         2.4rem;
+  --s-4:         3.4rem;
+  --s-5:         4.6rem;
+  --sp-1:        .25rem;
+  --sp-2:        .5rem;
+  --sp-3:        1rem;
+  --sp-4:        1.5rem;
+  --sp-5:        2.5rem;
+  --sp-6:        4rem;
+  --sp-7:        6rem;
+  --sp-8:        8rem;
+  --radius:      0px;
+  --shadow:      0 18px 50px rgba(30,38,56,.13);
+  --maxw:        1280px;
+}
+
+/* ============================================================
+   Section shell
+   ============================================================ */
+.s-savoirfaire {
+  background: var(--bg);
+  padding-block: var(--sp-7);
+  overflow: hidden;
+}
+
+.s-savoirfaire .wrap {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding-inline: var(--sp-4);
+  width: 100%;
+}
+
+/* ============================================================
+   Reveal
+   ============================================================ */
+.s-savoirfaire .reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity .72s ease,
+    transform .72s cubic-bezier(.2,.7,.2,1);
+  transition-delay: var(--delay, 0s);
+}
+
+.s-savoirfaire .reveal.in {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .s-savoirfaire .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* ============================================================
+   Inner 2-column grid
+   ============================================================ */
+.s-savoirfaire__inner {
+  display: grid;
+  grid-template-columns: minmax(0, 520px) 1fr;
+  gap: var(--sp-7);
+  align-items: center;
+}
+
+/* ============================================================
+   Image column
+   ============================================================ */
+.s-savoirfaire__img-col {
+  /* Constrain width so columns never touch */
+  max-width: 520px;
+  width: 100%;
+}
+
+.s-savoirfaire__img-wrap {
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  background: var(--surface-2);
+  /* hairline gold border for quiet-luxury feel */
+  outline: 1px solid var(--gold-soft);
+  outline-offset: -1px;
+}
+
+.s-savoirfaire__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+
+/* ============================================================
+   Text column
+   ============================================================ */
+.s-savoirfaire__text-col {
+  max-width: 560px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+}
+
+/* Eyebrow */
+.s-savoirfaire__eyebrow {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: var(--s--1);
+  letter-spacing: .28em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin: 0;
+}
+
+/* Heading */
+.s-savoirfaire__h2 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(2rem, 3.2vw, var(--s-4));
+  color: var(--ink);
+  line-height: 1.08;
+  margin: 0;
+  letter-spacing: -.01em;
+}
+
+/* Lead paragraph */
+.s-savoirfaire__lead {
+  font-family: var(--font-body);
+  font-size: var(--s-0);
+  color: var(--ink-soft);
+  line-height: 1.7;
+  margin: 0;
+  max-width: 48ch;
+}
+
+/* ============================================================
+   Highlight list
+   ============================================================ */
+.s-savoirfaire__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+  border-top: 1px solid var(--line);
+  padding-top: var(--sp-4);
+}
+
+.s-savoirfaire__item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--sp-3);
+}
+
+/* Gold icon wrapper */
+.s-savoirfaire__ic {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: var(--gold-soft);
+  color: var(--gold);
+  margin-top: 1px;
+}
+
+.s-savoirfaire__ic svg {
+  display: block;
+}
+
+.s-savoirfaire__item-body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-1);
+}
+
+.s-savoirfaire__item-title {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: var(--s-0);
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+.s-savoirfaire__item-desc {
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  color: var(--ink-soft);
+  line-height: 1.55;
+}
+
+/* ============================================================
+   Footer: chips + CTA
+   ============================================================ */
+.s-savoirfaire__footer {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+  border-top: 1px solid var(--line);
+  padding-top: var(--sp-4);
+}
+
+.s-savoirfaire__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+}
+
+/* .chip scoped override */
+.s-savoirfaire .chip {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  font-weight: 500;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--accent);
+  border: 1px solid var(--line);
+  background: var(--surface);
+  padding: .35em .9em;
+  white-space: nowrap;
+}
+
+/* .btn scoped overrides */
+.s-savoirfaire .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: var(--s--1);
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: var(--radius);
+  padding: .9em 2em;
+  cursor: pointer;
+  transition: background .22s, color .22s, border-color .22s;
+  align-self: flex-start;
+}
+
+.s-savoirfaire .btn-primary {
+  background: var(--accent);
+  color: var(--accent-ink);
+  border: 2px solid var(--accent);
+}
+
+.s-savoirfaire .btn-primary:hover,
+.s-savoirfaire .btn-primary:focus-visible {
+  background: var(--accent-deep);
+  border-color: var(--accent-deep);
+  outline: none;
+}
+
+/* ============================================================
+   Mobile — stack image above text
+   ============================================================ */
+@media (max-width: 860px) {
+  .s-savoirfaire__inner {
+    grid-template-columns: 1fr;
+    gap: var(--sp-5);
+  }
+
+  .s-savoirfaire__img-col {
+    max-width: 100%;
+  }
+
+  .s-savoirfaire__img-wrap {
+    /* landscape on small screens for visual variety */
+    aspect-ratio: 4 / 3;
+  }
+
+  .s-savoirfaire__h2 {
+    font-size: clamp(1.8rem, 7vw, 2.6rem);
+  }
+
+  .s-savoirfaire .btn {
+    align-self: stretch;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .s-savoirfaire {
+    padding-block: var(--sp-6);
+  }
+}
+/* ============================================================
+   06-histoire.css — Empire 1917 · Histoire / héritage
+   Dark navy-deep band · B&W photo left · text right · Reveal
+   ============================================================ */
+
+/* --- Local tokens (mirror base.css) --- */
+.s-histoire {
+  --bg:          #FBFAF7;
+  --surface:     #fff;
+  --surface-2:   #F1EEE6;
+  --ink:         #1E2638;
+  --ink-soft:    #5A6072;
+  --accent:      #2C365E;
+  --accent-ink:  #fff;
+  --accent-deep: #1B2340;
+  --gold:        #B08D4C;
+  --gold-soft:   #E7DCC4;
+  --navy-deep:   #161C2C;
+  --line:        #E4DFD4;
+  --star:        #B08D4C;
+  --font-display:"Cormorant Garamond","Georgia","Times New Roman",serif;
+  --font-body:   "Inter","Helvetica Neue",Arial,sans-serif;
+  --s--1:        .82rem;
+  --s-0:         1.06rem;
+  --s-1:         1.25rem;
+  --s-2:         1.7rem;
+  --s-3:         2.4rem;
+  --s-4:         3.4rem;
+  --s-5:         4.6rem;
+  --sp-1:        .25rem;
+  --sp-2:        .5rem;
+  --sp-3:        1rem;
+  --sp-4:        1.5rem;
+  --sp-5:        2.5rem;
+  --sp-6:        4rem;
+  --sp-7:        6rem;
+  --sp-8:        8rem;
+  --radius:      0px;
+  --shadow:      0 18px 50px rgba(30,38,56,.13);
+  --maxw:        1280px;
+}
+
+/* ============================================================
+   Section shell — dark navy background
+   ============================================================ */
+.s-histoire {
+  position: relative;
+  background: var(--navy-deep);
+  color: var(--accent-ink);
+  padding-block: var(--sp-7);
+  overflow: hidden;
+  isolation: isolate;
+}
+
+/* ============================================================
+   Full-bleed background image (faded, architectural texture)
+   ============================================================ */
+.s-histoire__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.s-histoire__bg-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+  display: block;
+  /* desaturate for archival look */
+  filter: grayscale(100%) contrast(.9) brightness(.55);
+  opacity: .18;
+}
+
+.s-histoire__scrim {
+  position: absolute;
+  inset: 0;
+  /* gradient scrim: darker on right (text side), lighter on left (photo col) */
+  background: linear-gradient(
+    100deg,
+    rgba(22, 28, 44, .55) 0%,
+    rgba(22, 28, 44, .82) 55%,
+    rgba(22, 28, 44, .95) 100%
+  );
+}
+
+/* ============================================================
+   Wrap
+   ============================================================ */
+.s-histoire .wrap {
+  position: relative;
+  z-index: 1;
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding-inline: var(--sp-4);
+  width: 100%;
+}
+
+/* ============================================================
+   Reveal
+   ============================================================ */
+.s-histoire .reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity .75s ease,
+    transform .75s cubic-bezier(.2,.7,.2,1);
+  transition-delay: var(--delay, 0s);
+}
+
+.s-histoire .reveal.in {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .s-histoire .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* ============================================================
+   Inner 2-column grid
+   ============================================================ */
+.s-histoire__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-7);
+  align-items: center;
+}
+
+/* ============================================================
+   Photo column (left)
+   ============================================================ */
+.s-histoire__photo-col {
+  position: relative;
+}
+
+.s-histoire__photo-wrap {
+  position: relative;
+  /* landscape photo wrapper */
+  aspect-ratio: 1200 / 778;
+  overflow: hidden;
+  /* subtle gold frame */
+  outline: 1px solid rgba(176, 141, 76, .35);
+  outline-offset: -1px;
+}
+
+.s-histoire__photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  /* archival B&W treatment */
+  filter: grayscale(100%) contrast(1.08) brightness(.92);
+  transition: filter .4s ease;
+}
+
+.s-histoire__photo-wrap:hover .s-histoire__photo {
+  filter: grayscale(100%) contrast(1.02) brightness(1);
+}
+
+/* "EST. 1917" gold stamp — bottom-left corner of photo */
+.s-histoire__year-stamp {
+  position: absolute;
+  bottom: var(--sp-3);
+  left: var(--sp-3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1;
+  /* semi-opaque dark bg for legibility */
+  background: rgba(22, 28, 44, .72);
+  padding: .55em .8em .5em;
+  border-left: 2px solid var(--gold);
+}
+
+.s-histoire__year-label {
+  font-family: var(--font-body);
+  font-size: .6rem;
+  font-weight: 600;
+  letter-spacing: .3em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: .2em;
+}
+
+.s-histoire__year-num {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--gold);
+  letter-spacing: .05em;
+  line-height: 1;
+}
+
+/* ============================================================
+   Text column (right)
+   ============================================================ */
+.s-histoire__text-col {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+  max-width: 540px;
+}
+
+/* Eyebrow */
+.s-histoire__eyebrow {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: var(--s--1);
+  letter-spacing: .28em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin: 0;
+}
+
+/* Heading */
+.s-histoire__h2 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(2rem, 3.2vw, var(--s-4));
+  color: #fff;
+  line-height: 1.08;
+  margin: 0;
+  letter-spacing: -.01em;
+}
+
+/* Body paragraphs */
+.s-histoire__body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+}
+
+.s-histoire__body p {
+  font-family: var(--font-body);
+  font-size: var(--s-0);
+  color: rgba(255, 255, 255, .75);
+  line-height: 1.72;
+  margin: 0;
+  max-width: 48ch;
+}
+
+/* Gold rule */
+.s-histoire__rule {
+  width: 48px;
+  height: 2px;
+  background: var(--gold);
+  opacity: .65;
+}
+
+/* CTA button — outline style for dark band */
+.s-histoire__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: var(--s--1);
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: var(--radius);
+  padding: .9em 2em;
+  cursor: pointer;
+  border: 2px solid rgba(255, 255, 255, .55);
+  color: #fff;
+  background: transparent;
+  align-self: flex-start;
+  transition: border-color .22s, background .22s, color .22s;
+}
+
+.s-histoire__btn:hover,
+.s-histoire__btn:focus-visible {
+  border-color: var(--gold);
+  color: var(--gold);
+  background: rgba(176, 141, 76, .08);
+  outline: none;
+}
+
+/* ============================================================
+   Mobile — stack photo above text
+   ============================================================ */
+@media (max-width: 860px) {
+  .s-histoire__inner {
+    grid-template-columns: 1fr;
+    gap: var(--sp-5);
+  }
+
+  .s-histoire__photo-col {
+    max-width: 100%;
+  }
+
+  .s-histoire__h2 {
+    font-size: clamp(1.8rem, 7vw, 2.6rem);
+  }
+
+  .s-histoire__body p {
+    max-width: none;
+  }
+
+  .s-histoire__btn {
+    align-self: stretch;
+    text-align: center;
+  }
+
+  /* On mobile, bg texture can be a bit stronger */
+  .s-histoire__bg-img {
+    opacity: .12;
+  }
+}
+
+@media (max-width: 480px) {
+  .s-histoire {
+    padding-block: var(--sp-6);
+  }
+
+  .s-histoire__year-num {
+    font-size: 1.6rem;
+  }
+}
+/* ============================================================
+   07-surmesure.css — Empire 1917 · Sur-mesure feature
+   Ivory bg · 2-col (copy + portrait) · gold serif step numbers
+   ============================================================ */
+
+/* --- Local tokens (mirror base.css — self-contained) --- */
+.s-surmesure {
+  --bg:          #FBFAF7;
+  --surface:     #fff;
+  --surface-2:   #F1EEE6;
+  --ink:         #1E2638;
+  --ink-soft:    #5A6072;
+  --accent:      #2C365E;
+  --accent-ink:  #fff;
+  --accent-deep: #1B2340;
+  --gold:        #B08D4C;
+  --gold-soft:   #E7DCC4;
+  --navy-deep:   #161C2C;
+  --line:        #E4DFD4;
+  --star:        #B08D4C;
+  --font-display:"Cormorant Garamond","Georgia","Times New Roman",serif;
+  --font-body:   "Inter","Helvetica Neue",Arial,sans-serif;
+  --s--1:        .82rem;
+  --s-0:         1.06rem;
+  --s-1:         1.25rem;
+  --s-2:         1.7rem;
+  --s-3:         2.4rem;
+  --s-4:         3.4rem;
+  --s-5:         4.6rem;
+  --sp-1:        .25rem;
+  --sp-2:        .5rem;
+  --sp-3:        1rem;
+  --sp-4:        1.5rem;
+  --sp-5:        2.5rem;
+  --sp-6:        4rem;
+  --sp-7:        6rem;
+  --sp-8:        8rem;
+  --radius:      0px;
+  --shadow:      0 18px 50px rgba(30,38,56,.13);
+  --maxw:        1280px;
+}
+
+/* ============================================================
+   Section shell
+   ============================================================ */
+.s-surmesure {
+  background: var(--surface-2);
+  padding-block: var(--sp-7);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.s-surmesure .wrap {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding-inline: var(--sp-4);
+  width: 100%;
+}
+
+/* ============================================================
+   Reveal — staggered
+   ============================================================ */
+.s-surmesure .reveal {
+  opacity: 0;
+  transform: perspective(900px) rotateX(8deg) translateY(26px);
+  transition:
+    opacity .7s ease,
+    transform .7s cubic-bezier(.2,.7,.2,1);
+  transition-delay: var(--delay, 0s);
+}
+
+.s-surmesure .reveal.in {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .s-surmesure .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* ============================================================
+   2-column grid
+   ============================================================ */
+.s-surmesure__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 540px) minmax(0, 500px);
+  gap: var(--sp-7);
+  align-items: center;
+  justify-content: center;
+}
+
+/* ============================================================
+   Copy column (left)
+   ============================================================ */
+.s-surmesure__copy {
+  display: flex;
+  flex-direction: column;
+}
+
+.s-surmesure__eyebrow {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: var(--s--1);
+  letter-spacing: .26em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin: 0 0 var(--sp-3);
+}
+
+.s-surmesure__h2 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: var(--s-4);
+  color: var(--ink);
+  line-height: 1.06;
+  letter-spacing: -.01em;
+  margin: 0 0 var(--sp-4);
+}
+
+.s-surmesure__lead {
+  font-family: var(--font-body);
+  font-size: var(--s-0);
+  color: var(--ink-soft);
+  line-height: 1.7;
+  margin: 0 0 var(--sp-5);
+  max-width: 44ch;
+}
+
+/* ============================================================
+   Numbered steps
+   ============================================================ */
+.s-surmesure__steps {
+  list-style: none;
+  margin: 0 0 var(--sp-6);
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.s-surmesure__step {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--sp-4);
+  padding-block: var(--sp-4);
+  border-bottom: 1px solid var(--line);
+}
+
+.s-surmesure__step:first-child {
+  border-top: 1px solid var(--line);
+}
+
+/* Gold serif large number */
+.s-surmesure__step-num {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: var(--s-3);
+  color: var(--gold);
+  line-height: 1;
+  letter-spacing: -.02em;
+  flex-shrink: 0;
+  min-width: 2.2ch;
+  user-select: none;
+}
+
+.s-surmesure__step-body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-1);
+  padding-top: .25em; /* optical align with number cap height */
+}
+
+.s-surmesure__step-title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: var(--s-1);
+  color: var(--ink);
+  line-height: 1.15;
+  letter-spacing: .01em;
+}
+
+.s-surmesure__step-desc {
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  color: var(--ink-soft);
+  line-height: 1.6;
+}
+
+/* ============================================================
+   CTA row
+   ============================================================ */
+.s-surmesure__ctas {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--sp-3);
+}
+
+/* Primary: inherits .btn .btn-primary from base */
+.s-surmesure__cta-primary {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: var(--s--1);
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  padding: 1.05em 2.4em;
+  border-radius: 0;
+  background: var(--accent);
+  color: var(--accent-ink);
+  border: 1.5px solid var(--accent);
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  transition: background .22s, color .22s, border-color .22s, transform .15s;
+  white-space: nowrap;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.s-surmesure__cta-primary:hover {
+  background: var(--accent-deep);
+  border-color: var(--accent-deep);
+  transform: translateY(-2px);
+}
+
+/* Outline: inherits .btn .btn-outline from base */
+.s-surmesure__cta-secondary {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: var(--s--1);
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  padding: 1.05em 2.4em;
+  border-radius: 0;
+  background: transparent;
+  color: var(--ink);
+  border: 1.5px solid var(--ink);
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  transition: background .22s, color .22s, border-color .22s, transform .15s;
+  white-space: nowrap;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.s-surmesure__cta-secondary:hover {
+  background: var(--ink);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+/* ============================================================
+   Image column (right)
+   ============================================================ */
+.s-surmesure__img-col {
+  display: flex;
+  justify-content: center;
+}
+
+.s-surmesure__img-frame {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+}
+
+/* Decorative offset gold border behind image */
+.s-surmesure__img-frame::before {
+  content: '';
+  position: absolute;
+  inset: var(--sp-4) calc(var(--sp-4) * -1) calc(var(--sp-4) * -1) var(--sp-4);
+  border: 1px solid var(--gold-soft);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.s-surmesure__img {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+
+/* Small gold accent bar at bottom-left of image */
+.s-surmesure__img-accent {
+  position: absolute;
+  z-index: 2;
+  bottom: calc(var(--sp-4) * -1);
+  left: 0;
+  width: 48px;
+  height: 3px;
+  background: var(--gold);
+}
+
+/* ============================================================
+   Responsive
+   ============================================================ */
+
+/* Tablet: shrink gap */
+@media (max-width: 1060px) {
+  .s-surmesure__grid {
+    gap: var(--sp-6);
+    grid-template-columns: minmax(0, 480px) minmax(0, 440px);
+  }
+
+  .s-surmesure__h2 {
+    font-size: var(--s-3);
+  }
+}
+
+/* Mobile: stack image ABOVE copy */
+@media (max-width: 760px) {
+  .s-surmesure {
+    padding-block: var(--sp-6);
+  }
+
+  .s-surmesure__grid {
+    grid-template-columns: 1fr;
+    gap: var(--sp-5);
+  }
+
+  /* Move image column to first visual position */
+  .s-surmesure__img-col {
+    order: -1;
+  }
+
+  .s-surmesure__img-frame {
+    max-width: 100%;
+  }
+
+  /* Simplify decorative border on mobile */
+  .s-surmesure__img-frame::before {
+    inset: var(--sp-3) calc(var(--sp-3) * -1) calc(var(--sp-3) * -1) var(--sp-3);
+  }
+
+  .s-surmesure__img {
+    aspect-ratio: 4 / 3;
+    object-position: center 20%;
+  }
+
+  .s-surmesure__lead {
+    max-width: none;
+  }
+
+  .s-surmesure__ctas {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .s-surmesure__cta-primary,
+  .s-surmesure__cta-secondary {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 400px) {
+  .s-surmesure__step-num {
+    font-size: var(--s-2);
+  }
+}
+/* ============================================================
+   08-lookbook.css — Empire 1917 · Lookbook / editorial band
+   Full-bleed photo · contained panel + scrim · light text · reveal
+   ============================================================ */
+
+/* --- Local tokens (mirror base.css — self-contained) --- */
+.s-lookbook {
+  --bg:          #FBFAF7;
+  --surface:     #fff;
+  --surface-2:   #F1EEE6;
+  --ink:         #1E2638;
+  --ink-soft:    #5A6072;
+  --accent:      #2C365E;
+  --accent-ink:  #fff;
+  --accent-deep: #1B2340;
+  --gold:        #B08D4C;
+  --gold-soft:   #E7DCC4;
+  --navy-deep:   #161C2C;
+  --line:        #E4DFD4;
+  --star:        #B08D4C;
+  --font-display:"Cormorant Garamond","Georgia","Times New Roman",serif;
+  --font-body:   "Inter","Helvetica Neue",Arial,sans-serif;
+  --s--1:        .82rem;
+  --s-0:         1.06rem;
+  --s-1:         1.25rem;
+  --s-2:         1.7rem;
+  --s-3:         2.4rem;
+  --s-4:         3.4rem;
+  --s-5:         4.6rem;
+  --sp-1:        .25rem;
+  --sp-2:        .5rem;
+  --sp-3:        1rem;
+  --sp-4:        1.5rem;
+  --sp-5:        2.5rem;
+  --sp-6:        4rem;
+  --sp-7:        6rem;
+  --sp-8:        8rem;
+  --radius:      0px;
+  --shadow:      0 18px 50px rgba(30,38,56,.13);
+  --maxw:        1280px;
+}
+
+/* ============================================================
+   Section shell — true full-bleed, override .sec padding
+   ============================================================ */
+.s-lookbook {
+  position: relative;
+  padding: 0;              /* override .sec padding-block for full-bleed */
+  min-height: 70vh;
+  display: flex;
+  align-items: flex-end;   /* anchor wrap to bottom */
+  overflow: hidden;
+}
+
+/* ============================================================
+   Full-bleed background image
+   ============================================================ */
+.s-lookbook__bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  z-index: 0;
+}
+
+/* ============================================================
+   Bottom scrim — gradient from transparent to near-black
+   Ensures mobile legibility and adds editorial depth
+   ============================================================ */
+.s-lookbook__scrim {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    to bottom,
+    rgba(22, 28, 44, 0) 0%,
+    rgba(22, 28, 44, 0.12) 30%,
+    rgba(22, 28, 44, 0.55) 65%,
+    rgba(22, 28, 44, 0.80) 100%
+  );
+  pointer-events: none;
+}
+
+/* ============================================================
+   Wrap — positions inner content
+   ============================================================ */
+.s-lookbook__wrap {
+  position: relative;
+  z-index: 2;
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding-inline: var(--sp-4);
+  padding-bottom: var(--sp-7);
+  padding-top: var(--sp-7);
+  width: 100%;
+}
+
+/* ============================================================
+   Contained text panel — left side, frosted navy
+   ============================================================ */
+.s-lookbook__panel {
+  max-width: 520px;
+  background: rgba(22, 28, 44, 0.48);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: var(--sp-6) var(--sp-6) var(--sp-5);
+  border-left: 3px solid var(--gold);
+}
+
+/* ============================================================
+   Reveal
+   ============================================================ */
+.s-lookbook .reveal {
+  opacity: 0;
+  transform: perspective(900px) rotateX(8deg) translateY(26px);
+  transition:
+    opacity .7s ease,
+    transform .7s cubic-bezier(.2,.7,.2,1);
+  transition-delay: var(--delay, 0s);
+}
+
+.s-lookbook .reveal.in {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .s-lookbook .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* ============================================================
+   Eyebrow — gold, light
+   ============================================================ */
+.s-lookbook__eyebrow {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: var(--s--1);
+  letter-spacing: .26em;
+  text-transform: uppercase;
+  color: var(--gold-soft);
+  margin: 0 0 var(--sp-3);
+}
+
+/* ============================================================
+   Heading — Cormorant, cream
+   ============================================================ */
+.s-lookbook__h2 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: var(--s-4);
+  color: #F8F4EE;
+  line-height: 1.06;
+  letter-spacing: -.01em;
+  margin: 0 0 var(--sp-3);
+}
+
+/* ============================================================
+   Subline — light
+   ============================================================ */
+.s-lookbook__sub {
+  font-family: var(--font-body);
+  font-size: var(--s-0);
+  color: rgba(248, 244, 238, 0.80);
+  line-height: 1.6;
+  margin: 0 0 var(--sp-5);
+  max-width: 38ch;
+}
+
+/* ============================================================
+   CTA — .btn .btn-light (white bg, dark ink; hover: transparent/white)
+   ============================================================ */
+.s-lookbook__cta {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: var(--s--1);
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  padding: 1.05em 2.4em;
+  border-radius: 0;
+  background: #fff;
+  color: var(--ink);
+  border: 1.5px solid #fff;
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  transition: background .22s, color .22s, border-color .22s, transform .15s;
+  white-space: nowrap;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.s-lookbook__cta:hover {
+  background: transparent;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+/* ============================================================
+   Responsive
+   ============================================================ */
+
+/* Tablet */
+@media (max-width: 900px) {
+  .s-lookbook {
+    min-height: 64vh;
+  }
+
+  .s-lookbook__h2 {
+    font-size: var(--s-3);
+  }
+
+  .s-lookbook__panel {
+    max-width: 460px;
+    padding: var(--sp-5);
+  }
+}
+
+/* Mobile — stronger scrim, panel full-width, bottom-anchored */
+@media (max-width: 600px) {
+  .s-lookbook {
+    min-height: 64vh;
+    align-items: flex-end;
+  }
+
+  /* Heavier bottom scrim for mobile legibility */
+  .s-lookbook__scrim {
+    background: linear-gradient(
+      to bottom,
+      rgba(22, 28, 44, 0) 0%,
+      rgba(22, 28, 44, 0.20) 25%,
+      rgba(22, 28, 44, 0.70) 55%,
+      rgba(22, 28, 44, 0.92) 100%
+    );
+  }
+
+  .s-lookbook__wrap {
+    padding-bottom: var(--sp-6);
+    padding-top: 0;
+  }
+
+  /* Panel goes edge-to-edge, no blur needed — scrim is enough */
+  .s-lookbook__panel {
+    max-width: 100%;
+    background: transparent;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    padding: 0;
+    border-left: 3px solid var(--gold);
+    padding-left: var(--sp-4);
+  }
+
+  .s-lookbook__h2 {
+    font-size: var(--s-2);
+  }
+
+  .s-lookbook__cta {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 400px) {
+  .s-lookbook__h2 {
+    font-size: var(--s-1);
+  }
+
+  .s-lookbook__eyebrow {
+    font-size: .75rem;
+    letter-spacing: .18em;
+  }
+}
+/* ============================================================
+   09-newsletter.css — Empire 1917 · Infolettre
+   Heritage tailored menswear Montréal · FRENCH · Quiet-luxury
+   Scoped entirely under .s-newsletter
+   ============================================================ */
+
+/* ── LOCAL TOKEN OVERRIDES ────────────────────────────────── */
+.s-newsletter {
+  --bg:          #FBFAF7;
+  --surface:     #FFFFFF;
+  --surface-2:   #F1EEE6;
+  --ink:         #1E2638;
+  --ink-soft:    #5A6072;
+  --accent:      #2C365E;
+  --accent-ink:  #FFFFFF;
+  --accent-deep: #1B2340;
+  --gold:        #B08D4C;
+  --gold-soft:   #E7DCC4;
+  --navy-deep:   #161C2C;
+  --dark:        #161C2C;
+  --line:        #E4DFD4;
+  --font-display:"Cormorant Garamond", "Georgia", "Times New Roman", serif;
+  --font-body:   "Inter", "Helvetica Neue", Arial, sans-serif;
+  --s--1:  .82rem;
+  --s-0:   1.06rem;
+  --s-1:   1.25rem;
+  --s-2:   1.7rem;
+  --s-3:   2.4rem;
+  --s-4:   3.4rem;
+  --s-5:   4.6rem;
+  --sp-1:  .25rem; --sp-2: .5rem;  --sp-3: 1rem;  --sp-4: 1.5rem;
+  --sp-5:  2.5rem; --sp-6: 4rem;   --sp-7: 6rem;  --sp-8: 8rem;
+  --radius: 0px;
+  --maxw:  1280px;
+}
+
+/* ── SECTION SHELL ────────────────────────────────────────── */
+.s-newsletter {
+  background: var(--navy-deep);
+  color: #FFFFFF;
+  padding-block: var(--sp-7);
+  position: relative;
+}
+
+/* ── INNER WRAP ───────────────────────────────────────────── */
+.s-newsletter__wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0;
+}
+
+/* ── EYEBROW ──────────────────────────────────────────────── */
+.s-newsletter .eyebrow,
+.s-newsletter__eyebrow {
+  color: var(--gold);
+  margin-bottom: var(--sp-3);
+  display: inline-block;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: var(--s--1);
+  letter-spacing: .26em;
+  text-transform: uppercase;
+}
+
+/* ── HEADING ──────────────────────────────────────────────── */
+.s-newsletter__heading {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(1.9rem, 4vw, 3rem);
+  line-height: 1.1;
+  letter-spacing: .01em;
+  color: #FFFFFF;
+  margin: 0 0 var(--sp-4);
+  max-width: 640px;
+}
+
+/* ── LEAD ─────────────────────────────────────────────────── */
+.s-newsletter__lead {
+  font-family: var(--font-body);
+  font-size: var(--s-0);
+  color: rgba(255,255,255,.72);
+  line-height: 1.6;
+  margin: 0 0 var(--sp-5);
+  max-width: 520px;
+}
+
+/* ── FORM ROW ─────────────────────────────────────────────── */
+.s-newsletter__form {
+  width: 100%;
+  max-width: 580px;
+}
+
+.s-newsletter__row {
+  display: flex;
+  gap: 0;
+  align-items: stretch;
+  width: 100%;
+}
+
+/* ── EMAIL INPUT ──────────────────────────────────────────── */
+.s-newsletter__label.sr-only {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.s-newsletter__input {
+  flex: 1 1 auto;
+  min-width: 0;
+  background: #FFFFFF;
+  color: var(--ink);
+  border: 1.5px solid #FFFFFF;
+  border-radius: 0;
+  padding: 1.05em 1.4em;
+  font-family: var(--font-body);
+  font-size: var(--s-0);
+  font-weight: 400;
+  line-height: 1;
+  outline: none;
+  transition: border-color .2s;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.s-newsletter__input::placeholder {
+  color: var(--ink-soft);
+  opacity: 1;
+}
+
+.s-newsletter__input:focus {
+  border-color: var(--gold);
+  outline: none;
+}
+
+/* ── SUBMIT BUTTON ────────────────────────────────────────── */
+.s-newsletter__btn {
+  /* .btn .btn-light already defined in base.css */
+  flex-shrink: 0;
+  border-radius: 0;
+  /* Ensure left border doesn't double with input's right border */
+  border-left: none;
+  letter-spacing: .16em;
+  font-size: var(--s--1);
+  white-space: nowrap;
+}
+
+.s-newsletter__btn:hover {
+  background: transparent;
+  color: #FFFFFF;
+  border-color: #FFFFFF;
+  transform: none;
+}
+
+/* ── FINE PRINT ───────────────────────────────────────────── */
+.s-newsletter__fine {
+  margin: var(--sp-3) 0 0;
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  color: rgba(255,255,255,.45);
+  letter-spacing: .04em;
+}
+
+/* ── MOBILE ───────────────────────────────────────────────── */
+@media (max-width: 620px) {
+  .s-newsletter {
+    padding-block: var(--sp-6);
+  }
+
+  .s-newsletter__row {
+    flex-direction: column;
+    gap: var(--sp-2);
+  }
+
+  .s-newsletter__input {
+    width: 100%;
+    border: 1.5px solid #FFFFFF;
+  }
+
+  .s-newsletter__btn {
+    width: 100%;
+    border: 1.5px solid #FFFFFF;
+    border-left: 1.5px solid #FFFFFF;
+    justify-content: center;
+  }
+}
+/* ============================================================
+   10-footer.css — Empire 1917 · Pied de page
+   Heritage tailored menswear Montréal · FRENCH · Quiet-luxury
+   Scoped entirely under .site-footer
+   Background: --navy-deep · all text light
+   ============================================================ */
+
+/* ── LOCAL TOKEN DEFINITIONS ──────────────────────────────── */
+.site-footer {
+  --bg:          #FBFAF7;
+  --surface:     #FFFFFF;
+  --surface-2:   #F1EEE6;
+  --ink:         #1E2638;
+  --ink-soft:    #5A6072;
+  --accent:      #2C365E;
+  --accent-ink:  #FFFFFF;
+  --accent-deep: #1B2340;
+  --gold:        #B08D4C;
+  --gold-soft:   #E7DCC4;
+  --navy-deep:   #161C2C;
+  --dark:        #161C2C;
+  --line:        #E4DFD4;
+  --font-display:"Cormorant Garamond", "Georgia", "Times New Roman", serif;
+  --font-body:   "Inter", "Helvetica Neue", Arial, sans-serif;
+  --s--1:  .82rem;
+  --s-0:   1.06rem;
+  --s-1:   1.25rem;
+  --s-2:   1.7rem;
+  --s-3:   2.4rem;
+  --s-4:   3.4rem;
+  --s-5:   4.6rem;
+  --sp-1:  .25rem; --sp-2: .5rem;  --sp-3: 1rem;  --sp-4: 1.5rem;
+  --sp-5:  2.5rem; --sp-6: 4rem;   --sp-7: 6rem;  --sp-8: 8rem;
+  --radius: 0px;
+  --maxw:  1280px;
+  --shadow: 0 18px 50px rgba(30,38,56,.13);
+
+  /* Footer-local light link color */
+  --footer-link:       #C7CBD6;
+  --footer-link-hover: #B08D4C; /* --gold */
+}
+
+/* ── FOOTER SHELL ─────────────────────────────────────────── */
+.site-footer {
+  background: var(--navy-deep);
+  color: var(--footer-link);
+  font-family: var(--font-body);
+  font-size: var(--s-0);
+  line-height: 1.65;
+  padding-block: var(--sp-7) var(--sp-5);
+}
+
+/* ── WRAP ─────────────────────────────────────────────────── */
+.site-footer__wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+/* ── TOP ROW: brand + columns ─────────────────────────────── */
+.site-footer__top {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: var(--sp-6) var(--sp-7);
+  align-items: start;
+  padding-bottom: var(--sp-6);
+}
+
+/* ── BRAND BLOCK ─────────────────────────────────────────── */
+.site-footer__brand {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+}
+
+.site-footer__logo-link {
+  display: inline-block;
+  line-height: 0;
+}
+
+.site-footer__logo {
+  height: 52px;
+  width: auto;
+  display: block;
+  /* Invert the dark wordmark to white */
+  filter: brightness(0) invert(1);
+  opacity: .95;
+}
+
+.site-footer__blurb {
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  color: var(--footer-link);
+  line-height: 1.7;
+  margin: 0;
+  max-width: 280px;
+  opacity: .85;
+}
+
+/* ── SOCIAL ICONS ─────────────────────────────────────────── */
+.site-footer__socials {
+  display: flex;
+  gap: var(--sp-3);
+  align-items: center;
+  margin-top: var(--sp-2);
+}
+
+.site-footer__social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--footer-link);
+  opacity: .75;
+  transition: color .2s, opacity .2s;
+  line-height: 0;
+}
+
+.site-footer__social-link:hover {
+  color: var(--gold);
+  opacity: 1;
+}
+
+.site-footer__social-icon {
+  width: 22px;
+  height: 22px;
+  display: block;
+  stroke: currentColor;
+  stroke-width: 1.5;
+  fill: none;
+}
+
+/* ── LINK COLUMNS GRID ────────────────────────────────────── */
+.site-footer__cols {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--sp-5) var(--sp-4);
+  align-items: start;
+}
+
+/* ── COLUMN HEADING ───────────────────────────────────────── */
+.site-footer__col-heading {
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  font-weight: 700;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin: 0 0 var(--sp-3);
+  line-height: 1;
+}
+
+/* ── COLUMN LIST ──────────────────────────────────────────── */
+.site-footer__col-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+}
+
+.site-footer__col-link {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  font-weight: 400;
+  color: var(--footer-link);
+  letter-spacing: .02em;
+  line-height: 1.5;
+  text-decoration: none;
+  transition: color .2s;
+  opacity: .85;
+}
+
+.site-footer__col-link:hover {
+  color: var(--gold);
+  opacity: 1;
+}
+
+/* ── TRUST MARKS ──────────────────────────────────────────── */
+.site-footer__trust {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+  align-items: center;
+  padding-bottom: var(--sp-6);
+}
+
+.site-footer__trust-chip {
+  /* Override base .chip tokens for dark background */
+  background: transparent;
+  border-color: rgba(199, 203, 214, 0.28);
+  color: var(--footer-link);
+  font-size: calc(var(--s--1) * .9);
+  letter-spacing: .2em;
+  padding: .45em 1.1em;
+  opacity: .8;
+  transition: border-color .2s, color .2s, opacity .2s;
+}
+
+.site-footer__trust-chip:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+  opacity: 1;
+}
+
+/* ── RULE ─────────────────────────────────────────────────── */
+.site-footer__rule {
+  border: none;
+  border-top: 1px solid rgba(199, 203, 214, 0.15);
+  margin: 0 0 var(--sp-5);
+}
+
+/* ── BOTTOM BAR ───────────────────────────────────────────── */
+.site-footer__bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-4);
+  flex-wrap: wrap;
+}
+
+.site-footer__copy {
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  color: var(--footer-link);
+  opacity: .5;
+  margin: 0;
+  letter-spacing: .02em;
+}
+
+.site-footer__legal {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  flex-wrap: wrap;
+}
+
+.site-footer__legal-link {
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  color: var(--footer-link);
+  opacity: .5;
+  letter-spacing: .02em;
+  text-decoration: none;
+  transition: color .2s, opacity .2s;
+}
+
+.site-footer__legal-link:hover {
+  color: var(--gold);
+  opacity: 1;
+}
+
+.site-footer__legal-sep {
+  color: var(--footer-link);
+  opacity: .28;
+  font-weight: 300;
+  user-select: none;
+}
+
+/* ── RESPONSIVE — TABLET (2-up columns) ───────────────────── */
+@media (max-width: 1024px) {
+  .site-footer__top {
+    grid-template-columns: 1fr;
+    gap: var(--sp-6);
+  }
+
+  .site-footer__blurb {
+    max-width: 400px;
+  }
+
+  .site-footer__cols {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--sp-5) var(--sp-5);
+  }
+}
+
+/* ── RESPONSIVE — MOBILE (1-up) ───────────────────────────── */
+@media (max-width: 620px) {
+  .site-footer {
+    padding-block: var(--sp-6) var(--sp-5);
+  }
+
+  .site-footer__top {
+    gap: var(--sp-5);
+  }
+
+  .site-footer__cols {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--sp-4) var(--sp-4);
+  }
+
+  .site-footer__trust {
+    gap: var(--sp-2);
+  }
+
+  .site-footer__bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--sp-2);
+  }
+}
+
+@media (max-width: 400px) {
+  .site-footer__cols {
+    grid-template-columns: 1fr;
+  }
+}

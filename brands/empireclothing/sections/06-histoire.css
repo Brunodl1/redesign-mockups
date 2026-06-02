@@ -1,0 +1,327 @@
+/* ============================================================
+   06-histoire.css — Empire 1917 · Histoire / héritage
+   Dark navy-deep band · B&W photo left · text right · Reveal
+   ============================================================ */
+
+/* --- Local tokens (mirror base.css) --- */
+.s-histoire {
+  --bg:          #FBFAF7;
+  --surface:     #fff;
+  --surface-2:   #F1EEE6;
+  --ink:         #1E2638;
+  --ink-soft:    #5A6072;
+  --accent:      #2C365E;
+  --accent-ink:  #fff;
+  --accent-deep: #1B2340;
+  --gold:        #B08D4C;
+  --gold-soft:   #E7DCC4;
+  --navy-deep:   #161C2C;
+  --line:        #E4DFD4;
+  --star:        #B08D4C;
+  --font-display:"Cormorant Garamond","Georgia","Times New Roman",serif;
+  --font-body:   "Inter","Helvetica Neue",Arial,sans-serif;
+  --s--1:        .82rem;
+  --s-0:         1.06rem;
+  --s-1:         1.25rem;
+  --s-2:         1.7rem;
+  --s-3:         2.4rem;
+  --s-4:         3.4rem;
+  --s-5:         4.6rem;
+  --sp-1:        .25rem;
+  --sp-2:        .5rem;
+  --sp-3:        1rem;
+  --sp-4:        1.5rem;
+  --sp-5:        2.5rem;
+  --sp-6:        4rem;
+  --sp-7:        6rem;
+  --sp-8:        8rem;
+  --radius:      0px;
+  --shadow:      0 18px 50px rgba(30,38,56,.13);
+  --maxw:        1280px;
+}
+
+/* ============================================================
+   Section shell — dark navy background
+   ============================================================ */
+.s-histoire {
+  position: relative;
+  background: var(--navy-deep);
+  color: var(--accent-ink);
+  padding-block: var(--sp-7);
+  overflow: hidden;
+  isolation: isolate;
+}
+
+/* ============================================================
+   Full-bleed background image (faded, architectural texture)
+   ============================================================ */
+.s-histoire__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.s-histoire__bg-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+  display: block;
+  /* desaturate for archival look */
+  filter: grayscale(100%) contrast(.9) brightness(.55);
+  opacity: .18;
+}
+
+.s-histoire__scrim {
+  position: absolute;
+  inset: 0;
+  /* gradient scrim: darker on right (text side), lighter on left (photo col) */
+  background: linear-gradient(
+    100deg,
+    rgba(22, 28, 44, .55) 0%,
+    rgba(22, 28, 44, .82) 55%,
+    rgba(22, 28, 44, .95) 100%
+  );
+}
+
+/* ============================================================
+   Wrap
+   ============================================================ */
+.s-histoire .wrap {
+  position: relative;
+  z-index: 1;
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding-inline: var(--sp-4);
+  width: 100%;
+}
+
+/* ============================================================
+   Reveal
+   ============================================================ */
+.s-histoire .reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity .75s ease,
+    transform .75s cubic-bezier(.2,.7,.2,1);
+  transition-delay: var(--delay, 0s);
+}
+
+.s-histoire .reveal.in {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .s-histoire .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* ============================================================
+   Inner 2-column grid
+   ============================================================ */
+.s-histoire__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-7);
+  align-items: center;
+}
+
+/* ============================================================
+   Photo column (left)
+   ============================================================ */
+.s-histoire__photo-col {
+  position: relative;
+}
+
+.s-histoire__photo-wrap {
+  position: relative;
+  /* landscape photo wrapper */
+  aspect-ratio: 1200 / 778;
+  overflow: hidden;
+  /* subtle gold frame */
+  outline: 1px solid rgba(176, 141, 76, .35);
+  outline-offset: -1px;
+}
+
+.s-histoire__photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  /* archival B&W treatment */
+  filter: grayscale(100%) contrast(1.08) brightness(.92);
+  transition: filter .4s ease;
+}
+
+.s-histoire__photo-wrap:hover .s-histoire__photo {
+  filter: grayscale(100%) contrast(1.02) brightness(1);
+}
+
+/* "EST. 1917" gold stamp — bottom-left corner of photo */
+.s-histoire__year-stamp {
+  position: absolute;
+  bottom: var(--sp-3);
+  left: var(--sp-3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1;
+  /* semi-opaque dark bg for legibility */
+  background: rgba(22, 28, 44, .72);
+  padding: .55em .8em .5em;
+  border-left: 2px solid var(--gold);
+}
+
+.s-histoire__year-label {
+  font-family: var(--font-body);
+  font-size: .6rem;
+  font-weight: 600;
+  letter-spacing: .3em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: .2em;
+}
+
+.s-histoire__year-num {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--gold);
+  letter-spacing: .05em;
+  line-height: 1;
+}
+
+/* ============================================================
+   Text column (right)
+   ============================================================ */
+.s-histoire__text-col {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+  max-width: 540px;
+}
+
+/* Eyebrow */
+.s-histoire__eyebrow {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: var(--s--1);
+  letter-spacing: .28em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin: 0;
+}
+
+/* Heading */
+.s-histoire__h2 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(2rem, 3.2vw, var(--s-4));
+  color: #fff;
+  line-height: 1.08;
+  margin: 0;
+  letter-spacing: -.01em;
+}
+
+/* Body paragraphs */
+.s-histoire__body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+}
+
+.s-histoire__body p {
+  font-family: var(--font-body);
+  font-size: var(--s-0);
+  color: rgba(255, 255, 255, .75);
+  line-height: 1.72;
+  margin: 0;
+  max-width: 48ch;
+}
+
+/* Gold rule */
+.s-histoire__rule {
+  width: 48px;
+  height: 2px;
+  background: var(--gold);
+  opacity: .65;
+}
+
+/* CTA button — outline style for dark band */
+.s-histoire__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: var(--s--1);
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: var(--radius);
+  padding: .9em 2em;
+  cursor: pointer;
+  border: 2px solid rgba(255, 255, 255, .55);
+  color: #fff;
+  background: transparent;
+  align-self: flex-start;
+  transition: border-color .22s, background .22s, color .22s;
+}
+
+.s-histoire__btn:hover,
+.s-histoire__btn:focus-visible {
+  border-color: var(--gold);
+  color: var(--gold);
+  background: rgba(176, 141, 76, .08);
+  outline: none;
+}
+
+/* ============================================================
+   Mobile — stack photo above text
+   ============================================================ */
+@media (max-width: 860px) {
+  .s-histoire__inner {
+    grid-template-columns: 1fr;
+    gap: var(--sp-5);
+  }
+
+  .s-histoire__photo-col {
+    max-width: 100%;
+  }
+
+  .s-histoire__h2 {
+    font-size: clamp(1.8rem, 7vw, 2.6rem);
+  }
+
+  .s-histoire__body p {
+    max-width: none;
+  }
+
+  .s-histoire__btn {
+    align-self: stretch;
+    text-align: center;
+  }
+
+  /* On mobile, bg texture can be a bit stronger */
+  .s-histoire__bg-img {
+    opacity: .12;
+  }
+}
+
+@media (max-width: 480px) {
+  .s-histoire {
+    padding-block: var(--sp-6);
+  }
+
+  .s-histoire__year-num {
+    font-size: 1.6rem;
+  }
+}

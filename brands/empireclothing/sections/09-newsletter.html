@@ -1,0 +1,44 @@
+<!-- ============================================================
+     09-newsletter.html — Empire 1917 · Infolettre
+     Heritage tailored menswear Montréal · FRENCH · Quiet-luxury
+     Background: --navy-deep (dark navy) with light text
+     ============================================================ -->
+
+<section class="sec s-newsletter" aria-labelledby="newsletter-heading">
+  <div class="wrap s-newsletter__wrap">
+
+    <span class="eyebrow s-newsletter__eyebrow">Restons en contact</span>
+
+    <h2 class="s-newsletter__heading" id="newsletter-heading">
+      Recevez nos nouveautés et collections.
+    </h2>
+
+    <p class="s-newsletter__lead">
+      Lookbooks de saison, savoir-faire et invitations&nbsp;— directement dans votre boîte courriel.
+    </p>
+
+    <form class="s-newsletter__form" onsubmit="return false" novalidate aria-label="Inscription à l'infolettre">
+      <div class="s-newsletter__row">
+        <label for="nl-email" class="s-newsletter__label sr-only">Adresse courriel</label>
+        <input
+          id="nl-email"
+          class="s-newsletter__input"
+          type="email"
+          name="email"
+          placeholder="Votre adresse courriel"
+          autocomplete="email"
+          required
+          aria-required="true"
+        >
+        <button type="submit" class="btn btn-light s-newsletter__btn">
+          S'inscrire
+        </button>
+      </div>
+    </form>
+
+    <p class="s-newsletter__fine">
+      Vous pouvez vous désinscrire en tout temps.
+    </p>
+
+  </div>
+</section>

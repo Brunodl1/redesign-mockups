@@ -1,0 +1,317 @@
+/* ============================================================
+   05-savoirfaire.css — Empire 1917 · Savoir-faire / qualité
+   Ivory bg · 2 colonnes (img gauche, texte droite) · Reveal
+   ============================================================ */
+
+/* --- Local tokens (mirror base.css) --- */
+.s-savoirfaire {
+  --bg:          #FBFAF7;
+  --surface:     #fff;
+  --surface-2:   #F1EEE6;
+  --ink:         #1E2638;
+  --ink-soft:    #5A6072;
+  --accent:      #2C365E;
+  --accent-ink:  #fff;
+  --accent-deep: #1B2340;
+  --gold:        #B08D4C;
+  --gold-soft:   #E7DCC4;
+  --navy-deep:   #161C2C;
+  --line:        #E4DFD4;
+  --star:        #B08D4C;
+  --font-display:"Cormorant Garamond","Georgia","Times New Roman",serif;
+  --font-body:   "Inter","Helvetica Neue",Arial,sans-serif;
+  --s--1:        .82rem;
+  --s-0:         1.06rem;
+  --s-1:         1.25rem;
+  --s-2:         1.7rem;
+  --s-3:         2.4rem;
+  --s-4:         3.4rem;
+  --s-5:         4.6rem;
+  --sp-1:        .25rem;
+  --sp-2:        .5rem;
+  --sp-3:        1rem;
+  --sp-4:        1.5rem;
+  --sp-5:        2.5rem;
+  --sp-6:        4rem;
+  --sp-7:        6rem;
+  --sp-8:        8rem;
+  --radius:      0px;
+  --shadow:      0 18px 50px rgba(30,38,56,.13);
+  --maxw:        1280px;
+}
+
+/* ============================================================
+   Section shell
+   ============================================================ */
+.s-savoirfaire {
+  background: var(--bg);
+  padding-block: var(--sp-7);
+  overflow: hidden;
+}
+
+.s-savoirfaire .wrap {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding-inline: var(--sp-4);
+  width: 100%;
+}
+
+/* ============================================================
+   Reveal
+   ============================================================ */
+.s-savoirfaire .reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity .72s ease,
+    transform .72s cubic-bezier(.2,.7,.2,1);
+  transition-delay: var(--delay, 0s);
+}
+
+.s-savoirfaire .reveal.in {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .s-savoirfaire .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* ============================================================
+   Inner 2-column grid
+   ============================================================ */
+.s-savoirfaire__inner {
+  display: grid;
+  grid-template-columns: minmax(0, 520px) 1fr;
+  gap: var(--sp-7);
+  align-items: center;
+}
+
+/* ============================================================
+   Image column
+   ============================================================ */
+.s-savoirfaire__img-col {
+  /* Constrain width so columns never touch */
+  max-width: 520px;
+  width: 100%;
+}
+
+.s-savoirfaire__img-wrap {
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  background: var(--surface-2);
+  /* hairline gold border for quiet-luxury feel */
+  outline: 1px solid var(--gold-soft);
+  outline-offset: -1px;
+}
+
+.s-savoirfaire__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+
+/* ============================================================
+   Text column
+   ============================================================ */
+.s-savoirfaire__text-col {
+  max-width: 560px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+}
+
+/* Eyebrow */
+.s-savoirfaire__eyebrow {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: var(--s--1);
+  letter-spacing: .28em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin: 0;
+}
+
+/* Heading */
+.s-savoirfaire__h2 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(2rem, 3.2vw, var(--s-4));
+  color: var(--ink);
+  line-height: 1.08;
+  margin: 0;
+  letter-spacing: -.01em;
+}
+
+/* Lead paragraph */
+.s-savoirfaire__lead {
+  font-family: var(--font-body);
+  font-size: var(--s-0);
+  color: var(--ink-soft);
+  line-height: 1.7;
+  margin: 0;
+  max-width: 48ch;
+}
+
+/* ============================================================
+   Highlight list
+   ============================================================ */
+.s-savoirfaire__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+  border-top: 1px solid var(--line);
+  padding-top: var(--sp-4);
+}
+
+.s-savoirfaire__item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--sp-3);
+}
+
+/* Gold icon wrapper */
+.s-savoirfaire__ic {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: var(--gold-soft);
+  color: var(--gold);
+  margin-top: 1px;
+}
+
+.s-savoirfaire__ic svg {
+  display: block;
+}
+
+.s-savoirfaire__item-body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-1);
+}
+
+.s-savoirfaire__item-title {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: var(--s-0);
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+.s-savoirfaire__item-desc {
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  color: var(--ink-soft);
+  line-height: 1.55;
+}
+
+/* ============================================================
+   Footer: chips + CTA
+   ============================================================ */
+.s-savoirfaire__footer {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+  border-top: 1px solid var(--line);
+  padding-top: var(--sp-4);
+}
+
+.s-savoirfaire__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+}
+
+/* .chip scoped override */
+.s-savoirfaire .chip {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  font-weight: 500;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--accent);
+  border: 1px solid var(--line);
+  background: var(--surface);
+  padding: .35em .9em;
+  white-space: nowrap;
+}
+
+/* .btn scoped overrides */
+.s-savoirfaire .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: var(--s--1);
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: var(--radius);
+  padding: .9em 2em;
+  cursor: pointer;
+  transition: background .22s, color .22s, border-color .22s;
+  align-self: flex-start;
+}
+
+.s-savoirfaire .btn-primary {
+  background: var(--accent);
+  color: var(--accent-ink);
+  border: 2px solid var(--accent);
+}
+
+.s-savoirfaire .btn-primary:hover,
+.s-savoirfaire .btn-primary:focus-visible {
+  background: var(--accent-deep);
+  border-color: var(--accent-deep);
+  outline: none;
+}
+
+/* ============================================================
+   Mobile — stack image above text
+   ============================================================ */
+@media (max-width: 860px) {
+  .s-savoirfaire__inner {
+    grid-template-columns: 1fr;
+    gap: var(--sp-5);
+  }
+
+  .s-savoirfaire__img-col {
+    max-width: 100%;
+  }
+
+  .s-savoirfaire__img-wrap {
+    /* landscape on small screens for visual variety */
+    aspect-ratio: 4 / 3;
+  }
+
+  .s-savoirfaire__h2 {
+    font-size: clamp(1.8rem, 7vw, 2.6rem);
+  }
+
+  .s-savoirfaire .btn {
+    align-self: stretch;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .s-savoirfaire {
+    padding-block: var(--sp-6);
+  }
+}

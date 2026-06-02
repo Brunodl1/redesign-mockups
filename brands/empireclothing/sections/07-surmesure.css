@@ -1,0 +1,369 @@
+/* ============================================================
+   07-surmesure.css — Empire 1917 · Sur-mesure feature
+   Ivory bg · 2-col (copy + portrait) · gold serif step numbers
+   ============================================================ */
+
+/* --- Local tokens (mirror base.css — self-contained) --- */
+.s-surmesure {
+  --bg:          #FBFAF7;
+  --surface:     #fff;
+  --surface-2:   #F1EEE6;
+  --ink:         #1E2638;
+  --ink-soft:    #5A6072;
+  --accent:      #2C365E;
+  --accent-ink:  #fff;
+  --accent-deep: #1B2340;
+  --gold:        #B08D4C;
+  --gold-soft:   #E7DCC4;
+  --navy-deep:   #161C2C;
+  --line:        #E4DFD4;
+  --star:        #B08D4C;
+  --font-display:"Cormorant Garamond","Georgia","Times New Roman",serif;
+  --font-body:   "Inter","Helvetica Neue",Arial,sans-serif;
+  --s--1:        .82rem;
+  --s-0:         1.06rem;
+  --s-1:         1.25rem;
+  --s-2:         1.7rem;
+  --s-3:         2.4rem;
+  --s-4:         3.4rem;
+  --s-5:         4.6rem;
+  --sp-1:        .25rem;
+  --sp-2:        .5rem;
+  --sp-3:        1rem;
+  --sp-4:        1.5rem;
+  --sp-5:        2.5rem;
+  --sp-6:        4rem;
+  --sp-7:        6rem;
+  --sp-8:        8rem;
+  --radius:      0px;
+  --shadow:      0 18px 50px rgba(30,38,56,.13);
+  --maxw:        1280px;
+}
+
+/* ============================================================
+   Section shell
+   ============================================================ */
+.s-surmesure {
+  background: var(--surface-2);
+  padding-block: var(--sp-7);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.s-surmesure .wrap {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding-inline: var(--sp-4);
+  width: 100%;
+}
+
+/* ============================================================
+   Reveal — staggered
+   ============================================================ */
+.s-surmesure .reveal {
+  opacity: 0;
+  transform: perspective(900px) rotateX(8deg) translateY(26px);
+  transition:
+    opacity .7s ease,
+    transform .7s cubic-bezier(.2,.7,.2,1);
+  transition-delay: var(--delay, 0s);
+}
+
+.s-surmesure .reveal.in {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .s-surmesure .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* ============================================================
+   2-column grid
+   ============================================================ */
+.s-surmesure__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 540px) minmax(0, 500px);
+  gap: var(--sp-7);
+  align-items: center;
+  justify-content: center;
+}
+
+/* ============================================================
+   Copy column (left)
+   ============================================================ */
+.s-surmesure__copy {
+  display: flex;
+  flex-direction: column;
+}
+
+.s-surmesure__eyebrow {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: var(--s--1);
+  letter-spacing: .26em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin: 0 0 var(--sp-3);
+}
+
+.s-surmesure__h2 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: var(--s-4);
+  color: var(--ink);
+  line-height: 1.06;
+  letter-spacing: -.01em;
+  margin: 0 0 var(--sp-4);
+}
+
+.s-surmesure__lead {
+  font-family: var(--font-body);
+  font-size: var(--s-0);
+  color: var(--ink-soft);
+  line-height: 1.7;
+  margin: 0 0 var(--sp-5);
+  max-width: 44ch;
+}
+
+/* ============================================================
+   Numbered steps
+   ============================================================ */
+.s-surmesure__steps {
+  list-style: none;
+  margin: 0 0 var(--sp-6);
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.s-surmesure__step {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--sp-4);
+  padding-block: var(--sp-4);
+  border-bottom: 1px solid var(--line);
+}
+
+.s-surmesure__step:first-child {
+  border-top: 1px solid var(--line);
+}
+
+/* Gold serif large number */
+.s-surmesure__step-num {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: var(--s-3);
+  color: var(--gold);
+  line-height: 1;
+  letter-spacing: -.02em;
+  flex-shrink: 0;
+  min-width: 2.2ch;
+  user-select: none;
+}
+
+.s-surmesure__step-body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-1);
+  padding-top: .25em; /* optical align with number cap height */
+}
+
+.s-surmesure__step-title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: var(--s-1);
+  color: var(--ink);
+  line-height: 1.15;
+  letter-spacing: .01em;
+}
+
+.s-surmesure__step-desc {
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  color: var(--ink-soft);
+  line-height: 1.6;
+}
+
+/* ============================================================
+   CTA row
+   ============================================================ */
+.s-surmesure__ctas {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--sp-3);
+}
+
+/* Primary: inherits .btn .btn-primary from base */
+.s-surmesure__cta-primary {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: var(--s--1);
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  padding: 1.05em 2.4em;
+  border-radius: 0;
+  background: var(--accent);
+  color: var(--accent-ink);
+  border: 1.5px solid var(--accent);
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  transition: background .22s, color .22s, border-color .22s, transform .15s;
+  white-space: nowrap;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.s-surmesure__cta-primary:hover {
+  background: var(--accent-deep);
+  border-color: var(--accent-deep);
+  transform: translateY(-2px);
+}
+
+/* Outline: inherits .btn .btn-outline from base */
+.s-surmesure__cta-secondary {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: var(--s--1);
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  padding: 1.05em 2.4em;
+  border-radius: 0;
+  background: transparent;
+  color: var(--ink);
+  border: 1.5px solid var(--ink);
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  transition: background .22s, color .22s, border-color .22s, transform .15s;
+  white-space: nowrap;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.s-surmesure__cta-secondary:hover {
+  background: var(--ink);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+/* ============================================================
+   Image column (right)
+   ============================================================ */
+.s-surmesure__img-col {
+  display: flex;
+  justify-content: center;
+}
+
+.s-surmesure__img-frame {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+}
+
+/* Decorative offset gold border behind image */
+.s-surmesure__img-frame::before {
+  content: '';
+  position: absolute;
+  inset: var(--sp-4) calc(var(--sp-4) * -1) calc(var(--sp-4) * -1) var(--sp-4);
+  border: 1px solid var(--gold-soft);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.s-surmesure__img {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+
+/* Small gold accent bar at bottom-left of image */
+.s-surmesure__img-accent {
+  position: absolute;
+  z-index: 2;
+  bottom: calc(var(--sp-4) * -1);
+  left: 0;
+  width: 48px;
+  height: 3px;
+  background: var(--gold);
+}
+
+/* ============================================================
+   Responsive
+   ============================================================ */
+
+/* Tablet: shrink gap */
+@media (max-width: 1060px) {
+  .s-surmesure__grid {
+    gap: var(--sp-6);
+    grid-template-columns: minmax(0, 480px) minmax(0, 440px);
+  }
+
+  .s-surmesure__h2 {
+    font-size: var(--s-3);
+  }
+}
+
+/* Mobile: stack image ABOVE copy */
+@media (max-width: 760px) {
+  .s-surmesure {
+    padding-block: var(--sp-6);
+  }
+
+  .s-surmesure__grid {
+    grid-template-columns: 1fr;
+    gap: var(--sp-5);
+  }
+
+  /* Move image column to first visual position */
+  .s-surmesure__img-col {
+    order: -1;
+  }
+
+  .s-surmesure__img-frame {
+    max-width: 100%;
+  }
+
+  /* Simplify decorative border on mobile */
+  .s-surmesure__img-frame::before {
+    inset: var(--sp-3) calc(var(--sp-3) * -1) calc(var(--sp-3) * -1) var(--sp-3);
+  }
+
+  .s-surmesure__img {
+    aspect-ratio: 4 / 3;
+    object-position: center 20%;
+  }
+
+  .s-surmesure__lead {
+    max-width: none;
+  }
+
+  .s-surmesure__ctas {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .s-surmesure__cta-primary,
+  .s-surmesure__cta-secondary {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 400px) {
+  .s-surmesure__step-num {
+    font-size: var(--s-2);
+  }
+}

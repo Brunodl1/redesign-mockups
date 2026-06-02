@@ -1,0 +1,341 @@
+/* ============================================================
+   04-collections.css — Empire 1917 · Grille des collections
+   Ivory bg · 4-up portrait tiles · hover zoom+lift · reveal stagger
+   ============================================================ */
+
+/* --- Local tokens (mirror base.css) --- */
+.s-collections {
+  --bg:          #FBFAF7;
+  --surface:     #fff;
+  --surface-2:   #F1EEE6;
+  --ink:         #1E2638;
+  --ink-soft:    #5A6072;
+  --accent:      #2C365E;
+  --accent-ink:  #fff;
+  --accent-deep: #1B2340;
+  --gold:        #B08D4C;
+  --gold-soft:   #E7DCC4;
+  --navy-deep:   #161C2C;
+  --line:        #E4DFD4;
+  --star:        #B08D4C;
+  --font-display:"Cormorant Garamond","Georgia","Times New Roman",serif;
+  --font-body:   "Inter","Helvetica Neue",Arial,sans-serif;
+  --s--1:        .82rem;
+  --s-0:         1.06rem;
+  --s-1:         1.25rem;
+  --s-2:         1.7rem;
+  --s-3:         2.4rem;
+  --s-4:         3.4rem;
+  --s-5:         4.6rem;
+  --sp-1:        .25rem;
+  --sp-2:        .5rem;
+  --sp-3:        1rem;
+  --sp-4:        1.5rem;
+  --sp-5:        2.5rem;
+  --sp-6:        4rem;
+  --sp-7:        6rem;
+  --sp-8:        8rem;
+  --radius:      0px;
+  --shadow:      0 18px 50px rgba(30,38,56,.13);
+  --maxw:        1280px;
+}
+
+/* ============================================================
+   Section shell
+   ============================================================ */
+.s-collections {
+  background: var(--bg);
+  padding-block: var(--sp-7);
+}
+
+.s-collections .wrap {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding-inline: var(--sp-4);
+  width: 100%;
+}
+
+/* ============================================================
+   Reveal — staggered (delay via inline --delay)
+   ============================================================ */
+.s-collections .reveal {
+  opacity: 0;
+  transform: perspective(900px) rotateX(8deg) translateY(26px);
+  transition:
+    opacity .7s ease,
+    transform .7s cubic-bezier(.2,.7,.2,1);
+  transition-delay: var(--delay, 0s);
+}
+
+.s-collections .reveal.in {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .s-collections .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* ============================================================
+   Section header
+   ============================================================ */
+.s-collections__header {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto var(--sp-6);
+}
+
+.s-collections__eyebrow {
+  /* .eyebrow already in base; restate for scoping */
+  display: inline-block;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: var(--s--1);
+  letter-spacing: .26em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin: 0 0 var(--sp-3);
+}
+
+.s-collections__h2 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: var(--s-4);
+  color: var(--ink);
+  line-height: 1.05;
+  margin: 0 0 var(--sp-3);
+  letter-spacing: -.01em;
+}
+
+.s-collections__intro {
+  font-family: var(--font-body);
+  font-size: var(--s-0);
+  color: var(--ink-soft);
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* ============================================================
+   Tile grid — 4 columns desktop
+   ============================================================ */
+.s-collections__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--sp-3);
+  list-style: none;
+  margin: 0 0 var(--sp-6);
+  padding: 0;
+}
+
+/* ============================================================
+   Individual tile
+   ============================================================ */
+.s-collections .tile {
+  position: relative;
+  overflow: hidden; /* clip the lifted card */
+  background: var(--surface);
+  border: 1px solid var(--line);
+  transition: box-shadow .3s ease, transform .3s cubic-bezier(.2,.7,.2,1);
+}
+
+.s-collections .tile:hover {
+  box-shadow: var(--shadow);
+  transform: translateY(-4px);
+}
+
+/* The anchor wraps everything — full-tile click target */
+.s-collections .tile__inner {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: inherit;
+  height: 100%;
+}
+
+/* ============================================================
+   Tile image
+   ============================================================ */
+.s-collections .tile__img-wrap {
+  overflow: hidden;
+  aspect-ratio: 3 / 4;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.s-collections .tile__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform .55s cubic-bezier(.2,.7,.2,1);
+}
+
+.s-collections .tile:hover .tile__img {
+  transform: scale(1.06);
+}
+
+/* ============================================================
+   Tile body
+   ============================================================ */
+.s-collections .tile__body {
+  padding: var(--sp-4) var(--sp-4) var(--sp-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+  flex: 1;
+  position: relative;
+}
+
+/* Gold hairline accent top of body */
+.s-collections .tile__body::before {
+  content: '';
+  display: block;
+  height: 1px;
+  width: 32px;
+  background: var(--gold);
+  margin-bottom: var(--sp-2);
+}
+
+.s-collections .tile__name {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: var(--s-2);
+  color: var(--ink);
+  line-height: 1.05;
+  margin: 0;
+  letter-spacing: .01em;
+}
+
+.s-collections .tile__desc {
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  color: var(--ink-soft);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Gold discover link */
+.s-collections .tile__cta {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: var(--s--1);
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-top: auto;
+  padding-top: var(--sp-2);
+  transition: color .2s, letter-spacing .2s;
+}
+
+.s-collections .tile:hover .tile__cta {
+  color: var(--accent);
+  letter-spacing: .18em;
+}
+
+/* ============================================================
+   Footer CTA — centered
+   ============================================================ */
+.s-collections__footer {
+  display: flex;
+  justify-content: center;
+}
+
+.s-collections__btn {
+  /* Inherits .btn .btn-primary from base.css */
+  /* Ensure square uppercase tracked */
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: var(--s--1);
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  padding: 1.05em 2.8em;
+  border-radius: 0;
+  background: var(--accent);
+  color: var(--accent-ink);
+  border: 1.5px solid var(--accent);
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  transition: background .22s, color .22s, border-color .22s, transform .15s;
+  white-space: nowrap;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.s-collections__btn:hover {
+  background: var(--accent-deep);
+  border-color: var(--accent-deep);
+  transform: translateY(-2px);
+}
+
+/* ============================================================
+   Responsive
+   ============================================================ */
+
+/* Tablet: 2-up */
+@media (max-width: 900px) {
+  .s-collections__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .s-collections__h2 {
+    font-size: var(--s-3);
+  }
+}
+
+/* Mobile: prefer horizontal snap (2-up visible, scrollable) */
+@media (max-width: 600px) {
+  .s-collections {
+    padding-block: var(--sp-6);
+  }
+
+  .s-collections__header {
+    margin-bottom: var(--sp-5);
+  }
+
+  /* 2-up snap scroll on narrow */
+  .s-collections__grid {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    gap: var(--sp-3);
+    margin-left: calc(var(--sp-4) * -1);
+    margin-right: calc(var(--sp-4) * -1);
+    padding-inline: var(--sp-4);
+    margin-bottom: var(--sp-5);
+    /* hide scrollbar visually */
+    scrollbar-width: none;
+  }
+
+  .s-collections__grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .s-collections .tile {
+    flex: 0 0 calc(72vw);
+    max-width: 320px;
+    scroll-snap-align: start;
+  }
+}
+
+/* Very narrow: single-column */
+@media (max-width: 400px) {
+  .s-collections .tile {
+    flex: 0 0 82vw;
+  }
+}
+
+/* Large screens: breathe a bit more */
+@media (min-width: 1200px) {
+  .s-collections__grid {
+    gap: var(--sp-4);
+  }
+}

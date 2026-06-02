@@ -1,0 +1,191 @@
+/* ============================================================
+   09-newsletter.css — Empire 1917 · Infolettre
+   Heritage tailored menswear Montréal · FRENCH · Quiet-luxury
+   Scoped entirely under .s-newsletter
+   ============================================================ */
+
+/* ── LOCAL TOKEN OVERRIDES ────────────────────────────────── */
+.s-newsletter {
+  --bg:          #FBFAF7;
+  --surface:     #FFFFFF;
+  --surface-2:   #F1EEE6;
+  --ink:         #1E2638;
+  --ink-soft:    #5A6072;
+  --accent:      #2C365E;
+  --accent-ink:  #FFFFFF;
+  --accent-deep: #1B2340;
+  --gold:        #B08D4C;
+  --gold-soft:   #E7DCC4;
+  --navy-deep:   #161C2C;
+  --dark:        #161C2C;
+  --line:        #E4DFD4;
+  --font-display:"Cormorant Garamond", "Georgia", "Times New Roman", serif;
+  --font-body:   "Inter", "Helvetica Neue", Arial, sans-serif;
+  --s--1:  .82rem;
+  --s-0:   1.06rem;
+  --s-1:   1.25rem;
+  --s-2:   1.7rem;
+  --s-3:   2.4rem;
+  --s-4:   3.4rem;
+  --s-5:   4.6rem;
+  --sp-1:  .25rem; --sp-2: .5rem;  --sp-3: 1rem;  --sp-4: 1.5rem;
+  --sp-5:  2.5rem; --sp-6: 4rem;   --sp-7: 6rem;  --sp-8: 8rem;
+  --radius: 0px;
+  --maxw:  1280px;
+}
+
+/* ── SECTION SHELL ────────────────────────────────────────── */
+.s-newsletter {
+  background: var(--navy-deep);
+  color: #FFFFFF;
+  padding-block: var(--sp-7);
+  position: relative;
+}
+
+/* ── INNER WRAP ───────────────────────────────────────────── */
+.s-newsletter__wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0;
+}
+
+/* ── EYEBROW ──────────────────────────────────────────────── */
+.s-newsletter .eyebrow,
+.s-newsletter__eyebrow {
+  color: var(--gold);
+  margin-bottom: var(--sp-3);
+  display: inline-block;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: var(--s--1);
+  letter-spacing: .26em;
+  text-transform: uppercase;
+}
+
+/* ── HEADING ──────────────────────────────────────────────── */
+.s-newsletter__heading {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(1.9rem, 4vw, 3rem);
+  line-height: 1.1;
+  letter-spacing: .01em;
+  color: #FFFFFF;
+  margin: 0 0 var(--sp-4);
+  max-width: 640px;
+}
+
+/* ── LEAD ─────────────────────────────────────────────────── */
+.s-newsletter__lead {
+  font-family: var(--font-body);
+  font-size: var(--s-0);
+  color: rgba(255,255,255,.72);
+  line-height: 1.6;
+  margin: 0 0 var(--sp-5);
+  max-width: 520px;
+}
+
+/* ── FORM ROW ─────────────────────────────────────────────── */
+.s-newsletter__form {
+  width: 100%;
+  max-width: 580px;
+}
+
+.s-newsletter__row {
+  display: flex;
+  gap: 0;
+  align-items: stretch;
+  width: 100%;
+}
+
+/* ── EMAIL INPUT ──────────────────────────────────────────── */
+.s-newsletter__label.sr-only {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.s-newsletter__input {
+  flex: 1 1 auto;
+  min-width: 0;
+  background: #FFFFFF;
+  color: var(--ink);
+  border: 1.5px solid #FFFFFF;
+  border-radius: 0;
+  padding: 1.05em 1.4em;
+  font-family: var(--font-body);
+  font-size: var(--s-0);
+  font-weight: 400;
+  line-height: 1;
+  outline: none;
+  transition: border-color .2s;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.s-newsletter__input::placeholder {
+  color: var(--ink-soft);
+  opacity: 1;
+}
+
+.s-newsletter__input:focus {
+  border-color: var(--gold);
+  outline: none;
+}
+
+/* ── SUBMIT BUTTON ────────────────────────────────────────── */
+.s-newsletter__btn {
+  /* .btn .btn-light already defined in base.css */
+  flex-shrink: 0;
+  border-radius: 0;
+  /* Ensure left border doesn't double with input's right border */
+  border-left: none;
+  letter-spacing: .16em;
+  font-size: var(--s--1);
+  white-space: nowrap;
+}
+
+.s-newsletter__btn:hover {
+  background: transparent;
+  color: #FFFFFF;
+  border-color: #FFFFFF;
+  transform: none;
+}
+
+/* ── FINE PRINT ───────────────────────────────────────────── */
+.s-newsletter__fine {
+  margin: var(--sp-3) 0 0;
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  color: rgba(255,255,255,.45);
+  letter-spacing: .04em;
+}
+
+/* ── MOBILE ───────────────────────────────────────────────── */
+@media (max-width: 620px) {
+  .s-newsletter {
+    padding-block: var(--sp-6);
+  }
+
+  .s-newsletter__row {
+    flex-direction: column;
+    gap: var(--sp-2);
+  }
+
+  .s-newsletter__input {
+    width: 100%;
+    border: 1.5px solid #FFFFFF;
+  }
+
+  .s-newsletter__btn {
+    width: 100%;
+    border: 1.5px solid #FFFFFF;
+    border-left: 1.5px solid #FFFFFF;
+    justify-content: center;
+  }
+}

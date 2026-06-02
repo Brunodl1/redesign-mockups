@@ -1,0 +1,308 @@
+/* ============================================================
+   10-footer.css — Empire 1917 · Pied de page
+   Heritage tailored menswear Montréal · FRENCH · Quiet-luxury
+   Scoped entirely under .site-footer
+   Background: --navy-deep · all text light
+   ============================================================ */
+
+/* ── LOCAL TOKEN DEFINITIONS ──────────────────────────────── */
+.site-footer {
+  --bg:          #FBFAF7;
+  --surface:     #FFFFFF;
+  --surface-2:   #F1EEE6;
+  --ink:         #1E2638;
+  --ink-soft:    #5A6072;
+  --accent:      #2C365E;
+  --accent-ink:  #FFFFFF;
+  --accent-deep: #1B2340;
+  --gold:        #B08D4C;
+  --gold-soft:   #E7DCC4;
+  --navy-deep:   #161C2C;
+  --dark:        #161C2C;
+  --line:        #E4DFD4;
+  --font-display:"Cormorant Garamond", "Georgia", "Times New Roman", serif;
+  --font-body:   "Inter", "Helvetica Neue", Arial, sans-serif;
+  --s--1:  .82rem;
+  --s-0:   1.06rem;
+  --s-1:   1.25rem;
+  --s-2:   1.7rem;
+  --s-3:   2.4rem;
+  --s-4:   3.4rem;
+  --s-5:   4.6rem;
+  --sp-1:  .25rem; --sp-2: .5rem;  --sp-3: 1rem;  --sp-4: 1.5rem;
+  --sp-5:  2.5rem; --sp-6: 4rem;   --sp-7: 6rem;  --sp-8: 8rem;
+  --radius: 0px;
+  --maxw:  1280px;
+  --shadow: 0 18px 50px rgba(30,38,56,.13);
+
+  /* Footer-local light link color */
+  --footer-link:       #C7CBD6;
+  --footer-link-hover: #B08D4C; /* --gold */
+}
+
+/* ── FOOTER SHELL ─────────────────────────────────────────── */
+.site-footer {
+  background: var(--navy-deep);
+  color: var(--footer-link);
+  font-family: var(--font-body);
+  font-size: var(--s-0);
+  line-height: 1.65;
+  padding-block: var(--sp-7) var(--sp-5);
+}
+
+/* ── WRAP ─────────────────────────────────────────────────── */
+.site-footer__wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+/* ── TOP ROW: brand + columns ─────────────────────────────── */
+.site-footer__top {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: var(--sp-6) var(--sp-7);
+  align-items: start;
+  padding-bottom: var(--sp-6);
+}
+
+/* ── BRAND BLOCK ─────────────────────────────────────────── */
+.site-footer__brand {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+}
+
+.site-footer__logo-link {
+  display: inline-block;
+  line-height: 0;
+}
+
+.site-footer__logo {
+  height: 52px;
+  width: auto;
+  display: block;
+  /* Invert the dark wordmark to white */
+  filter: brightness(0) invert(1);
+  opacity: .95;
+}
+
+.site-footer__blurb {
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  color: var(--footer-link);
+  line-height: 1.7;
+  margin: 0;
+  max-width: 280px;
+  opacity: .85;
+}
+
+/* ── SOCIAL ICONS ─────────────────────────────────────────── */
+.site-footer__socials {
+  display: flex;
+  gap: var(--sp-3);
+  align-items: center;
+  margin-top: var(--sp-2);
+}
+
+.site-footer__social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--footer-link);
+  opacity: .75;
+  transition: color .2s, opacity .2s;
+  line-height: 0;
+}
+
+.site-footer__social-link:hover {
+  color: var(--gold);
+  opacity: 1;
+}
+
+.site-footer__social-icon {
+  width: 22px;
+  height: 22px;
+  display: block;
+  stroke: currentColor;
+  stroke-width: 1.5;
+  fill: none;
+}
+
+/* ── LINK COLUMNS GRID ────────────────────────────────────── */
+.site-footer__cols {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--sp-5) var(--sp-4);
+  align-items: start;
+}
+
+/* ── COLUMN HEADING ───────────────────────────────────────── */
+.site-footer__col-heading {
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  font-weight: 700;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin: 0 0 var(--sp-3);
+  line-height: 1;
+}
+
+/* ── COLUMN LIST ──────────────────────────────────────────── */
+.site-footer__col-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+}
+
+.site-footer__col-link {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  font-weight: 400;
+  color: var(--footer-link);
+  letter-spacing: .02em;
+  line-height: 1.5;
+  text-decoration: none;
+  transition: color .2s;
+  opacity: .85;
+}
+
+.site-footer__col-link:hover {
+  color: var(--gold);
+  opacity: 1;
+}
+
+/* ── TRUST MARKS ──────────────────────────────────────────── */
+.site-footer__trust {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+  align-items: center;
+  padding-bottom: var(--sp-6);
+}
+
+.site-footer__trust-chip {
+  /* Override base .chip tokens for dark background */
+  background: transparent;
+  border-color: rgba(199, 203, 214, 0.28);
+  color: var(--footer-link);
+  font-size: calc(var(--s--1) * .9);
+  letter-spacing: .2em;
+  padding: .45em 1.1em;
+  opacity: .8;
+  transition: border-color .2s, color .2s, opacity .2s;
+}
+
+.site-footer__trust-chip:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+  opacity: 1;
+}
+
+/* ── RULE ─────────────────────────────────────────────────── */
+.site-footer__rule {
+  border: none;
+  border-top: 1px solid rgba(199, 203, 214, 0.15);
+  margin: 0 0 var(--sp-5);
+}
+
+/* ── BOTTOM BAR ───────────────────────────────────────────── */
+.site-footer__bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-4);
+  flex-wrap: wrap;
+}
+
+.site-footer__copy {
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  color: var(--footer-link);
+  opacity: .5;
+  margin: 0;
+  letter-spacing: .02em;
+}
+
+.site-footer__legal {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  flex-wrap: wrap;
+}
+
+.site-footer__legal-link {
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  color: var(--footer-link);
+  opacity: .5;
+  letter-spacing: .02em;
+  text-decoration: none;
+  transition: color .2s, opacity .2s;
+}
+
+.site-footer__legal-link:hover {
+  color: var(--gold);
+  opacity: 1;
+}
+
+.site-footer__legal-sep {
+  color: var(--footer-link);
+  opacity: .28;
+  font-weight: 300;
+  user-select: none;
+}
+
+/* ── RESPONSIVE — TABLET (2-up columns) ───────────────────── */
+@media (max-width: 1024px) {
+  .site-footer__top {
+    grid-template-columns: 1fr;
+    gap: var(--sp-6);
+  }
+
+  .site-footer__blurb {
+    max-width: 400px;
+  }
+
+  .site-footer__cols {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--sp-5) var(--sp-5);
+  }
+}
+
+/* ── RESPONSIVE — MOBILE (1-up) ───────────────────────────── */
+@media (max-width: 620px) {
+  .site-footer {
+    padding-block: var(--sp-6) var(--sp-5);
+  }
+
+  .site-footer__top {
+    gap: var(--sp-5);
+  }
+
+  .site-footer__cols {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--sp-4) var(--sp-4);
+  }
+
+  .site-footer__trust {
+    gap: var(--sp-2);
+  }
+
+  .site-footer__bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--sp-2);
+  }
+}
+
+@media (max-width: 400px) {
+  .site-footer__cols {
+    grid-template-columns: 1fr;
+  }
+}

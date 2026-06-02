@@ -1,0 +1,816 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Empire 1917 — Maison de tailleur à Montréal · Complets, vestons & sur-mesure</title>
+<meta name="description" content="Empire Clothing (Empire 1917) : maison de tailleur fondée à Montréal en 1917. Complets, vestons et smokings taillés dans les plus belles étoffes d'Europe. Sur-mesure.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<noscript><style>.reveal{opacity:1!important;transform:none!important}</style></noscript>
+</head>
+<body>
+<!-- ============================================================
+     01-header.html — Empire 1917 · Barre d'annonce + En-tête collant
+     Heritage tailored menswear Montréal · FRENCH · Quiet-luxury
+     ============================================================ -->
+
+<!-- ANNOUNCEMENT BAR -->
+<div class="announce">
+  <div class="announce__inner">
+    <span class="announce__item announce__item--always">Maison fondée en 1917</span>
+    <span class="announce__sep" aria-hidden="true">·</span>
+    <span class="announce__item announce__item--desktop">Confectionné à Montréal</span>
+    <span class="announce__sep announce__sep--desktop" aria-hidden="true">·</span>
+    <span class="announce__item announce__item--desktop">Étoffes des plus belles filatures d'Europe</span>
+  </div>
+</div>
+
+<!-- STICKY HEADER -->
+<header class="site-header" role="banner">
+  <div class="site-header__wrap wrap">
+
+    <!-- LEFT: Nav (desktop) / Hamburger (mobile) -->
+    <div class="site-header__left" aria-label="Navigation principale">
+
+      <!-- Desktop nav -->
+      <nav class="site-header__nav" aria-label="Navigation principale">
+        <a href="https://www.google.com" class="site-header__nav-link">Collections</a>
+        <a href="https://www.google.com" class="site-header__nav-link">Sur-Mesure</a>
+        <a href="https://www.google.com" class="site-header__nav-link">Savoir-faire</a>
+        <a href="https://www.google.com" class="site-header__nav-link">Histoire</a>
+        <a href="https://www.google.com" class="site-header__nav-link">Contact</a>
+      </nav>
+
+      <!-- Mobile hamburger -->
+      <button class="site-header__hamburger" aria-label="Ouvrir le menu" aria-expanded="false">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="square" aria-hidden="true">
+          <line x1="2" y1="5"  x2="20" y2="5"/>
+          <line x1="2" y1="11" x2="20" y2="11"/>
+          <line x1="2" y1="17" x2="20" y2="17"/>
+        </svg>
+      </button>
+
+    </div>
+
+    <!-- CENTER: Logo -->
+    <div class="site-header__logo-wrap">
+      <a href="https://www.google.com" class="site-header__logo-link" aria-label="Empire 1917 — Accueil">
+        <img
+          src="assets/logo.png"
+          alt="Empire 1917"
+          class="site-header__logo-img"
+          width="auto"
+          height="44"
+        >
+      </a>
+    </div>
+
+    <!-- RIGHT: CTA + Icons -->
+    <div class="site-header__actions">
+
+      <!-- "Collections" pill CTA (desktop only) -->
+      <a href="https://www.google.com" class="btn btn-primary site-header__cta" aria-label="Voir les collections">Collections</a>
+
+      <!-- Search icon (desktop only) -->
+      <button class="site-header__icon-btn site-header__icon-btn--desktop" aria-label="Rechercher">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square" aria-hidden="true">
+          <circle cx="9.5" cy="9.5" r="6.5"/>
+          <line x1="14.5" y1="14.5" x2="20" y2="20"/>
+        </svg>
+      </button>
+
+      <!-- Account icon (desktop only) -->
+      <button class="site-header__icon-btn site-header__icon-btn--desktop" aria-label="Mon compte">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square" aria-hidden="true">
+          <circle cx="11" cy="7" r="4"/>
+          <path d="M2 20c0-4 4-7 9-7s9 3 9 7"/>
+        </svg>
+      </button>
+
+      <!-- Cart icon (always visible) -->
+      <button class="site-header__icon-btn site-header__cart" aria-label="Panier (0 article)">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square" aria-hidden="true">
+          <path d="M4 4h2l2.4 10H16l2-7H7"/>
+          <circle cx="9.5" cy="17.5" r="1.5" fill="currentColor" stroke="none"/>
+          <circle cx="15.5" cy="17.5" r="1.5" fill="currentColor" stroke="none"/>
+        </svg>
+        <span class="site-header__cart-count" aria-label="0 article dans le panier">0</span>
+      </button>
+
+    </div>
+
+  </div>
+</header>
+
+<!-- ============================================================
+     Empire 1917 · Hero — Full-bleed éditorial, carte de texte flottante
+     FR · Quiet-luxury · UN CTA
+     ============================================================ -->
+<section class="sec s-hero hero-fullbleed">
+
+  <!-- Image pleine-plage -->
+  <img
+    class="s-hero__photo"
+    src="https://api.empireclothing.com/assets/5ddfd4c0-6340-4fc4-86aa-a7300de308b5"
+    alt="Homme en veston prince-de-galles gris, dans un intérieur aux fenêtres cintrées"
+  />
+
+  <!-- Voile directionnel léger sur l'ensemble de l'image -->
+  <div class="s-hero__scrim" aria-hidden="true"></div>
+
+  <!-- Contenu -->
+  <div class="wrap">
+    <div class="s-hero__card">
+
+      <span class="eyebrow s-hero__eyebrow">Maison de Tailleur&nbsp;· Depuis 1917</span>
+
+      <h1 class="s-hero__h1">
+        L'élégance,<br>
+        <span class="s-hero__accent">depuis 1917.</span>
+      </h1>
+
+      <p class="s-hero__sub">
+        Complets, vestons et smokings taillés à Montréal dans les plus belles étoffes d'Europe — pour une première impression inoubliable.
+      </p>
+
+      <div class="s-hero__cta-row">
+        <a href="https://www.google.com" class="btn btn-light s-hero__cta">Voir les collections</a>
+      </div>
+
+      <!-- Marques de confiance discrètes -->
+      <div class="s-hero__proof" aria-label="Repères de confiance">
+        <span class="s-hero__proof-mark">Depuis 1917</span>
+        <span class="s-hero__proof-sep" aria-hidden="true">·</span>
+        <span class="s-hero__proof-mark">Fait à Montréal</span>
+        <span class="s-hero__proof-sep" aria-hidden="true">·</span>
+        <span class="s-hero__proof-mark">Sur-mesure</span>
+      </div>
+
+    </div>
+  </div>
+
+</section>
+
+<!-- ============================================================
+     03-heritage.html — Empire 1917 · Bandeau héritage & confiance
+     FR · Heritage strip · Dark navy bg · 4 piliers
+     ============================================================ -->
+<section class="sec s-heritage" aria-label="Notre héritage">
+  <div class="wrap">
+    <ul class="s-heritage__row" role="list">
+
+      <!-- 1 · Depuis 1917 -->
+      <li class="s-heritage__item">
+        <svg class="ic s-heritage__ic" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <!-- Shield / crest -->
+          <path d="M20 4 L33 9 L33 21 C33 29 20 36 20 36 C20 36 7 29 7 21 L7 9 Z"/>
+          <path d="M20 12 L23 16 L28 17 L24.5 20.5 L25.5 26 L20 23 L14.5 26 L15.5 20.5 L12 17 L17 16 Z"/>
+        </svg>
+        <div class="s-heritage__text">
+          <strong class="s-heritage__label">Depuis 1917</strong>
+          <span class="s-heritage__sub">Plus d'un siècle de savoir-faire</span>
+        </div>
+      </li>
+
+      <!-- 2 · Taillé à Montréal -->
+      <li class="s-heritage__item">
+        <svg class="ic s-heritage__ic" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <!-- Scissors -->
+          <circle cx="11" cy="13" r="4.5"/>
+          <circle cx="11" cy="27" r="4.5"/>
+          <line x1="14.5" y1="15.5" x2="32" y2="32"/>
+          <line x1="14.5" y1="24.5" x2="32" y2="8"/>
+          <!-- Needle hint -->
+          <line x1="32" y1="8" x2="36" y2="4"/>
+        </svg>
+        <div class="s-heritage__text">
+          <strong class="s-heritage__label">Taillé à Montréal</strong>
+          <span class="s-heritage__sub">Notre atelier, depuis 1932</span>
+        </div>
+      </li>
+
+      <!-- 3 · Étoffes d'Europe -->
+      <li class="s-heritage__item">
+        <svg class="ic s-heritage__ic" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <!-- Globe -->
+          <circle cx="20" cy="20" r="14"/>
+          <ellipse cx="20" cy="20" rx="7" ry="14"/>
+          <line x1="6" y1="20" x2="34" y2="20"/>
+          <path d="M8 13 Q20 17 32 13"/>
+          <path d="M8 27 Q20 23 32 27"/>
+        </svg>
+        <div class="s-heritage__text">
+          <strong class="s-heritage__label">Étoffes d'Europe</strong>
+          <span class="s-heritage__sub">Italie · Angleterre · Écosse · Irlande</span>
+        </div>
+      </li>
+
+      <!-- 4 · Sur-mesure -->
+      <li class="s-heritage__item">
+        <svg class="ic s-heritage__ic" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <!-- Ruler -->
+          <rect x="5" y="14" width="30" height="12" rx="0"/>
+          <line x1="10" y1="14" x2="10" y2="19"/>
+          <line x1="15" y1="14" x2="15" y2="22"/>
+          <line x1="20" y1="14" x2="20" y2="19"/>
+          <line x1="25" y1="14" x2="25" y2="22"/>
+          <line x1="30" y1="14" x2="30" y2="19"/>
+        </svg>
+        <div class="s-heritage__text">
+          <strong class="s-heritage__label">Sur-mesure</strong>
+          <span class="s-heritage__sub">Coupe et finitions personnalisées</span>
+        </div>
+      </li>
+
+    </ul>
+  </div>
+</section>
+
+<!-- ============================================================
+     04-collections.html — Empire 1917 · Grille des collections
+     FR · 4 tuiles portrait · Cormorant serif · Reveal staggered
+     ============================================================ -->
+<section class="sec s-collections" aria-labelledby="collections-heading">
+  <div class="wrap">
+
+    <!-- Section header -->
+    <div class="s-collections__header">
+      <span class="eyebrow s-collections__eyebrow">Les Collections</span>
+      <h2 id="collections-heading" class="s-collections__h2">L'art du vêtement taillé.</h2>
+      <p class="s-collections__intro">
+        De l'étoffe au vêtement fini — chaque pièce porte l'exigence d'un atelier montréalais ancré dans la tradition depuis plus d'un siècle.
+      </p>
+    </div>
+
+    <!-- 4-up tile grid -->
+    <ul class="s-collections__grid" role="list">
+
+      <!-- 1 · Complets -->
+      <li class="s-collections__tile tile reveal" style="--delay:.05s" aria-label="Complets">
+        <a href="https://www.google.com" class="tile__inner" tabindex="0" aria-label="Découvrir la collection Complets">
+          <div class="tile__img-wrap">
+            <img
+              class="tile__img"
+              src="https://api.empireclothing.com/assets/154c2be3-8684-4822-a53f-1498c3fba05f?width=800"
+              alt="Complet marine Empire 1917"
+              loading="lazy"
+              decoding="async"
+            >
+          </div>
+          <div class="tile__body">
+            <h3 class="tile__name">Complets</h3>
+            <p class="tile__desc">Costumes deux-pièces, coupe contemporaine</p>
+            <span class="tile__cta" aria-hidden="true">Découvrir&thinsp;→</span>
+          </div>
+        </a>
+      </li>
+
+      <!-- 2 · Vestons -->
+      <li class="s-collections__tile tile reveal" style="--delay:.15s" aria-label="Vestons">
+        <a href="https://www.google.com" class="tile__inner" tabindex="0" aria-label="Découvrir la collection Vestons">
+          <div class="tile__img-wrap">
+            <img
+              class="tile__img"
+              src="https://api.empireclothing.com/assets/b767d2d3-11f2-4663-86b3-4d11c045592f?width=800"
+              alt="Veston prince-de-galles"
+              loading="lazy"
+              decoding="async"
+            >
+          </div>
+          <div class="tile__body">
+            <h3 class="tile__name">Vestons</h3>
+            <p class="tile__desc">Vestons sport en laines et carreaux</p>
+            <span class="tile__cta" aria-hidden="true">Découvrir&thinsp;→</span>
+          </div>
+        </a>
+      </li>
+
+      <!-- 3 · Smokings -->
+      <li class="s-collections__tile tile reveal" style="--delay:.25s" aria-label="Smokings">
+        <a href="https://www.google.com" class="tile__inner" tabindex="0" aria-label="Découvrir la collection Smokings">
+          <div class="tile__img-wrap">
+            <img
+              class="tile__img"
+              src="https://api.empireclothing.com/assets/fed6c79b-a47c-486e-b196-ba6ad5191f57?width=800"
+              alt="Smoking noir Empire 1917"
+              loading="lazy"
+              decoding="async"
+            >
+          </div>
+          <div class="tile__body">
+            <h3 class="tile__name">Smokings</h3>
+            <p class="tile__desc">Tenues de soirée et smokings</p>
+            <span class="tile__cta" aria-hidden="true">Découvrir&thinsp;→</span>
+          </div>
+        </a>
+      </li>
+
+      <!-- 4 · Sur-Mesure -->
+      <li class="s-collections__tile tile reveal" style="--delay:.35s" aria-label="Sur-Mesure">
+        <a href="https://www.google.com" class="tile__inner" tabindex="0" aria-label="Découvrir la collection Sur-Mesure">
+          <div class="tile__img-wrap">
+            <img
+              class="tile__img"
+              src="https://api.empireclothing.com/assets/e10f2a3f-c9e0-4c5c-9499-22359f9b797f?width=800"
+              alt="Veston vert sur-mesure"
+              loading="lazy"
+              decoding="async"
+            >
+          </div>
+          <div class="tile__body">
+            <h3 class="tile__name">Sur-Mesure</h3>
+            <p class="tile__desc">Votre vêtement, taillé pour vous</p>
+            <span class="tile__cta" aria-hidden="true">Découvrir&thinsp;→</span>
+          </div>
+        </a>
+      </li>
+
+    </ul>
+
+    <!-- Bottom CTA -->
+    <div class="s-collections__footer reveal" style="--delay:.45s">
+      <a href="https://www.google.com" class="btn btn-primary s-collections__btn">
+        Voir toutes les collections
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============================================================
+     05-savoirfaire.html — Empire 1917 · Savoir-faire / qualité
+     FR · 2 colonnes (image gauche, texte droite) · Reveal
+     ============================================================ -->
+<section class="sec s-savoirfaire" aria-labelledby="savoirfaire-heading">
+  <div class="wrap">
+
+    <div class="s-savoirfaire__inner">
+
+      <!-- Colonne image (gauche) -->
+      <div class="s-savoirfaire__img-col reveal" style="--delay:.05s">
+        <div class="s-savoirfaire__img-wrap">
+          <img
+            class="s-savoirfaire__img"
+            src="https://api.empireclothing.com/assets/5542a74f-2cb2-4c7c-98fc-ceef40d3413c?width=1000"
+            alt="Veston en laine à carreaux, devant un mur de pierre — savoir-faire Empire 1917"
+            loading="lazy"
+            decoding="async"
+          >
+        </div>
+      </div>
+
+      <!-- Colonne texte (droite) -->
+      <div class="s-savoirfaire__text-col reveal" style="--delay:.18s">
+
+        <span class="eyebrow s-savoirfaire__eyebrow">Notre Savoir-Faire</span>
+
+        <h2 id="savoirfaire-heading" class="s-savoirfaire__h2">
+          Chaque détail, examiné<br>et réexaminé.
+        </h2>
+
+        <p class="s-savoirfaire__lead">
+          Depuis 1932, nos vêtements sont confectionnés dans notre atelier de
+          Montréal. Nous choisissons nos étoffes auprès des plus belles filatures
+          d'Italie, d'Angleterre, d'Écosse et d'Irlande — pour un tombé plus
+          souple et une main plus noble.
+        </p>
+
+        <!-- Liste des engagements -->
+        <ul class="s-savoirfaire__list" role="list">
+
+          <li class="s-savoirfaire__item">
+            <span class="s-savoirfaire__ic" aria-hidden="true">
+              <!-- loom / fabric icon -->
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="2" y="9" width="16" height="1.5" rx=".75" fill="currentColor"/>
+                <rect x="2" y="4" width="16" height="1.5" rx=".75" fill="currentColor" opacity=".55"/>
+                <rect x="2" y="14" width="16" height="1.5" rx=".75" fill="currentColor" opacity=".55"/>
+                <rect x="6.5" y="2" width="1.5" height="16" rx=".75" fill="currentColor" opacity=".35"/>
+                <rect x="12" y="2" width="1.5" height="16" rx=".75" fill="currentColor" opacity=".35"/>
+              </svg>
+            </span>
+            <div class="s-savoirfaire__item-body">
+              <strong class="s-savoirfaire__item-title">Étoffes d'exception</strong>
+              <span class="s-savoirfaire__item-desc">Laines, cachemires, soies et lins des meilleures filatures.</span>
+            </div>
+          </li>
+
+          <li class="s-savoirfaire__item">
+            <span class="s-savoirfaire__ic" aria-hidden="true">
+              <!-- silhouette / form icon -->
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M10 2C8.34 2 7 3.34 7 5c0 1.66 1.34 3 3 3s3-1.34 3-3c0-1.66-1.34-3-3-3Z" fill="currentColor" opacity=".9"/>
+                <path d="M5.5 10.5C4.12 11.38 3 13.1 3 15v3h14v-3c0-1.9-1.12-3.62-2.5-4.5L13 14l-3-1-3 1-1.5-3.5Z" fill="currentColor" opacity=".7"/>
+              </svg>
+            </span>
+            <div class="s-savoirfaire__item-body">
+              <strong class="s-savoirfaire__item-title">Coupe et tombé</strong>
+              <span class="s-savoirfaire__item-desc">Une structure pensée pour la silhouette et le confort.</span>
+            </div>
+          </li>
+
+          <li class="s-savoirfaire__item">
+            <span class="s-savoirfaire__ic" aria-hidden="true">
+              <!-- needle / stitch icon -->
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M14.5 2.5 L5.5 17.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+                <circle cx="5.5" cy="17.5" r="1.2" fill="currentColor"/>
+                <path d="M14.5 2.5 Q16 2 16.5 3.5 Q17 5 15.5 5.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" fill="none"/>
+              </svg>
+            </span>
+            <div class="s-savoirfaire__item-body">
+              <strong class="s-savoirfaire__item-title">Finitions à la main</strong>
+              <span class="s-savoirfaire__item-desc">L'attention du tailleur, à chaque étape.</span>
+            </div>
+          </li>
+
+        </ul>
+
+        <!-- Chips + CTA -->
+        <div class="s-savoirfaire__footer">
+          <div class="s-savoirfaire__chips">
+            <span class="chip">Fait à Montréal</span>
+            <span class="chip">Depuis 1917</span>
+            <span class="chip">Étoffes d'Europe</span>
+          </div>
+          <a href="https://www.google.com" class="btn btn-primary s-savoirfaire__btn">
+            Découvrir le savoir-faire
+          </a>
+        </div>
+
+      </div><!-- /text-col -->
+
+    </div><!-- /inner -->
+
+  </div><!-- /wrap -->
+</section>
+
+<!-- ============================================================
+     06-histoire.html — Empire 1917 · Histoire / héritage
+     FR · Bande sombre navy-deep · image B&N + texte centré
+     ============================================================ -->
+<section class="sec s-histoire" aria-labelledby="histoire-heading">
+
+  <!-- Image archivale en fond flouté (scrim sombre par-dessus) -->
+  <div class="s-histoire__bg" aria-hidden="true">
+    <img
+      class="s-histoire__bg-img"
+      src="https://empireclothing.com/img/horsenbuggy_1200x.webp"
+      alt=""
+      loading="lazy"
+      decoding="async"
+    >
+    <div class="s-histoire__scrim"></div>
+  </div>
+
+  <div class="wrap">
+    <div class="s-histoire__inner">
+
+      <!-- Colonne image (gauche) — visible à la photo -->
+      <div class="s-histoire__photo-col reveal" style="--delay:.05s">
+        <div class="s-histoire__photo-wrap">
+          <img
+            class="s-histoire__photo"
+            src="https://empireclothing.com/img/horsenbuggy_1200x.webp"
+            alt="Livraison à cheval d'Empire Clothing, vers 1917 — Montréal"
+            loading="lazy"
+            decoding="async"
+          >
+          <!-- Gold year stamp -->
+          <div class="s-histoire__year-stamp" aria-label="Établi en 1917">
+            <span class="s-histoire__year-label">EST.</span>
+            <span class="s-histoire__year-num">1917</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Colonne texte (droite) -->
+      <div class="s-histoire__text-col reveal" style="--delay:.2s">
+
+        <span class="eyebrow s-histoire__eyebrow">Notre Histoire</span>
+
+        <h2 id="histoire-heading" class="s-histoire__h2">
+          Une maison montréalaise<br>depuis 1917.
+        </h2>
+
+        <div class="s-histoire__body">
+          <p>
+            Quand Empire Clothing voit le jour en 1917, le Canada fait encore
+            partie de l'Empire britannique. Joseph Leibovitch fonde alors sa
+            maison de tailleur à Montréal.
+          </p>
+          <p>
+            Trois générations plus tard, la famille perpétue le même engagement :
+            créer la meilleure première impression, et des impressions qui durent.
+          </p>
+        </div>
+
+        <!-- Séparateur décoratif doré -->
+        <div class="s-histoire__rule" aria-hidden="true"></div>
+
+        <a href="https://www.google.com" class="btn s-histoire__btn">
+          Notre histoire
+        </a>
+
+      </div><!-- /text-col -->
+
+    </div><!-- /inner -->
+  </div><!-- /wrap -->
+
+</section>
+
+<!-- ============================================================
+     07-surmesure.html — Empire 1917 · Sur-mesure feature
+     FR · 2-col (copy left / portrait right) · numbered steps · reveal
+     ============================================================ -->
+<section class="sec s-surmesure" aria-labelledby="surmesure-heading">
+  <div class="wrap">
+    <div class="s-surmesure__grid">
+
+      <!-- LEFT — copy column -->
+      <div class="s-surmesure__copy reveal">
+
+        <span class="eyebrow s-surmesure__eyebrow">Sur-mesure</span>
+
+        <h2 id="surmesure-heading" class="s-surmesure__h2">
+          Votre vêtement,<br>taillé pour vous.
+        </h2>
+
+        <p class="s-surmesure__lead">
+          Du choix de l'étoffe à la doublure et aux boutons, composez une pièce qui vous ressemble. Notre service sur-mesure marie la précision de l'atelier à votre style.
+        </p>
+
+        <!-- 3-step numbered list -->
+        <ol class="s-surmesure__steps" role="list">
+
+          <li class="s-surmesure__step">
+            <span class="s-surmesure__step-num" aria-hidden="true">01</span>
+            <div class="s-surmesure__step-body">
+              <strong class="s-surmesure__step-title">Choisissez l'étoffe</strong>
+              <span class="s-surmesure__step-desc">Laines, cachemires, soies, lins et cotons des plus belles filatures.</span>
+            </div>
+          </li>
+
+          <li class="s-surmesure__step">
+            <span class="s-surmesure__step-num" aria-hidden="true">02</span>
+            <div class="s-surmesure__step-body">
+              <strong class="s-surmesure__step-title">Personnalisez les détails</strong>
+              <span class="s-surmesure__step-desc">Doublure, boutons, revers et finitions, à votre goût.</span>
+            </div>
+          </li>
+
+          <li class="s-surmesure__step">
+            <span class="s-surmesure__step-num" aria-hidden="true">03</span>
+            <div class="s-surmesure__step-body">
+              <strong class="s-surmesure__step-title">Taillé à Montréal</strong>
+              <span class="s-surmesure__step-desc">Confectionné dans notre atelier, pour un tombé parfait.</span>
+            </div>
+          </li>
+
+        </ol>
+
+        <!-- CTAs -->
+        <div class="s-surmesure__ctas">
+          <a href="https://www.google.com" class="btn btn-primary s-surmesure__cta-primary">
+            Prendre rendez-vous
+          </a>
+          <a href="https://www.google.com" class="btn btn-outline s-surmesure__cta-secondary">
+            En savoir plus
+          </a>
+        </div>
+
+      </div><!-- /copy -->
+
+      <!-- RIGHT — portrait image -->
+      <div class="s-surmesure__img-col reveal" style="--delay:.12s">
+        <div class="s-surmesure__img-frame">
+          <img
+            class="s-surmesure__img"
+            src="https://api.empireclothing.com/assets/c0226425-64ce-4a70-97e9-588f7b59f756?width=1000"
+            alt="Veston sur-mesure camel Empire 1917"
+            loading="lazy"
+            decoding="async"
+          >
+          <!-- Decorative gold hairline accent -->
+          <div class="s-surmesure__img-accent" aria-hidden="true"></div>
+        </div>
+      </div>
+
+    </div><!-- /grid -->
+  </div>
+</section>
+
+<!-- ============================================================
+     08-lookbook.html — Empire 1917 · Lookbook / editorial band
+     FR · Full-bleed on-figure photo · contained overlay panel · reveal
+     ============================================================ -->
+<section class="sec s-lookbook" aria-label="Lookbook Printemps-Été 2026">
+
+  <!-- Full-bleed background image -->
+  <img
+    class="s-lookbook__bg"
+    src="https://api.empireclothing.com/assets/cb0366bf-c508-4f24-8f0b-fd433f82f680?width=1600"
+    alt="Veston bleu poudre Empire 1917, en extérieur"
+    loading="lazy"
+    decoding="async"
+    aria-hidden="true"
+    fetchpriority="low"
+  >
+
+  <!-- Bottom scrim for mobile legibility -->
+  <div class="s-lookbook__scrim" aria-hidden="true"></div>
+
+  <!-- Contained text overlay panel (left side) -->
+  <div class="s-lookbook__wrap wrap">
+    <div class="s-lookbook__panel reveal">
+
+      <span class="eyebrow s-lookbook__eyebrow">Lookbook&thinsp;·&thinsp;Printemps-Été 2026</span>
+
+      <h2 class="s-lookbook__h2">La nouvelle collection.</h2>
+
+      <p class="s-lookbook__sub">
+        Vestons d'été, carreaux et tons clairs&thinsp;—&thinsp;l'élégance estivale signée Empire.
+      </p>
+
+      <a href="https://www.google.com" class="btn btn-light s-lookbook__cta">
+        Voir le lookbook
+      </a>
+
+    </div>
+  </div>
+
+</section>
+
+<!-- ============================================================
+     09-newsletter.html — Empire 1917 · Infolettre
+     Heritage tailored menswear Montréal · FRENCH · Quiet-luxury
+     Background: --navy-deep (dark navy) with light text
+     ============================================================ -->
+
+<section class="sec s-newsletter" aria-labelledby="newsletter-heading">
+  <div class="wrap s-newsletter__wrap">
+
+    <span class="eyebrow s-newsletter__eyebrow">Restons en contact</span>
+
+    <h2 class="s-newsletter__heading" id="newsletter-heading">
+      Recevez nos nouveautés et collections.
+    </h2>
+
+    <p class="s-newsletter__lead">
+      Lookbooks de saison, savoir-faire et invitations&nbsp;— directement dans votre boîte courriel.
+    </p>
+
+    <form class="s-newsletter__form" onsubmit="return false" novalidate aria-label="Inscription à l'infolettre">
+      <div class="s-newsletter__row">
+        <label for="nl-email" class="s-newsletter__label sr-only">Adresse courriel</label>
+        <input
+          id="nl-email"
+          class="s-newsletter__input"
+          type="email"
+          name="email"
+          placeholder="Votre adresse courriel"
+          autocomplete="email"
+          required
+          aria-required="true"
+        >
+        <button type="submit" class="btn btn-light s-newsletter__btn">
+          S'inscrire
+        </button>
+      </div>
+    </form>
+
+    <p class="s-newsletter__fine">
+      Vous pouvez vous désinscrire en tout temps.
+    </p>
+
+  </div>
+</section>
+
+<!-- ============================================================
+     10-footer.html — Empire 1917 · Pied de page
+     Heritage tailored menswear Montréal · FRENCH · Quiet-luxury
+     Background: --navy-deep (#161C2C) · light text throughout
+     ============================================================ -->
+
+<footer class="site-footer" role="contentinfo">
+  <div class="wrap site-footer__wrap">
+
+    <!-- ── TOP: Logo + Blurb ──────────────────────────────── -->
+    <div class="site-footer__top">
+
+      <div class="site-footer__brand">
+        <a href="https://www.google.com" class="site-footer__logo-link" aria-label="Empire 1917 — Accueil">
+          <img
+            src="assets/logo.png"
+            alt="Empire 1917"
+            class="site-footer__logo"
+            width="auto"
+            height="52"
+          >
+        </a>
+        <p class="site-footer__blurb">
+          Maison de tailleur fondée à Montréal en&nbsp;1917. Complets, vestons et smokings taillés dans les plus belles étoffes d'Europe.
+        </p>
+        <!-- Social icons -->
+        <div class="site-footer__socials" aria-label="Réseaux sociaux">
+          <a href="https://www.google.com" class="site-footer__social-link" aria-label="Instagram Empire 1917">
+            <!-- Instagram SVG -->
+            <svg class="site-footer__social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+              <circle cx="12" cy="12" r="5"/>
+              <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+            </svg>
+          </a>
+          <a href="https://www.google.com" class="site-footer__social-link" aria-label="Facebook Empire 1917">
+            <!-- Facebook SVG -->
+            <svg class="site-footer__social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+              <rect x="2" y="2" width="20" height="20" rx="0" ry="0"/>
+              <path d="M15 8h-2a1 1 0 00-1 1v2h3l-.5 3H12v6"/>
+              <path d="M12 8v13"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- ── 4 Link Columns ─────────────────────────────────── -->
+      <nav class="site-footer__cols" aria-label="Navigation du pied de page">
+
+        <!-- Collections -->
+        <div class="site-footer__col">
+          <h3 class="site-footer__col-heading">Collections</h3>
+          <ul class="site-footer__col-list">
+            <li><a href="https://www.google.com" class="site-footer__col-link">Complets</a></li>
+            <li><a href="https://www.google.com" class="site-footer__col-link">Vestons</a></li>
+            <li><a href="https://www.google.com" class="site-footer__col-link">Smokings</a></li>
+            <li><a href="https://www.google.com" class="site-footer__col-link">Pardessus</a></li>
+            <li><a href="https://www.google.com" class="site-footer__col-link">Sur-Mesure</a></li>
+          </ul>
+        </div>
+
+        <!-- La Maison -->
+        <div class="site-footer__col">
+          <h3 class="site-footer__col-heading">La Maison</h3>
+          <ul class="site-footer__col-list">
+            <li><a href="https://www.google.com" class="site-footer__col-link">Notre histoire</a></li>
+            <li><a href="https://www.google.com" class="site-footer__col-link">Notre savoir-faire</a></li>
+            <li><a href="https://www.google.com" class="site-footer__col-link">Nos étoffes</a></li>
+            <li><a href="https://www.google.com" class="site-footer__col-link">Atelier de Montréal</a></li>
+          </ul>
+        </div>
+
+        <!-- Service -->
+        <div class="site-footer__col">
+          <h3 class="site-footer__col-heading">Service</h3>
+          <ul class="site-footer__col-list">
+            <li><a href="https://www.google.com" class="site-footer__col-link">Nous joindre</a></li>
+            <li><a href="https://www.google.com" class="site-footer__col-link">Trouver un détaillant</a></li>
+            <li><a href="https://www.google.com" class="site-footer__col-link">Représentants</a></li>
+            <li><a href="https://www.google.com" class="site-footer__col-link">FAQ</a></li>
+          </ul>
+        </div>
+
+        <!-- Suivez-nous -->
+        <div class="site-footer__col">
+          <h3 class="site-footer__col-heading">Suivez-nous</h3>
+          <ul class="site-footer__col-list">
+            <li><a href="https://www.google.com" class="site-footer__col-link">Instagram</a></li>
+            <li><a href="https://www.google.com" class="site-footer__col-link">Facebook</a></li>
+            <li><a href="https://www.google.com" class="site-footer__col-link">Infolettre</a></li>
+          </ul>
+        </div>
+
+      </nav>
+    </div>
+
+    <!-- ── TRUST MARKS ────────────────────────────────────── -->
+    <div class="site-footer__trust" aria-label="Distinctions de la maison">
+      <span class="chip site-footer__trust-chip">Depuis 1917</span>
+      <span class="chip site-footer__trust-chip">Fait à Montréal</span>
+      <span class="chip site-footer__trust-chip">Étoffes d'Europe</span>
+      <span class="chip site-footer__trust-chip">Sur-Mesure</span>
+    </div>
+
+    <!-- ── HAIRLINE ────────────────────────────────────────── -->
+    <hr class="site-footer__rule" aria-hidden="true">
+
+    <!-- ── BOTTOM BAR ─────────────────────────────────────── -->
+    <div class="site-footer__bottom">
+      <p class="site-footer__copy">
+        &copy;&nbsp;2026 Empire Clothing Manufacturing Co. Tous droits réservés.
+      </p>
+      <nav class="site-footer__legal" aria-label="Liens légaux">
+        <a href="https://www.google.com" class="site-footer__legal-link">Politique de confidentialité</a>
+        <span class="site-footer__legal-sep" aria-hidden="true">·</span>
+        <a href="https://www.google.com" class="site-footer__legal-link">Conditions d'utilisation</a>
+      </nav>
+    </div>
+
+  </div>
+</footer>
+
+<script src="fx.js"></script>
+</body>
+</html>

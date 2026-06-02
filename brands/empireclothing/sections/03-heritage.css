@@ -1,0 +1,190 @@
+/* ============================================================
+   03-heritage.css — Empire 1917 · Bandeau héritage & confiance
+   Dark navy bg · Gold icons · 4 piliers · 2×2 mobile
+   ============================================================ */
+
+/* --- local tokens (mirror base.css — no external dep needed) --- */
+.s-heritage {
+  --bg:          #FBFAF7;
+  --surface:     #fff;
+  --surface-2:   #F1EEE6;
+  --ink:         #1E2638;
+  --ink-soft:    #5A6072;
+  --accent:      #2C365E;
+  --accent-ink:  #fff;
+  --accent-deep: #1B2340;
+  --gold:        #B08D4C;
+  --gold-soft:   #E7DCC4;
+  --navy-deep:   #161C2C;
+  --line:        #E4DFD4;
+  --star:        #B08D4C;
+  --font-display:"Cormorant Garamond","Georgia","Times New Roman",serif;
+  --font-body:   "Inter","Helvetica Neue",Arial,sans-serif;
+  --s--1:        .82rem;
+  --s-0:         1.06rem;
+  --s-1:         1.25rem;
+  --sp-2:        .5rem;
+  --sp-3:        1rem;
+  --sp-4:        1.5rem;
+  --sp-5:        2.5rem;
+  --sp-6:        4rem;
+  --maxw:        1280px;
+  --radius:      0px;
+}
+
+/* --- Section shell --- */
+.s-heritage {
+  background: var(--navy-deep);
+  padding-block: var(--sp-5);  /* slim band */
+  border-top: 1px solid rgba(176,141,76,.18);
+  border-bottom: 1px solid rgba(176,141,76,.18);
+}
+
+/* wrap already defined in base.css; restate only what's needed */
+.s-heritage .wrap {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding-inline: var(--sp-4);
+  width: 100%;
+}
+
+/* --- 4-column row --- */
+.s-heritage__row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Hairline dividers between items */
+.s-heritage__item + .s-heritage__item {
+  border-left: 1px solid rgba(228,223,212,.15);
+}
+
+/* --- Individual item --- */
+.s-heritage__item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--sp-3);
+  padding-inline: var(--sp-4);
+}
+
+/* first item flush left */
+.s-heritage__item:first-child {
+  padding-left: 0;
+}
+
+/* last item: no right padding */
+.s-heritage__item:last-child {
+  padding-right: 0;
+}
+
+/* --- Icon --- */
+.s-heritage__ic {
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  stroke: var(--gold);
+  stroke-width: 1.35;
+  fill: none;
+  margin-top: 2px;
+}
+
+/* --- Text block --- */
+.s-heritage__text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+}
+
+.s-heritage__label {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: var(--s-1);
+  color: #fff;
+  line-height: 1.1;
+  letter-spacing: .01em;
+}
+
+.s-heritage__sub {
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  color: rgba(255,255,255,.52);
+  line-height: 1.5;
+  letter-spacing: .01em;
+}
+
+/* ============================================================
+   Responsive
+   ============================================================ */
+
+/* Tablet: tighten gaps */
+@media (max-width: 1000px) {
+  .s-heritage__item {
+    padding-inline: var(--sp-3);
+  }
+  .s-heritage__item:first-child {
+    padding-left: 0;
+  }
+}
+
+/* Mobile: 2×2 grid */
+@media (max-width: 780px) {
+  .s-heritage {
+    padding-block: var(--sp-4);
+  }
+
+  .s-heritage__row {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--sp-4) var(--sp-2);
+  }
+
+  /* Reset left-border on new-row starters */
+  .s-heritage__item + .s-heritage__item {
+    border-left: none;
+  }
+
+  /* Subtle internal separator: right border on col-1 items */
+  .s-heritage__item:nth-child(odd) {
+    border-right: 1px solid rgba(228,223,212,.15);
+    padding-right: var(--sp-3);
+  }
+
+  .s-heritage__item:nth-child(even) {
+    padding-left: var(--sp-3);
+  }
+
+  .s-heritage__item:first-child,
+  .s-heritage__item:nth-child(3) {
+    padding-left: 0;
+  }
+
+  .s-heritage__item:nth-child(2),
+  .s-heritage__item:nth-child(4) {
+    padding-right: 0;
+  }
+}
+
+/* Very narrow: stack fully */
+@media (max-width: 400px) {
+  .s-heritage__row {
+    grid-template-columns: 1fr;
+  }
+
+  .s-heritage__item:nth-child(odd) {
+    border-right: none;
+    padding-right: 0;
+  }
+
+  .s-heritage__item + .s-heritage__item {
+    border-left: none;
+    border-top: 1px solid rgba(228,223,212,.15);
+    padding-top: var(--sp-3);
+  }
+
+  .s-heritage__item {
+    padding-inline: 0;
+  }
+}

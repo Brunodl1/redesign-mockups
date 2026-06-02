@@ -1,0 +1,213 @@
+/* ============================================================
+   Empire 1917 · 02-hero.css — Full-bleed éditorial, carte contenue
+   Scoped entirely to .s-hero · FR · Quiet-luxury sartorial
+   ============================================================ */
+
+/* ── Section shell ── */
+.s-hero {
+  /* Override .sec padding → vraie pleine-plage */
+  padding-block: 0;
+  position: relative;
+  overflow: hidden;
+  min-height: 86vh;
+  max-height: 760px;
+  display: flex;
+  align-items: stretch;
+}
+
+/* ── Photo de fond ── */
+.s-hero__photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center right;
+  display: block;
+  min-width: 0;
+  max-width: 100%;
+  z-index: 0;
+}
+
+/* ── Voile directionnel (gauche plus dense, droit transparent) ── */
+.s-hero__scrim {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    to right,
+    rgba(22, 28, 44, 0.22) 0%,
+    rgba(22, 28, 44, 0.10) 50%,
+    rgba(22, 28, 44, 0.00) 100%
+  );
+  pointer-events: none;
+}
+
+/* ── Wrap en colonne pleine hauteur ── */
+.s-hero .wrap {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-height: 86vh;
+  max-height: 760px;
+  padding-block: var(--sp-7);
+}
+
+/* ── Carte de texte contenue (gauche, espace négatif du modèle) ── */
+.s-hero__card {
+  background: rgba(22, 28, 44, 0.50);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  padding: var(--sp-6) var(--sp-5);
+  max-width: 520px;
+  min-width: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+/* ── Eyebrow (or héritage, clair) ── */
+.s-hero__eyebrow {
+  /* hérite de .eyebrow — on surcharge la couleur pour l'or sur fond sombre */
+  color: var(--gold) !important;
+  margin-bottom: var(--sp-4);
+  opacity: 0.92;
+}
+
+/* ── H1 ── */
+.s-hero__h1 {
+  font-family: var(--font-display);
+  font-size: var(--s-4);
+  font-weight: 600;
+  line-height: 1.06;
+  color: #F5F1E8;       /* crème ivoire — contraste fort sur navy */
+  margin: 0 0 var(--sp-4);
+  letter-spacing: -0.01em;
+}
+
+/* ── Accentuation en or ── */
+.s-hero__accent {
+  color: var(--gold);
+  display: inline;
+}
+
+/* ── Sous-titre valeur ── */
+.s-hero__sub {
+  font-family: var(--font-body);
+  font-size: var(--s-0);
+  font-weight: 400;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.90);
+  margin: 0 0 var(--sp-5);
+  max-width: 44ch;
+}
+
+/* ── Rangée CTA ── */
+.s-hero__cta-row {
+  margin-bottom: var(--sp-5);
+}
+
+/* Surcharge .btn-light pour s'assurer que le texte est bien --ink (navy) sur fond crème */
+.s-hero .s-hero__cta.btn.btn-light {
+  background: #F5F1E8;
+  color: var(--ink);
+  border-color: #F5F1E8;
+}
+.s-hero .s-hero__cta.btn.btn-light:hover {
+  background: transparent;
+  color: #F5F1E8;
+  border-color: #F5F1E8;
+}
+
+/* ── Marques de confiance ── */
+.s-hero__proof {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--sp-2) var(--sp-3);
+  border-top: 1px solid rgba(176, 141, 76, 0.35);
+  padding-top: var(--sp-3);
+}
+
+.s-hero__proof-mark {
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  font-weight: 500;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: rgba(231, 220, 196, 0.80);    /* gold-soft atténué */
+}
+
+.s-hero__proof-sep {
+  color: rgba(176, 141, 76, 0.45);
+  font-size: var(--s--1);
+  line-height: 1;
+}
+
+/* ────────────────────────────────────────────
+   MOBILE ≤ 780px
+   Carte ancrée vers le BAS, image visible en haut
+   ──────────────────────────────────────────── */
+@media (max-width: 780px) {
+
+  .s-hero {
+    min-height: 80vh;
+    max-height: none;
+    align-items: flex-end;
+  }
+
+  /* Voile plus fort en bas sur mobile */
+  .s-hero__scrim {
+    background: linear-gradient(
+      to top,
+      rgba(22, 28, 44, 0.68) 0%,
+      rgba(22, 28, 44, 0.28) 45%,
+      rgba(22, 28, 44, 0.04) 100%
+    );
+  }
+
+  .s-hero .wrap {
+    align-items: flex-end;
+    min-height: 80vh;
+    max-height: none;
+    padding-block: 0 var(--sp-5);
+  }
+
+  .s-hero__photo {
+    object-position: center top;
+  }
+
+  .s-hero__card {
+    max-width: 100%;
+    padding: var(--sp-5) var(--sp-4);
+    background: rgba(22, 28, 44, 0.55);
+    gap: 0;
+  }
+
+  .s-hero__h1 {
+    font-size: var(--s-3);
+  }
+
+  .s-hero__sub {
+    font-size: var(--s--1);
+    max-width: 100%;
+  }
+
+  /* CTA pleine largeur mobile */
+  .s-hero__cta-row {
+    width: 100%;
+  }
+  .s-hero .s-hero__cta.btn.btn-light {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .s-hero__proof {
+    gap: var(--sp-2);
+    flex-wrap: wrap;
+  }
+}
