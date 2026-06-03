@@ -1,0 +1,943 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Naetal Skincare — Clean Postpartum & Baby Skincare · Made in Canada</title>
+<meta name="description" content="Naetal Skincare: simple, clean skincare for moms and babies — pregnancy- and nursing-safe, made with only essential ingredients in small batches in Canada. Calm and soothe delicate skin.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Nunito:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<noscript><style>.reveal{opacity:1!important;transform:none!important}</style></noscript>
+</head>
+<body>
+<!-- ============================================================
+     Naetal Skincare — 01-header.html
+     Announcement bar + sticky site header
+     ============================================================ -->
+
+<!-- ANNOUNCEMENT BAR -->
+<div class="announce" role="note" aria-label="Site-wide announcement">
+  <div class="announce__inner">
+    <span class="announce__item announce__item--primary">Clean &amp; pregnancy-safe skincare</span>
+    <span class="announce__sep" aria-hidden="true">&nbsp;·&nbsp;</span>
+    <span class="announce__item announce__item--secondary">Small-batch, made in Canada</span>
+    <span class="announce__sep" aria-hidden="true">&nbsp;·&nbsp;</span>
+    <span class="announce__item announce__item--secondary">Free shipping over $100</span>
+  </div>
+</div>
+
+<!-- SITE HEADER -->
+<header class="site-header" role="banner">
+  <div class="site-header__inner wrap">
+
+    <!-- LEFT: hamburger (mobile) / nav (desktop) -->
+    <div class="site-header__left" aria-label="Primary navigation">
+
+      <!-- Mobile hamburger -->
+      <button class="site-header__hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true" focusable="false">
+          <line x1="2" y1="5.5"  x2="20" y2="5.5"  stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+          <line x1="2" y1="11"   x2="20" y2="11"   stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+          <line x1="2" y1="16.5" x2="20" y2="16.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+        </svg>
+      </button>
+
+      <!-- Desktop nav -->
+      <nav id="site-nav" class="site-header__nav" aria-label="Main navigation">
+        <ul class="site-header__nav-list" role="list">
+          <li><a href="https://www.google.com" class="site-header__nav-link">Shop</a></li>
+          <li><a href="https://www.google.com" class="site-header__nav-link">Mama Care</a></li>
+          <li><a href="https://www.google.com" class="site-header__nav-link">Baby Care</a></li>
+          <li><a href="https://www.google.com" class="site-header__nav-link">Bath &amp; Ritual</a></li>
+          <li><a href="https://www.google.com" class="site-header__nav-link">Bundles &amp; Gifts</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <!-- CENTER: logo -->
+    <div class="site-header__logo-wrap">
+      <a href="https://www.google.com" class="site-header__logo-link" aria-label="Naetal Skincare — home">
+        <img
+          src="assets/logo.png"
+          alt="Naetal Skincare"
+          class="site-header__logo-img"
+          width="auto"
+          height="38"
+          loading="eager"
+          decoding="async"
+        >
+      </a>
+    </div>
+
+    <!-- RIGHT: actions -->
+    <div class="site-header__actions" aria-label="Site actions">
+
+      <!-- Shop pill — desktop only -->
+      <a href="https://www.google.com" class="btn btn-primary site-header__shop-btn" aria-label="Shop now">Shop</a>
+
+      <!-- Search — desktop only -->
+      <button class="site-header__icon-btn site-header__search" aria-label="Search" type="button">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true" focusable="false">
+          <circle cx="9.5" cy="9.5" r="6.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+          <line x1="14.5" y1="14.5" x2="20" y2="20" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+        </svg>
+      </button>
+
+      <!-- Account — desktop only -->
+      <button class="site-header__icon-btn site-header__account" aria-label="Account" type="button">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true" focusable="false">
+          <circle cx="11" cy="7.5" r="4" stroke="currentColor" stroke-width="1.4"/>
+          <path d="M2.5 20c0-4.142 3.806-7.5 8.5-7.5s8.5 3.358 8.5 7.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+        </svg>
+      </button>
+
+      <!-- Cart — always visible -->
+      <a href="https://www.google.com" class="site-header__icon-btn site-header__cart" aria-label="Cart — 0 items">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true" focusable="false">
+          <path d="M1 1.5h3l2.4 11.5h10.2l2.4-8H5.6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="9" cy="18.5" r="1.4" stroke="currentColor" stroke-width="1.2"/>
+          <circle cx="16" cy="18.5" r="1.4" stroke="currentColor" stroke-width="1.2"/>
+        </svg>
+        <span class="site-header__cart-badge" aria-hidden="true">0</span>
+      </a>
+
+    </div>
+  </div>
+</header>
+
+<section class="sec s-hero hero-split">
+  <div class="wrap">
+    <div class="s-hero__grid">
+
+      <!-- LEFT: text panel -->
+      <div class="s-hero__left">
+        <p class="eyebrow">For the Fourth Trimester &amp; Beyond</p>
+
+        <h1 class="s-hero__h1">
+          Calm and soothe<br>
+          <span class="s-hero__accent">delicate skin.</span>
+        </h1>
+
+        <p class="s-hero__sub">
+          Clean, simple skincare for the postpartum mama and her little one —
+          pregnancy- and nursing-safe, made with only essential ingredients
+          in small batches in Canada.
+        </p>
+
+        <!-- chip row -->
+        <div class="s-hero__chips">
+          <span class="chip">Pregnancy &amp; nursing safe</span>
+          <span class="chip">8–10 simple ingredients</span>
+          <span class="chip">Made in Canada</span>
+        </div>
+
+        <!-- single CTA -->
+        <div class="s-hero__cta-row">
+          <a href="https://www.google.com" class="btn btn-primary">Shop mama care</a>
+        </div>
+
+        <!-- rating -->
+        <p class="s-hero__rating">
+          <span class="stars">★★★★★</span>
+          <span class="s-hero__rating-text">Loved by 2,000+ mamas</span>
+        </p>
+      </div>
+
+      <!-- RIGHT: image -->
+      <div class="s-hero__right">
+        <div class="s-hero__img-wrap">
+          <img
+            src="https://naetalskincare.com/cdn/shop/files/IMG_6474.jpg?v=1698732404&width=1100"
+            alt="Naetal serums with a mother nursing her newborn in soft golden light"
+            class="s-hero__img"
+            loading="eager"
+            fetchpriority="high"
+          >
+          <!-- floating proof card -->
+          <div class="s-hero__proof-card">
+            <span class="s-hero__proof-stars">★ 4.9</span>
+            <span class="s-hero__proof-label">loved by mamas</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="sec s-trust">
+  <div class="wrap">
+    <ul class="s-trust__row" role="list">
+
+      <!-- Pregnancy & Nursing Safe -->
+      <li class="s-trust__item">
+        <span class="ic s-trust__ic" aria-hidden="true">
+          <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" width="38" height="38" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <!-- belly/bump with heart -->
+            <path d="M13 22 C13 15 27 15 27 22 C27 30 20 34 20 34 C20 34 13 30 13 22 Z"/>
+            <path d="M17 21 C17 19.5 19 18.5 20 20 C21 18.5 23 19.5 23 21 C23 23 20 25 20 25 C20 25 17 23 17 21 Z"/>
+          </svg>
+        </span>
+        <p class="s-trust__label">Pregnancy &amp; Nursing Safe</p>
+        <p class="s-trust__sub">Gentle for mama and baby</p>
+      </li>
+
+      <!-- Clean & Non-Toxic -->
+      <li class="s-trust__item">
+        <span class="ic s-trust__ic" aria-hidden="true">
+          <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" width="38" height="38" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <!-- leaf -->
+            <path d="M20 33 C20 33 8 28 8 16 C8 16 14 8 26 10 C26 10 28 22 20 33 Z"/>
+            <line x1="20" y1="33" x2="20" y2="18"/>
+            <path d="M20 22 C20 22 24 18 26 14"/>
+          </svg>
+        </span>
+        <p class="s-trust__label">Clean &amp; Non-Toxic</p>
+        <p class="s-trust__sub">No fillers, no harsh chemicals</p>
+      </li>
+
+      <!-- Simple Ingredients -->
+      <li class="s-trust__item">
+        <span class="ic s-trust__ic" aria-hidden="true">
+          <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" width="38" height="38" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <!-- droplet / flask -->
+            <path d="M20 8 L27 22 C27 27.5 23.5 32 20 32 C16.5 32 13 27.5 13 22 Z"/>
+            <line x1="16" y1="25" x2="22" y2="25"/>
+          </svg>
+        </span>
+        <p class="s-trust__label">8–10 Simple Ingredients</p>
+        <p class="s-trust__sub">Each one with a purpose</p>
+      </li>
+
+      <!-- Made in Canada -->
+      <li class="s-trust__item">
+        <span class="ic s-trust__ic" aria-hidden="true">
+          <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" width="38" height="38" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <!-- maple leaf (simplified) -->
+            <path d="M20 7 L22 15 L30 13 L26 18 L33 22 L25 21 L23 28 L20 24 L17 28 L15 21 L7 22 L14 18 L10 13 L18 15 Z"/>
+            <line x1="20" y1="24" x2="20" y2="33"/>
+            <line x1="17" y1="33" x2="23" y2="33"/>
+          </svg>
+        </span>
+        <p class="s-trust__label">Small-Batch, Made in Canada</p>
+        <p class="s-trust__sub">Crafted with intention in BC</p>
+      </li>
+
+    </ul>
+  </div>
+</section>
+
+<section class="sec s-bestsellers">
+  <div class="wrap">
+
+    <!-- Section header -->
+    <div class="s-bestsellers__header reveal">
+      <p class="eyebrow">Loved by Mamas</p>
+      <h2>The postpartum essentials.</h2>
+      <p class="s-bestsellers__intro">
+        Simple, clean formulas crafted for the tender fourth trimester — for your skin, your baby's skin, and every moment in between.
+      </p>
+    </div>
+
+    <!-- Product grid -->
+    <ul class="s-bestsellers__grid" role="list">
+
+      <!-- Card 1: Belly Butter -->
+      <li class="s-bestsellers__card card reveal" style="--delay:.08s">
+        <a href="https://www.google.com" class="card__img-wrap" aria-label="Shop Belly Butter">
+          <img
+            src="https://cdn.shopify.com/s/files/1/0550/7419/3568/products/naetalskincare_products_jenzelvelophotography2-sharpened.jpg?v=1624943355&width=700"
+            alt="Naetal Belly Butter"
+            class="card__img"
+            loading="lazy"
+            decoding="async"
+          />
+        </a>
+        <div class="card__body">
+          <h3 class="card__name">Belly Butter</h3>
+          <p class="card__desc">Stretch marks, scars &amp; postpartum skin</p>
+          <div class="card__meta">
+            <span class="card__price">$48</span>
+            <span class="card__reviews">
+              <span class="stars" aria-label="5 out of 5 stars">★★★★★</span>
+              <span class="card__count">(23)</span>
+            </span>
+          </div>
+          <a href="https://www.google.com" class="btn btn-primary btn-block card__cta">Add to bag</a>
+        </div>
+      </li>
+
+      <!-- Card 2: Original Serum -->
+      <li class="s-bestsellers__card card reveal" style="--delay:.16s">
+        <a href="https://www.google.com" class="card__img-wrap" aria-label="Shop Original Serum">
+          <img
+            src="https://cdn.shopify.com/s/files/1/0550/7419/3568/products/image_63fad6bc-06cf-4746-b0b4-7c6ae6f4ad21.jpg?v=1674886629&width=700"
+            alt="Naetal Original Serum"
+            class="card__img"
+            loading="lazy"
+            decoding="async"
+          />
+        </a>
+        <div class="card__body">
+          <h3 class="card__name">Original Serum</h3>
+          <p class="card__desc">Triple hyaluronic · pregnancy rash &amp; PUPPPs</p>
+          <div class="card__meta">
+            <span class="card__price">$68</span>
+            <span class="card__reviews">
+              <span class="stars" aria-label="5 out of 5 stars">★★★★★</span>
+              <span class="card__count">(40)</span>
+            </span>
+          </div>
+          <a href="https://www.google.com" class="btn btn-primary btn-block card__cta">Add to bag</a>
+        </div>
+      </li>
+
+      <!-- Card 3: Baby Butter -->
+      <li class="s-bestsellers__card card reveal" style="--delay:.24s">
+        <a href="https://www.google.com" class="card__img-wrap" aria-label="Shop Baby Butter">
+          <img
+            src="https://cdn.shopify.com/s/files/1/0550/7419/3568/files/ACF0A9D1-B89A-4CDA-8F82-DF630535C0B9.jpg?v=1764264609&width=700"
+            alt="Naetal Baby Butter"
+            class="card__img"
+            loading="lazy"
+            decoding="async"
+          />
+        </a>
+        <div class="card__body">
+          <h3 class="card__name">Baby Butter</h3>
+          <p class="card__desc">Eczema, rash &amp; baby's sensitive skin</p>
+          <div class="card__meta">
+            <span class="card__price">$46</span>
+            <span class="card__reviews">
+              <span class="stars" aria-label="5 out of 5 stars">★★★★★</span>
+              <span class="card__count">(55)</span>
+            </span>
+          </div>
+          <a href="https://www.google.com" class="btn btn-primary btn-block card__cta">Add to bag</a>
+        </div>
+      </li>
+
+      <!-- Card 4: Postpartum Mama Essentials -->
+      <li class="s-bestsellers__card card reveal" style="--delay:.32s">
+        <a href="https://www.google.com" class="card__img-wrap" aria-label="Shop Postpartum Mama Essentials">
+          <img
+            src="https://cdn.shopify.com/s/files/1/0550/7419/3568/files/Mama_Postpartum_Essentials.png?v=1722416208&width=700"
+            alt="Postpartum Mama Essentials bundle"
+            class="card__img"
+            loading="lazy"
+            decoding="async"
+          />
+        </a>
+        <div class="card__body">
+          <h3 class="card__name">Postpartum Mama Essentials</h3>
+          <p class="card__desc">The full fourth-trimester ritual</p>
+          <div class="card__meta">
+            <span class="card__price">$135</span>
+            <span class="card__reviews">
+              <span class="stars" aria-label="5 out of 5 stars">★★★★★</span>
+            </span>
+          </div>
+          <a href="https://www.google.com" class="btn btn-primary btn-block card__cta">Add to bag</a>
+        </div>
+      </li>
+
+      <!-- Card 5: Dynamic Duo -->
+      <li class="s-bestsellers__card card reveal" style="--delay:.40s">
+        <a href="https://www.google.com" class="card__img-wrap" aria-label="Shop Dynamic Duo">
+          <img
+            src="https://cdn.shopify.com/s/files/1/0550/7419/3568/products/image_700d0798-a026-41ae-8934-d9d2adc4dc46.jpg?v=1771231006&width=700"
+            alt="Naetal Dynamic Duo serums"
+            class="card__img"
+            loading="lazy"
+            decoding="async"
+          />
+        </a>
+        <div class="card__body">
+          <h3 class="card__name">Dynamic Duo</h3>
+          <p class="card__desc">Serum + oil, soothe &amp; restore</p>
+          <div class="card__meta">
+            <span class="card__price">$78</span>
+            <span class="card__reviews">
+              <span class="stars" aria-label="5 out of 5 stars">★★★★★</span>
+              <span class="card__count">(34)</span>
+            </span>
+          </div>
+          <a href="https://www.google.com" class="btn btn-primary btn-block card__cta">Add to bag</a>
+        </div>
+      </li>
+
+      <!-- Card 6: Oat & Lavender Bath -->
+      <li class="s-bestsellers__card card reveal" style="--delay:.48s">
+        <a href="https://www.google.com" class="card__img-wrap" aria-label="Shop Oat & Lavender Bath">
+          <img
+            src="https://cdn.shopify.com/s/files/1/0550/7419/3568/products/image_2418a096-d33b-4983-8d4b-b9425e459caa.jpg?v=1656575075&width=700"
+            alt="Oat &amp; Lavender Bath"
+            class="card__img"
+            loading="lazy"
+            decoding="async"
+          />
+        </a>
+        <div class="card__body">
+          <h3 class="card__name">Oat &amp; Lavender Bath</h3>
+          <p class="card__desc">Calming soak for mama &amp; baby</p>
+          <div class="card__meta">
+            <span class="card__price">$22</span>
+            <span class="card__reviews">
+              <span class="stars" aria-label="5 out of 5 stars">★★★★★</span>
+              <span class="card__count">(11)</span>
+            </span>
+          </div>
+          <a href="https://www.google.com" class="btn btn-primary btn-block card__cta">Add to bag</a>
+        </div>
+      </li>
+
+    </ul>
+
+    <!-- Shop all CTA -->
+    <div class="s-bestsellers__footer reveal" style="--delay:.56s">
+      <a href="https://www.google.com" class="btn btn-outline">Shop all products</a>
+    </div>
+
+  </div>
+</section>
+
+<section class="sec s-postpartum">
+  <div class="wrap">
+    <div class="s-postpartum__inner">
+
+      <!-- Left: image -->
+      <div class="s-postpartum__img-col reveal">
+        <div class="s-postpartum__img-frame">
+          <img
+            src="https://naetalskincare.com/cdn/shop/files/naetalskincare_jenzelvelophotography22.jpg?v=1624608876&width=1000"
+            alt="A mother nursing her newborn in soft, calm light"
+            class="s-postpartum__img"
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+      </div>
+
+      <!-- Right: copy -->
+      <div class="s-postpartum__copy reveal" style="--delay:.12s">
+        <p class="eyebrow">The Fourth Trimester</p>
+        <h2>Care made for the after.</h2>
+        <p class="s-postpartum__lead">
+          The weeks after birth ask so much of your body. Naetal's postpartum essentials soothe stretched, healing skin — from the Belly Butter for scars and stretch marks to the herbal mama bath and the cooling Original Serum for pregnancy rash.
+        </p>
+
+        <!-- Feature list -->
+        <ul class="s-postpartum__list" role="list">
+
+          <li class="s-postpartum__item">
+            <span class="s-postpartum__ic" aria-hidden="true">
+              <svg class="ic" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M20 6c-7.18 0-13 5.82-13 13s5.82 13 13 13 13-5.82 13-13S27.18 6 20 6Z" stroke="var(--accent)" stroke-width="1.4"/>
+                <path d="M14 20.5l4 4 8-9" stroke="var(--accent)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+            <div class="s-postpartum__item-text">
+              <strong>Soothes &amp; heals</strong>
+              <span>Calms stretched, sensitive, postpartum skin.</span>
+            </div>
+          </li>
+
+          <li class="s-postpartum__item">
+            <span class="s-postpartum__ic" aria-hidden="true">
+              <svg class="ic" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M20 8c-1.5 4-6 6-6 11a6 6 0 0 0 12 0c0-5-4.5-7-6-11Z" stroke="var(--accent)" stroke-width="1.4" stroke-linejoin="round"/>
+                <path d="M20 26v4M17 28h6" stroke="var(--accent)" stroke-width="1.4" stroke-linecap="round"/>
+              </svg>
+            </span>
+            <div class="s-postpartum__item-text">
+              <strong>Fades stretch marks &amp; scars</strong>
+              <span>Belly Butter for the bump and beyond — and C-section care.</span>
+            </div>
+          </li>
+
+          <li class="s-postpartum__item">
+            <span class="s-postpartum__ic" aria-hidden="true">
+              <svg class="ic" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M20 10c0 0-8 5-8 12a8 8 0 0 0 16 0c0-7-8-12-8-12Z" stroke="var(--accent)" stroke-width="1.4" stroke-linejoin="round"/>
+                <path d="M20 16v8" stroke="var(--accent)" stroke-width="1.4" stroke-linecap="round"/>
+                <path d="M16 22c1.2 2 6.8 2 8 0" stroke="var(--accent)" stroke-width="1.4" stroke-linecap="round"/>
+              </svg>
+            </span>
+            <div class="s-postpartum__item-text">
+              <strong>A moment for you</strong>
+              <span>The herbal mama bath, made to help you slow down.</span>
+            </div>
+          </li>
+
+        </ul>
+
+        <!-- Chips + CTA -->
+        <div class="s-postpartum__chips">
+          <span class="chip">Postpartum</span>
+          <span class="chip">Pregnancy-safe</span>
+          <span class="chip">Nursing-safe</span>
+        </div>
+
+        <div class="s-postpartum__cta">
+          <a href="https://www.google.com" class="btn btn-primary">Shop postpartum care</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="sec s-ingredients">
+  <div class="wrap">
+    <div class="s-ingredients__inner">
+
+      <!-- Left: copy -->
+      <div class="s-ingredients__copy reveal">
+        <p class="eyebrow">Essential &amp; Clean</p>
+        <h2>Only what your skin needs.</h2>
+        <p class="s-ingredients__lead">
+          Every Naetal product is made with just 8–10 essential ingredients — botanicals like calendula, oat, and hyaluronic acid — each one chosen for a reason. Nothing you'd want to keep away from your baby.
+        </p>
+
+        <!-- Free-from heading -->
+        <p class="s-ingredients__free-label">Free from</p>
+
+        <!-- Free-from chips -->
+        <div class="s-ingredients__free-chips">
+          <span class="chip">Parabens</span>
+          <span class="chip">Sulfates</span>
+          <span class="chip">Silicones</span>
+          <span class="chip">Synthetic fragrance</span>
+          <span class="chip">Mineral oil</span>
+          <span class="chip">Phenoxyethanol</span>
+        </div>
+
+        <div class="s-ingredients__cta">
+          <a href="https://www.google.com" class="btn btn-outline">See the ingredients</a>
+        </div>
+      </div>
+
+      <!-- Right: image -->
+      <div class="s-ingredients__img-col reveal" style="--delay:.12s">
+        <div class="s-ingredients__img-frame">
+          <img
+            src="https://naetalskincare.com/cdn/shop/files/naetalskincare_vivianlam_brand_jenzelvelophotography63.jpg?v=1621814258&width=1000"
+            alt="Calendula flowers and oats — Naetal's clean, simple ingredients"
+            class="s-ingredients__img"
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="sec s-mamababy">
+
+  <!-- Full-bleed background image -->
+  <div class="s-mamababy__bg">
+    <img
+      src="https://naetalskincare.com/cdn/shop/files/naetalskincare_jenzelvelophotography84.jpg?v=1624608876&width=1600"
+      alt="A mother gently applying Naetal to her child's skin"
+      class="s-mamababy__img"
+      loading="lazy"
+      decoding="async"
+    >
+    <!-- Scrim overlay -->
+    <div class="s-mamababy__scrim" aria-hidden="true"></div>
+  </div>
+
+  <!-- Contained text panel -->
+  <div class="wrap s-mamababy__wrap">
+    <div class="s-mamababy__panel reveal">
+      <p class="eyebrow s-mamababy__eyebrow">One Formula, The Whole Family</p>
+      <h2 class="s-mamababy__h2">Gentle enough for your baby.<br>Effective enough for you.</h2>
+      <p class="s-mamababy__sub">
+        The same simple formulas soothe a baby's eczema and a mama's stretched, sensitive skin —
+        because clean should mean clean for everyone.
+      </p>
+      <a href="https://www.google.com" class="btn btn-light s-mamababy__cta">Shop mama &amp; baby</a>
+    </div>
+  </div>
+
+</section>
+
+<section class="sec s-reviews">
+  <div class="wrap">
+
+    <!-- Section header -->
+    <div class="s-reviews__header reveal">
+      <p class="eyebrow">From Real Mamas</p>
+      <h2>Skin soothed, mamas relieved.</h2>
+
+      <!-- Rating summary -->
+      <div class="s-reviews__summary">
+        <span class="s-reviews__big-star">★ 4.9/5</span>
+        <span class="s-reviews__count">from 2,000+ reviews</span>
+      </div>
+    </div>
+
+    <!-- Review grid -->
+    <ul class="s-reviews__grid" role="list">
+
+      <!-- Review 1 -->
+      <li class="s-reviews__card review reveal" style="--delay:.06s">
+        <div class="s-reviews__card-top">
+          <span class="stars" aria-label="5 out of 5 stars">★★★★★</span>
+          <span class="chip s-reviews__chip">Verified buyer</span>
+        </div>
+        <blockquote class="s-reviews__quote">
+          "After only four days, my baby's red, inflamed skin was soothed. A first-time mom can feel confident it's safe."
+        </blockquote>
+        <p class="s-reviews__reviewer">— Lindsay C.</p>
+      </li>
+
+      <!-- Review 2 -->
+      <li class="s-reviews__card review reveal" style="--delay:.12s">
+        <div class="s-reviews__card-top">
+          <span class="stars" aria-label="5 out of 5 stars">★★★★★</span>
+          <span class="chip s-reviews__chip">Baby eczema</span>
+        </div>
+        <blockquote class="s-reviews__quote">
+          "My son had a dry teething rash on his cheeks — after the Baby Butter it was gone the next morning. Absolute miracle."
+        </blockquote>
+        <p class="s-reviews__reviewer">— Tarah K.</p>
+      </li>
+
+      <!-- Review 3 -->
+      <li class="s-reviews__card review reveal" style="--delay:.18s">
+        <div class="s-reviews__card-top">
+          <span class="stars" aria-label="5 out of 5 stars">★★★★★</span>
+          <span class="chip s-reviews__chip">Pregnancy rash</span>
+        </div>
+        <blockquote class="s-reviews__quote">
+          "The moment I put on the serum, that cooling gave me immediate relief. It calmed my angry pregnancy belly so I could finally sleep."
+        </blockquote>
+        <p class="s-reviews__reviewer">— Vickie L.</p>
+      </li>
+
+      <!-- Review 4 -->
+      <li class="s-reviews__card review reveal" style="--delay:.24s">
+        <div class="s-reviews__card-top">
+          <span class="stars" aria-label="5 out of 5 stars">★★★★★</span>
+          <span class="chip s-reviews__chip">New mama</span>
+        </div>
+        <blockquote class="s-reviews__quote">
+          "I love that the Belly Butter is mess-free and so easy to apply — and safe for both baby and me. A staple in our nursery."
+        </blockquote>
+        <p class="s-reviews__reviewer">— Joyan B.</p>
+      </li>
+
+      <!-- Review 5 -->
+      <li class="s-reviews__card review reveal" style="--delay:.30s">
+        <div class="s-reviews__card-top">
+          <span class="stars" aria-label="5 out of 5 stars">★★★★★</span>
+          <span class="chip s-reviews__chip">Baby eczema</span>
+        </div>
+        <blockquote class="s-reviews__quote">
+          "This oat bath does wonders calming my baby's eczema. We use the Baby Butter after every soak to keep him moisturized all day."
+        </blockquote>
+        <p class="s-reviews__reviewer">— Carly H.</p>
+      </li>
+
+      <!-- Review 6 — postpartum stretch-mark/healing -->
+      <li class="s-reviews__card review reveal" style="--delay:.36s">
+        <div class="s-reviews__card-top">
+          <span class="stars" aria-label="5 out of 5 stars">★★★★★</span>
+          <span class="chip s-reviews__chip">Postpartum healing</span>
+        </div>
+        <blockquote class="s-reviews__quote">
+          "Six weeks postpartum and my stretch marks have faded so much more than I expected. This serum is the only thing that truly helped my skin recover."
+        </blockquote>
+        <p class="s-reviews__reviewer">— Megan R.</p>
+      </li>
+
+    </ul>
+
+    <!-- Footnote -->
+    <p class="s-reviews__footnote">Reviews are illustrative (mockup).</p>
+
+  </div>
+</section>
+
+<!-- ============================================================
+     Naetal Skincare — 09-gifting.html
+     Gifting band: baby-shower / new-mama gift angle
+     2-column: copy LEFT, gift-set image RIGHT
+     ============================================================ -->
+
+<section class="sec s-gifting" aria-labelledby="gifting-heading">
+  <div class="wrap s-gifting__wrap">
+
+    <!-- LEFT: copy -->
+    <div class="s-gifting__copy reveal">
+      <p class="eyebrow">The perfect new-mama gift</p>
+      <h2 id="gifting-heading">A gift that says<br>"take care of you."</h2>
+      <p class="s-gifting__lead">
+        Beautifully boxed, thoughtfully chosen — our gift sets and keepsake box are
+        the baby-shower gift every new mama actually wants. Clean, safe, and made to
+        nurture both her and her little one.
+      </p>
+
+      <!-- Highlight list -->
+      <ul class="s-gifting__list" role="list">
+
+        <li class="s-gifting__item">
+          <span class="s-gifting__icon" aria-hidden="true">
+            <!-- gift box icon -->
+            <svg class="ic" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="6" y="17" width="28" height="18" rx="2" stroke="currentColor" stroke-width="1.4"/>
+              <rect x="4" y="11" width="32" height="7" rx="2" stroke="currentColor" stroke-width="1.4"/>
+              <line x1="20" y1="11" x2="20" y2="35" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+              <path d="M20 11 C20 11 14 7 14 4 C14 2.5 15.5 1 17.5 1 C19 1 20 3 20 3 C20 3 21 1 22.5 1 C24.5 1 26 2.5 26 4 C26 7 20 11 20 11Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/>
+            </svg>
+          </span>
+          <div class="s-gifting__item-text">
+            <strong class="s-gifting__item-label">Curated essentials</strong>
+            <span class="s-gifting__item-desc">The postpartum favourites, bundled and ready to gift.</span>
+          </div>
+        </li>
+
+        <li class="s-gifting__item">
+          <span class="s-gifting__icon" aria-hidden="true">
+            <!-- keepsake box / open box icon -->
+            <svg class="ic" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M6 20 L6 34 Q6 36 8 36 L32 36 Q34 36 34 34 L34 20" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M4 14 Q4 12 6 12 L34 12 Q36 12 36 14 L36 20 Q36 22 34 22 L6 22 Q4 22 4 20 Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/>
+              <path d="M15 12 C15 12 15 6 20 6 C25 6 25 12 25 12" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+            </svg>
+          </span>
+          <div class="s-gifting__item-text">
+            <strong class="s-gifting__item-label">Wooden keepsake box</strong>
+            <span class="s-gifting__item-desc">A reusable box she'll keep long after.</span>
+          </div>
+        </li>
+
+        <li class="s-gifting__item">
+          <span class="s-gifting__icon" aria-hidden="true">
+            <!-- note / envelope icon -->
+            <svg class="ic" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="5" y="9" width="30" height="22" rx="2" stroke="currentColor" stroke-width="1.4"/>
+              <path d="M5 13 L20 23 L35 13" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+              <line x1="13" y1="28" x2="19" y2="28" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+            </svg>
+          </span>
+          <div class="s-gifting__item-text">
+            <strong class="s-gifting__item-label">Free gift note</strong>
+            <span class="s-gifting__item-desc">Add a personal message at checkout.</span>
+          </div>
+        </li>
+
+      </ul>
+
+      <!-- CTAs -->
+      <div class="s-gifting__ctas">
+        <a href="https://www.google.com" class="btn btn-primary">Shop gift sets</a>
+        <a href="https://www.google.com" class="btn btn-outline">Add a gift card</a>
+      </div>
+    </div>
+
+    <!-- RIGHT: image -->
+    <div class="s-gifting__media reveal">
+      <div class="s-gifting__img-wrap">
+        <img
+          src="https://cdn.shopify.com/s/files/1/0550/7419/3568/files/Mama_Postpartum_Essentials.png?v=1722416208&width=1000"
+          alt="Naetal Postpartum Mama Essentials gift set on a styled tray"
+          class="s-gifting__img"
+          loading="lazy"
+          decoding="async"
+          width="1000"
+          height="1000"
+        >
+        <!-- decorative badge -->
+        <div class="s-gifting__badge" aria-hidden="true">
+          <span class="s-gifting__badge-line1">Baby shower</span>
+          <span class="s-gifting__badge-line2">favourite</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============================================================
+     Naetal Skincare — 10-newsletter.html
+     Newsletter signup band
+     ============================================================ -->
+<section class="sec s-newsletter">
+  <div class="wrap">
+    <div class="s-newsletter__inner">
+      <p class="eyebrow s-newsletter__eyebrow">Join the Naetal Family</p>
+      <h2 class="s-newsletter__h2">10% off your first ritual.</h2>
+      <p class="s-newsletter__sub">Gentle skincare tips for pregnancy, postpartum &amp; baby — plus 10% off your first order.</p>
+
+      <form class="s-newsletter__form" onsubmit="return false" novalidate>
+        <div class="s-newsletter__field-wrap">
+          <input
+            class="s-newsletter__input"
+            type="email"
+            placeholder="Your email address"
+            aria-label="Email address"
+            autocomplete="email"
+          />
+          <button class="btn btn-primary s-newsletter__btn" type="submit">Subscribe</button>
+        </div>
+        <p class="s-newsletter__fine">Unsubscribe anytime.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     Naetal Skincare — 11-footer.html
+     Site footer: logo/blurb, 4 link columns, social, values, bottom bar
+     ============================================================ -->
+<footer class="site-footer">
+  <div class="wrap">
+
+    <!-- ── Top row: brand + 4 columns ── -->
+    <div class="site-footer__top">
+
+      <!-- Brand column -->
+      <div class="site-footer__brand">
+        <a href="https://www.google.com" class="site-footer__logo-link" aria-label="Naetal Skincare home">
+          <img
+            src="assets/logo.png"
+            alt="Naetal Skincare"
+            class="site-footer__logo"
+          />
+        </a>
+        <p class="site-footer__blurb">
+          Simple, clean skincare for moms and babies — made in small batches in BC, Canada. Here to nurture every stage of motherhood.
+        </p>
+
+        <!-- Social icons -->
+        <div class="site-footer__social" aria-label="Follow us">
+          <!-- Instagram -->
+          <a href="https://www.google.com" class="site-footer__social-link" aria-label="Instagram">
+            <svg class="ic" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+              <circle cx="12" cy="12" r="4.5"/>
+              <circle cx="17.5" cy="6.5" r=".7" fill="currentColor" stroke="none"/>
+            </svg>
+          </a>
+          <!-- Facebook -->
+          <a href="https://www.google.com" class="site-footer__social-link" aria-label="Facebook">
+            <svg class="ic" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+            </svg>
+          </a>
+          <!-- Pinterest -->
+          <a href="https://www.google.com" class="site-footer__social-link" aria-label="Pinterest">
+            <svg class="ic" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 2C6.48 2 2 6.48 2 12c0 4.24 2.65 7.86 6.39 9.29-.09-.78-.17-1.98.04-2.83.18-.77 1.22-5.16 1.22-5.16s-.31-.62-.31-1.54c0-1.45.84-2.53 1.88-2.53.89 0 1.32.67 1.32 1.47 0 .89-.57 2.23-.86 3.47-.24 1.04.51 1.88 1.53 1.88 1.83 0 3.24-1.93 3.24-4.71 0-2.46-1.77-4.18-4.29-4.18-2.92 0-4.63 2.19-4.63 4.45 0 .88.34 1.82.76 2.34a.3.3 0 0 1 .07.29c-.08.32-.25 1.04-.28 1.18-.04.19-.14.23-.32.14-1.25-.58-2.03-2.42-2.03-3.89 0-3.15 2.29-6.05 6.61-6.05 3.47 0 6.16 2.47 6.16 5.77 0 3.44-2.17 6.21-5.18 6.21-1.01 0-1.96-.53-2.29-1.15l-.62 2.32c-.22.86-.83 1.93-1.24 2.58.93.29 1.92.44 2.94.44 5.52 0 10-4.48 10-10S17.52 2 12 2z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Link column: Shop -->
+      <nav class="site-footer__col" aria-label="Shop">
+        <h3 class="site-footer__col-head">Shop</h3>
+        <ul class="site-footer__links">
+          <li><a href="https://www.google.com">Mama Care</a></li>
+          <li><a href="https://www.google.com">Baby Care</a></li>
+          <li><a href="https://www.google.com">Bath &amp; Ritual</a></li>
+          <li><a href="https://www.google.com">Bundles &amp; Gifts</a></li>
+          <li><a href="https://www.google.com">Gift Card</a></li>
+          <li><a href="https://www.google.com">All Products</a></li>
+        </ul>
+      </nav>
+
+      <!-- Link column: About -->
+      <nav class="site-footer__col" aria-label="About">
+        <h3 class="site-footer__col-head">About</h3>
+        <ul class="site-footer__links">
+          <li><a href="https://www.google.com">Our Story</a></li>
+          <li><a href="https://www.google.com">Philosophy</a></li>
+          <li><a href="https://www.google.com">Ingredients</a></li>
+          <li><a href="https://www.google.com">Made in Canada</a></li>
+        </ul>
+      </nav>
+
+      <!-- Link column: Learn -->
+      <nav class="site-footer__col" aria-label="Learn">
+        <h3 class="site-footer__col-head">Learn</h3>
+        <ul class="site-footer__links">
+          <li><a href="https://www.google.com">Journal</a></li>
+          <li><a href="https://www.google.com">Pregnancy &amp; Postpartum</a></li>
+          <li><a href="https://www.google.com">FAQ</a></li>
+          <li><a href="https://www.google.com">Ingredients Glossary</a></li>
+        </ul>
+      </nav>
+
+      <!-- Link column: Care -->
+      <nav class="site-footer__col" aria-label="Care">
+        <h3 class="site-footer__col-head">Care</h3>
+        <ul class="site-footer__links">
+          <li><a href="https://www.google.com">Contact</a></li>
+          <li><a href="https://www.google.com">Shipping &amp; Returns</a></li>
+          <li><a href="https://www.google.com">Account</a></li>
+          <li><a href="https://www.google.com">Giving Back</a></li>
+        </ul>
+      </nav>
+
+    </div><!-- /.site-footer__top -->
+
+    <!-- ── Values marks ── -->
+    <div class="site-footer__values" aria-label="Our values">
+      <span class="chip site-footer__chip">Pregnancy-Safe</span>
+      <span class="chip site-footer__chip">Clean &amp; Non-Toxic</span>
+      <span class="chip site-footer__chip">Made in Canada</span>
+      <span class="chip site-footer__chip">Small-Batch</span>
+    </div>
+
+    <div class="site-footer__divider" role="separator"></div>
+
+    <!-- ── Bottom bar ── -->
+    <div class="site-footer__bottom">
+      <p class="site-footer__copy">&copy; 2026 Naetal Skincare. All rights reserved.</p>
+
+      <nav class="site-footer__legal" aria-label="Legal">
+        <a href="https://www.google.com">Privacy</a>
+        <span class="site-footer__dot" aria-hidden="true">&middot;</span>
+        <a href="https://www.google.com">Terms</a>
+      </nav>
+
+      <!-- Payment marks -->
+      <div class="site-footer__pay" aria-label="Payment methods">
+        <!-- Visa -->
+        <svg class="site-footer__pay-mark" width="38" height="24" viewBox="0 0 38 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Visa">
+          <rect width="38" height="24" rx="4" fill="rgba(255,255,255,.12)"/>
+          <text x="19" y="16" text-anchor="middle" font-family="var(--font-body),sans-serif" font-size="9" font-weight="700" fill="#F1E8E0" letter-spacing="-.3">VISA</text>
+        </svg>
+        <!-- Mastercard -->
+        <svg class="site-footer__pay-mark" width="38" height="24" viewBox="0 0 38 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Mastercard">
+          <rect width="38" height="24" rx="4" fill="rgba(255,255,255,.12)"/>
+          <circle cx="15" cy="12" r="6" fill="#EB001B" opacity=".85"/>
+          <circle cx="23" cy="12" r="6" fill="#F79E1B" opacity=".85"/>
+          <path d="M19 7.5a6 6 0 0 1 0 9 6 6 0 0 1 0-9z" fill="#FF5F00" opacity=".9"/>
+        </svg>
+        <!-- Amex -->
+        <svg class="site-footer__pay-mark" width="38" height="24" viewBox="0 0 38 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="American Express">
+          <rect width="38" height="24" rx="4" fill="rgba(255,255,255,.12)"/>
+          <text x="19" y="16" text-anchor="middle" font-family="var(--font-body),sans-serif" font-size="7.5" font-weight="700" fill="#F1E8E0" letter-spacing="-.2">AMEX</text>
+        </svg>
+        <!-- PayPal -->
+        <svg class="site-footer__pay-mark" width="38" height="24" viewBox="0 0 38 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="PayPal">
+          <rect width="38" height="24" rx="4" fill="rgba(255,255,255,.12)"/>
+          <text x="19" y="16" text-anchor="middle" font-family="var(--font-body),sans-serif" font-size="7.5" font-weight="700" fill="#F1E8E0" letter-spacing="-.2">PayPal</text>
+        </svg>
+      </div>
+    </div><!-- /.site-footer__bottom -->
+
+  </div><!-- /.wrap -->
+</footer>
+
+<script src="fx.js"></script>
+</body>
+</html>

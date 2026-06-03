@@ -1,0 +1,266 @@
+/* ============================================================
+   Naetal Skincare — 01-header.css
+   Announcement bar + sticky site header
+   All rules scoped under .announce / .site-header
+   ============================================================ */
+
+/* ─── ANNOUNCEMENT BAR ─────────────────────────────────────── */
+.announce {
+  background: var(--accent);
+  color: var(--accent-ink);
+  padding-block: .55rem;
+  text-align: center;
+  position: relative;
+  z-index: 200;
+}
+
+.announce__inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  line-height: 1.4;
+  white-space: nowrap;
+  overflow: hidden;
+  padding-inline: var(--sp-4);
+}
+
+.announce__sep {
+  opacity: .7;
+  padding-inline: .45em;
+  flex-shrink: 0;
+}
+
+.announce__item {
+  flex-shrink: 0;
+}
+
+/* Mobile: show primary only, hide secondary + separators */
+@media (max-width: 780px) {
+  .announce__item--secondary,
+  .announce__sep {
+    display: none;
+  }
+  .announce__inner {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+
+/* ─── SITE HEADER ───────────────────────────────────────────── */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 190;
+  background: var(--bg);
+  border-bottom: 1px solid var(--line);
+  /* subtle warmth lift */
+  box-shadow: 0 1px 0 var(--line), 0 4px 16px rgba(91, 76, 71, .05);
+}
+
+.site-header__inner {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  min-height: 68px;
+  gap: var(--sp-3);
+}
+
+/* ── Left column ── */
+.site-header__left {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+}
+
+/* ── Center / logo ── */
+.site-header__logo-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.site-header__logo-link {
+  display: block;
+  line-height: 0;
+}
+
+.site-header__logo-img {
+  height: 38px;
+  width: auto;
+  display: block;
+  /* charcoal PNG shows well on warm greige */
+  filter: none;
+}
+
+/* ── Right column / actions ── */
+.site-header__actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--sp-2);
+  min-width: 0;
+}
+
+/* Shop pill — subtle size reduction vs global .btn */
+.site-header__shop-btn.btn {
+  padding: .65em 1.4em;
+  font-size: calc(var(--s--1) * .95);
+}
+
+
+/* ─── DESKTOP NAV ───────────────────────────────────────────── */
+.site-header__nav-list {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-4);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  white-space: nowrap;
+}
+
+.site-header__nav-link {
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--ink);
+  transition: color .2s;
+  position: relative;
+  padding-bottom: 2px;
+}
+
+.site-header__nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 1.5px;
+  background: var(--accent);
+  border-radius: 99px;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .22s cubic-bezier(.4, 0, .2, 1);
+}
+
+.site-header__nav-link:hover {
+  color: var(--accent);
+}
+
+.site-header__nav-link:hover::after {
+  transform: scaleX(1);
+}
+
+
+/* ─── ICON BUTTONS ──────────────────────────────────────────── */
+.site-header__icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background: none;
+  border: none;
+  padding: .3rem;
+  color: var(--ink);
+  cursor: pointer;
+  border-radius: var(--radius);
+  transition: color .2s, background .2s;
+  line-height: 0;
+  text-decoration: none;
+}
+
+.site-header__icon-btn:hover {
+  color: var(--accent);
+  background: rgba(174, 135, 123, .09);
+}
+
+/* Cart badge */
+.site-header__cart {
+  /* relative already from icon-btn */
+}
+
+.site-header__cart-badge {
+  position: absolute;
+  top: 0;
+  right: 0;
+  min-width: 16px;
+  height: 16px;
+  padding-inline: 3px;
+  border-radius: var(--radius-pill);
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-family: var(--font-body);
+  font-size: 9px;
+  font-weight: 700;
+  line-height: 16px;
+  text-align: center;
+  display: block;
+  pointer-events: none;
+}
+
+/* Hamburger — mobile only, hidden on desktop */
+.site-header__hamburger {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  padding: .3rem;
+  color: var(--ink);
+  cursor: pointer;
+  border-radius: var(--radius);
+  transition: color .2s;
+  line-height: 0;
+}
+
+.site-header__hamburger:hover {
+  color: var(--accent);
+}
+
+
+/* ─── MOBILE (≤780px) ───────────────────────────────────────── */
+@media (max-width: 780px) {
+  .site-header__inner {
+    grid-template-columns: 44px 1fr 44px;
+    min-height: 56px;
+    gap: var(--sp-2);
+    padding-inline: var(--sp-3);
+  }
+
+  /* Show hamburger */
+  .site-header__hamburger {
+    display: inline-flex;
+  }
+
+  /* Hide desktop nav */
+  .site-header__nav {
+    display: none;
+  }
+
+  /* Logo smaller */
+  .site-header__logo-img {
+    height: 30px;
+  }
+
+  /* Hide search, account, shop pill on mobile */
+  .site-header__search,
+  .site-header__account,
+  .site-header__shop-btn {
+    display: none;
+  }
+
+  /* Right column: only cart, flush right */
+  .site-header__actions {
+    gap: 0;
+  }
+}

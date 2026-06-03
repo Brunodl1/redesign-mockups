@@ -1,0 +1,277 @@
+/* ============================================================
+   Naetal Skincare — 09-gifting.css
+   Gifting band: baby-shower / new-mama gift angle
+   ============================================================ */
+
+/* ── token aliases (scoped) ── */
+.s-gifting {
+  --bg:          #EFE8E1;
+  --surface:     #FCF9F5;
+  --surface-2:   #E5D8D0;
+  --cream:       #F4EFE8;
+  --ink:         #5B4C47;
+  --ink-soft:    #8A786F;
+  --accent:      #AE877B;
+  --accent-ink:  #FFF8F1;
+  --accent-deep: #956657;
+  --clay-deep:   #89695F;
+  --sage:        #A6B49C;
+  --line:        #E1D8CE;
+  --star:        #C49A5E;
+  --font-display: "Crimson Text", "Georgia", "Times New Roman", serif;
+  --font-body:    "Nunito", "Helvetica Neue", Arial, sans-serif;
+  --s--1: .82rem;
+  --s-0:  1.02rem;
+  --s-1:  1.2rem;
+  --s-2:  1.55rem;
+  --s-3:  2.05rem;
+  --s-4:  2.7rem;
+  --s-5:  3.5rem;
+  --sp-1: .25rem;  --sp-2: .5rem;   --sp-3: 1rem;
+  --sp-4: 1.5rem;  --sp-5: 2.5rem;  --sp-6: 4rem;
+  --sp-7: 6rem;    --sp-8: 8rem;
+  --radius:     14px;
+  --radius-lg:  22px;
+  --radius-pill:999px;
+  --shadow:     0 18px 48px rgba(91,76,71,.12);
+  --maxw:       1200px;
+}
+
+/* ── section shell ── */
+.s-gifting {
+  background: var(--cream);
+  position: relative;
+  overflow: hidden;
+  padding-block: var(--sp-7);
+}
+
+/* subtle decorative arc top-right */
+.s-gifting::before {
+  content: "";
+  position: absolute;
+  top: -120px;
+  right: -100px;
+  width: 480px;
+  height: 480px;
+  border-radius: 50%;
+  background: var(--surface-2);
+  opacity: .45;
+  pointer-events: none;
+}
+
+/* ── 2-col layout ── */
+.s-gifting__wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-6) var(--sp-6);
+  align-items: center;
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding-inline: var(--sp-4);
+}
+
+/* ── copy column ── */
+.s-gifting__copy {
+  max-width: 520px;
+}
+
+.s-gifting__copy h2 {
+  font-family: var(--font-display);
+  font-size: var(--s-4);
+  font-weight: 600;
+  line-height: 1.14;
+  color: var(--ink);
+  margin: 0 0 var(--sp-4);
+}
+
+.s-gifting__lead {
+  font-family: var(--font-body);
+  font-size: var(--s-1);
+  color: var(--ink-soft);
+  line-height: 1.7;
+  margin: 0 0 var(--sp-5);
+}
+
+/* ── highlight list ── */
+.s-gifting__list {
+  list-style: none;
+  margin: 0 0 var(--sp-5);
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+}
+
+.s-gifting__item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--sp-3);
+}
+
+.s-gifting__icon {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--surface-2);
+  border-radius: var(--radius);
+  color: var(--accent-deep);
+  padding: 6px;
+}
+
+.s-gifting__icon .ic {
+  width: 28px;
+  height: 28px;
+}
+
+.s-gifting__item-text {
+  display: flex;
+  flex-direction: column;
+  gap: .15em;
+  padding-top: .2em;
+}
+
+.s-gifting__item-label {
+  font-family: var(--font-body);
+  font-size: var(--s-0);
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+.s-gifting__item-desc {
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  color: var(--ink-soft);
+  line-height: 1.55;
+}
+
+/* ── CTAs ── */
+.s-gifting__ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-3);
+  align-items: center;
+  margin-top: var(--sp-2);
+}
+
+/* ── media column ── */
+.s-gifting__media {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.s-gifting__img-wrap {
+  position: relative;
+  max-width: 520px;
+  width: 100%;
+  border-radius: var(--radius-lg);
+  overflow: visible; /* allow badge to overflow */
+}
+
+.s-gifting__img {
+  width: 100%;
+  max-width: 520px;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
+  border-radius: var(--radius-lg);
+  background: var(--surface-2);
+  display: block;
+  /* subtle warm shadow */
+  box-shadow: 0 24px 60px rgba(91,76,71,.14), 0 4px 16px rgba(91,76,71,.08);
+}
+
+/* decorative circle badge */
+.s-gifting__badge {
+  position: absolute;
+  bottom: -18px;
+  left: -18px;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: var(--accent-ink);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-family: var(--font-body);
+  font-weight: 700;
+  line-height: 1.2;
+  box-shadow: 0 8px 24px rgba(91,76,71,.22);
+  gap: .05em;
+}
+
+.s-gifting__badge-line1 {
+  font-size: .62rem;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+}
+
+.s-gifting__badge-line2 {
+  font-size: .72rem;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+}
+
+/* ── reveal stagger ── */
+.s-gifting__copy.reveal  { transition-delay: 0s   }
+.s-gifting__media.reveal { transition-delay: .12s }
+
+/* ── MOBILE: stack image above copy ── */
+@media (max-width: 780px) {
+  .s-gifting {
+    padding-block: var(--sp-6);
+  }
+
+  .s-gifting__wrap {
+    grid-template-columns: 1fr;
+    gap: var(--sp-5);
+  }
+
+  /* image comes FIRST on mobile */
+  .s-gifting__media {
+    order: -1;
+  }
+
+  .s-gifting__copy {
+    max-width: 100%;
+  }
+
+  .s-gifting__copy h2 {
+    font-size: var(--s-3);
+  }
+
+  .s-gifting__img-wrap {
+    max-width: 380px;
+    margin: 0 auto;
+  }
+
+  .s-gifting__badge {
+    bottom: -12px;
+    left: -10px;
+    width: 76px;
+    height: 76px;
+  }
+
+  .s-gifting__ctas {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .s-gifting__ctas .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .s-gifting__img-wrap {
+    max-width: 100%;
+  }
+}

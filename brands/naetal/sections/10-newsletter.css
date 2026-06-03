@@ -1,0 +1,161 @@
+/* ============================================================
+   Naetal Skincare — 10-newsletter.css
+   Newsletter signup band
+   Scope: .s-newsletter  |  tokens from base.css only
+   ============================================================ */
+
+/* ── Section shell ── */
+.s-newsletter {
+  background: var(--accent);
+  padding-block: var(--sp-8);
+}
+
+/* ── Inner centering ── */
+.s-newsletter__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0;
+  max-width: 640px;
+  margin-inline: auto;
+}
+
+/* ── Eyebrow ── */
+.s-newsletter .eyebrow,
+.s-newsletter__eyebrow {
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--accent-ink);
+  opacity: .75;
+  margin: 0 0 var(--sp-2);
+}
+
+/* ── Headline ── */
+.s-newsletter__h2 {
+  font-family: var(--font-display);
+  font-size: var(--s-4);
+  font-weight: 600;
+  line-height: 1.15;
+  color: var(--accent-ink);
+  margin: 0 0 var(--sp-3);
+}
+
+/* ── Subtext ── */
+.s-newsletter__sub {
+  font-family: var(--font-body);
+  font-size: var(--s-1);
+  line-height: 1.6;
+  color: var(--accent-ink);
+  opacity: .88;
+  margin: 0 0 var(--sp-5);
+  max-width: 52ch;
+}
+
+/* ── Form ── */
+.s-newsletter__form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+}
+
+.s-newsletter__field-wrap {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  width: 100%;
+  max-width: 520px;
+}
+
+/* ── Email input ── */
+.s-newsletter__input {
+  flex: 1 1 0;
+  min-width: 0;
+  height: 52px;
+  padding-inline: var(--sp-4);
+  background: #fff;
+  color: var(--ink);
+  border: 1.5px solid var(--line);
+  border-radius: var(--radius-pill);
+  font-family: var(--font-body);
+  font-size: var(--s-0);
+  outline: none;
+  transition: border-color .2s, box-shadow .2s;
+}
+
+.s-newsletter__input::placeholder {
+  color: var(--ink-soft);
+  opacity: .7;
+}
+
+.s-newsletter__input:focus {
+  border-color: var(--accent-deep);
+  box-shadow: 0 0 0 3px rgba(149, 102, 87, .18);
+}
+
+/* ── Subscribe button ── */
+.s-newsletter .btn-primary,
+.s-newsletter__btn {
+  flex-shrink: 0;
+  height: 52px;
+  padding-inline: var(--sp-5);
+  border-radius: var(--radius-pill);
+  background: var(--accent-deep);
+  color: var(--accent-ink);
+  font-family: var(--font-body);
+  font-size: var(--s-0);
+  font-weight: 700;
+  letter-spacing: .06em;
+  border: none;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background .2s, transform .1s;
+}
+
+.s-newsletter .btn-primary:hover,
+.s-newsletter__btn:hover {
+  background: var(--clay-deep);
+  transform: translateY(-1px);
+}
+
+.s-newsletter .btn-primary:active,
+.s-newsletter__btn:active {
+  transform: translateY(0);
+}
+
+/* ── Fine print ── */
+.s-newsletter__fine {
+  margin: var(--sp-3) 0 0;
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  color: var(--accent-ink);
+  opacity: .55;
+}
+
+/* ── Mobile: stack full-width ── */
+@media (max-width: 600px) {
+  .s-newsletter {
+    padding-block: var(--sp-7);
+  }
+
+  .s-newsletter__h2 {
+    font-size: var(--s-3);
+  }
+
+  .s-newsletter__field-wrap {
+    flex-direction: column;
+    gap: var(--sp-2);
+  }
+
+  .s-newsletter__input,
+  .s-newsletter .btn-primary,
+  .s-newsletter__btn {
+    width: 100%;
+    flex: none;
+  }
+}

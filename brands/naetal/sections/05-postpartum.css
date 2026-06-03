@@ -1,0 +1,207 @@
+/* ============================================================
+   05-postpartum.css — The Fourth Trimester emotional band
+   Scope: .s-postpartum
+   ============================================================ */
+
+/* ── Local token aliases (all from base.css) ──────────────── */
+.s-postpartum {
+  --bg:          #EFE8E1;
+  --surface:     #FCF9F5;
+  --surface-2:   #E5D8D0;
+  --cream:       #F4EFE8;
+  --ink:         #5B4C47;
+  --ink-soft:    #8A786F;
+  --accent:      #AE877B;
+  --accent-ink:  #FFF8F1;
+  --accent-deep: #956657;
+  --clay-deep:   #89695F;
+  --sage:        #A6B49C;
+  --line:        #E1D8CE;
+  --star:        #C49A5E;
+  --font-display:"Crimson Text", "Georgia", serif;
+  --font-body:   "Nunito", "Helvetica Neue", Arial, sans-serif;
+  --s--1:  .82rem;
+  --s-0:   1.02rem;
+  --s-1:   1.2rem;
+  --s-2:   1.55rem;
+  --s-3:   2.05rem;
+  --s-4:   2.7rem;
+  --s-5:   3.5rem;
+  --sp-1:  .25rem;
+  --sp-2:  .5rem;
+  --sp-3:  1rem;
+  --sp-4:  1.5rem;
+  --sp-5:  2.5rem;
+  --sp-6:  4rem;
+  --sp-7:  6rem;
+  --sp-8:  8rem;
+  --radius:     14px;
+  --radius-lg:  22px;
+  --radius-pill:999px;
+  --shadow:     0 18px 48px rgba(91,76,71,.12);
+  --maxw:       1200px;
+}
+
+/* ── Section ────────────────────────────────────────────────── */
+.s-postpartum {
+  background: var(--surface);
+}
+
+/* ── Two-column inner grid ──────────────────────────────────── */
+.s-postpartum__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-7);
+  align-items: center;
+}
+
+/* ── Image column ───────────────────────────────────────────── */
+.s-postpartum__img-col {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.s-postpartum__img-frame {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  max-width: 520px;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  background: var(--cream);
+  box-shadow: var(--shadow);
+  flex-shrink: 0;
+}
+
+.s-postpartum__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+/* ── Copy column ─────────────────────────────────────────────── */
+.s-postpartum__copy {
+  max-width: 520px;
+}
+
+.s-postpartum__copy h2 {
+  font-family: var(--font-display);
+  font-size: var(--s-4);
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1.12;
+  margin: 0 0 var(--sp-4);
+}
+
+.s-postpartum__lead {
+  font-family: var(--font-body);
+  font-size: var(--s-0);
+  color: var(--ink-soft);
+  line-height: 1.75;
+  margin: 0 0 var(--sp-5);
+}
+
+/* ── Feature list ────────────────────────────────────────────── */
+.s-postpartum__list {
+  list-style: none;
+  margin: 0 0 var(--sp-5);
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+}
+
+.s-postpartum__item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--sp-3);
+}
+
+.s-postpartum__ic {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--cream);
+  border-radius: var(--radius);
+  margin-top: 2px;
+}
+
+.s-postpartum__item-text {
+  display: flex;
+  flex-direction: column;
+  gap: .2em;
+}
+
+.s-postpartum__item-text strong {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: var(--s-0);
+  color: var(--ink);
+  line-height: 1.35;
+}
+
+.s-postpartum__item-text span {
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  color: var(--ink-soft);
+  line-height: 1.55;
+}
+
+/* ── Chips row ───────────────────────────────────────────────── */
+.s-postpartum__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+  margin-bottom: var(--sp-5);
+}
+
+/* ── CTA ─────────────────────────────────────────────────────── */
+.s-postpartum__cta {
+  display: flex;
+}
+
+/* ── Staggered reveal ────────────────────────────────────────── */
+.s-postpartum .reveal {
+  transition-delay: var(--delay, 0s);
+}
+
+/* ── Tablet ──────────────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .s-postpartum__inner {
+    gap: var(--sp-5);
+  }
+
+  .s-postpartum__img-frame {
+    aspect-ratio: 3 / 4;
+  }
+}
+
+/* ── Mobile: stack image above text ─────────────────────────── */
+@media (max-width: 700px) {
+  .s-postpartum__inner {
+    grid-template-columns: 1fr;
+    gap: var(--sp-5);
+  }
+
+  .s-postpartum__img-col {
+    justify-content: center;
+    order: -1;
+  }
+
+  .s-postpartum__img-frame {
+    max-width: 100%;
+    aspect-ratio: 3 / 2;
+  }
+
+  .s-postpartum__copy {
+    max-width: 100%;
+  }
+
+  .s-postpartum__copy h2 {
+    font-size: var(--s-3);
+  }
+}

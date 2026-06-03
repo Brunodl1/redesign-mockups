@@ -1,0 +1,283 @@
+/* ============================================================
+   04-bestsellers.css — Loved By Mamas bestsellers grid
+   Scope: .s-bestsellers
+   ============================================================ */
+
+/* Local token aliases (all from base.css) */
+.s-bestsellers {
+  --bg:          #EFE8E1;
+  --surface:     #FCF9F5;
+  --surface-2:   #E5D8D0;
+  --cream:       #F4EFE8;
+  --ink:         #5B4C47;
+  --ink-soft:    #8A786F;
+  --accent:      #AE877B;
+  --accent-ink:  #FFF8F1;
+  --accent-deep: #956657;
+  --clay-deep:   #89695F;
+  --sage:        #A6B49C;
+  --line:        #E1D8CE;
+  --gold:        #C49A5E;
+  --star:        #C49A5E;
+  --font-display:"Crimson Text", "Georgia", serif;
+  --font-body:   "Nunito", "Helvetica Neue", Arial, sans-serif;
+  --s--1:  .82rem;
+  --s-0:   1.02rem;
+  --s-1:   1.2rem;
+  --s-2:   1.55rem;
+  --s-3:   2.05rem;
+  --s-4:   2.7rem;
+  --s-5:   3.5rem;
+  --sp-1:  .25rem;
+  --sp-2:  .5rem;
+  --sp-3:  1rem;
+  --sp-4:  1.5rem;
+  --sp-5:  2.5rem;
+  --sp-6:  4rem;
+  --sp-7:  6rem;
+  --sp-8:  8rem;
+  --radius:     14px;
+  --radius-lg:  22px;
+  --radius-pill:999px;
+  --shadow:     0 18px 48px rgba(91,76,71,.12);
+  --maxw:       1200px;
+}
+
+/* ── Section ───────────────────────────────────────────────── */
+.s-bestsellers {
+  background: var(--bg);
+}
+
+/* ── Header block ──────────────────────────────────────────── */
+.s-bestsellers__header {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto var(--sp-6);
+}
+
+.s-bestsellers__header h2 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: var(--s-4);
+  color: var(--ink);
+  margin: 0 0 var(--sp-3);
+  line-height: 1.14;
+}
+
+.s-bestsellers__intro {
+  font-family: var(--font-body);
+  font-size: var(--s-0);
+  color: var(--ink-soft);
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* ── Product grid ──────────────────────────────────────────── */
+.s-bestsellers__grid {
+  list-style: none;
+  margin: 0 0 var(--sp-6);
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-4);
+}
+
+/* ── Card ──────────────────────────────────────────────────── */
+.s-bestsellers .card {
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--line);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform .22s ease, box-shadow .22s ease;
+}
+
+.s-bestsellers .card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow);
+}
+
+/* Card image tile */
+.s-bestsellers .card__img-wrap {
+  display: block;
+  background: var(--cream);
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+}
+
+.s-bestsellers .card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform .35s ease;
+}
+
+.s-bestsellers .card:hover .card__img {
+  transform: scale(1.04);
+}
+
+/* Card body */
+.s-bestsellers .card__body {
+  padding: var(--sp-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+  flex: 1;
+}
+
+.s-bestsellers .card__name {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: var(--s-2);
+  color: var(--ink);
+  margin: 0;
+  line-height: 1.2;
+}
+
+.s-bestsellers .card__desc {
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  color: var(--ink-soft);
+  margin: 0;
+  line-height: 1.45;
+}
+
+/* Price + stars row */
+.s-bestsellers .card__meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-2);
+  margin-top: auto;
+  padding-top: var(--sp-2);
+}
+
+.s-bestsellers .card__price {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: var(--s-1);
+  color: var(--ink);
+}
+
+.s-bestsellers .card__reviews {
+  display: flex;
+  align-items: center;
+  gap: .3em;
+  flex-shrink: 0;
+}
+
+.s-bestsellers .stars {
+  color: var(--star);
+  font-size: var(--s--1);
+  letter-spacing: .04em;
+  line-height: 1;
+}
+
+.s-bestsellers .card__count {
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  color: var(--ink-soft);
+  line-height: 1;
+}
+
+/* CTA button — full-width pill */
+.s-bestsellers .card__cta {
+  margin-top: var(--sp-3);
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: var(--s--1);
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  padding: .95em 2.1em;
+  border-radius: var(--radius-pill);
+  border: 1.5px solid var(--accent);
+  background: var(--accent);
+  color: var(--accent-ink);
+  cursor: pointer;
+  transition: background .22s, color .22s, border-color .22s, transform .15s, box-shadow .2s;
+  line-height: 1;
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+.s-bestsellers .card__cta:hover {
+  background: var(--accent-deep);
+  border-color: var(--accent-deep);
+  box-shadow: var(--shadow);
+  transform: translateY(-2px);
+}
+
+/* ── Staggered reveal delays ───────────────────────────────── */
+.s-bestsellers .reveal {
+  transition-delay: var(--delay, 0s);
+}
+
+/* ── Footer / Shop all ─────────────────────────────────────── */
+.s-bestsellers__footer {
+  text-align: center;
+  padding-top: var(--sp-2);
+}
+
+/* Scope btn-outline styles inside section */
+.s-bestsellers .btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: var(--s--1);
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  padding: .95em 2.6em;
+  border-radius: var(--radius-pill);
+  border: 1.5px solid var(--accent-deep);
+  background: transparent;
+  color: var(--accent-deep);
+  cursor: pointer;
+  transition: background .22s, color .22s, border-color .22s, transform .15s;
+  line-height: 1;
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+.s-bestsellers .btn-outline:hover {
+  background: var(--accent-deep);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+/* ── Tablet: 2-up ──────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .s-bestsellers__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ── Mobile: 1-up or horizontal snap ──────────────────────── */
+@media (max-width: 560px) {
+  .s-bestsellers__grid {
+    grid-template-columns: 1fr;
+    /* Optional: horizontal snap on very small screens */
+  }
+
+  .s-bestsellers__header {
+    margin-bottom: var(--sp-5);
+  }
+
+  .s-bestsellers .card__img-wrap {
+    aspect-ratio: 3 / 2;
+  }
+}
+
+/* ── Responsive type ───────────────────────────────────────── */
+@media (max-width: 780px) {
+  .s-bestsellers__header h2 {
+    font-size: var(--s-3);
+  }
+}

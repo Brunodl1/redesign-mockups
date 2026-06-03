@@ -1,0 +1,225 @@
+/* ============================================================
+   Naetal — 02-hero.css  (split hero: content left, image right)
+   Scope: .s-hero  |  tokens from base.css only
+   ============================================================ */
+
+/* ── section shell ── */
+.s-hero {
+  background: var(--bg);
+  padding-block: 0;          /* grid handles vertical rhythm */
+  overflow: hidden;
+}
+
+.s-hero .wrap {
+  padding-inline: var(--sp-4);
+}
+
+/* ── two-column grid ── */
+.s-hero__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-6);
+  align-items: center;
+  min-height: 640px;
+  padding-block: var(--sp-7);
+}
+
+/* ── LEFT panel ── */
+.s-hero__left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0;
+  min-width: 0;
+  max-width: 100%;
+}
+
+.s-hero__h1 {
+  font-family: var(--font-display);
+  font-size: var(--s-5);
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -.01em;
+  color: var(--ink);
+  margin: 0 0 var(--sp-4);
+}
+
+.s-hero__accent {
+  color: var(--accent);
+}
+
+.s-hero__sub {
+  font-family: var(--font-body);
+  font-size: var(--s-1);
+  color: var(--ink-soft);
+  line-height: 1.65;
+  margin: 0 0 var(--sp-5);
+  max-width: 46ch;
+  min-width: 0;
+}
+
+/* chip row */
+.s-hero__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+  margin-bottom: var(--sp-5);
+}
+
+/* override chip to use cream bg for warmth on greige */
+.s-hero .chip {
+  background: var(--surface);
+  border-color: var(--line);
+  color: var(--ink);
+  font-size: var(--s--1);
+}
+
+/* CTA row */
+.s-hero__cta-row {
+  margin-bottom: var(--sp-4);
+}
+
+/* rating line */
+.s-hero__rating {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  margin: 0;
+  font-family: var(--font-body);
+}
+
+.s-hero__rating .stars {
+  font-size: var(--s-1);
+  line-height: 1;
+}
+
+.s-hero__rating-text {
+  font-size: var(--s--1);
+  font-weight: 700;
+  color: var(--ink-soft);
+  letter-spacing: .04em;
+}
+
+/* ── RIGHT panel ── */
+.s-hero__right {
+  min-width: 0;
+  max-width: 100%;
+  align-self: stretch;
+  display: flex;
+  align-items: stretch;
+}
+
+.s-hero__img-wrap {
+  position: relative;
+  width: 100%;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  max-height: 600px;
+  min-height: 420px;
+  background: var(--surface-2); /* warm fallback while image loads */
+}
+
+.s-hero__img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  min-width: 0;
+  max-width: 100%;
+  /* gentle warm tint overlay via mix-blend — subtle, no color loss */
+}
+
+/* floating proof card */
+.s-hero__proof-card {
+  position: absolute;
+  bottom: var(--sp-4);
+  left: var(--sp-4);
+  background: var(--surface);          /* warm off-white */
+  border-radius: var(--radius-pill);
+  box-shadow: var(--shadow);
+  padding: .55em 1.1em;
+  display: flex;
+  align-items: center;
+  gap: .5em;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: var(--s--1);
+  color: var(--ink);
+  letter-spacing: .04em;
+  pointer-events: none;
+}
+
+.s-hero__proof-stars {
+  color: var(--star);
+}
+
+.s-hero__proof-label {
+  color: var(--ink-soft);
+}
+
+/* ── Mobile: stack image ABOVE text ── */
+@media (max-width: 780px) {
+  .s-hero__grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    gap: var(--sp-5);
+    min-height: unset;
+    padding-block: var(--sp-5) var(--sp-6);
+  }
+
+  /* image first (order -1 puts it above LEFT in source order) */
+  .s-hero__right {
+    order: -1;
+    align-self: auto;
+  }
+
+  .s-hero__img-wrap {
+    max-height: 360px;
+    min-height: 220px;
+    border-radius: var(--radius-lg);
+  }
+
+  .s-hero__left {
+    align-items: flex-start;
+  }
+
+  .s-hero__h1 {
+    font-size: var(--s-4);
+    margin-bottom: var(--sp-3);
+  }
+
+  .s-hero__sub {
+    font-size: var(--s-0);
+    margin-bottom: var(--sp-4);
+    max-width: 100%;
+  }
+
+  .s-hero__chips {
+    gap: var(--sp-2);
+    margin-bottom: var(--sp-4);
+  }
+
+  /* full-width CTA on mobile */
+  .s-hero__cta-row .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .s-hero__proof-card {
+    bottom: var(--sp-3);
+    left: var(--sp-3);
+  }
+}
+
+/* ── Narrow mobile tweak ── */
+@media (max-width: 400px) {
+  .s-hero__chips {
+    gap: var(--sp-1);
+  }
+
+  .s-hero .chip {
+    font-size: .72rem;
+    padding: .45em .8em;
+  }
+}

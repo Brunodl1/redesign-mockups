@@ -1,0 +1,175 @@
+/* ============================================================
+   Section 07 — Mama & Baby full-bleed editorial band
+   .s-mamababy
+   ============================================================ */
+
+/* ── Token declarations (ensure all used vars are defined) ── */
+.s-mamababy {
+  --bg:           #EFE8E1;
+  --surface:      #FCF9F5;
+  --surface-2:    #E5D8D0;
+  --cream:        #F4EFE8;
+  --ink:          #5B4C47;
+  --ink-soft:     #8A786F;
+  --accent:       #AE877B;
+  --accent-ink:   #FFF8F1;
+  --accent-deep:  #956657;
+  --clay-deep:    #89695F;
+  --sage:         #A6B49C;
+  --gold:         #C49A5E;
+  --star:         #C49A5E;
+  --line:         #E1D8CE;
+  --radius:       14px;
+  --radius-lg:    22px;
+  --radius-pill:  999px;
+  --shadow:       0 18px 48px rgba(91,76,71,.12);
+  --maxw:         1200px;
+  --font-display: "Crimson Text", "Georgia", "Times New Roman", serif;
+  --font-body:    "Nunito", "Helvetica Neue", Arial, sans-serif;
+  --s--1:  .82rem;
+  --s-0:   1.02rem;
+  --s-1:   1.2rem;
+  --s-2:   1.55rem;
+  --s-3:   2.05rem;
+  --s-4:   2.7rem;
+  --s-5:   3.5rem;
+  --sp-1: .25rem; --sp-2: .5rem; --sp-3: 1rem;   --sp-4: 1.5rem;
+  --sp-5: 2.5rem; --sp-6: 4rem;  --sp-7: 6rem;   --sp-8: 8rem;
+}
+
+/* ── Section reset — true full-bleed, no sec padding ── */
+.s-mamababy {
+  position: relative;
+  padding: 0;
+  overflow: hidden;
+  min-height: 64vh;
+  max-height: 760px;
+  display: flex;
+  align-items: center;
+}
+
+/* ── Background image wrapper ── */
+.s-mamababy__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.s-mamababy__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+  display: block;
+  max-width: none; /* override base.css img rule */
+}
+
+/* ── Scrim — gradient from left, fades right ── */
+.s-mamababy__scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    rgba(51, 38, 33, 0.65) 0%,
+    rgba(51, 38, 33, 0.45) 45%,
+    rgba(51, 38, 33, 0.12) 100%
+  );
+  backdrop-filter: blur(0px);
+}
+
+/* ── Wrap — positioned above scrim ── */
+.s-mamababy__wrap {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  padding-block: var(--sp-8);
+}
+
+/* ── Text panel — semi-opaque card anchored left ── */
+.s-mamababy__panel {
+  max-width: 540px;
+  background: rgba(51, 38, 33, 0.46);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 248, 241, 0.14);
+  border-radius: var(--radius-lg);
+  padding: var(--sp-6) var(--sp-5);
+}
+
+/* ── Eyebrow — light cream override (specificity-safe) ── */
+.s-mamababy .s-mamababy__eyebrow,
+.s-mamababy__panel .s-mamababy__eyebrow {
+  color: rgba(255, 248, 241, 0.82) !important;
+  display: inline-block;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: var(--s--1);
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  margin: 0 0 var(--sp-3);
+}
+
+/* ── Heading — serif, large, cream ── */
+.s-mamababy__h2 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(1.9rem, 3.8vw, 2.8rem);
+  line-height: 1.12;
+  letter-spacing: 0;
+  color: #FFF8F1 !important;
+  margin: 0 0 var(--sp-4);
+}
+
+/* ── Subhead ── */
+.s-mamababy__sub {
+  font-family: var(--font-body);
+  font-size: var(--s-0);
+  line-height: 1.7;
+  color: rgba(255, 248, 241, 0.88) !important;
+  margin: 0 0 var(--sp-5);
+}
+
+/* ── CTA — use .btn.btn-light from base, add margin reset ── */
+.s-mamababy__cta {
+  /* inherits .btn .btn-light from base.css */
+  display: inline-flex;
+}
+
+/* ── Mobile ── */
+@media (max-width: 780px) {
+  .s-mamababy {
+    min-height: 56vh;
+    align-items: flex-end;
+  }
+
+  .s-mamababy__scrim {
+    background: linear-gradient(
+      180deg,
+      rgba(51, 38, 33, 0.22) 0%,
+      rgba(51, 38, 33, 0.72) 55%,
+      rgba(51, 38, 33, 0.82) 100%
+    );
+  }
+
+  .s-mamababy__wrap {
+    padding-block: var(--sp-5) var(--sp-6);
+  }
+
+  .s-mamababy__panel {
+    max-width: 100%;
+    padding: var(--sp-4) var(--sp-4);
+    background: rgba(51, 38, 33, 0.58);
+    border-radius: var(--radius);
+  }
+
+  .s-mamababy__h2 {
+    font-size: var(--s-3);
+  }
+}
+
+@media (max-width: 480px) {
+  .s-mamababy__cta {
+    width: 100%;
+    justify-content: center;
+  }
+}
