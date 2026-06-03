@@ -1,0 +1,86 @@
+/* Plantd Skincare — base foundation. Reproduces the REAL brand:
+   near-black + white + soft PASTEL panels (lilac/mint/pink/peach) + pink-magenta
+   accent + plant green. Hanken Grotesk (friendly grotesque), black PILL buttons.
+   Plant-based, fresh, clean, friendly, made-in-Canada. */
+:root{
+  /* color */
+  --bg:        #ffffff;
+  --surface:   #fafafa;   /* light grey card/band */
+  --surface-2: #f1f1f1;   /* deeper grey */
+  --lilac:     #e7ddf5;   /* hero pastel */
+  --mint:      #def7ec;
+  --pink:      #ffeef6;
+  --peach:     #ffeede;
+  --dark:      #191919;   /* black bars / dark band */
+  --ink:       #191919;   /* near-black text */
+  --ink-soft:  #5e5e5e;   /* grey secondary */
+  --accent:    #e8144b;   /* pink-magenta pop */
+  --accent-2:  #c40f3f;   /* deeper hover */
+  --accent-ink:#ffffff;
+  --green:     #2e7d52;   /* plant/organic eco */
+  --pop:       #e8144b;
+  --line:      #ebebeb;   /* hairline */
+  --star:      #e0a93b;   /* warm gold stars */
+  --scrim:     rgba(25,25,25,.46);
+  --btn:       #191919; --btn-ink:#ffffff;
+  /* type */
+  --font-display:"Hanken Grotesk","Helvetica Neue",Arial,sans-serif;
+  --font-body:"Hanken Grotesk","Helvetica Neue",Arial,sans-serif;
+  --s--1:.84rem; --s-0:1rem; --s-1:1.2rem; --s-2:1.5rem; --s-3:2.1rem; --s-4:2.9rem; --s-5:3.9rem;
+  /* space */
+  --sp-1:.25rem; --sp-2:.5rem; --sp-3:1rem; --sp-4:1.5rem; --sp-5:2.5rem; --sp-6:4rem; --sp-7:6rem;
+  /* radius + shadow */
+  --radius:14px; --radius-lg:24px; --radius-pill:999px;
+  --shadow:0 14px 40px rgba(25,25,25,.08);
+  --shadow-soft:0 6px 22px rgba(25,25,25,.06);
+  --maxw:1280px;
+}
+*{box-sizing:border-box}
+html,body{overflow-x:clip}
+html{scroll-behavior:smooth}
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font-family:var(--font-body); font-size:var(--s-0); line-height:1.6;
+  -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+}
+img{max-width:100%; display:block}
+a{color:inherit; text-decoration:none}
+
+h1,h2,h3{font-family:var(--font-display); color:var(--ink); margin:0; line-height:1.04; font-weight:800; letter-spacing:-.02em}
+h1{font-size:clamp(2.5rem,5.4vw,var(--s-5)); font-weight:800}
+h2{font-size:clamp(2rem,3.8vw,var(--s-4)); font-weight:800}
+h3{font-size:var(--s-2); font-weight:700}
+p{margin:0}
+
+.wrap{max-width:var(--maxw); margin-inline:auto; padding-inline:clamp(1.1rem,4vw,2.4rem); width:100%}
+.section{padding-block:clamp(3.2rem,7vw,var(--sp-7))}
+
+.eyebrow{font-family:var(--font-display); font-weight:700; font-size:var(--s--1);
+  letter-spacing:.16em; text-transform:uppercase; color:var(--green)}
+
+/* buttons — black PILL primary, outline; friendly */
+.btn{display:inline-flex; align-items:center; justify-content:center; gap:.5rem;
+  font-family:var(--font-display); font-weight:700; font-size:var(--s--1);
+  letter-spacing:.06em; text-transform:uppercase; cursor:pointer; border:2px solid transparent;
+  padding:.95rem 2rem; border-radius:var(--radius-pill); transition:.18s ease; white-space:nowrap}
+.btn-primary{background:var(--btn); color:var(--btn-ink)}
+.btn-primary:hover{background:#000}
+.btn-accent{background:var(--accent); color:var(--accent-ink)}
+.btn-accent:hover{background:var(--accent-2)}
+.btn-outline{background:transparent; color:var(--ink); border-color:var(--ink)}
+.btn-outline:hover{background:var(--ink); color:#fff}
+.btn-light{background:#fff; color:var(--ink); border-color:#fff}
+.btn-light:hover{background:transparent; color:#fff; border-color:#fff}
+.btn-block{width:100%}
+
+/* depth */
+.float{position:absolute; pointer-events:none; z-index:2}
+.float img{width:100%; height:auto; transform:rotate(var(--rot,0deg)); filter:drop-shadow(0 16px 28px rgba(25,25,25,.16))}
+.reveal{opacity:0; transform:perspective(900px) rotateX(8deg) translateY(26px); transition:.6s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1; transform:none}
+@media(prefers-reduced-motion:reduce){ .reveal{opacity:1; transform:none; transition:none} }
+@media print{ .reveal{opacity:1!important; transform:none!important} }
+@media(max-width:1000px){ .float{display:none} }
+
+/* shared inline icon */
+.ic{width:38px; height:38px; flex:none; stroke:currentColor; stroke-width:1.6; fill:none}
