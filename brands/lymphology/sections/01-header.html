@@ -1,0 +1,87 @@
+<!-- ============================================================
+     Lymphology Skincare — 01-header.html
+     Announcement bar + sticky header
+     ============================================================ -->
+
+<!-- Announcement Bar -->
+<div class="announce">
+  <div class="announce__inner wrap">
+    <span class="announce__bits">
+      <span class="announce__bit announce__bit--main">Canada's only lymphatic-care skincare</span>
+      <span class="announce__sep" aria-hidden="true">·</span>
+      <span class="announce__bit announce__bit--extra">Health Canada approved</span>
+      <span class="announce__sep" aria-hidden="true">·</span>
+      <span class="announce__bit announce__bit--extra">Free shipping over $75</span>
+    </span>
+  </div>
+</div>
+
+<!-- Sticky Header -->
+<header class="site-header">
+  <div class="site-header__inner wrap">
+
+    <!-- LEFT: hamburger (mobile) / nav (desktop) -->
+    <nav class="site-header__nav" aria-label="Primary navigation">
+      <!-- Mobile hamburger -->
+      <button class="site-header__hamburger" aria-label="Open menu" aria-expanded="false">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+          <line x1="2" y1="5.5"  x2="20" y2="5.5"  stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/>
+          <line x1="2" y1="11"   x2="20" y2="11"   stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/>
+          <line x1="2" y1="16.5" x2="20" y2="16.5" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/>
+        </svg>
+      </button>
+      <!-- Desktop nav links -->
+      <ul class="site-header__nav-list" role="list">
+        <li><a href="https://www.google.com" class="site-header__nav-link">Shop</a></li>
+        <li><a href="https://www.google.com" class="site-header__nav-link">The Cream</a></li>
+        <li><a href="https://www.google.com" class="site-header__nav-link">How It Works</a></li>
+        <li><a href="https://www.google.com" class="site-header__nav-link">Ingredients</a></li>
+        <li><a href="https://www.google.com" class="site-header__nav-link">About</a></li>
+      </ul>
+    </nav>
+
+    <!-- CENTER: Logo -->
+    <a href="https://www.google.com" class="site-header__logo" aria-label="Lymphology Skincare — home">
+      <img
+        src="assets/logo.png"
+        alt="Lymphology Skincare"
+        class="site-header__logo-img"
+        width="auto"
+        height="34"
+      >
+    </a>
+
+    <!-- RIGHT: actions -->
+    <div class="site-header__actions">
+      <!-- Optional Shop CTA pill (desktop only) -->
+      <a href="https://www.google.com" class="btn btn-primary site-header__shop-btn" aria-label="Shop now">Shop</a>
+
+      <!-- Search icon (desktop + tablet) -->
+      <button class="site-header__icon-btn site-header__icon-btn--search" aria-label="Search">
+        <svg class="ic" width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+          <circle cx="9.5" cy="9.5" r="6.5" stroke="currentColor" stroke-width="1.75"/>
+          <line x1="14.5" y1="14.5" x2="20" y2="20" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/>
+        </svg>
+      </button>
+
+      <!-- Account icon (desktop + tablet) -->
+      <button class="site-header__icon-btn site-header__icon-btn--account" aria-label="Account">
+        <svg class="ic" width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+          <circle cx="11" cy="7.5" r="3.75" stroke="currentColor" stroke-width="1.75"/>
+          <path d="M3.5 19c0-4.142 3.358-7.5 7.5-7.5s7.5 3.358 7.5 7.5" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/>
+        </svg>
+      </button>
+
+      <!-- Cart icon (always visible) -->
+      <button class="site-header__icon-btn site-header__cart-btn" aria-label="Cart, 0 items">
+        <svg class="ic" width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+          <path d="M1.5 1.5h2.7l2.3 10.5h11.2l2-7H6.2" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="9"  cy="18.5" r="1.5" stroke="currentColor" stroke-width="1.5"/>
+          <circle cx="16" cy="18.5" r="1.5" stroke="currentColor" stroke-width="1.5"/>
+        </svg>
+        <span class="site-header__cart-badge" aria-hidden="true">0</span>
+      </button>
+    </div>
+
+  </div>
+</header>

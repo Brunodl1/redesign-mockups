@@ -1,0 +1,281 @@
+/* ============================================================
+   Lymphology Skincare — 07-founder.css
+   Founder / Story — deep teal editorial band, text-forward
+   ============================================================ */
+
+/* ---- token declarations (all vars used below) ---- */
+.s-founder {
+  --bg:          #F5FAFB;
+  --surface:     #FFFFFF;
+  --surface-2:   #E6F3F5;
+  --sage:        #E9F2EC;
+  --ink:         #143A40;
+  --ink-soft:    #5E7A7F;
+  --accent:      #12BFDA;
+  --accent-ink:  #06343C;
+  --accent-deep: #0E9DB5;
+  --teal-deep:   #0F6E7E;
+  --teal-ink:    #EAF7F9;
+  --sage-deep:   #6FA98F;
+  --gold:        #D9A441;
+  --line:        #D3E6E9;
+  --star:        #D9A441;
+  --font-display:"Fraunces", "Georgia", "Times New Roman", serif;
+  --font-body:   "Assistant", "Helvetica Neue", Arial, sans-serif;
+  --s--1:  .84rem;
+  --s-0:  1.05rem;
+  --s-1:  1.2rem;
+  --s-2:  1.55rem;
+  --s-3:  2.1rem;
+  --s-4:  2.9rem;
+  --s-5:  3.8rem;
+  --sp-1: .25rem;
+  --sp-2: .5rem;
+  --sp-3: 1rem;
+  --sp-4: 1.5rem;
+  --sp-5: 2.5rem;
+  --sp-6: 4rem;
+  --sp-7: 6rem;
+  --sp-8: 8rem;
+  --radius:      12px;
+  --radius-lg:   18px;
+  --radius-pill: 999px;
+  --shadow:      0 16px 44px rgba(20,58,64,.10);
+  --maxw:        1200px;
+}
+
+/* ---- section shell — deep teal background ---- */
+.s-founder {
+  background:    var(--teal-deep);
+  padding-block: var(--sp-8);
+  text-align:    center;
+  position:      relative;
+  overflow:      hidden;
+}
+
+/* ---- subtle gradient overlay to add depth ---- */
+.s-founder::before {
+  content:  '';
+  position: absolute;
+  inset:    0;
+  background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(18,191,218,.12) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+/* ---- inner wrap ---- */
+.s-founder .wrap {
+  position:   relative;
+  z-index:    1;
+  max-width:  var(--maxw);
+  margin:     0 auto;
+  padding-inline: var(--sp-4);
+}
+
+/* ---- eyebrow ---- */
+.s-founder__eyebrow {
+  display:        inline-block;
+  font-family:    var(--font-body);
+  font-weight:    700;
+  font-size:      var(--s--1);
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color:          var(--accent);
+  margin:         0 0 var(--sp-4);
+}
+
+/* ---- heading ---- */
+.s-founder__heading {
+  font-family:  var(--font-display);
+  font-weight:  400;
+  font-size:    var(--s-4);
+  line-height:  1.1;
+  letter-spacing: -.015em;
+  color:        var(--teal-ink);
+  margin:       0 auto var(--sp-5);
+  max-width:    780px;
+}
+
+/* ---- body copy ---- */
+.s-founder__copy {
+  max-width: 640px;
+  margin:    0 auto var(--sp-6);
+}
+
+.s-founder__copy p {
+  font-family: var(--font-body);
+  font-size:   var(--s-1);
+  line-height: 1.7;
+  color:       rgba(234,247,249,1); /* --teal-ink at 80% */
+  margin:      0 0 var(--sp-3);
+}
+
+.s-founder__copy p:last-child {
+  margin-bottom: 0;
+}
+
+/* ---- decorative motif (concentric arcs) ---- */
+.s-founder__motif {
+  position: absolute;
+  top:  50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width:  540px;
+  height: 540px;
+  pointer-events: none;
+  z-index: 0;
+  opacity: .12;
+}
+
+.s-founder__motif-svg {
+  width:  100%;
+  height: 100%;
+  color:  var(--teal-ink);
+}
+
+/* ---- stat / credential row ---- */
+.s-founder__stats {
+  list-style: none;
+  margin:     0 auto var(--sp-6);
+  padding:    0;
+  display:    flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap:  wrap;
+  gap:        0;
+  max-width:  800px;
+}
+
+.s-founder__stat {
+  display:        flex;
+  flex-direction: column;
+  align-items:    center;
+  gap:            var(--sp-1);
+  padding:        0 var(--sp-5);
+}
+
+/* vertical divider between stats */
+.s-founder__stat-divider {
+  width:           1px;
+  height:          52px;
+  background:      rgba(234,247,249,.25);
+  align-self:      center;
+  flex-shrink:     0;
+}
+
+.s-founder__stat-num {
+  display:      block;
+  font-family:  var(--font-display);
+  font-weight:  400;
+  font-size:    var(--s-4);
+  line-height:  1;
+  letter-spacing: -.02em;
+  color:        var(--teal-ink);
+}
+
+.s-founder__stat-label {
+  display:        block;
+  font-family:    var(--font-body);
+  font-size:      var(--s--1);
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color:          rgba(234,247,249,.9);
+  line-height:    1.3;
+}
+
+/* ---- CTA ---- */
+.s-founder__cta {
+  display:         flex;
+  justify-content: center;
+}
+
+/* ---- scoped btn (mirrors base.css, self-contained) ---- */
+.s-founder .btn {
+  display:        inline-flex;
+  align-items:    center;
+  justify-content: center;
+  gap:            .5em;
+  font-family:    var(--font-body);
+  font-weight:    700;
+  font-size:      var(--s-0);
+  letter-spacing: .02em;
+  padding:        .85em 2em;
+  border-radius:  var(--radius-pill);
+  border:         1.5px solid transparent;
+  cursor:         pointer;
+  transition:     background .2s, color .2s, border-color .2s, transform .15s, box-shadow .2s;
+  line-height:    1;
+  white-space:    nowrap;
+  text-decoration: none;
+}
+.s-founder .btn:hover { transform: translateY(-2px); }
+
+.s-founder .btn-light {
+  background:   #fff;
+  color:        var(--teal-deep);
+  border-color: #fff;
+}
+.s-founder .btn-light:hover {
+  background:   transparent;
+  color:        #fff;
+  border-color: #fff;
+}
+
+/* ---- reveal transitions ---- */
+.s-founder .reveal {
+  opacity:   0;
+  transform: perspective(900px) rotateX(8deg) translateY(26px);
+  transition:
+    opacity   .7s ease,
+    transform .7s cubic-bezier(.2,.7,.2,1);
+  transition-delay: var(--delay, 0s);
+}
+.s-founder .reveal.in {
+  opacity:   1;
+  transform: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .s-founder .reveal {
+    opacity:    1;
+    transform:  none;
+    transition: none;
+  }
+}
+
+/* ---- responsive: tablet (≤900px) ---- */
+@media (max-width: 900px) {
+  .s-founder__stat {
+    padding: 0 var(--sp-4);
+  }
+  .s-founder__stat-num {
+    font-size: var(--s-3);
+  }
+  .s-founder__motif {
+    width:  360px;
+    height: 360px;
+  }
+}
+
+/* ---- responsive: mobile (≤780px) — stack stats ---- */
+@media (max-width: 780px) {
+  .s-founder {
+    padding-block: var(--sp-6);
+  }
+  .s-founder__heading {
+    font-size: var(--s-3);
+  }
+  .s-founder__stats {
+    flex-direction: column;
+    gap: var(--sp-4);
+  }
+  .s-founder__stat-divider {
+    width:  60px;
+    height: 1px;
+    background: rgba(234,247,249,.2);
+  }
+  .s-founder__stat {
+    padding: 0;
+  }
+  .s-founder__motif {
+    display: none;
+  }
+}

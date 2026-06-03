@@ -1,0 +1,285 @@
+/* ============================================================
+   Lymphology Skincare — 08-reviews.css
+   Community Reviews wall — 6 cards, 3-up desktop, 2-up tablet, 1-up mobile
+   ============================================================ */
+
+/* ---- token declarations (all vars used below) ---- */
+.s-reviews {
+  --bg:          #F5FAFB;
+  --surface:     #FFFFFF;
+  --surface-2:   #E6F3F5;
+  --sage:        #E9F2EC;
+  --ink:         #143A40;
+  --ink-soft:    #5E7A7F;
+  --accent:      #12BFDA;
+  --accent-ink:  #06343C;
+  --accent-deep: #0E9DB5;
+  --teal-deep:   #0F6E7E;
+  --teal-ink:    #EAF7F9;
+  --sage-deep:   #6FA98F;
+  --gold:        #D9A441;
+  --line:        #D3E6E9;
+  --star:        #D9A441;
+  --font-display:"Fraunces", "Georgia", "Times New Roman", serif;
+  --font-body:   "Assistant", "Helvetica Neue", Arial, sans-serif;
+  --s--1:  .84rem;
+  --s-0:  1.05rem;
+  --s-1:  1.2rem;
+  --s-2:  1.55rem;
+  --s-3:  2.1rem;
+  --s-4:  2.9rem;
+  --s-5:  3.8rem;
+  --sp-1: .25rem;
+  --sp-2: .5rem;
+  --sp-3: 1rem;
+  --sp-4: 1.5rem;
+  --sp-5: 2.5rem;
+  --sp-6: 4rem;
+  --sp-7: 6rem;
+  --sp-8: 8rem;
+  --radius:      12px;
+  --radius-lg:   18px;
+  --radius-pill: 999px;
+  --shadow:      0 16px 44px rgba(20,58,64,.10);
+  --maxw:        1200px;
+}
+
+/* ---- section shell ---- */
+.s-reviews {
+  background:    var(--bg);
+  padding-block: var(--sp-7);
+}
+
+/* ---- header block ---- */
+.s-reviews__header {
+  text-align: center;
+  margin:     0 auto var(--sp-6);
+  max-width:  680px;
+}
+
+.s-reviews__eyebrow {
+  display:        inline-block;
+  font-family:    var(--font-body);
+  font-weight:    700;
+  font-size:      var(--s--1);
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color:          var(--accent-deep);
+  margin:         0 0 var(--sp-3);
+}
+
+.s-reviews__heading {
+  font-family:    var(--font-display);
+  font-weight:    400;
+  font-size:      var(--s-4);
+  line-height:    1.1;
+  letter-spacing: -.015em;
+  color:          var(--ink);
+  margin:         0 0 var(--sp-4);
+}
+
+/* ---- aggregate rating ---- */
+.s-reviews__aggregate {
+  display:     flex;
+  align-items: baseline;
+  justify-content: center;
+  gap:         var(--sp-2);
+  flex-wrap:   wrap;
+}
+
+.s-reviews__big-star {
+  font-size:   var(--s-3);
+  color:       var(--gold);
+  line-height: 1;
+}
+
+.s-reviews__big-score {
+  font-family:    var(--font-display);
+  font-weight:    500;
+  font-size:      var(--s-4);
+  color:          var(--ink);
+  line-height:    1;
+  letter-spacing: -.02em;
+}
+
+.s-reviews__out-of {
+  font-size:   var(--s-1);
+  color:       var(--ink-soft);
+  font-weight: 400;
+}
+
+.s-reviews__tagline {
+  font-family: var(--font-body);
+  font-size:   var(--s--1);
+  color:       var(--ink-soft);
+  letter-spacing: .04em;
+  align-self:  center;
+}
+
+/* ---- review grid — 3-up desktop ---- */
+.s-reviews__grid {
+  list-style: none;
+  margin:     0 0 var(--sp-4);
+  padding:    0;
+  display:    grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap:        var(--sp-4);
+}
+
+/* ---- single review card ---- */
+.s-reviews__card {
+  /* transition-delay via inline --delay custom prop */
+  transition-delay: var(--delay, 0s);
+}
+
+.s-reviews__card-inner {
+  background:    var(--surface);
+  border:        1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding:       var(--sp-4) var(--sp-4) var(--sp-4);
+  height:        100%;
+  display:       flex;
+  flex-direction: column;
+  gap:           var(--sp-3);
+  transition:    box-shadow .25s, transform .25s;
+}
+
+.s-reviews__card-inner:hover {
+  box-shadow: var(--shadow);
+  transform:  translateY(-4px);
+}
+
+/* ---- star row ---- */
+.s-reviews__stars {
+  color:       var(--star);
+  font-size:   var(--s-1);
+  letter-spacing: .1em;
+  line-height: 1;
+}
+
+/* ---- quote text ---- */
+.s-reviews__quote {
+  margin:   0;
+  flex-grow: 1;
+}
+
+.s-reviews__quote p {
+  font-family: var(--font-body);
+  font-size:   var(--s-0);
+  line-height: 1.65;
+  color:       var(--ink);
+  margin:      0;
+  font-style:  normal;
+}
+
+/* ---- author row ---- */
+.s-reviews__author {
+  display:     flex;
+  align-items: center;
+  gap:         var(--sp-2);
+  flex-wrap:   wrap;
+  border-top:  1px solid var(--line);
+  padding-top: var(--sp-3);
+  margin-top:  auto;
+}
+
+.s-reviews__name {
+  font-family:    var(--font-body);
+  font-weight:    700;
+  font-size:      var(--s--1);
+  color:          var(--ink);
+  letter-spacing: .02em;
+}
+
+/* ---- tag chip (scoped override) ---- */
+.s-reviews .s-reviews__tag {
+  display:        inline-flex;
+  align-items:    center;
+  font-family:    var(--font-body);
+  font-weight:    600;
+  font-size:      .76rem;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  padding:        .3em .8em;
+  border-radius:  var(--radius-pill);
+  border:         1px solid var(--line);
+  background:     var(--surface-2);
+  color:          var(--ink-soft);
+  line-height:    1;
+}
+
+/* ---- footnote ---- */
+.s-reviews__footnote {
+  font-family:  var(--font-body);
+  font-size:    var(--s--1);
+  color:        var(--ink-soft);
+  text-align:   center;
+  margin:       0;
+  opacity:      .65;
+}
+
+/* ---- reveal transitions ---- */
+.s-reviews .reveal {
+  opacity:   0;
+  transform: perspective(900px) rotateX(8deg) translateY(26px);
+  transition:
+    opacity   .7s ease,
+    transform .7s cubic-bezier(.2,.7,.2,1);
+  transition-delay: var(--delay, 0s);
+}
+.s-reviews .reveal.in {
+  opacity:   1;
+  transform: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .s-reviews .reveal {
+    opacity:    1;
+    transform:  none;
+    transition: none;
+  }
+}
+
+/* ---- responsive: tablet (≤900px) — 2-up grid ---- */
+@media (max-width: 900px) {
+  .s-reviews__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--sp-3);
+  }
+}
+
+/* ---- responsive: mobile (≤600px) — horizontal scroll or 1-up ---- */
+@media (max-width: 600px) {
+  .s-reviews {
+    padding-block: var(--sp-6);
+  }
+  .s-reviews__heading {
+    font-size: var(--s-3);
+  }
+  .s-reviews__grid {
+    /* horizontal scroll on mobile */
+    grid-template-columns: repeat(6, 80vw);
+    overflow-x:    auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    gap:           var(--sp-3);
+    padding-bottom: var(--sp-2);
+    /* hide scrollbar visually but keep functionality */
+    scrollbar-width: none;
+  }
+  .s-reviews__grid::-webkit-scrollbar {
+    display: none;
+  }
+  .s-reviews__card {
+    scroll-snap-align: start;
+  }
+  .s-reviews__card-inner {
+    height: 100%;
+    min-height: 240px;
+  }
+  .s-reviews__aggregate {
+    gap: var(--sp-1);
+  }
+  .s-reviews__big-score {
+    font-size: var(--s-3);
+  }
+}

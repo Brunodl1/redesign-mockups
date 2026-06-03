@@ -1,0 +1,248 @@
+/* ============================================================
+   Lymphology Skincare — 01-header.css
+   Announcement bar + sticky header
+   ============================================================ */
+
+/* ── Announcement Bar ───────────────────────────────────────── */
+.announce {
+  background: var(--teal-deep);
+  color: var(--teal-ink);
+  padding-block: .6em;
+  text-align: center;
+  width: 100%;
+  z-index: 200;
+  position: relative;
+}
+
+.announce__inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.announce__bits {
+  display: flex;
+  align-items: center;
+  gap: .75em;
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  font-weight: 600;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.announce__sep {
+  opacity: .55;
+  flex-shrink: 0;
+}
+
+.announce__bit {
+  flex-shrink: 0;
+}
+
+/* Mobile: hide the extra bits */
+@media (max-width: 780px) {
+  .announce__bit--extra,
+  .announce__sep {
+    display: none;
+  }
+  .announce__bits {
+    white-space: normal;
+    overflow: visible;
+    text-align: center;
+  }
+}
+
+/* ── Site Header ────────────────────────────────────────────── */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--bg);
+  border-bottom: 1px solid var(--line);
+  box-shadow: 0 1px 12px rgba(20, 58, 64, .06);
+  width: 100%;
+}
+
+.site-header__inner {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  min-height: 64px;
+  gap: var(--sp-3);
+}
+
+/* ── Logo (center cell) ─────────────────────────────────────── */
+.site-header__logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-self: center;
+  flex-shrink: 0;
+}
+
+.site-header__logo-img {
+  height: 34px;
+  width: auto;
+  display: block;
+  /* Black wordmark on pale aqua-white — no filter needed */
+}
+
+/* ── Nav (left cell) ────────────────────────────────────────── */
+.site-header__nav {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+  justify-self: start;
+}
+
+.site-header__nav-list {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-4);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  flex-wrap: nowrap;
+}
+
+.site-header__nav-link {
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--ink);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color .18s ease;
+  padding-block: .25em;
+  border-bottom: 1.5px solid transparent;
+  transition: color .18s, border-color .18s;
+}
+
+.site-header__nav-link:hover {
+  color: var(--accent-deep);
+  border-bottom-color: var(--accent-deep);
+}
+
+/* Hamburger — hidden on desktop */
+.site-header__hamburger {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  padding: .4em;
+  cursor: pointer;
+  color: var(--ink);
+  border-radius: var(--radius);
+  transition: background .15s;
+  flex-shrink: 0;
+}
+
+.site-header__hamburger:hover {
+  background: var(--surface-2);
+}
+
+/* ── Actions (right cell) ───────────────────────────────────── */
+.site-header__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  justify-self: end;
+  min-width: 0;
+}
+
+/* Small Shop pill — desktop only */
+.site-header__shop-btn {
+  font-size: var(--s--1);
+  padding: .55em 1.3em;
+  margin-right: var(--sp-2);
+}
+
+/* Icon buttons */
+.site-header__icon-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  padding: .4em;
+  cursor: pointer;
+  color: var(--ink);
+  border-radius: var(--radius);
+  transition: color .18s, background .15s;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.site-header__icon-btn .ic {
+  width: 22px;
+  height: 22px;
+  stroke-width: 1.75;
+}
+
+.site-header__icon-btn:hover {
+  color: var(--accent-deep);
+  background: var(--surface-2);
+}
+
+/* Cart badge */
+.site-header__cart-btn {
+  position: relative;
+}
+
+.site-header__cart-badge {
+  position: absolute;
+  top: 0;
+  right: 0;
+  min-width: 17px;
+  height: 17px;
+  background: var(--accent);
+  color: var(--accent-ink);
+  border-radius: var(--radius-pill);
+  font-family: var(--font-body);
+  font-size: .62rem;
+  font-weight: 800;
+  line-height: 17px;
+  text-align: center;
+  padding-inline: .2em;
+  pointer-events: none;
+}
+
+/* ── Mobile (≤ 780px) ───────────────────────────────────────── */
+@media (max-width: 780px) {
+  .site-header__inner {
+    min-height: 54px;
+    gap: 0;
+  }
+
+  /* Show hamburger, hide nav links */
+  .site-header__hamburger {
+    display: flex;
+  }
+
+  .site-header__nav-list {
+    display: none;
+  }
+
+  /* Logo smaller on mobile */
+  .site-header__logo-img {
+    height: 28px;
+  }
+
+  /* Hide Shop pill, search, account on mobile */
+  .site-header__shop-btn,
+  .site-header__icon-btn--search,
+  .site-header__icon-btn--account {
+    display: none;
+  }
+
+  /* Keep cart, tighten gap */
+  .site-header__actions {
+    gap: 0;
+  }
+}

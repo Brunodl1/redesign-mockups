@@ -1,0 +1,2802 @@
+/* ============================================================
+   Lymphology Skincare — base.css (foundation)
+   Canada's only lymphatic-care skincare · "happy. healthy. skin." · Ontario · EN
+   Clinical-warm wellness: pale aqua-white + deep teal + bright lymphatic teal. Fraunces + Assistant.
+   ============================================================ */
+:root{
+  /* color */
+  --bg:        #F5FAFB;   /* pale aqua-white page */
+  --surface:   #FFFFFF;   /* cards */
+  --surface-2: #E6F3F5;   /* pale aqua band */
+  --sage:      #E9F2EC;   /* soft botanical green tint */
+  --ink:       #143A40;   /* deep teal-charcoal — text/headings */
+  --ink-soft:  #5E7A7F;   /* muted teal-grey — secondary text */
+  --accent:    #12BFDA;   /* bright aqua-teal — accents/links/highlights (their brand color) */
+  --accent-ink:#06343C;   /* deep teal text on bright teal (legible) */
+  --accent-deep:#0E9DB5;  /* hover */
+  --teal-deep: #0F6E7E;   /* deep teal — dark bands/footer */
+  --teal-ink:  #EAF7F9;   /* light text on deep teal */
+  --sage-deep: #6FA98F;   /* botanical green accent (sparing) */
+  --gold:      #D9A441;   /* warm gold — stars only */
+  --dark:      #0F6E7E;
+  --line:      #D3E6E9;   /* cool hairline */
+  --star:      #D9A441;
+  --btn:       #12BFDA;
+  --btn-ink:   #06343C;
+  /* type */
+  --font-display: "Fraunces", "Georgia", "Times New Roman", serif;
+  --font-body:    "Assistant", "Helvetica Neue", Arial, sans-serif;
+  --s--1: .84rem;
+  --s-0:  1.05rem;
+  --s-1:  1.2rem;
+  --s-2:  1.55rem;
+  --s-3:  2.1rem;
+  --s-4:  2.9rem;
+  --s-5:  3.8rem;
+  /* space */
+  --sp-1:.25rem; --sp-2:.5rem; --sp-3:1rem; --sp-4:1.5rem;
+  --sp-5:2.5rem; --sp-6:4rem; --sp-7:6rem;
+  --sp-8:8rem;
+  /* shape — soft rounded (warm-wellness elevation), pill buttons */
+  --radius:12px; --radius-lg:18px; --radius-pill:999px;
+  --shadow:0 16px 44px rgba(20,58,64,.10);
+  --maxw:1200px;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html,body{overflow-x:clip}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--ink);
+  font-family:var(--font-body);
+  font-size:var(--s-0);
+  line-height:1.65;
+  font-weight:400;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+
+/* headings — Fraunces, soft warm serif */
+h1,h2,h3{font-family:var(--font-display);font-weight:500;line-height:1.1;letter-spacing:-.01em;margin:0 0 var(--sp-3);color:var(--ink)}
+h1{font-size:var(--s-5)}
+h2{font-size:var(--s-4)}
+h3{font-size:var(--s-2)}
+p{margin:0 0 var(--sp-3)}
+
+/* layout */
+.wrap{max-width:var(--maxw);margin:0 auto;padding-inline:var(--sp-4);width:100%}
+.sec{position:relative;padding-block:var(--sp-7)}
+.section{position:relative}
+
+/* eyebrow — teal tracked caps */
+.eyebrow{
+  display:inline-block;font-family:var(--font-body);font-weight:700;
+  font-size:var(--s--1);letter-spacing:.18em;text-transform:uppercase;
+  color:var(--accent-deep);margin:0 0 var(--sp-3)
+}
+
+/* buttons — PILL, friendly wellness */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:.5em;
+  font-family:var(--font-body);font-weight:700;font-size:var(--s-0);
+  letter-spacing:.02em;
+  padding:.85em 2em;border-radius:var(--radius-pill);border:1.5px solid transparent;
+  cursor:pointer;transition:background .2s,color .2s,border-color .2s,transform .15s,box-shadow .2s;
+  line-height:1;white-space:nowrap
+}
+.btn:hover{transform:translateY(-2px)}
+.btn-primary{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.btn-primary:hover{background:var(--accent-deep);color:#fff;border-color:var(--accent-deep);box-shadow:var(--shadow)}
+.btn-teal{background:var(--teal-deep);color:#fff;border-color:var(--teal-deep)}
+.btn-teal:hover{background:#0a5562;border-color:#0a5562}
+.btn-outline{background:transparent;color:var(--teal-deep);border-color:var(--teal-deep)}
+.btn-outline:hover{background:var(--teal-deep);color:#fff}
+.btn-light{background:#fff;color:var(--teal-deep);border-color:#fff}
+.btn-light:hover{background:transparent;color:#fff;border-color:#fff}
+.btn-block{display:flex;width:100%}
+
+/* rating stars */
+.stars{color:var(--star);letter-spacing:.06em;font-size:var(--s-0)}
+
+/* chips */
+.chip{
+  display:inline-flex;align-items:center;gap:.45em;
+  font-family:var(--font-body);font-weight:700;font-size:var(--s--1);
+  letter-spacing:.08em;text-transform:uppercase;
+  padding:.5em 1em;border-radius:var(--radius-pill);border:1.5px solid var(--line);
+  background:var(--surface);color:var(--ink);line-height:1
+}
+
+/* section icons */
+.ic{width:40px;height:40px;display:block;stroke:currentColor;stroke-width:1.5;fill:none}
+
+/* floats — static, hidden mobile */
+.float{position:absolute;pointer-events:none;z-index:5}
+.float img{width:100%;transform:rotate(var(--rot,0deg));
+  filter:drop-shadow(0 24px 22px rgba(20,58,64,.16))}
+@media(max-width:1000px){.float{display:none}}
+
+/* scroll-reveal (3D) — NOT on hero */
+.reveal{opacity:0;transform:perspective(900px) rotateX(8deg) translateY(26px);
+  transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+
+/* responsive type */
+@media(max-width:780px){
+  :root{--s-5:2.6rem;--s-4:2.1rem;--s-3:1.7rem;--s-2:1.35rem}
+  .sec{padding-block:var(--sp-6)}
+}
+/* ============================================================
+   Lymphology Skincare — 01-header.css
+   Announcement bar + sticky header
+   ============================================================ */
+
+/* ── Announcement Bar ───────────────────────────────────────── */
+.announce {
+  background: var(--teal-deep);
+  color: var(--teal-ink);
+  padding-block: .6em;
+  text-align: center;
+  width: 100%;
+  z-index: 200;
+  position: relative;
+}
+
+.announce__inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.announce__bits {
+  display: flex;
+  align-items: center;
+  gap: .75em;
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  font-weight: 600;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.announce__sep {
+  opacity: .55;
+  flex-shrink: 0;
+}
+
+.announce__bit {
+  flex-shrink: 0;
+}
+
+/* Mobile: hide the extra bits */
+@media (max-width: 780px) {
+  .announce__bit--extra,
+  .announce__sep {
+    display: none;
+  }
+  .announce__bits {
+    white-space: normal;
+    overflow: visible;
+    text-align: center;
+  }
+}
+
+/* ── Site Header ────────────────────────────────────────────── */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--bg);
+  border-bottom: 1px solid var(--line);
+  box-shadow: 0 1px 12px rgba(20, 58, 64, .06);
+  width: 100%;
+}
+
+.site-header__inner {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  min-height: 64px;
+  gap: var(--sp-3);
+}
+
+/* ── Logo (center cell) ─────────────────────────────────────── */
+.site-header__logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-self: center;
+  flex-shrink: 0;
+}
+
+.site-header__logo-img {
+  height: 34px;
+  width: auto;
+  display: block;
+  /* Black wordmark on pale aqua-white — no filter needed */
+}
+
+/* ── Nav (left cell) ────────────────────────────────────────── */
+.site-header__nav {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+  justify-self: start;
+}
+
+.site-header__nav-list {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-4);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  flex-wrap: nowrap;
+}
+
+.site-header__nav-link {
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--ink);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color .18s ease;
+  padding-block: .25em;
+  border-bottom: 1.5px solid transparent;
+  transition: color .18s, border-color .18s;
+}
+
+.site-header__nav-link:hover {
+  color: var(--accent-deep);
+  border-bottom-color: var(--accent-deep);
+}
+
+/* Hamburger — hidden on desktop */
+.site-header__hamburger {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  padding: .4em;
+  cursor: pointer;
+  color: var(--ink);
+  border-radius: var(--radius);
+  transition: background .15s;
+  flex-shrink: 0;
+}
+
+.site-header__hamburger:hover {
+  background: var(--surface-2);
+}
+
+/* ── Actions (right cell) ───────────────────────────────────── */
+.site-header__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  justify-self: end;
+  min-width: 0;
+}
+
+/* Small Shop pill — desktop only */
+.site-header__shop-btn {
+  font-size: var(--s--1);
+  padding: .55em 1.3em;
+  margin-right: var(--sp-2);
+}
+
+/* Icon buttons */
+.site-header__icon-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  padding: .4em;
+  cursor: pointer;
+  color: var(--ink);
+  border-radius: var(--radius);
+  transition: color .18s, background .15s;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.site-header__icon-btn .ic {
+  width: 22px;
+  height: 22px;
+  stroke-width: 1.75;
+}
+
+.site-header__icon-btn:hover {
+  color: var(--accent-deep);
+  background: var(--surface-2);
+}
+
+/* Cart badge */
+.site-header__cart-btn {
+  position: relative;
+}
+
+.site-header__cart-badge {
+  position: absolute;
+  top: 0;
+  right: 0;
+  min-width: 17px;
+  height: 17px;
+  background: var(--accent);
+  color: var(--accent-ink);
+  border-radius: var(--radius-pill);
+  font-family: var(--font-body);
+  font-size: .62rem;
+  font-weight: 800;
+  line-height: 17px;
+  text-align: center;
+  padding-inline: .2em;
+  pointer-events: none;
+}
+
+/* ── Mobile (≤ 780px) ───────────────────────────────────────── */
+@media (max-width: 780px) {
+  .site-header__inner {
+    min-height: 54px;
+    gap: 0;
+  }
+
+  /* Show hamburger, hide nav links */
+  .site-header__hamburger {
+    display: flex;
+  }
+
+  .site-header__nav-list {
+    display: none;
+  }
+
+  /* Logo smaller on mobile */
+  .site-header__logo-img {
+    height: 28px;
+  }
+
+  /* Hide Shop pill, search, account on mobile */
+  .site-header__shop-btn,
+  .site-header__icon-btn--search,
+  .site-header__icon-btn--account {
+    display: none;
+  }
+
+  /* Keep cart, tighten gap */
+  .site-header__actions {
+    gap: 0;
+  }
+}
+/* ============================================================
+   02-hero.css — CENTERED EDITORIAL hero
+   Lymphology Skincare · Canada's only lymphatic-care skincare
+   Scope: .s-hero
+   ============================================================ */
+
+/* ---------- section shell & background ---------- */
+.s-hero {
+  position: relative;
+  overflow: hidden;
+  padding-block: var(--sp-8) calc(var(--sp-8) + var(--sp-5));
+  background:
+    radial-gradient(ellipse 80% 70% at 50% 20%, var(--surface-2) 0%, var(--bg) 70%),
+    var(--bg);
+  min-width: 0;
+}
+
+/* decorative SVG curves — fills the section behind content */
+.s-hero__curves {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ---------- centered inner column ---------- */
+.s-hero__inner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sp-6);
+  min-width: 0;
+  max-width: 100%;
+}
+
+/* ---------- text column ---------- */
+.s-hero__text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 720px;
+  width: 100%;
+  min-width: 0;
+}
+
+.s-hero__text .eyebrow {
+  margin-bottom: var(--sp-4);
+}
+
+/* ---------- heading ---------- */
+.s-hero__h1 {
+  font-family: var(--font-display);
+  font-size: var(--s-5);
+  font-weight: 500;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin: 0 0 var(--sp-4);
+  min-width: 0;
+  max-width: 100%;
+}
+
+.s-hero__accent {
+  color: var(--accent-deep);
+}
+
+/* ---------- subhead ---------- */
+.s-hero__sub {
+  font-family: var(--font-body);
+  font-size: var(--s-1);
+  line-height: 1.6;
+  color: var(--ink-soft);
+  margin: 0 0 var(--sp-5);
+  max-width: 600px;
+  min-width: 0;
+}
+
+/* ---------- CTA ---------- */
+.s-hero__cta-row {
+  display: flex;
+  justify-content: center;
+  gap: var(--sp-3);
+  flex-wrap: wrap;
+  margin-bottom: var(--sp-5);
+  min-width: 0;
+  max-width: 100%;
+}
+
+/* ---------- chips ---------- */
+.s-hero__chips {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--sp-2);
+  margin-bottom: var(--sp-4);
+  min-width: 0;
+  max-width: 100%;
+}
+
+/* ---------- rating line ---------- */
+.s-hero__rating {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sp-2);
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  color: var(--ink-soft);
+  margin: 0;
+  flex-wrap: wrap;
+  min-width: 0;
+}
+
+.s-hero__rating-label {
+  letter-spacing: .03em;
+}
+
+/* ---------- product image block ---------- */
+.s-hero__product-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 420px;
+  max-width: 100%;
+  min-width: 0;
+  flex-shrink: 0;
+}
+
+/* white radial glow disc — blends photo's white bg into the hero */
+.s-hero__glow {
+  position: absolute;
+  inset: 50% auto auto 50%;
+  transform: translate(-50%, -50%);
+  width: 540px;
+  height: 540px;
+  max-width: 116%;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(255,255,255,.99) 0%,
+    rgba(255,255,255,.88) 55%,
+    rgba(255,255,255,.5) 74%,
+    rgba(230,243,245,.18) 88%,
+    transparent 100%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+.s-hero__product-img {
+  position: relative;
+  z-index: 1;
+  display: block;
+  height: 360px;
+  width: auto;
+  max-width: 100%;
+  min-width: 0;
+  object-fit: contain;
+  /* no drop-shadow — photo has white bg; glow handles the blend */
+}
+
+/* ---------- Health Canada badge ---------- */
+.s-hero__badge {
+  position: absolute;
+  bottom: 8px;
+  right: 10px;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: .4em;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: .72rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--accent-ink);
+  background: var(--accent);
+  border-radius: var(--radius-pill);
+  padding: .45em .9em;
+  box-shadow: 0 4px 14px rgba(18,191,218,.28);
+  white-space: nowrap;
+}
+
+.s-hero__badge-check {
+  font-size: .9em;
+  line-height: 1;
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+/* Tablet – tighten sizing */
+@media (max-width: 900px) {
+  .s-hero {
+    padding-block: var(--sp-7) var(--sp-8);
+  }
+
+  .s-hero__h1 {
+    font-size: var(--s-4);
+  }
+
+  .s-hero__product-img {
+    height: 300px;
+  }
+
+  .s-hero__product-wrap,
+  .s-hero__glow {
+    width: 340px;
+    height: 340px;
+  }
+}
+
+/* Mobile <=780px */
+@media (max-width: 780px) {
+  .s-hero {
+    padding-block: var(--sp-6) var(--sp-7);
+  }
+
+  .s-hero__inner {
+    gap: var(--sp-5);
+  }
+
+  .s-hero__text {
+    max-width: 100%;
+  }
+
+  .s-hero__h1 {
+    font-size: var(--s-3);
+    letter-spacing: -0.015em;
+  }
+
+  .s-hero__sub {
+    font-size: var(--s-0);
+  }
+
+  .s-hero__cta-row .btn {
+    width: 100%;
+    max-width: 340px;
+  }
+
+  .s-hero__product-img {
+    height: 280px;
+  }
+
+  .s-hero__product-wrap {
+    width: 300px;
+    max-width: 90vw;
+  }
+
+  .s-hero__glow {
+    width: 300px;
+    height: 300px;
+    max-width: 90vw;
+  }
+
+  .s-hero__badge {
+    font-size: .65rem;
+    bottom: 4px;
+    right: 4px;
+  }
+
+  .s-hero__chips {
+    gap: var(--sp-2);
+  }
+}
+
+/* Very small screens */
+@media (max-width: 380px) {
+  .s-hero__h1 {
+    font-size: var(--s-2);
+  }
+
+  .s-hero__product-img {
+    height: 220px;
+  }
+
+  .s-hero__product-wrap {
+    width: 240px;
+  }
+
+  .s-hero__glow {
+    width: 240px;
+    height: 240px;
+  }
+}
+/* ============================================================
+   Lymphology Skincare — 03-credibility.css
+   Trust strip: 4 items in a row (2×2 on mobile)
+   ============================================================ */
+
+/* ---- token declarations (all vars used below) ---- */
+.s-credibility {
+  --bg:          #F5FAFB;
+  --surface:     #FFFFFF;
+  --surface-2:   #E6F3F5;
+  --sage:        #E9F2EC;
+  --ink:         #143A40;
+  --ink-soft:    #5E7A7F;
+  --accent:      #12BFDA;
+  --accent-ink:  #06343C;
+  --accent-deep: #0E9DB5;
+  --teal-deep:   #0F6E7E;
+  --teal-ink:    #EAF7F9;
+  --sage-deep:   #6FA98F;
+  --line:        #D3E6E9;
+  --star:        #D9A441;
+  --font-display:"Fraunces", "Georgia", "Times New Roman", serif;
+  --font-body:   "Assistant", "Helvetica Neue", Arial, sans-serif;
+  --s--1:  .84rem;
+  --s-0:  1.05rem;
+  --s-1:  1.2rem;
+  --s-2:  1.55rem;
+  --sp-1: .25rem;
+  --sp-2: .5rem;
+  --sp-3: 1rem;
+  --sp-4: 1.5rem;
+  --sp-5: 2.5rem;
+  --radius:      12px;
+  --radius-pill: 999px;
+  --maxw:        1200px;
+}
+
+/* ---- section shell ---- */
+.s-credibility {
+  background: var(--surface-2);
+  padding-block: var(--sp-4);  /* slim — intentionally compressed */
+  border-top:    1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+/* ---- list ---- */
+.s-credibility .cred__list {
+  list-style: none;
+  margin:  0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--sp-3) var(--sp-4);
+  align-items: start;
+}
+
+/* ---- individual item ---- */
+.s-credibility .cred__item {
+  display:     flex;
+  align-items: center;
+  gap:         var(--sp-3);
+}
+
+/* ---- icon wrapper ---- */
+.s-credibility .cred__icon {
+  flex-shrink: 0;
+  width:  36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent-deep);   /* stroke colour fed via currentColor */
+}
+
+/* ---- text block ---- */
+.s-credibility .cred__text {
+  display:        flex;
+  flex-direction: column;
+  gap:            .15em;
+}
+
+.s-credibility .cred__label {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size:   var(--s-0);
+  line-height: 1.2;
+  color:       var(--ink);
+}
+
+.s-credibility .cred__sub {
+  font-family: var(--font-body);
+  font-size:   var(--s--1);
+  line-height: 1.35;
+  color:       var(--ink-soft);
+}
+
+/* ---- dividers between items (desktop only) ---- */
+@media (min-width: 781px) {
+  .s-credibility .cred__item + .cred__item {
+    border-left: 1px solid var(--line);
+    padding-left: var(--sp-4);
+  }
+}
+
+/* ---- mobile: 2×2 grid ---- */
+@media (max-width: 780px) {
+  .s-credibility {
+    padding-block: var(--sp-3) var(--sp-4);
+  }
+
+  .s-credibility .cred__list {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--sp-3);
+  }
+
+  .s-credibility .cred__item {
+    gap: var(--sp-2);
+  }
+
+  .s-credibility .cred__label {
+    font-size: var(--s--1);
+  }
+}
+
+/* ---- very small: stack 1-up ---- */
+@media (max-width: 380px) {
+  .s-credibility .cred__list {
+    grid-template-columns: 1fr;
+  }
+}
+/* ============================================================
+   Lymphology Skincare — 04-howitworks.css
+   "The Lymphatic Ritual" — 3-step numbered section
+   ============================================================ */
+
+/* ---- token declarations (all vars used below) ---- */
+.s-howitworks {
+  --bg:          #F5FAFB;
+  --surface:     #FFFFFF;
+  --surface-2:   #E6F3F5;
+  --sage:        #E9F2EC;
+  --ink:         #143A40;
+  --ink-soft:    #5E7A7F;
+  --accent:      #12BFDA;
+  --accent-ink:  #06343C;
+  --accent-deep: #0E9DB5;
+  --teal-deep:   #0F6E7E;
+  --teal-ink:    #EAF7F9;
+  --sage-deep:   #6FA98F;
+  --line:        #D3E6E9;
+  --star:        #D9A441;
+  --font-display:"Fraunces", "Georgia", "Times New Roman", serif;
+  --font-body:   "Assistant", "Helvetica Neue", Arial, sans-serif;
+  --s--1:  .84rem;
+  --s-0:  1.05rem;
+  --s-1:  1.2rem;
+  --s-2:  1.55rem;
+  --s-3:  2.1rem;
+  --s-4:  2.9rem;
+  --s-5:  3.8rem;
+  --sp-1: .25rem;
+  --sp-2: .5rem;
+  --sp-3: 1rem;
+  --sp-4: 1.5rem;
+  --sp-5: 2.5rem;
+  --sp-6: 4rem;
+  --sp-7: 6rem;
+  --sp-8: 8rem;
+  --radius:      12px;
+  --radius-lg:   18px;
+  --radius-pill: 999px;
+  --shadow:      0 16px 44px rgba(20,58,64,.10);
+  --maxw:        1200px;
+}
+
+/* ---- section shell ---- */
+.s-howitworks {
+  background:   var(--bg);
+  padding-block: var(--sp-7);
+}
+
+/* ---- header block ---- */
+.s-howitworks .hiw__header {
+  text-align: center;
+  max-width:  700px;
+  margin:     0 auto var(--sp-6);
+}
+
+.s-howitworks .hiw__eyebrow {
+  /* inherits .eyebrow from base.css; restate for scoped correctness */
+  display:        inline-block;
+  font-family:    var(--font-body);
+  font-weight:    700;
+  font-size:      var(--s--1);
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color:          var(--accent-deep);
+  margin:         0 0 var(--sp-3);
+}
+
+.s-howitworks .hiw__title {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size:   var(--s-4);
+  line-height: 1.1;
+  color:       var(--ink);
+  margin:      0 0 var(--sp-3);
+}
+
+.s-howitworks .hiw__intro {
+  font-family: var(--font-body);
+  font-size:   var(--s-1);
+  color:       var(--ink-soft);
+  line-height: 1.65;
+  margin:      0;
+}
+
+/* ---- steps row ---- */
+.s-howitworks .hiw__steps {
+  list-style: none;
+  margin:     0 0 var(--sp-5);
+  padding:    0;
+  display:    grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap:        var(--sp-4);
+  counter-reset: hiw-step;
+}
+
+/* ---- single step card ---- */
+.s-howitworks .hiw__step {
+  /* .reveal transitions from base.css: opacity+3D translateY */
+  position: relative;
+}
+
+/* transition-delay via inline --delay custom prop */
+.s-howitworks .hiw__step {
+  transition-delay: var(--delay, 0s);
+}
+
+.s-howitworks .hiw__step-inner {
+  background:    var(--surface);
+  border:        1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding:       var(--sp-5) var(--sp-4) var(--sp-4);
+  height:        100%;
+  display:       flex;
+  flex-direction: column;
+  gap:           var(--sp-2);
+  position:      relative;
+  overflow:      hidden;
+  transition:    box-shadow .25s, transform .25s;
+}
+
+.s-howitworks .hiw__step-inner::before {
+  /* subtle teal top-edge accent bar */
+  content:  '';
+  position: absolute;
+  inset-block-start: 0;
+  inset-inline: 0;
+  height:   3px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-deep));
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+}
+
+.s-howitworks .hiw__step-inner:hover {
+  box-shadow: var(--shadow);
+  transform:  translateY(-3px);
+}
+
+/* ---- big Fraunces number ---- */
+.s-howitworks .hiw__num {
+  font-family:    var(--font-display);
+  font-weight:    500;
+  font-size:      var(--s-3);
+  line-height:    1;
+  color:          var(--accent-deep);
+  letter-spacing: -.02em;
+  display:        block;
+  margin-bottom:  var(--sp-1);
+}
+
+/* ---- icon ---- */
+.s-howitworks .hiw__icon {
+  display: block;
+  color:   var(--accent-deep);
+  width:   40px;
+  height:  40px;
+  margin-bottom: var(--sp-2);
+}
+
+.s-howitworks .hiw__icon svg {
+  display: block;
+}
+
+/* ---- step text ---- */
+.s-howitworks .hiw__step-title {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size:   var(--s-2);
+  color:       var(--ink);
+  line-height: 1.2;
+  margin:      0 0 var(--sp-2);
+}
+
+.s-howitworks .hiw__step-desc {
+  font-family: var(--font-body);
+  font-size:   var(--s-0);
+  color:       var(--ink-soft);
+  line-height: 1.6;
+  margin:      0;
+  flex-grow:   1;
+}
+
+/* ---- compression-garment note ---- */
+.s-howitworks .hiw__note {
+  display:       flex;
+  align-items:   flex-start;
+  gap:           var(--sp-3);
+  background:    var(--surface-2);
+  border:        1px solid var(--line);
+  border-left:   3px solid var(--accent);
+  border-radius: var(--radius);
+  padding:       var(--sp-3) var(--sp-4);
+  max-width:     740px;
+  margin:        0 auto var(--sp-5);
+}
+
+.s-howitworks .hiw__note-icon {
+  flex-shrink: 0;
+  margin-top:  .15em;
+  color:       var(--accent-deep);
+  display:     flex;
+  align-items: center;
+}
+
+.s-howitworks .hiw__note-text {
+  font-family: var(--font-body);
+  font-size:   var(--s--1);
+  color:       var(--ink-soft);
+  line-height: 1.55;
+  margin:      0;
+}
+
+.s-howitworks .hiw__note-text strong {
+  color:       var(--ink);
+  font-weight: 700;
+}
+
+/* ---- CTAs ---- */
+.s-howitworks .hiw__ctas {
+  display:         flex;
+  align-items:     center;
+  justify-content: center;
+  gap:             var(--sp-3);
+  flex-wrap:       wrap;
+}
+
+/* ---- scoped btn (mirrors base.css but self-contained) ---- */
+.s-howitworks .btn {
+  display:       inline-flex;
+  align-items:   center;
+  justify-content: center;
+  gap:           .5em;
+  font-family:   var(--font-body);
+  font-weight:   700;
+  font-size:     var(--s-0);
+  letter-spacing:.02em;
+  padding:       .85em 2em;
+  border-radius: var(--radius-pill);
+  border:        1.5px solid transparent;
+  cursor:        pointer;
+  transition:    background .2s, color .2s, border-color .2s, transform .15s, box-shadow .2s;
+  line-height:   1;
+  white-space:   nowrap;
+  text-decoration: none;
+}
+.s-howitworks .btn:hover { transform: translateY(-2px); }
+
+.s-howitworks .btn-primary {
+  background:   var(--accent);
+  color:        var(--accent-ink);
+  border-color: var(--accent);
+}
+.s-howitworks .btn-primary:hover {
+  background:   var(--accent-deep);
+  color:        #fff;
+  border-color: var(--accent-deep);
+  box-shadow:   var(--shadow);
+}
+
+.s-howitworks .btn-outline {
+  background:   transparent;
+  color:        var(--teal-deep);
+  border-color: var(--teal-deep);
+}
+.s-howitworks .btn-outline:hover {
+  background:   var(--teal-deep);
+  color:        #fff;
+}
+
+/* ---- reveal transitions (scoped re-statement for robustness) ---- */
+.s-howitworks .reveal {
+  opacity:   0;
+  transform: perspective(900px) rotateX(8deg) translateY(26px);
+  transition:
+    opacity   .7s ease,
+    transform .7s cubic-bezier(.2,.7,.2,1);
+  transition-delay: var(--delay, 0s);
+}
+.s-howitworks .reveal.in {
+  opacity:   1;
+  transform: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .s-howitworks .reveal {
+    opacity:    1;
+    transform:  none;
+    transition: none;
+  }
+}
+
+/* ---- responsive: tablet (≤900px) — reduce padding ---- */
+@media (max-width: 900px) {
+  .s-howitworks .hiw__steps {
+    gap: var(--sp-3);
+  }
+  .s-howitworks .hiw__num {
+    font-size: var(--s-2);
+  }
+}
+
+/* ---- responsive: mobile (≤780px) — stack 1-up ---- */
+@media (max-width: 780px) {
+  .s-howitworks {
+    padding-block: var(--sp-6);
+  }
+  .s-howitworks .hiw__title {
+    font-size: var(--s-3);
+  }
+  .s-howitworks .hiw__steps {
+    grid-template-columns: 1fr;
+    gap: var(--sp-3);
+  }
+  .s-howitworks .hiw__step-inner {
+    padding: var(--sp-4) var(--sp-3) var(--sp-3);
+  }
+  .s-howitworks .hiw__ctas {
+    flex-direction: column;
+    align-items:    stretch;
+  }
+  .s-howitworks .hiw__ctas .btn {
+    justify-content: center;
+    width: 100%;
+  }
+}
+/* ============================================================
+   05-essentials.css — THE ESSENTIALS product grid
+   Lymphology Skincare — scoped to .s-essentials
+   ============================================================ */
+
+/* ---------- tokens (mirror base.css for standalone safety) ---------- */
+.s-essentials {
+  --bg:          #F5FAFB;
+  --surface:     #fff;
+  --surface-2:   #E6F3F5;
+  --sage:        #E9F2EC;
+  --ink:         #143A40;
+  --ink-soft:    #5E7A7F;
+  --accent:      #12BFDA;
+  --accent-ink:  #06343C;
+  --accent-deep: #0E9DB5;
+  --teal-deep:   #0F6E7E;
+  --teal-ink:    #EAF7F9;
+  --sage-deep:   #6FA98F;
+  --line:        #D3E6E9;
+  --star:        #D9A441;
+  --gold:        #D9A441;
+  --font-display:"Fraunces","Georgia","Times New Roman",serif;
+  --font-body:   "Assistant","Helvetica Neue",Arial,sans-serif;
+  --s--1:        .84rem;
+  --s-0:         1.05rem;
+  --s-1:         1.2rem;
+  --s-2:         1.55rem;
+  --s-3:         2.1rem;
+  --s-4:         2.9rem;
+  --s-5:         3.8rem;
+  --sp-1:        .25rem;
+  --sp-2:        .5rem;
+  --sp-3:        1rem;
+  --sp-4:        1.5rem;
+  --sp-5:        2.5rem;
+  --sp-6:        4rem;
+  --sp-7:        6rem;
+  --sp-8:        8rem;
+  --radius:      12px;
+  --radius-lg:   18px;
+  --radius-pill: 999px;
+  --shadow:      0 16px 44px rgba(20,58,64,.10);
+  --maxw:        1200px;
+}
+
+/* ---------- section shell ---------- */
+.s-essentials {
+  background: var(--bg);
+  overflow: hidden;
+}
+
+/* ---------- header ---------- */
+.s-essentials__header {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto var(--sp-6);
+}
+
+.s-essentials__header .eyebrow {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: var(--s--1);
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--accent-deep);
+  margin: 0 0 var(--sp-3);
+}
+
+.s-essentials__header h2 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: var(--s-4);
+  line-height: 1.1;
+  letter-spacing: -.01em;
+  color: var(--ink);
+  margin: 0 0 var(--sp-3);
+}
+
+.s-essentials__intro {
+  font-family: var(--font-body);
+  font-size: var(--s-0);
+  color: var(--ink-soft);
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* ---------- grid ---------- */
+.s-essentials__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-4);
+  margin-bottom: var(--sp-6);
+}
+
+/* ---------- card ---------- */
+.s-essentials .card {
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--line);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform .22s ease, box-shadow .22s ease;
+  /* stagger support */
+  transition-delay: var(--d, 0s);
+}
+
+.s-essentials .card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow);
+}
+
+/* image tile — near-white so white-bg product shots blend */
+.s-essentials .card__img-wrap {
+  background: var(--surface-2);
+  aspect-ratio: 1 / 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--sp-4);
+  overflow: hidden;
+}
+
+.s-essentials .card__img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  transition: transform .35s ease;
+}
+
+.s-essentials .card:hover .card__img-wrap img {
+  transform: scale(1.04);
+}
+
+/* card body */
+.s-essentials .card__body {
+  padding: var(--sp-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+  flex: 1;
+}
+
+.s-essentials .card__name {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: var(--s-1);
+  line-height: 1.2;
+  color: var(--ink);
+  margin: 0;
+}
+
+.s-essentials .card__desc {
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  color: var(--ink-soft);
+  margin: 0;
+  line-height: 1.4;
+}
+
+.s-essentials .card__meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-2);
+  margin-top: auto;
+  padding-top: var(--sp-2);
+}
+
+.s-essentials .card__price {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: var(--s-1);
+  color: var(--ink);
+}
+
+.s-essentials .stars {
+  color: var(--star);
+  letter-spacing: .06em;
+  font-size: var(--s--1);
+}
+
+/* add-to-bag button — pill, full width */
+.s-essentials .card__body .btn {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: var(--s--1);
+  letter-spacing: .04em;
+  padding: .8em 1.5em;
+  border-radius: var(--radius-pill);
+  border: 1.5px solid transparent;
+  cursor: pointer;
+  transition: background .2s, color .2s, border-color .2s, transform .15s, box-shadow .2s;
+  line-height: 1;
+  white-space: nowrap;
+  text-decoration: none;
+  margin-top: var(--sp-2);
+}
+
+.s-essentials .card__body .btn-primary {
+  background: var(--accent);
+  color: var(--accent-ink);
+  border-color: var(--accent);
+}
+
+.s-essentials .card__body .btn-primary:hover {
+  background: var(--accent-deep);
+  color: #fff;
+  border-color: var(--accent-deep);
+  box-shadow: var(--shadow);
+  transform: translateY(-2px);
+}
+
+/* reveal stagger — honour --d custom prop */
+.s-essentials .reveal {
+  opacity: 0;
+  transform: perspective(900px) rotateX(8deg) translateY(26px);
+  transition:
+    opacity .7s ease var(--d, 0s),
+    transform .7s cubic-bezier(.2,.7,.2,1) var(--d, 0s);
+}
+
+.s-essentials .reveal.in {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .s-essentials .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* ---------- shop-all CTA ---------- */
+.s-essentials__cta {
+  text-align: center;
+}
+
+.s-essentials__cta .btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: var(--s-0);
+  letter-spacing: .04em;
+  padding: .85em 2.5em;
+  border-radius: var(--radius-pill);
+  border: 1.5px solid var(--teal-deep);
+  background: transparent;
+  color: var(--teal-deep);
+  cursor: pointer;
+  transition: background .2s, color .2s, transform .15s;
+  text-decoration: none;
+}
+
+.s-essentials__cta .btn-outline:hover {
+  background: var(--teal-deep);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+/* ---------- tablet (2-up) ---------- */
+@media (max-width: 900px) {
+  .s-essentials__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .s-essentials__header h2 {
+    font-size: var(--s-3);
+  }
+}
+
+/* ---------- mobile ---------- */
+@media (max-width: 560px) {
+  .s-essentials__grid {
+    grid-template-columns: 1fr;
+    /* horizontal snap on very narrow if preferred */
+  }
+
+  .s-essentials__header h2 {
+    font-size: var(--s-2);
+  }
+
+  .s-essentials__header {
+    margin-bottom: var(--sp-5);
+  }
+
+  .s-essentials .card__img-wrap {
+    padding: var(--sp-3);
+  }
+}
+
+/* ---------- 2-up snap on narrow (360–560px) ---------- */
+@media (min-width: 360px) and (max-width: 560px) {
+  .s-essentials__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--sp-3);
+  }
+
+  .s-essentials .card__name {
+    font-size: var(--s-0);
+  }
+
+  .s-essentials .card__body {
+    padding: var(--sp-3);
+    gap: var(--sp-1);
+  }
+}
+/* ============================================================
+   06-creamfeature.css — BODY CREAM flagship feature
+   Lymphology Skincare — scoped to .s-creamfeature
+   ============================================================ */
+
+/* ---------- tokens (mirror base.css for standalone safety) ---------- */
+.s-creamfeature {
+  --bg:          #F5FAFB;
+  --surface:     #fff;
+  --surface-2:   #E6F3F5;
+  --sage:        #E9F2EC;
+  --ink:         #143A40;
+  --ink-soft:    #5E7A7F;
+  --accent:      #12BFDA;
+  --accent-ink:  #06343C;
+  --accent-deep: #0E9DB5;
+  --teal-deep:   #0F6E7E;
+  --teal-ink:    #EAF7F9;
+  --sage-deep:   #6FA98F;
+  --line:        #D3E6E9;
+  --star:        #D9A441;
+  --gold:        #D9A441;
+  --font-display:"Fraunces","Georgia","Times New Roman",serif;
+  --font-body:   "Assistant","Helvetica Neue",Arial,sans-serif;
+  --s--1:        .84rem;
+  --s-0:         1.05rem;
+  --s-1:         1.2rem;
+  --s-2:         1.55rem;
+  --s-3:         2.1rem;
+  --s-4:         2.9rem;
+  --s-5:         3.8rem;
+  --sp-1:        .25rem;
+  --sp-2:        .5rem;
+  --sp-3:        1rem;
+  --sp-4:        1.5rem;
+  --sp-5:        2.5rem;
+  --sp-6:        4rem;
+  --sp-7:        6rem;
+  --sp-8:        8rem;
+  --radius:      12px;
+  --radius-lg:   18px;
+  --radius-pill: 999px;
+  --shadow:      0 16px 44px rgba(20,58,64,.10);
+  --maxw:        1200px;
+}
+
+/* ---------- section shell ---------- */
+.s-creamfeature {
+  background: var(--surface);
+  overflow: hidden;
+}
+
+/* ---------- 2-col inner layout ---------- */
+.s-creamfeature__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(var(--sp-5), 5vw, var(--sp-7));
+  align-items: center;
+}
+
+/* ---------- TEXT column (left) ---------- */
+.s-creamfeature__text {
+  max-width: 520px;
+}
+
+.s-creamfeature__text .eyebrow {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: var(--s--1);
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--accent-deep);
+  margin: 0 0 var(--sp-3);
+}
+
+.s-creamfeature__text h2 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: var(--s-4);
+  line-height: 1.08;
+  letter-spacing: -.01em;
+  color: var(--ink);
+  margin: 0 0 var(--sp-4);
+}
+
+.s-creamfeature__lead {
+  font-family: var(--font-body);
+  font-size: var(--s-0);
+  color: var(--ink-soft);
+  line-height: 1.7;
+  margin: 0 0 var(--sp-5);
+}
+
+/* ---------- benefit list ---------- */
+.s-creamfeature__benefits {
+  list-style: none;
+  margin: 0 0 var(--sp-5);
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+}
+
+.s-creamfeature__benefit {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--sp-3);
+}
+
+.s-creamfeature__benefit-icon {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  color: var(--accent);
+  background: var(--teal-ink);
+  border-radius: var(--radius);
+  padding: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.s-creamfeature__benefit-icon svg {
+  width: 100%;
+  height: 100%;
+  stroke: currentColor;
+  stroke-width: 1.5;
+  fill: none;
+}
+
+/* icon .ic passthrough */
+.s-creamfeature__benefit-icon.ic {
+  stroke: var(--accent);
+}
+
+.s-creamfeature__benefit div {
+  display: flex;
+  flex-direction: column;
+  gap: .18em;
+}
+
+.s-creamfeature__benefit strong {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: var(--s-0);
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+.s-creamfeature__benefit-desc {
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  color: var(--ink-soft);
+  line-height: 1.5;
+}
+
+/* ---------- CTA row ---------- */
+.s-creamfeature__cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--sp-4);
+  margin-bottom: var(--sp-4);
+}
+
+.s-creamfeature__price {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: var(--s-2);
+  color: var(--ink);
+  white-space: nowrap;
+}
+
+.s-creamfeature__btns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-3);
+}
+
+/* inherit base .btn styles; ensure sizing */
+.s-creamfeature .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: var(--s-0);
+  letter-spacing: .02em;
+  padding: .85em 2em;
+  border-radius: var(--radius-pill);
+  border: 1.5px solid transparent;
+  cursor: pointer;
+  transition: background .2s, color .2s, border-color .2s, transform .15s, box-shadow .2s;
+  line-height: 1;
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+.s-creamfeature .btn:hover {
+  transform: translateY(-2px);
+}
+
+.s-creamfeature .btn-primary {
+  background: var(--accent);
+  color: var(--accent-ink);
+  border-color: var(--accent);
+}
+
+.s-creamfeature .btn-primary:hover {
+  background: var(--accent-deep);
+  color: #fff;
+  border-color: var(--accent-deep);
+  box-shadow: var(--shadow);
+}
+
+.s-creamfeature .btn-outline {
+  background: transparent;
+  color: var(--teal-deep);
+  border-color: var(--teal-deep);
+}
+
+.s-creamfeature .btn-outline:hover {
+  background: var(--teal-deep);
+  color: #fff;
+}
+
+/* ---------- stars line ---------- */
+.s-creamfeature__stars {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  margin: 0;
+}
+
+.s-creamfeature__stars .stars {
+  color: var(--star);
+  letter-spacing: .06em;
+  font-size: var(--s-0);
+}
+
+.s-creamfeature__stars-label {
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  color: var(--ink-soft);
+}
+
+/* ---------- IMAGE column (right) ---------- */
+.s-creamfeature__img-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.s-creamfeature__img-panel {
+  background: var(--surface-2);
+  border-radius: var(--radius-lg);
+  padding: var(--sp-5);
+  width: 100%;
+  max-width: 480px;
+  aspect-ratio: 1 / 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.s-creamfeature__img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  transition: transform .45s ease;
+}
+
+.s-creamfeature__img-wrap:hover .s-creamfeature__img {
+  transform: scale(1.04);
+}
+
+/* ---------- reveal (stagger via --d) ---------- */
+.s-creamfeature .reveal {
+  opacity: 0;
+  transform: perspective(900px) rotateX(8deg) translateY(26px);
+  transition:
+    opacity .7s ease var(--d, 0s),
+    transform .7s cubic-bezier(.2,.7,.2,1) var(--d, 0s);
+}
+
+.s-creamfeature .reveal.in {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .s-creamfeature .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* ---------- tablet ---------- */
+@media (max-width: 900px) {
+  .s-creamfeature__text h2 {
+    font-size: var(--s-3);
+  }
+
+  .s-creamfeature__img-panel {
+    max-width: 380px;
+    padding: var(--sp-4);
+  }
+}
+
+/* ---------- mobile — stack image above text ---------- */
+@media (max-width: 720px) {
+  .s-creamfeature__inner {
+    grid-template-columns: 1fr;
+    gap: var(--sp-5);
+  }
+
+  /* image first on mobile */
+  .s-creamfeature__img-wrap {
+    order: -1;
+  }
+
+  .s-creamfeature__img-panel {
+    max-width: 320px;
+    aspect-ratio: 1 / 1;
+    padding: var(--sp-4);
+    margin: 0 auto;
+  }
+
+  .s-creamfeature__text {
+    max-width: 100%;
+  }
+
+  .s-creamfeature__text h2 {
+    font-size: var(--s-3);
+  }
+
+  .s-creamfeature__cta-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .s-creamfeature__btns {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .s-creamfeature .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+/* ============================================================
+   Lymphology Skincare — 07-founder.css
+   Founder / Story — deep teal editorial band, text-forward
+   ============================================================ */
+
+/* ---- token declarations (all vars used below) ---- */
+.s-founder {
+  --bg:          #F5FAFB;
+  --surface:     #FFFFFF;
+  --surface-2:   #E6F3F5;
+  --sage:        #E9F2EC;
+  --ink:         #143A40;
+  --ink-soft:    #5E7A7F;
+  --accent:      #12BFDA;
+  --accent-ink:  #06343C;
+  --accent-deep: #0E9DB5;
+  --teal-deep:   #0F6E7E;
+  --teal-ink:    #EAF7F9;
+  --sage-deep:   #6FA98F;
+  --gold:        #D9A441;
+  --line:        #D3E6E9;
+  --star:        #D9A441;
+  --font-display:"Fraunces", "Georgia", "Times New Roman", serif;
+  --font-body:   "Assistant", "Helvetica Neue", Arial, sans-serif;
+  --s--1:  .84rem;
+  --s-0:  1.05rem;
+  --s-1:  1.2rem;
+  --s-2:  1.55rem;
+  --s-3:  2.1rem;
+  --s-4:  2.9rem;
+  --s-5:  3.8rem;
+  --sp-1: .25rem;
+  --sp-2: .5rem;
+  --sp-3: 1rem;
+  --sp-4: 1.5rem;
+  --sp-5: 2.5rem;
+  --sp-6: 4rem;
+  --sp-7: 6rem;
+  --sp-8: 8rem;
+  --radius:      12px;
+  --radius-lg:   18px;
+  --radius-pill: 999px;
+  --shadow:      0 16px 44px rgba(20,58,64,.10);
+  --maxw:        1200px;
+}
+
+/* ---- section shell — deep teal background ---- */
+.s-founder {
+  background:    var(--teal-deep);
+  padding-block: var(--sp-8);
+  text-align:    center;
+  position:      relative;
+  overflow:      hidden;
+}
+
+/* ---- subtle gradient overlay to add depth ---- */
+.s-founder::before {
+  content:  '';
+  position: absolute;
+  inset:    0;
+  background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(18,191,218,.12) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+/* ---- inner wrap ---- */
+.s-founder .wrap {
+  position:   relative;
+  z-index:    1;
+  max-width:  var(--maxw);
+  margin:     0 auto;
+  padding-inline: var(--sp-4);
+}
+
+/* ---- eyebrow ---- */
+.s-founder__eyebrow {
+  display:        inline-block;
+  font-family:    var(--font-body);
+  font-weight:    700;
+  font-size:      var(--s--1);
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color:          var(--accent);
+  margin:         0 0 var(--sp-4);
+}
+
+/* ---- heading ---- */
+.s-founder__heading {
+  font-family:  var(--font-display);
+  font-weight:  400;
+  font-size:    var(--s-4);
+  line-height:  1.1;
+  letter-spacing: -.015em;
+  color:        var(--teal-ink);
+  margin:       0 auto var(--sp-5);
+  max-width:    780px;
+}
+
+/* ---- body copy ---- */
+.s-founder__copy {
+  max-width: 640px;
+  margin:    0 auto var(--sp-6);
+}
+
+.s-founder__copy p {
+  font-family: var(--font-body);
+  font-size:   var(--s-1);
+  line-height: 1.7;
+  color:       rgba(234,247,249,1); /* --teal-ink at 80% */
+  margin:      0 0 var(--sp-3);
+}
+
+.s-founder__copy p:last-child {
+  margin-bottom: 0;
+}
+
+/* ---- decorative motif (concentric arcs) ---- */
+.s-founder__motif {
+  position: absolute;
+  top:  50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width:  540px;
+  height: 540px;
+  pointer-events: none;
+  z-index: 0;
+  opacity: .12;
+}
+
+.s-founder__motif-svg {
+  width:  100%;
+  height: 100%;
+  color:  var(--teal-ink);
+}
+
+/* ---- stat / credential row ---- */
+.s-founder__stats {
+  list-style: none;
+  margin:     0 auto var(--sp-6);
+  padding:    0;
+  display:    flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap:  wrap;
+  gap:        0;
+  max-width:  800px;
+}
+
+.s-founder__stat {
+  display:        flex;
+  flex-direction: column;
+  align-items:    center;
+  gap:            var(--sp-1);
+  padding:        0 var(--sp-5);
+}
+
+/* vertical divider between stats */
+.s-founder__stat-divider {
+  width:           1px;
+  height:          52px;
+  background:      rgba(234,247,249,.25);
+  align-self:      center;
+  flex-shrink:     0;
+}
+
+.s-founder__stat-num {
+  display:      block;
+  font-family:  var(--font-display);
+  font-weight:  400;
+  font-size:    var(--s-4);
+  line-height:  1;
+  letter-spacing: -.02em;
+  color:        var(--teal-ink);
+}
+
+.s-founder__stat-label {
+  display:        block;
+  font-family:    var(--font-body);
+  font-size:      var(--s--1);
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color:          rgba(234,247,249,.9);
+  line-height:    1.3;
+}
+
+/* ---- CTA ---- */
+.s-founder__cta {
+  display:         flex;
+  justify-content: center;
+}
+
+/* ---- scoped btn (mirrors base.css, self-contained) ---- */
+.s-founder .btn {
+  display:        inline-flex;
+  align-items:    center;
+  justify-content: center;
+  gap:            .5em;
+  font-family:    var(--font-body);
+  font-weight:    700;
+  font-size:      var(--s-0);
+  letter-spacing: .02em;
+  padding:        .85em 2em;
+  border-radius:  var(--radius-pill);
+  border:         1.5px solid transparent;
+  cursor:         pointer;
+  transition:     background .2s, color .2s, border-color .2s, transform .15s, box-shadow .2s;
+  line-height:    1;
+  white-space:    nowrap;
+  text-decoration: none;
+}
+.s-founder .btn:hover { transform: translateY(-2px); }
+
+.s-founder .btn-light {
+  background:   #fff;
+  color:        var(--teal-deep);
+  border-color: #fff;
+}
+.s-founder .btn-light:hover {
+  background:   transparent;
+  color:        #fff;
+  border-color: #fff;
+}
+
+/* ---- reveal transitions ---- */
+.s-founder .reveal {
+  opacity:   0;
+  transform: perspective(900px) rotateX(8deg) translateY(26px);
+  transition:
+    opacity   .7s ease,
+    transform .7s cubic-bezier(.2,.7,.2,1);
+  transition-delay: var(--delay, 0s);
+}
+.s-founder .reveal.in {
+  opacity:   1;
+  transform: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .s-founder .reveal {
+    opacity:    1;
+    transform:  none;
+    transition: none;
+  }
+}
+
+/* ---- responsive: tablet (≤900px) ---- */
+@media (max-width: 900px) {
+  .s-founder__stat {
+    padding: 0 var(--sp-4);
+  }
+  .s-founder__stat-num {
+    font-size: var(--s-3);
+  }
+  .s-founder__motif {
+    width:  360px;
+    height: 360px;
+  }
+}
+
+/* ---- responsive: mobile (≤780px) — stack stats ---- */
+@media (max-width: 780px) {
+  .s-founder {
+    padding-block: var(--sp-6);
+  }
+  .s-founder__heading {
+    font-size: var(--s-3);
+  }
+  .s-founder__stats {
+    flex-direction: column;
+    gap: var(--sp-4);
+  }
+  .s-founder__stat-divider {
+    width:  60px;
+    height: 1px;
+    background: rgba(234,247,249,.2);
+  }
+  .s-founder__stat {
+    padding: 0;
+  }
+  .s-founder__motif {
+    display: none;
+  }
+}
+/* ============================================================
+   Lymphology Skincare — 08-reviews.css
+   Community Reviews wall — 6 cards, 3-up desktop, 2-up tablet, 1-up mobile
+   ============================================================ */
+
+/* ---- token declarations (all vars used below) ---- */
+.s-reviews {
+  --bg:          #F5FAFB;
+  --surface:     #FFFFFF;
+  --surface-2:   #E6F3F5;
+  --sage:        #E9F2EC;
+  --ink:         #143A40;
+  --ink-soft:    #5E7A7F;
+  --accent:      #12BFDA;
+  --accent-ink:  #06343C;
+  --accent-deep: #0E9DB5;
+  --teal-deep:   #0F6E7E;
+  --teal-ink:    #EAF7F9;
+  --sage-deep:   #6FA98F;
+  --gold:        #D9A441;
+  --line:        #D3E6E9;
+  --star:        #D9A441;
+  --font-display:"Fraunces", "Georgia", "Times New Roman", serif;
+  --font-body:   "Assistant", "Helvetica Neue", Arial, sans-serif;
+  --s--1:  .84rem;
+  --s-0:  1.05rem;
+  --s-1:  1.2rem;
+  --s-2:  1.55rem;
+  --s-3:  2.1rem;
+  --s-4:  2.9rem;
+  --s-5:  3.8rem;
+  --sp-1: .25rem;
+  --sp-2: .5rem;
+  --sp-3: 1rem;
+  --sp-4: 1.5rem;
+  --sp-5: 2.5rem;
+  --sp-6: 4rem;
+  --sp-7: 6rem;
+  --sp-8: 8rem;
+  --radius:      12px;
+  --radius-lg:   18px;
+  --radius-pill: 999px;
+  --shadow:      0 16px 44px rgba(20,58,64,.10);
+  --maxw:        1200px;
+}
+
+/* ---- section shell ---- */
+.s-reviews {
+  background:    var(--bg);
+  padding-block: var(--sp-7);
+}
+
+/* ---- header block ---- */
+.s-reviews__header {
+  text-align: center;
+  margin:     0 auto var(--sp-6);
+  max-width:  680px;
+}
+
+.s-reviews__eyebrow {
+  display:        inline-block;
+  font-family:    var(--font-body);
+  font-weight:    700;
+  font-size:      var(--s--1);
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color:          var(--accent-deep);
+  margin:         0 0 var(--sp-3);
+}
+
+.s-reviews__heading {
+  font-family:    var(--font-display);
+  font-weight:    400;
+  font-size:      var(--s-4);
+  line-height:    1.1;
+  letter-spacing: -.015em;
+  color:          var(--ink);
+  margin:         0 0 var(--sp-4);
+}
+
+/* ---- aggregate rating ---- */
+.s-reviews__aggregate {
+  display:     flex;
+  align-items: baseline;
+  justify-content: center;
+  gap:         var(--sp-2);
+  flex-wrap:   wrap;
+}
+
+.s-reviews__big-star {
+  font-size:   var(--s-3);
+  color:       var(--gold);
+  line-height: 1;
+}
+
+.s-reviews__big-score {
+  font-family:    var(--font-display);
+  font-weight:    500;
+  font-size:      var(--s-4);
+  color:          var(--ink);
+  line-height:    1;
+  letter-spacing: -.02em;
+}
+
+.s-reviews__out-of {
+  font-size:   var(--s-1);
+  color:       var(--ink-soft);
+  font-weight: 400;
+}
+
+.s-reviews__tagline {
+  font-family: var(--font-body);
+  font-size:   var(--s--1);
+  color:       var(--ink-soft);
+  letter-spacing: .04em;
+  align-self:  center;
+}
+
+/* ---- review grid — 3-up desktop ---- */
+.s-reviews__grid {
+  list-style: none;
+  margin:     0 0 var(--sp-4);
+  padding:    0;
+  display:    grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap:        var(--sp-4);
+}
+
+/* ---- single review card ---- */
+.s-reviews__card {
+  /* transition-delay via inline --delay custom prop */
+  transition-delay: var(--delay, 0s);
+}
+
+.s-reviews__card-inner {
+  background:    var(--surface);
+  border:        1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding:       var(--sp-4) var(--sp-4) var(--sp-4);
+  height:        100%;
+  display:       flex;
+  flex-direction: column;
+  gap:           var(--sp-3);
+  transition:    box-shadow .25s, transform .25s;
+}
+
+.s-reviews__card-inner:hover {
+  box-shadow: var(--shadow);
+  transform:  translateY(-4px);
+}
+
+/* ---- star row ---- */
+.s-reviews__stars {
+  color:       var(--star);
+  font-size:   var(--s-1);
+  letter-spacing: .1em;
+  line-height: 1;
+}
+
+/* ---- quote text ---- */
+.s-reviews__quote {
+  margin:   0;
+  flex-grow: 1;
+}
+
+.s-reviews__quote p {
+  font-family: var(--font-body);
+  font-size:   var(--s-0);
+  line-height: 1.65;
+  color:       var(--ink);
+  margin:      0;
+  font-style:  normal;
+}
+
+/* ---- author row ---- */
+.s-reviews__author {
+  display:     flex;
+  align-items: center;
+  gap:         var(--sp-2);
+  flex-wrap:   wrap;
+  border-top:  1px solid var(--line);
+  padding-top: var(--sp-3);
+  margin-top:  auto;
+}
+
+.s-reviews__name {
+  font-family:    var(--font-body);
+  font-weight:    700;
+  font-size:      var(--s--1);
+  color:          var(--ink);
+  letter-spacing: .02em;
+}
+
+/* ---- tag chip (scoped override) ---- */
+.s-reviews .s-reviews__tag {
+  display:        inline-flex;
+  align-items:    center;
+  font-family:    var(--font-body);
+  font-weight:    600;
+  font-size:      .76rem;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  padding:        .3em .8em;
+  border-radius:  var(--radius-pill);
+  border:         1px solid var(--line);
+  background:     var(--surface-2);
+  color:          var(--ink-soft);
+  line-height:    1;
+}
+
+/* ---- footnote ---- */
+.s-reviews__footnote {
+  font-family:  var(--font-body);
+  font-size:    var(--s--1);
+  color:        var(--ink-soft);
+  text-align:   center;
+  margin:       0;
+  opacity:      .65;
+}
+
+/* ---- reveal transitions ---- */
+.s-reviews .reveal {
+  opacity:   0;
+  transform: perspective(900px) rotateX(8deg) translateY(26px);
+  transition:
+    opacity   .7s ease,
+    transform .7s cubic-bezier(.2,.7,.2,1);
+  transition-delay: var(--delay, 0s);
+}
+.s-reviews .reveal.in {
+  opacity:   1;
+  transform: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .s-reviews .reveal {
+    opacity:    1;
+    transform:  none;
+    transition: none;
+  }
+}
+
+/* ---- responsive: tablet (≤900px) — 2-up grid ---- */
+@media (max-width: 900px) {
+  .s-reviews__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--sp-3);
+  }
+}
+
+/* ---- responsive: mobile (≤600px) — horizontal scroll or 1-up ---- */
+@media (max-width: 600px) {
+  .s-reviews {
+    padding-block: var(--sp-6);
+  }
+  .s-reviews__heading {
+    font-size: var(--s-3);
+  }
+  .s-reviews__grid {
+    /* horizontal scroll on mobile */
+    grid-template-columns: repeat(6, 80vw);
+    overflow-x:    auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    gap:           var(--sp-3);
+    padding-bottom: var(--sp-2);
+    /* hide scrollbar visually but keep functionality */
+    scrollbar-width: none;
+  }
+  .s-reviews__grid::-webkit-scrollbar {
+    display: none;
+  }
+  .s-reviews__card {
+    scroll-snap-align: start;
+  }
+  .s-reviews__card-inner {
+    height: 100%;
+    min-height: 240px;
+  }
+  .s-reviews__aggregate {
+    gap: var(--sp-1);
+  }
+  .s-reviews__big-score {
+    font-size: var(--s-3);
+  }
+}
+/* ============================================================
+   Lymphology Skincare — 09-newsletter.css
+   Newsletter / community signup band
+   Scope: .s-newsletter
+   ============================================================ */
+
+/* ── Section shell ──────────────────────────────────────────── */
+.s-newsletter {
+  background: var(--surface-2);
+  padding-block: var(--sp-8);
+}
+
+/* ── Centered inner column ──────────────────────────────────── */
+.s-newsletter__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0;
+  max-width: 640px;
+  margin-inline: auto;
+}
+
+/* ── Eyebrow ────────────────────────────────────────────────── */
+.s-newsletter__eyebrow {
+  color: var(--teal-deep);
+  margin-bottom: var(--sp-3);
+}
+
+/* ── Heading ────────────────────────────────────────────────── */
+.s-newsletter__h2 {
+  font-family: var(--font-display);
+  font-size: var(--s-4);
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin: 0 0 var(--sp-3);
+}
+
+/* ── Sub-copy ───────────────────────────────────────────────── */
+.s-newsletter__sub {
+  font-family: var(--font-body);
+  font-size: var(--s-1);
+  line-height: 1.6;
+  color: var(--ink-soft);
+  margin: 0 0 var(--sp-5);
+  max-width: 520px;
+}
+
+/* ── Form ───────────────────────────────────────────────────── */
+.s-newsletter__form {
+  display: flex;
+  align-items: stretch;
+  gap: var(--sp-2);
+  width: 100%;
+  max-width: 520px;
+  margin-bottom: var(--sp-2);
+}
+
+/* Visually-hidden label (accessible) */
+.s-newsletter__label {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.s-newsletter__field-wrap {
+  position: relative;
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.s-newsletter__input {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 52px;
+  padding-inline: var(--sp-4);
+  font-family: var(--font-body);
+  font-size: var(--s-0, 1rem);
+  color: var(--ink);
+  background: var(--surface);
+  border: 1.5px solid var(--line);
+  border-radius: var(--radius-pill);
+  outline: none;
+  transition: border-color .18s ease, box-shadow .18s ease;
+  box-sizing: border-box;
+}
+
+.s-newsletter__input::placeholder {
+  color: var(--ink-soft);
+  opacity: .65;
+}
+
+.s-newsletter__input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(18, 191, 218, .18);
+}
+
+/* Subscribe button — pill, using existing .btn .btn-primary */
+.s-newsletter__btn {
+  flex-shrink: 0;
+  padding-inline: var(--sp-5);
+  padding-block: 0;
+  min-height: 52px;
+  font-size: var(--s-0, 1rem);
+  border-radius: var(--radius-pill);
+  white-space: nowrap;
+}
+
+/* ── Fine print ─────────────────────────────────────────────── */
+.s-newsletter__fine {
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  color: var(--ink-soft);
+  opacity: .75;
+  margin: 0;
+}
+
+/* ── Mobile (≤ 600px) ───────────────────────────────────────── */
+@media (max-width: 600px) {
+  .s-newsletter {
+    padding-block: var(--sp-7);
+  }
+
+  .s-newsletter__h2 {
+    font-size: var(--s-3);
+  }
+
+  .s-newsletter__sub {
+    font-size: var(--s-0, 1rem);
+    margin-bottom: var(--sp-4);
+  }
+
+  /* Stack form full-width */
+  .s-newsletter__form {
+    flex-direction: column;
+    gap: var(--sp-2);
+  }
+
+  .s-newsletter__input,
+  .s-newsletter__btn {
+    width: 100%;
+    min-height: 50px;
+  }
+}
+/* ============================================================
+   Lymphology Skincare — 10-footer.css
+   Site footer on deep teal (#0F6E7E) with light --teal-ink text
+   Scope: .site-footer
+   ============================================================ */
+
+/* ── Footer shell ───────────────────────────────────────────── */
+.site-footer {
+  background: var(--teal-deep);
+  color: var(--teal-ink);
+  padding-block: var(--sp-8) var(--sp-5);
+}
+
+/* ── Top: brand + 4-column nav grid ────────────────────────── */
+.site-footer__top {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: var(--sp-6) var(--sp-8);
+  padding-bottom: var(--sp-7);
+  border-bottom: 1px solid rgba(234, 247, 249, .18);
+  margin-bottom: var(--sp-6);
+}
+
+/* ── Brand cell ─────────────────────────────────────────────── */
+.site-footer__brand {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+}
+
+/* Logo — invert black wordmark to white for dark bg */
+.site-footer__logo {
+  height: 34px;
+  width: auto;
+  display: block;
+  filter: brightness(0) invert(1);
+}
+
+.site-footer__blurb {
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  line-height: 1.65;
+  color: var(--teal-ink);
+  opacity: .82;
+  margin: 0;
+  max-width: 240px;
+}
+
+/* ── Social icons ───────────────────────────────────────────── */
+.site-footer__social {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  margin-top: var(--sp-1);
+}
+
+.site-footer__social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--teal-ink);
+  opacity: .7;
+  text-decoration: none;
+  transition: opacity .18s ease, color .18s ease;
+  border-radius: var(--radius);
+}
+
+.site-footer__social-link:hover {
+  opacity: 1;
+  color: var(--accent);
+}
+
+.site-footer__social-ic {
+  width: 22px;
+  height: 22px;
+  stroke-width: 1.75;
+  display: block;
+}
+
+/* ── 4-column nav ───────────────────────────────────────────── */
+.site-footer__nav {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--sp-5) var(--sp-4);
+}
+
+.site-footer__col {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+}
+
+.site-footer__col-heading {
+  font-family: var(--font-display);
+  font-size: var(--s--1);
+  font-weight: 600;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--teal-ink);
+  margin: 0 0 var(--sp-1);
+}
+
+.site-footer__col-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+}
+
+.site-footer__link {
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  line-height: 1.5;
+  color: var(--teal-ink);
+  text-decoration: none;
+  opacity: .72;
+  transition: opacity .18s ease, color .18s ease;
+}
+
+.site-footer__link:hover {
+  opacity: 1;
+  color: var(--teal-ink);
+}
+
+/* ── Trust marks ────────────────────────────────────────────── */
+.site-footer__trust {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sp-2) var(--sp-3);
+  padding-block: var(--sp-5);
+  border-bottom: 1px solid rgba(234, 247, 249, .18);
+  margin-bottom: var(--sp-5);
+}
+
+.site-footer__trust-item {
+  display: flex;
+  align-items: center;
+  gap: .45em;
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--teal-ink);
+  opacity: .75;
+}
+
+.site-footer__trust-ic {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  stroke-width: 1.25;
+  color: var(--accent);
+  opacity: 1;
+}
+
+.site-footer__trust-sep {
+  color: var(--teal-ink);
+  opacity: .3;
+  font-size: var(--s-0, 1rem);
+}
+
+/* ── Bottom bar ─────────────────────────────────────────────── */
+.site-footer__bottom {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-3) var(--sp-4);
+}
+
+.site-footer__copy {
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  color: var(--teal-ink);
+  opacity: .6;
+  margin: 0;
+}
+
+.site-footer__legal {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  font-size: var(--s--1);
+  color: var(--teal-ink);
+  opacity: .65;
+}
+
+.site-footer__legal span {
+  opacity: .45;
+}
+
+.site-footer__legal .site-footer__link {
+  font-size: var(--s--1);
+  opacity: .65;
+}
+
+.site-footer__legal .site-footer__link:hover {
+  opacity: 1;
+}
+
+/* ── Payment marks ──────────────────────────────────────────── */
+.site-footer__pay {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+}
+
+.site-footer__pay-ic {
+  display: block;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+/* ── Tablet (≤ 1024px) ──────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .site-footer__top {
+    grid-template-columns: 220px 1fr;
+    gap: var(--sp-5) var(--sp-6);
+  }
+
+  .site-footer__nav {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--sp-5) var(--sp-5);
+  }
+}
+
+/* ── Mobile (≤ 720px) ───────────────────────────────────────── */
+@media (max-width: 720px) {
+  .site-footer {
+    padding-block: var(--sp-7) var(--sp-5);
+  }
+
+  /* Stack brand above columns */
+  .site-footer__top {
+    grid-template-columns: 1fr;
+    gap: var(--sp-6);
+    padding-bottom: var(--sp-6);
+  }
+
+  .site-footer__blurb {
+    max-width: 100%;
+  }
+
+  /* 2-up on tablet-ish mobile, 1-up if narrower */
+  .site-footer__nav {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--sp-5) var(--sp-5);
+  }
+
+  /* Trust marks center, wrap gracefully */
+  .site-footer__trust {
+    gap: var(--sp-2);
+  }
+
+  .site-footer__trust-sep {
+    display: none;
+  }
+
+  /* Bottom bar: stack */
+  .site-footer__bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--sp-3);
+  }
+
+  .site-footer__pay {
+    align-self: flex-start;
+  }
+}
+
+/* ── Narrow mobile (≤ 420px) ────────────────────────────────── */
+@media (max-width: 420px) {
+  .site-footer__nav {
+    grid-template-columns: 1fr;
+    gap: var(--sp-5);
+  }
+}

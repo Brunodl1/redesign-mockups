@@ -1,0 +1,130 @@
+/* ============================================================
+   Lymphology Skincare — 03-credibility.css
+   Trust strip: 4 items in a row (2×2 on mobile)
+   ============================================================ */
+
+/* ---- token declarations (all vars used below) ---- */
+.s-credibility {
+  --bg:          #F5FAFB;
+  --surface:     #FFFFFF;
+  --surface-2:   #E6F3F5;
+  --sage:        #E9F2EC;
+  --ink:         #143A40;
+  --ink-soft:    #5E7A7F;
+  --accent:      #12BFDA;
+  --accent-ink:  #06343C;
+  --accent-deep: #0E9DB5;
+  --teal-deep:   #0F6E7E;
+  --teal-ink:    #EAF7F9;
+  --sage-deep:   #6FA98F;
+  --line:        #D3E6E9;
+  --star:        #D9A441;
+  --font-display:"Fraunces", "Georgia", "Times New Roman", serif;
+  --font-body:   "Assistant", "Helvetica Neue", Arial, sans-serif;
+  --s--1:  .84rem;
+  --s-0:  1.05rem;
+  --s-1:  1.2rem;
+  --s-2:  1.55rem;
+  --sp-1: .25rem;
+  --sp-2: .5rem;
+  --sp-3: 1rem;
+  --sp-4: 1.5rem;
+  --sp-5: 2.5rem;
+  --radius:      12px;
+  --radius-pill: 999px;
+  --maxw:        1200px;
+}
+
+/* ---- section shell ---- */
+.s-credibility {
+  background: var(--surface-2);
+  padding-block: var(--sp-4);  /* slim — intentionally compressed */
+  border-top:    1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+/* ---- list ---- */
+.s-credibility .cred__list {
+  list-style: none;
+  margin:  0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--sp-3) var(--sp-4);
+  align-items: start;
+}
+
+/* ---- individual item ---- */
+.s-credibility .cred__item {
+  display:     flex;
+  align-items: center;
+  gap:         var(--sp-3);
+}
+
+/* ---- icon wrapper ---- */
+.s-credibility .cred__icon {
+  flex-shrink: 0;
+  width:  36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent-deep);   /* stroke colour fed via currentColor */
+}
+
+/* ---- text block ---- */
+.s-credibility .cred__text {
+  display:        flex;
+  flex-direction: column;
+  gap:            .15em;
+}
+
+.s-credibility .cred__label {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size:   var(--s-0);
+  line-height: 1.2;
+  color:       var(--ink);
+}
+
+.s-credibility .cred__sub {
+  font-family: var(--font-body);
+  font-size:   var(--s--1);
+  line-height: 1.35;
+  color:       var(--ink-soft);
+}
+
+/* ---- dividers between items (desktop only) ---- */
+@media (min-width: 781px) {
+  .s-credibility .cred__item + .cred__item {
+    border-left: 1px solid var(--line);
+    padding-left: var(--sp-4);
+  }
+}
+
+/* ---- mobile: 2×2 grid ---- */
+@media (max-width: 780px) {
+  .s-credibility {
+    padding-block: var(--sp-3) var(--sp-4);
+  }
+
+  .s-credibility .cred__list {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--sp-3);
+  }
+
+  .s-credibility .cred__item {
+    gap: var(--sp-2);
+  }
+
+  .s-credibility .cred__label {
+    font-size: var(--s--1);
+  }
+}
+
+/* ---- very small: stack 1-up ---- */
+@media (max-width: 380px) {
+  .s-credibility .cred__list {
+    grid-template-columns: 1fr;
+  }
+}

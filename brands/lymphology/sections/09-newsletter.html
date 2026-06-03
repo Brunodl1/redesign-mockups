@@ -1,0 +1,50 @@
+<!-- ============================================================
+     Lymphology Skincare — 09-newsletter.html
+     Newsletter / community signup band
+     ============================================================ -->
+
+<section class="sec s-newsletter" aria-labelledby="nl-heading">
+  <div class="wrap s-newsletter__inner">
+
+    <!-- Eyebrow -->
+    <span class="eyebrow s-newsletter__eyebrow">Spread Lymph Love</span>
+
+    <!-- Heading -->
+    <h2 class="s-newsletter__h2" id="nl-heading">
+      Join the lymph-loving community.
+    </h2>
+
+    <!-- Sub-copy -->
+    <p class="s-newsletter__sub">
+      Lymphatic tips, rituals, and 10% off your first order — straight to your inbox.
+    </p>
+
+    <!-- Inline email form -->
+    <form
+      class="s-newsletter__form"
+      onsubmit="return false"
+      aria-label="Email newsletter signup"
+    >
+      <div class="s-newsletter__field-wrap">
+        <label for="nl-email" class="s-newsletter__label">Email address</label>
+        <input
+          id="nl-email"
+          class="s-newsletter__input"
+          type="email"
+          name="email"
+          placeholder="your@email.com"
+          autocomplete="email"
+          required
+          aria-required="true"
+        >
+      </div>
+      <button type="submit" class="btn btn-primary s-newsletter__btn">
+        Subscribe
+      </button>
+    </form>
+
+    <!-- Fine print -->
+    <p class="s-newsletter__fine">Unsubscribe anytime.</p>
+
+  </div>
+</section>

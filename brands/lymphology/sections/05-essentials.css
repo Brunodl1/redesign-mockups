@@ -1,0 +1,319 @@
+/* ============================================================
+   05-essentials.css — THE ESSENTIALS product grid
+   Lymphology Skincare — scoped to .s-essentials
+   ============================================================ */
+
+/* ---------- tokens (mirror base.css for standalone safety) ---------- */
+.s-essentials {
+  --bg:          #F5FAFB;
+  --surface:     #fff;
+  --surface-2:   #E6F3F5;
+  --sage:        #E9F2EC;
+  --ink:         #143A40;
+  --ink-soft:    #5E7A7F;
+  --accent:      #12BFDA;
+  --accent-ink:  #06343C;
+  --accent-deep: #0E9DB5;
+  --teal-deep:   #0F6E7E;
+  --teal-ink:    #EAF7F9;
+  --sage-deep:   #6FA98F;
+  --line:        #D3E6E9;
+  --star:        #D9A441;
+  --gold:        #D9A441;
+  --font-display:"Fraunces","Georgia","Times New Roman",serif;
+  --font-body:   "Assistant","Helvetica Neue",Arial,sans-serif;
+  --s--1:        .84rem;
+  --s-0:         1.05rem;
+  --s-1:         1.2rem;
+  --s-2:         1.55rem;
+  --s-3:         2.1rem;
+  --s-4:         2.9rem;
+  --s-5:         3.8rem;
+  --sp-1:        .25rem;
+  --sp-2:        .5rem;
+  --sp-3:        1rem;
+  --sp-4:        1.5rem;
+  --sp-5:        2.5rem;
+  --sp-6:        4rem;
+  --sp-7:        6rem;
+  --sp-8:        8rem;
+  --radius:      12px;
+  --radius-lg:   18px;
+  --radius-pill: 999px;
+  --shadow:      0 16px 44px rgba(20,58,64,.10);
+  --maxw:        1200px;
+}
+
+/* ---------- section shell ---------- */
+.s-essentials {
+  background: var(--bg);
+  overflow: hidden;
+}
+
+/* ---------- header ---------- */
+.s-essentials__header {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto var(--sp-6);
+}
+
+.s-essentials__header .eyebrow {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: var(--s--1);
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--accent-deep);
+  margin: 0 0 var(--sp-3);
+}
+
+.s-essentials__header h2 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: var(--s-4);
+  line-height: 1.1;
+  letter-spacing: -.01em;
+  color: var(--ink);
+  margin: 0 0 var(--sp-3);
+}
+
+.s-essentials__intro {
+  font-family: var(--font-body);
+  font-size: var(--s-0);
+  color: var(--ink-soft);
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* ---------- grid ---------- */
+.s-essentials__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-4);
+  margin-bottom: var(--sp-6);
+}
+
+/* ---------- card ---------- */
+.s-essentials .card {
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--line);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform .22s ease, box-shadow .22s ease;
+  /* stagger support */
+  transition-delay: var(--d, 0s);
+}
+
+.s-essentials .card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow);
+}
+
+/* image tile — near-white so white-bg product shots blend */
+.s-essentials .card__img-wrap {
+  background: var(--surface-2);
+  aspect-ratio: 1 / 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--sp-4);
+  overflow: hidden;
+}
+
+.s-essentials .card__img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  transition: transform .35s ease;
+}
+
+.s-essentials .card:hover .card__img-wrap img {
+  transform: scale(1.04);
+}
+
+/* card body */
+.s-essentials .card__body {
+  padding: var(--sp-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+  flex: 1;
+}
+
+.s-essentials .card__name {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: var(--s-1);
+  line-height: 1.2;
+  color: var(--ink);
+  margin: 0;
+}
+
+.s-essentials .card__desc {
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  color: var(--ink-soft);
+  margin: 0;
+  line-height: 1.4;
+}
+
+.s-essentials .card__meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-2);
+  margin-top: auto;
+  padding-top: var(--sp-2);
+}
+
+.s-essentials .card__price {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: var(--s-1);
+  color: var(--ink);
+}
+
+.s-essentials .stars {
+  color: var(--star);
+  letter-spacing: .06em;
+  font-size: var(--s--1);
+}
+
+/* add-to-bag button — pill, full width */
+.s-essentials .card__body .btn {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: var(--s--1);
+  letter-spacing: .04em;
+  padding: .8em 1.5em;
+  border-radius: var(--radius-pill);
+  border: 1.5px solid transparent;
+  cursor: pointer;
+  transition: background .2s, color .2s, border-color .2s, transform .15s, box-shadow .2s;
+  line-height: 1;
+  white-space: nowrap;
+  text-decoration: none;
+  margin-top: var(--sp-2);
+}
+
+.s-essentials .card__body .btn-primary {
+  background: var(--accent);
+  color: var(--accent-ink);
+  border-color: var(--accent);
+}
+
+.s-essentials .card__body .btn-primary:hover {
+  background: var(--accent-deep);
+  color: #fff;
+  border-color: var(--accent-deep);
+  box-shadow: var(--shadow);
+  transform: translateY(-2px);
+}
+
+/* reveal stagger — honour --d custom prop */
+.s-essentials .reveal {
+  opacity: 0;
+  transform: perspective(900px) rotateX(8deg) translateY(26px);
+  transition:
+    opacity .7s ease var(--d, 0s),
+    transform .7s cubic-bezier(.2,.7,.2,1) var(--d, 0s);
+}
+
+.s-essentials .reveal.in {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .s-essentials .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* ---------- shop-all CTA ---------- */
+.s-essentials__cta {
+  text-align: center;
+}
+
+.s-essentials__cta .btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: var(--s-0);
+  letter-spacing: .04em;
+  padding: .85em 2.5em;
+  border-radius: var(--radius-pill);
+  border: 1.5px solid var(--teal-deep);
+  background: transparent;
+  color: var(--teal-deep);
+  cursor: pointer;
+  transition: background .2s, color .2s, transform .15s;
+  text-decoration: none;
+}
+
+.s-essentials__cta .btn-outline:hover {
+  background: var(--teal-deep);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+/* ---------- tablet (2-up) ---------- */
+@media (max-width: 900px) {
+  .s-essentials__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .s-essentials__header h2 {
+    font-size: var(--s-3);
+  }
+}
+
+/* ---------- mobile ---------- */
+@media (max-width: 560px) {
+  .s-essentials__grid {
+    grid-template-columns: 1fr;
+    /* horizontal snap on very narrow if preferred */
+  }
+
+  .s-essentials__header h2 {
+    font-size: var(--s-2);
+  }
+
+  .s-essentials__header {
+    margin-bottom: var(--sp-5);
+  }
+
+  .s-essentials .card__img-wrap {
+    padding: var(--sp-3);
+  }
+}
+
+/* ---------- 2-up snap on narrow (360–560px) ---------- */
+@media (min-width: 360px) and (max-width: 560px) {
+  .s-essentials__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--sp-3);
+  }
+
+  .s-essentials .card__name {
+    font-size: var(--s-0);
+  }
+
+  .s-essentials .card__body {
+    padding: var(--sp-3);
+    gap: var(--sp-1);
+  }
+}

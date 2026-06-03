@@ -1,0 +1,282 @@
+/* ============================================================
+   Lymphology Skincare — 10-footer.css
+   Site footer on deep teal (#0F6E7E) with light --teal-ink text
+   Scope: .site-footer
+   ============================================================ */
+
+/* ── Footer shell ───────────────────────────────────────────── */
+.site-footer {
+  background: var(--teal-deep);
+  color: var(--teal-ink);
+  padding-block: var(--sp-8) var(--sp-5);
+}
+
+/* ── Top: brand + 4-column nav grid ────────────────────────── */
+.site-footer__top {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: var(--sp-6) var(--sp-8);
+  padding-bottom: var(--sp-7);
+  border-bottom: 1px solid rgba(234, 247, 249, .18);
+  margin-bottom: var(--sp-6);
+}
+
+/* ── Brand cell ─────────────────────────────────────────────── */
+.site-footer__brand {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+}
+
+/* Logo — invert black wordmark to white for dark bg */
+.site-footer__logo {
+  height: 34px;
+  width: auto;
+  display: block;
+  filter: brightness(0) invert(1);
+}
+
+.site-footer__blurb {
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  line-height: 1.65;
+  color: var(--teal-ink);
+  opacity: .82;
+  margin: 0;
+  max-width: 240px;
+}
+
+/* ── Social icons ───────────────────────────────────────────── */
+.site-footer__social {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  margin-top: var(--sp-1);
+}
+
+.site-footer__social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--teal-ink);
+  opacity: .7;
+  text-decoration: none;
+  transition: opacity .18s ease, color .18s ease;
+  border-radius: var(--radius);
+}
+
+.site-footer__social-link:hover {
+  opacity: 1;
+  color: var(--accent);
+}
+
+.site-footer__social-ic {
+  width: 22px;
+  height: 22px;
+  stroke-width: 1.75;
+  display: block;
+}
+
+/* ── 4-column nav ───────────────────────────────────────────── */
+.site-footer__nav {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--sp-5) var(--sp-4);
+}
+
+.site-footer__col {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+}
+
+.site-footer__col-heading {
+  font-family: var(--font-display);
+  font-size: var(--s--1);
+  font-weight: 600;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--teal-ink);
+  margin: 0 0 var(--sp-1);
+}
+
+.site-footer__col-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+}
+
+.site-footer__link {
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  line-height: 1.5;
+  color: var(--teal-ink);
+  text-decoration: none;
+  opacity: .72;
+  transition: opacity .18s ease, color .18s ease;
+}
+
+.site-footer__link:hover {
+  opacity: 1;
+  color: var(--teal-ink);
+}
+
+/* ── Trust marks ────────────────────────────────────────────── */
+.site-footer__trust {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sp-2) var(--sp-3);
+  padding-block: var(--sp-5);
+  border-bottom: 1px solid rgba(234, 247, 249, .18);
+  margin-bottom: var(--sp-5);
+}
+
+.site-footer__trust-item {
+  display: flex;
+  align-items: center;
+  gap: .45em;
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--teal-ink);
+  opacity: .75;
+}
+
+.site-footer__trust-ic {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  stroke-width: 1.25;
+  color: var(--accent);
+  opacity: 1;
+}
+
+.site-footer__trust-sep {
+  color: var(--teal-ink);
+  opacity: .3;
+  font-size: var(--s-0, 1rem);
+}
+
+/* ── Bottom bar ─────────────────────────────────────────────── */
+.site-footer__bottom {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-3) var(--sp-4);
+}
+
+.site-footer__copy {
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  color: var(--teal-ink);
+  opacity: .6;
+  margin: 0;
+}
+
+.site-footer__legal {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  font-size: var(--s--1);
+  color: var(--teal-ink);
+  opacity: .65;
+}
+
+.site-footer__legal span {
+  opacity: .45;
+}
+
+.site-footer__legal .site-footer__link {
+  font-size: var(--s--1);
+  opacity: .65;
+}
+
+.site-footer__legal .site-footer__link:hover {
+  opacity: 1;
+}
+
+/* ── Payment marks ──────────────────────────────────────────── */
+.site-footer__pay {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+}
+
+.site-footer__pay-ic {
+  display: block;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+/* ── Tablet (≤ 1024px) ──────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .site-footer__top {
+    grid-template-columns: 220px 1fr;
+    gap: var(--sp-5) var(--sp-6);
+  }
+
+  .site-footer__nav {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--sp-5) var(--sp-5);
+  }
+}
+
+/* ── Mobile (≤ 720px) ───────────────────────────────────────── */
+@media (max-width: 720px) {
+  .site-footer {
+    padding-block: var(--sp-7) var(--sp-5);
+  }
+
+  /* Stack brand above columns */
+  .site-footer__top {
+    grid-template-columns: 1fr;
+    gap: var(--sp-6);
+    padding-bottom: var(--sp-6);
+  }
+
+  .site-footer__blurb {
+    max-width: 100%;
+  }
+
+  /* 2-up on tablet-ish mobile, 1-up if narrower */
+  .site-footer__nav {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--sp-5) var(--sp-5);
+  }
+
+  /* Trust marks center, wrap gracefully */
+  .site-footer__trust {
+    gap: var(--sp-2);
+  }
+
+  .site-footer__trust-sep {
+    display: none;
+  }
+
+  /* Bottom bar: stack */
+  .site-footer__bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--sp-3);
+  }
+
+  .site-footer__pay {
+    align-self: flex-start;
+  }
+}
+
+/* ── Narrow mobile (≤ 420px) ────────────────────────────────── */
+@media (max-width: 420px) {
+  .site-footer__nav {
+    grid-template-columns: 1fr;
+    gap: var(--sp-5);
+  }
+}
