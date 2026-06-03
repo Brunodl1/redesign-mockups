@@ -409,10 +409,10 @@ p{margin:0 0 var(--sp-3)}
 .s-hero__inner {
   position: relative;
   z-index: 1;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1.04fr 0.96fr;
   align-items: center;
-  gap: var(--sp-6);
+  gap: var(--sp-7);
   min-width: 0;
   max-width: 100%;
 }
@@ -421,9 +421,9 @@ p{margin:0 0 var(--sp-3)}
 .s-hero__text {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
-  max-width: 720px;
+  align-items: flex-start;
+  text-align: left;
+  max-width: 560px;
   width: 100%;
   min-width: 0;
 }
@@ -592,8 +592,8 @@ p{margin:0 0 var(--sp-3)}
 
   .s-hero__product-wrap,
   .s-hero__glow {
-    width: 340px;
-    height: 340px;
+    width: 440px;
+    height: 440px;
   }
 }
 
@@ -604,11 +604,15 @@ p{margin:0 0 var(--sp-3)}
   }
 
   .s-hero__inner {
+    grid-template-columns: 1fr;
     gap: var(--sp-5);
+    text-align: center;
   }
 
   .s-hero__text {
     max-width: 100%;
+    align-items: center;
+    text-align: center;
   }
 
   .s-hero__h1 {
