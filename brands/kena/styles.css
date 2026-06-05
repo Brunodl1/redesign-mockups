@@ -228,11 +228,19 @@
   overflow: hidden;
 }
 
+/* ── Two-column layout: text left, image right ──────────────── */
+.s-hero .wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: var(--sp-6);
+}
+
 /* ── Text block ──────────────────────────────────────────────── */
 .s-hero .hero-text {
-  text-align: center;
-  max-width: 680px;
-  margin: 0 auto;
+  text-align: left;
+  max-width: 540px;
+  margin: 0;
 }
 
 .s-hero .hero-text .eyebrow {
@@ -260,15 +268,15 @@
   margin: 0 0 var(--sp-5);
   font-weight: 400;
   max-width: 540px;
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: 0;
+  margin-right: 0;
 }
 
 /* ── CTA cluster ─────────────────────────────────────────────── */
 .s-hero .hero-cta {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   gap: var(--sp-3);
 }
 
@@ -297,7 +305,7 @@
 .s-hero .hero-rating {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   gap: var(--sp-2);
   margin-top: var(--sp-4);
 }
@@ -318,8 +326,8 @@
 
 /* ── Image showcase ──────────────────────────────────────────── */
 .s-hero .hero-visual {
-  margin: var(--sp-6) auto 0;
-  width: min(980px, 100%);
+  margin: 0;
+  width: 100%;
   border-radius: var(--radius-lg);
   overflow: hidden;
   box-shadow: var(--shadow);
@@ -341,6 +349,31 @@
     padding-bottom: var(--sp-5);
   }
 
+  /* Stack: text on top, image below */
+  .s-hero .wrap {
+    grid-template-columns: 1fr;
+    gap: var(--sp-5);
+  }
+
+  .s-hero .hero-text {
+    max-width: 100%;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  .s-hero .hero-sub {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .s-hero .hero-cta {
+    align-items: center;
+  }
+
+  .s-hero .hero-rating {
+    justify-content: center;
+  }
+
   .s-hero .hero-h1 {
     font-size: var(--s-4);
   }
@@ -348,10 +381,6 @@
   .s-hero .hero-sub {
     font-size: var(--s-0);
     margin-bottom: var(--sp-4);
-  }
-
-  .s-hero .hero-visual {
-    margin-top: var(--sp-5);
   }
 }
 
