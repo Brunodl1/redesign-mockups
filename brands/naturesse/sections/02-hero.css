@@ -14,23 +14,24 @@
   position: relative;
 }
 
-/* ── Inner layout: column stack, centered ───────────────────── */
+/* ── Inner layout: text + visual on one row (desktop) ────────── */
 .s-hero__inner {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  gap: var(--sp-6);
-  text-align: center;
+  justify-content: center;
+  gap: var(--sp-7);
+  text-align: left;
 }
 
 /* ── Text column ────────────────────────────────────────────── */
 .s-hero__text {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  max-width: 760px;
+  align-items: flex-start;
+  max-width: 560px;
   min-width: 0;
-  width: 100%;
+  flex: 1 1 0;
 }
 
 /* Eyebrow already styled by base; just add bottom spacing */
@@ -71,7 +72,7 @@
 /* CTA row — single gold pill */
 .s-hero__cta-row {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   margin-bottom: var(--sp-5);
   min-width: 0;
   max-width: 100%;
@@ -81,7 +82,7 @@
 .s-hero__chips {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: flex-start;
   gap: var(--sp-2);
   margin-bottom: var(--sp-4);
   min-width: 0;
@@ -92,7 +93,7 @@
 .s-hero__rating {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   gap: var(--sp-2);
   margin: 0;
   min-width: 0;
@@ -181,7 +182,22 @@
   }
 
   .s-hero__inner {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
     gap: var(--sp-4);
+  }
+
+  .s-hero__text {
+    align-items: center;
+    max-width: 760px;
+    width: 100%;
+  }
+
+  .s-hero__cta-row,
+  .s-hero__chips,
+  .s-hero__rating {
+    justify-content: center;
   }
 
   .s-hero__h1 {
