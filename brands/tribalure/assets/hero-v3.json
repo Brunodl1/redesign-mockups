@@ -1,0 +1,11 @@
+{
+  "provider": "cloudflare-flux",
+  "model": "@cf/black-forest-labs/flux-1-schnell",
+  "account": "bruno1",
+  "aspect": "16:9",
+  "size": "1K",
+  "elapsed_s": 2.59,
+  "timestamp": "2026-06-09T13:21:24-0500",
+  "input_image": null,
+  "prompt": "Cinematic beauty photo of a woman holding a makeup brush near her face, applying blush, warm golden hour glow, radiant natural skin, warm earthy terracotta and sand tones, elegant editorial, model positioned RIGHT of frame, empty soft-focus warm background on the LEFT, premium cosmetics, shallow depth of field"
+}

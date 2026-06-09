@@ -1,0 +1,11 @@
+{
+  "provider": "cloudflare-flux",
+  "model": "@cf/black-forest-labs/flux-1-schnell",
+  "account": "bruno1",
+  "aspect": "16:9",
+  "size": "1K",
+  "elapsed_s": 1.82,
+  "timestamp": "2026-06-09T13:21:23-0500",
+  "input_image": null,
+  "prompt": "Warm editorial beauty photograph, close profile of a woman applying a bold red lip product, soft warm sunset light, dewy glowing skin, terracotta and warm cream palette, luxurious and calm, subject on the RIGHT side, large soft empty warm negative space on the LEFT for text, shallow depth of field, high-end makeup campaign"
+}

@@ -1,0 +1,11 @@
+{
+  "provider": "cloudflare-flux",
+  "model": "@cf/black-forest-labs/flux-1-schnell",
+  "account": "bruno1",
+  "aspect": "16:9",
+  "size": "1K",
+  "elapsed_s": 1.71,
+  "timestamp": "2026-06-09T13:21:23-0500",
+  "input_image": null,
+  "prompt": "Luxury makeup campaign, a woman applying pressed powder with a brush, warm studio light against a warm terracotta backdrop, glowing skin, refined and minimal, subject on the RIGHT, generous empty warm negative space on the LEFT for headline text, shallow depth of field, editorial"
+}

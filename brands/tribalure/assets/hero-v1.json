@@ -1,0 +1,11 @@
+{
+  "provider": "cloudflare-flux",
+  "model": "@cf/black-forest-labs/flux-1-schnell",
+  "account": "bruno1",
+  "aspect": "16:9",
+  "size": "1K",
+  "elapsed_s": 2.49,
+  "timestamp": "2026-06-09T13:21:24-0500",
+  "input_image": null,
+  "prompt": "Editorial beauty campaign photo, a woman applying makeup with a large makeup brush to her cheek, eyes lowered, warm golden cinematic light, glowing radiant skin, warm cream terracotta and earthy red tones, elegant minimal, subject framed on the RIGHT third with soft out-of-focus empty negative space on the LEFT, shallow depth of field, premium cosmetics advertising"
+}

@@ -52,28 +52,47 @@
    Tribalure — hero.css · variant: split (text left / product right)
    Warm sand bg, espresso ink, flame-red + smoke-teal accents.
    ============================================================ */
+/* variant: full-bleed background photo (someone using the product), copy left */
 .s-hero{
+  position:relative;
+  background-image:url('assets/hero.jpg');
+  background-size:cover;
+  background-position:74% center;
+  background-repeat:no-repeat;
+  min-height:82vh;
+  display:flex;
+  align-items:center;
   padding-block:var(--sp-7);
   overflow:hidden;
 }
-.s-hero .hero-split__grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:var(--sp-6);
-  align-items:center;
+/* left-heavy scrim so the copy stays legible over the photo */
+.s-hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(90deg,
+    rgba(28,22,18,.88) 0%,
+    rgba(28,22,18,.70) 34%,
+    rgba(28,22,18,.30) 56%,
+    rgba(28,22,18,0) 75%);
+  z-index:0;
 }
+.s-hero .wrap{position:relative;z-index:1}
+.s-hero .hero-bg__grid{display:flex;justify-content:flex-start}
 
-/* ---- LEFT copy ---- */
+/* ---- LEFT copy (kept on the left, now over the photo) ---- */
 .s-hero .hero-split__copy{
-  max-width:34rem;
+  max-width:35rem;
 }
+.s-hero .eyebrow{color:var(--clay)}
 .s-hero h1{
   font-size:var(--s-5);
   margin-bottom:var(--sp-4);
+  color:#FBF3E8;
 }
 .s-hero .hero-split__sub{
   font-size:var(--s-1);
-  color:var(--ink-soft);
+  color:rgba(251,243,232,.9);
   line-height:1.55;
   margin-bottom:var(--sp-5);
 }
@@ -88,77 +107,43 @@
   font-family:var(--font-body);
   font-weight:700;
   font-size:var(--s-0);
-  color:var(--ink);
+  color:#FBF3E8;
   letter-spacing:.02em;
   border-bottom:2px solid var(--accent);
   padding-bottom:.15em;
   transition:color .2s;
 }
 .s-hero .hero-split__story:hover{
-  color:var(--accent);
+  color:var(--clay);
 }
 .s-hero .hero-split__proof{
   display:flex;
   flex-wrap:wrap;
   gap:var(--sp-2);
 }
-
-/* ---- RIGHT media ---- */
-.s-hero .hero-split__media{
-  position:relative;
-  border-radius:var(--radius-lg);
-  background:var(--surface-2);
-  background-image:
-    radial-gradient(120% 90% at 78% 18%, rgba(184,58,43,.18), transparent 60%),
-    radial-gradient(110% 80% at 12% 92%, rgba(28,156,139,.16), transparent 62%);
-  padding:var(--sp-6);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-}
-.s-hero .hero-split__wisp{
-  position:absolute;
-  top:calc(-1 * var(--sp-4));
-  right:var(--sp-5);
-  width:84px;
-  height:auto;
-  pointer-events:none;
-  z-index:1;
-}
-.s-hero .hero-split__card{
-  position:relative;
-  z-index:2;
-  background:var(--surface);
-  border-radius:var(--radius-lg);
-  padding:var(--sp-4);
-  box-shadow:var(--shadow);
-  width:100%;
-}
-.s-hero .hero-split__card img{
-  width:100%;
-  height:auto;
-  border-radius:var(--radius);
+/* translucent chips so they read on the photo */
+.s-hero .hero-split__proof .chip{
+  background:rgba(255,255,255,.12);
+  border-color:rgba(255,255,255,.34);
+  color:#FBF3E8;
 }
 
-/* ---- MOBILE: product above the fold, copy below ---- */
+/* ---- MOBILE: full-bleed photo, copy over a bottom scrim ---- */
 @media(max-width:780px){
   .s-hero{
+    min-height:88vh;
+    background-position:52% 40%;
+    align-items:flex-end;
     padding-block:var(--sp-6);
   }
-  .s-hero .hero-split__grid{
-    grid-template-columns:1fr;
-    gap:var(--sp-5);
-  }
-  .s-hero .hero-split__media{
-    order:-1;
-    padding:var(--sp-5);
+  .s-hero::before{
+    background:linear-gradient(180deg,
+      rgba(28,22,18,.25) 0%,
+      rgba(28,22,18,.5) 45%,
+      rgba(28,22,18,.88) 100%);
   }
   .s-hero .hero-split__copy{
     max-width:none;
-  }
-  .s-hero .hero-split__wisp{
-    width:62px;
-    right:var(--sp-4);
   }
   .s-hero .hero-split__cta{
     gap:var(--sp-3);
