@@ -158,26 +158,33 @@
 /* ─── Hero Split — Seaflora ───────────────────────────────────────── */
 /* Scoped entirely under .s-hero */
 
+/* contained hero — same max-width + gutters as every other section */
 .s-hero {
-  padding: 0;
+  padding: clamp(var(--sp-6), 4vw, var(--sp-9)) clamp(20px, 5vw, 56px);
+  background: var(--bg);
   overflow: hidden;
 }
 
-/* Two-column grid filling a generous hero */
+/* Two-column card, centered to --maxw */
 .s-hero .hero-split__grid {
+  max-width: var(--maxw);
+  margin: 0 auto;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  min-height: min(86vh, 920px);
+  grid-template-columns: 1.04fr 1fr;
   align-items: stretch;
+  background: var(--surface-2);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  min-height: clamp(440px, 56vh, 600px);
 }
 
 /* ── LEFT: text column ─────────────────────────────────────────────── */
 .s-hero .hero-split__text {
-  background: var(--surface-2);
+  background: transparent;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: clamp(var(--sp-7), 7vw, var(--sp-12));
+  padding: clamp(var(--sp-6), 4.5vw, var(--sp-9));
   gap: var(--sp-4);
 }
 
@@ -246,8 +253,8 @@
   /* Image first on mobile */
   .s-hero .hero-split__media {
     order: -1;
-    height: 440px;
-    min-height: 440px;
+    height: 380px;
+    min-height: 380px;
   }
 
   .s-hero .hero-split__img {
