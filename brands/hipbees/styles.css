@@ -1,0 +1,661 @@
+/* ============ header ============ */
+/* ===== announce + header ===== */
+.announce{background:var(--coral);color:#5A2A22}
+.announce__wrap{display:flex;align-items:center;justify-content:center;gap:.6em;
+  padding-block:.6em;font-family:var(--font-display);font-weight:700;font-size:var(--s--1);
+  letter-spacing:.04em;text-align:center}
+.announce__item{white-space:nowrap}
+.announce__dot{opacity:.6}
+
+.site-header{position:sticky;top:0;z-index:40;background:var(--bg);border-bottom:1px solid var(--line)}
+.site-header__inner{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;
+  gap:var(--sp-4);padding-block:var(--sp-3)}
+
+.site-header__nav ul{display:flex;align-items:center;gap:var(--sp-4);list-style:none;margin:0;padding:0}
+.site-header__nav a{font-family:var(--font-display);font-weight:700;font-size:.9rem;
+  letter-spacing:.01em;color:var(--ink);transition:color .15s}
+.site-header__nav a:hover{color:var(--accent)}
+.site-header__nav--left{justify-self:start}
+
+.site-header__logo{justify-self:center;display:flex;align-items:center}
+.site-header__logo-img{height:50px;width:auto;display:block}
+
+.site-header__right{justify-self:end;display:flex;align-items:center;gap:var(--sp-5)}
+.site-header__icons{display:flex;align-items:center;gap:var(--sp-3)}
+.site-header__icon{color:var(--ink);display:flex;align-items:center;position:relative;transition:color .15s}
+.site-header__icon:hover{color:var(--accent)}
+.site-header__cart-count{position:absolute;top:-7px;right:-9px;background:var(--accent);color:#fff;
+  font-size:.62rem;font-weight:800;line-height:1;min-width:16px;height:16px;border-radius:999px;
+  display:flex;align-items:center;justify-content:center;padding:0 3px}
+
+.site-header__burger{display:none;flex-direction:column;gap:4px;background:none;border:0;cursor:pointer;padding:6px;justify-self:start}
+.site-header__burger span{width:22px;height:2px;background:var(--ink);border-radius:2px}
+
+.mobile-nav{display:none;background:var(--bg);border-bottom:1px solid var(--line)}
+.mobile-nav[aria-hidden="false"]{display:block}
+.mobile-nav ul{list-style:none;margin:0;padding:var(--sp-3) var(--sp-4) var(--sp-4)}
+.mobile-nav li{border-bottom:1px solid var(--line)}
+.mobile-nav a{display:block;padding:.85em 0;font-family:var(--font-display);font-weight:700;color:var(--ink)}
+
+@media(max-width:900px){
+  .site-header__nav--left,.site-header__nav--right{display:none}
+  .site-header__burger{display:flex}
+  .site-header__right{gap:var(--sp-3)}
+  .site-header__icons .site-header__icon:not(.site-header__cart){display:none}
+  .site-header__logo-img{height:42px}
+}
+@media(max-width:560px){
+  .announce__hide{display:none}
+}
+
+/* ============ hero ============ */
+/* ============================================================
+   Hipbees — HERO (split) · text left, product right
+   ============================================================ */
+.s-hero{padding-block:var(--sp-7);overflow:hidden}
+
+.s-hero .hero-split__grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:var(--sp-6);
+  align-items:center;
+}
+
+/* ---- copy ---- */
+.s-hero .hero-split__copy{max-width:34rem}
+.s-hero h1{font-size:var(--s-5);margin-bottom:var(--sp-4)}
+.s-hero .hero-sub{
+  font-size:var(--s-1);
+  color:var(--ink-soft);
+  line-height:1.55;
+  margin-bottom:var(--sp-5);
+}
+
+.s-hero .hero-cta{
+  display:flex;align-items:center;gap:var(--sp-4);
+  flex-wrap:wrap;
+  margin-bottom:var(--sp-5);
+}
+.s-hero .hero-link{
+  font-family:var(--font-display);font-weight:700;
+  color:var(--accent);
+  border-bottom:2px solid transparent;
+  transition:border-color .2s;
+}
+.s-hero .hero-link:hover{border-color:var(--accent)}
+
+.s-hero .hero-proof{display:flex;gap:var(--sp-3);flex-wrap:wrap}
+.s-hero .hero-proof .stars{font-size:var(--s--1)}
+
+/* ---- media panel ---- */
+.s-hero .hero-split__media{display:flex;justify-content:center}
+.s-hero .hero-panel{
+  position:relative;
+  width:100%;
+  max-width:30rem;
+  aspect-ratio:1/1;
+  background:var(--coral-soft);
+  border-radius:var(--radius-lg);
+  display:flex;align-items:center;justify-content:center;
+  padding:var(--sp-6);
+  overflow:hidden;
+}
+
+/* faint honeycomb dot texture */
+.s-hero .hero-panel::before{
+  content:"";
+  position:absolute;inset:0;
+  background-image:radial-gradient(rgba(251,205,10,.22) 2px, transparent 2px);
+  background-size:22px 22px;
+  opacity:.6;
+  pointer-events:none;
+}
+
+/* hexagon accents */
+.s-hero .hero-hex{
+  position:absolute;
+  clip-path:polygon(25% 5%,75% 5%,100% 50%,75% 95%,25% 95%,0% 50%);
+  pointer-events:none;z-index:1;
+}
+.s-hero .hero-hex--a{
+  width:7rem;height:7rem;
+  top:-1.4rem;right:-1.4rem;
+  background:var(--honey);
+  opacity:.85;
+}
+.s-hero .hero-hex--b{
+  width:4.5rem;height:4.5rem;
+  bottom:-1rem;left:-.8rem;
+  background:var(--coral);
+  opacity:.8;
+}
+
+/* white product card */
+.s-hero .hero-card{
+  position:relative;z-index:2;
+  background:var(--surface);
+  border-radius:var(--radius-lg);
+  box-shadow:var(--shadow);
+  padding:var(--sp-4);
+  width:100%;
+  display:flex;align-items:center;justify-content:center;
+}
+.s-hero .hero-card img{
+  width:100%;height:auto;
+  border-radius:var(--radius);
+  object-fit:contain;
+}
+
+/* ---- mobile: product first, then copy ---- */
+@media(max-width:780px){
+  .s-hero .hero-split__grid{
+    grid-template-columns:1fr;
+    gap:var(--sp-5);
+  }
+  .s-hero .hero-split__media{order:1}
+  .s-hero .hero-split__copy{order:2;max-width:none}
+  .s-hero .hero-panel{max-width:22rem;padding:var(--sp-5)}
+  .s-hero .hero-cta .btn{flex:1 1 auto}
+  .s-hero .hero-hex--a{width:5rem;height:5rem}
+  .s-hero .hero-hex--b{width:3.5rem;height:3.5rem}
+}
+
+/* ============ values ============ */
+/* ===== values strip ===== */
+.s-values{padding-block:var(--sp-5);background:var(--surface);
+  border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.s-values__row{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--sp-4);list-style:none;margin:0;padding:0}
+.s-values__item{display:flex;flex-direction:column;align-items:center;text-align:center;gap:.3em;padding-inline:var(--sp-3)}
+.s-values__item:not(:last-child){border-right:1px solid var(--line)}
+.s-values .ic{color:var(--accent);width:32px;height:32px;margin-bottom:.3em}
+.s-values__t{font-family:var(--font-display);font-weight:800;font-size:var(--s-0);color:var(--ink);line-height:1.2}
+.s-values__s{font-size:var(--s--1);color:var(--ink-soft)}
+
+@media(max-width:780px){
+  .s-values__row{grid-template-columns:repeat(2,1fr);gap:var(--sp-5) var(--sp-4)}
+  .s-values__item{border-right:0!important}
+}
+
+/* ============ cats ============ */
+/* ============================================================
+   Hipbees — s-cats : Shop by category tiles
+   ============================================================ */
+.s-cats{background:var(--bg)}
+
+.s-cats .cats-head{text-align:center;max-width:640px;margin:0 auto var(--sp-5)}
+.s-cats .cats-intro{color:var(--ink-soft);font-size:var(--s-1);margin:0}
+
+/* grid — 4 / 2 / 2 */
+.s-cats .cats-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:var(--sp-4);
+}
+
+/* tile */
+.s-cats .cat-tile{
+  display:flex;flex-direction:column;align-items:flex-start;
+  padding:var(--sp-5) var(--sp-4) var(--sp-4);
+  border-radius:var(--radius-lg);
+  background:var(--surface);
+  border:1.5px solid var(--line);
+  color:var(--ink);
+  transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease;
+  height:100%;
+}
+.s-cats .cat-tile:hover{
+  transform:translateY(-6px);
+  box-shadow:var(--shadow);
+  border-color:transparent;
+}
+
+/* alternating warm grounds for rhythm */
+.s-cats .t-face{background:var(--coral-soft);border-color:transparent}
+.s-cats .t-body{background:var(--sage);border-color:transparent}
+.s-cats .t-bath{background:#FBEFBE;border-color:transparent} /* honey tint */
+.s-cats .t-pets{background:var(--surface)}
+
+/* icon badge */
+.s-cats .cat-ico{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:64px;height:64px;border-radius:18px;
+  background:rgba(255,255,255,.6);
+  color:var(--accent);
+  margin-bottom:var(--sp-4);
+}
+.s-cats .t-pets .cat-ico{background:var(--bg)}
+
+.s-cats .cat-name{margin:0 0 var(--sp-2);font-size:var(--s-2)}
+.s-cats .cat-desc{
+  color:var(--ink-soft);font-size:var(--s-0);margin:0 0 var(--sp-4);
+  flex:1 1 auto;
+}
+
+/* shop link */
+.s-cats .cat-link{
+  display:inline-flex;align-items:center;gap:.45em;
+  font-family:var(--font-display);font-weight:700;font-size:var(--s-0);
+  color:var(--accent);
+}
+.s-cats .cat-link span{transition:transform .2s ease}
+.s-cats .cat-tile:hover .cat-link span{transform:translateX(4px)}
+
+/* mobile — 2 cols, no overflow */
+@media(max-width:780px){
+  .s-cats .cats-grid{grid-template-columns:repeat(2,1fr);gap:var(--sp-3)}
+  .s-cats .cat-tile{padding:var(--sp-4) var(--sp-3) var(--sp-3)}
+  .s-cats .cat-ico{width:54px;height:54px;border-radius:15px;margin-bottom:var(--sp-3)}
+  .s-cats .cat-ico .ic{width:32px;height:32px}
+  .s-cats .cat-desc{font-size:var(--s--1)}
+}
+
+/* ============ bestsellers ============ */
+/* ============================================================
+   Hipbees — bestsellers.css
+   Product grid · 8 cards · warm/cheerful · scoped .s-bestsellers
+   ============================================================ */
+
+.s-bestsellers{background:var(--bg)}
+
+/* header row */
+.s-bestsellers .bs-head{
+  display:flex;align-items:flex-end;justify-content:space-between;
+  gap:var(--sp-4);flex-wrap:wrap;margin-bottom:var(--sp-5)
+}
+.s-bestsellers .bs-head-text{max-width:none}
+.s-bestsellers .bs-head h2{margin-bottom:0}
+.s-bestsellers .bs-shopall{
+  font-family:var(--font-display);font-weight:700;font-size:var(--s-0);
+  color:var(--accent);white-space:nowrap;
+  display:inline-flex;align-items:center;gap:.4em;
+  transition:color .2s,transform .15s
+}
+.s-bestsellers .bs-shopall span{transition:transform .2s}
+.s-bestsellers .bs-shopall:hover{color:var(--accent-deep)}
+.s-bestsellers .bs-shopall:hover span{transform:translateX(4px)}
+
+/* grid — desktop 4, tablet 2, mobile 2 */
+.s-bestsellers .bs-grid{
+  list-style:none;margin:0;padding:0;
+  display:grid;grid-template-columns:repeat(4,1fr);gap:var(--sp-4)
+}
+
+/* staggered reveal */
+.s-bestsellers .bs-card:nth-child(1){transition-delay:0s}
+.s-bestsellers .bs-card:nth-child(2){transition-delay:.06s}
+.s-bestsellers .bs-card:nth-child(3){transition-delay:.12s}
+.s-bestsellers .bs-card:nth-child(4){transition-delay:.18s}
+.s-bestsellers .bs-card:nth-child(5){transition-delay:.24s}
+.s-bestsellers .bs-card:nth-child(6){transition-delay:.30s}
+.s-bestsellers .bs-card:nth-child(7){transition-delay:.36s}
+.s-bestsellers .bs-card:nth-child(8){transition-delay:.42s}
+
+/* card */
+.s-bestsellers .bs-card{
+  background:var(--surface);
+  border-radius:var(--radius-lg);
+  box-shadow:var(--shadow);
+  border:1px solid var(--line);
+  padding:var(--sp-3);
+  display:flex;flex-direction:column;gap:var(--sp-3);
+  transition:transform .25s ease,box-shadow .25s ease
+}
+.s-bestsellers .bs-card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 24px 56px rgba(47,42,33,.20)
+}
+
+.s-bestsellers .bs-link{
+  display:flex;flex-direction:column;gap:var(--sp-3);color:inherit
+}
+
+/* media */
+.s-bestsellers .bs-media{
+  position:relative;display:block;
+  background:var(--sage);
+  border-radius:var(--radius);
+  overflow:hidden;aspect-ratio:1/1
+}
+.s-bestsellers .bs-media img{
+  width:100%;height:100%;object-fit:cover;
+  transition:transform .4s ease
+}
+.s-bestsellers .bs-card:hover .bs-media img{transform:scale(1.05)}
+
+/* badge */
+.s-bestsellers .bs-badge{
+  position:absolute;top:var(--sp-2);left:var(--sp-2);
+  border:none;z-index:2;
+  box-shadow:0 4px 12px rgba(47,42,33,.16)
+}
+.s-bestsellers .bs-badge--coral{background:var(--coral);color:var(--ink)}
+.s-bestsellers .bs-badge--honey{background:var(--honey);color:var(--ink)}
+
+/* body */
+.s-bestsellers .bs-body{display:flex;flex-direction:column;gap:var(--sp-1)}
+.s-bestsellers .bs-name{
+  font-family:var(--font-display);font-weight:800;
+  font-size:var(--s-1);line-height:1.18;letter-spacing:-.01em;
+  color:var(--ink)
+}
+.s-bestsellers .bs-desc{
+  color:var(--ink-soft);font-size:var(--s--1);line-height:1.4
+}
+.s-bestsellers .bs-rating{
+  display:flex;align-items:center;gap:.45em;margin-top:var(--sp-1);
+  font-size:var(--s--1)
+}
+.s-bestsellers .bs-rating .stars{font-size:var(--s--1);line-height:1}
+.s-bestsellers .bs-rate-num{font-weight:700;color:var(--ink)}
+.s-bestsellers .bs-count{color:var(--ink-soft)}
+.s-bestsellers .bs-price{
+  font-family:var(--font-display);font-weight:800;
+  font-size:var(--s-2);color:var(--ink);margin-top:var(--sp-1)
+}
+
+/* footnote */
+.s-bestsellers .bs-footnote{
+  margin:var(--sp-5) 0 0;text-align:center;
+  font-size:var(--s--1);color:var(--ink-soft)
+}
+
+/* tablet: 2 cols */
+@media(max-width:980px){
+  .s-bestsellers .bs-grid{grid-template-columns:repeat(2,1fr)}
+}
+
+/* mobile: stay 2 cols, tighten */
+@media(max-width:560px){
+  .s-bestsellers .bs-grid{gap:var(--sp-3)}
+  .s-bestsellers .bs-card{padding:var(--sp-2);border-radius:var(--radius)}
+  .s-bestsellers .bs-name{font-size:var(--s-0)}
+  .s-bestsellers .bs-price{font-size:var(--s-1)}
+  .s-bestsellers .btn-block{padding:.8em 1em;font-size:var(--s--1)}
+}
+
+/* ============ diff ============ */
+/* ============================================================
+   Hipbees — the Hipbees difference (ingredient band)
+   Deep-green band · light text · hemp + honey + terpenes
+   ============================================================ */
+.s-diff{
+  background:var(--dark);
+  color:#fff;
+  overflow:hidden;
+}
+
+/* subtle honeycomb-tint glow for warmth */
+.s-diff::before{
+  content:"";
+  position:absolute;inset:0;
+  background:
+    radial-gradient(circle at 12% 0%, rgba(251,205,10,.12), transparent 42%),
+    radial-gradient(circle at 92% 100%, rgba(247,160,147,.12), transparent 46%);
+  pointer-events:none;
+}
+.s-diff .wrap{position:relative;z-index:1}
+
+/* header */
+.s-diff__head{
+  max-width:720px;
+  margin:0 auto var(--sp-6);
+  text-align:center;
+}
+.s-diff__head .eyebrow{color:var(--honey)}
+.s-diff__head h2{color:#fff}
+.s-diff__intro{
+  color:var(--sage);
+  font-size:var(--s-1);
+  margin:0;
+}
+
+/* trio grid */
+.s-diff__grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:var(--sp-4);
+}
+
+.s-diff__card{
+  background:rgba(255,255,255,.05);
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:var(--radius-lg);
+  padding:var(--sp-5) var(--sp-4);
+  text-align:center;
+  transition:transform .25s ease,border-color .25s ease,background .25s ease;
+}
+.s-diff__card:hover{
+  transform:translateY(-4px);
+  border-color:rgba(251,205,10,.5);
+  background:rgba(255,255,255,.08);
+}
+
+.s-diff__ic{
+  width:64px;height:64px;
+  display:grid;place-items:center;
+  margin:0 auto var(--sp-3);
+  border-radius:999px;
+  background:rgba(251,205,10,.14);
+  color:var(--honey);
+}
+.s-diff__ic .ic{width:34px;height:34px}
+
+.s-diff__name{
+  color:#fff;
+  margin:0 0 var(--sp-2);
+}
+.s-diff__copy{
+  color:var(--sage);
+  font-size:var(--s-0);
+  margin:0;
+}
+
+/* cta */
+.s-diff__cta{
+  text-align:center;
+  margin-top:var(--sp-6);
+}
+
+/* mobile — stack */
+@media(max-width:780px){
+  .s-diff__grid{
+    grid-template-columns:1fr;
+    gap:var(--sp-3);
+  }
+  .s-diff__head{margin-bottom:var(--sp-5)}
+  .s-diff__card{padding:var(--sp-4)}
+}
+
+/* ============ story ============ */
+/* ============================================================
+   Hipbees — story.css · "Meet the Hipbees" story band
+   ============================================================ */
+
+.s-story{background:var(--bg)}
+
+.s-story__grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:var(--sp-6);
+  align-items:center;
+}
+
+/* image frame */
+.s-story__media{
+  margin:0;
+  border-radius:var(--radius-lg);
+  overflow:hidden;
+  box-shadow:var(--shadow);
+}
+.s-story__media img{
+  width:100%;
+  aspect-ratio:5/4;
+  object-fit:cover;
+}
+
+/* copy */
+.s-story__copy p{
+  color:var(--ink-soft);
+  font-size:var(--s-1);
+  max-width:46ch;
+}
+
+/* value highlights */
+.s-story__stats{
+  list-style:none;
+  margin:var(--sp-4) 0 var(--sp-5);
+  padding:0;
+  display:flex;
+  flex-wrap:wrap;
+  gap:var(--sp-3) var(--sp-5);
+}
+.s-story__stats li{
+  position:relative;
+  padding-left:1.4em;
+  font-family:var(--font-display);
+  font-weight:800;
+  font-size:var(--s-1);
+  color:var(--ink);
+  letter-spacing:-.01em;
+}
+.s-story__stats li::before{
+  content:"";
+  position:absolute;
+  left:0;top:.5em;
+  width:.6em;height:.6em;
+  border-radius:2px;
+  background:var(--honey);
+  transform:rotate(45deg);
+}
+
+/* mobile */
+@media(max-width:780px){
+  .s-story__grid{
+    grid-template-columns:1fr;
+    gap:var(--sp-5);
+  }
+  .s-story__media img{aspect-ratio:4/3}
+  .s-story__copy p{max-width:none}
+  .s-story__stats{
+    gap:var(--sp-2) var(--sp-4);
+    margin:var(--sp-3) 0 var(--sp-4);
+  }
+}
+
+/* ============ reviews ============ */
+/* ============================================================
+   Hipbees — reviews.css · testimonial wall
+   ============================================================ */
+.s-reviews{background:var(--bg)}
+
+.s-reviews__head{text-align:center;max-width:48rem;margin:0 auto var(--sp-6)}
+.s-reviews__head h2{margin-bottom:var(--sp-3)}
+.s-reviews__rating{
+  display:inline-flex;align-items:center;gap:.5em;flex-wrap:wrap;
+  justify-content:center;margin:0;color:var(--ink-soft);font-size:var(--s-1)
+}
+.s-reviews__rating .stars{font-size:var(--s-1)}
+.s-reviews__rating strong{color:var(--ink)}
+
+/* wall grid */
+.s-reviews__wall{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:var(--sp-4)
+}
+
+/* card */
+.s-reviews__card{
+  background:var(--surface);
+  border:1.5px solid var(--line);
+  border-radius:var(--radius-lg);
+  box-shadow:var(--shadow);
+  padding:var(--sp-5);
+  display:flex;flex-direction:column;
+}
+.s-reviews__card .stars{font-size:var(--s-1);margin-bottom:var(--sp-3)}
+.s-reviews__card h3{font-size:var(--s-1);margin:0 0 var(--sp-2)}
+.s-reviews__card p{
+  color:var(--ink-soft);margin:0 0 var(--sp-4);flex:1 1 auto
+}
+
+.s-reviews__card footer{
+  display:flex;align-items:center;justify-content:space-between;gap:var(--sp-3);
+  flex-wrap:wrap;
+  padding-top:var(--sp-3);border-top:1px solid var(--line)
+}
+.s-reviews__name{
+  font-family:var(--font-display);font-weight:800;color:var(--ink)
+}
+.s-reviews__verified{
+  background:var(--sage);border-color:transparent;color:var(--accent-deep);
+  font-size:var(--s--1);padding:.4em .8em
+}
+
+/* staggered reveal */
+.s-reviews__card:nth-child(2){transition-delay:.08s}
+.s-reviews__card:nth-child(3){transition-delay:.16s}
+.s-reviews__card:nth-child(4){transition-delay:.06s}
+.s-reviews__card:nth-child(5){transition-delay:.14s}
+.s-reviews__card:nth-child(6){transition-delay:.22s}
+
+/* footnote */
+.s-reviews__note{
+  text-align:center;margin:var(--sp-6) 0 0;
+  color:var(--ink-soft);font-size:var(--s--1);font-style:italic
+}
+
+/* tablet — 2 cols */
+@media(max-width:1000px){
+  .s-reviews__wall{grid-template-columns:repeat(2,1fr)}
+}
+
+/* mobile — 1 col */
+@media(max-width:780px){
+  .s-reviews__wall{grid-template-columns:1fr;gap:var(--sp-4)}
+  .s-reviews__card{padding:var(--sp-4)}
+}
+
+/* ============ news ============ */
+/* ===== newsletter ===== */
+.s-news{background:var(--bg)}
+.s-news__card{max-width:740px;margin-inline:auto;text-align:center;
+  background:var(--surface-2);border:1px solid var(--line);
+  border-radius:var(--radius-lg);padding:var(--sp-6) var(--sp-5)}
+.s-news__heading{font-size:var(--s-4);margin:0 0 var(--sp-3)}
+.s-news__sub{color:var(--ink-soft);max-width:46ch;margin:0 auto var(--sp-4)}
+.s-news__form{display:flex;gap:var(--sp-2);max-width:480px;margin:0 auto var(--sp-3)}
+.s-news__input{flex:1;min-width:0;padding:.95em 1.2em;border:1.5px solid var(--line);
+  border-radius:999px;background:var(--surface);color:var(--ink);font-family:var(--font-body);font-size:var(--s-0)}
+.s-news__input:focus{outline:none;border-color:var(--accent)}
+.s-news__fine{font-size:var(--s--1);color:var(--ink-soft);margin:0}
+
+@media(max-width:560px){
+  .s-news__form{flex-direction:column}
+  .s-news__form .btn{width:100%}
+}
+
+/* ============ footer ============ */
+/* ===== footer ===== */
+.site-footer{background:var(--dark);color:#CFE0D4;padding-top:var(--sp-7)}
+.site-footer__inner{display:grid;grid-template-columns:1.7fr 1fr 1fr 1fr;gap:var(--sp-5);padding-bottom:var(--sp-6)}
+.site-footer__brand{max-width:340px}
+.site-footer__logo{height:50px;width:auto;margin-bottom:var(--sp-3)}
+.site-footer__blurb{font-size:var(--s--1);line-height:1.7;color:#A6BCAD;margin:0}
+.site-footer__h{font-family:var(--font-display);font-weight:800;font-size:var(--s--1);
+  letter-spacing:.1em;text-transform:uppercase;color:var(--honey);margin:0 0 var(--sp-3)}
+.site-footer__col ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:.6em}
+.site-footer__col a{font-size:.92rem;color:#CFE0D4;transition:color .15s}
+.site-footer__col a:hover{color:#fff}
+.site-footer__bottom{display:flex;align-items:center;justify-content:space-between;gap:var(--sp-3);
+  padding-block:var(--sp-4);border-top:1px solid rgba(255,255,255,.12);font-size:var(--s--1);color:#90A797}
+.site-footer__social{display:flex;gap:var(--sp-3)}
+.site-footer__icon{color:#CFE0D4;transition:color .15s}
+.site-footer__icon:hover{color:var(--honey)}
+
+@media(max-width:900px){
+  .site-footer__inner{grid-template-columns:1fr 1fr;gap:var(--sp-5)}
+  .site-footer__brand{grid-column:1/-1;max-width:none}
+}
+@media(max-width:560px){
+  .site-footer__bottom{flex-direction:column;text-align:center}
+}
+
