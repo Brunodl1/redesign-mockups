@@ -1,0 +1,1149 @@
+/* ===== announce ===== */
+/* ===== Announce Bar — Dry Skin Love ===== */
+.s-announce {
+  background: var(--ink);
+  color: var(--accent-ink);
+  width: 100%;
+}
+
+.s-announce__inner {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 9px clamp(20px, 5vw, 56px);
+  text-align: center;
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: .16em;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.s-announce__short {
+  display: none;
+}
+
+@media (max-width: 700px) {
+  .s-announce__full {
+    display: none;
+  }
+  .s-announce__short {
+    display: inline;
+  }
+}
+
+
+/* ===== header ===== */
+/* ===== Header — Dry Skin Love ===== */
+.s-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--bg);
+  border-bottom: 1px solid var(--line);
+}
+
+.s-header__inner {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  padding-top: clamp(14px, 1.5vw, 18px);
+  padding-bottom: clamp(14px, 1.5vw, 18px);
+}
+
+/* ── LEFT: nav ── */
+.s-header__nav {
+  display: flex;
+  align-items: center;
+  gap: clamp(var(--sp-3), 2.2vw, var(--sp-5));
+}
+
+.s-header__link {
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: .14em;
+  color: var(--ink);
+  white-space: nowrap;
+  transition: color .2s;
+}
+.s-header__link:hover {
+  color: var(--gold);
+}
+
+/* Mobile hamburger — hidden on desktop */
+.s-header__burger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  background: none;
+  border: none;
+  padding: 4px 0;
+  cursor: pointer;
+}
+.s-header__burger span {
+  display: block;
+  width: 22px;
+  height: 1.5px;
+  background: var(--ink);
+  border-radius: 1px;
+  transition: background .2s;
+}
+.s-header__burger:hover span {
+  background: var(--gold);
+}
+
+/* ── CENTER: logo ── */
+.s-header__logo-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ── RIGHT: actions ── */
+.s-header__actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--sp-4);
+}
+
+.s-header__icon {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: var(--ink);
+  transition: color .2s;
+  line-height: 1;
+}
+.s-header__icon:hover {
+  color: var(--gold);
+}
+
+.s-header__cart-count {
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  font-weight: 500;
+  letter-spacing: .02em;
+  color: inherit;
+}
+
+/* ── Mobile ≤ 900px ── */
+@media (max-width: 900px) {
+  /* hide desktop nav links */
+  .s-header__link {
+    display: none;
+  }
+  /* show hamburger */
+  .s-header__burger {
+    display: flex;
+  }
+  /* hide search icon on mobile to keep it clean */
+  .s-header__icon:not(.s-header__cart) {
+    display: none;
+  }
+}
+
+
+/* ===== hero ===== */
+/* ===== Hero — Split variant (Dry Skin Love) ===== */
+/* ALL rules scoped under .s-hero */
+
+.s-hero {
+  padding: 0;               /* section rhythm overridden — full-bleed split */
+}
+
+/* ── Grid shell ── */
+.s-hero__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: min(78vh, 720px);
+  align-items: stretch;
+}
+
+/* ── LEFT: text column ── */
+.s-hero__text {
+  background: var(--surface-2);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(var(--sp-7), 7vw, var(--sp-12));
+  gap: var(--sp-5);
+}
+
+.s-hero__eyebrow {
+  /* inherits .eyebrow styles; gold color from token */
+  margin: 0;
+}
+
+.s-hero__h1 {
+  /* inherits h1 — Tenor Sans, var(--s-5), near-black */
+  font-size: clamp(var(--s-3), 5vw, var(--s-5));
+  line-height: 1.08;
+  letter-spacing: .01em;
+}
+
+.s-hero__sub {
+  color: var(--ink-soft);
+  font-size: var(--s-1);
+  line-height: 1.55;
+  max-width: 36ch;
+  margin: calc(-1 * var(--sp-3)) 0 0;  /* tighten gap after headline */
+}
+
+.s-hero__ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-3);
+  align-items: center;
+}
+
+.s-hero__trust {
+  font-size: var(--s--1);
+  color: var(--ink-soft);
+  margin: 0;
+  letter-spacing: .02em;
+}
+
+.s-hero__stars {
+  color: var(--pop);
+  font-size: .95em;
+  letter-spacing: .03em;
+}
+
+/* ── RIGHT: image column ── */
+.s-hero__media {
+  position: relative;
+  overflow: hidden;
+  /* background warm amber while image loads */
+  background: #e8a050;
+}
+
+.s-hero__img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  display: block;
+}
+
+/* ── MOBILE ≤ 768px — stack: image first, text below ── */
+@media (max-width: 768px) {
+  .s-hero__grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: 440px auto;
+    min-height: unset;
+  }
+
+  /* image goes first (row 1) */
+  .s-hero__media {
+    grid-row: 1;
+    height: 440px;
+    position: relative;   /* restores flow for stacked layout */
+  }
+
+  .s-hero__img {
+    position: absolute;   /* still absolute inside its now-explicit-height container */
+  }
+
+  /* text goes second (row 2) */
+  .s-hero__text {
+    grid-row: 2;
+    padding: clamp(var(--sp-5), 8vw, var(--sp-7));
+    gap: var(--sp-4);
+  }
+
+  .s-hero__h1 {
+    font-size: clamp(var(--s-3), 9vw, var(--s-4));
+  }
+
+  .s-hero__sub {
+    font-size: var(--s-0);
+    max-width: 100%;
+  }
+
+  .s-hero__ctas {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .s-hero__ctas .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+
+/* ===== intro ===== */
+/* ===== s-intro — brand statement band ===== */
+.s-intro {
+  background: var(--bg);
+  padding: var(--sp-11) 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.s-intro__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--sp-5);
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.s-intro .eyebrow {
+  margin: 0;
+}
+
+.s-intro__statement {
+  font-family: var(--font-display);
+  font-size: var(--s-3);
+  font-weight: 400;
+  color: var(--ink);
+  line-height: 1.38;
+  letter-spacing: .01em;
+  margin: 0;
+}
+
+@media (max-width: 900px) {
+  .s-intro {
+    padding: var(--sp-9) 0;
+  }
+  .s-intro__statement {
+    font-size: var(--s-2);
+  }
+}
+
+@media (max-width: 600px) {
+  .s-intro {
+    padding: var(--sp-8) 0;
+  }
+  .s-intro__statement {
+    font-size: var(--s-1);
+  }
+}
+
+
+/* ===== bestsellers ===== */
+/* ===== s-bestsellers — 4-column product grid ===== */
+.s-bestsellers {
+  background: var(--surface-2);
+  padding: var(--sp-11) 0;
+}
+
+/* section header */
+.s-bestsellers__head {
+  text-align: center;
+  margin-bottom: var(--sp-8);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sp-3);
+}
+
+.s-bestsellers__head h2 {
+  font-family: var(--font-display);
+  font-size: var(--s-4);
+  font-weight: 400;
+  color: var(--ink);
+  letter-spacing: .005em;
+  line-height: 1.16;
+  margin: 0;
+}
+
+/* 4-col grid */
+.s-bestsellers__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--sp-5);
+}
+
+/* individual card */
+.s-bestsellers__card {
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform .28s cubic-bezier(.2,.7,.2,1), box-shadow .28s cubic-bezier(.2,.7,.2,1);
+}
+
+.s-bestsellers__card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow);
+}
+
+/* product image */
+.s-bestsellers__img-link {
+  display: block;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.s-bestsellers__img {
+  width: 100%;
+  height: 340px;
+  object-fit: cover;
+  display: block;
+  transition: transform .4s cubic-bezier(.2,.7,.2,1);
+}
+
+.s-bestsellers__card:hover .s-bestsellers__img {
+  transform: scale(1.03);
+}
+
+/* card body */
+.s-bestsellers__body {
+  padding: var(--sp-4) var(--sp-4) var(--sp-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+  flex: 1;
+}
+
+.s-bestsellers__name {
+  font-family: var(--font-display);
+  font-size: var(--s-1);
+  font-weight: 400;
+  color: var(--ink);
+  line-height: 1.25;
+  letter-spacing: .01em;
+  margin: 0;
+}
+
+.s-bestsellers__desc {
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  color: var(--ink-soft);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* stars row */
+.s-bestsellers__stars {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  margin-top: var(--sp-1);
+}
+
+.s-bestsellers__star-icons {
+  color: var(--pop);
+  font-size: var(--s--1);
+  letter-spacing: .08em;
+  line-height: 1;
+}
+
+.s-bestsellers__rating {
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  color: var(--ink-soft);
+  line-height: 1;
+}
+
+/* price */
+.s-bestsellers__price {
+  font-family: var(--font-body);
+  font-size: var(--s-0);
+  font-weight: 600;
+  color: var(--ink);
+  margin: var(--sp-1) 0 0;
+  letter-spacing: .01em;
+}
+
+/* CTA pushes to bottom */
+.s-bestsellers__cta {
+  margin-top: auto;
+  padding-top: var(--sp-3);
+  font-size: var(--s--1);
+  padding: .9em 1.6em;
+}
+
+/* ── Tablet: 2 columns ── */
+@media (max-width: 960px) {
+  .s-bestsellers {
+    padding: var(--sp-9) 0;
+  }
+  .s-bestsellers__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--sp-4);
+  }
+  .s-bestsellers__img {
+    height: 300px;
+  }
+}
+
+/* ── Mobile: 1 column (narrow) / 2 columns (wider mobile) ── */
+@media (max-width: 540px) {
+  .s-bestsellers {
+    padding: var(--sp-8) 0;
+  }
+  .s-bestsellers__grid {
+    grid-template-columns: 1fr;
+    gap: var(--sp-4);
+  }
+  .s-bestsellers__head h2 {
+    font-size: var(--s-3);
+  }
+  .s-bestsellers__img {
+    height: 280px;
+  }
+}
+
+@media (min-width: 380px) and (max-width: 540px) {
+  .s-bestsellers__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .s-bestsellers__img {
+    height: 220px;
+  }
+}
+
+
+/* ===== ritual ===== */
+/* ===== Oil-Cleanse Ritual Band — Dry Skin Love ===== */
+/* ALL rules scoped under .s-ritual */
+
+.s-ritual {
+  background: transparent; /* sits inside .sec — uses page bg */
+}
+
+/* ── Contained card shell ── */
+.s-ritual__inner {
+  background: var(--surface-2);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: stretch;
+  box-shadow: var(--shadow);
+}
+
+/* ── LEFT: image column ── */
+.s-ritual__media {
+  position: relative;
+  min-height: 520px;
+  overflow: hidden;
+}
+
+.s-ritual__img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  display: block;
+}
+
+/* ── RIGHT: text column ── */
+.s-ritual__text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--sp-5);
+  padding: clamp(var(--sp-6), 5vw, var(--sp-10));
+}
+
+.s-ritual__h2 {
+  font-family: var(--font-display);
+  font-size: clamp(var(--s-2), 3vw, var(--s-4));
+  font-weight: 400;
+  line-height: 1.18;
+  letter-spacing: .01em;
+  color: var(--ink);
+  margin: 0;
+}
+
+.s-ritual__body {
+  color: var(--ink-soft);
+  font-family: var(--font-body);
+  font-size: var(--s-0);
+  line-height: 1.65;
+  margin: 0;
+  max-width: 38ch;
+}
+
+/* ── Benefit list ── */
+.s-ritual__benefits {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+}
+
+.s-ritual__benefit {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  font-family: var(--font-body);
+  font-size: var(--s-0);
+  color: var(--ink);
+  line-height: 1.4;
+}
+
+.s-ritual__benefit .ic {
+  flex-shrink: 0;
+  color: var(--gold);
+  display: flex;
+  align-items: center;
+}
+
+/* ── MOBILE ≤ 768px — stack: image first, text below ── */
+@media (max-width: 768px) {
+  .s-ritual__inner {
+    grid-template-columns: 1fr;
+    border-radius: var(--radius);
+  }
+
+  .s-ritual__media {
+    min-height: 280px;
+    position: relative;
+    height: 280px;
+  }
+
+  .s-ritual__img {
+    position: absolute;
+  }
+
+  .s-ritual__text {
+    padding: var(--sp-7) var(--sp-6);
+    gap: var(--sp-4);
+  }
+
+  .s-ritual__body {
+    max-width: 100%;
+  }
+
+  .s-ritual__h2 {
+    font-size: clamp(var(--s-2), 6vw, var(--s-3));
+  }
+}
+
+
+/* ===== founder ===== */
+/* ===== Founder / Science Credibility Band — Dry Skin Love ===== */
+/* ALL rules scoped under .s-founder */
+
+.s-founder {
+  background: var(--bg);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+/* ── Centered editorial block ── */
+.s-founder__inner {
+  max-width: 760px;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sp-6);
+}
+
+.s-founder__h2 {
+  font-family: var(--font-display);
+  font-size: clamp(var(--s-2), 3.2vw, var(--s-4));
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: .01em;
+  color: var(--ink);
+  margin: 0;
+  max-width: 22ch;
+}
+
+.s-founder__body {
+  color: var(--ink-soft);
+  font-family: var(--font-body);
+  font-size: var(--s-0);
+  line-height: 1.7;
+  margin: 0;
+  max-width: 52ch;
+}
+
+/* ── Credential row ── */
+.s-founder__credentials {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--sp-8) var(--sp-10);
+}
+
+.s-founder__cred {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sp-3);
+}
+
+.s-founder__cred-icon {
+  color: var(--gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.s-founder__cred-label {
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  font-weight: 600;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--ink);
+  text-align: center;
+  line-height: 1.3;
+}
+
+/* ── MOBILE ≤ 600px ── */
+@media (max-width: 600px) {
+  .s-founder__h2 {
+    font-size: clamp(var(--s-2), 7vw, var(--s-3));
+    max-width: 100%;
+  }
+
+  .s-founder__body {
+    max-width: 100%;
+  }
+
+  .s-founder__credentials {
+    gap: var(--sp-7) var(--sp-8);
+  }
+}
+
+
+/* ===== reviews ===== */
+/* ── Reviews Section ─────────────────────────────────────── */
+.s-reviews {
+  background: var(--surface-2);
+  padding: var(--sp-12) 0;
+}
+
+/* Head */
+.s-reviews__head {
+  text-align: center;
+  margin-bottom: var(--sp-8);
+}
+
+.s-reviews__rating {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sp-2);
+  margin-top: var(--sp-3);
+  flex-wrap: wrap;
+}
+
+.s-reviews__stars {
+  color: var(--pop);
+  font-size: var(--s-2);
+  letter-spacing: 0.05em;
+}
+
+.s-reviews__score {
+  font-family: var(--font-display);
+  font-size: var(--s-2);
+  color: var(--ink);
+}
+
+.s-reviews__count {
+  font-size: var(--s-0);
+  color: var(--ink-soft);
+}
+
+/* Grid */
+.s-reviews__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-5);
+  margin-bottom: var(--sp-8);
+}
+
+/* Card */
+.s-reviews__card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: var(--sp-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+  transition: box-shadow 0.25s ease;
+}
+
+.s-reviews__card:hover {
+  box-shadow: var(--shadow);
+}
+
+.s-reviews__card-stars {
+  color: var(--pop);
+  font-size: var(--s-0);
+  letter-spacing: 0.06em;
+}
+
+.s-reviews__quote {
+  font-family: var(--font-body);
+  font-size: var(--s-0);
+  color: var(--ink);
+  line-height: 1.65;
+  margin: 0;
+  flex: 1;
+  font-style: italic;
+}
+
+.s-reviews__footer {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-1);
+  margin-top: auto;
+}
+
+.s-reviews__name {
+  font-family: var(--font-display);
+  font-size: var(--s-0);
+  color: var(--ink);
+}
+
+.s-reviews__meta {
+  font-size: var(--s--1);
+  color: var(--ink-soft);
+}
+
+.s-reviews__verified {
+  color: var(--ink-soft);
+  font-size: var(--s--1);
+  font-style: normal;
+}
+
+/* Bottom */
+.s-reviews__bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sp-4);
+}
+
+.s-reviews__disclaimer {
+  font-size: var(--s--1);
+  color: var(--ink-soft);
+  opacity: 0.65;
+  margin: 0;
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+  .s-reviews__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile */
+@media (max-width: 560px) {
+  .s-reviews__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .s-reviews__rating {
+    flex-direction: column;
+    gap: var(--sp-1);
+  }
+}
+
+
+/* ===== spas ===== */
+/* ── Spas Section ─────────────────────────────────────────── */
+.s-spas {
+  background: var(--bg);
+  padding: var(--sp-12) 0;
+}
+
+/* Head */
+.s-spas__head {
+  text-align: center;
+  margin-bottom: var(--sp-8);
+}
+
+.s-spas__title {
+  font-family: var(--font-display);
+  font-size: var(--s-3);
+  color: var(--ink);
+  font-weight: 400;
+  margin: var(--sp-3) 0 0;
+  line-height: 1.25;
+}
+
+/* Logo row */
+.s-spas__row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: clamp(var(--sp-5), 5vw, var(--sp-9));
+}
+
+/* Individual partner */
+.s-spas__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sp-3);
+}
+
+.s-spas__logo {
+  display: block;
+  height: clamp(104px, 11vw, 136px);
+  width: auto;
+  max-width: 240px;
+  object-fit: contain;
+  /* white card lifts pale/transparent stockist PNGs off the ivory band */
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: var(--sp-4) var(--sp-5);
+  box-shadow: 0 8px 22px rgba(26,26,26,.06);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.s-spas__logo:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow);
+}
+
+.s-spas__caption {
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  color: var(--ink-soft);
+  text-align: center;
+  max-width: 140px;
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* Mobile — keep the three logos in a row (social-proof density), just smaller */
+@media (max-width: 560px) {
+  .s-spas__row {
+    flex-wrap: wrap;
+    gap: var(--sp-4);
+  }
+
+  .s-spas__logo {
+    height: 78px;
+    padding: var(--sp-3);
+    max-width: 30vw;
+  }
+
+  .s-spas__caption {
+    font-size: .72rem;
+    max-width: 30vw;
+  }
+}
+
+
+/* ===== newsletter ===== */
+.s-newsletter {
+  background: var(--surface-2);
+  text-align: center;
+  padding: var(--sp-12) 0;
+}
+
+.s-newsletter .wrap {
+  max-width: 600px;
+}
+
+.s-newsletter h2 {
+  font-family: var(--font-display);
+  font-size: var(--s-4);
+  font-weight: 400;
+  color: var(--ink);
+  margin: var(--sp-2) 0 var(--sp-3);
+  line-height: 1.15;
+}
+
+.s-newsletter__sub {
+  font-size: var(--s-0);
+  color: var(--ink-soft);
+  line-height: 1.6;
+  margin-bottom: var(--sp-6);
+}
+
+.s-newsletter__form {
+  display: flex;
+  gap: var(--sp-3);
+  align-items: stretch;
+  justify-content: center;
+}
+
+.s-newsletter__input {
+  flex: 1;
+  max-width: 360px;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+  font-family: var(--font-body);
+  font-size: var(--s-0);
+  color: var(--ink);
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.s-newsletter__input::placeholder {
+  color: var(--ink-soft);
+}
+
+.s-newsletter__input:focus {
+  border-color: var(--accent);
+}
+
+@media (max-width: 540px) {
+  .s-newsletter__form {
+    flex-direction: column;
+    gap: var(--sp-3);
+  }
+
+  .s-newsletter__input {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .s-newsletter__form .btn {
+    width: 100%;
+  }
+}
+
+
+/* ===== footer ===== */
+.s-footer {
+  background: var(--ink);
+  color: #fff;
+  padding: var(--sp-11) 0 var(--sp-6);
+}
+
+/* ── Top row ── */
+.s-footer__top {
+  margin-bottom: var(--sp-10);
+}
+
+.s-footer__brand {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+}
+
+.s-footer__tagline {
+  font-size: var(--s--1);
+  color: rgba(255, 255, 255, 0.55);
+  font-family: var(--font-body);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* ── Link columns ── */
+.s-footer__cols {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--sp-8);
+  margin-bottom: var(--sp-10);
+}
+
+.s-footer__col-head {
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin: 0 0 var(--sp-4);
+}
+
+.s-footer__col ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+}
+
+.s-footer__col ul li a {
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  overflow-wrap: anywhere;
+  transition: color 0.2s;
+}
+
+.s-footer__col ul li a:hover {
+  color: #fff;
+}
+
+/* ── Bottom bar ── */
+.s-footer__bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-4);
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  padding-top: var(--sp-6);
+  flex-wrap: wrap;
+}
+
+.s-footer__copy {
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.s-footer__social {
+  display: flex;
+  gap: var(--sp-5);
+}
+
+.s-footer__social a {
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  color: rgba(255, 255, 255, 0.55);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.s-footer__social a:hover {
+  color: #fff;
+}
+
+/* ── Responsive ── */
+@media (max-width: 860px) {
+  .s-footer__cols {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--sp-8) var(--sp-6);
+  }
+}
+
+@media (max-width: 480px) {
+  .s-footer__cols {
+    grid-template-columns: 1fr;
+    gap: var(--sp-7);
+  }
+
+  .s-footer__bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--sp-3);
+  }
+}
+
+
