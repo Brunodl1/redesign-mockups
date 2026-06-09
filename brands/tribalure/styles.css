@@ -1,0 +1,760 @@
+/* ============ header ============ */
+/* ===== announce + header ===== */
+.announce{background:var(--dark);color:#EDE2D2}
+.announce__wrap{display:flex;align-items:center;justify-content:center;gap:.7em;
+  padding-block:.6em;font-size:var(--s--1);letter-spacing:.1em;text-transform:uppercase;text-align:center;font-weight:700}
+.announce__item{white-space:nowrap}
+.announce__dot{color:var(--teal)}
+
+.site-header{position:sticky;top:0;z-index:40;background:var(--bg);border-bottom:1px solid var(--line)}
+.site-header__inner{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;
+  gap:var(--sp-4);padding-block:var(--sp-3)}
+
+.site-header__nav ul{display:flex;align-items:center;gap:var(--sp-4);list-style:none;margin:0;padding:0}
+.site-header__nav a{font-family:var(--font-body);font-weight:600;font-size:.9rem;
+  letter-spacing:.02em;color:var(--ink);transition:color .15s}
+.site-header__nav a:hover{color:var(--accent)}
+.site-header__nav--left{justify-self:start}
+
+.site-header__logo{justify-self:center;display:flex;align-items:center}
+.site-header__logo-img{height:46px;width:auto;display:block}
+
+.site-header__right{justify-self:end;display:flex;align-items:center;gap:var(--sp-5)}
+.site-header__icons{display:flex;align-items:center;gap:var(--sp-3)}
+.site-header__icon{color:var(--ink);display:flex;align-items:center;position:relative;transition:color .15s}
+.site-header__icon:hover{color:var(--accent)}
+.site-header__cart-count{position:absolute;top:-7px;right:-9px;background:var(--accent);color:#fff;
+  font-size:.62rem;font-weight:800;line-height:1;min-width:16px;height:16px;border-radius:999px;
+  display:flex;align-items:center;justify-content:center;padding:0 3px}
+
+.site-header__burger{display:none;flex-direction:column;gap:4px;background:none;border:0;cursor:pointer;padding:6px;justify-self:start}
+.site-header__burger span{width:22px;height:2px;background:var(--ink);border-radius:2px}
+
+.mobile-nav{display:none;background:var(--bg);border-bottom:1px solid var(--line)}
+.mobile-nav[aria-hidden="false"]{display:block}
+.mobile-nav ul{list-style:none;margin:0;padding:var(--sp-3) var(--sp-4) var(--sp-4)}
+.mobile-nav li{border-bottom:1px solid var(--line)}
+.mobile-nav a{display:block;padding:.85em 0;font-weight:600;color:var(--ink)}
+
+@media(max-width:900px){
+  .site-header__nav--left,.site-header__nav--right{display:none}
+  .site-header__burger{display:flex}
+  .site-header__right{gap:var(--sp-3)}
+  .site-header__icons .site-header__icon:not(.site-header__cart){display:none}
+  .site-header__logo-img{height:38px}
+}
+@media(max-width:560px){
+  .announce__hide{display:none}
+}
+
+/* ============ hero ============ */
+/* ============================================================
+   Tribalure — hero.css · variant: split (text left / product right)
+   Warm sand bg, espresso ink, flame-red + smoke-teal accents.
+   ============================================================ */
+.s-hero{
+  padding-block:var(--sp-7);
+  overflow:hidden;
+}
+.s-hero .hero-split__grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:var(--sp-6);
+  align-items:center;
+}
+
+/* ---- LEFT copy ---- */
+.s-hero .hero-split__copy{
+  max-width:34rem;
+}
+.s-hero h1{
+  font-size:var(--s-5);
+  margin-bottom:var(--sp-4);
+}
+.s-hero .hero-split__sub{
+  font-size:var(--s-1);
+  color:var(--ink-soft);
+  line-height:1.55;
+  margin-bottom:var(--sp-5);
+}
+.s-hero .hero-split__cta{
+  display:flex;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:var(--sp-4);
+  margin-bottom:var(--sp-5);
+}
+.s-hero .hero-split__story{
+  font-family:var(--font-body);
+  font-weight:700;
+  font-size:var(--s-0);
+  color:var(--ink);
+  letter-spacing:.02em;
+  border-bottom:2px solid var(--accent);
+  padding-bottom:.15em;
+  transition:color .2s;
+}
+.s-hero .hero-split__story:hover{
+  color:var(--accent);
+}
+.s-hero .hero-split__proof{
+  display:flex;
+  flex-wrap:wrap;
+  gap:var(--sp-2);
+}
+
+/* ---- RIGHT media ---- */
+.s-hero .hero-split__media{
+  position:relative;
+  border-radius:var(--radius-lg);
+  background:var(--surface-2);
+  background-image:
+    radial-gradient(120% 90% at 78% 18%, rgba(184,58,43,.18), transparent 60%),
+    radial-gradient(110% 80% at 12% 92%, rgba(28,156,139,.16), transparent 62%);
+  padding:var(--sp-6);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.s-hero .hero-split__wisp{
+  position:absolute;
+  top:calc(-1 * var(--sp-4));
+  right:var(--sp-5);
+  width:84px;
+  height:auto;
+  pointer-events:none;
+  z-index:1;
+}
+.s-hero .hero-split__card{
+  position:relative;
+  z-index:2;
+  background:var(--surface);
+  border-radius:var(--radius-lg);
+  padding:var(--sp-4);
+  box-shadow:var(--shadow);
+  width:100%;
+}
+.s-hero .hero-split__card img{
+  width:100%;
+  height:auto;
+  border-radius:var(--radius);
+}
+
+/* ---- MOBILE: product above the fold, copy below ---- */
+@media(max-width:780px){
+  .s-hero{
+    padding-block:var(--sp-6);
+  }
+  .s-hero .hero-split__grid{
+    grid-template-columns:1fr;
+    gap:var(--sp-5);
+  }
+  .s-hero .hero-split__media{
+    order:-1;
+    padding:var(--sp-5);
+  }
+  .s-hero .hero-split__copy{
+    max-width:none;
+  }
+  .s-hero .hero-split__wisp{
+    width:62px;
+    right:var(--sp-4);
+  }
+  .s-hero .hero-split__cta{
+    gap:var(--sp-3);
+  }
+  .s-hero .hero-split__cta .btn-primary{
+    flex:1 1 auto;
+  }
+}
+
+/* ============ values ============ */
+/* ===== values strip ===== */
+.s-values{padding-block:var(--sp-5);background:var(--surface);
+  border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.s-values__row{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--sp-4);list-style:none;margin:0;padding:0}
+.s-values__item{display:flex;flex-direction:column;align-items:center;text-align:center;gap:.3em;padding-inline:var(--sp-3)}
+.s-values__item:not(:last-child){border-right:1px solid var(--line)}
+.s-values .ic{color:var(--accent);width:30px;height:30px;margin-bottom:.3em}
+.s-values__t{font-family:var(--font-display);font-weight:600;font-size:var(--s-1);color:var(--ink);line-height:1.2}
+.s-values__s{font-size:var(--s--1);color:var(--ink-soft)}
+
+@media(max-width:780px){
+  .s-values__row{grid-template-columns:repeat(2,1fr);gap:var(--sp-5) var(--sp-4)}
+  .s-values__item{border-right:0!important}
+}
+
+/* ============ cats ============ */
+/* ============================================================
+   Tribalure — s-cats (Shop by category)
+   ============================================================ */
+.s-cats{background:var(--bg)}
+
+.s-cats .cats-head{
+  text-align:center;
+  max-width:640px;
+  margin:0 auto var(--sp-6);
+}
+.s-cats .cats-intro{
+  color:var(--ink-soft);
+  font-size:var(--s-1);
+  margin:0;
+}
+
+.s-cats .cats-grid{
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  gap:var(--sp-4);
+}
+
+.s-cats .cat-tile{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  text-align:center;
+  gap:var(--sp-3);
+  padding:var(--sp-5) var(--sp-4);
+  border-radius:var(--radius-lg);
+  border:1px solid var(--line);
+  color:var(--ink);
+  transition:transform .25s cubic-bezier(.2,.7,.2,1),box-shadow .25s,border-color .25s;
+}
+
+/* alternating warm grounds for rhythm */
+.s-cats .t-surface  {background:var(--surface)}
+.s-cats .t-surface-2{background:var(--surface-2)}
+.s-cats .t-teal     {background:color-mix(in srgb, var(--teal) 13%, var(--surface));border-color:color-mix(in srgb, var(--teal) 24%, var(--line))}
+.s-cats .t-red      {background:color-mix(in srgb, var(--accent) 11%, var(--surface));border-color:color-mix(in srgb, var(--accent) 22%, var(--line))}
+
+.s-cats .cat-ico{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:64px;
+  height:64px;
+  border-radius:999px;
+  background:var(--bg);
+  color:var(--accent);
+}
+.s-cats .t-teal .cat-ico{color:var(--teal-deep)}
+
+.s-cats .cat-name{
+  font-family:var(--font-display);
+  font-weight:600;
+  font-size:var(--s-2);
+  line-height:1.1;
+}
+
+.s-cats .cat-link{
+  font-family:var(--font-body);
+  font-weight:700;
+  font-size:var(--s--1);
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  color:var(--ink-soft);
+  transition:color .2s;
+}
+
+.s-cats .cat-tile:hover{
+  transform:translateY(-6px);
+  box-shadow:var(--shadow);
+  border-color:var(--accent);
+}
+.s-cats .cat-tile:hover .cat-link{color:var(--accent)}
+
+/* tablet — 3 columns */
+@media(max-width:1000px){
+  .s-cats .cats-grid{grid-template-columns:repeat(3,1fr)}
+}
+
+/* mobile — 2 columns */
+@media(max-width:780px){
+  .s-cats .cats-grid{gap:var(--sp-3)}
+  .s-cats .cats-grid{grid-template-columns:repeat(2,1fr)}
+  .s-cats .cat-tile{padding:var(--sp-4) var(--sp-3)}
+  .s-cats .cat-ico{width:54px;height:54px}
+}
+
+/* ============ bestsellers ============ */
+/* ============================================================
+   Tribalure — bestsellers.css
+   BESTSELLERS product grid · scoped under .s-bestsellers
+   ============================================================ */
+.s-bestsellers{background:var(--bg)}
+
+/* header row */
+.s-bestsellers .bs-head{
+  display:flex;align-items:flex-end;justify-content:space-between;
+  gap:var(--sp-4);margin-bottom:var(--sp-5);
+}
+.s-bestsellers .bs-head-text{max-width:42rem}
+.s-bestsellers .bs-head h2{margin-bottom:0}
+.s-bestsellers .bs-shopall{
+  flex:none;display:inline-flex;align-items:center;gap:.4em;
+  font-family:var(--font-body);font-weight:700;font-size:var(--s--1);
+  letter-spacing:.08em;text-transform:uppercase;color:var(--accent);
+  padding-bottom:.15em;border-bottom:2px solid transparent;
+  transition:border-color .2s,color .2s;white-space:nowrap;
+}
+.s-bestsellers .bs-shopall:hover{color:var(--accent-deep);border-color:var(--accent)}
+.s-bestsellers .bs-shopall span{transition:transform .2s}
+.s-bestsellers .bs-shopall:hover span{transform:translateX(4px)}
+
+/* grid */
+.s-bestsellers .bs-grid{
+  list-style:none;margin:0;padding:0;
+  display:grid;grid-template-columns:repeat(4,1fr);gap:var(--sp-4);
+}
+
+/* staggered reveal */
+.s-bestsellers .bs-card:nth-child(2){transition-delay:.06s}
+.s-bestsellers .bs-card:nth-child(3){transition-delay:.12s}
+.s-bestsellers .bs-card:nth-child(4){transition-delay:.18s}
+.s-bestsellers .bs-card:nth-child(5){transition-delay:.04s}
+.s-bestsellers .bs-card:nth-child(6){transition-delay:.10s}
+.s-bestsellers .bs-card:nth-child(7){transition-delay:.16s}
+.s-bestsellers .bs-card:nth-child(8){transition-delay:.22s}
+
+/* card */
+.s-bestsellers .bs-card{
+  display:flex;flex-direction:column;
+  background:var(--surface);border-radius:var(--radius-lg);
+  border:1px solid var(--line);overflow:hidden;
+  box-shadow:0 10px 28px rgba(34,28,24,.08);
+  transition:transform .25s ease,box-shadow .25s ease;
+}
+.s-bestsellers .bs-card:hover{
+  transform:translateY(-6px);box-shadow:var(--shadow);
+}
+
+/* media */
+.s-bestsellers .bs-link{display:block}
+.s-bestsellers .bs-media{
+  position:relative;display:block;
+  background:var(--surface);aspect-ratio:1/1;overflow:hidden;
+}
+.s-bestsellers .bs-media img{
+  width:100%;height:100%;object-fit:cover;
+  transition:transform .4s ease;
+}
+.s-bestsellers .bs-card:hover .bs-media img{transform:scale(1.04)}
+
+/* badge */
+.s-bestsellers .bs-badge{
+  position:absolute;top:var(--sp-3);left:var(--sp-3);z-index:2;
+  border:none;color:#fff;
+  box-shadow:0 6px 16px rgba(34,28,24,.18);
+}
+.s-bestsellers .bs-badge--red{background:var(--accent)}
+.s-bestsellers .bs-badge--teal{background:var(--teal)}
+
+/* body */
+.s-bestsellers .bs-body{
+  display:flex;flex-direction:column;flex:1;
+  padding:var(--sp-4);gap:var(--sp-2);
+}
+.s-bestsellers .bs-name{
+  font-size:var(--s-1);line-height:1.18;margin:0;
+}
+.s-bestsellers .bs-name a:hover{color:var(--accent)}
+.s-bestsellers .bs-desc{
+  margin:0;color:var(--ink-soft);font-size:var(--s--1);
+}
+.s-bestsellers .bs-rate{
+  display:flex;align-items:center;gap:var(--sp-2);
+  font-size:var(--s--1);color:var(--ink-soft);
+}
+.s-bestsellers .bs-rate-text{font-weight:600;color:var(--ink)}
+.s-bestsellers .bs-count{font-weight:400;color:var(--ink-soft)}
+.s-bestsellers .bs-price{
+  margin:var(--sp-1) 0 var(--sp-3);
+  font-family:var(--font-display);font-weight:600;
+  font-size:var(--s-2);color:var(--ink);
+}
+.s-bestsellers .bs-body .btn{margin-top:auto}
+
+/* footnote */
+.s-bestsellers .bs-footnote{
+  margin:var(--sp-5) 0 0;text-align:center;
+  font-size:var(--s--1);color:var(--ink-soft);
+}
+
+/* responsive */
+@media(max-width:1000px){
+  .s-bestsellers .bs-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:780px){
+  .s-bestsellers .bs-head{align-items:center}
+}
+@media(max-width:560px){
+  .s-bestsellers .bs-grid{gap:var(--sp-3)}
+  .s-bestsellers .bs-body{padding:var(--sp-3)}
+  .s-bestsellers .bs-name{font-size:var(--s-0)}
+}
+
+/* ============ story ============ */
+/* ============================================================
+   Tribalure — story.css
+   "Our story" Indigenous-owned heritage band — light on espresso
+   ============================================================ */
+
+.s-story{
+  background:var(--dark);
+  color:#fff;
+  overflow:hidden;
+}
+
+.s-story__wrap{
+  position:relative;
+}
+
+/* centered editorial column */
+.s-story__inner{
+  position:relative;
+  z-index:2;
+  max-width:760px;
+  margin-inline:auto;
+  text-align:center;
+}
+
+/* eyebrow — teal on dark for contrast */
+.s-story__eyebrow{
+  color:var(--teal);
+}
+
+.s-story__title{
+  color:#fff;
+  margin-bottom:var(--sp-4);
+}
+
+.s-story__lead{
+  font-size:var(--s-1);
+  color:#F5EDE0;
+  margin-bottom:var(--sp-4);
+}
+
+.s-story__body{
+  color:rgba(245,237,224,.78);
+  margin-bottom:var(--sp-5);
+}
+
+/* accent word colours pulled into copy via em/strong if needed */
+.s-story__lead strong{color:var(--teal);font-weight:600}
+
+/* highlights row */
+.s-story__highlights{
+  list-style:none;
+  margin:0 0 var(--sp-5);
+  padding:0;
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:var(--sp-3) var(--sp-5);
+}
+
+.s-story__hl{
+  position:relative;
+  font-family:var(--font-body);
+  font-weight:700;
+  font-size:var(--s--1);
+  letter-spacing:.04em;
+  text-transform:uppercase;
+  color:#fff;
+  padding-left:1.5em;
+  line-height:1.2;
+}
+
+/* small flame-red marker before each highlight */
+.s-story__hl::before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:50%;
+  width:.55em;
+  height:.55em;
+  margin-top:-.275em;
+  border-radius:50% 50% 50% 0;
+  transform:rotate(45deg);
+  background:var(--accent);
+}
+
+.s-story__cta{
+  margin-top:var(--sp-2);
+}
+
+/* ---- decorative smoke + flame motif ---- */
+.s-story__motif{
+  position:absolute;
+  top:50%;
+  right:var(--sp-5);
+  transform:translateY(-50%);
+  width:120px;
+  height:auto;
+  z-index:1;
+  pointer-events:none;
+  opacity:.7;
+}
+
+.s-story__smoke{
+  fill:none;
+  stroke:var(--teal);
+  stroke-width:2.4;
+  stroke-linecap:round;
+  opacity:.55;
+}
+.s-story__smoke--2{opacity:.4;stroke-width:2}
+.s-story__smoke--3{opacity:.35;stroke-width:1.8}
+
+.s-story__flame{
+  fill:var(--accent);
+  opacity:.9;
+}
+
+/* ---- mobile ---- */
+@media(max-width:780px){
+  .s-story__inner{
+    max-width:100%;
+  }
+  .s-story__motif{
+    display:none;
+  }
+  .s-story__highlights{
+    gap:var(--sp-3) var(--sp-4);
+  }
+}
+
+/* ============ kit ============ */
+/* ============================================================
+   Tribalure — kit.css · featured product / hero-kit band
+   ============================================================ */
+.s-kit{background:var(--surface-2)}
+
+.s-kit__grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:clamp(var(--sp-5),5vw,var(--sp-7));
+  align-items:center;
+}
+
+/* media */
+.s-kit__frame{
+  border-radius:var(--radius-lg);
+  overflow:hidden;
+  box-shadow:var(--shadow);
+  background:var(--surface);
+}
+.s-kit__frame img{
+  width:100%;
+  aspect-ratio:4/5;
+  object-fit:cover;
+}
+
+/* copy */
+.s-kit__copy p{
+  color:var(--ink-soft);
+  font-size:var(--s-1);
+  max-width:46ch;
+}
+
+/* chips */
+.s-kit__chips{
+  list-style:none;margin:var(--sp-4) 0 0;padding:0;
+  display:flex;flex-wrap:wrap;gap:var(--sp-2);
+}
+
+/* rating */
+.s-kit__rating{
+  display:flex;align-items:center;gap:var(--sp-2);
+  margin-top:var(--sp-4);
+}
+.s-kit__count{color:var(--ink-soft);font-size:var(--s--1);font-weight:700;letter-spacing:.02em}
+
+/* price */
+.s-kit__price{
+  display:flex;align-items:baseline;gap:var(--sp-3);
+  margin-top:var(--sp-3);
+}
+.s-kit__amount{
+  font-family:var(--font-display);font-weight:600;
+  font-size:var(--s-3);color:var(--ink);line-height:1;
+}
+.s-kit__value{
+  font-family:var(--font-body);font-weight:700;
+  font-size:var(--s--1);letter-spacing:.04em;text-transform:uppercase;
+  color:var(--teal);
+}
+
+/* cta */
+.s-kit__cta{
+  display:flex;align-items:center;flex-wrap:wrap;
+  gap:var(--sp-4);margin-top:var(--sp-5);
+}
+.s-kit__link{
+  font-family:var(--font-body);font-weight:700;font-size:var(--s-0);
+  color:var(--accent);letter-spacing:.02em;
+  border-bottom:2px solid transparent;transition:border-color .2s;
+}
+.s-kit__link:hover{border-color:var(--accent)}
+
+/* mobile */
+@media(max-width:780px){
+  .s-kit__grid{grid-template-columns:1fr;gap:var(--sp-5)}
+  .s-kit__copy p{font-size:var(--s-0);max-width:none}
+  .s-kit__cta{gap:var(--sp-3)}
+}
+
+/* ============ reviews ============ */
+/* ============================================================
+   Tribalure — reviews.css (testimonial wall)
+   Scoped under .s-reviews. Tokens from base.css only.
+   ============================================================ */
+
+.s-reviews{background:var(--bg)}
+
+.s-reviews__head{
+  text-align:center;
+  max-width:760px;
+  margin:0 auto var(--sp-6);
+}
+.s-reviews__title{margin-bottom:var(--sp-3)}
+.s-reviews__summary{
+  margin:0;
+  font-family:var(--font-body);
+  font-size:var(--s-1);
+  color:var(--ink-soft);
+}
+.s-reviews__summary .stars{font-size:var(--s-1);vertical-align:-.05em}
+.s-reviews__summary strong{color:var(--ink);font-weight:700}
+
+/* wall grid — 3 cols desktop */
+.s-reviews__wall{
+  list-style:none;
+  margin:0;
+  padding:0;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:var(--sp-4);
+}
+
+/* card */
+.s-reviews__card{
+  display:flex;
+  flex-direction:column;
+  background:var(--surface);
+  border:1px solid var(--line);
+  border-radius:var(--radius-lg);
+  box-shadow:var(--shadow);
+  padding:var(--sp-5);
+}
+.s-reviews__card .stars{
+  font-size:var(--s-1);
+  margin-bottom:var(--sp-3);
+}
+
+.s-reviews__hl{
+  font-size:var(--s-2);
+  margin:0 0 var(--sp-3);
+}
+.s-reviews__quote{
+  color:var(--ink-soft);
+  margin:0 0 var(--sp-4);
+  flex:1 1 auto;
+}
+
+.s-reviews__by{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:var(--sp-3);
+  flex-wrap:wrap;
+  margin:0;
+  padding-top:var(--sp-3);
+  border-top:1px solid var(--line);
+}
+.s-reviews__name{
+  font-family:var(--font-display);
+  font-weight:600;
+  color:var(--ink);
+}
+.s-reviews__verified{
+  padding:.35em .75em;
+  color:var(--teal-deep);
+  border-color:var(--teal);
+}
+.s-reviews__verified::before{
+  content:"\2713";
+  font-weight:700;
+}
+
+/* footnote */
+.s-reviews__note{
+  text-align:center;
+  margin:var(--sp-5) 0 0;
+  font-size:var(--s--1);
+  color:var(--ink-soft);
+}
+
+/* staggered reveal */
+.s-reviews__card:nth-child(2){transition-delay:.08s}
+.s-reviews__card:nth-child(3){transition-delay:.16s}
+.s-reviews__card:nth-child(4){transition-delay:.08s}
+.s-reviews__card:nth-child(5){transition-delay:.16s}
+.s-reviews__card:nth-child(6){transition-delay:.24s}
+
+/* tablet — 2 cols */
+@media(max-width:1000px){
+  .s-reviews__wall{grid-template-columns:repeat(2,1fr)}
+}
+
+/* mobile — single column */
+@media(max-width:780px){
+  .s-reviews__head{margin-bottom:var(--sp-5)}
+  .s-reviews__wall{grid-template-columns:1fr;gap:var(--sp-4)}
+  .s-reviews__card{padding:var(--sp-4)}
+}
+
+/* ============ news ============ */
+/* ===== newsletter ===== */
+.s-news{background:var(--bg)}
+.s-news__card{max-width:740px;margin-inline:auto;text-align:center;
+  background:var(--surface-2);border:1px solid var(--line);
+  border-radius:var(--radius-lg);padding:var(--sp-6) var(--sp-5)}
+.s-news__heading{font-size:var(--s-4);margin:0 0 var(--sp-3)}
+.s-news__sub{color:var(--ink-soft);max-width:48ch;margin:0 auto var(--sp-4)}
+.s-news__form{display:flex;gap:var(--sp-2);max-width:480px;margin:0 auto var(--sp-3)}
+.s-news__input{flex:1;min-width:0;padding:.95em 1.2em;border:1.5px solid var(--line);
+  border-radius:999px;background:var(--surface);color:var(--ink);font-family:var(--font-body);font-size:var(--s-0)}
+.s-news__input:focus{outline:none;border-color:var(--accent)}
+.s-news__fine{font-size:var(--s--1);color:var(--ink-soft);margin:0}
+
+@media(max-width:560px){
+  .s-news__form{flex-direction:column}
+  .s-news__form .btn{width:100%}
+}
+
+/* ============ footer ============ */
+/* ===== footer ===== */
+.site-footer{background:var(--dark);color:#CFC2B2;padding-top:var(--sp-7)}
+.site-footer__inner{display:grid;grid-template-columns:1.7fr 1fr 1fr 1fr;gap:var(--sp-5);padding-bottom:var(--sp-6)}
+.site-footer__brand{max-width:340px}
+.site-footer__logo{height:44px;width:auto;margin-bottom:var(--sp-3)}
+.site-footer__blurb{font-size:var(--s--1);line-height:1.7;color:#A4998A;margin:0}
+.site-footer__h{font-family:var(--font-body);font-weight:700;font-size:var(--s--1);
+  letter-spacing:.12em;text-transform:uppercase;color:var(--teal);margin:0 0 var(--sp-3)}
+.site-footer__col ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:.6em}
+.site-footer__col a{font-size:.92rem;color:#CFC2B2;transition:color .15s}
+.site-footer__col a:hover{color:#fff}
+.site-footer__bottom{display:flex;align-items:center;justify-content:space-between;gap:var(--sp-3);
+  padding-block:var(--sp-4);border-top:1px solid rgba(255,255,255,.12);font-size:var(--s--1);color:#8B8071}
+.site-footer__social{display:flex;gap:var(--sp-3)}
+.site-footer__icon{color:#CFC2B2;transition:color .15s}
+.site-footer__icon:hover{color:var(--teal)}
+
+@media(max-width:900px){
+  .site-footer__inner{grid-template-columns:1fr 1fr;gap:var(--sp-5)}
+  .site-footer__brand{grid-column:1/-1;max-width:none}
+}
+@media(max-width:560px){
+  .site-footer__bottom{flex-direction:column;text-align:center}
+}
+
