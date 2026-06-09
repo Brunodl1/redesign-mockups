@@ -1,0 +1,809 @@
+/* ============ header ============ */
+/* ===== announce + header ===== */
+.announce{background:var(--dark);color:#E9DFC9}
+.announce__wrap{display:flex;align-items:center;justify-content:center;gap:.7em;
+  padding-block:.6em;font-size:var(--s--1);letter-spacing:.18em;text-transform:uppercase;text-align:center;font-weight:600}
+.announce__item{white-space:nowrap}
+.announce__dot{color:var(--gold)}
+
+.site-header{position:sticky;top:0;z-index:40;background:var(--bg);border-bottom:1px solid var(--line)}
+.site-header__inner{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;
+  gap:var(--sp-4);padding-block:var(--sp-3)}
+
+.site-header__nav ul{display:flex;align-items:center;gap:var(--sp-4);list-style:none;margin:0;padding:0}
+.site-header__nav a{font-family:var(--font-body);font-weight:600;font-size:.78rem;
+  letter-spacing:.14em;text-transform:uppercase;color:var(--ink);transition:color .15s}
+.site-header__nav a:hover{color:var(--accent)}
+.site-header__nav--left{justify-self:start}
+
+.site-header__logo{justify-self:center;display:flex;align-items:center}
+.site-header__logo-img{height:66px;width:auto;display:block}
+
+.site-header__right{justify-self:end;display:flex;align-items:center;gap:var(--sp-5)}
+.site-header__icons{display:flex;align-items:center;gap:var(--sp-3)}
+.site-header__icon{color:var(--ink);display:flex;align-items:center;position:relative;transition:color .15s}
+.site-header__icon:hover{color:var(--accent)}
+.site-header__cart-count{position:absolute;top:-7px;right:-9px;background:var(--accent);color:#fff;
+  font-size:.6rem;font-weight:700;line-height:1;min-width:15px;height:15px;border-radius:999px;
+  display:flex;align-items:center;justify-content:center;padding:0 3px}
+
+.site-header__burger{display:none;flex-direction:column;gap:4px;background:none;border:0;cursor:pointer;padding:6px;justify-self:start}
+.site-header__burger span{width:22px;height:1.5px;background:var(--ink);border-radius:2px}
+
+.mobile-nav{display:none;background:var(--bg);border-bottom:1px solid var(--line)}
+.mobile-nav[aria-hidden="false"]{display:block}
+.mobile-nav ul{list-style:none;margin:0;padding:var(--sp-3) var(--sp-4) var(--sp-4)}
+.mobile-nav li{border-bottom:1px solid var(--line)}
+.mobile-nav a{display:block;padding:.85em 0;font-weight:600;letter-spacing:.12em;text-transform:uppercase;font-size:.8rem;color:var(--ink)}
+
+@media(max-width:900px){
+  .site-header__nav--left,.site-header__nav--right{display:none}
+  .site-header__burger{display:flex}
+  .site-header__right{gap:var(--sp-3)}
+  .site-header__icons .site-header__icon:not(.site-header__cart){display:none}
+  .site-header__logo-img{height:52px}
+}
+@media(max-width:560px){
+  .announce__hide{display:none}
+}
+
+/* ============ hero ============ */
+/* ============================================================
+   Bella Aura — HERO (split, dark-luxe)
+   ============================================================ */
+.s-hero{
+  background:var(--dark);
+  padding-block:var(--sp-7);
+  overflow:hidden;
+}
+
+.s-hero .hero-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  align-items:center;
+  gap:var(--sp-6);
+}
+
+/* ---- copy (light on charcoal) ---- */
+.s-hero .hero-copy{
+  max-width:36rem;
+}
+.s-hero .hero-eyebrow{
+  color:var(--gold);
+}
+.s-hero .hero-title{
+  color:#FFFFFF;
+  font-size:var(--s-5);
+  margin-bottom:var(--sp-4);
+}
+.s-hero .hero-sub{
+  color:rgba(255,255,255,.74);
+  font-size:var(--s-1);
+  line-height:1.6;
+  max-width:32rem;
+  margin-bottom:var(--sp-5);
+}
+
+.s-hero .hero-cta{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  gap:var(--sp-3);
+  margin-bottom:var(--sp-5);
+}
+
+/* ---- proof chips (legible on dark) ---- */
+.s-hero .hero-proof{
+  display:flex;
+  flex-wrap:wrap;
+  gap:var(--sp-2);
+}
+.s-hero .hero-chip{
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.18);
+  color:rgba(255,255,255,.86);
+}
+.s-hero .hero-stars{
+  color:var(--gold);
+}
+
+/* ---- media: black bottle on light champagne card ---- */
+.s-hero .hero-media{
+  display:flex;
+  justify-content:center;
+}
+.s-hero .hero-card{
+  position:relative;
+  width:100%;
+  max-width:30rem;
+  background:var(--surface-2);
+  border-radius:var(--radius-lg);
+  box-shadow:var(--shadow);
+  padding:var(--sp-6) var(--sp-5);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.s-hero .hero-card-ring{
+  position:absolute;
+  inset:var(--sp-3);
+  border:1px solid var(--accent);
+  border-radius:calc(var(--radius-lg) - 4px);
+  pointer-events:none;
+  opacity:.5;
+}
+.s-hero .hero-card img{
+  position:relative;
+  width:auto;
+  max-height:30rem;
+  filter:drop-shadow(0 30px 40px rgba(0,0,0,.28));
+}
+
+/* ---- mobile: product card ABOVE the fold, then copy ---- */
+@media(max-width:780px){
+  .s-hero{
+    padding-block:var(--sp-6);
+  }
+  .s-hero .hero-grid{
+    grid-template-columns:1fr;
+    gap:var(--sp-5);
+  }
+  .s-hero .hero-media{
+    order:1;
+  }
+  .s-hero .hero-copy{
+    order:2;
+    max-width:none;
+  }
+  .s-hero .hero-card{
+    max-width:22rem;
+    padding:var(--sp-5) var(--sp-4);
+  }
+  .s-hero .hero-card img{
+    max-height:22rem;
+  }
+  .s-hero .hero-cta{
+    flex-direction:column;
+    align-items:stretch;
+  }
+  .s-hero .hero-cta .btn{
+    width:100%;
+  }
+}
+
+/* ============ values ============ */
+/* ===== values strip ===== */
+.s-values{padding-block:var(--sp-5);background:var(--surface);
+  border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.s-values__row{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--sp-4);list-style:none;margin:0;padding:0}
+.s-values__item{display:flex;flex-direction:column;align-items:center;text-align:center;gap:.3em;padding-inline:var(--sp-3)}
+.s-values__item:not(:last-child){border-right:1px solid var(--line)}
+.s-values .ic{color:var(--accent);width:30px;height:30px;margin-bottom:.3em}
+.s-values__t{font-family:var(--font-display);font-size:var(--s-1);color:var(--ink)}
+.s-values__s{font-size:var(--s--1);color:var(--ink-soft);letter-spacing:.02em}
+
+@media(max-width:780px){
+  .s-values__row{grid-template-columns:repeat(2,1fr);gap:var(--sp-5) var(--sp-4)}
+  .s-values__item{border-right:0!important}
+}
+
+/* ============ bestsellers ============ */
+/* ============================================================
+   Bella Aura Skincare — bestsellers.css
+   The radiance edit · luxury black-bottle product grid
+   ============================================================ */
+
+.s-bestsellers{background:var(--bg)}
+
+/* header row */
+.s-bestsellers .bs-head{
+  display:flex;align-items:flex-end;justify-content:space-between;gap:var(--sp-4);
+  margin-bottom:var(--sp-6)
+}
+.s-bestsellers .bs-head h2{margin:0}
+.s-bestsellers .bs-shopall{
+  flex:none;font-family:var(--font-body);font-weight:600;
+  font-size:var(--s--1);letter-spacing:.16em;text-transform:uppercase;
+  color:var(--ink);padding-bottom:.3em;
+  border-bottom:1px solid var(--accent);
+  transition:color .2s,border-color .2s
+}
+.s-bestsellers .bs-shopall span{transition:transform .2s;display:inline-block}
+.s-bestsellers .bs-shopall:hover{color:var(--accent-deep);border-color:var(--accent-deep)}
+.s-bestsellers .bs-shopall:hover span{transform:translateX(4px)}
+
+/* grid */
+.s-bestsellers .bs-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:var(--sp-4)
+}
+
+/* staggered reveal */
+.s-bestsellers .bs-card:nth-child(2){transition-delay:.08s}
+.s-bestsellers .bs-card:nth-child(3){transition-delay:.16s}
+.s-bestsellers .bs-card:nth-child(4){transition-delay:.24s}
+.s-bestsellers .bs-card:nth-child(5){transition-delay:.04s}
+.s-bestsellers .bs-card:nth-child(6){transition-delay:.12s}
+.s-bestsellers .bs-card:nth-child(7){transition-delay:.20s}
+.s-bestsellers .bs-card:nth-child(8){transition-delay:.28s}
+
+/* card */
+.s-bestsellers .bs-card{
+  display:flex;flex-direction:column;
+  background:var(--surface);
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  overflow:hidden;
+  box-shadow:0 6px 20px rgba(26,22,19,.05);
+  transition:transform .3s cubic-bezier(.2,.7,.2,1),box-shadow .3s,border-color .3s
+}
+.s-bestsellers .bs-card:hover{
+  transform:translateY(-6px);
+  box-shadow:var(--shadow);
+  border-color:var(--accent)
+}
+
+/* media — keep light so black bottles sit cleanly */
+.s-bestsellers .bs-media{
+  position:relative;
+  background:#FBFAF7;
+  padding:var(--sp-4);
+  aspect-ratio:1/1;
+  display:flex;align-items:center;justify-content:center
+}
+.s-bestsellers .bs-media img{
+  width:100%;height:100%;object-fit:contain;
+  transition:transform .4s cubic-bezier(.2,.7,.2,1)
+}
+.s-bestsellers .bs-card:hover .bs-media img{transform:scale(1.04)}
+
+/* gold-bordered badge */
+.s-bestsellers .bs-badge{
+  position:absolute;top:var(--sp-3);left:var(--sp-3);
+  background:var(--surface);
+  border:1px solid var(--accent);
+  color:var(--accent);
+  font-size:.66rem;letter-spacing:.14em;
+  padding:.45em .85em;
+  z-index:2
+}
+
+/* body */
+.s-bestsellers .bs-body{
+  display:flex;flex-direction:column;
+  padding:var(--sp-4);
+  flex:1
+}
+.s-bestsellers .bs-name{
+  font-size:var(--s-1);line-height:1.2;margin:0 0 var(--sp-2)
+}
+.s-bestsellers .bs-desc{
+  color:var(--ink-soft);font-size:var(--s--1);margin:0 0 var(--sp-3)
+}
+.s-bestsellers .bs-rating{
+  display:flex;align-items:center;gap:.5em;margin-bottom:var(--sp-3)
+}
+.s-bestsellers .bs-count{
+  color:var(--ink-soft);font-size:var(--s--1)
+}
+.s-bestsellers .bs-price{
+  font-family:var(--font-display);font-size:var(--s-2);
+  color:var(--ink);margin-bottom:var(--sp-4)
+}
+/* push button to bottom for even card heights */
+.s-bestsellers .bs-body .btn{margin-top:auto}
+
+/* footnote */
+.s-bestsellers .bs-foot{
+  margin:var(--sp-5) 0 0;text-align:center;
+  color:var(--ink-soft);font-size:var(--s--1);font-style:italic
+}
+
+/* responsive — tablet 2 cols */
+@media(max-width:1000px){
+  .s-bestsellers .bs-grid{grid-template-columns:repeat(2,1fr)}
+}
+/* mobile 2 cols, tighter */
+@media(max-width:780px){
+  .s-bestsellers .bs-head{margin-bottom:var(--sp-5)}
+  .s-bestsellers .bs-grid{gap:var(--sp-3)}
+  .s-bestsellers .bs-body{padding:var(--sp-3)}
+  .s-bestsellers .bs-media{padding:var(--sp-3)}
+  .s-bestsellers .bs-badge{font-size:.58rem;padding:.4em .7em}
+}
+@media(max-width:480px){
+  .s-bestsellers .bs-head{
+    flex-direction:column;align-items:flex-start;gap:var(--sp-3)
+  }
+}
+
+/* ============ science ============ */
+/* ============================================================
+   Bella Aura — "The Science" technology band
+   Light-on-dark premium science statement.
+   ============================================================ */
+.s-science{
+  background:var(--dark);
+  color:#fff;
+}
+
+/* header */
+.s-science .science-head{
+  max-width:720px;
+  margin:0 auto var(--sp-6);
+  text-align:center;
+}
+.s-science h2{
+  color:#fff;
+  margin-bottom:var(--sp-3);
+}
+.s-science .science-intro{
+  color:rgba(255,255,255,.74);
+  font-size:var(--s-1);
+  margin:0;
+}
+
+/* three feature columns */
+.s-science .science-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:var(--sp-5);
+}
+.s-science .science-col{
+  text-align:center;
+  padding-inline:var(--sp-3);
+}
+.s-science .ic{
+  width:46px;
+  height:46px;
+  margin:0 auto var(--sp-4);
+  color:var(--gold);
+}
+.s-science .science-name{
+  color:#fff;
+  font-weight:600;
+  font-size:var(--s-2);
+  margin:0 0 var(--sp-2);
+}
+.s-science .science-col p{
+  color:rgba(255,255,255,.72);
+  margin:0;
+}
+
+/* separators between columns */
+.s-science .science-col + .science-col{
+  border-left:1px solid rgba(255,255,255,.12);
+}
+
+/* cta */
+.s-science .science-cta{
+  text-align:center;
+  margin-top:var(--sp-6);
+}
+
+/* mobile */
+@media(max-width:780px){
+  .s-science .science-grid{
+    grid-template-columns:1fr;
+    gap:var(--sp-5);
+  }
+  .s-science .science-col{
+    padding-inline:0;
+  }
+  .s-science .science-col + .science-col{
+    border-left:0;
+    border-top:1px solid rgba(255,255,255,.12);
+    padding-top:var(--sp-5);
+  }
+  .s-science .science-head{
+    margin-bottom:var(--sp-5);
+  }
+}
+
+/* ============ rituals ============ */
+/* ============================================================
+   Bella Aura — Curated rituals band
+   ============================================================ */
+.s-rituals{background:var(--surface-2)}
+
+.s-rituals__head{
+  text-align:center;
+  max-width:46rem;
+  margin:0 auto var(--sp-6);
+}
+.s-rituals__intro{
+  color:var(--ink-soft);
+  font-size:var(--s-1);
+  margin:0;
+}
+
+.s-rituals__grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:var(--sp-4);
+}
+
+.s-rituals__card{
+  display:flex;
+  flex-direction:column;
+  background:var(--surface);
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  box-shadow:0 8px 24px rgba(26,22,19,.06);
+  overflow:hidden;
+  transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease;
+}
+.s-rituals__card:hover{
+  transform:translateY(-6px);
+  box-shadow:var(--shadow);
+  border-color:var(--accent);
+}
+
+.s-rituals__media{
+  position:relative;
+  display:block;
+  background:#fff;
+  border-bottom:1px solid var(--line);
+}
+.s-rituals__media img{
+  width:100%;
+  aspect-ratio:1/1;
+  object-fit:contain;
+  padding:var(--sp-4);
+}
+
+.s-rituals__badge{
+  position:absolute;
+  top:var(--sp-3);
+  left:var(--sp-3);
+  background:var(--accent);
+  color:#fff;
+  border-color:var(--accent);
+}
+
+.s-rituals__body{
+  display:flex;
+  flex-direction:column;
+  flex:1;
+  padding:var(--sp-4);
+  text-align:center;
+}
+.s-rituals__body h3{
+  margin:0 0 var(--sp-2);
+}
+.s-rituals__desc{
+  color:var(--ink-soft);
+  font-size:var(--s--1);
+  margin:0 0 var(--sp-3);
+  line-height:1.5;
+}
+.s-rituals__price{
+  font-family:var(--font-display);
+  font-size:var(--s-1);
+  color:var(--ink);
+  margin:0 0 var(--sp-4);
+}
+.s-rituals__body .btn{
+  margin-top:auto;
+}
+
+/* tablet — 2 cols */
+@media(max-width:980px){
+  .s-rituals__grid{grid-template-columns:repeat(2,1fr)}
+}
+
+/* mobile — 2 cols, tight */
+@media(max-width:780px){
+  .s-rituals__grid{gap:var(--sp-3)}
+  .s-rituals__media img{padding:var(--sp-3)}
+  .s-rituals__body{padding:var(--sp-3)}
+}
+
+/* small mobile — 1 col */
+@media(max-width:480px){
+  .s-rituals__grid{grid-template-columns:1fr}
+}
+
+/* ============ story ============ */
+/* ============================================================
+   Bella Aura — story.css (brand-story / philosophy band)
+   Scoped under .s-story · uses base.css tokens only
+   ============================================================ */
+.s-story{
+  background:var(--bg);
+  background-image:linear-gradient(180deg,var(--bg) 0%,var(--surface-2) 100%);
+  overflow:hidden;
+}
+
+.s-story__grid{
+  display:grid;
+  grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);
+  gap:var(--sp-7);
+  align-items:center;
+}
+
+/* ---- media column: monogram mark + thin gold rule ---- */
+.s-story__media{
+  position:relative;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:var(--sp-5);
+  padding-block:var(--sp-5);
+}
+.s-story__mark{
+  color:var(--accent);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.s-story__mark svg{
+  width:clamp(120px,16vw,180px);
+  height:auto;
+  filter:drop-shadow(0 14px 30px rgba(176,137,76,.22));
+}
+.s-story__rule{
+  display:block;
+  width:1px;
+  height:120px;
+  background:linear-gradient(180deg,transparent,var(--accent),transparent);
+  opacity:.7;
+}
+
+/* ---- body column ---- */
+.s-story__body{
+  max-width:54ch;
+}
+.s-story__body h2{
+  margin-bottom:var(--sp-4);
+}
+.s-story__body p{
+  color:var(--ink-soft);
+  font-size:var(--s-1);
+  line-height:1.8;
+}
+
+/* ---- stat / credential row ---- */
+.s-story__stats{
+  list-style:none;
+  margin:var(--sp-5) 0;
+  padding:0;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:var(--sp-4);
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+  padding-block:var(--sp-4);
+}
+.s-story__stat{
+  display:flex;
+  flex-direction:column;
+  gap:var(--sp-2);
+  position:relative;
+}
+.s-story__stat + .s-story__stat::before{
+  content:"";
+  position:absolute;
+  left:calc(var(--sp-4) * -.5);
+  top:50%;
+  transform:translateY(-50%);
+  width:1px;
+  height:60%;
+  background:var(--line);
+}
+.s-story__num{
+  font-family:var(--font-display);
+  font-size:var(--s-3);
+  line-height:1;
+  color:var(--accent);
+  letter-spacing:.01em;
+}
+.s-story__cap{
+  font-family:var(--font-body);
+  font-weight:600;
+  font-size:var(--s--1);
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--ink-soft);
+}
+
+/* ---- mobile ---- */
+@media(max-width:780px){
+  .s-story__grid{
+    grid-template-columns:1fr;
+    gap:var(--sp-5);
+  }
+  .s-story__media{
+    order:-1;
+    flex-direction:row;
+    gap:var(--sp-4);
+    padding-block:0;
+  }
+  .s-story__rule{
+    width:80px;
+    height:1px;
+    background:linear-gradient(90deg,transparent,var(--accent),transparent);
+  }
+  .s-story__body{
+    max-width:none;
+  }
+  .s-story__stats{
+    gap:var(--sp-2);
+  }
+  .s-story__num{
+    font-size:var(--s-2);
+  }
+  .s-story__cap{
+    font-size:.72rem;
+    letter-spacing:.1em;
+  }
+  .s-story__stat + .s-story__stat::before{
+    left:calc(var(--sp-2) * -.5);
+  }
+}
+
+@media(max-width:420px){
+  .s-story__stats{
+    grid-template-columns:1fr;
+  }
+  .s-story__stat{
+    flex-direction:row;
+    align-items:baseline;
+    gap:var(--sp-3);
+  }
+  .s-story__stat + .s-story__stat::before{display:none}
+  .s-story__num{min-width:2.4em}
+}
+
+/* ============ reviews ============ */
+/* ============================================================
+   Bella Aura Skincare — reviews.css (testimonial wall)
+   Scoped under .s-reviews
+   ============================================================ */
+
+.s-reviews{background:var(--bg)}
+
+.s-reviews .rv-head{
+  text-align:center;
+  max-width:720px;
+  margin:0 auto var(--sp-6);
+}
+.s-reviews .rv-head h2{margin-bottom:var(--sp-3)}
+.s-reviews .rv-summary{
+  margin:0;
+  font-size:var(--s-1);
+  color:var(--ink-soft);
+  letter-spacing:.02em;
+}
+.s-reviews .rv-summary .stars{
+  font-size:var(--s-1);
+  margin-right:.4em;
+}
+
+/* wall — desktop 3 cols */
+.s-reviews .rv-wall{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:var(--sp-4);
+}
+
+/* staggered reveal */
+.s-reviews .rv-card:nth-child(2){transition-delay:.08s}
+.s-reviews .rv-card:nth-child(3){transition-delay:.16s}
+.s-reviews .rv-card:nth-child(4){transition-delay:.06s}
+.s-reviews .rv-card:nth-child(5){transition-delay:.14s}
+.s-reviews .rv-card:nth-child(6){transition-delay:.22s}
+
+.s-reviews .rv-card{
+  background:var(--surface);
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  box-shadow:0 14px 34px rgba(26,22,19,.07);
+  padding:var(--sp-5);
+  display:flex;
+  flex-direction:column;
+}
+
+.s-reviews .rv-card .stars{
+  font-size:var(--s-0);
+  margin-bottom:var(--sp-3);
+}
+
+.s-reviews .rv-title{
+  font-size:var(--s-2);
+  margin:0 0 var(--sp-3);
+  line-height:1.15;
+}
+
+.s-reviews .rv-quote{
+  margin:0 0 var(--sp-4);
+  color:var(--ink-soft);
+  font-size:var(--s-0);
+  line-height:1.7;
+}
+
+.s-reviews .rv-by{
+  margin-top:auto;
+  padding-top:var(--sp-3);
+  border-top:1px solid var(--line);
+  display:flex;
+  align-items:center;
+  gap:var(--sp-3);
+}
+.s-reviews .rv-name{
+  font-family:var(--font-display);
+  font-size:var(--s-1);
+  color:var(--ink);
+  letter-spacing:.01em;
+}
+.s-reviews .rv-chip{
+  padding:.4em .75em;
+  font-size:.68rem;
+}
+
+.s-reviews .rv-foot{
+  text-align:center;
+  margin:var(--sp-5) 0 0;
+  font-size:var(--s--1);
+  color:var(--ink-soft);
+  font-style:italic;
+}
+
+/* tablet — 2 cols */
+@media(max-width:1000px){
+  .s-reviews .rv-wall{grid-template-columns:repeat(2,1fr)}
+}
+
+/* mobile — 1 col */
+@media(max-width:780px){
+  .s-reviews .rv-wall{grid-template-columns:1fr;gap:var(--sp-3)}
+  .s-reviews .rv-card{padding:var(--sp-4)}
+}
+
+/* ============ news ============ */
+/* ===== newsletter ===== */
+.s-news{background:var(--dark)}
+.s-news__card{max-width:760px;margin-inline:auto;text-align:center;
+  border:1px solid rgba(201,168,94,.4);border-radius:var(--radius-lg);
+  padding:var(--sp-6) var(--sp-5)}
+.s-news__card .eyebrow{color:var(--gold)}
+.s-news__heading{font-size:var(--s-4);margin:0 0 var(--sp-3);color:#FBF7EE}
+.s-news__sub{color:#C7BEAE;max-width:48ch;margin:0 auto var(--sp-4)}
+.s-news__form{display:flex;gap:var(--sp-2);max-width:480px;margin:0 auto var(--sp-3)}
+.s-news__input{flex:1;min-width:0;padding:1em 1.2em;border:1px solid rgba(255,255,255,.25);
+  border-radius:2px;background:rgba(255,255,255,.06);color:#fff;font-family:var(--font-body);font-size:var(--s--1)}
+.s-news__input::placeholder{color:#A99F8E}
+.s-news__input:focus{outline:none;border-color:var(--gold)}
+.s-news__fine{font-size:var(--s--1);color:#9A9081;margin:0}
+
+@media(max-width:560px){
+  .s-news__form{flex-direction:column}
+  .s-news__form .btn{width:100%}
+}
+
+/* ============ footer ============ */
+/* ===== footer ===== */
+.site-footer{background:var(--dark);color:#C7BEAE;padding-top:var(--sp-7)}
+.site-footer__inner{display:grid;grid-template-columns:1.7fr 1fr 1fr 1fr;gap:var(--sp-5);padding-bottom:var(--sp-6)}
+.site-footer__brand{max-width:340px}
+.site-footer__logo{height:64px;width:auto;margin-bottom:var(--sp-3)}
+.site-footer__blurb{font-size:var(--s--1);line-height:1.8;color:#9A9081;margin:0;font-weight:300}
+.site-footer__h{font-family:var(--font-body);font-weight:600;font-size:var(--s--1);
+  letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin:0 0 var(--sp-3)}
+.site-footer__col ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:.65em}
+.site-footer__col a{font-size:.9rem;color:#C7BEAE;font-weight:300;transition:color .15s}
+.site-footer__col a:hover{color:#fff}
+.site-footer__bottom{display:flex;align-items:center;justify-content:space-between;gap:var(--sp-3);
+  padding-block:var(--sp-4);border-top:1px solid rgba(255,255,255,.12);font-size:var(--s--1);color:#867C6D}
+.site-footer__social{display:flex;gap:var(--sp-3)}
+.site-footer__icon{color:#C7BEAE;transition:color .15s}
+.site-footer__icon:hover{color:var(--gold)}
+
+@media(max-width:900px){
+  .site-footer__inner{grid-template-columns:1fr 1fr;gap:var(--sp-5)}
+  .site-footer__brand{grid-column:1/-1;max-width:none}
+}
+@media(max-width:560px){
+  .site-footer__bottom{flex-direction:column;text-align:center}
+}
+
