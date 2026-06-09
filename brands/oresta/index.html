@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Oresta — Mindful Beauty · Curated clean beauty boutique</title>
+<meta name="description" content="Oresta is a curated clean-beauty boutique in Ottawa — superior, result-driven organic brands, mindfully chosen by skin experts. Clean, non-toxic, cruelty-free.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="base.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<!-- ===== header ===== -->
+<!-- Announcement bar -->
+<div class="announce">
+  <div class="wrap announce__wrap">
+    <span class="announce__item">Complimentary shipping over $75</span>
+    <span class="announce__dot announce__hide" aria-hidden="true">·</span>
+    <span class="announce__item announce__hide">Clean &amp; non-toxic</span>
+    <span class="announce__dot announce__hide" aria-hidden="true">·</span>
+    <span class="announce__item announce__hide">Expertly curated in Ottawa</span>
+  </div>
+</div>
+
+<!-- Header -->
+<header class="site-header" id="site-header">
+  <div class="wrap site-header__inner">
+
+    <button class="site-header__burger" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="site-header__nav site-header__nav--left" aria-label="Primary">
+      <ul role="list">
+        <li><a href="https://www.google.com">New</a></li>
+        <li><a href="https://www.google.com">Cleansers</a></li>
+        <li><a href="https://www.google.com">Serums</a></li>
+      </ul>
+    </nav>
+
+    <a class="site-header__logo" href="https://www.google.com" aria-label="Oresta — home">
+      <img src="assets/logo.png" alt="Oresta — Mindful Beauty" class="site-header__logo-img" width="500" height="500" loading="eager" decoding="async">
+    </a>
+
+    <div class="site-header__right">
+      <nav class="site-header__nav site-header__nav--right" aria-label="Secondary">
+        <ul role="list">
+          <li><a href="https://www.google.com">Moisturizers</a></li>
+          <li><a href="https://www.google.com">Shop by Brand</a></li>
+          <li><a href="https://www.google.com">Our Story</a></li>
+        </ul>
+      </nav>
+      <div class="site-header__icons">
+        <a href="https://www.google.com" aria-label="Search" class="site-header__icon">
+          <svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.2-3.2"/></svg>
+        </a>
+        <a href="https://www.google.com" aria-label="Account" class="site-header__icon">
+          <svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="8" r="4"/><path d="M5 21c0-3.5 3-6 7-6s7 2.5 7 6"/></svg>
+        </a>
+        <a href="https://www.google.com" aria-label="Cart" class="site-header__icon site-header__cart">
+          <svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M6 7h12l-1 13H7L6 7Z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg>
+          <span class="site-header__cart-count">0</span>
+        </a>
+      </div>
+    </div>
+
+  </div>
+</header>
+
+<!-- Mobile nav drawer -->
+<nav class="mobile-nav" id="mobile-nav" aria-label="Mobile menu" aria-hidden="true">
+  <ul role="list">
+    <li><a href="https://www.google.com">New</a></li>
+    <li><a href="https://www.google.com">Cleansers</a></li>
+    <li><a href="https://www.google.com">Serums</a></li>
+    <li><a href="https://www.google.com">Moisturizers</a></li>
+    <li><a href="https://www.google.com">Shop by Brand</a></li>
+    <li><a href="https://www.google.com">Our Story</a></li>
+  </ul>
+</nav>
+
+<!-- ===== hero ===== -->
+<section class="sec s-hero hero-split">
+  <div class="wrap hero-grid">
+
+    <div class="hero-media">
+      <div class="hero-panel">
+        <span class="hero-cap">The edit</span>
+        <div class="hero-trio">
+          <figure class="hero-card hero-card--a">
+            <img src="https://cdn.shopify.com/s/files/1/0001/1845/products/laurel-skin-laurel-rose-geranium-hydrosol-5971833.jpg?width=500" alt="Laurel Skin Rose Geranium Hydrosol" loading="eager">
+          </figure>
+          <figure class="hero-card hero-card--b">
+            <img src="https://cdn.shopify.com/s/files/1/0001/1845/products/eminence-organics-eminence-mangosteen-body-lotion-920362.jpg?width=500" alt="Eminence Organics Mangosteen Body Lotion" loading="eager">
+          </figure>
+          <figure class="hero-card hero-card--c">
+            <img src="https://cdn.shopify.com/s/files/1/0001/1845/products/huna-huna-nail-cuticle-oil-1588340.png?width=500" alt="Huna Nail and Cuticle Oil" loading="eager">
+          </figure>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-copy">
+      <span class="eyebrow">Clean beauty · Expertly curated</span>
+      <h1 class="hero-title">Mindful beauty,<br>expertly curated.</h1>
+      <p class="hero-sub">A skin-expert edit of clean, result-driven beauty — superior organic brands, vetted so you don't have to.</p>
+      <div class="hero-cta">
+        <a href="https://www.google.com" class="btn btn-primary">Shop the edit</a>
+        <a href="https://www.google.com" class="hero-link">Discover Oresta</a>
+      </div>
+      <div class="hero-proof">
+        <span class="chip"><span class="stars">★</span> 4.9/5</span>
+        <span class="chip">Clean &amp; non-toxic</span>
+        <span class="chip">Ottawa boutique</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== values ===== -->
+<!-- Values strip -->
+<section class="sec s-values" aria-label="Our promise">
+  <div class="wrap">
+    <ul class="s-values__row" role="list">
+      <li class="s-values__item">
+        <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 5 6v5c0 4.5 3 7.6 7 9 4-1.4 7-4.5 7-9V6l-7-3Z"/><path d="m9 12 2 2 4-4"/></svg>
+        <span class="s-values__t">Clean &amp; non-toxic</span>
+        <span class="s-values__s">No questionable ingredients</span>
+      </li>
+      <li class="s-values__item">
+        <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 11c-2 0-3.5-1.5-3.5-3.5S6 4 7.5 5C8 3.5 10 3 11 4.5"/><path d="M16 11c2 0 3.5-1.5 3.5-3.5S17 4 15.5 5C15 3.5 13 3 12 4.5"/><path d="M5 13c0 4 3 7 7 7s7-3 7-7"/></svg>
+        <span class="s-values__t">Cruelty-free</span>
+        <span class="s-values__s">Kind, conscious beauty</span>
+      </li>
+      <li class="s-values__item">
+        <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.4-3.4"/><path d="m8.5 11 1.8 1.8 3.4-3.6"/></svg>
+        <span class="s-values__t">Expertly curated</span>
+        <span class="s-values__s">Vetted by skin experts</span>
+      </li>
+      <li class="s-values__item">
+        <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3c3 3 6 4.5 6 9a6 6 0 0 1-12 0c0-4.5 3-6 6-9Z"/><path d="M12 12c-1.6 1-2.6 2.5-2.6 4.2"/></svg>
+        <span class="s-values__t">Independent brands</span>
+        <span class="s-values__s">Superior organic makers</span>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ===== cats ===== -->
+<section class="sec s-cats">
+  <div class="wrap">
+    <header class="s-cats__head reveal">
+      <span class="eyebrow">Shop the routine</span>
+      <h2>Find your daily ritual</h2>
+      <p class="s-cats__intro">Six considered steps, one mindful routine — build yours from our curated clean-beauty edit.</p>
+    </header>
+
+    <div class="s-cats__grid">
+
+      <a class="s-cats__tile reveal" href="https://www.google.com">
+        <span class="s-cats__ico">
+          <svg class="ic" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 3c3 4 5 6.5 5 9.2A5 5 0 0 1 7 12.2C7 9.5 9 7 12 3Z"/>
+          </svg>
+        </span>
+        <h3 class="s-cats__name">Cleansers</h3>
+        <span class="s-cats__link">Shop <span class="s-cats__arrow" aria-hidden="true">&rarr;</span></span>
+      </a>
+
+      <a class="s-cats__tile reveal" href="https://www.google.com">
+        <span class="s-cats__ico">
+          <svg class="ic" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M5 12h14M5 12a7 7 0 0 1 14 0M5 12a7 7 0 0 0 14 0"/>
+            <path d="M9 5h6"/>
+          </svg>
+        </span>
+        <h3 class="s-cats__name">Toners</h3>
+        <span class="s-cats__link">Shop <span class="s-cats__arrow" aria-hidden="true">&rarr;</span></span>
+      </a>
+
+      <a class="s-cats__tile reveal" href="https://www.google.com">
+        <span class="s-cats__ico">
+          <svg class="ic" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M10 3h4M12 3v3M9 6h6l1 3v9a3 3 0 0 1-3 3h-2a3 3 0 0 1-3-3V9Z"/>
+            <path d="M8 13h8"/>
+          </svg>
+        </span>
+        <h3 class="s-cats__name">Serums</h3>
+        <span class="s-cats__link">Shop <span class="s-cats__arrow" aria-hidden="true">&rarr;</span></span>
+      </a>
+
+      <a class="s-cats__tile reveal" href="https://www.google.com">
+        <span class="s-cats__ico">
+          <svg class="ic" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M7 9a5 5 0 0 1 10 0v7a3 3 0 0 1-3 3h-4a3 3 0 0 1-3-3Z"/>
+            <path d="M9 4h6"/>
+            <path d="M7 12h10"/>
+          </svg>
+        </span>
+        <h3 class="s-cats__name">Moisturizers</h3>
+        <span class="s-cats__link">Shop <span class="s-cats__arrow" aria-hidden="true">&rarr;</span></span>
+      </a>
+
+      <a class="s-cats__tile reveal" href="https://www.google.com">
+        <span class="s-cats__ico">
+          <svg class="ic" viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="12" r="8"/>
+            <path d="M9 9.5h.01M14.5 10h.01M11 14h.01M15 14.5h.01M8 13h.01"/>
+          </svg>
+        </span>
+        <h3 class="s-cats__name">Exfoliants</h3>
+        <span class="s-cats__link">Shop <span class="s-cats__arrow" aria-hidden="true">&rarr;</span></span>
+      </a>
+
+      <a class="s-cats__tile reveal" href="https://www.google.com">
+        <span class="s-cats__ico">
+          <svg class="ic" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M5 9c0-2 2-4 7-4s7 2 7 4-2 4-7 4-7-2-7-4Z"/>
+            <path d="M5 9v3c0 2 2 4 7 4s7-2 7-4V9"/>
+          </svg>
+        </span>
+        <h3 class="s-cats__name">Masques</h3>
+        <span class="s-cats__link">Shop <span class="s-cats__arrow" aria-hidden="true">&rarr;</span></span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== bestsellers ===== -->
+<section class="sec s-bestsellers">
+  <div class="wrap">
+    <div class="bs-head">
+      <div class="bs-head-text">
+        <span class="eyebrow">The edit</span>
+        <h2>Bestsellers, expert-approved</h2>
+      </div>
+      <a class="bs-shopall" href="https://www.google.com">Shop all <span aria-hidden="true">&rarr;</span></a>
+    </div>
+
+    <div class="bs-grid">
+
+      <article class="bs-card reveal">
+        <a class="bs-media" href="https://www.google.com">
+          <span class="chip bs-badge">Bestseller</span>
+          <img src="https://cdn.shopify.com/s/files/1/0001/1845/products/eminence-organics-eminence-mangosteen-body-lotion-920362.jpg?width=600" alt="Eminence Organics Mangosteen Body Lotion" loading="lazy">
+        </a>
+        <div class="bs-body">
+          <span class="bs-brand">Eminence Organics</span>
+          <h3 class="bs-name"><a href="https://www.google.com">Mangosteen Body Lotion</a></h3>
+          <p class="bs-desc">Brightening daily body lotion</p>
+          <div class="bs-meta">
+            <span class="stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+            <span class="bs-rating">4.9 <span class="bs-count">(214)</span></span>
+          </div>
+          <div class="bs-foot">
+            <span class="bs-price">$47</span>
+            <a class="btn btn-primary btn-block bs-shop" href="https://www.google.com">Shop</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="bs-card reveal">
+        <a class="bs-media" href="https://www.google.com">
+          <span class="chip bs-badge">Cult favourite</span>
+          <img src="https://cdn.shopify.com/s/files/1/0001/1845/products/laurel-skin-laurel-rose-geranium-hydrosol-5971833.jpg?width=600" alt="Laurel Skin Rose Geranium Hydrosol" loading="lazy">
+        </a>
+        <div class="bs-body">
+          <span class="bs-brand">Laurel Skin</span>
+          <h3 class="bs-name"><a href="https://www.google.com">Rose Geranium Hydrosol</a></h3>
+          <p class="bs-desc">Botanical balancing mist</p>
+          <div class="bs-meta">
+            <span class="stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+            <span class="bs-rating">4.8 <span class="bs-count">(96)</span></span>
+          </div>
+          <div class="bs-foot">
+            <span class="bs-price">$69</span>
+            <a class="btn btn-outline btn-block bs-shop" href="https://www.google.com">Shop</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="bs-card reveal">
+        <a class="bs-media" href="https://www.google.com">
+          <span class="chip bs-badge">New</span>
+          <img src="https://cdn.shopify.com/s/files/1/0001/1845/files/rahua-rahua-defining-hair-spray-9781153.webp?width=600" alt="Rahua Defining Hair Spray" loading="lazy">
+        </a>
+        <div class="bs-body">
+          <span class="bs-brand">Rahua</span>
+          <h3 class="bs-name"><a href="https://www.google.com">Defining Hair Spray</a></h3>
+          <p class="bs-desc">Clean flexible hold</p>
+          <div class="bs-meta">
+            <span class="stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+            <span class="bs-rating">4.7 <span class="bs-count">(142)</span></span>
+          </div>
+          <div class="bs-foot">
+            <span class="bs-price">$78</span>
+            <a class="btn btn-primary btn-block bs-shop" href="https://www.google.com">Shop</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="bs-card reveal">
+        <a class="bs-media" href="https://www.google.com">
+          <span class="chip bs-badge">Bestseller</span>
+          <img src="https://cdn.shopify.com/s/files/1/0001/1845/products/ere-perez-ere-perez-rice-powder-bronzer-tulum-955927.jpg?width=600" alt="Ere Perez Rice Powder Bronzer in Tulum" loading="lazy">
+        </a>
+        <div class="bs-body">
+          <span class="bs-brand">Ere Perez</span>
+          <h3 class="bs-name"><a href="https://www.google.com">Rice Powder Bronzer (Tulum)</a></h3>
+          <p class="bs-desc">Natural sun-kissed glow</p>
+          <div class="bs-meta">
+            <span class="stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+            <span class="bs-rating">4.9 <span class="bs-count">(188)</span></span>
+          </div>
+          <div class="bs-foot">
+            <span class="bs-price">$58</span>
+            <a class="btn btn-primary btn-block bs-shop" href="https://www.google.com">Shop</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="bs-card reveal">
+        <a class="bs-media" href="https://www.google.com">
+          <span class="chip bs-badge">New</span>
+          <img src="https://cdn.shopify.com/s/files/1/0001/1845/files/wonderblush-wonderblush-le-fondant-cream-blush-3045722.jpg?width=600" alt="Wonderblush Le Fondant Cream Blush" loading="lazy">
+        </a>
+        <div class="bs-body">
+          <span class="bs-brand">Wonderblush</span>
+          <h3 class="bs-name"><a href="https://www.google.com">Le Fondant Cream Blush</a></h3>
+          <p class="bs-desc">Dewy cream flush</p>
+          <div class="bs-meta">
+            <span class="stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+            <span class="bs-rating">4.8 <span class="bs-count">(73)</span></span>
+          </div>
+          <div class="bs-foot">
+            <span class="bs-price">$46</span>
+            <a class="btn btn-primary btn-block bs-shop" href="https://www.google.com">Shop</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="bs-card reveal">
+        <a class="bs-media" href="https://www.google.com">
+          <span class="chip bs-badge">Cult favourite</span>
+          <img src="https://cdn.shopify.com/s/files/1/0001/1845/products/huna-huna-nail-cuticle-oil-1588340.png?width=600" alt="HUNA Nail and Cuticle Oil" loading="lazy">
+        </a>
+        <div class="bs-body">
+          <span class="bs-brand">HUNA</span>
+          <h3 class="bs-name"><a href="https://www.google.com">Nail + Cuticle Oil</a></h3>
+          <p class="bs-desc">Nourishing botanical oil</p>
+          <div class="bs-meta">
+            <span class="stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+            <span class="bs-rating">4.9 <span class="bs-count">(151)</span></span>
+          </div>
+          <div class="bs-foot">
+            <span class="bs-price">$34</span>
+            <a class="btn btn-outline btn-block bs-shop" href="https://www.google.com">Shop</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="bs-card reveal">
+        <a class="bs-media" href="https://www.google.com">
+          <span class="chip bs-badge">Editor&rsquo;s pick</span>
+          <img src="https://cdn.shopify.com/s/files/1/0001/1845/files/blissoma-blissoma-lavish-recovery-beta-glucan-mask-blissomalavish-377058.jpg?width=600" alt="Blissoma Lavish Recovery Mask" loading="lazy">
+        </a>
+        <div class="bs-body">
+          <span class="bs-brand">Blissoma</span>
+          <h3 class="bs-name"><a href="https://www.google.com">Lavish Recovery Mask</a></h3>
+          <p class="bs-desc">Beta-glucan recovery mask</p>
+          <div class="bs-meta">
+            <span class="stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+            <span class="bs-rating">4.8 <span class="bs-count">(64)</span></span>
+          </div>
+          <div class="bs-foot">
+            <span class="bs-price">$113</span>
+            <a class="btn btn-outline btn-block bs-shop" href="https://www.google.com">Shop</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="bs-card reveal">
+        <a class="bs-media" href="https://www.google.com">
+          <span class="chip bs-badge">Bestseller</span>
+          <img src="https://cdn.shopify.com/s/files/1/0001/1845/files/bathorium-bathorium-hinoki-magnesium-bath-soak-bathoriumhinoki-1-4015149.jpg?width=600" alt="Bathorium Hinoki Magnesium Bath Soak" loading="lazy">
+        </a>
+        <div class="bs-body">
+          <span class="bs-brand">Bathorium</span>
+          <h3 class="bs-name"><a href="https://www.google.com">Hinoki Magnesium Bath Soak</a></h3>
+          <p class="bs-desc">Restorative soak</p>
+          <div class="bs-meta">
+            <span class="stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+            <span class="bs-rating">4.9 <span class="bs-count">(109)</span></span>
+          </div>
+          <div class="bs-foot">
+            <span class="bs-price">$40</span>
+            <a class="btn btn-primary btn-block bs-shop" href="https://www.google.com">Shop</a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+    <p class="bs-footnote">Ratings shown are illustrative for this concept mockup.</p>
+  </div>
+</section>
+
+<!-- ===== brands ===== -->
+<section class="sec s-brands">
+  <div class="wrap reveal">
+    <header class="s-brands__head">
+      <span class="eyebrow">Curated with care</span>
+      <h2>Brands we love</h2>
+      <p class="s-brands__intro">We hand-select a small circle of independent, clean and organic brands — each one chosen for its integrity, its ingredients and its results.</p>
+    </header>
+
+    <ul class="s-brands__list">
+      <li><a href="https://www.google.com">Eminence Organics</a></li>
+      <li><a href="https://www.google.com">Ere Perez</a></li>
+      <li><a href="https://www.google.com">Rahua</a></li>
+      <li><a href="https://www.google.com">Laurel Skin</a></li>
+      <li><a href="https://www.google.com">Living Libations</a></li>
+      <li><a href="https://www.google.com">Josh Rosebrook</a></li>
+      <li><a href="https://www.google.com">FitGlow Beauty</a></li>
+      <li><a href="https://www.google.com">Kahina</a></li>
+      <li><a href="https://www.google.com">Blissoma</a></li>
+      <li><a href="https://www.google.com">Wonderblush</a></li>
+      <li><a href="https://www.google.com">Bathorium</a></li>
+      <li><a href="https://www.google.com">Kaia Naturals</a></li>
+    </ul>
+
+    <div class="s-brands__cta">
+      <a class="btn btn-light" href="https://www.google.com">Shop by brand</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== story ===== -->
+<section class="sec s-story">
+  <div class="wrap">
+    <div class="s-story__grid">
+      <div class="s-story__media reveal">
+        <div class="s-story__frame">
+          <img src="https://oresta.ca/cdn/shop/files/SEO_social_sharing.jpg?width=1400"
+               alt="Inside the Oresta clean-beauty boutique in Ottawa" loading="lazy">
+        </div>
+      </div>
+      <div class="s-story__copy reveal">
+        <span class="eyebrow">Our story</span>
+        <h2>Mindful beauty, chosen by experts</h2>
+        <p>Oresta is a clean-beauty boutique run by skin experts who genuinely understand skin, ingredients and results — so you never have to guess what belongs on yours.</p>
+        <p>Every brand we carry is hand-vetted for clean, non-toxic, organic, result-driven formulas. And beyond products, we offer facials and holistic skin guidance — mindful beauty, simplified.</p>
+        <ul class="s-story__stats">
+          <li>
+            <span class="s-story__stat-num">Skin</span>
+            <span class="s-story__stat-label">experts on hand</span>
+          </li>
+          <li>
+            <span class="s-story__stat-num">100+</span>
+            <span class="s-story__stat-label">clean brands</span>
+          </li>
+          <li>
+            <span class="s-story__stat-num">Vetted</span>
+            <span class="s-story__stat-label">&amp; non-toxic</span>
+          </li>
+        </ul>
+        <a class="btn btn-outline" href="https://www.google.com">Read our story</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== reviews ===== -->
+<section class="sec s-reviews">
+  <div class="wrap">
+    <header class="s-reviews__head">
+      <span class="eyebrow">Loved &amp; trusted</span>
+      <h2>What our community says</h2>
+      <p class="s-reviews__summary"><span class="stars">★★★★★</span> 4.9 / 5 — 1,800+ reviews</p>
+    </header>
+
+    <div class="s-reviews__wall">
+      <article class="s-reviews__card reveal">
+        <div class="stars">★★★★★</div>
+        <h3 class="s-reviews__title">Curation I actually trust</h3>
+        <p class="s-reviews__quote">I used to second-guess every label. Now I trust Oresta to vet the brands so I don't have to. Everything they recommend has earned its place on my shelf.</p>
+        <footer class="s-reviews__by">Marianne D. <span class="chip">Verified</span></footer>
+      </article>
+
+      <article class="s-reviews__card reveal">
+        <div class="stars">★★★★★</div>
+        <h3 class="s-reviews__title">Clean that finally works</h3>
+        <p class="s-reviews__quote">I'd written off natural skincare as gentle but ineffective. The brands I discovered here proved me wrong — my skin has never looked clearer.</p>
+        <footer class="s-reviews__by">Sophie L. <span class="chip">Verified</span></footer>
+      </article>
+
+      <article class="s-reviews__card reveal">
+        <div class="stars">★★★★★</div>
+        <h3 class="s-reviews__title">Kind to sensitive skin</h3>
+        <p class="s-reviews__quote">My skin reacts to almost everything. The team listened, matched me carefully, and for the first time a full routine hasn't left me red or stinging.</p>
+        <footer class="s-reviews__by">Catherine R. <span class="chip">Verified</span></footer>
+      </article>
+
+      <article class="s-reviews__card reveal">
+        <div class="stars">★★★★★</div>
+        <h3 class="s-reviews__title">The facial was a reset</h3>
+        <p class="s-reviews__quote">Booking a facial in-store felt like a true ritual — calm, expert hands and zero pressure. I left glowing and with a routine that finally made sense.</p>
+        <footer class="s-reviews__by">Élise M. <span class="chip">Verified</span></footer>
+      </article>
+
+      <article class="s-reviews__card reveal">
+        <div class="stars">★★★★★</div>
+        <h3 class="s-reviews__title">No more decoding labels</h3>
+        <p class="s-reviews__quote">I no longer stand in the aisle googling ingredients. Everything here is already screened, so I can simply choose what feels right and trust it's clean.</p>
+        <footer class="s-reviews__by">Hannah P. <span class="chip">Verified</span></footer>
+      </article>
+
+      <article class="s-reviews__card reveal">
+        <div class="stars">★★★★★</div>
+        <h3 class="s-reviews__title">Beauty that aligns with my values</h3>
+        <p class="s-reviews__quote">Mindful, non-toxic, thoughtfully sourced — Oresta lets me care for my skin without compromising what I believe in. That peace of mind is everything.</p>
+        <footer class="s-reviews__by">Joanne T. <span class="chip">Verified</span></footer>
+      </article>
+    </div>
+
+    <p class="s-reviews__note">Reviews shown are illustrative for this concept mockup.</p>
+  </div>
+</section>
+
+<!-- ===== news ===== -->
+<!-- Newsletter -->
+<section class="sec s-news">
+  <div class="wrap">
+    <div class="s-news__card reveal">
+      <p class="eyebrow">The mindful edit</p>
+      <h2 class="s-news__heading">15% off your first ritual</h2>
+      <p class="s-news__sub">Join our community for expert skin notes, new clean arrivals and member offers.</p>
+      <form class="s-news__form" onsubmit="return false">
+        <input type="email" class="s-news__input" placeholder="Your email address" aria-label="Email address" required>
+        <button type="submit" class="btn btn-primary">Subscribe</button>
+      </form>
+      <p class="s-news__fine">Thoughtful emails only. Unsubscribe anytime.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== footer ===== -->
+<!-- Footer -->
+<footer class="site-footer">
+  <div class="wrap site-footer__inner">
+
+    <div class="site-footer__brand">
+      <a href="https://www.google.com" class="site-footer__logo-link" aria-label="Oresta — home">
+        <img src="assets/logo-white.png" alt="Oresta — Mindful Beauty" class="site-footer__logo" width="500" height="500" loading="lazy" decoding="async">
+      </a>
+      <p class="site-footer__blurb">A curated clean-beauty boutique in Ottawa. Superior, result-driven organic brands — mindfully chosen by skin experts.</p>
+    </div>
+
+    <nav class="site-footer__col" aria-label="Shop">
+      <h4 class="site-footer__h">Shop</h4>
+      <ul role="list">
+        <li><a href="https://www.google.com">New arrivals</a></li>
+        <li><a href="https://www.google.com">Bestsellers</a></li>
+        <li><a href="https://www.google.com">Skincare</a></li>
+        <li><a href="https://www.google.com">Makeup</a></li>
+        <li><a href="https://www.google.com">Shop by brand</a></li>
+        <li><a href="https://www.google.com">Gift cards</a></li>
+      </ul>
+    </nav>
+
+    <nav class="site-footer__col" aria-label="Discover">
+      <h4 class="site-footer__h">Discover</h4>
+      <ul role="list">
+        <li><a href="https://www.google.com">Our story</a></li>
+        <li><a href="https://www.google.com">Facials &amp; services</a></li>
+        <li><a href="https://www.google.com">Skin courses</a></li>
+        <li><a href="https://www.google.com">The journal</a></li>
+        <li><a href="https://www.google.com">Contact</a></li>
+      </ul>
+    </nav>
+
+    <nav class="site-footer__col" aria-label="Support">
+      <h4 class="site-footer__h">Support</h4>
+      <ul role="list">
+        <li><a href="https://www.google.com">Shipping &amp; returns</a></li>
+        <li><a href="https://www.google.com">Track order</a></li>
+        <li><a href="https://www.google.com">FAQ</a></li>
+        <li><a href="https://www.google.com">Privacy policy</a></li>
+      </ul>
+    </nav>
+
+  </div>
+  <div class="wrap site-footer__bottom">
+    <p>© 2026 Oresta Mindful Beauty. Concept redesign mockup — not affiliated.</p>
+    <div class="site-footer__social">
+      <a href="https://www.google.com" aria-label="Instagram" class="site-footer__icon"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
+      <a href="https://www.google.com" aria-label="Facebook" class="site-footer__icon"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M14 8h2.5M14 8V6.5A1.5 1.5 0 0 1 15.5 5H17m-3 3v11m0-11h-2"/></svg></a>
+    </div>
+  </div>
+</footer>
+
+<script src="fx.js"></script>
+</body>
+</html>
