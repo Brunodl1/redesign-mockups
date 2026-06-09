@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cascadia Skincare — Natural Wellness, Handmade in Vancouver Since 1990</title>
+<meta name="description" content="Natural, holistic, handmade botanical skincare and soaps, crafted in small batches in Vancouver, BC since 1990. Ingredients you can believe in.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:wght@400;500;600&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="base.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- ===== announce ===== -->
+<div class="s-announce">
+  <span class="s-announce__desktop">FREE SHIPPING ON ORDERS $75 CAD+ &nbsp;·&nbsp; HANDMADE IN VANCOUVER SINCE 1990</span>
+  <span class="s-announce__mobile">FREE SHIPPING OVER $75 CAD</span>
+</div>
+
+<!-- ===== header ===== -->
+<header class="s-header">
+  <div class="s-header__inner wrap">
+
+    <!-- LEFT: desktop nav / mobile hamburger -->
+    <nav class="s-header__nav" aria-label="Main navigation">
+      <!-- Desktop nav links -->
+      <a href="https://www.google.com" class="s-header__link">Shop</a>
+      <a href="https://www.google.com" class="s-header__link">Bestsellers</a>
+      <a href="https://www.google.com" class="s-header__link">Skin Types</a>
+      <a href="https://www.google.com" class="s-header__link">Our Story</a>
+      <!-- Mobile hamburger -->
+      <button class="s-header__hamburger" aria-label="Open menu">
+        <svg width="22" height="16" viewBox="0 0 22 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <line x1="0" y1="2"  x2="22" y2="2"/>
+          <line x1="0" y1="8"  x2="22" y2="8"/>
+          <line x1="0" y1="14" x2="22" y2="14"/>
+        </svg>
+      </button>
+    </nav>
+
+    <!-- CENTER: logo -->
+    <a href="https://www.google.com" class="s-header__logo-link" aria-label="Cascadia Skincare home">
+      <img
+        src="https://cascadiaskincare.com/cdn/shop/files/CascadiaSkincare-BlackLogo.png?width=400"
+        alt="Cascadia Skincare"
+        style="height:42px;width:auto"
+      >
+    </a>
+
+    <!-- RIGHT: search + cart -->
+    <div class="s-header__actions">
+      <a href="https://www.google.com" class="s-header__icon-btn" aria-label="Search">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="8.5" cy="8.5" r="5.5"/>
+          <line x1="13" y1="13" x2="18" y2="18"/>
+        </svg>
+      </a>
+      <a href="https://www.google.com" class="s-header__icon-btn s-header__cart" aria-label="Cart, 0 items">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M6 2 L3 6 L3 17 Q3 18 4 18 L16 18 Q17 18 17 17 L17 6 L14 2"/>
+          <line x1="6" y1="2" x2="14" y2="2"/>
+          <path d="M7 9 Q7 13 10 13 Q13 13 13 9"/>
+        </svg>
+        <span class="s-header__cart-count">(0)</span>
+      </a>
+    </div>
+
+  </div>
+</header>
+
+<!-- ===== hero ===== -->
+<section class="sec s-hero hero-fullbleed">
+  <!-- full-bleed background image -->
+  <img
+    class="s-hero__bg"
+    src="https://cascadiaskincare.com/cdn/shop/files/Cascadia-89.jpg?width=2000"
+    alt="Woman holding a handmade Cascadia soap bar in a lush Pacific Northwest forest"
+    fetchpriority="high"
+    decoding="async"
+  >
+  <!-- light full-bleed scrim for safety -->
+  <div class="s-hero__scrim" aria-hidden="true"></div>
+
+  <!-- constrained content inside wrap -->
+  <div class="wrap s-hero__inner">
+    <div class="s-hero__panel">
+      <p class="eyebrow s-hero__eyebrow">Natural Skincare · Since 1990</p>
+      <h1 class="s-hero__heading">Natural Wellness,<br>Made in Vancouver</h1>
+      <p class="s-hero__sub">Hand-made botanical remedies, with ingredients you can believe in.</p>
+      <div class="s-hero__ctas">
+        <a href="https://www.google.com" class="btn btn-primary">Shop Bestsellers</a>
+        <a href="https://www.google.com" class="btn btn-outline s-hero__outline">Our Story</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== promise ===== -->
+<section class="sec s-promise">
+  <div class="wrap">
+    <p class="eyebrow reveal">INGREDIENTS YOU CAN BELIEVE IN</p>
+    <p class="s-promise__statement reveal">Holistic, small-batch remedies — handmade in Vancouver with botanicals, not fillers. The way skincare was meant to be made.</p>
+    <div class="s-promise__icons reveal">
+      <div class="s-promise__item">
+        <span class="ic">
+          <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M20 36C20 36 6 27 6 16C6 10.477 10.477 6 16 6C17.82 6 19.525 6.527 20.965 7.435C19.535 8.848 18.5 10.686 18.084 12.784C17.367 12.287 16.5 12 15.5 12C12.462 12 10 14.462 10 17.5C10 20.538 12.462 23 15.5 23C17.326 23 18.95 22.115 19.981 20.743C20.485 22.296 21.218 23.726 22.131 24.982C21.511 25.618 20.78 26.145 19.965 26.515C19.965 26.515 22 30 20 36Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M20 36C20 36 34 27 34 16C34 10.477 29.523 6 24 6C22.18 6 20.475 6.527 19.035 7.435C20.465 8.848 21.5 10.686 21.916 12.784C22.633 12.287 23.5 12 24.5 12C27.538 12 30 14.462 30 17.5C30 20.538 27.538 23 24.5 23C22.674 23 21.05 22.115 20.019 20.743" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        <span class="s-promise__label">100% NATURAL</span>
+      </div>
+      <div class="s-promise__item">
+        <span class="ic">
+          <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 30C12 30 8 28 8 22C8 18 10 16 12 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M28 30C28 30 32 28 32 22C32 18 30 16 28 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M14 14H26C26 14 28 14 28 16V22C28 26.418 24.418 30 20 30C15.582 30 12 26.418 12 22V16C12 14 14 14 14 14Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M16 10C16 10 16 8 20 8C24 8 24 10 24 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M16 14V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M24 14V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </span>
+        <span class="s-promise__label">HANDMADE</span>
+      </div>
+      <div class="s-promise__item">
+        <span class="ic">
+          <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="20" cy="20" r="12" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M20 8V6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M20 34V32" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M8 20H6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M34 20H32" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M20 14V20L24 23" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M15 5C15 5 17 3 20 3C23 3 25 5 25 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </span>
+        <span class="s-promise__label">SINCE 1990</span>
+      </div>
+      <div class="s-promise__item">
+        <span class="ic">
+          <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M20 32C20 32 8 25.5 8 16.5C8 12.91 10.91 10 14.5 10C16.57 10 18.41 10.94 19.655 12.43C19.78 12.576 19.889 12.73 19.99 12.887C20.09 12.73 20.2 12.576 20.325 12.43C21.57 10.94 23.41 10 25.5 10C29.09 10 32 12.91 32 16.5C32 25.5 20 32 20 32Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M29 9C29 9 27 7 24 7C21.5 7 20 8 20 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            <circle cx="30" cy="7" r="2" stroke="currentColor" stroke-width="1.5"/>
+          </svg>
+        </span>
+        <span class="s-promise__label">CRUELTY-FREE</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== bestsellers ===== -->
+<section class="sec s-bestsellers">
+  <div class="wrap">
+    <div class="s-bestsellers__head">
+      <p class="eyebrow">LOVED FOR DECADES</p>
+      <h2>Shop the bestsellers</h2>
+    </div>
+    <div class="s-bestsellers__grid">
+
+      <a href="https://www.google.com" class="s-bestsellers__card reveal">
+        <div class="s-bestsellers__img-wrap">
+          <img src="https://cascadiaskincare.com/cdn/shop/files/manuka-honey-cleanser-2322602.png?width=900" alt="Manuka Honey Cleanser" loading="lazy">
+        </div>
+        <div class="s-bestsellers__body">
+          <h3 class="s-bestsellers__name">Manuka Honey Cleanser</h3>
+          <p class="s-bestsellers__desc">Goat-milk + shea soap bar</p>
+          <div class="s-bestsellers__stars">
+            <span class="s-bestsellers__star-row">★★★★★</span>
+            <span class="s-bestsellers__rating">4.9</span>
+          </div>
+          <p class="s-bestsellers__price">$8.00</p>
+          <button class="btn btn-primary btn-block s-bestsellers__cta">ADD TO CART</button>
+        </div>
+      </a>
+
+      <a href="https://www.google.com" class="s-bestsellers__card reveal">
+        <div class="s-bestsellers__img-wrap">
+          <img src="https://cascadiaskincare.com/cdn/shop/files/botanical_serum_hero.png?width=900" alt="Botanical Face Serum" loading="lazy">
+        </div>
+        <div class="s-bestsellers__body">
+          <h3 class="s-bestsellers__name">Botanical Face Serum</h3>
+          <p class="s-bestsellers__desc">Lightweight botanical glow oil</p>
+          <div class="s-bestsellers__stars">
+            <span class="s-bestsellers__star-row">★★★★★</span>
+            <span class="s-bestsellers__rating">4.9</span>
+          </div>
+          <p class="s-bestsellers__price">$17.00</p>
+          <button class="btn btn-primary btn-block s-bestsellers__cta">ADD TO CART</button>
+        </div>
+      </a>
+
+      <a href="https://www.google.com" class="s-bestsellers__card reveal">
+        <div class="s-bestsellers__img-wrap">
+          <img src="https://cascadiaskincare.com/cdn/shop/files/calendula-skin-relief-salve-7522253.png?width=900" alt="Calendula Skin Relief Salve" loading="lazy">
+        </div>
+        <div class="s-bestsellers__body">
+          <h3 class="s-bestsellers__name">Calendula Skin Relief Salve</h3>
+          <p class="s-bestsellers__desc">Soothes dry, irritated skin</p>
+          <div class="s-bestsellers__stars">
+            <span class="s-bestsellers__star-row">★★★★★</span>
+            <span class="s-bestsellers__rating">4.9</span>
+          </div>
+          <p class="s-bestsellers__price">$26.00</p>
+          <button class="btn btn-primary btn-block s-bestsellers__cta">ADD TO CART</button>
+        </div>
+      </a>
+
+      <a href="https://www.google.com" class="s-bestsellers__card reveal">
+        <div class="s-bestsellers__img-wrap">
+          <img src="https://cascadiaskincare.com/cdn/shop/files/bakuchiol_serum_hero.png?width=900" alt="Bakuchiol Face Serum" loading="lazy">
+        </div>
+        <div class="s-bestsellers__body">
+          <h3 class="s-bestsellers__name">Bakuchiol Face Serum</h3>
+          <p class="s-bestsellers__desc">Gentle, natural retinol alternative</p>
+          <div class="s-bestsellers__stars">
+            <span class="s-bestsellers__star-row">★★★★★</span>
+            <span class="s-bestsellers__rating">4.9</span>
+          </div>
+          <p class="s-bestsellers__price">$49.00</p>
+          <button class="btn btn-primary btn-block s-bestsellers__cta">ADD TO CART</button>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== heritage ===== -->
+<section class="sec s-heritage">
+  <div class="wrap">
+    <div class="s-heritage__inner">
+      <div class="s-heritage__image-col">
+        <img
+          src="https://cascadiaskincare.com/cdn/shop/files/Hand_Washing_5_7962b0c4-47ae-4d21-9a24-429515be2987.jpg?width=1400"
+          alt="Hands washing a Cascadia handmade soap bar in nature"
+          class="s-heritage__img"
+        >
+      </div>
+      <div class="s-heritage__text-col reveal">
+        <p class="eyebrow">OUR STORY · SINCE 1990</p>
+        <h2 class="s-heritage__heading">Three decades of small-batch craft</h2>
+        <p class="s-heritage__body">Cascadia began in 1990 with a simple belief: skincare should be made by hand, from ingredients you can actually pronounce.</p>
+        <p class="s-heritage__body">Every salve, serum and soap is still crafted in small batches in Vancouver — slow, honest, and good for your skin and the planet.</p>
+        <a href="https://www.google.com" class="btn btn-outline s-heritage__cta">Read Our Story</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ingredients ===== -->
+<section class="sec s-ingredients">
+  <div class="wrap">
+    <div class="s-ingredients__head reveal">
+      <p class="eyebrow">HOLISTIC BY NATURE</p>
+      <h2 class="s-ingredients__heading">Botanicals that do the work</h2>
+      <p class="s-ingredients__intro">We formulate with plant oils, honey, calendula and bakuchiol — gentle actives that respect your skin barrier.</p>
+    </div>
+    <div class="s-ingredients__grid reveal">
+      <div class="s-ingredients__col">
+        <span class="ic s-ingredients__ic">
+          <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M18 4C18 4 10 10 10 19a8 8 0 0 0 16 0c0-9-8-15-8-15Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+            <path d="M18 13v10M14 20a4 4 0 0 0 4 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M24 8c1.5 1.5 3 4 3 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </span>
+        <h3 class="s-ingredients__subhead">Plant-Powered</h3>
+        <p class="s-ingredients__desc">Cold-pressed oils &amp; botanical extracts.</p>
+      </div>
+      <div class="s-ingredients__col">
+        <span class="ic s-ingredients__ic">
+          <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M18 6l3.09 6.26L28 13.27l-5 4.87 1.18 6.86L18 22l-6.18 3-1-6.86-5-4.87 6.91-1.01L18 6Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+            <path d="M18 10v4M21 13h-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </span>
+        <h3 class="s-ingredients__subhead">Gently Effective</h3>
+        <p class="s-ingredients__desc">Actives like bakuchiol, minus the irritation.</p>
+      </div>
+      <div class="s-ingredients__col">
+        <span class="ic s-ingredients__ic">
+          <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M18 5l-11 4v9c0 6.07 4.68 11.73 11 13 6.32-1.27 11-6.93 11-13V9L18 5Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+            <path d="M13 18l3.5 3.5L23 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        <h3 class="s-ingredients__subhead">Barrier-Kind</h3>
+        <p class="s-ingredients__desc">Non-stripping, fragrance-conscious formulas.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== reviews ===== -->
+<section class="sec s-reviews">
+  <div class="wrap">
+
+    <!-- Section header -->
+    <div class="s-reviews__head reveal">
+      <p class="eyebrow">Loved by Our Community</p>
+      <div class="s-reviews__rating">
+        <span class="s-reviews__stars" aria-label="5 stars">★★★★★</span>
+        <span class="s-reviews__score">4.9 / 5</span>
+        <span class="s-reviews__count">· 1,200+ reviews</span>
+      </div>
+    </div>
+
+    <!-- Review grid -->
+    <ul class="s-reviews__grid" role="list">
+
+      <li class="s-reviews__card reveal">
+        <div class="s-reviews__card-stars" aria-label="5 stars">★★★★★</div>
+        <blockquote class="s-reviews__quote">
+          "The Manuka soap bar is a daily ritual. My skin has never felt calmer."
+        </blockquote>
+        <footer class="s-reviews__footer">
+          <span class="s-reviews__name">Erin M.</span>
+          <span class="s-reviews__sep">,</span>
+          <span class="s-reviews__location">Victoria, BC</span>
+          <span class="s-reviews__verified">Verified</span>
+        </footer>
+      </li>
+
+      <li class="s-reviews__card reveal">
+        <div class="s-reviews__card-stars" aria-label="5 stars">★★★★★</div>
+        <blockquote class="s-reviews__quote">
+          "I've used Cascadia for over a decade. Nothing else compares."
+        </blockquote>
+        <footer class="s-reviews__footer">
+          <span class="s-reviews__name">Linda P.</span>
+          <span class="s-reviews__sep">,</span>
+          <span class="s-reviews__location">Vancouver, BC</span>
+          <span class="s-reviews__verified">Verified</span>
+        </footer>
+      </li>
+
+      <li class="s-reviews__card reveal">
+        <div class="s-reviews__card-stars" aria-label="5 stars">★★★★★</div>
+        <blockquote class="s-reviews__quote">
+          "Finally a natural serum that actually works — no irritation, just glow."
+        </blockquote>
+        <footer class="s-reviews__footer">
+          <span class="s-reviews__name">Priya S.</span>
+          <span class="s-reviews__sep">,</span>
+          <span class="s-reviews__location">Calgary, AB</span>
+          <span class="s-reviews__verified">Verified</span>
+        </footer>
+      </li>
+
+      <li class="s-reviews__card reveal">
+        <div class="s-reviews__card-stars" aria-label="5 stars">★★★★★</div>
+        <blockquote class="s-reviews__quote">
+          "The calendula salve healed my dry, cracked hands in days."
+        </blockquote>
+        <footer class="s-reviews__footer">
+          <span class="s-reviews__name">Marc D.</span>
+          <span class="s-reviews__sep">,</span>
+          <span class="s-reviews__location">Seattle, WA</span>
+          <span class="s-reviews__verified">Verified</span>
+        </footer>
+      </li>
+
+      <li class="s-reviews__card reveal">
+        <div class="s-reviews__card-stars" aria-label="5 stars">★★★★★</div>
+        <blockquote class="s-reviews__quote">
+          "You can feel the care that goes into every batch. Beautiful products."
+        </blockquote>
+        <footer class="s-reviews__footer">
+          <span class="s-reviews__name">Hana K.</span>
+          <span class="s-reviews__sep">,</span>
+          <span class="s-reviews__location">Toronto, ON</span>
+          <span class="s-reviews__verified">Verified</span>
+        </footer>
+      </li>
+
+      <li class="s-reviews__card reveal">
+        <div class="s-reviews__card-stars" aria-label="5 stars">★★★★★</div>
+        <blockquote class="s-reviews__quote">
+          "Bakuchiol serum gave me retinol results without the redness."
+        </blockquote>
+        <footer class="s-reviews__footer">
+          <span class="s-reviews__name">Dana R.</span>
+          <span class="s-reviews__sep">,</span>
+          <span class="s-reviews__location">Portland, OR</span>
+          <span class="s-reviews__verified">Verified</span>
+        </footer>
+      </li>
+
+    </ul>
+
+    <!-- Footer note + CTA -->
+    <div class="s-reviews__bottom reveal">
+      <p class="s-reviews__disclaimer">Reviews shown are representative mockup content.</p>
+      <a href="https://www.google.com" class="btn btn-outline">Read All Reviews</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== community ===== -->
+<section class="sec s-community">
+  <!-- Full-bleed background image -->
+  <img
+    class="s-community__bg"
+    src="https://cascadiaskincare.com/cdn/shop/files/Cascadia-365.jpg?width=1600"
+    alt="Five women in white surrounded by lush Pacific Northwest forest — the Cascadia community"
+    loading="lazy"
+    decoding="async"
+  >
+
+  <!-- Dark scrim for contrast -->
+  <div class="s-community__scrim" aria-hidden="true"></div>
+
+  <!-- Constrained content block -->
+  <div class="wrap s-community__inner">
+    <div class="s-community__panel reveal">
+      <p class="eyebrow s-community__eyebrow">Made in Canada · Made for You</p>
+      <h2 class="s-community__heading">Skincare that brings<br>people together</h2>
+      <p class="s-community__body">Clean, holistic, handmade in Vancouver — and loved across North America for over 30 years.</p>
+      <a href="https://www.google.com" class="btn btn-light s-community__cta">Join the Community</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== newsletter ===== -->
+<section class="sec s-newsletter">
+  <div class="wrap">
+    <div class="s-newsletter__inner reveal">
+      <span class="eyebrow">Join Our Roots</span>
+      <h2>10% Off Your First Order</h2>
+      <p class="s-newsletter__sub">Natural skincare tips, new small-batch launches, and members-only offers — from our hands to yours.</p>
+      <form class="s-newsletter__form" action="https://www.google.com" method="get">
+        <input class="s-newsletter__input" type="email" name="email" placeholder="Your email address" required aria-label="Email address">
+        <button type="submit" class="btn btn-primary">Subscribe</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ===== footer ===== -->
+<footer class="s-footer">
+  <div class="wrap">
+
+    <div class="s-footer__top">
+
+      <!-- Brand -->
+      <div class="s-footer__brand">
+        <a href="https://www.google.com" aria-label="Cascadia Skincare home">
+          <img src="https://cascadiaskincare.com/cdn/shop/files/CascadiaSkincareLogo_Reverse_395a283a-451e-40d1-a250-4bcff72808a4.png?width=400"
+               alt="Cascadia Skincare"
+               style="height:62px;width:auto">
+        </a>
+        <p class="s-footer__tagline">Natural wellness, handmade in Vancouver since 1990.</p>
+      </div>
+
+      <!-- Shop -->
+      <div class="s-footer__col">
+        <p class="s-footer__col-heading">Shop</p>
+        <ul>
+          <li><a href="https://www.google.com">Bestsellers</a></li>
+          <li><a href="https://www.google.com">Cleansers</a></li>
+          <li><a href="https://www.google.com">Serums</a></li>
+          <li><a href="https://www.google.com">Salves</a></li>
+          <li><a href="https://www.google.com">Soap Bars</a></li>
+          <li><a href="https://www.google.com">Gift Sets</a></li>
+        </ul>
+      </div>
+
+      <!-- Learn -->
+      <div class="s-footer__col">
+        <p class="s-footer__col-heading">Learn</p>
+        <ul>
+          <li><a href="https://www.google.com">Our Story</a></li>
+          <li><a href="https://www.google.com">Skin Types</a></li>
+          <li><a href="https://www.google.com">Ingredients</a></li>
+          <li><a href="https://www.google.com">Blog</a></li>
+        </ul>
+      </div>
+
+      <!-- Help -->
+      <div class="s-footer__col">
+        <p class="s-footer__col-heading">Help</p>
+        <ul>
+          <li><a href="https://www.google.com">Shipping</a></li>
+          <li><a href="https://www.google.com">Returns</a></li>
+          <li><a href="https://www.google.com">FAQ</a></li>
+          <li><a href="https://www.google.com">Wholesale</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div class="s-footer__col">
+        <p class="s-footer__col-heading">Contact</p>
+        <ul>
+          <li><a href="https://www.google.com">hello@cascadiaskincare.com</a></li>
+          <li><a href="https://www.google.com">Vancouver, BC</a></li>
+        </ul>
+      </div>
+
+    </div><!-- /.s-footer__top -->
+
+    <!-- Bottom bar -->
+    <div class="s-footer__bottom">
+      <p class="s-footer__copy">&copy; 2026 Cascadia Skincare. Redesign mockup.</p>
+      <nav class="s-footer__social" aria-label="Social media">
+        <a href="https://www.google.com">Instagram</a>
+        <a href="https://www.google.com">Facebook</a>
+        <a href="https://www.google.com">Pinterest</a>
+      </nav>
+    </div>
+
+  </div><!-- /.wrap -->
+</footer>
+
+<script src="fx.js"></script>
+</body>
+</html>

@@ -1,0 +1,1145 @@
+/* ===== announce ===== */
+/* ===== Announce bar — Cascadia Skincare ===== */
+.s-announce {
+  background: var(--accent);
+  color: var(--accent-ink);
+  text-align: center;
+  padding: var(--sp-2) var(--sp-3);
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .14em;
+  line-height: 1;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.s-announce__desktop { display: inline; }
+.s-announce__mobile  { display: none; }
+
+@media (max-width: 700px) {
+  .s-announce__desktop { display: none; }
+  .s-announce__mobile  { display: inline; }
+}
+
+
+/* ===== header ===== */
+/* ===== Header — Cascadia Skincare ===== */
+.s-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--bg);
+  border-bottom: 1px solid var(--line);
+}
+
+.s-header__inner {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  padding-top: clamp(14px, 1.5vw, 18px);
+  padding-bottom: clamp(14px, 1.5vw, 18px);
+}
+
+/* ---- LEFT nav ---- */
+.s-header__nav {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-4);
+}
+
+.s-header__link {
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .12em;
+  color: var(--ink);
+  transition: color .2s;
+  white-space: nowrap;
+}
+.s-header__link:hover { color: var(--accent); }
+
+.s-header__hamburger {
+  display: none;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  color: var(--ink);
+  line-height: 0;
+}
+.s-header__hamburger:hover { color: var(--accent); }
+
+/* ---- CENTER logo ---- */
+.s-header__logo-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 0;
+}
+
+/* ---- RIGHT actions ---- */
+.s-header__actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--sp-3);
+}
+
+.s-header__icon-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: .35em;
+  color: var(--ink);
+  transition: color .2s;
+  line-height: 0;
+}
+.s-header__icon-btn:hover { color: var(--accent); }
+
+.s-header__cart-count {
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 1;
+}
+
+/* ---- MOBILE ≤ 900px ---- */
+@media (max-width: 900px) {
+  /* hide desktop nav links, show hamburger */
+  .s-header__link     { display: none; }
+  .s-header__hamburger{ display: inline-flex; }
+
+  /* hide desktop search on mobile for cleanliness */
+  .s-header__icon-btn:not(.s-header__cart) { display: none; }
+}
+
+
+/* ===== hero ===== */
+/* ===== Hero — Full-Bleed Forest (Cascadia Skincare) ===== */
+
+/* --- Layout shell --- */
+.s-hero {
+  position: relative;
+  min-height: min(82vh, 760px);
+  display: flex;
+  align-items: flex-end;          /* content anchors to lower area */
+  padding: 0;                     /* override .sec default; inner panel carries padding */
+  overflow: hidden;
+}
+
+/* --- Background image absolutely behind everything --- */
+.s-hero__bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 60% center;   /* subject (woman) sits right; trees fill left */
+  z-index: 0;
+}
+
+/* --- Thin full-bleed scrim (safety contrast) --- */
+.s-hero__scrim {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, .12);
+  z-index: 1;
+}
+
+/* --- Inner layout: wrap provides max-width + gutters --- */
+.s-hero__inner {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  padding-top: var(--sp-9);
+  padding-bottom: var(--sp-9);
+  display: flex;
+  align-items: flex-end;
+}
+
+/* --- Contained cream text panel (left column) --- */
+.s-hero__panel {
+  width: min(520px, 100%);
+  background: rgba(250, 248, 245, .90);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg, 14px);
+  box-shadow: 0 8px 40px rgba(44, 33, 24, .18);
+  padding: var(--sp-8) var(--sp-8) var(--sp-8);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+}
+
+/* --- Eyebrow --- */
+.s-hero__eyebrow {
+  color: var(--accent);
+  margin-bottom: calc(-1 * var(--sp-2));  /* tighten to headline */
+}
+
+/* --- Headline --- */
+.s-hero__heading {
+  font-size: clamp(var(--s-3), 5.5vw, var(--s-5));
+  color: var(--ink);
+  line-height: 1.1;
+  letter-spacing: .01em;
+}
+
+/* --- Subhead --- */
+.s-hero__sub {
+  font-size: var(--s-1);
+  color: var(--ink-soft);
+  line-height: 1.55;
+  font-family: var(--font-body);
+}
+
+/* --- CTA row --- */
+.s-hero__ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-3);
+  margin-top: var(--sp-2);
+}
+
+/* Outline button: clear forest-green on the cream panel */
+.s-hero__outline {
+  color: var(--accent);
+  border-color: var(--accent);
+  border-width: 2px;
+}
+.s-hero__outline:hover {
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+
+/* ===== MOBILE ≤ 768px ===== */
+@media (max-width: 768px) {
+  .s-hero {
+    min-height: min(78vh, 680px);
+    align-items: flex-end;       /* panel sits at bottom; forest visible above */
+  }
+
+  .s-hero__bg {
+    object-position: 55% center; /* keep woman visible, open sky/trees above */
+  }
+
+  .s-hero__inner {
+    padding-top: var(--sp-5);
+    padding-bottom: var(--sp-6);
+    align-items: flex-end;
+  }
+
+  .s-hero__panel {
+    width: 100%;
+    padding: var(--sp-5) var(--sp-5);
+    border-radius: var(--radius);
+    gap: var(--sp-3);
+  }
+
+  .s-hero__heading {
+    font-size: clamp(var(--s-3), 8vw, var(--s-4));
+  }
+
+  .s-hero__sub {
+    font-size: var(--s-0);
+  }
+
+  .s-hero__ctas {
+    flex-direction: column;
+    gap: var(--sp-2);
+  }
+
+  .s-hero__ctas .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+
+/* ===== promise ===== */
+.s-promise {
+  background: var(--bg);
+  padding-block: var(--sp-12);
+  text-align: center;
+}
+
+.s-promise .wrap {
+  max-width: 860px;
+}
+
+.s-promise__statement {
+  font-family: var(--font-display);
+  font-size: var(--s-3);
+  font-weight: 400;
+  color: var(--ink);
+  line-height: 1.35;
+  max-width: 760px;
+  margin-inline: auto;
+  margin-block: var(--sp-4) var(--sp-8);
+  letter-spacing: 0.01em;
+}
+
+.s-promise__icons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--sp-8) var(--sp-10);
+  margin-block-start: var(--sp-8);
+}
+
+.s-promise__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sp-3);
+  flex: 0 0 auto;
+}
+
+.s-promise__item .ic {
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+}
+
+.s-promise__item .ic svg {
+  width: 40px;
+  height: 40px;
+}
+
+.s-promise__label {
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--ink-soft);
+  text-transform: uppercase;
+}
+
+@media (max-width: 540px) {
+  .s-promise__icons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--sp-8) var(--sp-6);
+    justify-items: center;
+  }
+
+  .s-promise__statement {
+    font-size: var(--s-2);
+  }
+}
+
+
+/* ===== bestsellers ===== */
+.s-bestsellers {
+  background: var(--surface-2);
+  padding-block: var(--sp-12);
+}
+
+.s-bestsellers__head {
+  text-align: center;
+  margin-block-end: var(--sp-8);
+}
+
+.s-bestsellers__head h2 {
+  font-family: var(--font-display);
+  font-size: var(--s-4);
+  font-weight: 400;
+  color: var(--ink);
+  margin-block-start: var(--sp-2);
+  line-height: 1.2;
+}
+
+.s-bestsellers__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--sp-5);
+}
+
+.s-bestsellers__card {
+  display: flex;
+  flex-direction: column;
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  box-shadow: var(--shadow);
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
+}
+
+.s-bestsellers__card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.13);
+}
+
+.s-bestsellers__img-wrap {
+  width: 100%;
+  height: 330px;
+  overflow: hidden;
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  background: var(--surface-2);
+}
+
+.s-bestsellers__img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.35s ease;
+}
+
+.s-bestsellers__card:hover .s-bestsellers__img-wrap img {
+  transform: scale(1.04);
+}
+
+.s-bestsellers__body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+  padding: var(--sp-4) var(--sp-4) var(--sp-5);
+  flex: 1;
+}
+
+.s-bestsellers__name {
+  font-family: var(--font-display);
+  font-size: var(--s-1);
+  font-weight: 500;
+  color: var(--ink);
+  line-height: 1.25;
+  margin: 0;
+}
+
+.s-bestsellers__desc {
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  color: var(--ink-soft);
+  margin: 0;
+  line-height: 1.4;
+}
+
+.s-bestsellers__stars {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-1);
+  margin-block: var(--sp-1);
+}
+
+.s-bestsellers__star-row {
+  color: var(--pop);
+  font-size: var(--s--1);
+  letter-spacing: 0.05em;
+  line-height: 1;
+}
+
+.s-bestsellers__rating {
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  color: var(--ink-soft);
+  font-weight: 600;
+}
+
+.s-bestsellers__price {
+  font-family: var(--font-body);
+  font-size: var(--s-0);
+  font-weight: 700;
+  color: var(--ink);
+  margin: 0;
+}
+
+.s-bestsellers__cta {
+  margin-block-start: auto;
+  font-size: var(--s--1);
+  letter-spacing: 0.08em;
+  padding-block: var(--sp-2);
+  width: 100%;
+}
+
+@media (max-width: 900px) {
+  .s-bestsellers__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .s-bestsellers__img-wrap {
+    height: 280px;
+  }
+}
+
+@media (max-width: 520px) {
+  .s-bestsellers__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--sp-3);
+  }
+
+  .s-bestsellers__img-wrap {
+    height: 200px;
+  }
+
+  .s-bestsellers__head h2 {
+    font-size: var(--s-3);
+  }
+}
+
+@media (max-width: 360px) {
+  .s-bestsellers__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* ===== heritage ===== */
+.s-heritage {
+  background: var(--surface-2);
+}
+
+.s-heritage__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-8);
+  align-items: center;
+}
+
+.s-heritage__image-col {
+  min-width: 0;
+}
+
+.s-heritage__img {
+  width: 100%;
+  height: 520px;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+  display: block;
+}
+
+.s-heritage__text-col {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--sp-4);
+}
+
+.s-heritage__heading {
+  font-family: var(--font-display);
+  font-size: var(--s-4);
+  font-weight: 400;
+  color: var(--ink);
+  line-height: 1.15;
+  margin: 0;
+}
+
+.s-heritage__body {
+  font-family: var(--font-body);
+  font-size: var(--s-0);
+  color: var(--ink-soft);
+  line-height: 1.7;
+  margin: 0;
+}
+
+.s-heritage__cta {
+  margin-top: var(--sp-2);
+}
+
+@media (max-width: 768px) {
+  .s-heritage__inner {
+    grid-template-columns: 1fr;
+    gap: var(--sp-6);
+  }
+
+  .s-heritage__image-col {
+    order: -1;
+  }
+
+  .s-heritage__img {
+    height: 320px;
+  }
+}
+
+
+/* ===== ingredients ===== */
+.s-ingredients {
+  background: var(--bg);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.s-ingredients__head {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sp-3);
+  margin-bottom: var(--sp-8);
+}
+
+.s-ingredients__heading {
+  font-family: var(--font-display);
+  font-size: var(--s-4);
+  font-weight: 400;
+  color: var(--ink);
+  line-height: 1.15;
+  margin: 0;
+}
+
+.s-ingredients__intro {
+  font-family: var(--font-body);
+  font-size: var(--s-0);
+  color: var(--ink-soft);
+  line-height: 1.7;
+  max-width: 640px;
+  text-align: center;
+  margin: 0;
+}
+
+.s-ingredients__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-6);
+}
+
+.s-ingredients__col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--sp-3);
+}
+
+.s-ingredients__ic {
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+}
+
+.s-ingredients__subhead {
+  font-family: var(--font-display);
+  font-size: var(--s-1);
+  font-weight: 500;
+  color: var(--ink);
+  margin: 0;
+  line-height: 1.2;
+}
+
+.s-ingredients__desc {
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  color: var(--ink-soft);
+  line-height: 1.6;
+  margin: 0;
+}
+
+@media (max-width: 640px) {
+  .s-ingredients__grid {
+    grid-template-columns: 1fr;
+    gap: var(--sp-8);
+  }
+}
+
+
+/* ===== reviews ===== */
+/* ===== Reviews — Community Wall (Cascadia Skincare) ===== */
+
+.s-reviews {
+  background: var(--surface-2);
+}
+
+/* --- Header --- */
+.s-reviews__head {
+  text-align: center;
+  margin-bottom: var(--sp-8);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sp-3);
+}
+
+.s-reviews__rating {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+  font-family: var(--font-body);
+}
+
+.s-reviews__stars {
+  color: var(--pop);
+  font-size: var(--s-2);
+  letter-spacing: .06em;
+  line-height: 1;
+}
+
+.s-reviews__score {
+  font-family: var(--font-display);
+  font-size: var(--s-3);
+  font-weight: 500;
+  color: var(--ink);
+  line-height: 1;
+}
+
+.s-reviews__count {
+  font-size: var(--s-0);
+  color: var(--ink-soft);
+}
+
+/* --- Grid: 3 cols desktop, 2 tablet, 1 mobile --- */
+.s-reviews__grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-5);
+}
+
+/* --- Individual card --- */
+.s-reviews__card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: var(--sp-5) var(--sp-5) var(--sp-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+  transition: box-shadow .25s;
+}
+
+.s-reviews__card:hover {
+  box-shadow: var(--shadow);
+}
+
+.s-reviews__card-stars {
+  color: var(--gold);
+  font-size: var(--s-1);
+  letter-spacing: .08em;
+  line-height: 1;
+}
+
+.s-reviews__quote {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: var(--s-2);
+  font-weight: 400;
+  color: var(--ink);
+  line-height: 1.45;
+  font-style: italic;
+  flex: 1;
+}
+
+.s-reviews__footer {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: .3em;
+  margin-top: auto;
+}
+
+.s-reviews__name {
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.s-reviews__sep {
+  font-size: var(--s--1);
+  color: var(--ink-soft);
+}
+
+.s-reviews__location {
+  font-size: var(--s--1);
+  color: var(--ink-soft);
+}
+
+.s-reviews__verified {
+  display: inline-block;
+  margin-left: auto;
+  font-size: .72rem;
+  font-weight: 700;
+  color: var(--ink-soft);
+  letter-spacing: .07em;
+  text-transform: uppercase;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-pill);
+  padding: .2em .7em;
+}
+
+/* --- Bottom: disclaimer + CTA --- */
+.s-reviews__bottom {
+  margin-top: var(--sp-8);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sp-4);
+}
+
+.s-reviews__disclaimer {
+  font-size: var(--s--1);
+  color: var(--ink-soft);
+  opacity: .65;
+  font-style: italic;
+  text-align: center;
+}
+
+/* ===== TABLET ≤ 900px ===== */
+@media (max-width: 900px) {
+  .s-reviews__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ===== MOBILE ≤ 560px ===== */
+@media (max-width: 560px) {
+  .s-reviews__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .s-reviews__score {
+    font-size: var(--s-2);
+  }
+
+  .s-reviews__head {
+    margin-bottom: var(--sp-6);
+  }
+}
+
+
+/* ===== community ===== */
+/* ===== Community Band — Full-Bleed (Cascadia Skincare) ===== */
+
+.s-community {
+  position: relative;
+  min-height: clamp(420px, 55vh, 560px);
+  display: flex;
+  align-items: center;
+  padding: 0;          /* full-bleed; inner panel carries vertical padding */
+  overflow: hidden;
+}
+
+/* --- Background photo absolutely behind everything --- */
+.s-community__bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+  z-index: 0;
+}
+
+/* --- Dark scrim for solid text contrast over the bright forest photo --- */
+.s-community__scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(rgba(0,0,0,.58), rgba(0,0,0,.42));
+  z-index: 1;
+}
+
+/* --- Constrained inner layout --- */
+.s-community__inner {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  padding-top: var(--sp-9);
+  padding-bottom: var(--sp-9);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+/* --- Text panel: max 620px, left-aligned, light text --- */
+.s-community__panel {
+  max-width: 620px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+}
+
+/* --- Eyebrow: force white (override base .eyebrow which is accent green) --- */
+.s-community__eyebrow {
+  color: #ffffff !important;
+}
+
+/* --- Headline: white Cormorant --- */
+.s-community__heading {
+  font-size: clamp(var(--s-3), 5.2vw, var(--s-4));
+  color: #ffffff;
+  line-height: 1.12;
+  letter-spacing: .01em;
+}
+
+/* --- Body copy: white at ~90% opacity --- */
+.s-community__body {
+  font-size: var(--s-1);
+  color: rgba(255, 255, 255, .90);
+  line-height: 1.6;
+  font-family: var(--font-body);
+}
+
+/* --- btn-light: white pill button (defined inline here for context) --- */
+.s-community .btn-light,
+.s-community__cta.btn-light {
+  background: #ffffff;
+  color: var(--ink);
+  border-color: #ffffff;
+}
+
+.s-community .btn-light:hover,
+.s-community__cta.btn-light:hover {
+  background: rgba(255, 255, 255, .88);
+  border-color: rgba(255, 255, 255, .88);
+}
+
+/* ===== MOBILE ≤ 600px ===== */
+@media (max-width: 600px) {
+  .s-community {
+    min-height: clamp(380px, 60vh, 480px);
+    align-items: flex-end;
+  }
+
+  .s-community__inner {
+    padding-top: var(--sp-7);
+    padding-bottom: var(--sp-7);
+    justify-content: center;
+  }
+
+  .s-community__panel {
+    max-width: 100%;
+    text-align: center;
+    gap: var(--sp-3);
+  }
+
+  .s-community__panel .btn-light {
+    align-self: center;
+  }
+
+  .s-community__heading {
+    font-size: clamp(var(--s-2), 8vw, var(--s-3));
+  }
+}
+
+
+/* ===== newsletter ===== */
+/* ===== Newsletter Band (Cascadia Skincare) ===== */
+
+.s-newsletter {
+  background: var(--surface-2);
+  text-align: center;
+}
+
+.s-newsletter .s-newsletter__inner {
+  max-width: 600px;
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--s-1);
+}
+
+.s-newsletter h2 {
+  font-family: var(--font-display);
+  font-size: var(--s-4);
+  font-weight: 400;
+  line-height: 1.15;
+  color: var(--ink);
+  margin: 0;
+}
+
+.s-newsletter .s-newsletter__sub {
+  font-family: var(--font-body);
+  font-size: var(--s-0);
+  color: var(--ink-soft);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* --- Inline form --- */
+.s-newsletter__form {
+  display: flex;
+  gap: var(--s--1);
+  width: 100%;
+  justify-content: center;
+  margin-top: var(--s-0);
+}
+
+.s-newsletter__input {
+  flex: 1 1 260px;
+  max-width: 320px;
+  padding: 0.65em 1.2em;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-pill);
+  background: #fff;
+  font-family: var(--font-body);
+  font-size: var(--s-0);
+  color: var(--ink);
+  outline: none;
+  transition: border-color .2s;
+}
+
+.s-newsletter__input::placeholder {
+  color: var(--ink-soft);
+  opacity: .75;
+}
+
+.s-newsletter__input:focus {
+  border-color: var(--accent);
+}
+
+/* --- Mobile: stack full-width --- */
+@media (max-width: 540px) {
+  .s-newsletter__form {
+    flex-direction: column;
+    gap: var(--s-0);
+  }
+
+  .s-newsletter__input {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .s-newsletter__form .btn-primary {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+
+/* ===== footer ===== */
+/* ===== Footer (Cascadia Skincare) ===== */
+
+.s-footer {
+  background: var(--accent-dark);
+  color: #fff;
+  padding-top: var(--sp-11);
+  padding-bottom: var(--sp-6);
+}
+
+/* --- Top row: logo + tagline + columns grid --- */
+.s-footer__top {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  gap: var(--sp-8);
+  align-items: start;
+}
+
+/* Brand block spans first column */
+.s-footer__brand {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-0);
+}
+
+.s-footer__tagline {
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  color: rgba(255,255,255,.7);
+  line-height: 1.55;
+  margin: 0;
+}
+
+/* --- Column headers --- */
+.s-footer__col-heading {
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .12em;
+  color: rgba(255,255,255,.95);
+  margin: 0 0 var(--s-0);
+}
+
+/* --- Column links --- */
+.s-footer__col ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45em;
+}
+
+.s-footer__col ul li a {
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  color: rgba(255,255,255,.75);
+  text-decoration: none;
+  transition: color .18s;
+  overflow-wrap: anywhere;
+}
+
+.s-footer__col ul li a:hover {
+  color: #fff;
+}
+
+/* --- Bottom bar --- */
+.s-footer__bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--s-1);
+  margin-top: var(--sp-8);
+  padding-top: var(--s-1);
+  border-top: 1px solid rgba(255,255,255,.18);
+  flex-wrap: wrap;
+}
+
+.s-footer__copy {
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  color: rgba(255,255,255,.55);
+  margin: 0;
+}
+
+.s-footer__social {
+  display: flex;
+  gap: var(--s-0);
+}
+
+.s-footer__social a {
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  color: rgba(255,255,255,.65);
+  text-decoration: none;
+  transition: color .18s;
+}
+
+.s-footer__social a:hover {
+  color: #fff;
+}
+
+/* --- Responsive: 4-col → 2×2 → 1-col --- */
+@media (max-width: 860px) {
+  .s-footer__top {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .s-footer__brand {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 480px) {
+  .s-footer__top {
+    grid-template-columns: 1fr;
+  }
+
+  .s-footer__brand {
+    grid-column: span 1;
+  }
+
+  .s-footer__bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--s-0);
+  }
+}
+
+

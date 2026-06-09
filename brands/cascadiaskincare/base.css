@@ -1,0 +1,99 @@
+/* ===== Cascadia Skincare — base foundation (earthy heritage botanical) ===== */
+:root{
+  /* color — verified earthy palette */
+  --bg:#faf8f5;              /* warm cream page bg */
+  --surface:#ffffff;
+  --surface-2:#f0ece7;       /* warm stone band */
+  --surface-3:#e6ded2;       /* deeper stone fill */
+  --ink:#2c2118;             /* espresso brown-black — headings/text */
+  --ink-soft:#6b5c4a;        /* warm taupe secondary */
+  --accent:#03593a;          /* deep forest green — buttons/accents */
+  --accent-dark:#02402a;
+  --accent-ink:#faf8f5;
+  --gold:#b8893f;            /* honey/gold — stars, small warm accents */
+  --pop:#b8893f;
+  --line:#e2dcd2;            /* warm hairline */
+  --btn:#03593a;
+  --btn-ink:#faf8f5;
+
+  /* type */
+  --font-display:"Cormorant","Times New Roman",Georgia,serif;
+  --font-body:"Nunito Sans","Helvetica Neue",Arial,sans-serif;
+  --s--1:.84rem;
+  --s-0:1rem;
+  --s-1:1.15rem;
+  --s-2:1.45rem;
+  --s-3:2.1rem;
+  --s-4:3rem;
+  --s-5:4.3rem;
+
+  /* space */
+  --sp-1:.25rem; --sp-2:.5rem; --sp-3:1rem; --sp-4:1.5rem;
+  --sp-5:2.5rem; --sp-6:4rem; --sp-7:6rem;
+  --sp-8:3.5rem; --sp-9:4.5rem; --sp-10:5.5rem; --sp-11:7rem; --sp-12:9rem;
+
+  /* radius + shadow + layout */
+  --radius:6px;
+  --radius-lg:14px;
+  --radius-pill:999px;
+  --shadow:0 18px 46px rgba(44,33,24,.10);
+  --maxw:1280px;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html,body{overflow-x:clip}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--bg);color:var(--ink);
+  font-family:var(--font-body);font-size:var(--s-0);line-height:1.7;
+  font-weight:400;-webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+
+/* headings = Cormorant serif (elegant, heritage) */
+h1,h2,h3,h4{margin:0;font-family:var(--font-display);color:var(--ink);line-height:1.14;font-weight:500}
+h1{font-size:var(--s-5);letter-spacing:.005em}
+h2{font-size:var(--s-4);letter-spacing:.005em}
+h3{font-size:var(--s-3)}
+p{margin:0}
+
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 clamp(20px,5vw,56px)}
+.sec{padding:var(--sp-7) 0}
+
+/* eyebrow — uppercase letter-spaced forest-green label */
+.eyebrow{
+  font-family:var(--font-body);font-size:var(--s--1);font-weight:700;
+  text-transform:uppercase;letter-spacing:.2em;color:var(--accent);
+}
+
+/* buttons — PILL, matches their real rounded CTA */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:.55em;
+  font-family:var(--font-body);font-size:var(--s-0);font-weight:700;
+  letter-spacing:.02em;line-height:1;
+  padding:1.05em 2.3em;border:1.5px solid transparent;border-radius:var(--radius-pill);
+  cursor:pointer;transition:background .22s,color .22s,border-color .22s;white-space:nowrap;
+}
+.btn-primary{background:var(--btn);color:var(--btn-ink);border-color:var(--btn)}
+.btn-primary:hover{background:var(--accent-dark);border-color:var(--accent-dark)}
+.btn-outline{background:transparent;color:var(--accent);border-color:var(--accent)}
+.btn-outline:hover{background:var(--accent);color:var(--accent-ink)}
+.btn-light{background:#fff;color:var(--accent);border-color:#fff}
+.btn-light:hover{background:transparent;color:#fff;border-color:#fff}
+.btn-block{display:flex;width:100%}
+
+/* small inline line-icon */
+.ic{width:40px;height:40px;stroke:var(--accent);stroke-width:1.4;fill:none;color:var(--accent)}
+
+/* scroll-reveal */
+.reveal{opacity:0;transform:perspective(900px) rotateX(6deg) translateY(24px);
+  transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  .reveal{opacity:1;transform:none;transition:none}
+}
+
+@media (max-width:900px){
+  :root{--s-5:2.8rem;--s-4:2.1rem;--s-3:1.6rem;--sp-7:4rem;--sp-12:5.5rem;--sp-11:4.5rem}
+}
