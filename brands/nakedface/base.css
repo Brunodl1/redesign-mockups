@@ -1,0 +1,96 @@
+/* ===== NAKEDFACE Skincare — base foundation (clean minimalist, warm monochrome) ===== */
+:root{
+  /* color — verified warm monochrome palette */
+  --bg:#fcfaf7;              /* warm ivory page bg */
+  --surface:#ffffff;
+  --surface-2:#f0efe6;       /* warm cream band */
+  --surface-3:#e6e0d6;       /* deeper taupe fill */
+  --ink:#1a1a1a;             /* near-black headings/text */
+  --ink-soft:#6b6b66;        /* warm grey secondary */
+  --accent:#1a1a1a;          /* monochrome — black buttons */
+  --accent-ink:#ffffff;
+  --pop:#1a1a1a;             /* stars/accents = black (monochrome) */
+  --line:#e2ddd4;            /* warm hairline */
+  --btn:#1a1a1a;
+  --btn-ink:#ffffff;
+
+  /* type */
+  --font-display:"Poppins","Helvetica Neue",Arial,sans-serif;
+  --font-body:"Poppins","Helvetica Neue",Arial,sans-serif;
+  --font-label:"Archivo Narrow","Poppins",Arial,sans-serif;
+  --s--1:.8rem;
+  --s-0:1rem;
+  --s-1:1.15rem;
+  --s-2:1.45rem;
+  --s-3:2rem;
+  --s-4:2.9rem;
+  --s-5:4.1rem;
+
+  /* space */
+  --sp-1:.25rem; --sp-2:.5rem; --sp-3:1rem; --sp-4:1.5rem;
+  --sp-5:2.5rem; --sp-6:4rem; --sp-7:6rem;
+  --sp-8:3.5rem; --sp-9:4.5rem; --sp-10:5.5rem; --sp-11:7rem; --sp-12:9rem;
+
+  /* radius + shadow + layout */
+  --radius:2px;
+  --radius-lg:6px;
+  --shadow:0 16px 44px rgba(26,26,26,.09);
+  --maxw:1280px;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html,body{overflow-x:clip}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--bg);color:var(--ink);
+  font-family:var(--font-body);font-size:var(--s-0);line-height:1.7;
+  font-weight:400;-webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+
+h1,h2,h3,h4{margin:0;font-family:var(--font-display);color:var(--ink);line-height:1.14;font-weight:300}
+h1{font-size:var(--s-5);letter-spacing:.02em}
+h2{font-size:var(--s-4);letter-spacing:.01em}
+h3{font-size:var(--s-3);font-weight:400}
+p{margin:0}
+
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 clamp(20px,5vw,56px)}
+.sec{padding:var(--sp-7) 0}
+
+/* eyebrow — uppercase letter-spaced label (clean-beauty signature) */
+.eyebrow{
+  font-family:var(--font-label);font-size:var(--s--1);font-weight:600;
+  text-transform:uppercase;letter-spacing:.26em;color:var(--ink-soft);
+}
+
+/* buttons — rectangular, uppercase, letter-spaced (matches their real CTA) */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:.55em;
+  font-family:var(--font-body);font-size:var(--s--1);font-weight:500;
+  text-transform:uppercase;letter-spacing:.18em;line-height:1;
+  padding:1.1em 2.4em;border:1px solid transparent;border-radius:var(--radius);
+  cursor:pointer;transition:background .22s,color .22s,border-color .22s;white-space:nowrap;
+}
+.btn-primary{background:var(--btn);color:var(--btn-ink);border-color:var(--btn)}
+.btn-primary:hover{background:transparent;color:var(--ink);border-color:var(--ink)}
+.btn-outline{background:transparent;color:var(--ink);border-color:var(--ink)}
+.btn-outline:hover{background:var(--ink);color:var(--accent-ink)}
+.btn-light{background:#fff;color:var(--ink);border-color:#fff}
+.btn-light:hover{background:transparent;color:#fff;border-color:#fff}
+.btn-block{display:flex;width:100%}
+
+/* small inline line-icon */
+.ic{width:38px;height:38px;stroke:var(--ink);stroke-width:1.3;fill:none;color:var(--ink)}
+
+/* scroll-reveal */
+.reveal{opacity:0;transform:perspective(900px) rotateX(6deg) translateY(24px);
+  transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  .reveal{opacity:1;transform:none;transition:none}
+}
+
+@media (max-width:900px){
+  :root{--s-5:2.7rem;--s-4:2.1rem;--s-3:1.55rem;--sp-7:4rem;--sp-12:5.5rem;--sp-11:4.5rem}
+}
