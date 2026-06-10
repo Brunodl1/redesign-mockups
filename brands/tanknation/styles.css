@@ -277,7 +277,7 @@ p{margin:0}
 /* === trust === */
 /* ── TRUST BADGES STRIP ───────────────────────────────────────── */
 /* === results / before-after === */
-.s-results { background: var(--bg); }
+.s-results { background: var(--bg); padding-top: clamp(var(--sp-6), 8vw, calc(var(--sp-7) + var(--sp-5))); }
 .s-results .s-results__head { text-align: center; max-width: 680px; margin: 0 auto var(--sp-6); }
 .s-results .s-results__eyebrow { color: var(--accent); margin-bottom: var(--sp-2); }
 .s-results .s-results__title {
