@@ -276,6 +276,37 @@ p{margin:0}
 
 /* === trust === */
 /* ── TRUST BADGES STRIP ───────────────────────────────────────── */
+/* === results / before-after === */
+.s-results { background: var(--bg); }
+.s-results .s-results__head { text-align: center; max-width: 680px; margin: 0 auto var(--sp-6); }
+.s-results .s-results__eyebrow { color: var(--accent); margin-bottom: var(--sp-2); }
+.s-results .s-results__title {
+  font-family: var(--font-display); font-weight: 800;
+  font-size: clamp(var(--s-4), 6vw, var(--s-5)); line-height: 1.05;
+  color: var(--accent); letter-spacing: -.01em; margin: 0;
+}
+.s-results .s-results__sub {
+  font-family: var(--font-body); color: var(--ink-soft);
+  font-size: var(--s-1); line-height: 1.55; margin: var(--sp-3) auto 0; max-width: 56ch;
+}
+.s-results .s-results__grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: clamp(var(--sp-4), 3vw, var(--sp-5));
+}
+.s-results .s-results__card {
+  margin: 0; border-radius: var(--radius-lg); overflow: hidden;
+  background: var(--surface); box-shadow: var(--shadow); border: 1px solid var(--line);
+}
+.s-results .s-results__card img { width: 100%; height: auto; display: block; }
+.s-results .s-results__note {
+  text-align: center; font-family: var(--font-body); font-size: var(--s--1);
+  color: var(--ink-soft); margin: var(--sp-4) 0 0; letter-spacing: .01em;
+}
+.s-results .s-results__cta { text-align: center; margin-top: var(--sp-5); }
+@media (max-width: 760px) {
+  .s-results .s-results__grid { grid-template-columns: 1fr; }
+}
+
 .s-trust {
   background: var(--bg);
   border-top: 1.5px solid var(--line);
@@ -287,8 +318,8 @@ p{margin:0}
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: clamp(var(--sp-4), 4vw, var(--sp-6));
-  flex-wrap: wrap;
+  gap: clamp(var(--sp-3), 1.8vw, var(--sp-4));
+  flex-wrap: nowrap;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -309,14 +340,21 @@ p{margin:0}
 .s-trust .trust-item .ic {
   color: var(--accent);
   flex-shrink: 0;
+  width: 26px;
+  height: 26px;
 }
 
 /* dividers between items (hidden on wrap) */
 .s-trust .trust-sep {
   width: 1px;
-  height: 28px;
+  height: 26px;
   background: var(--line);
   flex-shrink: 0;
+}
+
+/* tablet: allow graceful wrap (desktop keeps all 5 on one line via nowrap) */
+@media (max-width: 980px) {
+  .s-trust .trust-list { flex-wrap: wrap; }
 }
 
 @media (max-width: 700px) {
