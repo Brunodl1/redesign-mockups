@@ -167,7 +167,7 @@
 @media(max-width:480px){ .s-best__grid{grid-template-columns:1fr} }
 
 /* ---------- sustainability ---------- */
-.s-sustain{background:var(--surface)}
+.s-sustain{background:var(--surface); padding-block:80px}
 .s-sustain__grid{display:grid; grid-template-columns:1fr 1fr; gap:var(--sp-6); align-items:center}
 .s-sustain__media{position:relative; aspect-ratio:4/5; border-radius:var(--radius-lg);
   background-size:cover; background-position:center; box-shadow:var(--shadow)}
@@ -201,7 +201,7 @@
 }
 
 /* ---------- reviews ---------- */
-.s-reviews{background:var(--bg)}
+.s-reviews{background:var(--bg); padding-block:80px}
 .s-reviews__head{text-align:center; margin-bottom:var(--sp-5)}
 .s-reviews__sum{color:var(--ink-soft); font-weight:600; margin:0}
 .s-reviews__grid{display:grid; grid-template-columns:repeat(3,1fr); gap:var(--sp-4)}
