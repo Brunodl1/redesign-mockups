@@ -34,6 +34,7 @@
 
 .s-hero {
   background: var(--bg);
+  padding: 50px 0;
 }
 
 .s-hero .wrap {
@@ -210,6 +211,7 @@
 
 .s-collections {
   background: var(--bg);
+  padding: 60px 0;
 }
 
 /* ---- Header (left aligned) ---- */
@@ -410,6 +412,7 @@
 .s-inspiration {
   position: relative;
   background: var(--bg);
+  padding: 30px 0px 50px;
 }
 
 /* ---- Large lifestyle band ---- */
@@ -895,6 +898,7 @@
 
 .s-decor {
   background: var(--bg);
+  padding-bottom: 60px;
 }
 
 /* ---- Header (left aligned, compact) ---- */
