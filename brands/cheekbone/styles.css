@@ -16,7 +16,7 @@
 .hdr{position:sticky; top:0; z-index:40; background:rgba(251,238,230,.92);
   backdrop-filter:blur(8px); border-bottom:1px solid var(--line)}
 .hdr__row{display:flex; align-items:center; gap:var(--sp-4); padding-block:.7rem}
-.hdr__logo img{height:38px; width:auto}
+.hdr__logo img{height:38px; width:auto; filter:brightness(0)}
 .hdr__nav{display:flex; gap:1.6rem; margin-left:auto; font-family:var(--font-display);
   text-transform:uppercase; font-weight:600; letter-spacing:.08em; font-size:.84rem}
 .hdr__nav a{position:relative; padding-block:.2em}
