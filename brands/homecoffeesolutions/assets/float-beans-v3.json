@@ -1,0 +1,11 @@
+{
+  "provider": "cloudflare-flux",
+  "model": "@cf/black-forest-labs/flux-1-schnell",
+  "account": "bruno1",
+  "aspect": "1:1",
+  "size": "1K",
+  "elapsed_s": 1.9,
+  "timestamp": "2026-06-11T11:30:11-0500",
+  "input_image": null,
+  "prompt": "artful arrangement of dark roasted coffee beans, some whole some grouped, photorealistic close-up, glossy oiled surface texture, pure white seamless background, no cast shadow"
+}

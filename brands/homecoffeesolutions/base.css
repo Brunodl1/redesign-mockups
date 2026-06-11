@@ -1,0 +1,96 @@
+/* ============================================================
+   Home Coffee Solutions — base.css (foundation, faithful tokens)
+   Real site: white bg · black ink · red #EE302C · Urbanist · pill
+   buttons (r27) · 30px cards. Elevated with warm espresso neutrals.
+   ============================================================ */
+:root{
+  /* color */
+  --bg:#FFFFFF;
+  --surface:#F7F3EE;          /* warm cream band */
+  --surface-2:#221710;        /* deep roast — dark bands/footer */
+  --ink:#17120E;
+  --ink-soft:#5C544C;
+  --accent:#EE302C;
+  --accent-ink:#FFFFFF;
+  --pop:#F25D5A;              /* accent hover */
+  --line:#E4DDD4;
+  --btn:#EE302C;
+  --btn-ink:#FFFFFF;
+  /* type */
+  --font-display:"Urbanist",system-ui,sans-serif;
+  --font-body:"Urbanist",system-ui,sans-serif;
+  --s--1:.875rem; --s-0:1rem; --s-1:1.2rem; --s-2:1.5rem;
+  --s-3:2rem; --s-4:2.75rem; --s-5:3.5rem;
+  /* space */
+  --sp-1:.25rem; --sp-2:.5rem; --sp-3:1rem; --sp-4:1.5rem;
+  --sp-5:2.5rem; --sp-6:4rem; --sp-7:6rem;
+  /* shape */
+  --radius:16px;
+  --radius-lg:30px;           /* their real card radius */
+  --r-pill:27px;              /* their real button radius */
+  --shadow:0 10px 34px rgba(23,18,14,.10);
+  --maxw:1240px;
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+html,body{overflow-x:clip}
+body{
+  font-family:var(--font-body);font-size:var(--s-0);line-height:1.6;
+  color:var(--ink);background:var(--bg);
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+ul{list-style:none}
+
+h1,h2,h3{font-family:var(--font-display);font-weight:700;line-height:1.12;letter-spacing:-.015em}
+h1{font-size:clamp(2.1rem,4.6vw,var(--s-5))}
+h2{font-size:clamp(1.7rem,3.2vw,var(--s-4))}
+h3{font-size:var(--s-2)}
+
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 clamp(1rem,4vw,2rem)}
+.sec{padding:var(--sp-7) 0}
+@media(max-width:760px){.sec{padding:var(--sp-6) 0}}
+
+.eyebrow{
+  display:inline-block;font-size:var(--s--1);font-weight:700;
+  letter-spacing:.18em;text-transform:uppercase;color:var(--accent);
+  margin-bottom:var(--sp-3);
+}
+
+/* buttons — their real pill style, sentence case, 700 */
+.btn{
+  display:inline-block;font-family:var(--font-body);font-weight:700;
+  font-size:.95rem;line-height:1;padding:16px 30px;border-radius:var(--r-pill);
+  border:2px solid transparent;cursor:pointer;transition:background .2s,color .2s,border-color .2s;
+  text-align:center;
+}
+.btn-primary{background:var(--btn);color:var(--btn-ink)}
+.btn-primary:hover{background:var(--pop)}
+.btn-outline{background:transparent;color:var(--ink);border-color:var(--ink)}
+.btn-outline:hover{background:var(--ink);color:var(--bg)}
+.btn-light{background:var(--bg);color:var(--ink)}
+.btn-light:hover{background:var(--surface)}
+.btn-outline-light{background:transparent;color:#fff;border-color:rgba(255,255,255,.85)}
+.btn-outline-light:hover{background:#fff;color:var(--ink)}
+.btn-block{display:block;width:100%}
+
+/* icons */
+.ic{width:42px;height:42px;color:var(--accent);stroke-width:1.6}
+
+/* floats — STATIC decorative product elements */
+.float{position:absolute;pointer-events:none;z-index:5}
+.float img{
+  width:100%;transform:rotate(var(--rot,0deg));
+  filter:drop-shadow(0 30px 24px rgba(23,18,14,.30)) drop-shadow(0 8px 8px rgba(23,18,14,.16));
+}
+@media(max-width:1000px){.float{display:none}}
+
+/* scroll reveal (3D) */
+.reveal{opacity:0;transform:perspective(900px) rotateX(8deg) translateY(26px);
+  transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){
+  .reveal{opacity:1;transform:none;transition:none}
+}

@@ -1,0 +1,11 @@
+{
+  "provider": "cloudflare-flux",
+  "model": "@cf/black-forest-labs/flux-1-schnell",
+  "account": "bruno1",
+  "aspect": "1:1",
+  "size": "1K",
+  "elapsed_s": 2.38,
+  "timestamp": "2026-06-11T11:30:11-0500",
+  "input_image": null,
+  "prompt": "small scattered cluster of glossy dark roasted coffee beans, ultra photorealistic macro, rich brown oily sheen, on a pure solid white background, no shadow, no props, studio product photography"
+}

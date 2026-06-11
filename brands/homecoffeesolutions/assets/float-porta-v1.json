@@ -1,0 +1,11 @@
+{
+  "provider": "cloudflare-flux",
+  "model": "@cf/black-forest-labs/flux-1-schnell",
+  "account": "bruno1",
+  "aspect": "1:1",
+  "size": "1K",
+  "elapsed_s": 1.95,
+  "timestamp": "2026-06-11T11:30:11-0500",
+  "input_image": null,
+  "prompt": "stainless steel espresso portafilter filled with freshly ground coffee, level dose, photorealistic product shot, chrome handle, isolated on pure white background, no shadow"
+}

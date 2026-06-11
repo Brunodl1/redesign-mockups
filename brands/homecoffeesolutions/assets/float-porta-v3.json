@@ -1,0 +1,11 @@
+{
+  "provider": "cloudflare-flux",
+  "model": "@cf/black-forest-labs/flux-1-schnell",
+  "account": "bruno1",
+  "aspect": "1:1",
+  "size": "1K",
+  "elapsed_s": 3.13,
+  "timestamp": "2026-06-11T11:30:12-0500",
+  "input_image": null,
+  "prompt": "top-down view of a chrome espresso portafilter holding rich brown ground coffee, hyperrealistic detail, isolated on clean pure white background, no shadows"
+}

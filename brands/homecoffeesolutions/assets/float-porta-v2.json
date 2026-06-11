@@ -1,0 +1,11 @@
+{
+  "provider": "cloudflare-flux",
+  "model": "@cf/black-forest-labs/flux-1-schnell",
+  "account": "bruno1",
+  "aspect": "1:1",
+  "size": "1K",
+  "elapsed_s": 2.93,
+  "timestamp": "2026-06-11T11:30:12-0500",
+  "input_image": null,
+  "prompt": "professional espresso portafilter with tamped coffee grounds and a few whole beans beside the rim, ultra photorealistic, polished steel, pure solid white background, studio light, no shadow"
+}
