@@ -1,11 +1,18 @@
-/* ===== announce bar + sticky header ===== */
-.announce{background:var(--accent);color:var(--accent-ink);font-family:var(--font-mono);
-  font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;text-align:center;
-  padding:.55rem 1rem;position:relative;z-index:60}
+/* ============================================================
+   Maater Cosmetics — styles.css (v2, cinematic pass)
+   Art direction: black cinema, orange as ACCENT not fill,
+   oversized condensed type, alternating alignment, one grade.
+   ============================================================ */
+
+/* ===== announce bar (quiet, mono, orange text on black) ===== */
+.announce{background:var(--bg);color:var(--accent-2);font-family:var(--font-mono);
+  font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;text-align:center;
+  padding:.6rem 1rem;position:relative;z-index:60;border-bottom:1px solid var(--line-2)}
 .announce__track{display:flex;gap:.7rem;justify-content:center;align-items:center;flex-wrap:wrap}
 
-.site-header{position:sticky;top:0;z-index:50;background:rgba(10,10,10,.72);
-  backdrop-filter:blur(12px);border-bottom:1px solid var(--line-2);transition:background .3s}
+/* ===== sticky header ===== */
+.site-header{position:sticky;top:0;z-index:50;background:rgba(10,10,10,.6);
+  backdrop-filter:blur(14px);border-bottom:1px solid var(--line-2);transition:background .3s}
 .site-header.is-scrolled{background:rgba(10,10,10,.92)}
 .site-header__inner{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;
   gap:var(--sp-3);padding-block:.85rem}
@@ -18,7 +25,6 @@
 .site-nav a:hover{color:var(--ink)}
 .site-cart{display:inline-flex;align-items:center;gap:.3rem;color:var(--ink)}
 .site-cart__n{font-family:var(--font-mono);font-size:.74rem;color:var(--accent-2)}
-
 @media(max-width:900px){
   .announce__x{display:none}
   .site-header__inner{grid-template-columns:auto 1fr auto}
@@ -27,1120 +33,306 @@
   .site-nav--right .site-nav__sets{display:none}
 }
 
-
-.s-hero {
-  position: relative;
-  min-height: 90vh;
-  display: flex;
-  align-items: flex-end;
-  overflow: hidden;
-  background: var(--bg);
-  padding: 0;
+/* ============================================================
+   HERO — full-bleed cinematic, type owns the canvas, no panel
+   ============================================================ */
+.s-hero{position:relative;min-height:92vh;display:flex;align-items:center;
+  overflow:hidden;background:var(--bg);padding:0}
+.s-hero__bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+  object-position:72% center;z-index:0}
+/* gentle left anchor + bottom settle — image is already near-black */
+.s-hero__scrim{position:absolute;inset:0;z-index:1;background:
+  linear-gradient(90deg,rgba(10,10,10,.55) 0%,rgba(10,10,10,.18) 42%,rgba(10,10,10,0) 65%),
+  linear-gradient(0deg,rgba(10,10,10,.5) 0%,rgba(10,10,10,0) 26%)}
+.s-hero__wrap{position:relative;z-index:2;width:100%}
+.s-hero__content{max-width:none}
+.s-hero__eyebrow{margin:0 0 var(--sp-4)}
+.s-hero__title{display:flex;flex-direction:column;margin:0 0 var(--sp-4);
+  font-size:clamp(4.2rem,11.5vw,10.5rem);line-height:.88;color:var(--ink);
+  text-shadow:0 4px 60px rgba(0,0,0,.45)}
+.s-hero__l2{margin-left:.55em;color:transparent;-webkit-text-stroke:2px var(--ink)}
+.s-hero__sub{max-width:46ch;margin:0 0 var(--sp-5);color:var(--ink);opacity:.86;
+  font-size:var(--s-1);line-height:1.5}
+.s-hero__cta{display:flex;flex-wrap:wrap;gap:var(--sp-3);margin:0 0 var(--sp-4)}
+.s-hero__trust{margin:0;color:var(--ink-soft);font-family:var(--font-mono);
+  font-size:var(--s--1);letter-spacing:.14em}
+@media(max-width:900px){
+  .s-hero{min-height:88vh;align-items:flex-end}
+  .s-hero__bg{object-position:68% center}
+  .s-hero__scrim{background:
+    linear-gradient(0deg,rgba(10,10,10,.9) 0%,rgba(10,10,10,.55) 38%,rgba(10,10,10,.12) 72%)}
+  .s-hero__wrap{padding-bottom:var(--sp-5)}
+  .s-hero__eyebrow{font-size:.6rem;letter-spacing:.18em;max-width:30ch}
+  .s-hero__title{font-size:clamp(3.2rem,14vw,5rem);line-height:.95}
+  .s-hero__l2{margin-left:.18em;-webkit-text-stroke:1.5px var(--ink)}
+  .s-hero__sub{font-size:var(--s-0);margin-bottom:var(--sp-4)}
+  .s-hero__cta .btn{flex:1;min-width:9rem}
 }
-
-.s-hero__bg {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: 75% center;
-  z-index: 0;
-}
-
-.s-hero__scrim {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  background:
-    linear-gradient(90deg, rgba(10,10,10,.78) 0%, rgba(10,10,10,.45) 42%, rgba(10,10,10,.15) 70%, rgba(10,10,10,.35) 100%),
-    radial-gradient(120% 90% at 20% 90%, rgba(10,10,10,.7) 0%, rgba(10,10,10,0) 60%);
-}
-
-.s-hero__wrap {
-  position: relative;
-  z-index: 2;
-  width: 100%;
-  padding-top: var(--sp-6);
-  padding-bottom: var(--sp-6);
-}
-
-.s-hero__panel {
-  max-width: 560px;
-  padding: var(--sp-5);
-  background: rgba(10,10,10,.55);
-  border: 1px solid var(--line);
-  border-radius: var(--radius-lg);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  box-shadow: var(--shadow);
-}
-
-.s-hero__eyebrow {
-  margin: 0 0 var(--sp-3);
-}
-
-.s-hero__title {
-  margin: 0 0 var(--sp-3);
-  color: var(--ink);
-  font-size: var(--s-5);
-  line-height: .92;
-  letter-spacing: .01em;
-}
-
-.s-hero__sub {
-  margin: 0 0 var(--sp-4);
-  color: var(--ink-soft);
-  font-family: var(--font-body);
-  font-size: var(--s-0);
-  line-height: 1.5;
-  max-width: 44ch;
-}
-
-.s-hero__cta {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--sp-3);
-  margin: 0 0 var(--sp-4);
-}
-
-.s-hero__trust {
-  margin: 0;
-  color: var(--ink-soft);
-  font-family: var(--font-mono);
-  font-size: var(--s--1);
-  letter-spacing: .03em;
-}
-.s-hero__trust::first-letter { color: var(--accent-2); }
-
-@media (max-width: 768px) {
-  .s-hero {
-    min-height: 88vh;
-    align-items: flex-end;
-  }
-  .s-hero__bg { object-position: 60% 30%; }
-  .s-hero__scrim {
-    background:
-      linear-gradient(180deg, rgba(10,10,10,.2) 0%, rgba(10,10,10,.1) 38%, rgba(10,10,10,.55) 66%, rgba(10,10,10,.85) 100%);
-  }
-  .s-hero__wrap {
-    padding-top: var(--sp-4);
-    padding-bottom: var(--sp-5);
-  }
-  .s-hero__panel {
-    max-width: 100%;
-    padding: var(--sp-4);
-    background: rgba(10,10,10,.6);
-  }
-  .s-hero__title { font-size: var(--s-4); }
-  .s-hero__sub { font-size: var(--s--1); }
-  .s-hero__cta { gap: var(--sp-2); }
-  .s-hero__cta .btn { flex: 1 1 auto; text-align: center; }
-}
-
-
-.s-press {
-  border-top: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
-  padding-top: var(--sp-7);
-  padding-bottom: var(--sp-7);
-}
-
-.s-press__wrap {
-  text-align: center;
-}
-
-.s-press__eyebrow {
-  margin-bottom: var(--sp-5);
-}
-
-/* Press logo wall */
-.s-press__logos {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  gap: var(--sp-5) var(--sp-7);
-  margin-bottom: var(--sp-6);
-}
-
-.s-press__logo {
-  height: 30px;
-  width: auto;
-  filter: brightness(0) invert(1);
-  opacity: .78;
-  transition: opacity .25s ease;
-}
-
-.s-press__logo:hover {
-  opacity: 1;
-}
-
-/* Review pull-quote */
-.s-press__review {
-  max-width: 720px;
-  margin: 0 auto;
-}
-
-.s-press__stars {
-  color: var(--star);
-  font-size: 1.15rem;
-  letter-spacing: .15em;
-  margin-bottom: var(--sp-3);
-}
-
-.s-press__quote {
-  margin: 0;
-  font-family: var(--font-cond);
-  font-size: clamp(1.35rem, 3vw, 2rem);
-  line-height: 1.25;
-  color: var(--ink);
-}
-
-.s-press__attr {
-  margin: var(--sp-3) 0 0;
-  font-family: var(--font-mono);
-  font-size: .8rem;
-  letter-spacing: .12em;
-  text-transform: uppercase;
-  color: var(--ink-soft);
-}
-
-@media (max-width: 640px) {
-  .s-press__logo {
-    height: 24px;
-  }
-}
-
 
 /* ============================================================
-   Maater Cosmetics — bestsellers.css
-   Bestseller product grid (4 → 2 → 1). Scoped under .s-bestsellers.
+   PRESS — legible logos + an Anton pull-quote moment
    ============================================================ */
-
-.s-bestsellers {
-  padding-block: clamp(3.2rem, 7vw, var(--sp-7));
+.s-press{border-top:1px solid var(--line-2);border-bottom:1px solid var(--line-2);
+  padding-block:clamp(2.6rem,5vw,4rem)}
+.s-press__wrap{text-align:center}
+.s-press__eyebrow{text-align:center}
+.s-press__logos{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;
+  gap:clamp(1.4rem,4vw,3.2rem);margin-block:var(--sp-4) var(--sp-6)}
+.s-press__logo{height:34px;width:auto;filter:brightness(0) invert(1);opacity:.92;
+  transition:opacity .25s ease}
+.s-press__logo:hover{opacity:1}
+/* National Post wordmark runs optically light — match weight */
+.s-press__logo:nth-child(5){height:42px}
+.s-press__review{max-width:980px;margin-inline:auto}
+.s-press__stars{color:var(--star);font-size:var(--s-1);letter-spacing:.35em;margin-bottom:var(--sp-3)}
+.s-press__quote{margin:0 0 var(--sp-3);font-family:var(--font-display);font-weight:400;
+  font-size:clamp(1.9rem,4.2vw,3.6rem);line-height:1.04;text-transform:uppercase;color:var(--ink)}
+.s-press__attr{margin:0;font-family:var(--font-mono);font-size:var(--s--1);
+  letter-spacing:.22em;text-transform:uppercase;color:var(--ink-soft)}
+@media(max-width:700px){
+  .s-press__logos{display:grid;grid-template-columns:repeat(3,1fr);justify-items:center;
+    align-items:center;gap:var(--sp-4) var(--sp-3)}
+  .s-press__logo{height:auto;max-height:26px;max-width:100%;opacity:.95}
 }
-
-.s-bestsellers__head {
-  text-align: center;
-  max-width: 680px;
-  margin: 0 auto var(--sp-6);
-}
-
-.s-bestsellers__title {
-  margin: 0 0 var(--sp-3);
-}
-
-.s-bestsellers__sub {
-  margin: 0;
-  color: var(--ink-soft);
-  font-size: var(--s-1);
-}
-
-/* Grid */
-.s-bestsellers__grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: clamp(1rem, 2.4vw, var(--sp-4));
-}
-
-/* Card */
-.s-bestsellers__card {
-  display: flex;
-  flex-direction: column;
-  background: var(--surface);
-  border: 1px solid var(--line);
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  transition: transform .28s cubic-bezier(.2,.7,.2,1),
-              box-shadow .28s ease,
-              border-color .28s ease;
-}
-
-.s-bestsellers__card:hover {
-  transform: translateY(-6px);
-  box-shadow: var(--glow), var(--shadow);
-  border-color: var(--accent);
-}
-
-/* Media — let the burnt-orange studio tile show */
-.s-bestsellers__media {
-  position: relative;
-  aspect-ratio: 4 / 5;
-  margin: var(--sp-3) var(--sp-3) 0;
-  border-radius: var(--radius);
-  overflow: hidden;
-  background: var(--surface-2);
-}
-
-.s-bestsellers__img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform .5s cubic-bezier(.2,.7,.2,1);
-}
-
-.s-bestsellers__card:hover .s-bestsellers__img {
-  transform: scale(1.04);
-}
-
-/* Badge */
-.s-bestsellers__badge {
-  position: absolute;
-  top: var(--sp-3);
-  left: var(--sp-3);
-  z-index: 2;
-  background: var(--accent);
-  color: var(--btn-ink);
-  font-family: var(--font-mono);
-  font-size: .62rem;
-  letter-spacing: .14em;
-  text-transform: uppercase;
-  padding: .4em .7em;
-  border-radius: var(--radius);
-}
-
-/* Body */
-.s-bestsellers__body {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-  padding: var(--sp-4) var(--sp-4) var(--sp-4);
-}
-
-.s-bestsellers__line {
-  margin: 0 0 var(--sp-2);
-  font-family: var(--font-mono);
-  font-size: .68rem;
-  letter-spacing: .22em;
-  text-transform: uppercase;
-  color: var(--accent-2);
-}
-
-.s-bestsellers__name {
-  margin: 0 0 var(--sp-2);
-  font-family: var(--font-cond);
-  font-size: var(--s-1);
-  font-weight: 600;
-  letter-spacing: .03em;
-  text-transform: none;
-  color: var(--ink);
-}
-
-.s-bestsellers__benefit {
-  margin: 0 0 var(--sp-3);
-  color: var(--ink-soft);
-  font-size: .95rem;
-  line-height: 1.4;
-}
-
-.s-bestsellers__rating {
-  display: flex;
-  align-items: center;
-  gap: .5em;
-  margin: 0 0 var(--sp-3);
-  font-size: .9rem;
-}
-
-.s-bestsellers__stars {
-  color: var(--star);
-  letter-spacing: .08em;
-}
-
-.s-bestsellers__score {
-  font-family: var(--font-mono);
-  color: var(--ink);
-}
-
-.s-bestsellers__count {
-  font-family: var(--font-mono);
-  color: var(--ink-soft);
-  font-size: .82rem;
-}
-
-.s-bestsellers__price {
-  margin: 0 0 var(--sp-4);
-  font-family: var(--font-mono);
-  font-size: var(--s-1);
-  font-weight: 700;
-  color: var(--ink);
-}
-
-/* push CTA to the bottom for even card alignment */
-.s-bestsellers__body .btn {
-  margin-top: auto;
-}
-
-/* Responsive: 4 → 2 → 1 */
-@media (max-width: 960px) {
-  .s-bestsellers__grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 520px) {
-  .s-bestsellers__grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-
-.s-actives {
-  position: relative;
-  isolation: isolate;
-  overflow: hidden;
-  background: var(--bg);
-  padding-block: clamp(3.2rem, 7vw, var(--sp-7));
-}
-
-/* cosmic nebula background + dark overlay so white text stays crisp */
-.s-actives::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  background-image:
-    linear-gradient(rgba(10,10,10,.55), rgba(10,10,10,.55)),
-    url("assets/nebula.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-/* subtle vignette to anchor edges */
-.s-actives::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  pointer-events: none;
-  background: radial-gradient(120% 90% at 50% 50%, rgba(10,10,10,0) 40%, rgba(10,10,10,.7) 100%);
-}
-
-.s-actives__head {
-  text-align: center;
-  max-width: 60ch;
-  margin: 0 auto clamp(2.4rem, 5vw, var(--sp-6));
-}
-
-.s-actives__eyebrow {
-  margin: 0 0 var(--sp-3);
-}
-
-.s-actives__title {
-  margin: 0 0 var(--sp-3);
-  color: var(--ink);
-}
-
-.s-actives__sub {
-  margin: 0;
-  color: var(--ink-soft);
-  font-family: var(--font-body);
-  font-size: var(--s-1);
-  line-height: 1.5;
-}
-
-.s-actives__grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: clamp(1.4rem, 3vw, var(--sp-5));
-}
-
-.s-actives__item {
-  text-align: center;
-  padding: var(--sp-3) var(--sp-2);
-}
-
-.s-actives__icon {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 64px;
-  height: 64px;
-  margin: 0 auto var(--sp-3);
-  border-radius: var(--radius-pill);
-  border: 1px solid var(--line);
-  background: rgba(10,10,10,.4);
-  box-shadow: var(--glow);
-}
-
-.s-actives__icon .ic {
-  width: 38px;
-  height: 38px;
-}
-
-.s-actives__name {
-  margin: 0 0 var(--sp-2);
-  color: var(--ink);
-  font-family: var(--font-cond);
-  font-weight: 600;
-  font-size: var(--s-1);
-  letter-spacing: .04em;
-  text-transform: uppercase;
-}
-
-.s-actives__desc {
-  margin: 0;
-  color: var(--ink-soft);
-  font-family: var(--font-body);
-  font-size: var(--s--1);
-  line-height: 1.5;
-  max-width: 26ch;
-  margin-inline: auto;
-}
-
-@media (max-width: 860px) {
-  .s-actives__grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: var(--sp-5) var(--sp-4);
-  }
-}
-
-@media (max-width: 480px) {
-  .s-actives__grid {
-    grid-template-columns: 1fr;
-  }
-  .s-actives__sub {
-    font-size: var(--s-0);
-  }
-}
-
 
 /* ============================================================
-   Maater Cosmetics — feature.css
-   Two alternating image|text feature bands. Scoped under .s-feature.
-   Section is position:relative so a floating element can be placed inside.
+   BESTSELLERS — bottles on black w/ orange rim-glow (no tiles)
    ============================================================ */
-
-.s-feature {
-  position: relative;
-  padding-block: clamp(3.2rem, 7vw, var(--sp-7));
-}
-
-.s-feature__wrap {
-  display: flex;
-  flex-direction: column;
-  gap: clamp(3rem, 7vw, var(--sp-7));
-}
-
-/* Band — 2 columns, vertically centered */
-.s-feature__band {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
-  gap: clamp(1.6rem, 4.5vw, var(--sp-6));
-}
-
-/* Band 2 alternates: image moves to the right column */
-.s-feature__band--reverse .s-feature__media {
-  order: 2;
-}
-
-/* Media */
-.s-feature__media {
-  margin: 0;
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  background: var(--surface-2);
-  box-shadow: var(--shadow);
-}
-
-.s-feature__img {
-  width: 100%;
-  height: clamp(420px, 56vw, 620px);
-  object-fit: cover;
-  transition: transform .6s cubic-bezier(.2,.7,.2,1);
-}
-
-.s-feature__media:hover .s-feature__img {
-  transform: scale(1.04);
-}
-
-/* Text */
-.s-feature__text {
-  max-width: 520px;
-}
-
-.s-feature__title {
-  margin: 0 0 var(--sp-4);
-}
-
-.s-feature__body {
-  margin: 0 0 var(--sp-4);
-  color: var(--ink-soft);
-  font-size: var(--s-1);
-  line-height: 1.5;
-}
-
-/* Mono spec list */
-.s-feature__spec {
-  list-style: none;
-  margin: 0 0 var(--sp-5);
-  padding: var(--sp-4) 0;
-  border-top: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
-}
-
-.s-feature__spec-item {
-  font-family: var(--font-mono);
-  font-size: var(--s--1);
-  letter-spacing: .06em;
-  text-transform: uppercase;
-  color: var(--ink-soft);
-  padding-block: var(--sp-2);
-}
-
-.s-feature__spec-item + .s-feature__spec-item {
-  border-top: 1px solid var(--line-2);
-}
-
-.s-feature__spec-k {
-  color: var(--accent-2);
-  margin-right: .4em;
-}
-
-/* Responsive: stack to 1 col, image always on top */
-@media (max-width: 880px) {
-  .s-feature__band {
-    grid-template-columns: 1fr;
-    gap: var(--sp-5);
-  }
-
-  .s-feature__band--reverse .s-feature__media {
-    order: 0;
-  }
-
-  .s-feature__text {
-    max-width: none;
-  }
-
-  .s-feature__img {
-    height: clamp(340px, 70vw, 460px);
-  }
-}
-
+.s-bestsellers{padding-block:clamp(4rem,9vw,7.5rem)}
+.s-bestsellers__head{max-width:none;text-align:left;margin-bottom:clamp(2.4rem,5vw,4rem)}
+.s-bestsellers__title{margin:0 0 var(--sp-3)}
+.s-bestsellers__sub{margin:0;color:var(--ink-soft);font-size:var(--s-0);max-width:52ch}
+.s-bestsellers__grid{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--sp-4)}
+.s-bestsellers__card{display:flex;flex-direction:column;background:transparent;
+  border:1px solid var(--line-2);border-radius:var(--radius-lg);overflow:hidden;
+  transition:transform .35s ease,border-color .35s ease,box-shadow .35s ease}
+.s-bestsellers__card:hover{transform:translateY(-6px);border-color:rgba(212,86,30,.55);
+  box-shadow:var(--glow)}
+.s-bestsellers__media{position:relative;aspect-ratio:4/5;display:flex;align-items:flex-end;
+  justify-content:center;overflow:hidden;
+  background:radial-gradient(62% 52% at 50% 64%,rgba(212,86,30,.38),rgba(10,10,10,0) 76%),#0D0C0B}
+.s-bestsellers__img{position:relative;z-index:1;width:auto;height:84%;object-fit:contain;
+  align-self:flex-end;margin-bottom:5%;filter:drop-shadow(0 22px 30px rgba(0,0,0,.6));
+  -webkit-mask-image:linear-gradient(#000 88%,transparent 99%);
+  mask-image:linear-gradient(#000 88%,transparent 99%);
+  transition:transform .45s ease}
+/* contact shadow grounds the cutout */
+.s-bestsellers__media::after{content:"";position:absolute;left:50%;bottom:3.5%;z-index:0;
+  width:54%;height:16px;transform:translateX(-50%);
+  background:radial-gradient(50% 50% at 50% 50%,rgba(0,0,0,.6),transparent 72%)}
+.s-bestsellers__card:hover .s-bestsellers__img{transform:translateY(-4px) scale(1.025)}
+.s-bestsellers__badge{position:absolute;top:var(--sp-3);left:var(--sp-3);z-index:2;
+  font-family:var(--font-mono);font-size:.62rem;letter-spacing:.2em;color:var(--accent-2);
+  border:1px solid rgba(212,86,30,.5);padding:.35em .8em;border-radius:var(--radius-pill);
+  background:rgba(10,10,10,.55)}
+.s-bestsellers__body{display:flex;flex-direction:column;gap:.35rem;padding:var(--sp-4);flex:1}
+.s-bestsellers__line{margin:0;font-family:var(--font-mono);font-size:.66rem;
+  letter-spacing:.26em;color:var(--ink-soft)}
+.s-bestsellers__name{margin:0;font-size:var(--s-1);color:var(--ink);text-transform:uppercase;
+  letter-spacing:.05em}
+.s-bestsellers__benefit{margin:0;color:var(--ink-soft);font-size:var(--s--1)}
+.s-bestsellers__rating{margin:.2rem 0 0;display:flex;align-items:baseline;gap:.45rem;
+  font-size:var(--s--1)}
+.s-bestsellers__stars{color:var(--star);letter-spacing:.12em}
+.s-bestsellers__score{color:var(--ink);font-weight:600}
+.s-bestsellers__count{color:var(--ink-soft)}
+.s-bestsellers__price{margin:.3rem 0 var(--sp-3);font-family:var(--font-cond);font-weight:600;
+  font-size:var(--s-2);color:var(--accent-2)}
+.s-bestsellers__body .btn{margin-top:auto}
+@media(max-width:1020px){.s-bestsellers__grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:520px){.s-bestsellers__grid{grid-template-columns:1fr}}
 
 /* ============================================================
-   Maater Cosmetics — reviews.css
-   Review wall: 6 cards in 2 rows (3 → 2 → 1). Scoped under .s-reviews.
+   ACTIVES — duotone nebula band, mono spec list, no icon circles
    ============================================================ */
-
-.s-reviews {
-  padding-block: clamp(3.2rem, 7vw, var(--sp-7));
+.s-actives{position:relative;isolation:isolate;padding-block:clamp(4.5rem,10vw,8rem);
+  overflow:hidden}
+.s-actives::before{content:"";position:absolute;inset:0;z-index:-1;
+  background:linear-gradient(rgba(10,10,10,.42),rgba(10,10,10,.66)),
+  url("assets/nebula-duo.jpg") center/cover no-repeat}
+.s-actives::after{content:"";position:absolute;inset:0;z-index:-1;
+  background:radial-gradient(120% 100% at 50% 50%,transparent 55%,rgba(5,5,5,.8) 100%)}
+.s-actives__wrap{display:grid;grid-template-columns:1.05fr 1fr;gap:clamp(2.5rem,6vw,5rem);
+  align-items:center}
+.s-actives__head{text-align:left}
+.s-actives__title{margin:0 0 var(--sp-3);text-transform:uppercase}
+.s-actives__sub{margin:0;color:var(--ink);opacity:.78;font-size:var(--s-0);max-width:42ch}
+.s-actives__grid{display:flex;flex-direction:column;gap:0;border-top:1px solid var(--line)}
+.s-actives__item{display:grid;grid-template-columns:54px 1fr;grid-template-rows:auto auto;
+  column-gap:var(--sp-4);align-items:center;padding-block:var(--sp-4);
+  border-bottom:1px solid var(--line)}
+.s-actives__icon{grid-row:1/3;display:flex;align-items:center;justify-content:center}
+.s-actives__name{margin:0;font-size:var(--s-1);letter-spacing:.08em}
+.s-actives__desc{margin:.15rem 0 0;color:var(--ink-soft);font-size:var(--s--1);grid-column:2}
+@media(max-width:900px){
+  .s-actives__wrap{grid-template-columns:1fr;gap:var(--sp-5)}
 }
-
-/* Heading block */
-.s-reviews__head {
-  text-align: center;
-  max-width: 720px;
-  margin: 0 auto var(--sp-6);
-}
-
-.s-reviews__title {
-  margin: 0 0 var(--sp-3);
-}
-
-.s-reviews__summary {
-  margin: 0;
-  font-family: var(--font-mono);
-  font-size: var(--s-1);
-  font-weight: 700;
-  letter-spacing: .06em;
-  color: var(--ink);
-}
-
-.s-reviews__summary::first-letter {
-  color: var(--star);
-}
-
-/* Grid: 3 across */
-.s-reviews__grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: clamp(1rem, 2.4vw, var(--sp-4));
-}
-
-/* Card */
-.s-reviews__card {
-  display: flex;
-  flex-direction: column;
-  background: var(--surface);
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  padding: var(--sp-5) var(--sp-4) var(--sp-4);
-  transition: transform .28s cubic-bezier(.2,.7,.2,1),
-              box-shadow .28s ease,
-              border-color .28s ease;
-}
-
-.s-reviews__card:hover {
-  transform: translateY(-6px);
-  box-shadow: var(--shadow);
-  border-color: var(--accent);
-}
-
-.s-reviews__stars {
-  color: var(--star);
-  font-size: 1rem;
-  letter-spacing: .14em;
-  margin-bottom: var(--sp-3);
-}
-
-.s-reviews__cardtitle {
-  margin: 0 0 var(--sp-3);
-  font-family: var(--font-cond);
-  font-size: var(--s-1);
-  font-weight: 600;
-  letter-spacing: .03em;
-  text-transform: none;
-  color: var(--ink);
-}
-
-.s-reviews__quote {
-  margin: 0 0 var(--sp-4);
-  color: var(--ink-soft);
-  font-size: .98rem;
-  line-height: 1.55;
-}
-
-/* push attribution to the bottom for even card alignment */
-.s-reviews__attr {
-  margin: auto 0 0;
-  font-family: var(--font-mono);
-  font-size: .8rem;
-  letter-spacing: .04em;
-  color: var(--ink-soft);
-}
-
-/* Disclaimer */
-.s-reviews__disclaimer {
-  margin: var(--sp-6) 0 0;
-  text-align: center;
-  font-family: var(--font-mono);
-  font-size: var(--s--1);
-  letter-spacing: .08em;
-  color: var(--ink-soft);
-}
-
-/* Responsive: 3 → 2 → 1 */
-@media (max-width: 960px) {
-  .s-reviews__grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 560px) {
-  .s-reviews__grid {
-    grid-template-columns: 1fr;
-  }
-}
-
 
 /* ============================================================
-   Maater Cosmetics — sets.css
-   Value sets / bundles band (2 cards → stack). Scoped under .s-sets.
+   FEATURE BANDS — edge-bled imagery, big heads, spec rows
    ============================================================ */
-
-.s-sets {
-  padding-block: clamp(3.2rem, 7vw, var(--sp-7));
+.s-feature{position:relative;padding-block:clamp(4rem,9vw,7.5rem);overflow:visible}
+.s-feature__wrap{display:flex;flex-direction:column;gap:clamp(4.5rem,10vw,8rem)}
+.s-feature__band{display:grid;grid-template-columns:1.15fr 1fr;
+  gap:clamp(2.2rem,5vw,4.5rem);align-items:center}
+.s-feature__media{margin:0;position:relative}
+/* bleed the image to the viewport edge on its side */
+.s-feature__band:not(.s-feature__band--reverse) .s-feature__media{
+  margin-left:calc(50% - 50vw)}
+.s-feature__band--reverse .s-feature__media{order:2;margin-right:calc(50% - 50vw)}
+.s-feature__band--reverse .s-feature__text{order:1}
+.s-feature__img{width:100%;height:clamp(440px,58vw,660px);object-fit:cover;
+  border-radius:0 var(--radius-lg) var(--radius-lg) 0;box-shadow:var(--shadow);
+  filter:saturate(.88) contrast(1.04)}
+.s-feature__band--reverse .s-feature__img{border-radius:var(--radius-lg) 0 0 var(--radius-lg)}
+.s-feature__text{max-width:560px}
+.s-feature__title{margin:0 0 var(--sp-4)}
+.s-feature__body{margin:0 0 var(--sp-4);color:var(--ink-soft);font-size:var(--s-0);
+  line-height:1.65;max-width:46ch}
+.s-feature__spec{list-style:none;margin:0 0 var(--sp-5);padding:0;
+  border-top:1px solid var(--line)}
+.s-feature__spec-item{padding:.7rem 0;border-bottom:1px solid var(--line);
+  font-family:var(--font-mono);font-size:var(--s--1);letter-spacing:.08em;color:var(--ink-soft)}
+.s-feature__spec-k{color:var(--accent-2);letter-spacing:.2em;margin-right:.4rem}
+/* float instances */
+.s-feature .float-1{top:-90px;right:-120px;--rot:-10deg}
+.s-feature .float-2{bottom:2%;left:-150px;--rot:14deg;width:clamp(280px,24vw,440px)}
+@media(max-width:900px){
+  .s-feature__band,.s-feature__band--reverse{grid-template-columns:1fr}
+  .s-feature__band--reverse .s-feature__media{order:0;margin-right:calc(50% - 50vw + 0px)}
+  .s-feature__band:not(.s-feature__band--reverse) .s-feature__media{margin-left:calc(50% - 50vw)}
+  .s-feature__media{margin-inline:calc(50% - 50vw)!important}
+  .s-feature__img{height:clamp(300px,70vw,420px);border-radius:0}
+  .s-feature__text{max-width:none}
 }
-
-.s-sets__head {
-  text-align: center;
-  max-width: 680px;
-  margin: 0 auto var(--sp-6);
-}
-
-.s-sets__title {
-  margin: 0 0 var(--sp-3);
-}
-
-.s-sets__sub {
-  margin: 0;
-  color: var(--ink-soft);
-  font-size: var(--s-1);
-}
-
-/* Grid — 2 side by side, stack on mobile */
-.s-sets__grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: clamp(1rem, 2.4vw, var(--sp-4));
-  max-width: 880px;
-  margin-inline: auto;
-}
-
-/* Card */
-.s-sets__card {
-  display: flex;
-  flex-direction: column;
-  background: var(--surface);
-  border: 1px solid var(--line);
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  transition: transform .28s cubic-bezier(.2,.7,.2,1),
-              box-shadow .28s ease,
-              border-color .28s ease;
-}
-
-.s-sets__card:hover {
-  transform: translateY(-6px);
-  box-shadow: var(--glow), var(--shadow);
-  border-color: var(--accent);
-}
-
-/* Media — fixed aspect, cover */
-.s-sets__media {
-  position: relative;
-  aspect-ratio: 4 / 3;
-  margin: var(--sp-3) var(--sp-3) 0;
-  border-radius: var(--radius);
-  overflow: hidden;
-  background: var(--surface-2);
-}
-
-.s-sets__img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform .5s cubic-bezier(.2,.7,.2,1);
-}
-
-.s-sets__card:hover .s-sets__img {
-  transform: scale(1.04);
-}
-
-/* Savings badge */
-.s-sets__badge {
-  position: absolute;
-  top: var(--sp-3);
-  left: var(--sp-3);
-  z-index: 2;
-  background: var(--accent);
-  color: var(--btn-ink);
-  font-family: var(--font-mono);
-  font-size: .62rem;
-  letter-spacing: .14em;
-  text-transform: uppercase;
-  padding: .4em .7em;
-  border-radius: var(--radius);
-}
-
-/* Body */
-.s-sets__body {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-  padding: var(--sp-4);
-}
-
-.s-sets__name {
-  margin: 0 0 var(--sp-2);
-  font-family: var(--font-cond);
-  font-size: var(--s-1);
-  font-weight: 600;
-  letter-spacing: .03em;
-  text-transform: none;
-  color: var(--ink);
-}
-
-.s-sets__inside {
-  margin: 0 0 var(--sp-3);
-  color: var(--ink-soft);
-  font-size: .95rem;
-  line-height: 1.4;
-}
-
-.s-sets__price {
-  display: flex;
-  align-items: baseline;
-  gap: .6em;
-  margin: 0 0 var(--sp-4);
-}
-
-.s-sets__now {
-  font-family: var(--font-mono);
-  font-size: var(--s-1);
-  font-weight: 700;
-  color: var(--ink);
-}
-
-.s-sets__was {
-  font-family: var(--font-mono);
-  font-size: .9rem;
-  color: var(--ink-soft);
-  text-decoration: line-through;
-}
-
-/* push CTA to the bottom for even card alignment */
-.s-sets__body .btn {
-  margin-top: auto;
-}
-
-/* Responsive: 2 → 1 */
-@media (max-width: 640px) {
-  .s-sets__grid {
-    grid-template-columns: 1fr;
-    max-width: 420px;
-  }
-}
-
 
 /* ============================================================
-   Maater Cosmetics — newsletter.css
-   Centered signup band with a faint cosmic teal nebula glow.
-   Scoped under .s-newsletter. Tokens only.
+   REVIEWS — masonry columns, sans body, mono only for attribution
    ============================================================ */
-
-.s-newsletter {
-  position: relative;
-  overflow: hidden;
-  padding-block: clamp(3.6rem, 8vw, var(--sp-7));
-  background: var(--surface);
-  border-top: 1px solid var(--line-2);
-  border-bottom: 1px solid var(--line-2);
-}
-
-/* faint nebula / teal glow */
-.s-newsletter::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background:
-    radial-gradient(60% 70% at 50% 0%, rgba(168,232,226,.10), transparent 70%),
-    radial-gradient(50% 80% at 50% 120%, rgba(212,86,30,.14), transparent 70%);
-  z-index: 0;
-}
-
-.s-newsletter__inner {
-  position: relative;
-  z-index: 1;
-  max-width: 640px;
-  margin-inline: auto;
-  text-align: center;
-}
-
-.s-newsletter__title {
-  margin: 0 0 var(--sp-3);
-}
-
-.s-newsletter__lead {
-  margin: 0 auto var(--sp-5);
-  max-width: 46ch;
-  color: var(--ink-soft);
-  font-size: var(--s-1);
-  line-height: 1.5;
-}
-
-/* inline form — stacks on mobile, never overflows */
-.s-newsletter__form {
-  display: flex;
-  gap: var(--sp-3);
-  max-width: 520px;
-  margin: 0 auto var(--sp-3);
-}
-
-.s-newsletter__input {
-  flex: 1 1 auto;
-  min-width: 0;
-  font-family: var(--font-body);
-  font-size: var(--s-0);
-  color: var(--ink);
-  background: var(--surface);
-  border: 1.5px solid var(--line);
-  border-radius: var(--radius-pill);
-  padding: .95em 1.4em;
-  transition: border-color .22s ease, box-shadow .22s ease;
-}
-
-.s-newsletter__input::placeholder {
-  color: var(--ink-soft);
-}
-
-.s-newsletter__input:focus {
-  outline: none;
-  border-color: var(--accent-2);
-  box-shadow: 0 0 0 3px rgba(168,232,226,.18);
-}
-
-.s-newsletter__btn {
-  flex: 0 0 auto;
-  border-radius: var(--radius-pill);
-  white-space: nowrap;
-}
-
-.s-newsletter__fine {
-  margin: 0;
-  font-family: var(--font-mono);
-  font-size: var(--s--1);
-  letter-spacing: .14em;
-  text-transform: uppercase;
-  color: var(--ink-soft);
-}
-
-@media (max-width: 560px) {
-  .s-newsletter__form {
-    flex-direction: column;
-  }
-  .s-newsletter__btn {
-    width: 100%;
-  }
-}
-
+.s-reviews{padding-block:clamp(4rem,9vw,7.5rem)}
+.s-reviews__head{text-align:left;margin-bottom:clamp(2.4rem,5vw,4rem)}
+.s-reviews__eyebrow{text-align:left}
+.s-reviews__title{margin:0 0 var(--sp-3);text-transform:uppercase}
+.s-reviews__summary{margin:0;font-family:var(--font-mono);font-size:var(--s-0);
+  letter-spacing:.12em;color:var(--accent-2)}
+.s-reviews__grid{columns:3;column-gap:var(--sp-4)}
+.s-reviews__card{break-inside:avoid;margin-bottom:var(--sp-4);
+  background:var(--surface);border:1px solid var(--line-2);border-radius:var(--radius-lg);
+  padding:var(--sp-5) var(--sp-4);transition:border-color .3s ease,transform .3s ease}
+.s-reviews__card:hover{border-color:rgba(212,86,30,.45);transform:translateY(-4px)}
+.s-reviews__stars{color:var(--star);letter-spacing:.2em;font-size:var(--s--1);
+  margin-bottom:var(--sp-3)}
+.s-reviews__cardtitle{margin:0 0 var(--sp-2);font-size:var(--s-1);letter-spacing:.04em}
+.s-reviews__quote{margin:0 0 var(--sp-3);font-family:var(--font-body);color:var(--ink-soft);
+  font-size:var(--s-0);line-height:1.6}
+.s-reviews__attr{margin:0;font-family:var(--font-mono);font-size:.7rem;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);opacity:.8}
+.s-reviews__disclaimer{margin:var(--sp-5) 0 0;text-align:center;font-family:var(--font-mono);
+  font-size:.66rem;letter-spacing:.14em;color:var(--ink-soft);opacity:.55}
+@media(max-width:1000px){.s-reviews__grid{columns:2}}
+@media(max-width:620px){.s-reviews__grid{columns:1}}
 
 /* ============================================================
-   Maater Cosmetics — footer.css
-   Dark footer: brand + tagline, 3 link columns, trust badges,
-   bottom bar. Scoped under .s-footer. Tokens only.
+   SETS — duo bottles on dark glow, right-aligned head
    ============================================================ */
-
-.s-footer {
-  background: var(--surface-2);
-  border-top: 1px solid var(--line-2);
-  padding-block: clamp(3rem, 6vw, var(--sp-7)) var(--sp-5);
-  color: var(--ink-soft);
+.s-sets{padding-block:clamp(4rem,9vw,7.5rem)}
+.s-sets__head{text-align:right;margin-bottom:clamp(2.4rem,5vw,4rem)}
+.s-sets__head .eyebrow{text-align:right}
+.s-sets__title{margin:0 0 var(--sp-3)}
+.s-sets__sub{margin:0 0 0 auto;color:var(--ink-soft);font-size:var(--s-0);max-width:48ch}
+.s-sets__grid{display:grid;grid-template-columns:repeat(2,1fr);gap:var(--sp-4);
+  max-width:1020px;margin-inline:auto}
+.s-sets__card{display:flex;flex-direction:column;border:1px solid var(--line-2);
+  border-radius:var(--radius-lg);overflow:hidden;background:transparent;
+  transition:transform .35s ease,border-color .35s ease,box-shadow .35s ease}
+.s-sets__card:hover{transform:translateY(-6px);border-color:rgba(212,86,30,.55);
+  box-shadow:var(--glow)}
+.s-sets__media{position:relative;aspect-ratio:4/3;display:flex;align-items:flex-end;
+  justify-content:center;overflow:hidden;
+  background:radial-gradient(58% 56% at 50% 66%,rgba(212,86,30,.34),rgba(10,10,10,0) 78%),#0D0C0B}
+.s-sets__badge{position:absolute;top:var(--sp-3);left:var(--sp-3);z-index:2;
+  font-family:var(--font-mono);font-size:.62rem;letter-spacing:.2em;color:var(--accent-ink);
+  background:var(--accent);padding:.4em .9em;border-radius:var(--radius-pill)}
+.s-sets__duo{position:relative;height:88%;display:flex;align-items:flex-end;
+  justify-content:center;margin-bottom:3%}
+.s-sets__img{height:92%;width:auto;object-fit:contain;
+  filter:drop-shadow(0 22px 30px rgba(0,0,0,.6));
+  -webkit-mask-image:linear-gradient(#000 88%,transparent 99%);
+  mask-image:linear-gradient(#000 88%,transparent 99%)}
+.s-sets__media::after{content:"";position:absolute;left:50%;bottom:4%;z-index:0;
+  width:50%;height:16px;transform:translateX(-50%);
+  background:radial-gradient(50% 50% at 50% 50%,rgba(0,0,0,.6),transparent 72%)}
+.s-sets__duo{position:relative;z-index:1}
+.s-sets__img--a{transform:rotate(-4deg) translateX(12%)}
+.s-sets__img--b{transform:rotate(3deg) translateX(-12%) scale(.92);transform-origin:bottom}
+.s-sets__body{display:flex;flex-direction:column;gap:.4rem;padding:var(--sp-4)}
+.s-sets__name{margin:0;font-size:var(--s-2);text-transform:uppercase;letter-spacing:.05em}
+.s-sets__inside{margin:0;color:var(--ink-soft);font-size:var(--s--1)}
+.s-sets__price{margin:.2rem 0 var(--sp-3);display:flex;align-items:baseline;gap:.7rem}
+.s-sets__now{font-family:var(--font-cond);font-weight:600;font-size:var(--s-2);
+  color:var(--accent-2)}
+.s-sets__was{font-family:var(--font-mono);font-size:var(--s-0);color:var(--ink-soft);
+  text-decoration:line-through;opacity:.7}
+@media(max-width:760px){
+  .s-sets__grid{grid-template-columns:1fr}
+  .s-sets__head{text-align:left}
+  .s-sets__head .eyebrow{text-align:left}
+  .s-sets__sub{margin:0}
 }
 
-/* Top region: brand block beside the columns */
-.s-footer__top {
-  display: grid;
-  grid-template-columns: minmax(220px, 1fr) 2fr;
-  gap: clamp(2rem, 5vw, var(--sp-6));
-  align-items: start;
+/* ============================================================
+   NEWSLETTER
+   ============================================================ */
+.s-newsletter{position:relative;isolation:isolate;padding-block:clamp(4rem,9vw,7rem);
+  border-top:1px solid var(--line-2)}
+.s-newsletter::before{content:"";position:absolute;inset:0;z-index:-1;
+  background:radial-gradient(620px 320px at 50% 110%,rgba(212,86,30,.13),transparent 70%)}
+.s-newsletter__inner{max-width:680px;margin-inline:auto;text-align:center}
+.s-newsletter__title{margin:0 0 var(--sp-3);font-size:clamp(2.2rem,5vw,4.2rem)}
+.s-newsletter__lead{margin:0 0 var(--sp-5);color:var(--ink-soft);font-size:var(--s-0)}
+.s-newsletter__form{display:flex;gap:var(--sp-2);max-width:480px;margin:0 auto var(--sp-3)}
+.s-newsletter__input{flex:1;min-width:0;background:var(--surface);border:1px solid var(--line);
+  border-radius:var(--radius-pill);color:var(--ink);font-family:var(--font-body);
+  font-size:var(--s-0);padding:.9em 1.4em;outline:none;transition:border-color .25s}
+.s-newsletter__input:focus{border-color:var(--accent-2)}
+.s-newsletter__input::placeholder{color:var(--ink-soft);opacity:.7}
+.s-newsletter__btn{border-radius:var(--radius-pill)}
+.s-newsletter__fine{margin:0;font-family:var(--font-mono);font-size:.68rem;
+  letter-spacing:.16em;color:var(--ink-soft);opacity:.7}
+@media(max-width:560px){
+  .s-newsletter__form{flex-direction:column}
+  .s-newsletter__btn{width:100%}
 }
 
-.s-footer__logo {
-  width: 150px;
-  height: auto;
-  margin-bottom: var(--sp-3);
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.s-footer{background:var(--surface);border-top:1px solid var(--line-2);
+  padding-block:clamp(3rem,6vw,4.5rem) var(--sp-4)}
+.s-footer__top{display:grid;grid-template-columns:1.2fr 2fr;gap:clamp(2rem,5vw,4rem);
+  margin-bottom:var(--sp-6)}
+.s-footer__logo{width:150px;height:auto;margin-bottom:var(--sp-3)}
+.s-footer__tagline{margin:0;color:var(--ink-soft);font-size:var(--s--1)}
+.s-footer__cols{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--sp-4)}
+.s-footer__heading{margin:0 0 var(--sp-3);font-size:.8rem;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--ink)}
+.s-footer__list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;
+  gap:.55rem}
+.s-footer__list a{color:var(--ink-soft);font-size:var(--s--1);transition:color .2s}
+.s-footer__list a:hover{color:var(--ink)}
+.s-footer__badges{margin:0 0 var(--sp-4);padding-top:var(--sp-4);
+  border-top:1px solid var(--line-2);text-align:center;font-family:var(--font-mono);
+  font-size:.68rem;letter-spacing:.22em;color:var(--ink-soft)}
+.s-footer__bottom{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;
+  gap:var(--sp-3);padding-top:var(--sp-4);border-top:1px solid var(--line-2)}
+.s-footer__copy,.s-footer__note{margin:0;font-family:var(--font-mono);font-size:.66rem;
+  letter-spacing:.12em;color:var(--ink-soft)}
+.s-footer__social{margin:0;display:flex;gap:var(--sp-3)}
+.s-footer__social a{font-family:var(--font-cond);font-size:.78rem;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--ink-soft);transition:color .2s}
+.s-footer__social a:hover{color:var(--ink)}
+@media(max-width:760px){
+  .s-footer__top{grid-template-columns:1fr}
+  .s-footer__cols{grid-template-columns:1fr 1fr}
+  .s-footer__bottom{flex-direction:column;text-align:center}
 }
-
-.s-footer__tagline {
-  margin: 0;
-  max-width: 30ch;
-  color: var(--ink-soft);
-  font-size: var(--s-0);
-  line-height: 1.5;
-}
-
-/* Link columns — 3-up */
-.s-footer__cols {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: clamp(1.4rem, 4vw, var(--sp-5));
-}
-
-.s-footer__heading {
-  margin: 0 0 var(--sp-3);
-  font-family: var(--font-cond);
-  font-weight: 600;
-  font-size: var(--s-0);
-  letter-spacing: .14em;
-  text-transform: uppercase;
-  color: var(--ink);
-}
-
-.s-footer__list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: grid;
-  gap: var(--sp-2);
-}
-
-.s-footer__list a {
-  color: var(--ink-soft);
-  font-size: var(--s-0);
-  transition: color .2s ease;
-}
-
-.s-footer__list a:hover {
-  color: var(--ink);
-}
-
-/* Trust badges */
-.s-footer__badges {
-  margin: clamp(2.4rem, 5vw, var(--sp-6)) 0 0;
-  padding-top: var(--sp-4);
-  border-top: 1px solid var(--line);
-  font-family: var(--font-mono);
-  font-size: var(--s--1);
-  letter-spacing: .18em;
-  text-transform: uppercase;
-  color: var(--accent-2);
-}
-
-/* Bottom bar */
-.s-footer__bottom {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: var(--sp-3) var(--sp-5);
-  margin-top: var(--sp-4);
-  padding-top: var(--sp-4);
-  border-top: 1px solid var(--line-2);
-}
-
-.s-footer__copy {
-  margin: 0;
-  font-family: var(--font-cond);
-  letter-spacing: .08em;
-  text-transform: uppercase;
-  color: var(--ink);
-}
-
-.s-footer__note {
-  margin: 0;
-  flex: 1 1 240px;
-  font-family: var(--font-mono);
-  font-size: var(--s--1);
-  letter-spacing: .06em;
-  color: var(--ink-soft);
-}
-
-.s-footer__social {
-  margin: 0;
-  display: flex;
-  gap: var(--sp-4);
-}
-
-.s-footer__social a {
-  font-family: var(--font-mono);
-  font-size: var(--s--1);
-  letter-spacing: .12em;
-  text-transform: uppercase;
-  color: var(--ink-soft);
-  transition: color .2s ease;
-}
-
-.s-footer__social a:hover {
-  color: var(--ink);
-}
-
-/* Responsive — stack on mobile */
-@media (max-width: 880px) {
-  .s-footer__top {
-    grid-template-columns: 1fr;
-    gap: var(--sp-5);
-  }
-}
-
-@media (max-width: 560px) {
-  .s-footer__cols {
-    grid-template-columns: 1fr;
-    gap: var(--sp-5);
-  }
-  .s-footer__bottom {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-}
-
-
-
-/* ===== floating droplet instances (static) ===== */
-.s-feature{ }
-.s-feature .float-1{top:-40px;right:-70px;width:clamp(220px,22vw,380px);--rot:-8deg}
-.s-feature .float-2{bottom:4%;left:-90px;width:clamp(180px,18vw,300px);--rot:13deg}
