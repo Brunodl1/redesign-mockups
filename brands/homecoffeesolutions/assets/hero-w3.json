@@ -1,0 +1,11 @@
+{
+  "provider": "cloudflare-flux",
+  "model": "@cf/black-forest-labs/flux-1-schnell",
+  "account": "bruno1",
+  "aspect": "16:9",
+  "size": "1K",
+  "elapsed_s": 1.9,
+  "timestamp": "2026-06-11T13:23:45-0500",
+  "input_image": null,
+  "prompt": "close atmospheric scene of espresso dripping from a bottomless portafilter into a ceramic cup, swirling golden crema, steam glowing in warm window light at sunrise, dark cozy kitchen, intense emotional mood, photorealistic, no text no logos no writing anywhere in the scene"
+}

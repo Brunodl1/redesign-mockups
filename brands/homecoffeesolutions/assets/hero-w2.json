@@ -1,0 +1,11 @@
+{
+  "provider": "cloudflare-flux",
+  "model": "@cf/black-forest-labs/flux-1-schnell",
+  "account": "bruno1",
+  "aspect": "16:9",
+  "size": "1K",
+  "elapsed_s": 1.81,
+  "timestamp": "2026-06-11T13:23:45-0500",
+  "input_image": null,
+  "prompt": "elegant chrome espresso machine brewing at dawn in a moody kitchen, thick steam curling through warm golden side light, a glass espresso cup filling with rich crema in the foreground right, deep brown shadows, cinematic emotional atmosphere, photorealistic, completely unbranded equipment with no text or logos"
+}
