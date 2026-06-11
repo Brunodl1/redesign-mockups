@@ -160,8 +160,8 @@
     display: none;
   }
 
-  /* hide right account icon, show hamburger instead */
-  .s-header__icons-right {
+  /* hide right account icon, show hamburger instead (keep container so cart stays visible) */
+  .s-header__icons-right .s-header__icon-btn[aria-label="My account"] {
     display: none;
   }
 
