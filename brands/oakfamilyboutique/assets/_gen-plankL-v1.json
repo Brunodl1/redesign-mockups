@@ -1,0 +1,11 @@
+{
+  "provider": "cloudflare-flux",
+  "model": "@cf/black-forest-labs/flux-1-schnell",
+  "account": "bruno1",
+  "aspect": "4:5",
+  "size": "1K",
+  "elapsed_s": 1.88,
+  "timestamp": "2026-06-11T13:28:29-0500",
+  "input_image": null,
+  "prompt": "A single engineered hardwood oak floor plank sample at a slight angle, light natural oak with visible wood grain and a subtle beveled edge, realistic wood texture, isolated on a pure solid white background, soft studio product photography, NO shadow, ultra sharp, top-down three-quarter view"
+}

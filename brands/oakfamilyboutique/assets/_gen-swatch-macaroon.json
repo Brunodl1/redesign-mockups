@@ -1,0 +1,11 @@
+{
+  "provider": "cloudflare-flux",
+  "model": "@cf/black-forest-labs/flux-1-schnell",
+  "account": "bruno1",
+  "aspect": "1:1",
+  "size": "1K",
+  "elapsed_s": 2.04,
+  "timestamp": "2026-06-11T13:30:44-0500",
+  "input_image": null,
+  "prompt": "Top-down flat-lay close-up of a warm honey-blonde engineered oak floor plank, natural wood grain texture, even tone, soft studio light, realistic, filling the frame, no objects"
+}

@@ -1,0 +1,11 @@
+{
+  "provider": "cloudflare-flux",
+  "model": "@cf/black-forest-labs/flux-1-schnell",
+  "account": "bruno1",
+  "aspect": "16:9",
+  "size": "1K",
+  "elapsed_s": 1.82,
+  "timestamp": "2026-06-11T13:28:29-0500",
+  "input_image": null,
+  "prompt": "Premium interior photography, a warm sunlit Scandinavian open-plan kitchen and living room with WIDE light European white-oak engineered plank flooring filling the foreground, minimal warm decor, soft morning light, neutral linen tones, shallow depth, editorial architectural digest style, calm and inviting, generous empty space on the left for text, photorealistic"
+}

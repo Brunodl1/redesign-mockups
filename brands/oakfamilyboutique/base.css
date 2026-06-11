@@ -1,0 +1,106 @@
+/* ============================================================
+   Oak Family Boutique — base.css (warm flooring foundation)
+   Faithful to the real brand: warm cream bg, charcoal ink + CTA,
+   wood is the colour, serif display + humanist sans. Reference: flooring.md
+   ============================================================ */
+:root{
+  /* color — warm natural, wood carries the colour */
+  --bg:        #F6F1E9;   /* warm cream page */
+  --surface:   #FFFFFF;   /* cards / raised surface */
+  --surface-2: #ECE3D5;   /* warm sand alt bands */
+  --surface-3: #E3D8C6;   /* deeper sand */
+  --ink:       #26221E;   /* warm near-black */
+  --ink-soft:  #6C6358;   /* secondary text / spec labels */
+  --accent:    #2B2622;   /* charcoal — primary buttons */
+  --accent-ink:#FBF7EF;   /* text on charcoal */
+  --pop:       #8A6A45;   /* warm oak/tan — $/sqft, small accents */
+  --pop-2:     #46553F;   /* forest/olive — trust ticks, links */
+  --line:      #DED3C2;   /* warm hairline */
+  --line-2:    #EBE2D5;   /* faint hairline */
+  --star:      #B5803F;   /* warm rating stars */
+  --btn:       #2B2622;
+  --btn-ink:   #FBF7EF;
+  /* type */
+  --font-display: "Fraunces", Georgia, "Times New Roman", serif;
+  --font-body:    "Inter", "Helvetica Neue", Arial, sans-serif;
+  --s--1: .84rem;
+  --s-0:  1rem;
+  --s-1:  1.25rem;
+  --s-2:  1.62rem;
+  --s-3:  2.3rem;
+  --s-4:  3.3rem;
+  --s-5:  4.6rem;
+  /* space (4px base) */
+  --sp-1:.25rem; --sp-2:.5rem; --sp-3:1rem; --sp-4:1.5rem;
+  --sp-5:2.5rem; --sp-6:4rem; --sp-7:6.5rem;
+  /* radius + shadow */
+  --radius:    10px;
+  --radius-lg: 20px;
+  --radius-pill: 999px;
+  --shadow:    0 14px 40px rgba(36,31,26,.10);
+  --shadow-sm: 0 4px 16px rgba(36,31,26,.07);
+  --maxw: 1280px;
+}
+
+*{box-sizing:border-box}
+html,body{overflow-x:clip}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--bg);color:var(--ink);
+  font-family:var(--font-body);font-size:17px;line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+
+h1,h2,h3{margin:0;font-family:var(--font-display);font-weight:400;
+  line-height:1.04;letter-spacing:-.01em}
+h1{font-size:clamp(2.6rem,5.6vw,var(--s-5));font-weight:380}
+h2{font-size:clamp(2rem,3.8vw,var(--s-4));font-weight:380}
+h3{font-size:var(--s-1);line-height:1.15}
+p{margin:0 0 var(--sp-3)}
+
+.wrap{max-width:var(--maxw);margin-inline:auto;padding-inline:clamp(1.1rem,4vw,2.4rem)}
+.section{padding-block:clamp(3.4rem,7vw,var(--sp-7))}
+
+.eyebrow{font-family:var(--font-body);font-weight:600;font-size:var(--s--1);
+  letter-spacing:.2em;text-transform:uppercase;color:var(--pop);margin:0 0 var(--sp-3)}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5em;
+  font-family:var(--font-body);font-weight:600;font-size:.95rem;letter-spacing:.02em;
+  padding:.95em 1.8em;border-radius:var(--radius-pill);border:1.5px solid transparent;
+  cursor:pointer;transition:.22s ease;line-height:1}
+.btn-primary{background:var(--btn);color:var(--btn-ink)}
+.btn-primary:hover{background:#3a342e;transform:translateY(-2px);box-shadow:var(--shadow-sm)}
+.btn-outline{background:transparent;color:var(--ink);border-color:var(--ink)}
+.btn-outline:hover{background:var(--ink);color:var(--accent-ink)}
+.btn-light{background:var(--surface);color:var(--ink);border-color:var(--line)}
+.btn-light:hover{border-color:var(--ink)}
+.btn-block{display:flex;width:100%}
+
+/* small inline SVG line icons */
+.ic{width:38px;height:38px;display:block;stroke:var(--pop-2);stroke-width:1.4;
+  fill:none;stroke-linecap:round;stroke-linejoin:round}
+
+/* sample chip (the flooring conversion device) */
+.chip{display:inline-flex;align-items:center;gap:.45em;font-family:var(--font-body);
+  font-weight:600;font-size:var(--s--1);letter-spacing:.01em;color:var(--pop-2);
+  background:var(--surface);border:1.5px solid var(--line);border-radius:var(--radius-pill);
+  padding:.5em 1em;transition:.2s ease}
+.chip:hover{border-color:var(--pop-2);background:#fbfaf7}
+
+/* floating decorative element (STATIC) — angled plank sample */
+.float{position:absolute;z-index:1;pointer-events:none;width:clamp(220px,22vw,380px)}
+.float img{width:100%;transform:rotate(var(--rot,0deg));
+  filter:drop-shadow(0 22px 34px rgba(36,31,26,.28))}
+@media(max-width:1000px){.float{display:none}}
+
+/* scroll-reveal */
+.reveal{opacity:0;transform:perspective(1000px) rotateX(7deg) translateY(26px);
+  transition:.7s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){
+  .reveal{opacity:1;transform:none;transition:none}
+  html{scroll-behavior:auto}
+}
