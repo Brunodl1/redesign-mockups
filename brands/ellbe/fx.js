@@ -25,8 +25,6 @@
         });
       }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
       reveals.forEach(function (el) { io.observe(el); });
-      var revealInView=function(){var vh=window.innerHeight||document.documentElement.clientHeight;reveals.forEach(function(el){if(el.classList.contains('in'))return;if(el.getBoundingClientRect().top<vh*0.98){el.classList.add('in');io.unobserve(el);}});};
-      revealInView();window.addEventListener('load',revealInView);
     }
   }
 
