@@ -1,0 +1,116 @@
+/* ============================================================
+   Cheekbone Beauty — foundation (faithful to the real brand)
+   warm blush-cream canvas · bold Indigenous colour pops
+   (magenta / purple / orange / teal) · Oswald condensed caps
+   ============================================================ */
+:root{
+  /* color */
+  --bg:        #fbeee6;   /* warm blush-cream page bg */
+  --surface:   #ffffff;   /* white cards / raised surface */
+  --surface-2: #f6e2da;   /* soft blush alt bands */
+  --ink:       #231f20;   /* near-black headings + text */
+  --ink-soft:  #6b5f5b;   /* secondary text */
+  --accent:    #e6197d;   /* hot magenta — primary buttons */
+  --accent-ink:#ffffff;   /* text on accent */
+  --pop:       #f59a1f;   /* orange pop */
+  --purple:    #7d3cc9;   /* royal purple pop */
+  --teal:      #15b3c2;   /* teal pop */
+  --line:      #ead9d0;   /* hairline borders */
+  --star:      #f59a1f;   /* rating stars */
+  --btn:       #231f20;
+  --btn-ink:   #ffffff;
+  /* type */
+  --font-display: "Oswald", "Arial Narrow", system-ui, sans-serif;
+  --font-body:    "Mulish", "Helvetica Neue", Arial, sans-serif;
+  --s--1: 0.82rem;
+  --s-0:  1rem;
+  --s-1:  1.25rem;
+  --s-2:  1.6rem;
+  --s-3:  2.3rem;
+  --s-4:  3.4rem;
+  --s-5:  5rem;
+  /* space (4px base) */
+  --sp-1:.25rem; --sp-2:.5rem; --sp-3:1rem; --sp-4:1.5rem;
+  --sp-5:2.5rem; --sp-6:4rem; --sp-7:6rem;
+  /* radius + shadow */
+  --radius:    6px;
+  --radius-lg: 18px;
+  --radius-pill: 999px;
+  --shadow:    0 14px 40px rgba(35,31,32,.12);
+  --maxw: 1240px;
+}
+
+*{box-sizing:border-box}
+html,body{overflow-x:clip}
+html{scroll-behavior:smooth}
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font-family:var(--font-body); font-size:var(--s-0); line-height:1.6;
+  -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+}
+img{max-width:100%; display:block}
+a{color:inherit; text-decoration:none}
+
+h1,h2,h3{
+  font-family:var(--font-display); font-weight:700; line-height:1.02;
+  text-transform:uppercase; letter-spacing:.01em; margin:0; color:var(--ink);
+}
+h1{font-size:clamp(2.6rem,6vw,var(--s-5))}
+h2{font-size:clamp(2rem,4.4vw,var(--s-4))}
+h3{font-size:var(--s-2); letter-spacing:.02em}
+p{margin:0 0 var(--sp-3)}
+
+.wrap{max-width:var(--maxw); margin-inline:auto; padding-inline:var(--sp-4)}
+.section{padding-block:var(--sp-7)}
+.eyebrow{
+  font-family:var(--font-display); text-transform:uppercase; font-weight:600;
+  letter-spacing:.22em; font-size:var(--s--1); color:var(--accent);
+  margin:0 0 var(--sp-3);
+}
+
+/* buttons */
+.btn{
+  display:inline-flex; align-items:center; gap:.5em; cursor:pointer;
+  font-family:var(--font-display); font-weight:600; text-transform:uppercase;
+  letter-spacing:.12em; font-size:var(--s--1);
+  padding:.95em 1.9em; border-radius:var(--radius-pill);
+  border:2px solid transparent; transition:transform .15s ease, background .2s, color .2s;
+}
+.btn:hover{transform:translateY(-2px)}
+.btn-primary{background:var(--accent); color:var(--accent-ink); border-color:var(--accent)}
+.btn-primary:hover{background:#c8126a; border-color:#c8126a}
+.btn-dark{background:var(--btn); color:var(--btn-ink); border-color:var(--btn)}
+.btn-light{background:#fff; color:var(--ink); border-color:#fff}
+.btn-outline{background:transparent; color:var(--ink); border-color:var(--ink)}
+.btn-outline-light{background:transparent; color:#fff; border-color:#fff}
+.btn-outline-light:hover{background:#fff; color:var(--ink)}
+.btn-block{width:100%; justify-content:center}
+
+/* beadwork ribbon — signature Indigenous pattern border */
+.ribbon{
+  height:26px; width:100%;
+  background:url('assets/ribbon.png') repeat-x center/auto 100%;
+  background-size:auto 100%;
+}
+
+/* section icons */
+.ic{width:38px;height:38px;stroke:var(--accent);stroke-width:1.6;fill:none;
+   stroke-linecap:round;stroke-linejoin:round}
+
+/* floating product elements — STATIC */
+.float{position:absolute; z-index:3; pointer-events:none}
+.float img{
+  width:100%; height:auto;
+  transform:rotate(var(--rot,0deg));
+  filter:drop-shadow(0 18px 26px rgba(35,31,32,.28));
+}
+@media(max-width:1000px){ .float{display:none} }
+
+/* scroll-reveal */
+.reveal{opacity:0; transform:perspective(900px) rotateX(8deg) translateY(26px);
+  transition:opacity .7s cubic-bezier(.2,.7,.2,1), transform .7s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1; transform:none}
+@media(prefers-reduced-motion:reduce){
+  .reveal{opacity:1; transform:none; transition:none}
+  html{scroll-behavior:auto}
+}
