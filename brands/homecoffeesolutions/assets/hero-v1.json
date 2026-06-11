@@ -1,0 +1,11 @@
+{
+  "provider": "cloudflare-flux",
+  "model": "@cf/black-forest-labs/flux-1-schnell",
+  "account": "bruno1",
+  "aspect": "16:9",
+  "size": "1K",
+  "elapsed_s": 1.7,
+  "timestamp": "2026-06-11T13:17:15-0500",
+  "input_image": null,
+  "prompt": "cinematic close-up of espresso pouring from a portafilter into a glass cup, rich golden crema streams, wisps of steam, dark moody caf\u00e9 atmosphere with warm amber backlight, shallow depth of field, emotional and inviting, photorealistic, darker left side of frame"
+}

@@ -1,0 +1,11 @@
+{
+  "provider": "cloudflare-flux",
+  "model": "@cf/black-forest-labs/flux-1-schnell",
+  "account": "bruno1",
+  "aspect": "16:9",
+  "size": "1K",
+  "elapsed_s": 1.8,
+  "timestamp": "2026-06-11T13:17:16-0500",
+  "input_image": null,
+  "prompt": "prosumer espresso machine pulling a shot in a dim warm kitchen at dawn, steam rising dramatically lit by side light, double espresso cups with thick crema, deep shadows and amber highlights, emotional cinematic photography, photorealistic"
+}

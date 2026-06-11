@@ -1,0 +1,11 @@
+{
+  "provider": "cloudflare-flux",
+  "model": "@cf/black-forest-labs/flux-1-schnell",
+  "account": "bruno1",
+  "aspect": "16:9",
+  "size": "1K",
+  "elapsed_s": 1.49,
+  "timestamp": "2026-06-11T13:17:15-0500",
+  "input_image": null,
+  "prompt": "hands cradling a steaming cup of cappuccino with latte art, soft golden morning light through a kitchen window, espresso machine glowing softly in the background, cozy intimate morning ritual, warm cinematic color grade, photorealistic, calm negative space on the left"
+}

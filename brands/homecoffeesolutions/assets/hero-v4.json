@@ -1,0 +1,11 @@
+{
+  "provider": "cloudflare-flux",
+  "model": "@cf/black-forest-labs/flux-1-schnell",
+  "account": "bruno1",
+  "aspect": "16:9",
+  "size": "1K",
+  "elapsed_s": 1.9,
+  "timestamp": "2026-06-11T13:17:16-0500",
+  "input_image": null,
+  "prompt": "overhead-angle shot of fresh espresso with swirling crema next to scattered roasted coffee beans on dark walnut wood, gentle steam curling upward in warm directional light, rich browns and deep blacks, evocative and tactile, photorealistic macro"
+}
