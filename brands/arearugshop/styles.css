@@ -806,6 +806,7 @@
 /* Image column */
 .s-materials__img-col {
   flex-shrink: 0;
+  padding-right: 40px;
 }
 
 .s-materials__img {
@@ -927,6 +928,7 @@
   background-size: cover;
   background-position: center;
   overflow: hidden;
+  padding: 80px 0;
 }
 
 /* Full-bleed cinematic scrim: dark left, lighter right */
