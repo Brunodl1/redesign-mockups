@@ -1,0 +1,108 @@
+/* ============================================================
+   Pehr — foundation (faithful to the real brand)
+   warm cream canvas · sage-teal accent · Fraunces serif display
+   · Jost geometric sans body · near-sharp craft buttons
+   ============================================================ */
+:root{
+  /* color */
+  --bg:        #f0ebe3;   /* warm cream — the page air */
+  --surface:   #f7f4ee;   /* lifted cream cards/bands */
+  --surface-2: #e7e3da;   /* deeper cream alt band */
+  --ink:       #222222;   /* warm near-black — all text */
+  --ink-soft:  #6b6a66;   /* secondary text */
+  --accent:    #597C7C;   /* sage-teal — buttons, links, active */
+  --accent-ink:#ffffff;   /* text on accent */
+  --accent-soft:#829C9C;  /* lighter sage — labels, soft tints */
+  --pop:       #c98a73;   /* warm terracotta — sparing warm accent */
+  --line:      #ddd6ca;   /* hairline on cream */
+  --star:      #c98a73;
+  --btn:       #597C7C;
+  --btn-ink:   #ffffff;
+  /* type */
+  --font-display: "Fraunces", Georgia, "Times New Roman", serif;
+  --font-body:    "Jost", system-ui, -apple-system, sans-serif;
+  --s--1: 0.78rem;
+  --s-0:  1rem;
+  --s-1:  1.2rem;
+  --s-2:  1.6rem;
+  --s-3:  2.2rem;
+  --s-4:  3.2rem;
+  --s-5:  4.6rem;
+  /* space (4px base) */
+  --sp-1:.25rem; --sp-2:.5rem; --sp-3:1rem; --sp-4:1.5rem;
+  --sp-5:2.5rem; --sp-6:4rem; --sp-7:6rem;
+  /* shape */
+  --radius:    3px;       /* near-sharp — craft/precision */
+  --radius-lg: 8px;
+  --radius-pill: 999px;
+  --shadow:    0 14px 40px rgba(34,34,34,.08);
+  --maxw: 1320px;
+}
+
+*{box-sizing:border-box}
+html,body{overflow-x:clip}
+html{scroll-behavior:smooth}
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font-family:var(--font-body); font-size:var(--s-0); line-height:1.65;
+  font-weight:300; -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+}
+img{max-width:100%; display:block}
+a{color:inherit; text-decoration:none}
+
+h1,h2,h3{
+  font-family:var(--font-display); font-weight:400; line-height:1.06;
+  letter-spacing:-.01em; margin:0; color:var(--ink);
+}
+h1{font-size:clamp(2.8rem,6vw,var(--s-5))}
+h2{font-size:clamp(2rem,4vw,var(--s-4))}
+h3{font-size:var(--s-2); line-height:1.12}
+p{margin:0 0 var(--sp-3)}
+
+.wrap{max-width:var(--maxw); margin-inline:auto; padding-inline:var(--sp-4)}
+.section{padding-block:var(--sp-7)}
+.eyebrow{
+  font-family:var(--font-body); text-transform:uppercase; font-weight:500;
+  letter-spacing:.18em; font-size:var(--s--1); color:var(--accent);
+  margin:0 0 var(--sp-3);
+}
+
+/* buttons — near-sharp, uppercase, geometric */
+.btn{
+  display:inline-flex; align-items:center; gap:.5em; cursor:pointer;
+  font-family:var(--font-body); font-weight:600; text-transform:uppercase;
+  letter-spacing:.07em; font-size:var(--s--1);
+  padding:.95em 2em; border-radius:var(--radius);
+  border:1.5px solid transparent; transition:background .2s, color .2s, border-color .2s, transform .15s ease;
+}
+.btn:hover{transform:translateY(-1px)}
+.btn-primary{background:var(--accent); color:var(--accent-ink); border-color:var(--accent)}
+.btn-primary:hover{background:#456262; border-color:#456262}
+.btn-outline{background:transparent; color:var(--ink); border-color:var(--ink)}
+.btn-outline:hover{background:var(--ink); color:#fff}
+.btn-outline-light{background:transparent; color:#fff; border-color:rgba(255,255,255,.85)}
+.btn-outline-light:hover{background:#fff; color:var(--ink)}
+.btn-light{background:#fff; color:var(--ink); border-color:#fff}
+.btn-block{width:100%; justify-content:center}
+
+/* section line icons */
+.ic{width:38px;height:38px;stroke:var(--accent);stroke-width:1.4;fill:none;
+   stroke-linecap:round;stroke-linejoin:round}
+
+/* floating elements — STATIC */
+.float{position:absolute; z-index:3; pointer-events:none}
+.float img{
+  width:100%; height:auto;
+  transform:rotate(var(--rot,0deg));
+  filter:drop-shadow(0 22px 26px rgba(34,34,34,.18));
+}
+@media(max-width:1000px){ .float{display:none} }
+
+/* scroll-reveal */
+.reveal{opacity:0; transform:perspective(900px) rotateX(7deg) translateY(24px);
+  transition:opacity .7s ease, transform .7s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1; transform:none}
+@media(prefers-reduced-motion:reduce){
+  .reveal{opacity:1; transform:none; transition:none}
+  html{scroll-behavior:auto}
+}
