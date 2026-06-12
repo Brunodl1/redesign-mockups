@@ -1,0 +1,104 @@
+/* bonosensu — brand foundation. Handmade home decor: warm cream + petrol-teal + terracotta + sage. */
+@import url('https://fonts.googleapis.com/css2?family=Halant:wght@400;500;600;700&family=Nunito:wght@400;500;600;700;800&display=swap');
+
+:root{
+  /* color */
+  --bg:        #F6F2EA;   /* warm off-white cream page bg */
+  --surface:   #FFFFFF;   /* true-white cards (poster packshots sit on white) */
+  --surface-2: #ECE5D7;   /* deeper sand/sage band */
+  --ink:       #1C2A2E;   /* near-black warmed toward petrol — body + headings */
+  --ink-soft:  #5B6357;   /* secondary sage-grey text */
+  --accent:    #BC5631;   /* terracotta — accents, eyebrows, hovers */
+  --accent-ink:#FBF8F1;
+  --pop:       #103948;   /* petrol-teal — primary dark / buttons */
+  --sage:      #434B3B;   /* olive-sage */
+  --line:      #DDD5C4;   /* warm hairline */
+  --star:      #BC5631;
+  --btn:       #103948;   /* petrol-teal solid pill buttons */
+  --btn-ink:   #FBF8F1;
+  /* type */
+  --font-display: "Halant", Georgia, "Times New Roman", serif;
+  --font-body:    "Nunito", "Helvetica Neue", Arial, sans-serif;
+  --s--1: .84rem;
+  --s-0:  1rem;
+  --s-1:  1.2rem;
+  --s-2:  1.55rem;
+  --s-3:  2.1rem;
+  --s-4:  3rem;
+  --s-5:  4.25rem;
+  /* space (4px base) */
+  --sp-1:.25rem; --sp-2:.5rem; --sp-3:1rem; --sp-4:1.5rem;
+  --sp-5:2.5rem; --sp-6:4rem; --sp-7:6rem;
+  /* radius + shadow — brand uses 40px pill buttons */
+  --radius:    12px;
+  --radius-lg: 24px;
+  --radius-pill: 40px;
+  --shadow:    0 14px 40px rgba(16,57,72,.10);
+  --shadow-soft: 0 6px 22px rgba(16,57,72,.08);
+  --maxw: 1240px;
+}
+
+*{box-sizing:border-box}
+html,body{overflow-x:clip}
+html{scroll-behavior:smooth}
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font-family:var(--font-body); font-size:var(--s-0); line-height:1.65;
+  -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+}
+img{max-width:100%; display:block}
+a{color:inherit; text-decoration:none}
+
+h1,h2,h3{
+  font-family:var(--font-display); font-weight:500; color:var(--ink);
+  line-height:1.1; letter-spacing:-.01em; margin:0 0 var(--sp-3);
+}
+h1{font-size:clamp(2.5rem,5.5vw,var(--s-5)); font-weight:500}
+h2{font-size:clamp(1.9rem,3.6vw,var(--s-4))}
+h3{font-size:var(--s-2); font-weight:600}
+p{margin:0 0 var(--sp-3)}
+
+.wrap{max-width:var(--maxw); margin:0 auto; padding:0 var(--sp-4)}
+.section{padding:var(--sp-7) 0; position:relative}
+
+.eyebrow{
+  font-family:var(--font-body); font-weight:700; text-transform:uppercase;
+  letter-spacing:.16em; font-size:.74rem; color:var(--accent);
+  margin:0 0 var(--sp-3); display:inline-block;
+}
+
+/* buttons — pill, sentence case */
+.btn{
+  display:inline-flex; align-items:center; justify-content:center; gap:.5em;
+  font-family:var(--font-body); font-weight:700; font-size:.98rem;
+  padding:.9em 1.9em; border-radius:var(--radius-pill); border:1.5px solid transparent;
+  cursor:pointer; transition:transform .15s ease, box-shadow .2s ease, background .2s ease, color .2s ease;
+  line-height:1; white-space:nowrap;
+}
+.btn:hover{transform:translateY(-2px)}
+.btn-primary{background:var(--btn); color:var(--btn-ink)}
+.btn-primary:hover{box-shadow:0 10px 26px rgba(16,57,72,.26)}
+.btn-accent{background:var(--accent); color:var(--accent-ink)}
+.btn-accent:hover{box-shadow:0 10px 26px rgba(188,86,49,.28)}
+.btn-outline{background:transparent; color:var(--pop); border-color:var(--pop)}
+.btn-outline:hover{background:var(--pop); color:var(--btn-ink)}
+.btn-light{background:var(--surface); color:var(--ink); border-color:var(--line)}
+.btn-light:hover{border-color:var(--ink)}
+.btn-block{width:100%}
+
+/* floating product cut-outs (STATIC) */
+.float{position:absolute; z-index:3; pointer-events:none}
+.float img{width:100%; height:auto; transform:rotate(var(--rot,0deg));
+  filter:drop-shadow(0 20px 26px rgba(16,57,72,.22)) drop-shadow(0 5px 9px rgba(16,57,72,.12));}
+
+/* scroll-reveal (3D) — fx.js toggles .in */
+.reveal{opacity:0; transform:perspective(900px) rotateX(8deg) translateY(26px);
+  transition:opacity .7s ease, transform .7s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1; transform:none}
+@media (prefers-reduced-motion:reduce){
+  .reveal{opacity:1; transform:none; transition:none}
+  html{scroll-behavior:auto}
+}
+
+@media (max-width:1000px){ .float{display:none} }
+@media (max-width:760px){ .section{padding:var(--sp-6) 0} }
