@@ -107,6 +107,7 @@
         <!-- price row -->
         <div class="s-hero__price-row">
           <span class="s-hero__price">US$58.00</span>
+          <span class="s-hero__volume">100ml &middot; 3.38oz</span>
         </div>
 
         <!-- size selector -->
@@ -125,7 +126,6 @@
 
             <label class="s-hero__po-card">
               <input type="radio" name="purchase" value="one-time" />
-              <span class="s-hero__po-check" aria-hidden="true"></span>
               <span class="s-hero__po-inner">
                 <span class="s-hero__po-title">One-time purchase</span>
                 <span class="s-hero__po-price">$58.00</span>
@@ -133,35 +133,16 @@
             </label>
 
             <label class="s-hero__po-card s-hero__po-card--sub">
-              <span class="s-hero__po-ribbon">Most Popular</span>
               <input type="radio" name="purchase" value="subscribe" checked />
-              <span class="s-hero__po-check" aria-hidden="true"></span>
-              <span class="s-hero__po-body">
-                <span class="s-hero__po-inner">
-                  <span class="s-hero__po-title">
-                    Subscribe &amp; Save
-                    <span class="s-hero__po-tag">SAVE 10%</span>
-                  </span>
-                  <span class="s-hero__po-price">
-                    $52.20
-                    <span class="s-hero__po-was">$58.00</span>
-                  </span>
+              <span class="s-hero__po-inner">
+                <span class="s-hero__po-title">
+                  Subscribe &amp; Save
+                  <span class="s-hero__po-tag">SAVE 10%</span>
                 </span>
-                <!-- subscription benefits -->
-                <ul class="s-hero__po-perks">
-                  <li>
-                    <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
-                    Save 10% on every refill, automatically
-                  </li>
-                  <li>
-                    <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
-                    Free priority shipping on every order
-                  </li>
-                  <li>
-                    <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
-                    Skip, pause or cancel anytime &mdash; no commitment
-                  </li>
-                </ul>
+                <span class="s-hero__po-price">
+                  $52.20
+                  <span class="s-hero__po-was">was $58.00</span>
+                </span>
               </span>
             </label>
 
@@ -380,40 +361,10 @@
 
 <!-- ===== howto ===== -->
 <section class="sec s-howto">
-  <div class="s-howto__bg" aria-hidden="true"></div>
   <div class="float" style="position:absolute;bottom:-48px;right:-36px;width:220px;pointer-events:none;z-index:2;">
     <img src="assets/float-dew.png" alt="" aria-hidden="true">
   </div>
   <div class="wrap">
-
-    <!-- TOP: carousel of the product in use -->
-    <div class="s-howto__carousel reveal" data-carousel>
-      <div class="s-howto__track">
-        <figure class="s-howto__slide is-active">
-          <img src="assets/life-hand.jpg" alt="Facial Mist held in hand" loading="lazy" />
-          <figcaption>A weightless mist that absorbs in seconds.</figcaption>
-        </figure>
-        <figure class="s-howto__slide">
-          <img src="assets/life-stone.jpg" alt="Facial Mist resting on stone" loading="lazy" />
-          <figcaption>Morning and night, your daily reset.</figcaption>
-        </figure>
-        <figure class="s-howto__slide">
-          <img src="assets/life-vanity.jpg" alt="Facial Mist on the vanity" loading="lazy" />
-          <figcaption>A ritual that earns its place on the shelf.</figcaption>
-        </figure>
-      </div>
-      <button class="s-howto__nav s-howto__nav--prev" type="button" aria-label="Previous photo">
-        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>
-      </button>
-      <button class="s-howto__nav s-howto__nav--next" type="button" aria-label="Next photo">
-        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
-      </button>
-      <div class="s-howto__dots" role="tablist" aria-label="Choose photo">
-        <button class="s-howto__dot is-active" type="button" aria-label="Photo 1"></button>
-        <button class="s-howto__dot" type="button" aria-label="Photo 2"></button>
-        <button class="s-howto__dot" type="button" aria-label="Photo 3"></button>
-      </div>
-    </div>
 
     <!-- LEFT: How to Use -->
     <div class="s-howto__left reveal">
