@@ -1,0 +1,112 @@
+/* ============================================================
+   Nova Coffee — foundation (faithful to the REAL brand, elevated)
+   warm butter-cream canvas · burnt-orange accent · roast brown
+   · maritime navy support · Fraunces heritage serif + Figtree sans
+   ============================================================ */
+:root{
+  /* color — TRUE palette read from rendered site (teal token was theme default) */
+  --bg:        #f7f2e4;   /* warm butter-cream page */
+  --surface:   #fffdf7;   /* lifted cream cards */
+  --surface-2: #f1e7cf;   /* soft butter warm band */
+  --ink:       #1a1714;   /* warm near-black */
+  --ink-soft:  #6b6155;   /* secondary warm grey */
+  --accent:    #c5701a;   /* burnt orange — Nova's real logo color (CTAs) */
+  --accent-ink:#ffffff;
+  --roast:     #4a2c1a;   /* dark roast brown — dark bands */
+  --navy:      #1f3a4d;   /* maritime navy — sparing support */
+  --pop:       #c5701a;
+  --line:      #e4d9c2;   /* hairline on cream */
+  --star:      #c5701a;
+  --btn:       #c5701a;
+  --btn-ink:   #ffffff;
+  /* type */
+  --font-display: "Fraunces", Georgia, "Times New Roman", serif;
+  --font-body:    "Figtree", system-ui, -apple-system, Arial, sans-serif;
+  --s--1: 0.82rem;
+  --s-0:  1rem;
+  --s-1:  1.2rem;
+  --s-2:  1.55rem;
+  --s-3:  2.1rem;
+  --s-4:  3rem;
+  --s-5:  3.7rem;
+  /* space (4px base) */
+  --sp-1:.25rem; --sp-2:.5rem; --sp-3:1rem; --sp-4:1.5rem;
+  --sp-5:2.5rem; --sp-6:4rem; --sp-7:6rem;
+  /* shape */
+  --radius:    10px;
+  --radius-lg: 22px;
+  --radius-pill: 999px;
+  --shadow:    0 12px 36px rgba(26,23,20,.10);
+  --maxw: 1280px;
+}
+
+*{box-sizing:border-box}
+html,body{overflow-x:clip}
+html{scroll-behavior:smooth}
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font-family:var(--font-body); font-size:var(--s-0); line-height:1.65;
+  -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+}
+img{max-width:100%; display:block}
+a{color:inherit; text-decoration:none}
+
+h1,h2,h3{
+  font-family:var(--font-display); font-weight:600; line-height:1.06;
+  letter-spacing:-.01em; margin:0; color:var(--ink);
+}
+h1{font-size:clamp(2.5rem,5.5vw,var(--s-5))}
+h2{font-size:clamp(2rem,4vw,var(--s-4))}
+h3{font-size:var(--s-2); line-height:1.16}
+p{margin:0 0 var(--sp-3)}
+
+.wrap{max-width:var(--maxw); margin-inline:auto; padding-inline:var(--sp-4)}
+.section{padding-block:var(--sp-7)}
+.eyebrow{
+  font-family:var(--font-body); text-transform:uppercase; font-weight:600;
+  letter-spacing:.18em; font-size:var(--s--1); color:var(--accent);
+  margin:0 0 var(--sp-3);
+}
+
+/* buttons */
+.btn{
+  display:inline-flex; align-items:center; justify-content:center; gap:.5em; cursor:pointer;
+  font-family:var(--font-body); font-weight:600; text-transform:uppercase;
+  letter-spacing:.06em; font-size:var(--s--1);
+  padding:.95em 1.9em; border-radius:var(--radius);
+  border:2px solid transparent; transition:background .18s, color .18s, border-color .18s, transform .12s ease;
+}
+.btn:hover{transform:translateY(-1px)}
+.btn-primary{background:var(--accent); color:var(--accent-ink); border-color:var(--accent)}
+.btn-primary:hover{background:#a85c12; border-color:#a85c12}
+.btn-dark{background:var(--ink); color:#fff; border-color:var(--ink)}
+.btn-dark:hover{background:#000; border-color:#000}
+.btn-navy{background:var(--navy); color:#fff; border-color:var(--navy)}
+.btn-outline{background:transparent; color:var(--ink); border-color:var(--ink)}
+.btn-outline:hover{background:var(--ink); color:#fff}
+.btn-outline-light{background:transparent; color:#fff; border-color:rgba(255,255,255,.85)}
+.btn-outline-light:hover{background:#fff; color:var(--ink)}
+.btn-light{background:#fff; color:var(--ink); border-color:#fff}
+.btn-block{width:100%}
+
+/* section line icons */
+.ic{width:38px;height:38px;stroke:var(--accent);stroke-width:1.5;fill:none;
+   stroke-linecap:round;stroke-linejoin:round}
+
+/* floating elements — STATIC (coffee beans) */
+.float{position:absolute; z-index:3; pointer-events:none}
+.float img{
+  width:100%; height:auto;
+  transform:rotate(var(--rot,0deg));
+  filter:drop-shadow(0 18px 22px rgba(26,23,20,.26));
+}
+@media(max-width:1000px){ .float{display:none} }
+
+/* scroll-reveal */
+.reveal{opacity:0; transform:perspective(900px) rotateX(7deg) translateY(24px);
+  transition:opacity .7s ease, transform .7s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1; transform:none}
+@media(prefers-reduced-motion:reduce){
+  .reveal{opacity:1; transform:none; transition:none}
+  html{scroll-behavior:auto}
+}
