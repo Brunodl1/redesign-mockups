@@ -1,0 +1,11 @@
+{
+  "provider": "gemini-pro",
+  "model": "gemini-2.5-flash-image",
+  "account": "bruno1",
+  "aspect": "1:1",
+  "size": "1K",
+  "elapsed_s": 5.83,
+  "timestamp": "2026-06-12T09:23:00-0500",
+  "input_image": null,
+  "prompt": "A small loose scattered cluster of roasted dark coffee beans, top-down view, photorealistic, on a PURE SOLID WHITE (#FFFFFF) background with NO shadow, no plate, no bowl. The beans form an irregular organic clump with empty white space and gaps around the edges so the cluster has a natural ragged outline and does NOT touch any edge of the frame \u2014 generous white margin on all four sides. Studio product photography, sharp focus, warm brown tones."
+}

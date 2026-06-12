@@ -95,20 +95,12 @@
   box-shadow:var(--shadow-sm);
   overflow:hidden;
 }
-/* uniform white plate so the white-bg packshot blends seamlessly (no box seam);
-   warmth comes from the cream page around the card */
-.s-hero__glow{
-  position:absolute;
-  inset:0;
-  background:#FFFFFF;
-  pointer-events:none;
-}
 .s-hero__product{
   position:relative;
   z-index:1;
-  width:88%;
-  height:88%;
-  object-fit:contain;
+  width:100%;
+  height:100%;
+  object-fit:cover;
 }
 
 /* ---- MOBILE: product on top, then text ---- */
@@ -1074,5 +1066,5 @@
 
 /* ===== floating coffee-bean elements (static) ===== */
 .s-benefits{position:relative}
-.s-benefits .float-1{top:-40px;right:-46px;width:clamp(120px,12vw,190px);--rot:9deg}
-.s-benefits .float-2{bottom:-36px;left:-44px;width:clamp(100px,10vw,150px);--rot:-12deg;opacity:.92}
+.s-benefits .float-1{top:-90px;right:-90px;width:clamp(300px,30vw,480px);--rot:9deg}
+.s-benefits .float-2{bottom:-80px;left:-80px;width:clamp(260px,26vw,400px);--rot:-12deg;opacity:.92}

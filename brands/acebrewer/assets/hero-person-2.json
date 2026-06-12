@@ -1,0 +1,11 @@
+{
+  "provider": "gemini-pro",
+  "model": "gemini-2.5-flash-image",
+  "account": "bruno1",
+  "aspect": "1:1",
+  "size": "1K",
+  "elapsed_s": 11.76,
+  "timestamp": "2026-06-12T09:13:58-0500",
+  "input_image": "(PosixPath('/Users/brunodelafontaine/git/claude-workspace/redesign-mockup/brands/acebrewer/assets/product-brewer.png'),)",
+  "prompt": "Cozy photorealistic lifestyle scene. A smiling young woman in a knit sweater stands at a sunlit kitchen counter, holding and pouring hot water from a kettle through THIS EXACT reusable cone coffee filter \u2014 the cream organic-cotton filter in its stainless-steel spiral stand from the reference image \u2014 into a mug. She is looking down at the brew, relaxed weekend-morning feeling. Keep the filter and metal spiral stand exactly as the reference: cream cotton, stainless spiral coil, small green logo tab, intact and legible. Warm natural light, soft bokeh background, premium editorial photography. Square crop."
+}
