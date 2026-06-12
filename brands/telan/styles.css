@@ -201,7 +201,10 @@
   position: relative;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  min-height: 88vh;
+  /* Fill the viewport minus the sticky header (68px bar + 46px nav + 2px borders)
+     so the whole hero is visible without scrolling. Photo crops from the bottom. */
+  height: calc(100vh - 116px);
+  min-height: 560px;
   overflow: hidden;
   padding: 0; /* override .section padding */
 }
@@ -238,8 +241,10 @@
 .s-hero__text-inner {
   position: relative;
   z-index: 2;
-  padding: var(--sp-7) var(--sp-6) var(--sp-7) clamp(var(--sp-4), 6vw, var(--sp-7));
-  max-width: 540px;
+  /* Left padding aligns the content with the header's left icon button:
+     (100vw - maxw)/2 + wrap padding (sp-4) + icon-btn padding (sp-2). */
+  padding: var(--sp-7) var(--sp-6) var(--sp-7)
+           calc(max(var(--sp-4), (100vw - var(--maxw)) / 2 + var(--sp-4)) + var(--sp-2));
 }
 
 /* copper radial blob (subtle depth, desktop) */
@@ -298,9 +303,13 @@
 /* ── CTAs ── */
 .s-hero__ctas {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   gap: var(--sp-3);
   align-items: center;
+}
+
+.s-hero__ctas .btn {
+  white-space: nowrap;
 }
 
 /* Mobile-only light CTA row — hidden on desktop */
@@ -315,6 +324,7 @@
   .s-hero {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
+    height: auto;
     min-height: 100svh;
   }
 
