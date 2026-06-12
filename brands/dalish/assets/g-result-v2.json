@@ -1,0 +1,11 @@
+{
+  "provider": "gemini-pro",
+  "model": "gemini-2.5-flash-image",
+  "account": "bruno1",
+  "aspect": "4:5",
+  "size": "1K",
+  "elapsed_s": 6.74,
+  "timestamp": "2026-06-12T13:41:40-0500",
+  "input_image": null,
+  "prompt": "Beauty close-up photograph of a woman's open eye with dramatic voluminous separated black lashes, deep medium skin tone with realistic texture, dark iris with soft catchlight, bright clean daylight, 85mm lens, photorealistic editorial, warm tones, no text, no watermark, no logo"
+}

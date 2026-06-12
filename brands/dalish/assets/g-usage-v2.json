@@ -1,0 +1,11 @@
+{
+  "provider": "gemini-pro",
+  "model": "gemini-2.5-flash-image",
+  "account": "bruno1",
+  "aspect": "3:4",
+  "size": "1K",
+  "elapsed_s": 7.09,
+  "timestamp": "2026-06-12T13:41:41-0500",
+  "input_image": null,
+  "prompt": "Macro beauty photograph, three-quarter angle of a woman's eye as a black mascara wand sweeps through the upper lashes, realistic fair skin with soft freckles, defined natural lashes, gentle daylight, 100mm macro, shallow depth of field, photorealistic editorial, warm neutral tones, no text, no watermark, no logo"
+}

@@ -1,0 +1,11 @@
+{
+  "provider": "gemini-pro",
+  "model": "gemini-2.5-flash-image",
+  "account": "bruno1",
+  "aspect": "4:5",
+  "size": "1K",
+  "elapsed_s": 7.35,
+  "timestamp": "2026-06-12T13:41:41-0500",
+  "input_image": null,
+  "prompt": "Beauty close-up photograph of a woman's open eye with full long well-separated black lashes after mascara, flawless natural skin with subtle freckles and real pore texture, warm brown iris with a gentle catchlight, soft warm daylight, 85mm lens shallow depth of field, photorealistic editorial makeup, peachy tones, no text, no watermark, no logo"
+}

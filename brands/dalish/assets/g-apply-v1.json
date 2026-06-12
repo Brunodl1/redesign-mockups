@@ -1,0 +1,11 @@
+{
+  "provider": "gemini-pro",
+  "model": "gemini-2.5-flash-image",
+  "account": "bruno1",
+  "aspect": "4:5",
+  "size": "1K",
+  "elapsed_s": 6.98,
+  "timestamp": "2026-06-12T13:41:41-0500",
+  "input_image": null,
+  "prompt": "Editorial beauty photograph: a real woman in her late 20s with warm light-medium skin applying black mascara to her upper lashes with a mascara wand, gazing slightly up into a mirror, natural fresh skin with visible pores and a few freckles, relaxed candid expression, soft warm morning window light, shot on a 50mm lens at f2.8, shallow depth of field, bright airy bathroom with peachy cream tones and negative space at top, clean-beauty lifestyle, hyper photorealistic, ultra detailed, no text, no watermark, no logo"
+}
