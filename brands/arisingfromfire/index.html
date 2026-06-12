@@ -26,7 +26,6 @@
         <li><a href="https://www.google.com">Cafés</a></li>
         <li><a href="https://www.google.com">Espresso</a></li>
         <li><a href="https://www.google.com">Abonnement</a></li>
-        <li><a href="https://www.google.com">Notre histoire</a></li>
       </ul>
     </nav>
 
@@ -85,7 +84,7 @@
         <div class="s-product__main-image-wrap">
           <img
             class="s-product__main-image"
-            src="https://arisingfromfire.com/cdn/shop/files/7A08D6CC-ACCB-4677-8C18-F7D94855188B.png?v=1778545416&width=1200"
+            src="/assets/hf_20260612_141950_38af806c-176a-415a-b940-f590f530827a.png"
             alt="Sac de café Allie &amp; Lennie — Brésil, Yuki Minami"
           >
         </div>
@@ -136,39 +135,44 @@
         <div class="roast-card">
           <p class="roast-card__label">Profil de torréfaction</p>
 
-          <!-- Roast scale -->
-          <div class="roast-card__scale-row">
-            <span class="roast-card__scale-title">Torréfaction</span>
-            <div class="roast-card__scale-wrap">
-              <span class="roast-card__scale-end roast-card__scale-end--left">Clair</span>
-              <div class="roast-card__scale-track" role="img" aria-label="Niveau de torréfaction : foncé-moyen, 78 %">
-                <div class="roast-card__scale-fill" style="width:78%"></div>
-                <div class="roast-card__scale-dot" style="left:78%"></div>
-              </div>
-              <span class="roast-card__scale-end roast-card__scale-end--right">Foncé</span>
-            </div>
-          </div>
+          <!-- Profile rows — one consistent layout per line -->
+          <div class="roast-card__rows">
 
-          <!-- Flavour bars -->
-          <div class="roast-card__bars">
-            <div class="roast-card__bar-row">
-              <span class="roast-card__bar-label">Douceur</span>
-              <div class="roast-card__bar-track" role="img" aria-label="Douceur : 82 %">
-                <div class="roast-card__bar-fill" style="width:82%"></div>
+            <div class="roast-card__row roast-card__row--scale">
+              <span class="roast-card__row-label">Torréfaction</span>
+              <div class="roast-card__row-scale">
+                <div class="roast-card__track" role="img" aria-label="Niveau de torréfaction : foncé-moyen, 78 %">
+                  <div class="roast-card__fill" style="width:78%"></div>
+                  <div class="roast-card__dot" style="left:78%"></div>
+                </div>
+                <div class="roast-card__scale-caption">
+                  <span>Clair</span>
+                  <span>Foncé</span>
+                </div>
               </div>
             </div>
-            <div class="roast-card__bar-row">
-              <span class="roast-card__bar-label">Acidité</span>
-              <div class="roast-card__bar-track" role="img" aria-label="Acidité : 35 %">
-                <div class="roast-card__bar-fill" style="width:35%"></div>
+
+            <div class="roast-card__row">
+              <span class="roast-card__row-label">Douceur</span>
+              <div class="roast-card__track" role="img" aria-label="Douceur : 82 %">
+                <div class="roast-card__fill" style="width:82%"></div>
               </div>
             </div>
-            <div class="roast-card__bar-row">
-              <span class="roast-card__bar-label">Corps</span>
-              <div class="roast-card__bar-track" role="img" aria-label="Corps : 88 %">
-                <div class="roast-card__bar-fill" style="width:88%"></div>
+
+            <div class="roast-card__row">
+              <span class="roast-card__row-label">Acidité</span>
+              <div class="roast-card__track" role="img" aria-label="Acidité : 35 %">
+                <div class="roast-card__fill" style="width:35%"></div>
               </div>
             </div>
+
+            <div class="roast-card__row">
+              <span class="roast-card__row-label">Corps</span>
+              <div class="roast-card__track" role="img" aria-label="Corps : 88 %">
+                <div class="roast-card__fill" style="width:88%"></div>
+              </div>
+            </div>
+
           </div>
 
           <!-- Tasting-note chips -->
@@ -184,9 +188,9 @@
         <div class="s-product__format">
           <p class="s-product__field-label">Format</p>
           <div class="s-product__format-chips" role="group" aria-label="Choisir le format">
-            <button class="s-product__format-chip is-active" aria-pressed="true">300 g</button>
-            <button class="s-product__format-chip" aria-pressed="false">1,1 kg</button>
-            <button class="s-product__format-chip" aria-pressed="false">2,3 kg</button>
+            <button type="button" class="s-product__format-chip is-active" aria-pressed="true" data-price="24.00">300 g</button>
+            <button type="button" class="s-product__format-chip" aria-pressed="false" data-price="72.00">1,1 kg</button>
+            <button type="button" class="s-product__format-chip" aria-pressed="false" data-price="138.00">2,3 kg</button>
           </div>
         </div>
 
@@ -269,7 +273,7 @@
 </section>
 <section class="sec s-story">
   <div class="float float-beans" aria-hidden="true">
-    <img src="assets/float-beans-cut.png" alt="">
+    <img src="assets/float-beans 1.png" alt="">
   </div>
 
   <div class="wrap s-story__grid">
@@ -302,6 +306,9 @@
       <p class="s-story__caption">Cerrado Mineiro, Minas Gerais — Brésil</p>
     </div>
 
+  </div>
+    <div class="float float-beans2" aria-hidden="true">
+    <img src="assets/float-beans 1.png" alt="">
   </div>
 </section>
 <section class="sec s-specs">

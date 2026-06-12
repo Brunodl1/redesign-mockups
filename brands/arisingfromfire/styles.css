@@ -312,6 +312,10 @@ h3{font-size:var(--s-2)}
   display: flex;
   flex-direction: column;
   gap: var(--sp-3);
+  /* sticky to its parent grid cell — stays in view while the buybox scrolls */
+  position: sticky;
+  top: 90px;
+  align-self: start;
 }
 
 .s-product__main-image-wrap {
@@ -331,22 +335,22 @@ h3{font-size:var(--s-2)}
   display: block;
 }
 
-/* Thumbnail strip */
+/* Thumbnail strip — fills the full gallery width, 4 equal squares */
 .s-product__thumbs {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   gap: var(--sp-2);
 }
 
 .s-product__thumb {
-  width: 72px;
-  height: 72px;
+  width: 100%;
+  aspect-ratio: 1 / 1;
   border-radius: var(--radius);
   overflow: hidden;
   border: 2px solid var(--line);
   background: var(--surface-2);
   padding: 0;
   cursor: pointer;
-  flex-shrink: 0;
   transition: border-color .2s;
 }
 .s-product__thumb img {
@@ -364,8 +368,6 @@ h3{font-size:var(--s-2)}
 
 /* ── BUY BOX ────────────────────────────────────────────────── */
 .s-product__buybox {
-  position: sticky;
-  top: 90px;
   display: flex;
   flex-direction: column;
   gap: var(--sp-4);
@@ -435,44 +437,52 @@ h3{font-size:var(--s-2)}
   color: var(--ink-soft);
 }
 
-/* Roast scale */
-.roast-card__scale-row {
+/* Profile rows — every line shares ONE layout: [label] [track] */
+.roast-card__rows {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 14px;
 }
-.roast-card__scale-title {
-  font-size: var(--s--1);
-  font-weight: 600;
-  color: var(--ink);
-}
-.roast-card__scale-wrap {
+.roast-card__row {
   display: flex;
   align-items: center;
-  gap: var(--sp-2);
+  gap: var(--sp-3);
 }
-.roast-card__scale-end {
-  font-size: var(--s--1);
-  color: var(--ink-soft);
-  white-space: nowrap;
+/* extra room under the roast line for its absolutely-placed caption */
+.roast-card__row--scale {
+  margin-bottom: 18px;
+}
+.roast-card__row-label {
+  width: 92px;
   flex-shrink: 0;
+  font-size: var(--s--1);
+  font-weight: 500;
+  color: var(--ink);
 }
-.roast-card__scale-track {
-  position: relative;
+/* the right-hand element of every row fills the remaining width */
+.roast-card__row > .roast-card__track,
+.roast-card__row-scale {
   flex: 1;
-  height: 10px;
+  min-width: 0;
+}
+.roast-card__row-scale {
+  position: relative;
+}
+.roast-card__track {
+  position: relative;
+  width: 100%;
+  height: 8px;
   border-radius: 999px;
   background: rgba(37,37,37,.10);
-  overflow: visible;
 }
-.roast-card__scale-fill {
+.roast-card__fill {
   position: absolute;
   inset: 0 auto 0 0;
   height: 100%;
   border-radius: 999px;
   background: var(--accent);
 }
-.roast-card__scale-dot {
+.roast-card__dot {
   position: absolute;
   top: 50%;
   transform: translate(-50%, -50%);
@@ -484,39 +494,15 @@ h3{font-size:var(--s-2)}
   box-shadow: 0 1px 4px rgba(37,37,37,.25);
   z-index: 2;
 }
-
-/* Flavour bars */
-.roast-card__bars {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-.roast-card__bar-row {
-  display: flex;
-  align-items: center;
-  gap: var(--sp-3);
-}
-.roast-card__bar-label {
-  font-size: var(--s--1);
-  color: var(--ink);
-  font-weight: 500;
-  width: 68px;
-  flex-shrink: 0;
-}
-.roast-card__bar-track {
-  flex: 1;
-  height: 8px;
-  border-radius: 999px;
-  background: rgba(37,37,37,.10);
-  overflow: hidden;
-  position: relative;
-}
-.roast-card__bar-fill {
+.roast-card__scale-caption {
   position: absolute;
-  inset: 0 auto 0 0;
-  height: 100%;
-  border-radius: 999px;
-  background: var(--accent);
+  top: calc(100% + 5px);
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  font-size: .72rem;
+  color: var(--ink-soft);
 }
 
 /* Tasting-note chips */
@@ -746,29 +732,18 @@ h3{font-size:var(--s-2)}
     gap: var(--sp-5);
   }
 
-  /* Gallery on top — already the natural order */
-
-  /* Buybox: not sticky on mobile */
-  .s-product__buybox {
+  /* Gallery on top — not sticky on mobile (single column) */
+  .s-product__gallery {
     position: static;
     top: auto;
-  }
-
-  /* Thumbs: smaller on mobile */
-  .s-product__thumb {
-    width: 60px;
-    height: 60px;
   }
 
   /* Roast card: ensure full-width readability */
   .roast-card {
     padding: var(--sp-3);
   }
-  .roast-card__bar-label {
-    width: 60px;
-  }
-  .roast-card__scale-wrap {
-    gap: var(--sp-1);
+  .roast-card__row-label {
+    width: 84px;
   }
 
   /* qty-price: stack if tight */
@@ -804,11 +779,19 @@ h3{font-size:var(--s-2)}
 
 /* --- float bean decoration --- */
 .s-story .float-beans {
-  width: 200px;
-  right: -60px;
-  top: -90px;
+  width: 600px;
+  right: -190px;
+  top: -260px;
   --rot: 14deg;
 }
+
+.s-story .float-beans2 {
+  width: 600px;
+  left: -190px;
+  bottom: -260px;
+  --rot: 14deg;
+}
+
 
 /* --- section background --- */
 .s-story {
