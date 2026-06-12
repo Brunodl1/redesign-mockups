@@ -85,10 +85,10 @@
 }
 
 .site-header__logo-img {
-  height: 60px;
+  height: 72px;
   width: auto;
   display: block;
-  /* square stacked logo (mark + wordmark) — needs more height to stay legible */
+  /* transparent stacked logo (mark + wordmark), trimmed tight → render larger */
 }
 
 /* ─── Nav ──────────────────────────────────────────────────── */
@@ -251,7 +251,7 @@
   }
 
   .site-header__logo-img {
-    height: 48px;
+    height: 56px;
   }
 
   /* Hide desktop nav entirely */
@@ -281,67 +281,51 @@
 
 /* ===== 02-hero.css ===== */
 /* ============================================================
-   02-hero.css — Hero section (centered editorial)
+   02-hero.css — Hero section (desktop: full-bleed background image
+   with copy overlaid left; mobile: stacked copy + image)
    Les soins de Menea · ALL styles scoped under .s-hero
    ============================================================ */
 
-/* ── Section shell ─────────────────────────────────────────── */
+/* ── Section shell — desktop background-image hero ──────────── */
 .s-hero {
-  position: relative;
-  background: var(--bg);
-  padding-block: var(--sp-7);
-  min-height: 600px;
-  display: flex;
-  align-items: center;
+  background-color: var(--bg);
+  /* left-heavy cream scrim for text legibility, over the lifestyle photo */
+  background-image:
+    linear-gradient(
+      90deg,
+      rgba(244, 240, 232, .98) 0%,
+      rgba(244, 240, 232, .92) 26%,
+      rgba(244, 240, 232, .55) 47%,
+      rgba(244, 240, 232, .10) 66%,
+      rgba(244, 240, 232, 0)   82%
+    ),
+    url('https://soinsdemenea.com/cdn/shop/files/bannerMenea3.png?width=1800');
+  background-repeat: no-repeat, no-repeat;
+  background-size: cover, cover;
+  /* keep the baby + cream jar framed in the right half */
+  background-position: center, 68% 58%;
   overflow: hidden;
+  padding-block: var(--sp-6);
+  min-height: 78vh;
+  display: flex;
+  align-items: center;
 }
 
-/* Full-bleed background image */
-.s-hero__bg {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  /* products (jar + dropper) sit right-of-center; left third is negative space */
-  object-position: center right;
-  z-index: 0;
-}
-
-/* Scrim — lifts the dark editorial copy off the imagery for legibility.
-   Stronger toward the centre/left where the text column sits. */
-.s-hero::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    90deg,
-    rgba(248, 244, 236, 0.92) 0%,
-    rgba(248, 244, 236, 0.78) 45%,
-    rgba(248, 244, 236, 0.42) 100%
-  );
-  z-index: 1;
-}
-
+/* Single full-width content row; copy sits in the left half over the scrim */
 .s-hero .wrap {
-  position: relative;
-  z-index: 2;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: var(--sp-6);
+  display: block;
 }
 
-/* ── Centered copy column ───────────────────────────────────── */
+/* ── Copy column (left) ─────────────────────────────────────── */
 .s-hero__copy {
-  max-width: 720px;
+  max-width: 540px;
   width: 100%;
-  margin-inline: auto;
-  text-align: center;
+  text-align: left;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   gap: 0;
+  min-width: 0;
 }
 
 /* Eyebrow — inherits .eyebrow; override margin for tighter editorial rhythm */
@@ -359,7 +343,6 @@
   letter-spacing: -.01em;
   color: var(--ink);
   margin: 0 0 var(--sp-4);
-  /* avoid orphan lines clipping on small widths */
   max-width: 100%;
   min-width: 0;
 }
@@ -370,7 +353,7 @@
   font-size: var(--s-1);          /* 1.2rem */
   line-height: 1.6;
   color: var(--ink-soft);
-  max-width: 600px;
+  max-width: 50ch;
   margin: 0 0 var(--sp-5);
   min-width: 0;
 }
@@ -390,7 +373,7 @@
 .s-hero__chips {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: flex-start;
   gap: var(--sp-2);
 }
 
@@ -401,26 +384,57 @@
   color: var(--ink-soft);
 }
 
-/* ── Mobile (≤780px) ────────────────────────────────────────── */
+/* ── Lifestyle image — desktop uses the section background, so the
+   inline element is hidden here and restored (stacked) on mobile ─ */
+.s-hero__media {
+  display: none;
+  width: 100%;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  min-width: 0;
+}
+
+.s-hero__img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* baby is centered, the cream jar sits lower-right — bias down so both stay in frame */
+  object-position: 50% 62%;
+}
+
+/* ── Tablet (≤980px) — pull the photo a touch tighter behind text ─ */
+@media (max-width: 980px) {
+  .s-hero {
+    min-height: 72vh;
+    background-position: center, 72% 58%;
+  }
+
+  .s-hero__copy {
+    max-width: 480px;
+  }
+}
+
+/* ── Mobile (≤780px) — drop the background, stack copy then image ─ */
 @media (max-width: 780px) {
 
   .s-hero {
+    background-image: none;          /* no overlay photo on small screens */
+    background-color: var(--bg);
+    display: block;
+    min-height: 0;
     padding-block: var(--sp-6);
-    min-height: 520px;
-  }
-
-  /* On narrow screens centre the image so the jar stays visible */
-  .s-hero__bg {
-    object-position: center;
-  }
-
-  /* Even scrim — copy is full-width on mobile, no side-weighting */
-  .s-hero::after {
-    background: rgba(248, 244, 236, 0.82);
   }
 
   .s-hero .wrap {
+    display: flex;
+    flex-direction: column;
     gap: var(--sp-5);
+  }
+
+  .s-hero__copy {
+    max-width: 100%;
   }
 
   /* heading inherits --s-5: 3rem from base.css responsive override */
@@ -440,11 +454,21 @@
     font-size: var(--s-0);
     padding: 1em 1.5em;
   }
+
+  /* Restore the inline image as a stacked band below the copy */
+  .s-hero__media {
+    display: block;
+    aspect-ratio: 16 / 11;
+  }
+
+  .s-hero__img {
+    object-position: 50% 58%;
+  }
 }
 
 @media (max-width: 480px) {
-  .s-hero {
-    min-height: 480px;
+  .s-hero__media {
+    aspect-ratio: 4 / 3;
   }
 
   .s-hero__chips {
