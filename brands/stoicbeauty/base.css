@@ -1,0 +1,71 @@
+/* ===== STOIC BEAUTY — per-brand foundation (burgundy / gold / blush-cream · Fraunces · FR) ===== */
+:root{
+  --bg:        #F6EFEF;   /* blush cream page */
+  --surface:   #FFFFFF;   /* white card */
+  --surface-2: #EFE2DF;   /* warm blush alt band */
+  --ink:       #2A211F;   /* warm near-black */
+  --ink-soft:  #6C6660;   /* taupe secondary */
+  --accent:    #720111;   /* deep burgundy — buttons, headings, brand */
+  --accent-ink:#FBF3F1;   /* cream on burgundy */
+  --accent-deep:#5A0010;  /* burgundy hover */
+  --pop:       #B0863A;   /* deep gold — eyebrows/accents (legible on cream) */
+  --gold:      #D6AD60;   /* bright gold — decorative lines, stars */
+  --line:      #E4D6D2;   /* warm hairline */
+  --star:      #C49A4E;
+  --scrim:     rgba(42,20,18,.40);
+  --font-display:"Fraunces","Cormorant Garamond",Georgia,serif;
+  --font-body:  "Montserrat","Helvetica Neue",Arial,sans-serif;
+  --s--1:.8rem; --s-0:1rem; --s-1:1.2rem; --s-2:1.55rem; --s-3:2.2rem; --s-4:3.3rem; --s-5:4.6rem;
+  --sp-1:.25rem; --sp-2:.5rem; --sp-3:1rem; --sp-4:1.5rem; --sp-5:2.5rem; --sp-6:4rem; --sp-7:6rem;
+  --radius:6px; --radius-lg:18px; --radius-pill:999px;
+  --shadow:0 16px 44px rgba(42,20,18,.13);
+  --maxw:1260px;
+}
+*{box-sizing:border-box}
+html,body{overflow-x:clip}
+html{scroll-behavior:smooth}
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font-family:var(--font-body); font-size:var(--s-0); line-height:1.65;
+  font-weight:400; -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%; display:block}
+a{color:inherit; text-decoration:none}
+.wrap{max-width:var(--maxw); margin:0 auto; padding:0 var(--sp-4)}
+.section{padding:var(--sp-7) 0}
+.sec{overflow-x:clip}
+h1,h2,h3{font-family:var(--font-display); font-weight:500; line-height:1.08;
+  margin:0 0 var(--sp-3); letter-spacing:.005em; color:var(--accent)}
+h1{font-size:var(--s-5)} h2{font-size:var(--s-4)} h3{font-size:var(--s-2); color:var(--ink)}
+p{margin:0 0 var(--sp-3)}
+.eyebrow{font-family:var(--font-body); font-weight:600; font-size:var(--s--1);
+  letter-spacing:.26em; text-transform:uppercase; color:var(--pop); margin:0 0 var(--sp-3)}
+.lead{font-size:var(--s-1); color:var(--ink-soft); line-height:1.6}
+/* buttons — burgundy, rounded, uppercase */
+.btn{display:inline-flex; align-items:center; justify-content:center; gap:.5em;
+  font-family:var(--font-body); font-weight:600; font-size:var(--s--1);
+  letter-spacing:.14em; text-transform:uppercase; cursor:pointer;
+  padding:1rem 2.2rem; border-radius:var(--radius); border:1.5px solid transparent;
+  transition:transform .18s ease, background .18s ease, color .18s ease, box-shadow .18s}
+.btn:hover{transform:translateY(-2px)}
+.btn-primary{background:var(--accent); color:var(--accent-ink); border-color:var(--accent)}
+.btn-primary:hover{background:var(--accent-deep); border-color:var(--accent-deep)}
+.btn-outline{background:transparent; color:var(--accent); border-color:var(--accent)}
+.btn-outline:hover{background:var(--accent); color:var(--accent-ink)}
+.btn-light{background:var(--surface); color:var(--accent); border-color:var(--surface)}
+.btn-light-outline{background:transparent; color:#fff; border-color:rgba(255,255,255,.85)}
+.btn-light-outline:hover{background:#fff; color:var(--accent)}
+.btn-block{display:flex; width:100%}
+.ic{width:40px; height:40px; stroke:var(--accent); stroke-width:1.4; fill:none; display:block}
+/* depth: floats (static) + scroll reveal */
+.float{position:absolute; z-index:2; pointer-events:none}
+.float img{width:100%; transform:rotate(var(--rot,0deg));
+  filter:drop-shadow(0 20px 30px rgba(42,20,18,.24))}
+.reveal{opacity:0; transform:perspective(900px) rotateX(8deg) translateY(26px);
+  transition:opacity .7s cubic-bezier(.2,.7,.2,1), transform .7s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1; transform:none}
+@media (prefers-reduced-motion:reduce){
+  .reveal{opacity:1; transform:none; transition:none}
+  .btn:hover{transform:none}
+}
+@media (max-width:1000px){ .float{display:none} }

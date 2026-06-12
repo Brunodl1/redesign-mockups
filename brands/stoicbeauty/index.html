@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stoic Beauty — Soins propres pour peaux sensibles, fabriqués au Canada</title>
+<meta name="description" content="Soins pour peaux sensibles formulés au Canada : science botanique, actifs cliniquement étudiés, ingrédients doux et sûrs pour la planète.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="base.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<!-- announce -->
+<div class="sec s-announce">
+  <div class="s-announce__bar">
+    <span class="s-announce__item">FABRIQUÉ AU CANADA</span>
+    <span class="s-announce__dot" aria-hidden="true">·</span>
+    <span class="s-announce__item">LIVRAISON GRATUITE 75&thinsp;$+</span>
+    <span class="s-announce__dot s-announce__hide-mobile" aria-hidden="true">·</span>
+    <span class="s-announce__item s-announce__hide-mobile">FORMULES SÛRES POUR PEAUX SENSIBLES</span>
+  </div>
+</div>
+
+<!-- header -->
+<header class="sec s-header">
+  <div class="s-header__inner wrap">
+
+    <!-- LEFT: search (desktop) + hamburger (mobile) -->
+    <div class="s-header__left">
+      <!-- Hamburger: mobile only -->
+      <button class="s-header__hamburger" aria-label="Ouvrir le menu" aria-expanded="false">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.6" stroke-linecap="round">
+          <line x1="3" y1="6" x2="21" y2="6"/>
+          <line x1="3" y1="12" x2="21" y2="12"/>
+          <line x1="3" y1="18" x2="21" y2="18"/>
+        </svg>
+      </button>
+      <!-- Search: desktop only -->
+      <button class="s-header__icon s-header__search" aria-label="Rechercher">
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="7"/>
+          <line x1="16.5" y1="16.5" x2="22" y2="22"/>
+        </svg>
+      </button>
+    </div>
+
+    <!-- CENTER: logo -->
+    <a class="s-header__logo-link" href="https://www.google.com" aria-label="Stoic Beauty — retourner à l'accueil">
+      <img
+        class="s-header__logo"
+        src="https://stoic-beauty.ca/cdn/shop/files/sblogo_676526e6-9028-4e46-af3d-d2a147651136_1100x_1.png?width=420"
+        alt="Stoic Beauty"
+        height="52"
+        width="auto"
+      >
+    </a>
+
+    <!-- RIGHT: account (desktop) + cart -->
+    <div class="s-header__right">
+      <!-- Account: desktop only -->
+      <button class="s-header__icon s-header__account" aria-label="Mon compte">
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="8" r="4"/>
+          <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
+        </svg>
+      </button>
+      <!-- Cart: always visible -->
+      <button class="s-header__icon s-header__cart" aria-label="Panier">
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+          <line x1="3" y1="6" x2="21" y2="6"/>
+          <path d="M16 10a4 4 0 0 1-8 0"/>
+        </svg>
+      </button>
+    </div>
+
+  </div><!-- /.s-header__inner -->
+
+  <!-- NAV: desktop only -->
+  <nav class="s-header__nav" aria-label="Navigation principale">
+    <div class="s-header__nav-inner wrap">
+      <a class="s-header__nav-link" href="https://www.google.com">Boutique</a>
+      <a class="s-header__nav-link" href="https://www.google.com">Par type de peau</a>
+      <a class="s-header__nav-link" href="https://www.google.com">Par préoccupation</a>
+      <a class="s-header__nav-link" href="https://www.google.com">Échantillons</a>
+      <a class="s-header__nav-link" href="https://www.google.com">Coffrets</a>
+      <a class="s-header__nav-pill btn btn-primary" href="https://www.google.com">Nouveautés</a>
+    </div>
+  </nav>
+
+</header>
+
+<!-- hero -->
+<section class="sec s-hero hero-centered">
+
+  <!-- Decorative gold hairline top -->
+  <div class="s-hero__rule s-hero__rule--top" aria-hidden="true"></div>
+
+  <!-- Hero image — first in DOM so flex column-reverse puts it on top on mobile -->
+  <div class="s-hero__image-wrap">
+    <img
+      class="s-hero__image"
+      src="https://stoic-beauty.ca/cdn/shop/files/Harmonia-compresse.jpg?width=1400"
+      alt="Crème de nuit Harmonia de Stoic Beauty présentée avec une fiole scientifique et des fleurs de camomille sur un fond terracotta chaleureux"
+    >
+  </div>
+
+  <!-- Text block -->
+  <div class="s-hero__text">
+    <p class="eyebrow s-hero__eyebrow">FABRIQUÉ AU CANADA · PEAU SENSIBLE</p>
+    <h1 class="s-hero__h1">La science au service des peaux sensibles</h1>
+    <p class="lead s-hero__lead">Des actifs cliniquement étudiés et des botaniques doux qui rééquilibrent votre peau, sans irritation.</p>
+    <div class="s-hero__actions">
+      <a class="btn btn-primary" href="https://www.google.com">Magasiner</a>
+      <a class="s-hero__text-link" href="https://www.google.com">Trouver ma routine&thinsp;→</a>
+    </div>
+  </div>
+
+  <!-- Decorative gold hairline bottom -->
+  <div class="s-hero__rule s-hero__rule--bottom" aria-hidden="true"></div>
+
+</section>
+
+<!-- proof -->
+<section class="sec section s-proof">
+  <div class="wrap">
+    <div class="s-proof__head reveal">
+      <p class="eyebrow">Science + Botanique</p>
+      <h2>Des soins naturels,<br>appuyés par la science</h2>
+      <p class="lead">Formulés avec des actifs cliniquement étudiés et des botaniques doux pour rééquilibrer la peau sensible — sans irritation ni additifs superflus.</p>
+    </div>
+
+    <div class="s-proof__press reveal">
+      <span class="s-proof__vu-label">Vu dans</span>
+      <div class="s-proof__marks">
+        <a href="https://www.google.com" class="s-proof__mark s-proof__mark--bold" aria-label="ELLE">ELLE</a>
+        <span class="s-proof__divider" aria-hidden="true"></span>
+        <a href="https://www.google.com" class="s-proof__mark s-proof__mark--italic" aria-label="Clin d'œil">Clin d'œil</a>
+        <span class="s-proof__divider" aria-hidden="true"></span>
+        <a href="https://www.google.com" class="s-proof__mark s-proof__mark--tracked" aria-label="FAJO">FAJO</a>
+        <span class="s-proof__divider" aria-hidden="true"></span>
+        <a href="https://www.google.com" class="s-proof__mark" aria-label="Breakfast Television">Breakfast Television</a>
+        <span class="s-proof__divider" aria-hidden="true"></span>
+        <a href="https://www.google.com" class="s-proof__mark s-proof__mark--serif" aria-label="Forbes">Forbes</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- bestsellers -->
+<section class="sec section s-bestsellers">
+  <div class="wrap">
+
+    <!-- Head -->
+    <div class="s-bestsellers__head reveal">
+      <p class="eyebrow">PRÉOCCUPATIONS PEAU SENSIBLE</p>
+      <h2>Nos incontournables</h2>
+      <p class="s-bestsellers__sub">Des formules ciblées, douces pour les peaux les plus réactives.</p>
+
+      <!-- Filter chips -->
+      <div class="s-bestsellers__filters" role="list" aria-label="Filtrer par préoccupation">
+        <span class="s-bestsellers__chip s-bestsellers__chip--active" role="listitem">Tout</span>
+        <span class="s-bestsellers__chip" role="listitem">Eczéma</span>
+        <span class="s-bestsellers__chip" role="listitem">Rosacée</span>
+        <span class="s-bestsellers__chip" role="listitem">Acné</span>
+        <span class="s-bestsellers__chip" role="listitem">Rides</span>
+      </div>
+
+      <a href="https://www.google.com" class="s-bestsellers__see-all" aria-label="Voir tous les produits">Tout voir →</a>
+    </div>
+
+    <!-- Product grid -->
+    <div class="s-bestsellers__grid reveal">
+
+      <!-- 1. Eos -->
+      <article class="s-bestsellers__card">
+        <div class="s-bestsellers__img-wrap">
+          <img
+            src="https://stoic-beauty.ca/cdn/shop/products/PregnancySafeExfoliant.png?width=700"
+            alt="Eos — Brume du matin, exfoliant doux"
+            loading="lazy"
+          >
+          <span class="s-bestsellers__badge">Best-seller</span>
+        </div>
+        <div class="s-bestsellers__body">
+          <h3 class="s-bestsellers__name">Eos | Brume du matin</h3>
+          <p class="s-bestsellers__concern">Réparation de la barrière</p>
+          <div class="s-bestsellers__stars">
+            <span class="s-bestsellers__star-icons" aria-hidden="true">★★★★★</span>
+            <span class="s-bestsellers__star-count">4,8 (132)</span>
+          </div>
+          <div class="s-bestsellers__footer">
+            <span class="s-bestsellers__price">36 $</span>
+            <a href="https://www.google.com" class="btn btn-primary s-bestsellers__cta">Ajouter au panier</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 2. Harmonia -->
+      <article class="s-bestsellers__card">
+        <div class="s-bestsellers__img-wrap">
+          <img
+            src="https://stoic-beauty.ca/cdn/shop/files/Harmonia-compresse.jpg?width=700"
+            alt="Harmonia — Crème de nuit équilibrante"
+            loading="lazy"
+          >
+          <span class="s-bestsellers__badge">Coup de cœur</span>
+        </div>
+        <div class="s-bestsellers__body">
+          <h3 class="s-bestsellers__name">Harmonia | Crème de nuit équilibrante</h3>
+          <p class="s-bestsellers__concern">Hydratation · anti-rougeurs</p>
+          <div class="s-bestsellers__stars">
+            <span class="s-bestsellers__star-icons" aria-hidden="true">★★★★★</span>
+            <span class="s-bestsellers__star-count">4,9 (210)</span>
+          </div>
+          <div class="s-bestsellers__footer">
+            <span class="s-bestsellers__price">46 $</span>
+            <a href="https://www.google.com" class="btn btn-primary s-bestsellers__cta">Ajouter au panier</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 3. Lakhesis -->
+      <article class="s-bestsellers__card">
+        <div class="s-bestsellers__img-wrap">
+          <img
+            src="https://stoic-beauty.ca/cdn/shop/files/Perimenopausedaycream.png?width=700"
+            alt="Lakhesis — Crème de jour vitamine C"
+            loading="lazy"
+          >
+        </div>
+        <div class="s-bestsellers__body">
+          <h3 class="s-bestsellers__name">Lakhesis | Crème de jour vitamine C</h3>
+          <p class="s-bestsellers__concern">Éclat · péri-ménopause</p>
+          <div class="s-bestsellers__stars">
+            <span class="s-bestsellers__star-icons" aria-hidden="true">★★★★★</span>
+            <span class="s-bestsellers__star-count">4,7 (88)</span>
+          </div>
+          <div class="s-bestsellers__footer">
+            <span class="s-bestsellers__price">68 $</span>
+            <a href="https://www.google.com" class="btn btn-primary s-bestsellers__cta">Ajouter au panier</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 4. Chryso -->
+      <article class="s-bestsellers__card">
+        <div class="s-bestsellers__img-wrap">
+          <img
+            src="https://stoic-beauty.ca/cdn/shop/files/Chryso.jpg?width=700"
+            alt="Chryso — Sérum régénérant"
+            loading="lazy"
+          >
+        </div>
+        <div class="s-bestsellers__body">
+          <h3 class="s-bestsellers__name">Chryso | Sérum régénérant</h3>
+          <p class="s-bestsellers__concern">Alternative douce au rétinol</p>
+          <div class="s-bestsellers__stars">
+            <span class="s-bestsellers__star-icons" aria-hidden="true">★★★★★</span>
+            <span class="s-bestsellers__star-count">4,9 (156)</span>
+          </div>
+          <div class="s-bestsellers__footer">
+            <span class="s-bestsellers__price">54 $</span>
+            <a href="https://www.google.com" class="btn btn-primary s-bestsellers__cta">Ajouter au panier</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 5. Thalassa -->
+      <article class="s-bestsellers__card">
+        <div class="s-bestsellers__img-wrap">
+          <img
+            src="https://stoic-beauty.ca/cdn/shop/products/solutionfordryscalpe.png?width=700"
+            alt="Thalassa — Sérum hydratant visage et cuir chevelu"
+            loading="lazy"
+          >
+        </div>
+        <div class="s-bestsellers__body">
+          <h3 class="s-bestsellers__name">Thalassa | Sérum hydratant visage et cuir chevelu</h3>
+          <p class="s-bestsellers__concern">Hydratation intense</p>
+          <div class="s-bestsellers__stars">
+            <span class="s-bestsellers__star-icons" aria-hidden="true">★★★★★</span>
+            <span class="s-bestsellers__star-count">4,8 (74)</span>
+          </div>
+          <div class="s-bestsellers__footer">
+            <span class="s-bestsellers__price">42 $</span>
+            <a href="https://www.google.com" class="btn btn-primary s-bestsellers__cta">Ajouter au panier</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 6. Trivolos -->
+      <article class="s-bestsellers__card">
+        <div class="s-bestsellers__img-wrap">
+          <img
+            src="https://stoic-beauty.ca/cdn/shop/files/TrivolosBestEczemaCream3.png?width=700"
+            alt="Trivolos — Crème eczéma"
+            loading="lazy"
+          >
+          <span class="s-bestsellers__badge">Nouveau</span>
+        </div>
+        <div class="s-bestsellers__body">
+          <h3 class="s-bestsellers__name">Trivolos | Crème eczéma</h3>
+          <p class="s-bestsellers__concern">Apaise l'eczéma</p>
+          <div class="s-bestsellers__stars">
+            <span class="s-bestsellers__star-icons" aria-hidden="true">★★★★★</span>
+            <span class="s-bestsellers__star-count">4,9 (97)</span>
+          </div>
+          <div class="s-bestsellers__footer">
+            <span class="s-bestsellers__price">38 $</span>
+            <a href="https://www.google.com" class="btn btn-primary s-bestsellers__cta">Ajouter au panier</a>
+          </div>
+        </div>
+      </article>
+
+    </div><!-- /grid -->
+
+    <p class="s-bestsellers__disclaimer">évaluations fictives — maquette</p>
+
+  </div><!-- /wrap -->
+</section>
+
+<!-- spotlight -->
+<section class="sec section s-spotlight">
+  <div class="wrap">
+    <div class="s-spotlight__grid">
+
+      <div class="s-spotlight__img-col reveal">
+        <img
+          class="s-spotlight__img"
+          src="https://stoic-beauty.ca/cdn/shop/files/GoldenChamomileCream.jpg?width=1100"
+          alt="Pot ambré de la crème équilibrante Harmonia de Stoic Beauty"
+          width="540"
+          height="600"
+          loading="lazy"
+        >
+      </div>
+
+      <div class="s-spotlight__text-col">
+        <p class="eyebrow reveal">NOTRE INCONTOURNABLE</p>
+        <h2 class="reveal">Harmonia, la crème de nuit qui rééquilibre</h2>
+        <p class="lead reveal">Acide hyaluronique hydratant et extrait botanique de sauge sclarée travaillent ensemble pour apaiser les rougeurs et restaurer la barrière cutanée pendant la nuit.</p>
+
+        <ul class="s-spotlight__benefits" role="list">
+
+          <li class="s-spotlight__benefit reveal">
+            <svg class="ic" viewBox="0 0 36 36" aria-hidden="true" focusable="false">
+              <path d="M18 4c0 0-9 7-9 15a9 9 0 0 0 18 0C27 11 18 4 18 4z"/>
+              <path d="M18 13v7"/>
+            </svg>
+            <div>
+              <strong class="s-spotlight__benefit-title">Hydrate en profondeur</strong>
+              <span class="s-spotlight__benefit-desc">Acide hyaluronique + sauge sclarée</span>
+            </div>
+          </li>
+
+          <li class="s-spotlight__benefit reveal">
+            <svg class="ic" viewBox="0 0 36 36" aria-hidden="true" focusable="false">
+              <circle cx="18" cy="18" r="13"/>
+              <path d="M13 18c0-2.8 2.2-5 5-5s5 2.2 5 5"/>
+              <path d="M18 13V9m0 18v-4"/>
+            </svg>
+            <div>
+              <strong class="s-spotlight__benefit-title">Apaise les rougeurs</strong>
+              <span class="s-spotlight__benefit-desc">Pensé pour les peaux réactives et sujettes à la rosacée</span>
+            </div>
+          </li>
+
+          <li class="s-spotlight__benefit reveal">
+            <svg class="ic" viewBox="0 0 36 36" aria-hidden="true" focusable="false">
+              <path d="M6 26c3-4 7-6 12-6s9 2 12 6"/>
+              <path d="M18 8c0 0-6 4-6 10s6 10 6 10 6-4 6-10S18 8 18 8z"/>
+            </svg>
+            <div>
+              <strong class="s-spotlight__benefit-title">Sûr pour la planète</strong>
+              <span class="s-spotlight__benefit-desc">Formule biodégradable, sûre pour les milieux aquatiques</span>
+            </div>
+          </li>
+
+        </ul>
+
+        <div class="s-spotlight__cta reveal">
+          <a href="https://www.google.com" class="btn btn-primary">Découvrir Harmonia</a>
+          <p class="s-spotlight__rating" aria-label="Note: 4,9 sur 5, 210 avis">
+            <span class="s-spotlight__stars" aria-hidden="true">★★★★★</span>
+            <span>4,9/5 · 210 avis</span>
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- trust -->
+<section class="sec section s-trust">
+  <div class="wrap">
+    <div class="s-trust__grid">
+
+      <article class="s-trust__pillar reveal">
+        <svg class="ic s-trust__icon" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <!-- Leaf + flask: science + nature -->
+          <path d="M20 8 C12 8 7 15 7 22 C7 29 13 34 20 34 C27 34 33 29 33 22 C33 15 28 8 20 8Z" stroke-linecap="round" stroke-linejoin="round"/>
+          <line x1="20" y1="34" x2="20" y2="24" stroke-linecap="round"/>
+          <path d="M14 21 C14 21 17 18 20 21 C23 24 26 21 26 21" stroke-linecap="round"/>
+        </svg>
+        <h3>Naturel et appuyé<br>par la science</h3>
+        <p>Actifs cliniquement étudiés associés à des botaniques doux pour des résultats visibles.</p>
+      </article>
+
+      <article class="s-trust__pillar reveal">
+        <svg class="ic s-trust__icon" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <!-- Shield + heart: gentle protection -->
+          <path d="M20 6 L32 11 L32 22 C32 29 26 34 20 36 C14 34 8 29 8 22 L8 11 Z" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M15.5 19.5 C15.5 17.5 17 16 18.8 16 C19.6 16 20.3 16.4 20.8 17 C21.3 16.4 22 16 22.8 16 C24.6 16 26 17.5 26 19.5 C26 22 20.8 26 20.8 26 C20.8 26 15.5 22 15.5 19.5Z" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <h3>Pensé pour les<br>peaux sensibles</h3>
+        <p>Testé pour l'eczéma, la rosacée et les peaux réactives — douceur garantie.</p>
+      </article>
+
+      <article class="s-trust__pillar reveal">
+        <svg class="ic s-trust__icon" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <!-- Checkmark in circle: clean & cruelty-free -->
+          <circle cx="20" cy="20" r="13" stroke-linecap="round"/>
+          <polyline points="13,20 18,25 27,15" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <h3>Sans cruauté<br>et propre</h3>
+        <p>Sans additifs superflus, jamais testé sur les animaux — clean à chaque formule.</p>
+      </article>
+
+      <article class="s-trust__pillar reveal">
+        <svg class="ic s-trust__icon" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <!-- Water drop + wave: reef/water safe -->
+          <path d="M20 6 C20 6 10 17 10 23 C10 29 14.5 34 20 34 C25.5 34 30 29 30 23 C30 17 20 6 20 6Z" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M14 27 C15.5 25.5 18 25.5 20 27 C22 28.5 24.5 28.5 26 27" stroke-linecap="round"/>
+        </svg>
+        <h3>Sûr pour l'eau<br>et la planète</h3>
+        <p>Ingrédients biodégradables, formulés pour être sûrs pour les milieux aquatiques.</p>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- sampler -->
+<section class="sec s-sampler">
+  <div class="wrap">
+    <div class="s-sampler__grid">
+
+      <div class="s-sampler__img-col reveal">
+        <img
+          class="s-sampler__img"
+          src="https://stoic-beauty.ca/cdn/shop/files/samplerpack.png?width=1000"
+          alt="Coffret d'échantillons Harmonia et Lakhesis de Stoic Beauty dans une boîte en bois"
+          width="480"
+          height="520"
+          loading="lazy"
+        >
+      </div>
+
+      <div class="s-sampler__text-col">
+        <p class="eyebrow reveal">ESSAYEZ AVANT DE VOUS ENGAGER</p>
+        <h2 class="reveal">Le coffret découverte Harmonia + Lakhesis</h2>
+        <p class="lead reveal">Deux crèmes puissantes, un beau commencement. 0,25&thinsp;oz de chaque — parfait pour deux semaines d'essai, ou en cadeau pour quelqu'un que vous aimez.</p>
+
+        <p class="s-sampler__price reveal" aria-label="Prix : 18 dollars, livré dès 35 dollars d'achat">
+          <span class="s-sampler__price-amount">18&thinsp;$</span>
+          <span class="s-sampler__price-note">· livré dès 35&thinsp;$ d'achat</span>
+        </p>
+
+        <div class="s-sampler__cta reveal">
+          <a href="https://www.google.com" class="btn btn-primary">Commander le coffret</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- story -->
+<section class="sec s-story">
+  <div class="s-story__inner">
+    <div class="s-story__text reveal">
+      <p class="eyebrow s-story__eyebrow">Notre Histoire</p>
+      <h2 class="s-story__h2">La science botanique,<br>avec conscience</h2>
+      <p class="lead s-story__lead">Stoic Beauty est née d'une conviction&nbsp;: les peaux sensibles méritent des soins à la fois efficaces et doux. Chaque formule est conçue au Canada par notre chimiste, avec des actifs étudiés et des ingrédients sûrs pour vous et pour la planète.</p>
+      <a href="https://www.google.com" class="btn btn-light-outline">Notre histoire</a>
+    </div>
+  </div>
+</section>
+
+<!-- reviews -->
+<section class="sec section s-reviews">
+  <div class="wrap">
+
+    <!-- Section head -->
+    <div class="s-reviews__head reveal">
+      <div class="s-reviews__stars-head" aria-hidden="true">★★★★★</div>
+      <h2>Approuvé par les peaux sensibles</h2>
+      <p class="s-reviews__summary">★ 4,9/5 · 1&nbsp;800+ avis</p>
+    </div>
+
+    <!-- Cards grid -->
+    <div class="s-reviews__grid">
+
+      <article class="s-reviews__card reveal">
+        <div class="s-reviews__card-stars" aria-label="5 étoiles">★★★★★</div>
+        <h3 class="s-reviews__card-title">Fini les rougeurs persistantes</h3>
+        <p class="s-reviews__card-quote">«&nbsp;Après deux semaines d'utilisation, mes rougeurs ont vraiment diminué. Ma peau tolère enfin un soin sans réaction. Je recommande à toutes les peaux réactives.&nbsp;»</p>
+        <footer class="s-reviews__card-footer">
+          <span class="s-reviews__reviewer">Marie-Ève T. — Montréal, QC</span>
+          <span class="s-reviews__verified">Vérifié</span>
+        </footer>
+      </article>
+
+      <article class="s-reviews__card reveal">
+        <div class="s-reviews__card-stars" aria-label="5 étoiles">★★★★★</div>
+        <h3 class="s-reviews__card-title">Enfin une crème pour mon eczéma</h3>
+        <p class="s-reviews__card-quote">«&nbsp;J'ai essayé des dizaines de produits. Celui-ci n'irrite pas mon eczéma — il le calme vraiment. La texture est légère et absorbe en quelques secondes.&nbsp;»</p>
+        <footer class="s-reviews__card-footer">
+          <span class="s-reviews__reviewer">Josée L. — Québec, QC</span>
+          <span class="s-reviews__verified">Vérifié</span>
+        </footer>
+      </article>
+
+      <article class="s-reviews__card reveal">
+        <div class="s-reviews__card-stars" aria-label="5 étoiles">★★★★★</div>
+        <h3 class="s-reviews__card-title">Sûr pendant ma grossesse</h3>
+        <p class="s-reviews__card-quote">«&nbsp;Mon dermatologue m'a donné le feu vert. C'est rare de trouver un soin efficace, sans ingrédients controversés, qu'on peut utiliser sereinement en étant enceinte.&nbsp;»</p>
+        <footer class="s-reviews__card-footer">
+          <span class="s-reviews__reviewer">Camille B. — Laval, QC</span>
+          <span class="s-reviews__verified">Vérifié</span>
+        </footer>
+      </article>
+
+      <article class="s-reviews__card reveal">
+        <div class="s-reviews__card-stars" aria-label="5 étoiles">★★★★★</div>
+        <h3 class="s-reviews__card-title">Hydratation toute la journée</h3>
+        <p class="s-reviews__card-quote">«&nbsp;Texture légère mais super nourrissante. Ma peau reste hydratée du matin au soir, même par temps froid. Plus besoin de reappliquer en journée.&nbsp;»</p>
+        <footer class="s-reviews__card-footer">
+          <span class="s-reviews__reviewer">Nathalie R. — Sherbrooke, QC</span>
+          <span class="s-reviews__verified">Vérifié</span>
+        </footer>
+      </article>
+
+      <article class="s-reviews__card reveal">
+        <div class="s-reviews__card-stars" aria-label="5 étoiles">★★★★★</div>
+        <h3 class="s-reviews__card-title">Ma rosacée s'est calmée</h3>
+        <p class="s-reviews__card-quote">«&nbsp;Je souffre de rosacée depuis des années. En moins d'un mois, les bouffées de chaleur et l'irritation ont diminué de façon notable. Un vrai soulagement.&nbsp;»</p>
+        <footer class="s-reviews__card-footer">
+          <span class="s-reviews__reviewer">Isabelle D. — Gatineau, QC</span>
+          <span class="s-reviews__verified">Vérifié</span>
+        </footer>
+      </article>
+
+      <article class="s-reviews__card reveal">
+        <div class="s-reviews__card-stars" aria-label="5 étoiles">★★★★★</div>
+        <h3 class="s-reviews__card-title">Fière d'acheter canadien</h3>
+        <p class="s-reviews__card-quote">«&nbsp;Fabriqué au Canada, formule propre, et ça fonctionne vraiment — que demander de plus? Je soutiens cette marque avec plaisir. J'ai converti toute ma famille.&nbsp;»</p>
+        <footer class="s-reviews__card-footer">
+          <span class="s-reviews__reviewer">Sophie M. — Longueuil, QC</span>
+          <span class="s-reviews__verified">Vérifié</span>
+        </footer>
+      </article>
+
+    </div><!-- /.s-reviews__grid -->
+
+    <p class="s-reviews__disclaimer">Avis fictifs — maquette de présentation</p>
+
+  </div>
+</section>
+
+<!-- newsletter -->
+<section class="sec section s-newsletter reveal">
+  <div class="wrap">
+    <div class="s-newsletter__inner">
+      <p class="eyebrow s-newsletter__eyebrow">Rejoignez-nous</p>
+      <h2 class="s-newsletter__heading">Inscrivez-vous et économisez 15&nbsp;%</h2>
+      <p class="s-newsletter__sub">Recevez des conseils experts adaptés à votre peau, nos nouveautés et des offres réservées aux membres.</p>
+      <form class="s-newsletter__form" action="https://www.google.com" method="get" onsubmit="return false;">
+        <input
+          class="s-newsletter__input"
+          type="email"
+          name="email"
+          placeholder="Votre adresse courriel"
+          autocomplete="email"
+          required
+        >
+        <button type="submit" class="btn btn-light s-newsletter__btn">S'inscrire</button>
+      </form>
+      <p class="s-newsletter__micro">Pas de pourriel. Désabonnement en un clic.</p>
+    </div>
+  </div>
+</section>
+
+<!-- footer -->
+<footer class="sec s-footer">
+  <div class="wrap">
+
+    <!-- Top: logo + tagline -->
+    <div class="s-footer__top">
+      <a href="https://www.google.com" class="s-footer__logo-link">
+        <img
+          src="https://stoic-beauty.ca/cdn/shop/files/sblogo_676526e6-9028-4e46-af3d-d2a147651136_1100x_1.png?width=380"
+          alt="Stoic Beauty"
+          class="s-footer__logo"
+          style="filter:brightness(0) invert(1)"
+          height="50"
+          loading="lazy"
+        >
+      </a>
+      <p class="s-footer__tagline">Soins propres et appuyés par la science pour les peaux sensibles. Fabriqué au Canada.</p>
+    </div>
+
+    <!-- Link columns -->
+    <div class="s-footer__cols">
+
+      <div class="s-footer__col">
+        <h4 class="s-footer__col-head">Boutique</h4>
+        <ul class="s-footer__links">
+          <li><a href="https://www.google.com">Tous les produits</a></li>
+          <li><a href="https://www.google.com">Sérums</a></li>
+          <li><a href="https://www.google.com">Crèmes</a></li>
+          <li><a href="https://www.google.com">Nettoyants</a></li>
+          <li><a href="https://www.google.com">Coffrets</a></li>
+          <li><a href="https://www.google.com">Cartes-cadeaux</a></li>
+        </ul>
+      </div>
+
+      <div class="s-footer__col">
+        <h4 class="s-footer__col-head">Par besoin</h4>
+        <ul class="s-footer__links">
+          <li><a href="https://www.google.com">Eczéma</a></li>
+          <li><a href="https://www.google.com">Rosacée</a></li>
+          <li><a href="https://www.google.com">Acné</a></li>
+          <li><a href="https://www.google.com">Anti-âge</a></li>
+          <li><a href="https://www.google.com">Grossesse</a></li>
+          <li><a href="https://www.google.com">Peau sensible</a></li>
+        </ul>
+      </div>
+
+      <div class="s-footer__col">
+        <h4 class="s-footer__col-head">À propos</h4>
+        <ul class="s-footer__links">
+          <li><a href="https://www.google.com">Notre histoire</a></li>
+          <li><a href="https://www.google.com">Nos ingrédients</a></li>
+          <li><a href="https://www.google.com">Durabilité</a></li>
+          <li><a href="https://www.google.com">Fabriqué au Canada</a></li>
+          <li><a href="https://www.google.com">Blogue</a></li>
+        </ul>
+      </div>
+
+      <div class="s-footer__col">
+        <h4 class="s-footer__col-head">Aide</h4>
+        <ul class="s-footer__links">
+          <li><a href="https://www.google.com">Nous joindre</a></li>
+          <li><a href="https://www.google.com">Livraison</a></li>
+          <li><a href="https://www.google.com">Retours</a></li>
+          <li><a href="https://www.google.com">Trouver ma routine</a></li>
+          <li><a href="https://www.google.com">FAQ</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Social icons -->
+    <div class="s-footer__social">
+
+      <a href="https://www.google.com" class="s-footer__social-link" aria-label="Instagram">
+        <!-- Instagram -->
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+          <circle cx="12" cy="12" r="4.2"/>
+          <circle cx="17.5" cy="6.5" r=".6" fill="currentColor" stroke="none"/>
+        </svg>
+      </a>
+
+      <a href="https://www.google.com" class="s-footer__social-link" aria-label="Facebook">
+        <!-- Facebook -->
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+        </svg>
+      </a>
+
+      <a href="https://www.google.com" class="s-footer__social-link" aria-label="TikTok">
+        <!-- TikTok -->
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/>
+        </svg>
+      </a>
+
+      <a href="https://www.google.com" class="s-footer__social-link" aria-label="Pinterest">
+        <!-- Pinterest -->
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M12 2C6.48 2 2 6.48 2 12c0 4.24 2.65 7.86 6.39 9.29-.09-.78-.17-1.98.04-2.83.18-.74 1.22-5.17 1.22-5.17s-.31-.63-.31-1.56c0-1.46.85-2.55 1.9-2.55.9 0 1.33.67 1.33 1.48 0 .9-.58 2.26-.87 3.52-.25 1.05.52 1.9 1.54 1.9 1.85 0 3.1-2.36 3.1-5.15 0-2.13-1.44-3.62-3.5-3.62-2.38 0-3.78 1.79-3.78 3.63 0 .72.27 1.49.62 1.91.07.08.08.15.06.24l-.23.96c-.04.15-.13.18-.3.11C7.9 13.7 7.3 12.01 7.3 10.65c0-2.83 2.06-5.44 5.93-5.44 3.11 0 5.53 2.22 5.53 5.18 0 3.09-1.95 5.58-4.65 5.58-.91 0-1.76-.47-2.05-1.03l-.56 2.08c-.2.78-.75 1.75-1.12 2.34.85.26 1.75.4 2.68.4 5.52 0 10-4.48 10-10S17.52 2 12 2z"/>
+        </svg>
+      </a>
+
+    </div>
+
+    <!-- Bottom bar -->
+    <div class="s-footer__bar">
+      <span>© 2026 Stoic Beauty — maquette de présentation · Prix en CAD</span>
+      <span class="s-footer__canada">Fièrement canadien 🍁</span>
+    </div>
+
+  </div>
+</footer>
+<script src="fx.js"></script>
+</body>
+</html>
