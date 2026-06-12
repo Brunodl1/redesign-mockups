@@ -1,0 +1,104 @@
+/* ============================================================
+   bluboho — base.css (foundation, faithful tokens)
+   Real site: cream #F9F4F0 · near-black #080E00 · gold #B5951C ·
+   signature sage CTA #67874A · Sorts Mill Goudy (serif display) +
+   Montserrat (body) · 2px squared buttons · uppercase tracked heads.
+   Boho-luxe editorial: airy, warm, meaningful. Whitespace = the look.
+   ============================================================ */
+:root{
+  /* color */
+  --bg:#FFFFFF;
+  --surface:#F9F4F0;          /* warm cream band/cards */
+  --surface-2:#2C2A22;        /* deep earth — dark bands/footer */
+  --ink:#080E00;              /* near-black */
+  --ink-soft:#6B6657;         /* warm taupe-grey secondary */
+  --accent:#67874A;           /* signature sage green — CTAs */
+  --accent-ink:#FFFFFF;
+  --pop:#7A9B5B;              /* sage hover (lighter) */
+  --gold:#B5951C;             /* metallic gold hairline/accent (sparing) */
+  --star:#B5951C;
+  --line:#E6DFD6;             /* warm hairline */
+  --btn:#67874A;
+  --btn-ink:#FFFFFF;
+  /* type */
+  --font-display:"Sorts Mill Goudy",Georgia,serif;
+  --font-body:"Montserrat",system-ui,sans-serif;
+  --s--1:.78rem; --s-0:1rem; --s-1:1.2rem; --s-2:1.55rem;
+  --s-3:2.1rem; --s-4:2.9rem; --s-5:3.9rem;
+  /* space — generous / airy */
+  --sp-1:.25rem; --sp-2:.5rem; --sp-3:1rem; --sp-4:1.5rem;
+  --sp-5:2.75rem; --sp-6:4.5rem; --sp-7:7rem;
+  /* shape — minimal, squared */
+  --radius:2px;
+  --radius-lg:4px;
+  --shadow:0 14px 40px rgba(44,42,34,.08);
+  --maxw:1320px;
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+html,body{overflow-x:clip}
+body{
+  font-family:var(--font-body);font-size:var(--s-0);line-height:1.7;
+  color:var(--ink);background:var(--bg);font-weight:400;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+ul{list-style:none}
+
+/* display = elegant serif; section heads are uppercase tracked Montserrat OR serif */
+h1,h2,h3{font-family:var(--font-display);font-weight:400;line-height:1.18;letter-spacing:.005em}
+h1{font-size:clamp(2.4rem,4.4vw,var(--s-5))}
+h2{font-size:clamp(1.9rem,3vw,var(--s-4))}
+h3{font-size:var(--s-2)}
+
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 clamp(1.1rem,4vw,2.2rem)}
+.sec{padding:var(--sp-7) 0}
+@media(max-width:760px){.sec{padding:var(--sp-6) 0}}
+
+/* eyebrow — uppercase, wide tracking, gold or sage */
+.eyebrow{
+  display:inline-block;font-family:var(--font-body);font-size:var(--s--1);
+  font-weight:600;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:var(--sp-3);
+}
+
+/* buttons — bluboho squared 2px, uppercase, tracked */
+.btn{
+  display:inline-block;font-family:var(--font-body);font-weight:600;
+  font-size:var(--s--1);letter-spacing:.14em;text-transform:uppercase;
+  line-height:1;padding:18px 34px;border-radius:var(--radius);
+  border:1px solid transparent;cursor:pointer;
+  transition:background .25s,color .25s,border-color .25s;text-align:center;
+}
+.btn-primary{background:var(--btn);color:var(--btn-ink);border-color:var(--btn)}
+.btn-primary:hover{background:var(--pop);border-color:var(--pop)}
+.btn-outline{background:transparent;color:var(--accent);border-color:var(--accent)}
+.btn-outline:hover{background:var(--accent);color:var(--accent-ink)}
+.btn-dark{background:var(--ink);color:#fff;border-color:var(--ink)}
+.btn-dark:hover{background:transparent;color:var(--ink)}
+.btn-light{background:var(--bg);color:var(--ink);border-color:var(--bg)}
+.btn-light:hover{background:transparent;color:#fff;border-color:#fff}
+.btn-outline-light{background:transparent;color:#fff;border-color:#fff}
+.btn-outline-light:hover{background:#fff;color:var(--ink)}
+.btn-block{display:block;width:100%}
+
+/* icons */
+.ic{width:38px;height:38px;color:var(--accent);stroke-width:1.4}
+
+/* floats — STATIC delicate decorative elements (restrained for jewelry) */
+.float{position:absolute;pointer-events:none;z-index:5}
+.float img{
+  width:100%;transform:rotate(var(--rot,0deg));
+  filter:drop-shadow(0 22px 20px rgba(44,42,34,.16)) drop-shadow(0 6px 6px rgba(44,42,34,.10));
+}
+@media(max-width:1000px){.float{display:none}}
+
+/* scroll reveal (3D) */
+.reveal{opacity:0;transform:perspective(900px) rotateX(8deg) translateY(26px);
+  transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){
+  .reveal{opacity:1;transform:none;transition:none}
+}

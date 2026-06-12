@@ -1,0 +1,11 @@
+{
+  "provider": "cloudflare-flux",
+  "model": "@cf/black-forest-labs/flux-1-schnell",
+  "account": "bruno1",
+  "aspect": "1:1",
+  "size": "1K",
+  "elapsed_s": 2.01,
+  "timestamp": "2026-06-11T19:27:55-0500",
+  "input_image": null,
+  "prompt": "a small delicate spray of wildflowers, pale blue and white blossoms with slender green foliage, photorealistic botanical study, fresh and airy, on a pure white seamless background, zero shadow, refined minimal composition"
+}

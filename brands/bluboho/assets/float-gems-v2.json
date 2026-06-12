@@ -1,0 +1,11 @@
+{
+  "provider": "cloudflare-flux",
+  "model": "@cf/black-forest-labs/flux-1-schnell",
+  "account": "bruno1",
+  "aspect": "1:1",
+  "size": "1K",
+  "elapsed_s": 3.7,
+  "timestamp": "2026-06-11T19:27:56-0500",
+  "input_image": null,
+  "prompt": "a few scattered precious gemstones, blue sapphire green emerald milky opal, smooth tumbled and faceted stones with soft inner glow, ultra photorealistic, on pure white seamless background, no shadow, elegant minimal jewelry styling"
+}
