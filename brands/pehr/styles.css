@@ -980,7 +980,6 @@
 /* ── Section shell ─────────────────────────────────────────── */
 .s-promise {
   background: var(--surface);
-  padding: 80px 0;
 }
 
 /* ── Two-column grid ───────────────────────────────────────── */
@@ -1118,7 +1117,6 @@
   background: var(--accent);
   color: #fff;
   text-align: center;
-  padding: 80px 0;
 }
 
 /* ── Centred container ─────────────────────────────────────── */
