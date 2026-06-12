@@ -1,0 +1,72 @@
+/* ===== SECOND LIFE CANDLES — per-brand foundation (sage / cream / black · Didone · satirical) ===== */
+:root{
+  --bg:        #F2ECE1;   /* warm bone/cream */
+  --surface:   #FBF7EF;   /* lighter cream card */
+  --surface-2: #E6E3D5;   /* soft sage-cream alt band */
+  --ink:       #1E1B17;   /* near-black */
+  --ink-soft:  #6B6357;   /* secondary text */
+  --accent:    #7C8B6F;   /* sage / eucalyptus — CTAs, blocks, marquee */
+  --accent-ink:#FBF7EF;   /* text on sage */
+  --accent-deep:#5F6E54;  /* hover */
+  --pop:       #C06B3E;   /* warm amber/terracotta pop (candle warmth) */
+  --dark:      #1A1714;   /* black drama band (iconic) */
+  --dark-ink:  #F4EFE4;   /* cream text on black */
+  --line:      #DAD0BF;   /* warm hairline */
+  --star:      #C06B3E;
+  --scrim:     rgba(20,18,16,.42);
+  --font-display:"Playfair Display","Bodoni Moda",Georgia,serif;
+  --font-body:  "Assistant","Inter","Helvetica Neue",Arial,sans-serif;
+  --s--1:.82rem; --s-0:1rem; --s-1:1.22rem; --s-2:1.6rem; --s-3:2.3rem; --s-4:3.6rem; --s-5:5.5rem;
+  --sp-1:.25rem; --sp-2:.5rem; --sp-3:1rem; --sp-4:1.5rem; --sp-5:2.5rem; --sp-6:4rem; --sp-7:6rem;
+  --radius:3px; --radius-lg:14px; --radius-pill:999px;
+  --shadow:0 18px 48px rgba(30,27,23,.16);
+  --maxw:1280px;
+}
+*{box-sizing:border-box}
+html,body{overflow-x:clip}
+html{scroll-behavior:smooth}
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font-family:var(--font-body); font-size:var(--s-0); line-height:1.6;
+  font-weight:400; -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%; display:block}
+a{color:inherit; text-decoration:none}
+.wrap{max-width:var(--maxw); margin:0 auto; padding:0 var(--sp-4)}
+.section{padding:var(--sp-7) 0}
+.sec{overflow-x:clip}
+h1,h2,h3{font-family:var(--font-display); font-weight:600; line-height:1.04;
+  margin:0 0 var(--sp-3); letter-spacing:0}
+h1{font-size:var(--s-5)} h2{font-size:var(--s-4)} h3{font-size:var(--s-2)}
+p{margin:0 0 var(--sp-3)}
+.eyebrow{font-family:var(--font-body); font-weight:700; font-size:var(--s--1);
+  letter-spacing:.28em; text-transform:uppercase; color:var(--accent-deep); margin:0 0 var(--sp-3)}
+.lead{font-size:var(--s-1); color:var(--ink-soft); line-height:1.55}
+/* buttons — sage, rounded, uppercase */
+.btn{display:inline-flex; align-items:center; justify-content:center; gap:.5em;
+  font-family:var(--font-body); font-weight:700; font-size:var(--s--1);
+  letter-spacing:.12em; text-transform:uppercase; cursor:pointer;
+  padding:1rem 2.1rem; border-radius:var(--radius-pill); border:1.5px solid transparent;
+  transition:transform .18s ease, background .18s ease, color .18s ease, box-shadow .18s}
+.btn:hover{transform:translateY(-2px)}
+.btn-primary{background:var(--accent); color:var(--accent-ink); border-color:var(--accent)}
+.btn-primary:hover{background:var(--accent-deep); border-color:var(--accent-deep)}
+.btn-outline{background:transparent; color:var(--ink); border-color:var(--ink)}
+.btn-outline:hover{background:var(--ink); color:var(--accent-ink)}
+.btn-light{background:var(--surface); color:var(--ink); border-color:var(--surface)}
+.btn-light-outline{background:transparent; color:var(--dark-ink); border-color:rgba(244,239,228,.8)}
+.btn-light-outline:hover{background:var(--dark-ink); color:var(--dark)}
+.btn-block{display:flex; width:100%}
+.ic{width:40px; height:40px; stroke:var(--accent-deep); stroke-width:1.5; fill:none; display:block}
+/* depth: floats (static) + scroll reveal */
+.float{position:absolute; z-index:2; pointer-events:none}
+.float img{width:100%; transform:rotate(var(--rot,0deg));
+  filter:drop-shadow(0 20px 30px rgba(30,27,23,.28))}
+.reveal{opacity:0; transform:perspective(900px) rotateX(8deg) translateY(26px);
+  transition:opacity .7s cubic-bezier(.2,.7,.2,1), transform .7s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1; transform:none}
+@media (prefers-reduced-motion:reduce){
+  .reveal{opacity:1; transform:none; transition:none}
+  .btn:hover{transform:none}
+}
+@media (max-width:1000px){ .float{display:none} }
