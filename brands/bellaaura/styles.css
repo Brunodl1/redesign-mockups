@@ -68,7 +68,7 @@
   align-items:center;
 }
 .s-hero .hero-copy-inner{
-  max-width: 78%;
+  max-width: 90%;
   padding:var(--sp-2) var(--sp-6) var(--sp-2)
           max(var(--sp-6));
 }
