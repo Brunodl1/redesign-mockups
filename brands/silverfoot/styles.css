@@ -1,0 +1,1896 @@
+/* Silverfoot — concatenated section styles (scoped per .s-*) */
+
+/* ===== header ===== */
+/* ============================================================
+   Silverfoot — Announcement Bar + Header
+   ============================================================ */
+
+/* ── Announcement Bar ─────────────────────────────────────── */
+.announce {
+  background: var(--pine);
+  color: #fff;
+  text-align: center;
+  padding: .5rem var(--sp-4);
+}
+
+.announce__text {
+  font-family: var(--font-display);
+  font-size: .8rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  white-space: nowrap;
+}
+
+/* Hide 2nd and 3rd segments on narrow screens */
+@media (max-width: 680px) {
+  .announce__hide {
+    display: none;
+  }
+}
+
+/* ── Sticky Header ────────────────────────────────────────── */
+.hdr {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  background: rgba(244, 239, 228, .94);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--line);
+}
+
+.hdr__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-block: .8rem;
+  gap: var(--sp-4);
+}
+
+/* ── LEFT: Nav ────────────────────────────────────────────── */
+.hdr__nav {
+  display: flex;
+  align-items: center;
+  gap: 1.4rem;
+  flex: 1;
+}
+
+.hdr__nav-link {
+  font-family: var(--font-display);
+  font-size: .86rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  color: var(--ink);
+  white-space: nowrap;
+  transition: color .15s;
+}
+
+.hdr__nav-link:hover {
+  color: var(--accent);
+}
+
+/* ── CENTER: Logo ─────────────────────────────────────────── */
+.hdr__logo {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.hdr__logo img {
+  height: 30px;
+  width: auto;
+  display: block;
+}
+
+/* ── RIGHT: Icons ─────────────────────────────────────────── */
+.hdr__icons {
+  display: flex;
+  align-items: center;
+  gap: .25rem;
+  flex: 1;
+  justify-content: flex-end;
+}
+
+.hdr__icon-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--ink);
+  border-radius: var(--radius);
+  transition: color .15s, background .15s;
+  padding: 0;
+  text-decoration: none;
+}
+
+.hdr__icon-btn:hover {
+  color: var(--accent);
+  background: var(--surface-2);
+}
+
+/* Cart badge */
+.hdr__cart-badge {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  background: var(--accent);
+  color: #fff;
+  font-family: var(--font-display);
+  font-size: .6rem;
+  font-weight: 700;
+  line-height: 1;
+  min-width: 15px;
+  height: 15px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 3px;
+  pointer-events: none;
+}
+
+/* ── Mobile (≤860px): hide nav + search + account ─────────── */
+@media (max-width: 860px) {
+  .hdr__nav {
+    display: none;
+  }
+
+  .hdr__search,
+  .hdr__account {
+    display: none;
+  }
+
+  /* Logo no longer needs to balance between nav and icons */
+  .hdr__inner {
+    justify-content: space-between;
+  }
+
+  /* Cart stays visible — direct child of .hdr__icons which remains */
+  .hdr__cart {
+    display: inline-flex; /* explicit — survives any inheritance */
+  }
+}
+
+/* ===== product ===== */
+/* ============================================================
+   Silverfoot — Product page section (breadcrumb + gallery + buy-box)
+   Scoped entirely under .s-product
+   ============================================================ */
+
+/* ── Section shell ─────────────────────────────────────── */
+.s-product {
+  background: var(--bg);
+  padding-block: var(--sp-5) var(--sp-7);
+}
+
+/* ── Breadcrumb ─────────────────────────────────────────── */
+.s-product__breadcrumb {
+  margin-bottom: var(--sp-4);
+}
+.s-product__breadcrumb ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .25rem .1rem;
+  font-family: var(--font-body);
+  font-size: .8rem;
+  color: var(--ink-soft);
+}
+.s-product__breadcrumb li {
+  display: flex;
+  align-items: center;
+}
+.s-product__breadcrumb li + li::before {
+  content: "/";
+  margin-inline: .35rem;
+  color: var(--line);
+  font-weight: 300;
+}
+.s-product__breadcrumb a {
+  color: var(--ink-soft);
+  text-decoration: none;
+  transition: color .15s;
+}
+.s-product__breadcrumb a:hover {
+  color: var(--ink);
+  text-decoration: underline;
+}
+.s-product__breadcrumb-current {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+/* ── 2-col grid ─────────────────────────────────────────── */
+.s-product__grid {
+  display: grid;
+  grid-template-columns: 58fr 42fr;
+  gap: var(--sp-6);
+  align-items: start;
+}
+
+/* ════════════════════════════════════════════════════════════
+   GALLERY
+════════════════════════════════════════════════════════════ */
+.s-product__gallery {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+}
+
+/* Main image wrapper */
+.s-product__main-img-wrap {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5%;
+}
+.s-product__main-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* Thumbnail strip */
+.s-product__thumbs {
+  display: flex;
+  gap: var(--sp-2);
+  flex-wrap: wrap;
+}
+.s-product__thumb {
+  width: 74px;
+  height: 74px;
+  flex-shrink: 0;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  padding: 0;
+  cursor: pointer;
+  transition: border-color .15s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.s-product__thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.s-product__thumb:hover {
+  border-color: var(--ink-soft);
+}
+.s-product__thumb--active {
+  border: 2px solid var(--accent);
+}
+
+/* ════════════════════════════════════════════════════════════
+   BUY-BOX
+════════════════════════════════════════════════════════════ */
+.s-product__buybox {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+}
+
+/* 1. Rating row */
+.s-product__rating {
+  display: flex;
+  align-items: center;
+  gap: .45rem;
+  flex-wrap: wrap;
+}
+.s-product__stars {
+  display: flex;
+  align-items: center;
+  gap: 1px;
+}
+.s-product__rating-score {
+  font-family: var(--font-display);
+  font-size: var(--s-1);
+  font-weight: 600;
+  color: var(--ink);
+  letter-spacing: .02em;
+}
+.s-product__rating-count {
+  font-family: var(--font-body);
+  font-size: .85rem;
+  color: var(--ink-soft);
+  text-decoration: underline;
+  text-decoration-color: var(--line);
+  text-underline-offset: 2px;
+  transition: color .15s;
+}
+.s-product__rating-count:hover {
+  color: var(--ink);
+}
+
+/* 2. Title + subtitle */
+.s-product__title {
+  font-family: var(--font-display);
+  font-size: clamp(1.9rem, 3.6vw, 2.9rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .02em;
+  color: var(--ink);
+  line-height: 1;
+  margin: 0;
+}
+.s-product__subtitle {
+  font-family: var(--font-display);
+  font-size: var(--s-2);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  color: var(--accent);
+  margin: 0;
+  line-height: 1.1;
+}
+
+/* 3. Price */
+.s-product__price {
+  display: flex;
+  align-items: baseline;
+  gap: .35rem;
+  margin-block: calc(-1 * var(--sp-1)) 0;
+}
+.s-product__price-amount {
+  font-family: var(--font-display);
+  font-size: clamp(1.9rem, 3.2vw, var(--s-3));
+  font-weight: 700;
+  color: var(--accent);
+  letter-spacing: .01em;
+  line-height: 1;
+}
+.s-product__price-currency {
+  font-family: var(--font-body);
+  font-size: .85rem;
+  color: var(--ink-soft);
+  font-weight: 400;
+}
+
+/* 4. Descriptive subtitle */
+.s-product__desc {
+  font-family: var(--font-body);
+  font-size: .9rem;
+  color: var(--ink-soft);
+  line-height: 1.55;
+  margin: 0;
+  padding-bottom: var(--sp-1);
+  border-bottom: 1px solid var(--line);
+}
+
+/* 5. Size selector */
+.s-product__size-block {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+}
+.s-product__size-label {
+  font-family: var(--font-display);
+  font-size: .75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .12em;
+  color: var(--ink);
+  margin: 0;
+}
+.s-product__size-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: .5rem;
+}
+.s-product__size-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: .15rem;
+  padding: .55rem .4rem .5rem;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  text-decoration: none;
+  color: var(--ink);
+  cursor: pointer;
+  transition: border-color .15s, background .15s, color .15s;
+  text-align: center;
+  min-height: 62px;
+}
+.s-product__size-btn:hover {
+  border-color: var(--ink-soft);
+  background: var(--surface-2);
+}
+.s-product__size-btn--selected {
+  border: 2px solid var(--accent);
+  background: rgba(192, 57, 43, .07);
+}
+.s-product__size-btn--selected:hover {
+  border-color: var(--accent);
+  background: rgba(192, 57, 43, .07);
+}
+.s-product__size-name {
+  font-family: var(--font-display);
+  font-size: .78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  line-height: 1;
+}
+.s-product__size-range {
+  font-family: var(--font-body);
+  font-size: .68rem;
+  color: var(--ink-soft);
+  line-height: 1.2;
+}
+.s-product__size-price {
+  font-family: var(--font-body);
+  font-size: .72rem;
+  color: var(--ink-soft);
+  line-height: 1;
+}
+.s-product__size-btn--selected .s-product__size-price {
+  color: var(--accent);
+  font-weight: 600;
+}
+/* Size guide link */
+.s-product__size-guide {
+  display: inline-flex;
+  align-items: center;
+  gap: .35rem;
+  font-family: var(--font-body);
+  font-size: .8rem;
+  color: var(--ink-soft);
+  text-decoration: underline;
+  text-decoration-color: var(--line);
+  text-underline-offset: 2px;
+  transition: color .15s;
+  margin-top: .1rem;
+}
+.s-product__size-guide:hover {
+  color: var(--ink);
+  text-decoration-color: var(--ink);
+}
+.s-product__size-guide svg {
+  flex-shrink: 0;
+}
+
+/* 6. Qty + CTA */
+.s-product__cta-row {
+  display: flex;
+  align-items: stretch;
+  gap: .65rem;
+  margin-top: calc(-1 * var(--sp-1));
+}
+.s-product__qty {
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.s-product__qty-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: var(--font-display);
+  font-size: var(--s-2);
+  font-weight: 400;
+  color: var(--ink);
+  width: 38px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background .15s;
+  padding: 0;
+  line-height: 1;
+}
+.s-product__qty-btn:hover {
+  background: var(--surface-2);
+}
+.s-product__qty-val {
+  font-family: var(--font-display);
+  font-size: var(--s-1);
+  font-weight: 600;
+  color: var(--ink);
+  min-width: 34px;
+  text-align: center;
+  border-inline: 1px solid var(--line);
+  padding-block: .6rem;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.s-product__atc {
+  flex: 1;
+  font-size: .9rem;
+  letter-spacing: .09em;
+  padding-block: .95em;
+}
+
+/* 7. Trust trio */
+.s-product__trust {
+  list-style: none;
+  margin: 0;
+  padding: var(--sp-3) 0 0;
+  border-top: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+  gap: .65rem;
+}
+.s-product__trust li {
+  display: flex;
+  align-items: center;
+  gap: .65rem;
+  font-family: var(--font-body);
+  font-size: .82rem;
+  color: var(--ink-soft);
+  font-weight: 500;
+}
+.s-product__trust-ic {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+  stroke: var(--pine);
+  stroke-width: 1.5;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* 8. Made in Canada badge */
+.s-product__canada-badge {
+  display: flex;
+  align-items: center;
+  gap: .55rem;
+  font-family: var(--font-body);
+  font-size: .82rem;
+  color: var(--pine);
+  font-weight: 600;
+  background: var(--surface-2);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: .6rem .85rem;
+}
+.s-product__maple {
+  flex-shrink: 0;
+}
+
+/* 9. Free shipping line */
+.s-product__free-ship {
+  font-family: var(--font-body);
+  font-size: .8rem;
+  color: var(--ink-soft);
+  margin: 0;
+  text-align: center;
+}
+
+/* ════════════════════════════════════════════════════════════
+   RESPONSIVE — stack on mobile
+════════════════════════════════════════════════════════════ */
+@media (max-width: 768px) {
+  .s-product {
+    padding-block: var(--sp-4) var(--sp-5);
+  }
+
+  /* Stack: gallery on top, buy-box below */
+  .s-product__grid {
+    grid-template-columns: 1fr;
+    gap: var(--sp-4);
+  }
+
+  /* Main image slightly taller proportion on mobile */
+  .s-product__main-img-wrap {
+    aspect-ratio: 4 / 3;
+  }
+
+  /* Thumb strip: let them scroll horizontally if needed */
+  .s-product__thumbs {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: .25rem;
+    scrollbar-width: thin;
+    scrollbar-color: var(--line) transparent;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Size grid: 2 cols on mobile */
+  .s-product__size-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* CTA row: keep qty + button side-by-side on mobile */
+  .s-product__cta-row {
+    flex-direction: row;
+    align-items: stretch;
+    gap: .65rem;
+  }
+  .s-product__qty {
+    align-self: stretch;
+    min-width: 108px;
+    flex: 0 0 auto;
+  }
+  .s-product__atc {
+    flex: 1 1 auto;
+    width: auto;
+  }
+
+  /* Trust trio: slightly more compact */
+  .s-product__trust {
+    gap: .5rem;
+  }
+
+  /* Breadcrumb wraps naturally */
+  .s-product__breadcrumb ol {
+    font-size: .75rem;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 960px) {
+  .s-product__grid {
+    grid-template-columns: 55fr 45fr;
+    gap: var(--sp-5);
+  }
+  .s-product__size-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ===== break ===== */
+/* ============================================================
+   Silverfoot — Lifestyle Break (s-break)
+   ============================================================ */
+
+.s-break {
+  position: relative;
+  min-height: clamp(440px, 56vh, 620px);
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  padding-block: clamp(2.5rem, 5vw, 4rem);
+}
+
+/* ── Background photo ──────────────────────────────────────── */
+.s-break__bg {
+  position: absolute;
+  inset: 0;
+  background: url('assets/hero.jpg') center / cover no-repeat;
+  z-index: 0;
+}
+
+/* ── Scrim: left-to-right gradient for text legibility ─────── */
+.s-break__scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(20, 28, 30, .62) 0%,
+    rgba(20, 28, 30, .28) 50%,
+    transparent 100%
+  );
+  z-index: 1;
+}
+
+/* ── Content block ─────────────────────────────────────────── */
+.s-break__content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: var(--wrap-max, 1200px);
+  margin-inline: auto;
+  padding-inline: clamp(1.25rem, 4vw, 3rem);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: .75rem;
+}
+
+/* ── Eyebrow ───────────────────────────────────────────────── */
+.s-break__eyebrow {
+  font-family: var(--font-display);
+  font-size: .78rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: .14em;
+  color: rgba(255, 255, 255, .72) !important;
+  /* override any base .eyebrow ink color */
+}
+
+/* ── Headline ──────────────────────────────────────────────── */
+.s-break__headline {
+  font-family: var(--font-display);
+  font-size: clamp(2.8rem, 7vw, 5rem);
+  font-weight: 700;
+  line-height: .96;
+  text-transform: uppercase;
+  letter-spacing: .01em;
+  color: #fff !important;
+  margin: 0;
+  text-shadow: 0 2px 18px rgba(0, 0, 0, .35);
+}
+
+/* ── Sub-copy ──────────────────────────────────────────────── */
+.s-break__sub {
+  font-family: var(--font-body);
+  font-size: clamp(.92rem, 1.6vw, 1.05rem);
+  font-weight: 400;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, .88) !important;
+  margin: 0;
+  max-width: 36ch;
+}
+
+/* ── Outline-light CTA ─────────────────────────────────────── */
+.btn-outline-light,
+.s-break__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: .45rem;
+  font-family: var(--font-display);
+  font-size: .82rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  color: #fff !important;
+  border: 1.5px solid rgba(255, 255, 255, .75);
+  border-radius: var(--radius);
+  padding: .6rem 1.35rem;
+  text-decoration: none;
+  background: transparent;
+  transition: background .18s, border-color .18s, color .18s;
+  margin-top: .35rem;
+  white-space: nowrap;
+}
+
+.btn-outline-light:hover,
+.s-break__cta:hover {
+  background: rgba(255, 255, 255, .14);
+  border-color: #fff;
+  color: #fff !important;
+}
+
+/* ── Mobile (≤600px): bottom-to-top scrim, text centered ───── */
+@media (max-width: 600px) {
+  .s-break {
+    align-items: flex-end;
+  }
+
+  .s-break__scrim {
+    background: linear-gradient(
+      0deg,
+      rgba(20, 28, 30, .74) 35%,
+      rgba(20, 28, 30, .42) 70%,
+      transparent 100%
+    );
+  }
+
+  .s-break__content {
+    padding-inline: 1.25rem;
+    padding-bottom: .25rem;
+  }
+
+  .s-break__headline {
+    font-size: clamp(2.2rem, 10vw, 2.8rem);
+    /* 4-word headline stays on 2 short lines — no overflow */
+  }
+
+  .s-break__sub {
+    font-size: .9rem;
+  }
+}
+
+/* ===== features ===== */
+/* ============================================================
+   Silverfoot — Features Section (s-features)
+   ============================================================ */
+
+.s-features {
+  background: var(--bg);
+  padding-block: clamp(3.5rem, 7vw, 6rem);
+}
+
+/* ── Section head ──────────────────────────────────────────── */
+.s-features__head {
+  text-align: center;
+  margin-bottom: clamp(2.5rem, 5vw, 3.5rem);
+}
+
+.s-features__head .eyebrow {
+  display: block;
+  color: var(--pine);
+  margin-bottom: .6rem;
+}
+
+.s-features__h2 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4.5vw, 3rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .02em;
+  color: var(--ink);
+  margin: 0;
+  line-height: 1.05;
+}
+
+/* ── Feature cards: 2-up desktop, stacked mobile ───────────── */
+.s-features__cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(1.25rem, 2.5vw, 2rem);
+  max-width: var(--wrap-max, 1200px);
+  margin-inline: auto;
+  padding-inline: clamp(1.25rem, 4vw, 3rem);
+  margin-bottom: clamp(3rem, 6vw, 5rem);
+}
+
+.s-features__card {
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--line);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Card image ────────────────────────────────────────────── */
+.s-features__card-img-wrap {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  flex-shrink: 0;
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+}
+
+.s-features__card-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  transition: transform .4s ease;
+}
+
+.s-features__card:hover .s-features__card-img {
+  transform: scale(1.03);
+}
+
+/* ── Card caption ──────────────────────────────────────────── */
+.s-features__card-caption {
+  padding: clamp(1rem, 2.5vw, 1.5rem) clamp(1rem, 2.5vw, 1.5rem) clamp(1.25rem, 3vw, 1.75rem);
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+  flex: 1;
+  border-top: 1px solid var(--line);
+}
+
+.s-features__card-title {
+  font-family: var(--font-display);
+  font-size: clamp(.95rem, 1.8vw, 1.15rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  color: var(--ink);
+  margin: 0;
+  line-height: 1.15;
+}
+
+.s-features__card-body {
+  font-family: var(--font-body);
+  font-size: .93rem;
+  color: var(--ink-soft);
+  line-height: 1.55;
+  margin: 0;
+}
+
+/* ── 3-up spec row ─────────────────────────────────────────── */
+.s-features__specs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(1.5rem, 3vw, 2.5rem);
+  max-width: var(--wrap-max, 1200px);
+  margin-inline: auto;
+  padding-inline: clamp(1.25rem, 4vw, 3rem);
+  padding-block: clamp(2rem, 4vw, 3rem);
+  border-top: 1px solid var(--line);
+}
+
+.s-features__spec {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+}
+
+/* ── Spec icon ─────────────────────────────────────────────── */
+.s-features__spec-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 58px;
+  height: 58px;
+  background: var(--surface-2);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--line);
+  flex-shrink: 0;
+}
+
+/* ── Spec text ─────────────────────────────────────────────── */
+.s-features__spec-text {
+  display: flex;
+  flex-direction: column;
+  gap: .35rem;
+}
+
+.s-features__spec-title {
+  font-family: var(--font-display);
+  font-size: .92rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .07em;
+  color: var(--ink);
+  margin: 0;
+  line-height: 1.2;
+}
+
+.s-features__spec-body {
+  font-family: var(--font-body);
+  font-size: .88rem;
+  color: var(--ink-soft);
+  line-height: 1.5;
+  margin: 0;
+  max-width: 24ch;
+}
+
+/* ── Tablet (≤900px): cards stack ──────────────────────────── */
+@media (max-width: 900px) {
+  .s-features__cards {
+    grid-template-columns: 1fr;
+    max-width: 560px;
+  }
+
+  .s-features__card-img-wrap {
+    aspect-ratio: 16 / 9;
+  }
+}
+
+/* ── Mobile (≤600px): specs stack ─────────────────────────── */
+@media (max-width: 600px) {
+  .s-features__specs {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .s-features__spec {
+    flex-direction: row;
+    text-align: left;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .s-features__spec-icon {
+    flex-shrink: 0;
+  }
+
+  .s-features__spec-body {
+    max-width: none;
+  }
+
+  .s-features__cards {
+    padding-inline: 1.25rem;
+  }
+
+  .s-features__specs {
+    padding-inline: 1.25rem;
+  }
+}
+
+/* ===== specs ===== */
+/* ============================================================
+   Silverfoot — Materials & Care Section (s-specs)
+   ============================================================ */
+
+.s-specs {
+  background: var(--surface-2);
+  padding-block: clamp(3.5rem, 7vw, 6rem);
+}
+
+/* ── Section head ──────────────────────────────────────────── */
+.s-specs__head {
+  text-align: center;
+  margin-bottom: clamp(2.5rem, 5vw, 3.5rem);
+  padding-inline: clamp(1.25rem, 4vw, 3rem);
+}
+
+.s-specs__head .eyebrow {
+  display: block;
+  color: var(--pine);
+  margin-bottom: .6rem;
+}
+
+.s-specs__h2 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4.5vw, 3rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .02em;
+  color: var(--ink);
+  margin: 0;
+  line-height: 1.05;
+}
+
+/* ── 2-col grid ────────────────────────────────────────────── */
+.s-specs__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(2rem, 4vw, 4rem);
+  align-items: start;
+}
+
+/* ── Column title ──────────────────────────────────────────── */
+.s-specs__col-title {
+  font-family: var(--font-display);
+  font-size: clamp(.8rem, 1.4vw, .92rem);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  color: var(--ink-soft);
+  margin: 0 0 1rem;
+  padding-bottom: .65rem;
+  border-bottom: 2px solid var(--pine);
+}
+
+/* ── Spec table (definition list) ──────────────────────────── */
+.s-specs__table {
+  margin: 0;
+  padding: 0;
+  border: 1px solid var(--line);
+}
+
+.s-specs__row {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  border-bottom: 1px solid var(--line);
+}
+
+.s-specs__row:last-child {
+  border-bottom: none;
+}
+
+.s-specs__label,
+.s-specs__value {
+  padding: .7rem .9rem;
+  margin: 0;
+  line-height: 1.45;
+}
+
+.s-specs__label {
+  font-family: var(--font-display);
+  font-size: .8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  color: var(--ink-soft);
+  border-right: 1px solid var(--line);
+  background: transparent;
+  display: flex;
+  align-items: center;
+}
+
+.s-specs__value {
+  font-family: var(--font-body);
+  font-size: .9rem;
+  color: var(--ink);
+  background: var(--surface);
+}
+
+/* ── Care list ─────────────────────────────────────────────── */
+.s-specs__care-list {
+  list-style: none;
+  margin: 0 0 1.25rem;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border: 1px solid var(--line);
+}
+
+.s-specs__care-item {
+  display: flex;
+  align-items: flex-start;
+  gap: .85rem;
+  padding: .8rem .9rem;
+  border-bottom: 1px solid var(--line);
+  background: var(--surface);
+}
+
+.s-specs__care-item:last-child {
+  border-bottom: none;
+}
+
+.s-specs__care-icon {
+  flex-shrink: 0;
+  margin-top: .1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+}
+
+.s-specs__care-text {
+  font-family: var(--font-body);
+  font-size: .9rem;
+  color: var(--ink);
+  line-height: 1.5;
+}
+
+/* ── Care note ─────────────────────────────────────────────── */
+.s-specs__care-note {
+  font-family: var(--font-body);
+  font-size: .85rem;
+  color: var(--ink-soft);
+  line-height: 1.55;
+  margin: 0;
+  padding: .6rem .9rem;
+  border-left: 2px solid var(--pine);
+  background: transparent;
+  font-style: italic;
+}
+
+/* ── Tablet (≤880px): stack columns ────────────────────────── */
+@media (max-width: 880px) {
+  .s-specs__grid {
+    grid-template-columns: 1fr;
+    gap: clamp(2rem, 5vw, 3rem);
+  }
+}
+
+/* ── Mobile (≤600px) ───────────────────────────────────────── */
+@media (max-width: 600px) {
+  .s-specs__label,
+  .s-specs__value {
+    padding: .6rem .75rem;
+    font-size: .83rem;
+  }
+
+  .s-specs__care-item {
+    padding: .7rem .75rem;
+  }
+}
+
+/* ===== heritage ===== */
+/* ============================================================
+   Silverfoot — Heritage Band (s-heritage)
+   Full-bleed landscape with dark scrim; ALL text is #fff
+   ============================================================ */
+
+.s-heritage {
+  position: relative;
+  min-height: clamp(420px, 50vh, 560px);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-block: clamp(4rem, 8vw, 6rem);
+}
+
+/* ── Background photo ──────────────────────────────────────── */
+.s-heritage__bg {
+  position: absolute;
+  inset: 0;
+  background: url('assets/heritage.jpg') center / cover no-repeat;
+  z-index: 0;
+}
+
+/* ── Dark scrim ────────────────────────────────────────────── */
+.s-heritage__scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(rgba(20, 30, 28, .55), rgba(20, 30, 28, .68));
+  z-index: 1;
+}
+
+/* ── Content block — centered, max 760px ───────────────────── */
+.s-heritage__content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 760px;
+  margin-inline: auto;
+  padding-inline: clamp(1.25rem, 5vw, 3rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1.1rem;
+}
+
+/* ── Eyebrow — override base ink color ─────────────────────── */
+.s-heritage__eyebrow,
+.s-heritage .eyebrow {
+  color: rgba(255, 255, 255, .75) !important;
+  letter-spacing: .14em;
+}
+
+/* ── Headline ──────────────────────────────────────────────── */
+.s-heritage__h2 {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 5.5vw, 3.6rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .025em;
+  color: #fff !important;
+  margin: 0;
+  line-height: 1.02;
+  text-shadow: 0 2px 20px rgba(0, 0, 0, .4);
+}
+
+/* ── Body copy ─────────────────────────────────────────────── */
+.s-heritage__body {
+  font-family: var(--font-body);
+  font-size: clamp(.92rem, 1.7vw, 1.05rem);
+  color: rgba(255, 255, 255, .88) !important;
+  line-height: 1.65;
+  margin: 0;
+  max-width: 58ch;
+}
+
+/* ── Stat row ──────────────────────────────────────────────── */
+.s-heritage__stats {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  margin-block: .4rem .2rem;
+  flex-wrap: wrap;
+  row-gap: 1.25rem;
+}
+
+.s-heritage__stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .2rem;
+  padding-inline: clamp(1.5rem, 3.5vw, 2.5rem);
+}
+
+.s-heritage__stat-num {
+  font-family: var(--font-display);
+  font-size: clamp(1.7rem, 3.5vw, 2.4rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .03em;
+  color: #fff !important;
+  line-height: 1;
+}
+
+.s-heritage__stat-label {
+  font-family: var(--font-body);
+  font-size: .8rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  color: rgba(255, 255, 255, .72) !important;
+  line-height: 1.3;
+}
+
+/* ── Dividers between stats ─────────────────────────────────── */
+.s-heritage__stat-divider {
+  width: 1px;
+  height: 2.5rem;
+  background: rgba(255, 255, 255, .28);
+  flex-shrink: 0;
+  align-self: center;
+}
+
+/* ── CTA button (reuses shared .btn-outline-light) ──────────── */
+.s-heritage__cta {
+  margin-top: .5rem;
+}
+
+/* ── Mobile (≤600px) ───────────────────────────────────────── */
+@media (max-width: 600px) {
+  .s-heritage {
+    background-position: center;
+    padding-block: clamp(3rem, 8vw, 5rem);
+  }
+
+  .s-heritage__h2 {
+    font-size: clamp(1.9rem, 9vw, 2.4rem);
+    line-height: 1.05;
+  }
+
+  .s-heritage__stat-divider {
+    display: none;
+  }
+
+  .s-heritage__stats {
+    gap: 1.25rem 2rem;
+  }
+
+  .s-heritage__stat {
+    padding-inline: 0;
+    min-width: 6rem;
+  }
+}
+
+/* ===== crosssell ===== */
+/* ============================================================
+   Silverfoot — Cross-sell "Complete the Adventure" (s-cross)
+   Scoped entirely under .s-cross
+   ============================================================ */
+
+.s-cross {
+  background: var(--bg);
+  padding-block: clamp(3.5rem, 7vw, 6rem);
+}
+
+/* ── Section head ──────────────────────────────────────────── */
+.s-cross__head {
+  text-align: center;
+  margin-bottom: clamp(2.5rem, 5vw, 3.5rem);
+}
+
+.s-cross__head .eyebrow {
+  display: block;
+  color: var(--pine);
+  margin-bottom: .55rem;
+}
+
+.s-cross__h2 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4.5vw, 2.9rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .03em;
+  color: var(--ink);
+  margin: 0;
+  line-height: 1.05;
+}
+
+/* ── 4-up grid ─────────────────────────────────────────────── */
+.s-cross__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: clamp(1rem, 2vw, 1.5rem);
+}
+
+@media (max-width: 759px) {
+  .s-cross__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 479px) {
+  .s-cross__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: .75rem;
+  }
+}
+
+/* ── Product card ──────────────────────────────────────────── */
+.s-cross__card {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: inherit;
+  border-radius: var(--radius-lg);
+  transition: color .18s;
+}
+
+.s-cross__card:hover .s-cross__img-wrap {
+  border-color: var(--accent);
+}
+
+.s-cross__card:hover .s-cross__img {
+  transform: scale(1.03);
+}
+
+/* ── Image wrapper ─────────────────────────────────────────── */
+.s-cross__img-wrap {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6%;
+  transition: border-color .18s;
+}
+
+.s-cross__img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  transition: transform .25s ease;
+}
+
+/* ── Card info strip ───────────────────────────────────────── */
+.s-cross__info {
+  display: flex;
+  flex-direction: column;
+  gap: .2rem;
+  padding: .75rem .1rem .25rem;
+}
+
+.s-cross__name {
+  font-family: var(--font-body);
+  font-size: .95rem;
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+.s-cross__tag {
+  font-family: var(--font-body);
+  font-size: .75rem;
+  color: var(--ink-soft);
+  text-transform: uppercase;
+  letter-spacing: .06em;
+}
+
+.s-cross__price {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: .01em;
+  margin-top: .1rem;
+}
+
+/* ===== reviews ===== */
+/* ============================================================
+   Silverfoot — Reviews Section (s-reviews)
+   Scoped entirely under .s-reviews
+   ============================================================ */
+
+.s-reviews {
+  background: var(--surface-2);
+  padding-block: clamp(3.5rem, 7vw, 6rem);
+}
+
+/* ══════════════════════════════════════════════════════════════
+   AGGREGATE PANEL — full-width top band
+═══════════════════════════════════════════════════════════════ */
+.s-reviews__aggregate {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: clamp(1.75rem, 3.5vw, 2.5rem) clamp(1.5rem, 4vw, 3rem);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: clamp(1.5rem, 3vw, 2.5rem);
+  margin-bottom: clamp(2rem, 4vw, 3rem);
+}
+
+/* Score block: big number + stars + count */
+.s-reviews__agg-score {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-shrink: 0;
+}
+
+.s-reviews__big-num {
+  font-family: var(--font-display);
+  font-size: clamp(3.5rem, 7vw, 5rem);
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1;
+  letter-spacing: -.01em;
+}
+
+.s-reviews__agg-right {
+  display: flex;
+  flex-direction: column;
+  gap: .3rem;
+}
+
+.s-reviews__stars {
+  display: flex;
+  gap: .1rem;
+}
+
+.s-reviews__star {
+  color: var(--star);
+  font-size: 1.25rem;
+  line-height: 1;
+}
+
+.s-reviews__star--empty {
+  color: var(--line);
+}
+
+.s-reviews__count {
+  font-family: var(--font-body);
+  font-size: .85rem;
+  color: var(--ink-soft);
+  margin: 0;
+}
+
+/* Breakdown bars */
+.s-reviews__bars {
+  display: flex;
+  flex-direction: column;
+  gap: .45rem;
+  flex: 1;
+  min-width: 180px;
+  max-width: 360px;
+}
+
+.s-reviews__bar-row {
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+}
+
+.s-reviews__bar-label {
+  font-family: var(--font-body);
+  font-size: .78rem;
+  color: var(--ink-soft);
+  width: 1.8rem;
+  flex-shrink: 0;
+  text-align: right;
+}
+
+.s-reviews__bar-track {
+  flex: 1;
+  height: 6px;
+  background: var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.s-reviews__bar-fill {
+  height: 100%;
+  background: var(--pine);
+  border-radius: var(--radius);
+  transition: width .4s ease;
+}
+
+.s-reviews__bar-pct {
+  font-family: var(--font-body);
+  font-size: .75rem;
+  color: var(--ink-soft);
+  width: 2.4rem;
+  flex-shrink: 0;
+}
+
+/* Write-a-review button */
+.s-reviews__write-btn {
+  margin-left: auto;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+@media (max-width: 640px) {
+  .s-reviews__aggregate {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .s-reviews__bars {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .s-reviews__write-btn {
+    margin-left: 0;
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+}
+
+/* ══════════════════════════════════════════════════════════════
+   REVIEW CARDS GRID
+═══════════════════════════════════════════════════════════════ */
+.s-reviews__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: clamp(1rem, 2vw, 1.4rem);
+}
+
+@media (max-width: 599px) {
+  .s-reviews__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ── Individual card ──────────────────────────────────────── */
+.s-reviews__card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: clamp(1.1rem, 2.5vw, 1.4rem) clamp(1.1rem, 2.5vw, 1.5rem);
+  display: flex;
+  flex-direction: column;
+  gap: .55rem;
+}
+
+.s-reviews__card-stars {
+  display: flex;
+  gap: .1rem;
+}
+
+.s-reviews__card-stars .s-reviews__star {
+  font-size: 1.05rem;
+}
+
+.s-reviews__card-title {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .03em;
+  color: var(--ink);
+  margin: 0;
+  line-height: 1.2;
+}
+
+.s-reviews__card-body {
+  font-family: var(--font-body);
+  font-size: .9rem;
+  color: var(--ink);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.s-reviews__card-byline {
+  font-family: var(--font-body);
+  font-size: .8rem;
+  color: var(--ink-soft);
+  margin: 0;
+  margin-top: auto;
+  padding-top: .25rem;
+}
+
+.s-reviews__verified {
+  font-family: var(--font-body);
+  font-size: .7rem;
+  color: var(--pine);
+  text-transform: uppercase;
+  letter-spacing: .07em;
+  font-weight: 600;
+  border: 1px solid var(--pine);
+  border-radius: var(--radius);
+  padding: .15em .5em;
+  align-self: flex-start;
+}
+
+/* ── Disclaimer ───────────────────────────────────────────── */
+.s-reviews__disclaimer {
+  font-family: var(--font-body);
+  font-size: .75rem;
+  color: var(--ink-soft);
+  text-align: center;
+  margin-top: clamp(1.5rem, 3vw, 2rem);
+  margin-bottom: 0;
+  opacity: .75;
+}
+
+/* ===== footer ===== */
+/* ============================================================
+   Silverfoot — Footer
+   ============================================================ */
+
+/* ── Outer shell ──────────────────────────────────────────── */
+.ftr {
+  background: var(--pine);
+  color: rgba(255, 255, 255, .8);
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+}
+
+/* ── Main grid ────────────────────────────────────────────── */
+.ftr__inner {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr 1fr 1fr;
+  gap: var(--sp-6) var(--sp-5);
+  padding-block: var(--sp-7) var(--sp-5);
+  border-bottom: 1px solid rgba(255, 255, 255, .12);
+}
+
+/* ── Brand column ─────────────────────────────────────────── */
+.ftr__brand {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+}
+
+.ftr__logo-link {
+  display: inline-block;
+  line-height: 0;
+}
+
+/* Invert black logo to white on dark pine background */
+.ftr__logo {
+  height: 30px;
+  width: auto;
+  filter: brightness(0) invert(1);
+  display: block;
+}
+
+.ftr__tagline {
+  font-size: .84rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, .7);
+  margin: 0;
+  max-width: 28ch;
+}
+
+.ftr__badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+}
+
+.ftr__badge {
+  font-family: var(--font-display);
+  font-size: .68rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  padding: .25em .7em;
+  border: 1px solid rgba(255, 255, 255, .3);
+  border-radius: var(--radius);
+  color: rgba(255, 255, 255, .75);
+  white-space: nowrap;
+}
+
+/* ── Link columns ─────────────────────────────────────────── */
+.ftr__col {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+}
+
+.ftr__heading {
+  font-family: var(--font-display);
+  font-size: .78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .14em;
+  color: #fff;
+  margin: 0;
+  /* override global h3 size */
+  font-size: .78rem !important;
+}
+
+.ftr__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: .55rem;
+}
+
+.ftr__link {
+  color: rgba(255, 255, 255, .7);
+  font-size: .84rem;
+  line-height: 1;
+  transition: color .15s;
+  text-decoration: none;
+}
+
+.ftr__link:hover {
+  color: #fff;
+}
+
+/* ── Base row (social + legal) ────────────────────────────── */
+.ftr__base-wrap {
+  background: rgba(0, 0, 0, .15);
+}
+
+.ftr__base {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-4);
+  padding-block: var(--sp-4);
+  flex-wrap: wrap;
+}
+
+.ftr__social {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-4);
+}
+
+.ftr__social-link {
+  display: inline-flex;
+  align-items: center;
+  gap: .4em;
+  color: rgba(255, 255, 255, .65);
+  font-size: .82rem;
+  text-decoration: none;
+  transition: color .15s;
+}
+
+.ftr__social-link:hover {
+  color: #fff;
+}
+
+.ftr__social-link svg {
+  flex-shrink: 0;
+}
+
+.ftr__legal {
+  font-size: .78rem;
+  color: rgba(255, 255, 255, .45);
+  margin: 0;
+  text-align: right;
+}
+
+.ftr__legal-sep {
+  opacity: .5;
+}
+
+/* ── Responsive: 2 link-column grid at 860px ──────────────── */
+@media (max-width: 860px) {
+  .ftr__inner {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--sp-5) var(--sp-5);
+  }
+
+  /* Brand col spans full width */
+  .ftr__brand {
+    grid-column: 1 / -1;
+  }
+
+  .ftr__tagline {
+    max-width: none;
+  }
+}
+
+/* ── Responsive: single column at 520px ──────────────────── */
+@media (max-width: 520px) {
+  .ftr__inner {
+    grid-template-columns: 1fr;
+    gap: var(--sp-4);
+    padding-block: var(--sp-5) var(--sp-4);
+  }
+
+  .ftr__brand {
+    grid-column: 1;
+  }
+
+  .ftr__base {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--sp-3);
+  }
+
+  .ftr__legal {
+    text-align: left;
+  }
+}
