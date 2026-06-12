@@ -1,0 +1,101 @@
+/* ============================================================
+   ACE Brewer — base.css (warm editorial eco-coffee foundation)
+   Elevates their timid black/white into: cream base · espresso ink ·
+   ownable PINE-GREEN accent (eco) · warm caramel pop. Reference: coffee.md
+   ============================================================ */
+:root{
+  /* color */
+  --bg:        #F7F2E9;   /* warm cream page */
+  --surface:   #FFFFFF;   /* card / raised surface */
+  --surface-2: #ECE2D2;   /* warm kraft/sand alt band */
+  --surface-3: #E2D6C2;   /* deeper sand */
+  --ink:       #211A14;   /* deep espresso — headings, text, dark bands */
+  --ink-soft:  #6A6055;   /* warm secondary */
+  --accent:    #1F5D4C;   /* pine green — eco accent, eyebrows, icons, links */
+  --accent-2:  #2E7A63;   /* lighter pine (hover) */
+  --accent-ink:#F7F2E9;   /* cream on green/espresso */
+  --pop:       #B47B3C;   /* warm caramel/kraft — price, badges, small accents */
+  --line:      #DCCDB6;   /* warm hairline */
+  --line-2:    #EBE2D2;   /* faint hairline */
+  --star:      #B47B3C;   /* caramel stars */
+  --btn:       #211A14;   /* espresso buttons (faithful to their black) */
+  --btn-ink:   #F7F2E9;
+  /* type */
+  --font-display: "Bricolage Grotesque", "Assistant", system-ui, sans-serif;
+  --font-body:    "Assistant", "Helvetica Neue", Arial, sans-serif;
+  --s--1: .84rem;
+  --s-0:  1rem;
+  --s-1:  1.25rem;
+  --s-2:  1.6rem;
+  --s-3:  2.3rem;
+  --s-4:  3.3rem;
+  --s-5:  4.6rem;
+  /* space */
+  --sp-1:.25rem; --sp-2:.5rem; --sp-3:1rem; --sp-4:1.5rem;
+  --sp-5:2.5rem; --sp-6:4rem; --sp-7:6.5rem;
+  /* radius + shadow */
+  --radius:    10px;
+  --radius-lg: 20px;
+  --radius-pill: 999px;
+  --shadow:    0 16px 44px rgba(33,26,20,.13);
+  --shadow-sm: 0 5px 18px rgba(33,26,20,.09);
+  --maxw: 1280px;
+}
+
+*{box-sizing:border-box}
+html,body{overflow-x:clip}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--bg);color:var(--ink);
+  font-family:var(--font-body);font-size:17px;line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+
+h1,h2,h3{margin:0;font-family:var(--font-display);font-weight:600;
+  line-height:1.04;letter-spacing:-.015em}
+h1{font-size:clamp(2.6rem,5.6vw,var(--s-5));font-weight:700}
+h2{font-size:clamp(2rem,3.8vw,var(--s-4));font-weight:600}
+h3{font-size:var(--s-1);line-height:1.18}
+p{margin:0 0 var(--sp-3)}
+
+.wrap{max-width:var(--maxw);margin-inline:auto;padding-inline:clamp(1.1rem,4vw,2.4rem)}
+.section{padding-block:clamp(3.4rem,7vw,var(--sp-7))}
+
+.eyebrow{font-family:var(--font-body);font-weight:700;font-size:var(--s--1);
+  letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin:0 0 var(--sp-3)}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5em;
+  font-family:var(--font-body);font-weight:700;font-size:.95rem;letter-spacing:.02em;
+  padding:.95em 1.8em;border-radius:var(--radius-pill);border:1.5px solid transparent;
+  cursor:pointer;transition:.22s ease;line-height:1}
+.btn-primary{background:var(--btn);color:var(--btn-ink)}
+.btn-primary:hover{background:#352a20;transform:translateY(-2px);box-shadow:var(--shadow-sm)}
+.btn-accent{background:var(--accent);color:var(--accent-ink)}
+.btn-accent:hover{background:var(--accent-2);transform:translateY(-2px)}
+.btn-outline{background:transparent;color:var(--ink);border-color:var(--ink)}
+.btn-outline:hover{background:var(--ink);color:var(--accent-ink)}
+.btn-light{background:var(--surface);color:var(--ink);border-color:var(--line)}
+.btn-light:hover{border-color:var(--ink)}
+.btn-block{display:flex;width:100%}
+
+/* small inline SVG line icons */
+.ic{width:40px;height:40px;display:block;stroke:var(--accent);stroke-width:1.4;
+  fill:none;stroke-linecap:round;stroke-linejoin:round}
+
+/* floating decorative element (STATIC) */
+.float{position:absolute;z-index:1;pointer-events:none;width:clamp(150px,15vw,250px)}
+.float img{width:100%;transform:rotate(var(--rot,0deg));
+  filter:drop-shadow(0 20px 32px rgba(33,26,20,.30))}
+@media(max-width:1000px){.float{display:none}}
+
+/* scroll-reveal */
+.reveal{opacity:0;transform:perspective(1000px) rotateX(7deg) translateY(26px);
+  transition:.7s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){
+  .reveal{opacity:1;transform:none;transition:none}
+  html{scroll-behavior:auto}
+}
