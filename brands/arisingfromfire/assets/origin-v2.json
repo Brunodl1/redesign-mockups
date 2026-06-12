@@ -1,0 +1,11 @@
+{
+  "provider": "cloudflare-flux",
+  "model": "@cf/black-forest-labs/flux-1-schnell",
+  "account": "bruno1",
+  "aspect": "16:9",
+  "size": "1K",
+  "elapsed_s": 5.1,
+  "timestamp": "2026-06-12T08:25:46-0500",
+  "input_image": null,
+  "prompt": "rows of lush coffee plants on a sunlit Brazilian highland plantation, red ripe coffee cherries on branches in foreground, rolling terroir hills behind, warm golden morning light, photorealistic, rich and earthy, no text"
+}

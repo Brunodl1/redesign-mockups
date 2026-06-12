@@ -1,0 +1,11 @@
+{
+  "provider": "cloudflare-flux",
+  "model": "@cf/black-forest-labs/flux-1-schnell",
+  "account": "bruno1",
+  "aspect": "4:5",
+  "size": "1K",
+  "elapsed_s": 3.75,
+  "timestamp": "2026-06-12T08:25:42-0500",
+  "input_image": null,
+  "prompt": "overhead moody shot of espresso in a glass, a small pile of dark glossy coffee beans and a vintage brass scoop on black stone, dramatic side light with warm amber tones, photorealistic, no text, premium dark coffee styling"
+}
