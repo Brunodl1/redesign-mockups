@@ -1,0 +1,100 @@
+/* ============================================================
+   Page of Wands Candles — base.css (warm mystical foundation)
+   Elevates their real plum into: parchment base · deep plum ink/bands ·
+   gold + magenta accents · Fraunces serif. Reference: candles.md (Boy Smells)
+   ============================================================ */
+:root{
+  /* color */
+  --bg:        #F3EADA;   /* warm parchment page */
+  --surface:   #FBF6EC;   /* card / raised surface */
+  --surface-2: #EADFC9;   /* warm sand alt band */
+  --ink:       #2C1733;   /* deep plum/eggplant — headings, text, dark bands */
+  --ink-soft:  #6A5468;   /* muted plum-grey secondary */
+  --accent:    #2C1733;   /* deep plum — primary buttons */
+  --accent-ink:#F7EFE2;   /* cream text on plum */
+  --pop:       #C2902F;   /* brass/gold — prices, badges, mystical accent */
+  --pop-2:     #C2456E;   /* hot magenta/berry — secondary pop */
+  --line:      #DCC9AE;   /* warm hairline */
+  --line-2:    #EBE0CC;   /* faint hairline */
+  --star:      #C2902F;   /* gold stars */
+  --btn:       #2C1733;
+  --btn-ink:   #F7EFE2;
+  /* type */
+  --font-display: "Fraunces", Georgia, "Times New Roman", serif;
+  --font-body:    "Inter", "Helvetica Neue", Arial, sans-serif;
+  --s--1: .84rem;
+  --s-0:  1rem;
+  --s-1:  1.25rem;
+  --s-2:  1.62rem;
+  --s-3:  2.3rem;
+  --s-4:  3.3rem;
+  --s-5:  4.6rem;
+  /* space */
+  --sp-1:.25rem; --sp-2:.5rem; --sp-3:1rem; --sp-4:1.5rem;
+  --sp-5:2.5rem; --sp-6:4rem; --sp-7:6.5rem;
+  /* radius + shadow */
+  --radius:    10px;
+  --radius-lg: 22px;
+  --radius-pill: 999px;
+  --shadow:    0 16px 44px rgba(44,23,51,.14);
+  --shadow-sm: 0 5px 18px rgba(44,23,51,.10);
+  --maxw: 1280px;
+}
+
+*{box-sizing:border-box}
+html,body{overflow-x:clip}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--bg);color:var(--ink);
+  font-family:var(--font-body);font-size:17px;line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+
+h1,h2,h3{margin:0;font-family:var(--font-display);font-weight:400;
+  line-height:1.05;letter-spacing:-.01em}
+h1{font-size:clamp(2.6rem,5.6vw,var(--s-5));font-weight:400}
+h2{font-size:clamp(2rem,3.8vw,var(--s-4));font-weight:400}
+h3{font-size:var(--s-1);line-height:1.18}
+p{margin:0 0 var(--sp-3)}
+
+.wrap{max-width:var(--maxw);margin-inline:auto;padding-inline:clamp(1.1rem,4vw,2.4rem)}
+.section{padding-block:clamp(3.4rem,7vw,var(--sp-7))}
+
+.eyebrow{font-family:var(--font-body);font-weight:600;font-size:var(--s--1);
+  letter-spacing:.22em;text-transform:uppercase;color:var(--pop);margin:0 0 var(--sp-3)}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5em;
+  font-family:var(--font-body);font-weight:600;font-size:.95rem;letter-spacing:.02em;
+  padding:.95em 1.8em;border-radius:var(--radius-pill);border:1.5px solid transparent;
+  cursor:pointer;transition:.22s ease;line-height:1}
+.btn-primary{background:var(--btn);color:var(--btn-ink)}
+.btn-primary:hover{background:#3d2147;transform:translateY(-2px);box-shadow:var(--shadow-sm)}
+.btn-outline{background:transparent;color:var(--ink);border-color:var(--ink)}
+.btn-outline:hover{background:var(--ink);color:var(--accent-ink)}
+.btn-light{background:var(--surface);color:var(--ink);border-color:var(--line)}
+.btn-light:hover{border-color:var(--ink)}
+.btn-gold{background:var(--pop);color:#2C1733}
+.btn-gold:hover{background:#d3a23f;transform:translateY(-2px)}
+.btn-block{display:flex;width:100%}
+
+/* small inline SVG line icons */
+.ic{width:38px;height:38px;display:block;stroke:var(--pop);stroke-width:1.4;
+  fill:none;stroke-linecap:round;stroke-linejoin:round}
+
+/* floating decorative element (STATIC) */
+.float{position:absolute;z-index:1;pointer-events:none;width:clamp(180px,18vw,300px)}
+.float img{width:100%;transform:rotate(var(--rot,0deg));
+  filter:drop-shadow(0 22px 34px rgba(44,23,51,.30))}
+@media(max-width:1000px){.float{display:none}}
+
+/* scroll-reveal */
+.reveal{opacity:0;transform:perspective(1000px) rotateX(7deg) translateY(26px);
+  transition:.7s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){
+  .reveal{opacity:1;transform:none;transition:none}
+  html{scroll-behavior:auto}
+}

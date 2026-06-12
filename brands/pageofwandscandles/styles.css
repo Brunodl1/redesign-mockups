@@ -1,0 +1,1424 @@
+/* ===== announce bar + sticky header (plum + parchment) ===== */
+.announce{background:var(--ink);color:var(--accent-ink);font-family:var(--font-body);
+  font-weight:600;font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;text-align:center;
+  padding:.55rem 1rem;position:relative;z-index:60}
+.announce__track{display:flex;gap:.7rem;justify-content:center;align-items:center;flex-wrap:wrap}
+.announce__track span:not(.announce__x){color:var(--accent-ink)}
+.announce__track .announce__x{color:var(--pop)}
+
+.site-header{position:sticky;top:0;z-index:50;background:rgba(243,234,218,.82);
+  backdrop-filter:blur(12px);border-bottom:1px solid var(--line);transition:background .3s}
+.site-header.is-scrolled{background:rgba(243,234,218,.97)}
+.site-header__inner{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;
+  gap:var(--sp-3);padding-block:.85rem}
+.site-brand{justify-self:center;display:inline-flex;align-items:center;gap:.4rem;color:var(--ink)}
+.site-brand__star{color:var(--pop);font-size:1rem;line-height:1}
+.site-brand__name{font-family:var(--font-display);font-weight:500;font-size:1.5rem;
+  letter-spacing:.005em;line-height:1}
+.site-nav{display:flex;align-items:center;gap:var(--sp-4);font-family:var(--font-body);
+  font-weight:500;font-size:.92rem}
+.site-nav--right{justify-self:end;gap:var(--sp-4)}
+.site-nav a{color:var(--ink);transition:color .2s}
+.site-nav a:hover{color:var(--pop)}
+.site-find{font-weight:600;border:1.5px solid var(--ink);border-radius:var(--radius-pill);
+  padding:.5em 1.1em;transition:.2s ease}
+.site-find:hover{background:var(--ink);color:var(--accent-ink)!important}
+.site-cart{display:inline-flex;align-items:center;gap:.3rem;color:var(--ink)}
+.site-cart__n{font-family:var(--font-body);font-size:.78rem;color:var(--pop)}
+
+@media(max-width:920px){
+  .announce__x:nth-of-type(2),.announce__track > span:nth-of-type(3){display:none}
+  .site-header__inner{grid-template-columns:auto 1fr auto}
+  .site-nav--left{display:none}
+  .site-brand{justify-self:start}
+  .site-find{display:none}
+  .site-brand__name{font-size:1.3rem}
+}
+
+
+/* ============================================================
+   Page of Wands Candles — hero.css
+   Full-bleed candlelit hero · contained dark-plum text card
+   ============================================================ */
+
+.s-hero{
+  position:relative;
+  display:flex;
+  align-items:flex-end;
+  min-height:90vh;
+  overflow:hidden;
+  isolation:isolate;
+  background:var(--ink);
+}
+
+/* full-bleed background image */
+.s-hero__bg{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center right;
+  z-index:0;
+}
+
+/* full-bleed dark scrim — heavier toward the text side (left) */
+.s-hero__scrim{
+  position:absolute;
+  inset:0;
+  z-index:1;
+  background:
+    linear-gradient(90deg,
+      rgba(44,23,51,.66) 0%,
+      rgba(44,23,51,.42) 42%,
+      rgba(44,23,51,.18) 72%,
+      rgba(44,23,51,.10) 100%),
+    linear-gradient(0deg,
+      rgba(44,23,51,.40) 0%,
+      rgba(44,23,51,0) 38%);
+}
+
+.s-hero__wrap{
+  position:relative;
+  z-index:2;
+  width:100%;
+  padding-block:clamp(2.4rem,6vw,var(--sp-7));
+}
+
+/* contained dark-plum card holding the text — bottom-left on desktop */
+.s-hero__card{
+  max-width:560px;
+  background:rgba(44,23,51,.62);
+  -webkit-backdrop-filter:blur(8px);
+  backdrop-filter:blur(8px);
+  border:1px solid rgba(247,239,226,.18);
+  border-radius:var(--radius-lg);
+  padding:clamp(1.6rem,3vw,var(--sp-5));
+  box-shadow:var(--shadow);
+}
+
+.s-hero__eyebrow{
+  color:var(--pop);
+  font-size:var(--s--1);
+  letter-spacing:.2em;
+}
+
+.s-hero__title{
+  color:var(--accent-ink);
+  font-size:clamp(2.5rem,5.4vw,var(--s-5));
+  margin:0 0 var(--sp-3);
+}
+
+.s-hero__sub{
+  color:var(--accent-ink);
+  font-size:clamp(1rem,1.4vw,var(--s-1));
+  line-height:1.5;
+  margin:0 0 var(--sp-4);
+  max-width:46ch;
+}
+
+.s-hero__cta{
+  display:flex;
+  flex-wrap:wrap;
+  gap:var(--sp-3);
+  margin-bottom:var(--sp-4);
+}
+
+/* light variant of outline btn so it reads on the dark card */
+.s-hero .s-hero__btn-light{
+  color:var(--accent-ink);
+  border-color:rgba(247,239,226,.7);
+  background:transparent;
+}
+.s-hero .s-hero__btn-light:hover{
+  background:var(--accent-ink);
+  color:var(--ink);
+  border-color:var(--accent-ink);
+}
+
+.s-hero__trust{
+  color:var(--accent-ink);
+  opacity:.78;
+  font-size:var(--s--1);
+  letter-spacing:.02em;
+  margin:0;
+}
+
+/* ---------- MOBILE ---------- */
+@media(max-width:720px){
+  .s-hero{
+    align-items:flex-end;
+    min-height:92vh;
+  }
+  /* stronger scrim, weighted to the bottom where the card sits */
+  .s-hero__scrim{
+    background:
+      linear-gradient(0deg,
+        rgba(44,23,51,.78) 0%,
+        rgba(44,23,51,.55) 30%,
+        rgba(44,23,51,.20) 58%,
+        rgba(44,23,51,.10) 100%);
+  }
+  .s-hero__wrap{
+    padding-block:0 clamp(1.6rem,7vw,2.6rem);
+  }
+  .s-hero__card{
+    max-width:none;
+    background:rgba(44,23,51,.58);
+    border-radius:var(--radius-lg);
+    padding:clamp(1.3rem,5vw,1.7rem);
+  }
+  .s-hero__sub{
+    max-width:none;
+  }
+  .s-hero__cta{
+    flex-direction:column;
+    gap:var(--sp-2);
+  }
+  .s-hero__cta .btn{
+    width:100%;
+  }
+}
+
+
+/* ============================================================
+   Page of Wands Candles — trust.css
+   Compact 4-up trust strip on a faint band, thin --line dividers.
+   ============================================================ */
+
+.s-trust{
+  background:var(--surface-2);
+  border-block:1px solid var(--line);
+  padding-block:clamp(1.4rem,3vw,2.1rem);
+}
+
+.s-trust .trust-strip{
+  list-style:none;margin:0;padding:0;
+  display:grid;grid-template-columns:repeat(4,1fr);
+  align-items:center;
+}
+
+.s-trust .trust-item{
+  display:flex;align-items:center;gap:var(--sp-3);
+  padding-inline:clamp(.8rem,2vw,1.6rem);
+  padding-block:var(--sp-2);
+  border-left:1px solid var(--line);
+}
+.s-trust .trust-item:first-child{border-left:0}
+
+.s-trust .trust-icon{
+  flex:0 0 auto;display:grid;place-items:center;
+}
+
+.s-trust .trust-text{
+  display:flex;flex-direction:column;gap:.1rem;min-width:0;
+}
+
+.s-trust .trust-label{
+  font-family:var(--font-display);font-weight:600;
+  font-size:var(--s-0);line-height:1.2;color:var(--ink);
+  letter-spacing:-.01em;
+}
+
+.s-trust .trust-sub{
+  font-family:var(--font-body);font-size:var(--s--1);
+  line-height:1.35;color:var(--ink-soft);
+}
+
+/* staggered reveal */
+.s-trust .trust-item:nth-child(2){transition-delay:.07s}
+.s-trust .trust-item:nth-child(3){transition-delay:.14s}
+.s-trust .trust-item:nth-child(4){transition-delay:.21s}
+
+/* tablet / mobile: 2x2 grid */
+@media(max-width:860px){
+  .s-trust .trust-strip{
+    grid-template-columns:repeat(2,1fr);
+    row-gap:var(--sp-2);
+  }
+  .s-trust .trust-item{
+    border-left:0;
+    border-top:1px solid var(--line);
+    padding-block:var(--sp-3);
+  }
+  /* top row gets no divider above */
+  .s-trust .trust-item:nth-child(1),
+  .s-trust .trust-item:nth-child(2){border-top:0}
+  /* vertical divider between the two columns */
+  .s-trust .trust-item:nth-child(odd){border-right:1px solid var(--line)}
+}
+
+@media(max-width:430px){
+  .s-trust .trust-item{
+    gap:var(--sp-2);
+    padding-inline:.6rem;
+  }
+  .s-trust .ic{width:30px;height:30px}
+}
+
+
+/* ============================================================
+   Page of Wands Candles — Shop by scent family / mood tiles
+   Typographic jewel-tone color cards. Scoped under .s-families.
+   ============================================================ */
+
+.s-families{
+  padding-block: clamp(3.4rem, 7vw, var(--sp-7));
+  background: var(--bg);
+}
+
+/* ---- head ---- */
+.s-families__head{
+  text-align: center;
+  max-width: 44ch;
+  margin-inline: auto;
+  margin-bottom: clamp(var(--sp-5), 5vw, var(--sp-6));
+}
+.s-families__title{
+  color: var(--ink);
+  margin-bottom: var(--sp-3);
+}
+.s-families__sub{
+  color: var(--ink-soft);
+  font-size: var(--s-1);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* ---- grid ---- */
+.s-families__grid{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(var(--sp-3), 2vw, var(--sp-4));
+}
+
+/* ---- tile ---- */
+.s-families__tile{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: clamp(200px, 22vw, 264px);
+  padding: clamp(var(--sp-4), 2.4vw, var(--sp-5));
+  border-radius: var(--radius-lg);
+  border: 1px solid transparent;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: transform .28s cubic-bezier(.2,.7,.2,1), box-shadow .28s ease;
+  /* per-tile tokens (defaults overridden below) */
+  --tile-bg: var(--surface);
+  --tile-ink: var(--ink);
+  --tile-note: var(--ink-soft);
+  --tile-pop: var(--pop);
+  background: var(--tile-bg);
+  color: var(--tile-ink);
+}
+.s-families__tile:hover{
+  transform: translateY(-6px);
+  box-shadow: var(--shadow);
+}
+
+/* big watermark index number */
+.s-families__count{
+  position: absolute;
+  top: clamp(var(--sp-3), 2vw, var(--sp-4));
+  right: clamp(var(--sp-3), 2.2vw, var(--sp-5));
+  font-family: var(--font-display);
+  font-size: var(--s-3);
+  line-height: 1;
+  color: var(--tile-pop);
+  opacity: .5;
+  letter-spacing: -.02em;
+}
+
+.s-families__name{
+  font-family: var(--font-display);
+  font-size: clamp(var(--s-2), 3vw, var(--s-3));
+  line-height: 1.04;
+  color: var(--tile-ink);
+  margin-top: auto;
+  letter-spacing: -.015em;
+}
+.s-families__note{
+  margin: var(--sp-2) 0 var(--sp-4);
+  font-size: var(--s-0);
+  color: var(--tile-note);
+}
+
+.s-families__link{
+  align-self: flex-start;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: .92rem;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  color: var(--tile-pop);
+  display: inline-flex;
+  align-items: center;
+  gap: .4em;
+}
+.s-families__link span{ transition: transform .24s ease; }
+.s-families__tile:hover .s-families__link span{ transform: translateX(5px); }
+
+/* ============================================================
+   Per-tile color treatments (jewel + warm mix)
+   ============================================================ */
+
+/* 1. Pride — magenta on deep plum */
+.s-families__tile--pride{
+  --tile-bg: var(--ink);
+  --tile-ink: var(--accent-ink);
+  --tile-note: var(--surface-2);
+  --tile-pop: var(--pop-2);
+}
+
+/* 2. Musk & Smoke — gold on near-black plum */
+.s-families__tile--musk{
+  --tile-bg: #1C0E22;
+  --tile-ink: var(--accent-ink);
+  --tile-note: #C7AFBE;
+  --tile-pop: var(--pop);
+}
+
+/* 3. Gourmand & Spice — magenta jewel card, cream text */
+.s-families__tile--gourmand{
+  --tile-bg: var(--pop-2);
+  --tile-ink: var(--accent-ink);
+  --tile-note: #FBE3EC;
+  --tile-pop: var(--accent-ink);
+}
+
+/* 4. Citrus — plum text on warm sand */
+.s-families__tile--citrus{
+  --tile-bg: var(--surface-2);
+  --tile-ink: var(--ink);
+  --tile-note: var(--ink);
+  --tile-pop: #A82F58;
+}
+
+/* 5. Woodsy — gold card, deep plum text */
+.s-families__tile--woodsy{
+  --tile-bg: var(--pop);
+  --tile-ink: var(--ink);
+  --tile-note: #5A4116;
+  --tile-pop: var(--ink);
+}
+
+/* 6. Floral — plum text on cream, magenta accent */
+.s-families__tile--floral{
+  --tile-bg: var(--surface);
+  --tile-ink: var(--ink);
+  --tile-note: var(--ink);
+  --tile-pop: #A82F58;
+  border-color: var(--line);
+}
+
+/* ============================================================
+   Responsive
+   ============================================================ */
+@media (max-width: 860px){
+  .s-families__grid{ grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 460px){
+  .s-families__tile{ min-height: 168px; }
+}
+
+
+/* ============================================================
+   Page of Wands Candles — bestsellers.css
+   6-up bestseller grid · scent family + notes + rating + gold price
+   ============================================================ */
+
+.s-bestsellers{
+  background:var(--bg);
+}
+
+/* ---------- header (left-aligned) ---------- */
+.s-bestsellers__head{
+  max-width:48ch;
+  margin-bottom:clamp(2rem,4vw,var(--sp-5));
+}
+.s-bestsellers__title{
+  color:var(--ink);
+  margin:0 0 var(--sp-3);
+}
+.s-bestsellers__sub{
+  color:var(--ink-soft);
+  font-size:clamp(1rem,1.3vw,var(--s-1));
+  line-height:1.5;
+  margin:0;
+}
+
+/* ---------- grid ---------- */
+.s-bestsellers__grid{
+  list-style:none;
+  margin:0;
+  padding:0;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:clamp(1.1rem,2.4vw,var(--sp-4));
+}
+
+/* ---------- card ---------- */
+.s-bestsellers__card{
+  display:flex;
+  flex-direction:column;
+  background:var(--surface);
+  border:1px solid var(--line);
+  border-radius:var(--radius-lg);
+  overflow:hidden;
+  transition:transform .26s cubic-bezier(.2,.7,.2,1),
+             box-shadow .26s ease,
+             border-color .26s ease;
+}
+.s-bestsellers__card:hover{
+  transform:translateY(-6px);
+  box-shadow:var(--shadow);
+  border-color:var(--pop);
+}
+
+/* stagger the reveal */
+.s-bestsellers__card:nth-child(2){transition-delay:.06s}
+.s-bestsellers__card:nth-child(3){transition-delay:.12s}
+.s-bestsellers__card:nth-child(4){transition-delay:.18s}
+.s-bestsellers__card:nth-child(5){transition-delay:.24s}
+.s-bestsellers__card:nth-child(6){transition-delay:.30s}
+
+/* ---------- media ---------- */
+.s-bestsellers__media{
+  position:relative;
+  aspect-ratio:1/1;
+  overflow:hidden;
+  background:var(--surface-2);
+}
+.s-bestsellers__media img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:transform .5s cubic-bezier(.2,.7,.2,1);
+}
+.s-bestsellers__card:hover .s-bestsellers__media img{
+  transform:scale(1.045);
+}
+
+/* badge pill top-left */
+.s-bestsellers__badge{
+  position:absolute;
+  top:var(--sp-3);
+  left:var(--sp-3);
+  z-index:2;
+  font-family:var(--font-body);
+  font-weight:700;
+  font-size:.66rem;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  padding:.42em .85em;
+  border-radius:var(--radius-pill);
+  box-shadow:var(--shadow-sm);
+}
+.s-bestsellers__badge--pop2{
+  background:var(--pop-2);
+  color:var(--accent-ink);
+}
+.s-bestsellers__badge--pop{
+  background:var(--pop);
+  color:var(--ink);
+}
+
+/* ---------- body ---------- */
+.s-bestsellers__body{
+  display:flex;
+  flex-direction:column;
+  gap:var(--sp-2);
+  padding:clamp(1.1rem,2vw,var(--sp-4));
+  flex:1;
+}
+.s-bestsellers__name{
+  color:var(--ink);
+  margin:0;
+}
+.s-bestsellers__family{
+  font-family:var(--font-body);
+  font-weight:600;
+  font-size:.72rem;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:var(--pop);
+  margin:0;
+}
+.s-bestsellers__notes{
+  color:var(--ink-soft);
+  font-size:var(--s--1);
+  line-height:1.4;
+  margin:0;
+}
+
+/* rating + price row */
+.s-bestsellers__meta{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:var(--sp-3);
+  margin-top:auto;
+  padding-top:var(--sp-2);
+}
+.s-bestsellers__rating{
+  display:inline-flex;
+  align-items:center;
+  gap:.35em;
+  font-size:var(--s--1);
+  font-weight:600;
+  color:var(--ink);
+}
+.s-bestsellers__stars{
+  color:var(--star);
+  letter-spacing:.04em;
+}
+.s-bestsellers__count{
+  color:var(--ink-soft);
+  font-weight:400;
+}
+.s-bestsellers__price{
+  font-family:var(--font-body);
+  font-weight:700;
+  font-size:var(--s-1);
+  color:var(--pop);
+  letter-spacing:.01em;
+}
+
+/* actions */
+.s-bestsellers__actions{
+  display:flex;
+  align-items:center;
+  gap:var(--sp-3);
+  margin-top:var(--sp-2);
+}
+.s-bestsellers__add{
+  flex:1;
+  padding:.7em 1.1em;
+  font-size:.86rem;
+}
+.s-bestsellers__view{
+  font-family:var(--font-body);
+  font-weight:600;
+  font-size:.8rem;
+  letter-spacing:.04em;
+  color:var(--ink-soft);
+  border-bottom:1px solid var(--line);
+  padding-bottom:1px;
+  transition:color .2s ease,border-color .2s ease;
+}
+.s-bestsellers__view:hover{
+  color:var(--ink);
+  border-color:var(--ink);
+}
+
+/* ---------- footer cta ---------- */
+.s-bestsellers__foot{
+  display:flex;
+  justify-content:center;
+  margin-top:clamp(2rem,4vw,var(--sp-5));
+}
+
+/* ---------- responsive ---------- */
+@media(max-width:920px){
+  .s-bestsellers__grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+}
+@media(max-width:560px){
+  .s-bestsellers__grid{
+    grid-template-columns:1fr;
+  }
+  .s-bestsellers__head{
+    margin-bottom:var(--sp-4);
+  }
+}
+
+
+.s-story {
+  position: relative;
+  background: var(--ink);
+  color: var(--accent-ink);
+  overflow: hidden;
+}
+
+.s-story .wrap {
+  position: relative;
+  z-index: 1;
+}
+
+/* Head */
+.s-story__head {
+  max-width: 64ch;
+  margin: 0 auto var(--sp-xl, 3rem);
+  text-align: center;
+}
+
+.s-story__eyebrow {
+  color: var(--pop);
+}
+
+.s-story__title {
+  font-family: var(--font-display);
+  color: var(--accent-ink);
+  font-size: clamp(1.9rem, 1.2rem + 2.6vw, 3rem);
+  line-height: 1.08;
+  margin: var(--sp-sm, .6rem) 0 var(--sp-md, 1rem);
+  letter-spacing: -0.01em;
+}
+
+.s-story__sub {
+  font-family: var(--font-body);
+  color: color-mix(in srgb, var(--accent-ink) 72%, transparent);
+  font-size: clamp(1rem, .95rem + .3vw, 1.12rem);
+  line-height: 1.6;
+  margin: 0 auto;
+  max-width: 60ch;
+}
+
+/* Feature grid */
+.s-story__grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--sp-lg, 2rem);
+}
+
+.s-story__item {
+  text-align: center;
+  padding: var(--sp-md, 1.2rem) var(--sp-sm, .8rem);
+}
+
+.s-story__ic {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  margin-bottom: var(--sp-md, 1rem);
+  border-radius: 50%;
+  color: var(--pop);
+  background: color-mix(in srgb, var(--pop) 14%, transparent);
+  border: 1px solid color-mix(in srgb, var(--pop) 34%, transparent);
+}
+
+.s-story__ic .ic {
+  width: 38px;
+  height: 38px;
+  color: var(--pop);
+  stroke: var(--pop);
+}
+
+.s-story__item-title {
+  font-family: var(--font-display);
+  color: var(--accent-ink);
+  font-size: 1.18rem;
+  font-weight: 600;
+  margin: 0 0 var(--sp-xs, .35rem);
+}
+
+.s-story__item-desc {
+  font-family: var(--font-body);
+  color: color-mix(in srgb, var(--accent-ink) 66%, transparent);
+  font-size: .98rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Stat row */
+.s-story__stats {
+  margin: var(--sp-xl, 3rem) auto 0;
+  text-align: center;
+  font-family: var(--font-body);
+  color: var(--pop);
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: .76rem;
+  font-weight: 600;
+  padding-top: var(--sp-lg, 1.8rem);
+  border-top: 1px solid color-mix(in srgb, var(--pop) 26%, transparent);
+  max-width: 52ch;
+}
+
+/* Responsive */
+@media (max-width: 860px) {
+  .s-story__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--sp-md, 1.4rem);
+  }
+}
+
+@media (max-width: 520px) {
+  .s-story__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* ============================================================
+   Page of Wands Candles — reviews.css
+   Gold 5-star marquee on a thin plum band · centered head ·
+   6 review cards (3 → 2 → 1) · illustrative-content disclaimer
+   ============================================================ */
+
+.s-reviews{
+  background:var(--bg);
+  padding-top:0;                 /* marquee band sits flush at top */
+}
+
+/* ---------- 5-STAR marquee strip (thin plum band) ---------- */
+.s-reviews__marquee{
+  background:var(--ink);
+  overflow:hidden;
+  padding-block:.7rem;
+  margin-bottom:clamp(2.6rem,6vw,var(--sp-7));
+}
+.s-reviews__track{
+  display:flex;
+  width:max-content;
+  white-space:nowrap;
+  animation:s-reviews-scroll 34s linear infinite;
+}
+.s-reviews__chip{
+  font-family:var(--font-body);
+  font-weight:700;
+  font-size:.82rem;
+  letter-spacing:.2em;
+  text-transform:uppercase;
+  color:var(--pop);
+  padding-right:1.5rem;
+}
+@keyframes s-reviews-scroll{
+  from{transform:translateX(0)}
+  to{transform:translateX(-50%)}
+}
+
+/* ---------- centered head ---------- */
+.s-reviews__head{
+  text-align:center;
+  max-width:46ch;
+  margin:0 auto clamp(2.2rem,4.5vw,var(--sp-6));
+}
+.s-reviews__title{
+  color:var(--ink);
+  margin:0 0 var(--sp-3);
+}
+.s-reviews__rating{
+  display:inline-flex;
+  align-items:center;
+  gap:.4em;
+  font-family:var(--font-body);
+  font-weight:700;
+  font-size:clamp(1.05rem,1.8vw,var(--s-2));
+  letter-spacing:.01em;
+  color:var(--pop);
+  margin:0;
+}
+.s-reviews__rating-stars{
+  color:var(--star);
+  font-size:1.15em;
+  line-height:1;
+}
+
+/* ---------- grid ---------- */
+.s-reviews__grid{
+  list-style:none;
+  margin:0;
+  padding:0;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:clamp(1.1rem,2.4vw,var(--sp-4));
+}
+
+/* ---------- card ---------- */
+.s-reviews__card{
+  display:flex;
+  flex-direction:column;
+  gap:var(--sp-2);
+  background:var(--surface);
+  border:1px solid var(--line);
+  border-radius:var(--radius-lg);
+  padding:clamp(1.3rem,2.4vw,var(--sp-5));
+  transition:transform .26s cubic-bezier(.2,.7,.2,1),
+             box-shadow .26s ease,
+             border-color .26s ease;
+}
+.s-reviews__card:hover{
+  transform:translateY(-6px);
+  box-shadow:var(--shadow);
+  border-color:var(--pop);
+}
+
+/* stagger the reveal */
+.s-reviews__card:nth-child(2){transition-delay:.06s}
+.s-reviews__card:nth-child(3){transition-delay:.12s}
+.s-reviews__card:nth-child(4){transition-delay:.18s}
+.s-reviews__card:nth-child(5){transition-delay:.24s}
+.s-reviews__card:nth-child(6){transition-delay:.30s}
+
+.s-reviews__stars{
+  color:var(--star);
+  font-size:1.05rem;
+  letter-spacing:.12em;
+  line-height:1;
+}
+.s-reviews__hl{
+  color:var(--ink);
+  font-size:var(--s-1);
+  margin:0;
+}
+.s-reviews__quote{
+  color:var(--ink-soft);
+  font-size:var(--s-0);
+  line-height:1.55;
+  margin:0;
+  flex:1;
+}
+.s-reviews__by{
+  font-family:var(--font-body);
+  font-weight:600;
+  font-size:var(--s--1);
+  letter-spacing:.02em;
+  color:var(--ink);
+  margin:var(--sp-2) 0 0;
+}
+
+/* ---------- disclaimer ---------- */
+.s-reviews__disclaimer{
+  text-align:center;
+  font-family:var(--font-body);
+  font-size:.78rem;
+  letter-spacing:.02em;
+  color:var(--ink-soft);
+  margin:clamp(2rem,4vw,var(--sp-5)) 0 0;
+  opacity:.85;
+}
+
+/* ---------- responsive ---------- */
+@media(max-width:920px){
+  .s-reviews__grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:560px){
+  .s-reviews__grid{grid-template-columns:1fr}
+}
+
+/* ---------- reduced motion: freeze marquee ---------- */
+@media(prefers-reduced-motion:reduce){
+  .s-reviews__track{
+    animation:none;
+    width:100%;
+    justify-content:center;
+    overflow:hidden;
+  }
+  .s-reviews__chip:nth-child(2){display:none}
+}
+
+
+/* ============================================================
+   Page of Wands Candles — Gifts & sets / build-your-own band
+   Two bold cards: warm ready-to-gift + deep plum build-your-own.
+   Scoped under .s-bundle. Tokens only.
+   ============================================================ */
+
+.s-bundle{
+  padding-block: clamp(3.4rem, 7vw, var(--sp-7));
+  background: var(--bg);
+}
+
+.s-bundle__grid{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: clamp(var(--sp-4), 3vw, var(--sp-5));
+  align-items: stretch;
+}
+
+/* ---- shared card ---- */
+.s-bundle__card{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: clamp(var(--sp-5), 4vw, var(--sp-6));
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  transition: transform .28s cubic-bezier(.2,.7,.2,1), box-shadow .28s ease;
+}
+.s-bundle__card:hover{
+  transform: translateY(-6px);
+  box-shadow: 0 22px 56px rgba(44,23,51,.20);
+}
+
+.s-bundle__title{
+  font-size: clamp(var(--s-3), 4vw, var(--s-4));
+  color: var(--ink);
+  letter-spacing: -.015em;
+  margin-bottom: var(--sp-3);
+}
+.s-bundle__title--cream{ color: var(--accent-ink); }
+
+.s-bundle__line{
+  font-size: var(--s-1);
+  line-height: 1.5;
+  color: var(--ink-soft);
+  max-width: 32ch;
+  margin: 0 0 var(--sp-4);
+}
+.s-bundle__line--cream{ color: var(--surface-2); }
+
+/* ---- CARD A : warm ready-to-gift ---- */
+.s-bundle__card--warm{
+  background: linear-gradient(150deg, var(--surface-2) 0%, var(--surface) 100%);
+  border: 1px solid var(--line);
+}
+.s-bundle__price{
+  font-family: var(--font-display);
+  font-size: var(--s-3);
+  line-height: 1;
+  color: var(--pop);
+  letter-spacing: -.01em;
+  margin: 0 0 var(--sp-4);
+}
+
+.s-bundle__wrap-note{
+  display: inline-flex;
+  align-items: center;
+  gap: .55em;
+  margin: var(--sp-4) 0 0;
+  font-size: var(--s--1);
+  font-weight: 600;
+  letter-spacing: .02em;
+  color: var(--ink-soft);
+}
+.s-bundle__gift{
+  width: 20px;
+  height: 20px;
+  flex: none;
+  fill: none;
+  stroke: var(--pop);
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* ---- CARD B : deep plum build-your-own ---- */
+.s-bundle__card--plum{
+  background:
+    radial-gradient(120% 120% at 0% 0%, #3d2147 0%, var(--ink) 55%);
+  border: 1px solid var(--ink);
+}
+.s-bundle__eyebrow--gold{ color: var(--pop); }
+
+.s-bundle__note{
+  display: inline-flex;
+  align-items: baseline;
+  gap: .35em;
+  font-family: var(--font-display);
+  font-size: var(--s-2);
+  color: var(--pop);
+  letter-spacing: -.01em;
+  margin: 0 0 var(--sp-4);
+  padding: .3em .8em;
+  border: 1px solid color-mix(in srgb, var(--pop) 55%, transparent);
+  border-radius: var(--radius-pill);
+}
+
+/* ============================================================
+   Responsive
+   ============================================================ */
+@media (max-width: 820px){
+  .s-bundle__grid{ grid-template-columns: 1fr; }
+}
+
+
+.s-founder {
+  position: relative;
+  overflow: hidden;
+  background: var(--surface-2);
+  color: var(--ink);
+}
+
+/* warm vertical glow so the band reads premium, not flat */
+.s-founder::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(120% 90% at 12% 0%, color-mix(in srgb, var(--pop) 12%, transparent), transparent 55%),
+    radial-gradient(100% 80% at 100% 100%, color-mix(in srgb, var(--pop-2) 10%, transparent), transparent 55%);
+  pointer-events: none;
+}
+
+.s-founder .wrap {
+  position: relative;
+  z-index: 1;
+}
+
+.s-founder__grid {
+  display: grid;
+  /* leave generous side margins so the floating element can bleed at the seam */
+  padding-inline: clamp(0px, 4vw, var(--sp-xl, 64px));
+}
+
+.s-founder__body {
+  max-width: 56ch;
+  margin-inline: auto;
+  text-align: center;
+}
+
+.s-founder__eyebrow {
+  color: var(--pop);
+}
+
+.s-founder__title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(2rem, 1.2rem + 3.6vw, 3.4rem);
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+  margin: var(--sp-sm, 12px) 0 var(--sp-md, 20px);
+  color: var(--ink);
+}
+
+.s-founder__lead {
+  font-family: var(--font-body);
+  font-size: clamp(1.05rem, 1rem + 0.4vw, 1.25rem);
+  line-height: 1.6;
+  color: var(--ink);
+  margin: 0 0 var(--sp-sm, 14px);
+}
+
+.s-founder__lead em {
+  font-style: italic;
+  color: var(--pop-2);
+}
+
+.s-founder__text {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.65;
+  color: var(--ink-soft);
+  margin: 0 0 var(--sp-lg, 32px);
+}
+
+.s-founder__values {
+  list-style: none;
+  margin: 0 0 var(--sp-lg, 32px);
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--sp-sm, 14px) var(--sp-md, 24px);
+}
+
+.s-founder__value {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--ink);
+}
+
+.s-founder__icon {
+  display: inline-flex;
+  width: 1.6rem;
+  height: 1.6rem;
+  align-items: center;
+  justify-content: center;
+  color: var(--pop);
+  background: color-mix(in srgb, var(--pop) 16%, var(--surface));
+  border-radius: 999px;
+  flex: none;
+}
+
+.s-founder__icon svg {
+  width: 1rem;
+  height: 1rem;
+}
+
+.s-founder__cta {
+  margin-top: 0;
+}
+
+/* reveal */
+.s-founder .reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.s-founder .reveal.is-visible,
+.s-founder .reveal.in-view {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .s-founder .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .s-founder__grid {
+    padding-inline: 0;
+  }
+  .s-founder__values {
+    flex-direction: column;
+    align-items: center;
+    text-align: left;
+  }
+}
+
+
+/* ============================================================
+   Page of Wands Candles — newsletter.css
+   Centered "Join the coven" band on warm sand --surface-2.
+   Scoped under .s-newsletter. Tokens only.
+   ============================================================ */
+
+.s-newsletter{
+  background:var(--surface-2);
+  padding-block:clamp(3.4rem,7vw,var(--sp-7));
+}
+
+.s-newsletter .wrap{ }
+
+.s-newsletter__inner{
+  max-width:640px;
+  margin-inline:auto;
+  text-align:center;
+}
+
+.s-newsletter__eyebrow{
+  margin-bottom:var(--sp-3);
+}
+
+.s-newsletter__title{
+  color:var(--ink);
+  margin-bottom:var(--sp-3);
+}
+
+.s-newsletter__sub{
+  color:var(--ink-soft);
+  font-size:var(--s-1);
+  line-height:1.5;
+  margin:0 auto var(--sp-5);
+  max-width:42ch;
+}
+
+/* inline form -> stacks on mobile */
+.s-newsletter__form{
+  display:flex;
+  gap:var(--sp-3);
+  align-items:stretch;
+  justify-content:center;
+  max-width:520px;
+  margin-inline:auto;
+  flex-wrap:wrap;
+}
+
+.s-newsletter__field{
+  flex:1 1 260px;
+  min-width:0;
+  display:block;
+}
+
+.s-newsletter__field input{
+  width:100%;
+  font-family:var(--font-body);
+  font-size:1rem;
+  color:var(--ink);
+  background:var(--surface);
+  border:1.5px solid var(--line);
+  border-radius:var(--radius-pill);
+  padding:.95em 1.5em;
+  line-height:1;
+  transition:.2s ease;
+}
+.s-newsletter__field input::placeholder{ color:var(--ink-soft); opacity:.8 }
+.s-newsletter__field input:focus{
+  outline:none;
+  border-color:var(--ink);
+  box-shadow:0 0 0 3px rgba(44,23,51,.12);
+}
+
+.s-newsletter__btn{
+  flex:0 0 auto;
+  white-space:nowrap;
+}
+
+.s-newsletter__fine{
+  margin:var(--sp-4) 0 0;
+  font-size:var(--s--1);
+  color:var(--ink-soft);
+}
+
+.sr-only{
+  position:absolute;width:1px;height:1px;padding:0;margin:-1px;
+  overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;
+}
+
+@media(max-width:560px){
+  .s-newsletter__form{ flex-direction:column; gap:var(--sp-2) }
+  .s-newsletter__field{ flex:1 1 auto }
+  .s-newsletter__btn{ width:100% }
+}
+
+
+/* ============================================================
+   Page of Wands Candles — footer.css
+   Dark plum --ink footer, cream --accent-ink text, gold accents.
+   Multi-col desktop -> stacked mobile. Scoped under .s-footer.
+   ============================================================ */
+
+.s-footer{
+  background:var(--ink);
+  color:var(--accent-ink);
+  padding-block:clamp(3rem,6vw,var(--sp-6));
+}
+
+/* top: wordmark + link columns */
+.s-footer__top{
+  display:grid;
+  grid-template-columns:minmax(220px,1.4fr) 2.6fr;
+  gap:clamp(2rem,5vw,var(--sp-6));
+  padding-bottom:var(--sp-5);
+}
+
+.s-footer__wordmark{
+  font-family:var(--font-display);
+  font-weight:400;
+  font-size:1.6rem;
+  line-height:1.1;
+  letter-spacing:-.01em;
+  color:var(--accent-ink);
+  margin:0 0 var(--sp-3);
+}
+.s-footer__star{
+  color:var(--pop);
+  font-size:.9em;
+  margin-left:.15em;
+}
+
+.s-footer__tagline{
+  margin:0;
+  color:var(--accent-ink);
+  opacity:.74;
+  font-size:var(--s-0);
+  max-width:30ch;
+}
+
+/* columns */
+.s-footer__cols{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:clamp(1.4rem,3vw,var(--sp-5));
+}
+
+.s-footer__head{
+  font-family:var(--font-body);
+  font-weight:600;
+  font-size:var(--s--1);
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:var(--pop);
+  margin:0 0 var(--sp-4);
+}
+
+.s-footer__list{
+  list-style:none;
+  margin:0;
+  padding:0;
+  display:grid;
+  gap:.65rem;
+}
+.s-footer__list a{
+  color:var(--accent-ink);
+  opacity:.66;
+  font-size:.96rem;
+  transition:.18s ease;
+}
+.s-footer__list a:hover,
+.s-footer__list a:focus-visible{
+  opacity:1;
+  color:#fff;
+}
+
+/* trust row */
+.s-footer__trust{
+  margin:0;
+  padding:var(--sp-4) 0;
+  border-top:1px solid rgba(247,239,226,.15);
+  border-bottom:1px solid rgba(247,239,226,.15);
+  font-family:var(--font-body);
+  font-weight:600;
+  font-size:var(--s--1);
+  letter-spacing:.2em;
+  text-transform:uppercase;
+  color:var(--pop);
+}
+
+/* bottom bar */
+.s-footer__bottom{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:var(--sp-3);
+  flex-wrap:wrap;
+  padding-top:var(--sp-4);
+}
+.s-footer__legal{
+  display:flex;
+  align-items:center;
+  gap:var(--sp-3);
+  flex-wrap:wrap;
+  color:var(--accent-ink);
+  opacity:.6;
+  font-size:var(--s--1);
+}
+.s-footer__copy{ font-weight:600; opacity:.85 }
+
+.s-footer__social{
+  display:flex;
+  gap:var(--sp-4);
+}
+.s-footer__social a{
+  color:var(--accent-ink);
+  opacity:.7;
+  font-size:var(--s--1);
+  letter-spacing:.04em;
+  transition:.18s ease;
+}
+.s-footer__social a:hover,
+.s-footer__social a:focus-visible{
+  opacity:1;
+  color:var(--pop);
+}
+
+@media(max-width:860px){
+  .s-footer__top{ grid-template-columns:1fr; gap:var(--sp-5) }
+}
+@media(max-width:560px){
+  .s-footer__cols{ grid-template-columns:1fr 1fr; gap:var(--sp-5) }
+  .s-footer__bottom{ flex-direction:column; align-items:flex-start }
+}
+@media(max-width:380px){
+  .s-footer__cols{ grid-template-columns:1fr }
+}
+
+
+
+/* ===== floating decorative elements (static) ===== */
+.s-founder{position:relative}
+.s-founder .float-1{top:-50px;right:-40px;width:clamp(150px,15vw,250px);--rot:6deg}
+.s-founder .float-2{bottom:-30px;left:-30px;width:clamp(130px,13vw,210px);--rot:-8deg}
