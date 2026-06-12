@@ -214,29 +214,29 @@
 .s-hero {
   background: var(--bg);
   padding: var(--sp-6) var(--sp-4);
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   align-items: center;
-  gap: var(--sp-5);
+  gap: var(--sp-6);
+  max-width: 1200px;
+  margin-inline: auto;
   position: relative;
 }
 
 /* ---- Gold decorative hairlines ---- */
+/* Side-by-side layout: hide the full-width separators */
 .s-hero__rule {
-  width: min(320px, 60%);
-  height: 1px;
-  background: linear-gradient(90deg, transparent, var(--gold), transparent);
-  flex-shrink: 0;
+  display: none;
 }
 
 /* ---- Text block ---- */
 .s-hero__text {
-  max-width: 720px;
+  max-width: 560px;
   width: 100%;
-  text-align: center;
+  text-align: left;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .s-hero__eyebrow {
@@ -262,7 +262,7 @@
   align-items: center;
   gap: var(--sp-4);
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: flex-start;
 }
 
 .s-hero__text-link {
@@ -283,12 +283,11 @@
 /* ---- Hero image ---- */
 .s-hero__image-wrap {
   width: 100%;
-  max-width: 960px;
   border-radius: var(--radius-lg);
   overflow: hidden;
   box-shadow: var(--shadow);
-  /* 16:7 aspect */
-  aspect-ratio: 16 / 7;
+  /* portrait-ish crop for the side-by-side column */
+  aspect-ratio: 4 / 5;
 }
 
 .s-hero__image {
@@ -301,15 +300,25 @@
 /* ===== MOBILE ≤ 820px ===== */
 @media (max-width: 820px) {
   .s-hero {
-    /* Reverse so image is FIRST (above fold), text below */
-    flex-direction: column-reverse;
+    /* Stack into a single column — image on top, text below */
+    grid-template-columns: 1fr;
+    justify-items: center;
     padding: var(--sp-4) var(--sp-3);
     gap: var(--sp-4);
   }
 
-  /* hide the decorative rules on mobile to keep it clean */
-  .s-hero__rule {
-    display: none;
+  .s-hero__text {
+    max-width: 720px;
+    text-align: center;
+    align-items: center;
+  }
+
+  .s-hero__actions {
+    justify-content: center;
+  }
+
+  .s-hero__image-wrap {
+    max-width: 520px;
   }
 
   .s-hero__h1 {
