@@ -936,18 +936,6 @@
   margin-top: var(--sp-1);
 }
 
-/* Reveal animation hook */
-.s-ritual .reveal {
-  opacity: 0;
-  transform: translateY(22px);
-  transition: opacity 0.7s ease, transform 0.7s ease;
-}
-
-.s-ritual .reveal.is-visible {
-  opacity: 1;
-  transform: none;
-}
-
 /* Responsive */
 @media (max-width: 640px) {
   .s-ritual__scrim {
