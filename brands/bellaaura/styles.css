@@ -52,21 +52,24 @@
    Bella Aura — HERO (split, dark-luxe)
    ============================================================ */
 .s-hero{
-  background:var(--dark);
-  padding-block:var(--sp-7);
-  overflow:hidden;
-}
-
-.s-hero .hero-grid{
+  position:relative;
   display:grid;
   grid-template-columns:1fr 1fr;
-  align-items:center;
-  gap:var(--sp-6);
+  align-items:stretch;
+  background:var(--dark);
+  min-height:36rem;
+  padding:0;
+  overflow:hidden;
 }
 
 /* ---- copy (light on charcoal) ---- */
 .s-hero .hero-copy{
-  max-width:36rem;
+  display:flex;
+  align-items:center;
+}
+.s-hero .hero-copy-inner{
+  padding:var(--sp-7) var(--sp-6) var(--sp-7)
+          max(var(--sp-6), (100vw - var(--maxw)) / 2 + var(--sp-4));
 }
 .s-hero .hero-eyebrow{
   color:var(--gold);
@@ -107,60 +110,37 @@
   color:var(--gold);
 }
 
-/* ---- media: black bottle on light champagne card ---- */
+/* ---- media: full-bleed editorial image filling the left column ---- */
 .s-hero .hero-media{
-  display:flex;
-  justify-content:center;
-}
-.s-hero .hero-card{
   position:relative;
+  overflow:hidden;
+}
+.s-hero .hero-media img{
+  display:block;
   width:100%;
-  max-width:30rem;
-  background:var(--surface-2);
-  border-radius:var(--radius-lg);
-  box-shadow:var(--shadow);
-  padding:var(--sp-6) var(--sp-5);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-}
-.s-hero .hero-card-ring{
-  position:absolute;
-  inset:var(--sp-3);
-  border:1px solid var(--accent);
-  border-radius:calc(var(--radius-lg) - 4px);
-  pointer-events:none;
-  opacity:.5;
-}
-.s-hero .hero-card img{
-  position:relative;
-  width:auto;
-  max-height:30rem;
-  filter:drop-shadow(0 30px 40px rgba(0,0,0,.28));
+  height:100%;
+  object-fit:cover;
+  object-position:center;
 }
 
-/* ---- mobile: product card ABOVE the fold, then copy ---- */
+/* ---- mobile: photo ABOVE the fold, then copy ---- */
 @media(max-width:780px){
   .s-hero{
-    padding-block:var(--sp-6);
-  }
-  .s-hero .hero-grid{
     grid-template-columns:1fr;
-    gap:var(--sp-5);
+    min-height:0;
   }
   .s-hero .hero-media{
     order:1;
+    height:60vw;
+    min-height:18rem;
+    max-height:26rem;
   }
   .s-hero .hero-copy{
     order:2;
+  }
+  .s-hero .hero-copy-inner{
     max-width:none;
-  }
-  .s-hero .hero-card{
-    max-width:22rem;
-    padding:var(--sp-5) var(--sp-4);
-  }
-  .s-hero .hero-card img{
-    max-height:22rem;
+    padding:var(--sp-6) var(--sp-4);
   }
   .s-hero .hero-cta{
     flex-direction:column;
