@@ -1,0 +1,105 @@
+/* da lish — brand foundation. Palette: black + white + signature peach #ffc3af. */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap');
+
+:root{
+  /* color */
+  --bg:        #FDF6F2;   /* soft warm peach-cream page bg */
+  --surface:   #FFFFFF;   /* cards / raised surfaces */
+  --surface-2: #FCE9E0;   /* soft peach fill bands */
+  --ink:       #1D1C1C;   /* near-black — headings + body */
+  --ink-soft:  #6B6360;   /* secondary text */
+  --accent:    #1D1C1C;   /* primary buttons (black) */
+  --accent-ink:#FFFFFF;
+  --peach:     #FFC3AF;   /* signature peach */
+  --peach-deep:#F0A98E;   /* peach for fills needing a touch more body */
+  --pop:       #DA6E45;   /* deep coral — stars, links, accents on white (readable) */
+  --line:      #EFD9CE;   /* warm hairline */
+  --star:      #DA6E45;
+  --btn:       #1D1C1C;
+  --btn-ink:   #FFFFFF;
+  /* type */
+  --font-display: "Outfit", "Helvetica Neue", Arial, sans-serif;
+  --font-body:    "Inter", "Helvetica Neue", Arial, sans-serif;
+  --s--1: .82rem;
+  --s-0:  1rem;
+  --s-1:  1.2rem;
+  --s-2:  1.55rem;
+  --s-3:  2.1rem;
+  --s-4:  3rem;
+  --s-5:  4rem;
+  /* space (4px base) */
+  --sp-1:.25rem; --sp-2:.5rem; --sp-3:1rem; --sp-4:1.5rem;
+  --sp-5:2.5rem; --sp-6:4rem; --sp-7:6rem;
+  /* radius + shadow */
+  --radius:    12px;
+  --radius-lg: 24px;
+  --radius-pill: 999px;
+  --shadow:    0 14px 40px rgba(29,28,28,.10);
+  --shadow-soft: 0 6px 22px rgba(218,110,69,.10);
+  --maxw: 1240px;
+}
+
+*{box-sizing:border-box}
+html,body{overflow-x:clip}
+html{scroll-behavior:smooth}
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font-family:var(--font-body); font-size:var(--s-0); line-height:1.6;
+  -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+}
+img{max-width:100%; display:block}
+a{color:inherit; text-decoration:none}
+
+h1,h2,h3{
+  font-family:var(--font-display); font-weight:600; color:var(--ink);
+  line-height:1.04; letter-spacing:-.02em; text-transform:lowercase;
+  margin:0 0 var(--sp-3);
+}
+h1{font-size:clamp(2.6rem,6vw,var(--s-5)); font-weight:600}
+h2{font-size:clamp(2rem,4vw,var(--s-4))}
+h3{font-size:var(--s-2); letter-spacing:-.01em}
+p{margin:0 0 var(--sp-3)}
+
+.wrap{max-width:var(--maxw); margin:0 auto; padding:0 var(--sp-4)}
+.section{padding:var(--sp-7) 0; position:relative}
+
+.eyebrow{
+  font-family:var(--font-body); font-weight:600; text-transform:uppercase;
+  letter-spacing:.18em; font-size:.72rem; color:var(--pop);
+  margin:0 0 var(--sp-3); display:inline-block;
+}
+
+/* buttons */
+.btn{
+  display:inline-flex; align-items:center; justify-content:center; gap:.5em;
+  font-family:var(--font-body); font-weight:600; font-size:.98rem;
+  padding:.95em 1.9em; border-radius:var(--radius-pill); border:1.5px solid transparent;
+  cursor:pointer; transition:transform .15s ease, box-shadow .2s ease, background .2s ease;
+  line-height:1; white-space:nowrap;
+}
+.btn:hover{transform:translateY(-2px)}
+.btn-primary{background:var(--btn); color:var(--btn-ink)}
+.btn-primary:hover{box-shadow:0 10px 26px rgba(29,28,28,.26)}
+.btn-peach{background:var(--peach); color:var(--ink)}
+.btn-peach:hover{box-shadow:var(--shadow-soft)}
+.btn-outline{background:transparent; color:var(--ink); border-color:var(--ink)}
+.btn-outline:hover{background:var(--ink); color:#fff}
+.btn-light{background:#fff; color:var(--ink); border-color:var(--line)}
+.btn-block{width:100%}
+
+/* floating product cut-outs (STATIC) */
+.float{position:absolute; z-index:2; pointer-events:none}
+.float img{width:100%; height:auto; transform:rotate(var(--rot,0deg));
+  filter:drop-shadow(0 18px 26px rgba(29,28,28,.22)) drop-shadow(0 4px 8px rgba(29,28,28,.12));}
+
+/* scroll-reveal (3D) */
+.reveal{opacity:0; transform:perspective(900px) rotateX(8deg) translateY(26px);
+  transition:.7s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1; transform:none}
+@media (prefers-reduced-motion:reduce){
+  .reveal{opacity:1; transform:none; transition:none}
+  html{scroll-behavior:auto}
+}
+
+@media (max-width:1000px){ .float{display:none} }
+@media (max-width:760px){ .section{padding:var(--sp-6) 0} }
