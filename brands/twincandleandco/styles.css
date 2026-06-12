@@ -321,7 +321,7 @@
 /* Mosaic grid */
 .s-collections__mosaic {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: var(--sp-3);
 }
 
@@ -338,7 +338,7 @@
   border-radius: var(--radius-lg);
   text-decoration: none;
   background: var(--surface-2);
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 1 / 1;
 }
 
 .s-collections__tile img {
@@ -355,12 +355,12 @@
 
 /* Featured tile fills the full left column height */
 .s-collections__tile--featured {
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 1 / 1;
 }
 
 /* Stack tiles share the right column evenly */
 .s-collections__stack .s-collections__tile {
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 1 / 1;
 }
 
 /* Scrim panel — sits at the bottom, contained, always legible */
@@ -468,7 +468,7 @@
   }
 
   .s-collections__tile--featured {
-    aspect-ratio: 4 / 5;
+    aspect-ratio: 1 / 1;
   }
 
   .s-collections__stack {
@@ -478,7 +478,7 @@
   }
 
   .s-collections__stack .s-collections__tile {
-    aspect-ratio: 4 / 5;
+    aspect-ratio: 1 / 1;
   }
 
   .s-collections__header h2 {
