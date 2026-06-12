@@ -68,8 +68,9 @@
   align-items:center;
 }
 .s-hero .hero-copy-inner{
-  padding:var(--sp-7) var(--sp-6) var(--sp-7)
-          max(var(--sp-6), (100vw - var(--maxw)) / 2 + var(--sp-4));
+  max-width: 78%;
+  padding:var(--sp-2) var(--sp-6) var(--sp-2)
+          max(var(--sp-6));
 }
 .s-hero .hero-eyebrow{
   color:var(--gold);
