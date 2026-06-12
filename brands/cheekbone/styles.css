@@ -139,7 +139,7 @@
 }
 
 /* ---------- bestsellers ---------- */
-.s-best{position:relative; background:var(--bg); padding-bottom: 80px;}
+.s-best{position:relative; background:var(--bg)}
 .s-best__float1{top:-30px; right:-26px; width:150px}
 .s-best__float2{bottom:60px; left:-40px; width:170px}
 .s-best__head{text-align:center; margin-bottom:var(--sp-5)}
@@ -168,7 +168,7 @@
 
 /* ---------- sustainability ---------- */
 .s-sustain{background:var(--surface); padding-block:80px}
-.s-sustain__grid{display:grid; grid-template-columns:1fr 1fr; gap:var(--sp-6); align-items:center; padding:0 80px;}
+.s-sustain__grid{display:grid; grid-template-columns:1fr 1fr; gap:var(--sp-6); align-items:center}
 .s-sustain__media{position:relative; aspect-ratio:4/5; border-radius:var(--radius-lg);
   background-size:cover; background-position:center; box-shadow:var(--shadow)}
 .s-sustain__float{top:-34px; right:-30px; width:140px}
