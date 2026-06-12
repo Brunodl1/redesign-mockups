@@ -1,0 +1,11 @@
+{
+  "provider": "cloudflare-flux",
+  "model": "@cf/black-forest-labs/flux-1-schnell",
+  "account": "bruno3",
+  "aspect": "16:9",
+  "size": "1K",
+  "elapsed_s": 1.44,
+  "timestamp": "2026-05-31T17:10:14-0500",
+  "input_image": null,
+  "prompt": "Very light minimal pale teal to white gradient background with soft blurred bokeh light and faint smooth water ripples, airy clean spa aesthetic, mostly white with gentle aqua tones toward the edges, soft unobtrusive, no text, no objects, no product"
+}

@@ -1,0 +1,11 @@
+{
+  "provider": "cloudflare-flux",
+  "model": "@cf/black-forest-labs/flux-1-schnell",
+  "account": "bruno3",
+  "aspect": "16:9",
+  "size": "1K",
+  "elapsed_s": 1.4,
+  "timestamp": "2026-05-31T17:10:14-0500",
+  "input_image": null,
+  "prompt": "Soft abstract pale aqua and white background, gentle out-of-focus water surface with delicate light reflections and a few soft dewy droplets, very light airy minimal, lots of pale negative space, subtle teal tint, dreamy clean skincare ambiance, no text, no objects, no product"
+}
