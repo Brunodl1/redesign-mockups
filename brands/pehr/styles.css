@@ -980,6 +980,7 @@
 /* ── Section shell ─────────────────────────────────────────── */
 .s-promise {
   background: var(--surface);
+  padding: 80px;
 }
 
 /* ── Two-column grid ───────────────────────────────────────── */
