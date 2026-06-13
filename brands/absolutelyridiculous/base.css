@@ -1,0 +1,84 @@
+/* Absolutely Ridiculous — per-brand foundation (dark cinematic, orange accent, playful lowercase) */
+:root{
+  /* color — dark canvas; color comes from product photography */
+  --bg:#0A0A0A;            /* near-black page */
+  --surface:#151515;       /* raised dark card */
+  --surface-2:#1C1C1C;     /* alt dark band */
+  --surface-light:#F4F2EC; /* rare near-white band (use sparingly) */
+  --ink:#FFFFFF;           /* white text */
+  --ink-soft:#A8A8A8;      /* grey labels/secondary */
+  --accent:#FF6719;        /* electric orange — signature */
+  --accent-2:#E2560D;      /* hover orange */
+  --accent-ink:#0A0A0A;    /* dark text on orange (legible) */
+  --pop:#2F6BFF;           /* royal blue — secondary product color */
+  --line:rgba(255,255,255,.14);
+  --line-2:rgba(255,255,255,.08);
+  --btn:#FF6719; --btn-ink:#0A0A0A;
+  --star:#FF6719;
+  /* type — rounded playful display (lowercase) + Inter body */
+  --font-display:"Fredoka","Baloo 2",system-ui,sans-serif;
+  --font-body:"Inter","Helvetica Neue",Arial,sans-serif;
+  --s--1:.84rem; --s-0:1rem; --s-1:1.25rem; --s-2:1.7rem;
+  --s-3:2.4rem; --s-4:3.5rem; --s-5:5rem;
+  /* space (4px base) */
+  --sp-1:.25rem; --sp-2:.5rem; --sp-3:1rem; --sp-4:1.5rem;
+  --sp-5:2.5rem; --sp-6:4rem; --sp-7:6.5rem;
+  /* radius + shadow — soft tiles, pill CTAs */
+  --radius:16px; --radius-lg:26px; --radius-pill:999px;
+  --shadow:0 22px 60px rgba(0,0,0,.55);
+  --shadow-sm:0 10px 30px rgba(0,0,0,.45);
+  /* layout */
+  --maxw:1320px;
+}
+*{box-sizing:border-box}
+html,body{overflow-x:clip}
+html{scroll-behavior:smooth}
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font-family:var(--font-body); font-size:var(--s-0); line-height:1.6;
+  -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+}
+/* subtle cinematic grain */
+body::after{content:""; position:fixed; inset:0; z-index:9999; pointer-events:none; opacity:.04;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");}
+img{max-width:100%; display:block}
+h1,h2,h3{font-family:var(--font-display); font-weight:600; line-height:1.02; letter-spacing:-.01em; margin:0 0 var(--sp-3); color:var(--ink); text-transform:lowercase}
+h1{font-size:var(--s-5)} h2{font-size:var(--s-4)} h3{font-size:var(--s-2); font-weight:500}
+h1 em,h2 em,h3 em{font-style:normal; color:var(--accent)} /* accent emphasis word */
+p{margin:0 0 var(--sp-3)}
+a{color:inherit; text-decoration:none}
+.wrap{width:min(100% - 2.5rem, var(--maxw)); margin-inline:auto}
+.section{padding:var(--sp-7) 0}
+/* eyebrow — UPPERCASE letter-spaced label (Inter) */
+.eyebrow{font-family:var(--font-body); font-weight:700; font-size:var(--s--1);
+  text-transform:uppercase; letter-spacing:.2em; color:var(--accent); margin:0 0 var(--sp-3)}
+.eyebrow.muted{color:var(--ink-soft)}
+.lead{font-size:var(--s-1); color:var(--ink-soft); line-height:1.55}
+/* buttons — PILL, lowercase, arrow (brand voice) */
+.btn{display:inline-flex; align-items:center; justify-content:center; gap:.5rem;
+  font-family:var(--font-body); font-weight:700; font-size:var(--s-0); letter-spacing:.01em;
+  text-transform:lowercase; padding:.95rem 1.8rem; border-radius:var(--radius-pill);
+  border:2px solid transparent; cursor:pointer;
+  transition:background .18s ease,color .18s ease,border-color .18s ease,transform .18s ease;}
+.btn:hover{transform:translateY(-2px)}
+.btn-primary{background:var(--accent); color:var(--accent-ink)}
+.btn-primary:hover{background:var(--accent-2)}
+.btn-ghost{background:transparent; color:#fff; border-color:rgba(255,255,255,.55)}
+.btn-ghost:hover{background:#fff; color:var(--bg); border-color:#fff}
+.btn-light{background:#fff; color:var(--bg); border-color:#fff}
+.btn-light:hover{background:transparent; color:#fff; border-color:#fff}
+.btn-block{display:flex; width:100%}
+.ic{width:38px; height:38px; flex:none; stroke:currentColor; fill:none; stroke-width:1.6}
+/* floating elements (mechanical) */
+.float{position:absolute; z-index:2; pointer-events:none}
+.float img{width:100%; height:auto; transform:rotate(var(--rot,0deg));
+  filter:drop-shadow(0 22px 30px rgba(0,0,0,.6))}
+@media(max-width:1000px){.float{display:none}}
+/* scroll-reveal (the 3D effect) */
+.reveal{opacity:0; transform:perspective(900px) rotateX(8deg) translateY(26px);
+  transition:opacity .7s cubic-bezier(.2,.7,.2,1), transform .7s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1; transform:none}
+@media(prefers-reduced-motion:reduce){
+  .reveal{opacity:1 !important; transform:none !important; transition:none}
+  html{scroll-behavior:auto}
+}
