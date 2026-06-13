@@ -1203,3 +1203,809 @@ h3{font-size:var(--s-2)}
   font-size: var(--s--1);
   color: rgba(255, 255, 255, .45);
 }
+
+/* ===== manifest ===== */
+/* ============================================================
+   s-manifest — full-bleed "manifest your mood" campaign banner
+   Image already carries the headline + mood rings; we add only
+   a dark CTA button pinned to the bottom-center of the photo.
+   ============================================================ */
+
+.s-manifest {
+  padding: 0;          /* no vertical rhythm — runs edge-to-edge */
+  background: var(--bg);
+}
+
+/* outer wrapper: caps at 1600px so on ultra-wides it still reads
+   as editorial rather than infinitely stretched */
+.s-manifest__wrap {
+  max-width: 1600px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* position:relative creates the stacking context the button lives in */
+.s-manifest__img-wrap {
+  position: relative;
+  display: block;
+  width: 100%;
+  /* maintain the image's natural 5335:2542 ratio on desktop */
+  aspect-ratio: 5335 / 2542;
+  overflow: hidden;
+}
+
+.s-manifest__img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* model is on the right; rings float centre-left — show both */
+  object-position: center center;
+  max-width: none;     /* override base.css img{max-width:100%} */
+}
+
+/* CTA wrapper — pinned bottom-center over the image */
+.s-manifest__cta-wrap {
+  position: absolute;
+  bottom: clamp(1.5rem, 5%, 3.5rem);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  /* subtle scrim pill so button stays legible over warm peachy tones */
+  padding: var(--sp-2) var(--sp-3);
+  border-radius: var(--radius);
+}
+
+/* button — inherit base .btn shape, override colour to bb-dark spec */
+.s-manifest__btn {
+  display: inline-block;
+  background: var(--bb-dark);
+  color: #fff;
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  font-weight: 600;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  padding: var(--sp-3) var(--sp-5);
+  border-radius: var(--radius);
+  border: none;
+  cursor: pointer;
+  white-space: nowrap;
+  /* barely-there gold hairline echoes the ring metallics */
+  box-shadow: 0 0 0 1px rgba(181, 149, 28, .35),
+              0 8px 24px rgba(20, 25, 31, .45);
+  transition: background .2s ease, box-shadow .2s ease, transform .15s ease;
+}
+
+.s-manifest__btn:hover,
+.s-manifest__btn:focus-visible {
+  background: #1f2933;   /* lighten bb-dark just slightly */
+  box-shadow: 0 0 0 1px rgba(181, 149, 28, .6),
+              0 12px 32px rgba(20, 25, 31, .55);
+  transform: translateY(-2px);
+  outline: none;
+}
+
+.s-manifest__btn:active {
+  transform: translateY(0);
+}
+
+/* ── Mobile ─────────────────────────────────────────────────────────
+   On small screens the natural ratio would make the banner tiny.
+   Switch to a fixed height + cover so the model (right side) and
+   rings remain visible and the composition doesn't collapse.
+   ───────────────────────────────────────────────────────────────── */
+@media (max-width: 760px) {
+  .s-manifest__img-wrap {
+    aspect-ratio: unset;
+    min-height: 62vh;
+    height: 62vh;
+  }
+
+  .s-manifest__img {
+    /* shift slightly right to feature model + keep rings in frame */
+    object-position: 70% center;
+  }
+
+  .s-manifest__cta-wrap {
+    bottom: var(--sp-5);
+    padding: var(--sp-1) var(--sp-2);
+  }
+
+  .s-manifest__btn {
+    font-size: .7rem;
+    padding: var(--sp-3) var(--sp-4);
+    letter-spacing: .14em;
+  }
+}
+
+@media (max-width: 480px) {
+  .s-manifest__img-wrap {
+    min-height: 55vh;
+    height: 55vh;
+  }
+
+  .s-manifest__img {
+    object-position: 75% center;
+  }
+}
+
+/* ===== conviction ===== */
+/* ============================================================
+   s-conviction — Conviction & Purpose section
+   Part 1: centered beige band with ethos copy
+   Part 2: 5-up testimonial product cards on white
+   All rules scoped to .s-conviction
+   ============================================================ */
+
+/* --- remove default .sec padding — we control band/reviews separately --- */
+.s-conviction {
+  padding: 0;
+}
+
+/* ── PART 1 — BAND ─────────────────────────────────────────── */
+
+.s-conviction__band {
+  background: var(--bb-beige);
+  padding: var(--sp-7) 0;
+}
+
+.s-conviction__band-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--sp-4);
+}
+
+.s-conviction__eyebrow {
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  font-weight: 600;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.s-conviction__heading {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 3.6vw, var(--s-4));
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: .12em;
+  color: var(--ink);
+  line-height: 1.15;
+  max-width: 22ch;
+}
+
+.s-conviction__sub {
+  font-family: var(--font-body);
+  font-size: var(--s-1);
+  font-weight: 300;
+  color: var(--ink-soft);
+  max-width: 52ch;
+  line-height: 1.7;
+  letter-spacing: .01em;
+}
+
+.s-conviction__origin-link {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  font-weight: 600;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--ink);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-color: var(--gold);
+  transition: color .2s, text-decoration-color .2s;
+}
+
+.s-conviction__origin-link:hover {
+  color: var(--gold);
+  text-decoration-color: var(--gold);
+}
+
+/* ── PART 2 — REVIEW CARDS ─────────────────────────────────── */
+
+.s-conviction__reviews {
+  background: var(--bg);
+  padding: var(--sp-7) 0 var(--sp-5);
+}
+
+/* 5-up desktop grid */
+.s-conviction__track {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: var(--sp-4);
+}
+
+/* ── CARD ── */
+.s-conviction__card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background: var(--bb-beige);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: box-shadow .25s;
+}
+
+.s-conviction__card:hover {
+  box-shadow: 0 10px 32px rgba(8, 14, 0, .08);
+}
+
+/* image frame — square, soft cream tile */
+.s-conviction__img-frame {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background: var(--surface);
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.s-conviction__img-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  padding: var(--sp-3);
+  transition: transform .4s ease;
+}
+
+.s-conviction__card:hover .s-conviction__img-frame img {
+  transform: scale(1.04);
+}
+
+/* card body */
+.s-conviction__card-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sp-2);
+  padding: var(--sp-4) var(--sp-3) var(--sp-4);
+  flex: 1;
+}
+
+.s-conviction__product-name {
+  font-family: var(--font-display);
+  font-size: var(--s-1);
+  font-weight: 400;
+  color: var(--ink);
+  line-height: 1.25;
+  letter-spacing: .005em;
+  /* lowercase by spec — no text-transform */
+}
+
+.s-conviction__quote {
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  font-weight: 300;
+  color: var(--ink-soft);
+  line-height: 1.6;
+  font-style: italic;
+  max-width: 24ch;
+}
+
+.s-conviction__reviewer {
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  font-weight: 500;
+  color: var(--ink-soft);
+  letter-spacing: .04em;
+}
+
+/* gold stars */
+.s-conviction__stars {
+  display: flex;
+  gap: 2px;
+  justify-content: center;
+  margin-top: var(--sp-1);
+}
+
+.s-conviction__stars span {
+  color: var(--star);
+  font-size: var(--s-1);
+  line-height: 1;
+}
+
+/* footnote caption */
+.s-conviction__caption {
+  text-align: center;
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  color: var(--ink-soft);
+  letter-spacing: .04em;
+  margin-top: var(--sp-5);
+  opacity: .7;
+}
+
+/* ── REVEAL ────────────────────────────────────────────────── */
+
+.s-conviction .reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity .55s ease, transform .55s ease;
+}
+
+.s-conviction .reveal.in {
+  opacity: 1;
+  transform: none;
+}
+
+/* stagger cards */
+.s-conviction__card.reveal:nth-child(1) { transition-delay: .05s }
+.s-conviction__card.reveal:nth-child(2) { transition-delay: .12s }
+.s-conviction__card.reveal:nth-child(3) { transition-delay: .19s }
+.s-conviction__card.reveal:nth-child(4) { transition-delay: .26s }
+.s-conviction__card.reveal:nth-child(5) { transition-delay: .33s }
+
+/* ── RESPONSIVE ─────────────────────────────────────────────── */
+
+/* tablet — 3-up */
+@media (max-width: 1024px) {
+  .s-conviction__track {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* mobile — horizontal scroll, 1.6-up peek */
+@media (max-width: 640px) {
+  .s-conviction__band {
+    padding: var(--sp-6) 0;
+  }
+
+  .s-conviction__reviews {
+    padding: var(--sp-6) 0 var(--sp-4);
+  }
+
+  /* override wrap padding for scroll bleed */
+  .s-conviction__reviews .wrap {
+    padding-right: 0;
+  }
+
+  .s-conviction__track {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    gap: var(--sp-3);
+    padding-bottom: var(--sp-3);
+    /* peek next card */
+    padding-right: clamp(1.1rem, 4vw, 2.2rem);
+  }
+
+  /* hide scrollbar — cosmetic */
+  .s-conviction__track::-webkit-scrollbar { display: none }
+  .s-conviction__track { scrollbar-width: none }
+
+  .s-conviction__card {
+    flex: 0 0 72vw;
+    max-width: 280px;
+    scroll-snap-align: start;
+  }
+
+  .s-conviction__caption {
+    padding-right: clamp(1.1rem, 4vw, 2.2rem);
+  }
+}
+
+/* ===== engagement ===== */
+/* ============================================================
+   s-engagement — full-bleed 2-column image split with CTA
+   Scoped entirely under .s-engagement
+   ============================================================ */
+
+.s-engagement {
+  padding: 0;
+  position: relative;
+}
+
+/* ---- split container ---- */
+.s-engagement__split {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 80vh;
+  gap: 2px;
+}
+
+/* ---- each image panel ---- */
+.s-engagement__panel {
+  position: relative;
+  overflow: hidden;
+  display: block;
+}
+
+.s-engagement__panel img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  image-rendering: auto;
+}
+
+/* subtle darkening vignette on both panels to give CTA legibility */
+.s-engagement__panel::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(8, 14, 0, 0.30) 0%,
+    rgba(8, 14, 0, 0.0) 50%
+  );
+  pointer-events: none;
+}
+
+/* ---- CTA button — absolute over the seam ---- */
+.s-engagement__cta {
+  position: absolute;
+  bottom: var(--sp-5);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+
+  /* token-only styling */
+  background: var(--bb-dark);
+  color: #fff;
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  font-weight: 600;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  padding: var(--sp-3) var(--sp-5);
+  border-radius: var(--radius);
+  white-space: nowrap;
+  display: inline-block;
+  transition: background .2s ease, opacity .2s ease;
+}
+
+.s-engagement__cta:hover {
+  background: rgba(20, 25, 31, 0.80);
+}
+
+/* ============================================================
+   MOBILE — stack vertically
+   ============================================================ */
+@media (max-width: 760px) {
+  .s-engagement__split {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    min-height: unset;
+    gap: 2px;
+  }
+
+  .s-engagement__panel {
+    aspect-ratio: 3 / 4;
+    width: 100%;
+  }
+
+  /* on mobile keep the button below the pair, still centered */
+  .s-engagement__cta {
+    position: relative;
+    bottom: unset;
+    left: unset;
+    transform: none;
+    display: block;
+    width: max-content;
+    margin: var(--sp-4) auto 0;
+  }
+
+  /* remove the stacking pseudo so the button sits outside the grid cleanly */
+  .s-engagement__split {
+    grid-template-areas:
+      "left"
+      "right"
+      "cta";
+  }
+
+  .s-engagement__panel--left  { grid-area: left; }
+  .s-engagement__panel--right { grid-area: right; }
+  .s-engagement__cta          { grid-area: cta; padding-bottom: var(--sp-4); }
+}
+
+/* ===== lifestyle ===== */
+/* ============================================================
+   s-lifestyle — community / happy people band
+   Scoped entirely under .s-lifestyle
+   ============================================================ */
+
+.s-lifestyle {
+  background: var(--surface);
+}
+
+/* ---- heading block ---- */
+.s-lifestyle__head {
+  text-align: center;
+  max-width: 560px;
+  margin: 0 auto var(--sp-6);
+}
+
+.s-lifestyle__head .eyebrow {
+  display: block;
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  font-weight: 600;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin-bottom: var(--sp-3);
+}
+
+.s-lifestyle__head h2 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(1.9rem, 3vw, var(--s-4));
+  color: var(--ink);
+  line-height: 1.15;
+  letter-spacing: .01em;
+  text-transform: lowercase;
+  margin-bottom: var(--sp-3);
+}
+
+.s-lifestyle__sub {
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  color: var(--ink-soft);
+  line-height: 1.7;
+  letter-spacing: .03em;
+}
+
+/* ---- photo grid ---- */
+.s-lifestyle__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-4);
+  margin-bottom: var(--sp-6);
+}
+
+.s-lifestyle__tile {
+  display: block;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  aspect-ratio: 3 / 4;
+  background: var(--line);
+}
+
+/* third image is landscape (3600×2395) — give it a wider feel */
+.s-lifestyle__tile:nth-child(3) {
+  aspect-ratio: 4 / 3;
+  align-self: center;
+}
+
+.s-lifestyle__tile img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform .55s cubic-bezier(.25,.46,.45,.94);
+}
+
+.s-lifestyle__tile:hover img {
+  transform: scale(1.04);
+}
+
+/* ---- CTA block ---- */
+.s-lifestyle__cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sp-3);
+}
+
+.s-lifestyle__btn {
+  display: inline-block;
+  background: var(--bb-dark);
+  color: #ffffff;
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  font-weight: 600;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  padding: var(--sp-3) var(--sp-5);
+  border-radius: var(--radius);
+  transition: opacity .25s ease;
+}
+
+.s-lifestyle__btn:hover {
+  opacity: .82;
+}
+
+.s-lifestyle__tag {
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  color: var(--ink-soft);
+  letter-spacing: .1em;
+}
+
+/* ---- reveal animation ---- */
+.s-lifestyle .reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity .65s ease, transform .65s ease;
+}
+
+.s-lifestyle .reveal.in {
+  opacity: 1;
+  transform: none;
+}
+
+/* ---- responsive ---- */
+@media (max-width: 900px) {
+  .s-lifestyle__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* third tile spans both columns at 2-up */
+  .s-lifestyle__tile:nth-child(3) {
+    grid-column: 1 / -1;
+    aspect-ratio: 16 / 9;
+  }
+}
+
+@media (max-width: 520px) {
+  .s-lifestyle__grid {
+    grid-template-columns: 1fr;
+    gap: var(--sp-3);
+  }
+
+  .s-lifestyle__tile,
+  .s-lifestyle__tile:nth-child(3) {
+    grid-column: auto;
+    aspect-ratio: 4 / 5;
+  }
+}
+
+/* ===== locations ===== */
+/* ── s-locations ─────────────────────────────────────────── */
+
+.s-locations {
+  background: var(--bg);
+}
+
+.s-locations__head {
+  text-align: center;
+  margin-bottom: var(--sp-5);
+}
+
+.s-locations__head .eyebrow {
+  margin-bottom: var(--sp-2);
+}
+
+.s-locations__head h2 {
+  font-family: var(--font-display);
+  font-size: var(--s-4);
+  color: var(--ink);
+  max-width: 480px;
+  margin: 0 auto;
+  line-height: 1.2;
+}
+
+/* row -------------------------------------------------------- */
+
+.s-locations__row {
+  display: flex;
+  gap: var(--sp-4);
+  justify-content: center;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  /* hide scrollbar but keep scroll */
+  scrollbar-width: none;
+  padding-bottom: var(--sp-2);
+}
+
+.s-locations__row::-webkit-scrollbar {
+  display: none;
+}
+
+/* card ------------------------------------------------------- */
+
+.s-locations__card {
+  flex: 0 0 200px;
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: var(--sp-3);
+  scroll-snap-align: start;
+}
+
+/* image ------------------------------------------------------ */
+
+.s-locations__img-wrap {
+  width: 200px;
+  height: 180px;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+}
+
+.s-locations__img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* pill button ------------------------------------------------ */
+
+.s-locations__pill {
+  display: block;
+  width: 100%;
+  background: var(--bb-beige);
+  color: var(--ink);
+  border: none;
+  border-radius: 100px;
+  padding: var(--sp-2) var(--sp-3);
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-align: center;
+  text-decoration: none;
+  box-sizing: border-box;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.s-locations__pill:hover {
+  background: var(--ink);
+  color: var(--bb-beige);
+}
+
+/* mobile ----------------------------------------------------- */
+
+@media (max-width: 700px) {
+  .s-locations__row {
+    justify-content: flex-start;
+    padding-left: var(--sp-3);
+    padding-right: var(--sp-3);
+  }
+}
+
+/* ===== badges ===== */
+/* ── s-badges: trust/values strip ── */
+.s-badges {
+  background: var(--bb-beige);
+  padding: var(--sp-4) 0;
+}
+
+@media (min-width: 761px) {
+  .s-badges {
+    padding: var(--sp-5) 0;
+  }
+}
+
+.s-badges .wrap {
+  display: flex;
+  justify-content: center;
+}
+
+.s-badges__row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 700px;
+  gap: var(--sp-3);
+}
+
+.s-badges__icon {
+  width: 75px;
+  height: auto;
+  flex-shrink: 0;
+  display: block;
+}
+
+@media (min-width: 761px) {
+  .s-badges__icon {
+    width: 120px;
+  }
+}
