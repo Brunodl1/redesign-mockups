@@ -1,0 +1,105 @@
+/* Sweet Water Decor — brand foundation. Warm soy candles + home decor: cream / tan / soft brown. */
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Mulish:wght@400;500;600;700;800&display=swap');
+
+:root{
+  /* color — warm neutral, soft & gift-forward */
+  --bg:        #F6F0E6;   /* warm cream page bg */
+  --surface:   #FFFFFF;   /* white product cards (packshots are white-bg) */
+  --surface-2: #ECE1D0;   /* soft tan/sand band */
+  --ink:       #3E342B;   /* deep warm brown — headings + text */
+  --ink-soft:  #87796A;   /* muted taupe secondary */
+  --accent:    #6E5B47;   /* warm espresso-brown — primary buttons */
+  --accent-ink:#FBF6EE;   /* text on accent */
+  --pop:       #B5764A;   /* warm clay/terracotta — badges, sale, accents */
+  --blush:     #D8A98C;   /* soft blush — gentle secondary pop */
+  --line:      #E3D7C4;   /* warm hairline */
+  --star:      #C39A45;   /* gold rating stars */
+  --btn:       #6E5B47;
+  --btn-ink:   #FBF6EE;
+  /* type */
+  --font-display: "Fraunces", Georgia, "Times New Roman", serif;
+  --font-body:    "Mulish", "Helvetica Neue", Arial, sans-serif;
+  --s--1: .84rem;
+  --s-0:  1rem;
+  --s-1:  1.2rem;
+  --s-2:  1.55rem;
+  --s-3:  2.15rem;
+  --s-4:  3.1rem;
+  --s-5:  4.4rem;
+  /* space (4px base) */
+  --sp-1:.25rem; --sp-2:.5rem; --sp-3:1rem; --sp-4:1.5rem;
+  --sp-5:2.5rem; --sp-6:4rem; --sp-7:6rem;
+  /* radius + shadow */
+  --radius:    8px;
+  --radius-lg: 20px;
+  --radius-pill: 999px;
+  --shadow:    0 16px 44px rgba(62,52,43,.12);
+  --shadow-soft: 0 6px 22px rgba(62,52,43,.08);
+  --maxw: 1280px;
+}
+
+*{box-sizing:border-box}
+html,body{overflow-x:clip}
+html{scroll-behavior:smooth}
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font-family:var(--font-body); font-size:var(--s-0); line-height:1.6;
+  -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+}
+img{max-width:100%; display:block}
+a{color:inherit; text-decoration:none}
+
+h1,h2,h3{
+  font-family:var(--font-display); font-weight:500; color:var(--ink);
+  line-height:1.08; letter-spacing:-.01em; margin:0 0 var(--sp-3);
+}
+h1{font-size:clamp(2.5rem,5.5vw,var(--s-5)); font-weight:500}
+h2{font-size:clamp(1.9rem,3.6vw,var(--s-4))}
+h3{font-size:var(--s-2); font-weight:600}
+p{margin:0 0 var(--sp-3)}
+
+.wrap{max-width:var(--maxw); margin:0 auto; padding:0 var(--sp-4)}
+.section{padding:var(--sp-7) 0; position:relative}
+
+.eyebrow{
+  font-family:var(--font-body); font-weight:800; text-transform:uppercase;
+  letter-spacing:.18em; font-size:.72rem; color:var(--pop);
+  margin:0 0 var(--sp-3); display:inline-block;
+}
+
+/* buttons — rounded solid, uppercase tracked (SWD promo style) */
+.btn{
+  display:inline-flex; align-items:center; justify-content:center; gap:.5em;
+  font-family:var(--font-body); font-weight:800; font-size:.82rem;
+  text-transform:uppercase; letter-spacing:.1em;
+  padding:1em 2em; border-radius:var(--radius); border:1.5px solid transparent;
+  cursor:pointer; transition:transform .15s ease, box-shadow .2s ease, background .2s ease, color .2s ease;
+  line-height:1; white-space:nowrap;
+}
+.btn:hover{transform:translateY(-2px)}
+.btn-primary{background:var(--btn); color:var(--btn-ink)}
+.btn-primary:hover{box-shadow:0 10px 26px rgba(62,52,43,.28)}
+.btn-accent{background:var(--pop); color:#fff}
+.btn-accent:hover{box-shadow:0 10px 26px rgba(181,118,74,.30)}
+.btn-outline{background:transparent; color:var(--ink); border-color:var(--ink)}
+.btn-outline:hover{background:var(--ink); color:var(--btn-ink)}
+.btn-light{background:var(--surface); color:var(--ink); border-color:var(--line)}
+.btn-light:hover{border-color:var(--ink)}
+.btn-block{width:100%}
+
+/* floating product cut-outs (STATIC) */
+.float{position:absolute; z-index:3; pointer-events:none}
+.float img{width:100%; height:auto; transform:rotate(var(--rot,0deg));
+  filter:drop-shadow(0 22px 28px rgba(62,52,43,.24)) drop-shadow(0 6px 10px rgba(62,52,43,.14));}
+
+/* scroll-reveal (3D) — fx.js toggles .in */
+.reveal{opacity:0; transform:perspective(900px) rotateX(8deg) translateY(26px);
+  transition:opacity .7s ease, transform .7s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1; transform:none}
+@media (prefers-reduced-motion:reduce){
+  .reveal{opacity:1; transform:none; transition:none}
+  html{scroll-behavior:auto}
+}
+
+@media (max-width:1000px){ .float{display:none} }
+@media (max-width:760px){ .section{padding:var(--sp-6) 0} }

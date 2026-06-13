@@ -1,0 +1,1075 @@
+/* ===== header ===== */
+/* ===== Announcement bar ===== */
+.announce{
+  background:var(--ink);
+  color:var(--accent-ink);
+  font-family:var(--font-body);
+}
+.announce-track{
+  max-width:var(--maxw);
+  margin:0 auto;
+  padding:.55rem var(--sp-4);
+  display:flex; align-items:center; justify-content:center;
+  flex-wrap:wrap; gap:.5em;
+  text-align:center;
+}
+.announce-item{
+  font-size:.74rem; font-weight:600;
+  letter-spacing:.05em;
+  text-transform:uppercase;
+}
+.announce-dot{
+  color:var(--blush);
+  font-size:.74rem;
+  opacity:.9;
+}
+
+/* Mobile: only the first message, one line */
+@media (max-width:760px){
+  .announce-track{ flex-wrap:nowrap; gap:0; padding:.5rem var(--sp-3); }
+  .announce-dot,
+  .announce-item:not(.announce-first){ display:none; }
+  .announce-first{
+    white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+  }
+}
+
+/* ===== Header ===== */
+.s-head{
+  position:sticky; top:0; z-index:50;
+  background:var(--surface);
+  border-bottom:1px solid var(--line);
+}
+.s-head .head-inner{
+  display:flex; align-items:center; gap:var(--sp-4);
+  min-height:68px;
+  padding-top:.4rem; padding-bottom:.4rem;
+}
+
+/* burger — hidden on desktop */
+.s-head .head-burger{
+  display:none;
+  background:none; border:0; padding:0; margin:0;
+  color:var(--ink); cursor:pointer;
+  align-items:center; justify-content:center;
+}
+
+/* logo */
+.s-head .head-logo{
+  display:inline-flex; align-items:center;
+  flex:0 0 auto;
+}
+.s-head .head-logo img{
+  height:24px; width:auto; max-width:240px; object-fit:contain; object-position:center;
+}
+
+/* center nav */
+.s-head .head-nav{
+  display:flex; align-items:center; gap:var(--sp-4);
+  margin:0 auto;
+  font-family:var(--font-body);
+}
+.s-head .head-nav a{
+  font-size:.92rem; font-weight:600;
+  letter-spacing:.01em; color:var(--ink);
+  position:relative; padding:.4em 0;
+  transition:color .18s ease;
+}
+.s-head .head-nav a::after{
+  content:""; position:absolute; left:0; right:100%; bottom:-2px;
+  height:1.5px; background:var(--pop);
+  transition:right .22s ease;
+}
+.s-head .head-nav a:hover{ color:var(--pop); }
+.s-head .head-nav a:hover::after{ right:0; }
+
+/* right actions */
+.s-head .head-actions{
+  display:flex; align-items:center; gap:var(--sp-3);
+  flex:0 0 auto; margin-left:auto;
+}
+.s-head .head-icon{
+  display:inline-flex; align-items:center; justify-content:center;
+  position:relative;
+  color:var(--ink);
+  transition:color .18s ease;
+}
+.s-head .head-icon:hover{ color:var(--pop); }
+.s-head .head-cart-count{
+  position:absolute; top:-6px; right:-8px;
+  min-width:17px; height:17px; padding:0 4px;
+  display:inline-flex; align-items:center; justify-content:center;
+  background:var(--pop); color:#fff;
+  font-family:var(--font-body); font-weight:800;
+  font-size:.62rem; line-height:1;
+  border-radius:var(--radius-pill);
+}
+
+/* ===== Mobile (<900px): logo + burger + cart, one row ===== */
+@media (max-width:900px){
+  .s-head .head-inner{
+    gap:var(--sp-3); flex-wrap:nowrap; min-height:58px;
+  }
+  .s-head .head-burger{ display:inline-flex; flex:0 0 auto; }
+  .s-head .head-nav{ display:none; }
+  .s-head .head-search{ display:none; }
+  .s-head .head-logo{ margin:0 auto; min-width:0; }
+  .s-head .head-logo img{ height:20px; max-width:150px; }
+}
+
+/* ===== hero ===== */
+/* Sweet Water Decor — full-bleed hero */
+.s-hero{
+  position:relative;
+  min-height:84vh;
+  display:flex;
+  align-items:center;
+  overflow:hidden;
+  isolation:isolate;
+}
+.s-hero__img{
+  position:absolute; inset:0; z-index:0;
+  width:100%; height:100%;
+  object-fit:cover; object-position:center;
+}
+/* full-bleed dark scrim for overall legibility */
+.s-hero__scrim{
+  position:absolute; inset:0; z-index:1;
+  background:linear-gradient(rgba(62,52,43,.40), rgba(62,52,43,.26));
+}
+.s-hero .wrap{
+  position:relative; z-index:2;
+  width:100%;
+  padding-top:var(--sp-6);
+  padding-bottom:var(--sp-6);
+}
+
+/* contained text card — upper-left */
+.s-hero__card{
+  max-width:540px;
+  background:rgba(62,52,43,.42);
+  -webkit-backdrop-filter:blur(3px);
+  backdrop-filter:blur(3px);
+  border-radius:var(--radius-lg);
+  padding:var(--sp-5) var(--sp-5) calc(var(--sp-5) + .25rem);
+  border:1px solid rgba(251,246,238,.14);
+  box-shadow:0 24px 60px rgba(62,52,43,.30);
+}
+
+/* all card text light/cream — win specificity over base */
+.s-hero .s-hero__eyebrow{
+  color:var(--blush);
+  margin-bottom:var(--sp-3);
+}
+.s-hero .s-hero__title{
+  color:var(--accent-ink);
+  font-size:clamp(2.6rem,5.4vw,var(--s-5));
+  font-weight:500;
+  margin:0 0 var(--sp-3);
+  text-shadow:0 2px 18px rgba(62,52,43,.35);
+}
+.s-hero .s-hero__sub{
+  color:var(--accent-ink);
+  font-size:clamp(1.02rem,1.4vw,var(--s-1));
+  line-height:1.5;
+  margin:0 0 var(--sp-5);
+  opacity:.96;
+}
+.s-hero__cta{
+  align-self:flex-start;
+}
+
+/* MOBILE — image fills above the fold, card sits toward the bottom */
+@media (max-width:860px){
+  .s-hero{
+    min-height:90vh;
+    align-items:flex-end;
+  }
+  .s-hero .wrap{
+    padding-bottom:var(--sp-5);
+  }
+  .s-hero__card{
+    max-width:none;
+    padding:var(--sp-4) var(--sp-4) var(--sp-5);
+  }
+  .s-hero .s-hero__title{
+    font-size:clamp(2.3rem,9vw,3.2rem);
+  }
+  .s-hero__cta{
+    width:100%;
+  }
+}
+
+/* ===== marquee ===== */
+/* Sweet Water Decor — Press / Featured marquee. Compact sand band, seamless infinite scroll. */
+.s-marquee{
+  padding:var(--sp-5) 0;            /* override tall section padding DOWN — thin strip */
+  background:var(--surface-2);      /* sand band */
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+  overflow:hidden;
+}
+
+.s-marquee .swm-eyebrow{
+  display:block;
+  text-align:center;
+  margin:0 0 var(--sp-4);
+}
+
+/* full-bleed track wrapper (breaks out of .wrap) */
+.s-marquee .swm-track-wrap{
+  position:relative;
+  width:100%;
+  overflow:hidden;
+  /* fade items in/out at the edges */
+  -webkit-mask-image:linear-gradient(to right, transparent 0, #000 9%, #000 91%, transparent 100%);
+          mask-image:linear-gradient(to right, transparent 0, #000 9%, #000 91%, transparent 100%);
+}
+
+.s-marquee .swm-track{
+  display:flex;
+  align-items:center;
+  width:max-content;
+  will-change:transform;
+  animation:swm-scroll 42s linear infinite;
+}
+.s-marquee .swm-track-wrap:hover .swm-track{
+  animation-play-state:paused;
+}
+
+@keyframes swm-scroll{
+  from{ transform:translateX(0); }
+  to  { transform:translateX(-50%); }   /* list duplicated 2x → seamless */
+}
+
+.s-marquee .swm-item{
+  flex:0 0 auto;
+  font-family:var(--font-display);
+  font-weight:500;
+  font-size:clamp(1.15rem, 2vw, var(--s-2));
+  font-style:italic;
+  letter-spacing:-.01em;
+  color:var(--ink-soft);
+  white-space:nowrap;
+  padding:0 var(--sp-2);
+}
+
+.s-marquee .swm-sep{
+  flex:0 0 auto;
+  color:var(--pop);
+  font-size:.8rem;
+  margin:0 var(--sp-4);
+  line-height:1;
+  transform:translateY(-1px);
+}
+
+.s-marquee .swm-note{
+  text-align:center;
+  margin:var(--sp-4) 0 0;
+  font-size:.72rem;
+  letter-spacing:.02em;
+  color:var(--ink-soft);
+  opacity:.7;
+}
+
+@media (max-width:760px){
+  .s-marquee{ padding:var(--sp-4) 0; }
+  .s-marquee .swm-track{ animation-duration:30s; }
+  .s-marquee .swm-sep{ margin:0 var(--sp-3); }
+}
+
+/* reduced motion — stop the scroll, center the wrap, wrap items */
+@media (prefers-reduced-motion:reduce){
+  .s-marquee .swm-track{
+    animation:none;
+    width:auto;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:var(--sp-2) 0;
+    padding:0 var(--sp-4);
+  }
+  /* hide the duplicate list so items aren't shown twice */
+  .s-marquee .swm-track > [aria-hidden="true"].swm-item{ display:none; }
+  .s-marquee .swm-track-wrap{
+    -webkit-mask-image:none;
+            mask-image:none;
+  }
+}
+
+/* ===== categories ===== */
+/* ===== Shop by Category — big image tiles ===== */
+.s-categories{ padding:var(--sp-7) 0; background:var(--bg); }
+
+.s-categories .cat-head{ max-width:640px; margin:0 0 var(--sp-6); }
+.s-categories .cat-sub{
+  font-size:var(--s-1); color:var(--ink-soft); line-height:1.5; margin:0;
+  max-width:48ch;
+}
+
+.s-categories .cat-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:var(--sp-4);
+}
+
+/* shared tile shell — single fixed-aspect height keeps the row even */
+.s-categories .cat-tile{
+  position:relative;
+  display:flex;
+  flex-direction:column;
+  aspect-ratio:4/5;
+  border-radius:var(--radius-lg);
+  overflow:hidden;
+  background:var(--surface-2);
+  box-shadow:var(--shadow-soft);
+  transition:transform .3s cubic-bezier(.2,.7,.2,1), box-shadow .3s ease;
+  isolation:isolate;
+}
+.s-categories .cat-tile:hover{
+  transform:translateY(-6px);
+  box-shadow:var(--shadow);
+}
+
+/* ----- lifestyle (image-fill) tiles ----- */
+.s-categories .cat-fill > img{
+  position:absolute; inset:0;
+  width:100%; height:100%;
+  object-fit:cover;
+  transition:transform .6s cubic-bezier(.2,.7,.2,1);
+}
+.s-categories .cat-fill:hover > img{ transform:scale(1.05); }
+
+.s-categories .cat-scrim{
+  position:absolute; inset:0;
+  background:linear-gradient(
+    to top,
+    rgba(62,52,43,.72) 0%,
+    rgba(62,52,43,.34) 30%,
+    rgba(62,52,43,0) 58%
+  );
+  z-index:1;
+}
+.s-categories .cat-fill .cat-meta{
+  position:relative; z-index:2;
+  margin-top:auto;
+  padding:var(--sp-4) var(--sp-4) var(--sp-4);
+  color:var(--accent-ink);
+}
+.s-categories .cat-fill .cat-name{ color:#fff; }
+.s-categories .cat-fill .cat-shop{ color:rgba(255,255,255,.92); }
+
+/* ----- product (white-bg) tiles: cream inner bg + contained + label below ----- */
+.s-categories .cat-product .cat-img-wrap{
+  flex:1 1 auto;
+  display:flex; align-items:center; justify-content:center;
+  background:var(--surface-2);
+  padding:var(--sp-5) var(--sp-4) var(--sp-3);
+  min-height:0;
+}
+.s-categories .cat-product .cat-img-wrap img{
+  max-width:100%; max-height:100%;
+  width:auto; height:auto;
+  object-fit:contain;
+  transition:transform .5s cubic-bezier(.2,.7,.2,1);
+}
+.s-categories .cat-product:hover .cat-img-wrap img{ transform:scale(1.04); }
+
+.s-categories .cat-meta-below{
+  flex:0 0 auto;
+  padding:var(--sp-3) var(--sp-4) var(--sp-4);
+  background:var(--surface-2);
+  color:var(--ink);
+}
+.s-categories .cat-meta-below .cat-name{ color:var(--ink); }
+.s-categories .cat-meta-below .cat-shop{ color:var(--pop); }
+
+/* ----- shared meta typography ----- */
+.s-categories .cat-meta{
+  display:flex; flex-direction:column; gap:var(--sp-1);
+}
+.s-categories .cat-name{
+  font-family:var(--font-display);
+  font-weight:600;
+  font-size:var(--s-2);
+  line-height:1.1;
+  letter-spacing:-.01em;
+}
+.s-categories .cat-shop{
+  font-family:var(--font-body);
+  font-weight:800;
+  text-transform:uppercase;
+  letter-spacing:.12em;
+  font-size:.72rem;
+}
+.s-categories .cat-tile:hover .cat-shop span{ animation:none; }
+
+/* ===== responsive: 4-up / 2-up tablet / 1-up mobile ===== */
+@media (max-width:980px){
+  .s-categories .cat-grid{ grid-template-columns:repeat(2,1fr); }
+}
+@media (max-width:560px){
+  .s-categories .cat-grid{ grid-template-columns:1fr; gap:var(--sp-3); }
+  .s-categories .cat-tile{ aspect-ratio:4/5; }
+}
+
+/* ===== bestsellers ===== */
+/* ===== Best Sellers product grid — Sweet Water Decor ===== */
+.s-bestsellers{ padding:var(--sp-7) 0; background:var(--bg); }
+
+.s-bestsellers .bs-head{
+  text-align:center; max-width:46rem; margin:0 auto var(--sp-6);
+}
+.s-bestsellers .bs-sub{
+  color:var(--ink-soft); font-size:var(--s-1); margin:0 auto;
+  max-width:36rem; line-height:1.55;
+}
+
+/* grid: 3-up desktop / 2-up tablet / 1-up mobile */
+.s-bestsellers .bs-grid{
+  display:grid; grid-template-columns:repeat(3,1fr);
+  gap:var(--sp-4);
+}
+@media (max-width:1000px){
+  .s-bestsellers .bs-grid{ grid-template-columns:repeat(2,1fr); }
+}
+@media (max-width:600px){
+  .s-bestsellers .bs-grid{ grid-template-columns:1fr; gap:var(--sp-4); }
+}
+
+/* card */
+.s-bestsellers .bs-card{
+  display:flex; flex-direction:column;
+  background:var(--surface-2);
+  border:1px solid var(--line);
+  border-radius:var(--radius-lg);
+  padding:var(--sp-3);
+  transition:transform .25s ease, box-shadow .25s ease;
+}
+.s-bestsellers .bs-card:hover{
+  transform:translateY(-4px); box-shadow:var(--shadow);
+}
+
+/* white image tile — packshots are white-bg */
+.s-bestsellers .bs-tile{
+  position:relative;
+  background:var(--surface);
+  border-radius:var(--radius);
+  padding:var(--sp-5);
+  display:flex; align-items:center; justify-content:center;
+  aspect-ratio:1/1;
+  overflow:hidden;
+}
+.s-bestsellers .bs-tile img{
+  width:100%; height:100%;
+  object-fit:contain;
+  mix-blend-mode:multiply;
+}
+
+/* clay best-seller badge */
+.s-bestsellers .bs-badge{
+  position:absolute; top:var(--sp-3); left:var(--sp-3);
+  background:var(--pop); color:#fff;
+  font-family:var(--font-body); font-weight:800;
+  text-transform:uppercase; letter-spacing:.1em; font-size:.62rem;
+  padding:.45em .85em; border-radius:var(--radius-pill);
+  line-height:1; z-index:2;
+}
+
+/* body */
+.s-bestsellers .bs-body{
+  display:flex; flex-direction:column;
+  padding:var(--sp-4) var(--sp-2) var(--sp-2);
+  flex:1;
+}
+.s-bestsellers .bs-family{
+  font-family:var(--font-body); font-weight:800;
+  text-transform:uppercase; letter-spacing:.16em; font-size:.66rem;
+  color:var(--pop); margin-bottom:var(--sp-2);
+}
+.s-bestsellers .bs-name{
+  font-family:var(--font-display); font-weight:600;
+  font-size:var(--s-1); color:var(--ink);
+  margin:0 0 var(--sp-2); line-height:1.15;
+}
+
+/* rating */
+.s-bestsellers .bs-rating{
+  display:flex; align-items:center; gap:.5em;
+  margin-bottom:var(--sp-3);
+}
+.s-bestsellers .bs-stars{ display:inline-flex; gap:2px; }
+.s-bestsellers .bs-stars svg{
+  width:14px; height:14px; fill:var(--star); display:block;
+}
+.s-bestsellers .bs-rcount{
+  font-family:var(--font-body); font-size:var(--s--1);
+  color:var(--ink-soft); font-weight:600;
+}
+
+/* footer: price + add-to-cart */
+.s-bestsellers .bs-foot{
+  display:flex; align-items:center; justify-content:space-between;
+  gap:var(--sp-3); margin-top:auto;
+}
+.s-bestsellers .bs-price{
+  font-family:var(--font-display); font-weight:600;
+  font-size:var(--s-2); color:var(--ink);
+}
+.s-bestsellers .bs-add{
+  padding:.8em 1.4em; font-size:.72rem; border-radius:var(--radius-pill);
+}
+
+/* footer CTA */
+.s-bestsellers .bs-cta{
+  text-align:center; margin-top:var(--sp-6);
+}
+
+@media (max-width:600px){
+  .s-bestsellers .bs-tile{ padding:var(--sp-4); }
+}
+
+/* ===== story ===== */
+/* ===== Brand Story band — Sweet Water Decor ===== */
+.s-story{
+  background:var(--surface-2);
+  padding:var(--sp-7) 0;
+}
+
+.s-story .s-story__grid{
+  display:grid;
+  grid-template-columns:1.15fr .85fr;
+  gap:clamp(2rem, 5vw, var(--sp-7));
+  align-items:center;
+}
+
+/* IMAGE side — big rounded frame */
+.s-story .s-story__frame{
+  border-radius:var(--radius-lg);
+  overflow:hidden;
+  box-shadow:var(--shadow);
+}
+.s-story .s-story__frame img{
+  width:100%;
+  height:100%;
+  min-height:clamp(360px, 44vw, 600px);
+  object-fit:cover;
+}
+
+/* TEXT side */
+.s-story .s-story__body{
+  max-width:34rem;
+}
+.s-story .s-story__body h2{
+  margin-bottom:var(--sp-4);
+}
+.s-story .s-story__body p{
+  color:var(--ink-soft);
+  font-size:var(--s-1);
+  line-height:1.65;
+}
+
+/* stat row */
+.s-story .s-story__stats{
+  display:grid;
+  grid-template-columns:repeat(3, auto);
+  gap:clamp(1.25rem, 4vw, 2.75rem);
+  margin:var(--sp-5) 0;
+  padding-top:var(--sp-4);
+  border-top:1px solid var(--line);
+}
+.s-story .s-story__stat{
+  display:flex;
+  flex-direction:column;
+  gap:.35rem;
+}
+.s-story .s-story__num{
+  font-family:var(--font-display);
+  font-weight:600;
+  font-size:clamp(1.7rem, 3vw, var(--s-3));
+  color:var(--pop);
+  line-height:1;
+  letter-spacing:-.01em;
+}
+.s-story .s-story__lbl{
+  font-family:var(--font-body);
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:.12em;
+  font-size:.68rem;
+  color:var(--ink-soft);
+}
+
+/* ===== responsive ===== */
+@media (max-width:880px){
+  .s-story .s-story__grid{
+    grid-template-columns:1fr;
+    gap:var(--sp-5);
+  }
+  .s-story .s-story__body{ max-width:none; }
+  .s-story .s-story__frame img{ min-height:clamp(300px, 60vw, 440px); }
+}
+@media (max-width:480px){
+  .s-story .s-story__stats{
+    gap:1.25rem;
+  }
+  .s-story .s-story__num{ font-size:1.6rem; }
+}
+
+/* ===== quote ===== */
+/* ── Quote / Affirmation Candle feature band ── */
+.s-quote{
+  padding:var(--sp-7) 0;
+  /* soft blush tint over the warm cream page bg */
+  background:
+    linear-gradient(180deg, rgba(216,169,140,.16), rgba(216,169,140,.06)),
+    var(--bg);
+}
+
+.s-quote .quote-grid{
+  display:grid;
+  grid-template-columns:1.05fr .95fr;
+  gap:clamp(var(--sp-5), 5vw, var(--sp-7));
+  align-items:center;
+}
+
+/* IMAGE side — big packshot on a rounded cream panel */
+.s-quote .quote-media{ position:relative }
+.s-quote .quote-panel{
+  margin:0;
+  background:var(--surface-2);
+  border-radius:var(--radius-lg);
+  border:1px solid var(--line);
+  box-shadow:var(--shadow);
+  padding:clamp(var(--sp-4), 4vw, var(--sp-6));
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.s-quote .quote-panel img{
+  width:100%;
+  max-height:560px;
+  height:auto;
+  object-fit:contain;
+  filter:drop-shadow(0 18px 26px rgba(62,52,43,.18));
+}
+
+/* TEXT side */
+.s-quote .quote-copy{ max-width:34rem }
+.s-quote .quote-lede{
+  color:var(--ink-soft);
+  font-size:var(--s-1);
+  line-height:1.7;
+  margin-bottom:var(--sp-4);
+}
+
+/* chips naming popular ones */
+.s-quote .quote-chips{
+  list-style:none;
+  margin:0 0 var(--sp-5);
+  padding:0;
+  display:flex;
+  flex-wrap:wrap;
+  gap:var(--sp-2);
+}
+.s-quote .quote-chip{
+  font-family:var(--font-display);
+  font-weight:500;
+  font-size:var(--s-0);
+  color:var(--ink);
+  background:var(--surface);
+  border:1px solid var(--line);
+  border-radius:var(--radius-pill);
+  padding:.5em 1.1em;
+  box-shadow:var(--shadow-soft);
+}
+
+@media (max-width:880px){
+  .s-quote .quote-grid{
+    grid-template-columns:1fr;
+    gap:var(--sp-5);
+  }
+  .s-quote .quote-copy{ max-width:none }
+  .s-quote .quote-panel img{ max-height:440px }
+}
+
+/* ===== values ===== */
+/* Values / trust strip — compact cream band */
+.s-values{
+  padding:var(--sp-5) 0;
+  background:var(--bg);
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+}
+
+.s-values .sv-row{
+  list-style:none;
+  margin:0;
+  padding:0;
+  display:grid;
+  grid-template-columns:repeat(6,1fr);
+  gap:var(--sp-4) var(--sp-3);
+  align-items:start;
+}
+
+.s-values .sv-item{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  text-align:center;
+  gap:var(--sp-2);
+  padding:0 var(--sp-2);
+}
+
+.s-values .sv-ico{
+  color:var(--pop);
+  line-height:0;
+}
+.s-values .sv-ico svg{
+  width:36px;
+  height:36px;
+  display:block;
+}
+
+.s-values .sv-label{
+  font-family:var(--font-body);
+  font-weight:700;
+  font-size:var(--s--1);
+  line-height:1.3;
+  letter-spacing:.01em;
+  color:var(--ink);
+  max-width:13ch;
+}
+
+/* 6 -> 3 */
+@media (max-width:900px){
+  .s-values .sv-row{ grid-template-columns:repeat(3,1fr); }
+}
+
+/* 3 -> 2 */
+@media (max-width:560px){
+  .s-values{ padding:var(--sp-4) 0; }
+  .s-values .sv-row{ grid-template-columns:repeat(2,1fr); gap:var(--sp-4) var(--sp-2); }
+}
+
+/* ===== reviews ===== */
+/* ============ REVIEWS WALL — Sweet Water Decor ============ */
+.s-reviews{
+  padding:var(--sp-7) 0;
+  background:var(--bg);
+}
+
+/* ---- summary header ---- */
+.s-reviews__head{
+  text-align:center;
+  margin:0 auto var(--sp-6);
+  max-width:720px;
+}
+.s-reviews__summary{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:var(--sp-3);
+}
+.s-reviews__score{
+  display:flex;
+  align-items:center;
+  gap:var(--sp-4);
+}
+.s-reviews__num{
+  font-family:var(--font-display);
+  font-weight:600;
+  font-size:clamp(3.4rem,7vw,var(--s-5));
+  line-height:1;
+  color:var(--ink);
+  letter-spacing:-.02em;
+}
+.s-reviews__stars{display:inline-flex; gap:2px}
+.s-reviews__stars svg{width:clamp(22px,3vw,30px); height:auto}
+.s-reviews__lede{
+  font-family:var(--font-display);
+  font-weight:500;
+  font-size:var(--s-2);
+  color:var(--ink);
+  margin:0;
+}
+.s-reviews__write{margin-top:var(--sp-2)}
+
+/* ---- grid ---- */
+.s-reviews__grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:var(--sp-4);
+}
+
+/* ---- card ---- */
+.s-reviews__card{
+  display:flex;
+  flex-direction:column;
+  gap:var(--sp-3);
+  background:var(--surface);
+  border:1px solid var(--line);
+  border-radius:var(--radius-lg);
+  padding:var(--sp-5);
+  box-shadow:var(--shadow-soft);
+  transition:transform .18s ease, box-shadow .25s ease;
+}
+.s-reviews__card:hover{
+  transform:translateY(-4px);
+  box-shadow:var(--shadow);
+}
+.s-reviews__cstars{display:inline-flex; gap:2px}
+.s-reviews__cstars svg{display:block}
+.s-reviews__quote{
+  font-family:var(--font-display);
+  font-weight:400;
+  font-size:var(--s-1);
+  line-height:1.45;
+  color:var(--ink);
+  margin:0;
+  flex:1 1 auto;
+}
+.s-reviews__by{
+  display:flex;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:var(--sp-3);
+  margin-top:var(--sp-2);
+  padding-top:var(--sp-3);
+  border-top:1px solid var(--line);
+}
+.s-reviews__name{
+  font-family:var(--font-body);
+  font-weight:800;
+  font-size:var(--s--1);
+  letter-spacing:.02em;
+  color:var(--ink);
+}
+.s-reviews__tag{
+  display:inline-flex;
+  align-items:center;
+  font-family:var(--font-body);
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:.1em;
+  font-size:.62rem;
+  color:var(--pop);
+  background:var(--surface-2);
+  padding:.35em .7em;
+  border-radius:var(--radius-pill);
+}
+
+/* ---- disclaimer ---- */
+.s-reviews__note{
+  text-align:center;
+  margin:var(--sp-5) 0 0;
+  font-family:var(--font-body);
+  font-size:var(--s--1);
+  color:var(--ink-soft);
+  font-style:italic;
+}
+
+/* ---- responsive ---- */
+@media (max-width:980px){
+  .s-reviews__grid{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:600px){
+  .s-reviews__grid{grid-template-columns:1fr}
+  .s-reviews__score{gap:var(--sp-3)}
+}
+
+/* ===== news ===== */
+/* Newsletter band — warm clay band, cream text */
+.s-news{
+  padding: var(--sp-7) 0;
+  background: var(--pop);
+}
+.s-news .news-card{
+  max-width: 34rem;
+  margin: 0 auto;
+  text-align: center;
+}
+.s-news .eyebrow{
+  color: var(--accent-ink);
+  opacity: .95;
+}
+.s-news h2{
+  color: var(--accent-ink);
+  margin-bottom: var(--sp-3);
+}
+.s-news .news-sub{
+  color: var(--accent-ink);
+  font-size: var(--s-1);
+  line-height: 1.5;
+  opacity: .94;
+  margin: 0 auto var(--sp-5);
+  max-width: 30rem;
+}
+.s-news .news-form{
+  max-width: 34rem;
+  margin: 0 auto;
+}
+.s-news .news-label{
+  display: block;
+  font-family: var(--font-body);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: .14em;
+  font-size: .7rem;
+  color: var(--accent-ink);
+  opacity: .9;
+  margin-bottom: var(--sp-2);
+}
+.s-news .news-row{
+  display: flex;
+  justify-content: center;
+  gap: var(--sp-2);
+}
+.s-news .news-input{
+  flex: 1 1 auto;
+  min-width: 0;
+  font-family: var(--font-body);
+  font-size: var(--s-0);
+  color: var(--ink);
+  background: var(--surface);
+  border: 1.5px solid transparent;
+  border-radius: var(--radius);
+  padding: 1em 1.1em;
+  line-height: 1;
+  transition: box-shadow .2s ease;
+}
+.s-news .news-input::placeholder{ color: var(--ink-soft) }
+.s-news .news-input:focus{
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(251,246,238,.55);
+}
+.s-news .news-btn{
+  flex: 0 0 auto;
+  background: var(--accent-ink);
+  color: var(--ink);
+  border-color: var(--accent-ink);
+}
+.s-news .news-btn:hover{
+  background: #fff;
+  border-color: #fff;
+  box-shadow: 0 10px 26px rgba(62,52,43,.22);
+}
+.s-news .news-fine{
+  color: var(--accent-ink);
+  opacity: .82;
+  font-size: var(--s--1);
+  margin: var(--sp-4) 0 0;
+}
+
+@media (max-width:520px){
+  .s-news .news-row{ flex-direction: column }
+  .s-news .news-btn{ width: 100% }
+}
+
+/* ===== footer ===== */
+/* ===== Footer — deep-brown, cream text ===== */
+.s-footer{
+  background:var(--ink);
+  color:var(--accent-ink);
+  padding:var(--sp-7) 0 var(--sp-5);
+  font-family:var(--font-body);
+}
+
+.s-footer__top{
+  display:grid;
+  grid-template-columns:1.3fr 2fr;
+  gap:var(--sp-6);
+  padding-bottom:var(--sp-6);
+  border-bottom:1px solid rgba(251,246,238,.14);
+}
+
+/* --- brand block --- */
+.s-footer__logo{
+  height:26px; width:auto;
+  filter:brightness(0) invert(1);
+  margin-bottom:var(--sp-4);
+}
+.s-footer__tag{
+  max-width:30ch;
+  color:rgba(251,246,238,.72);
+  font-size:var(--s--1);
+  line-height:1.7;
+  margin:0 0 var(--sp-4);
+}
+
+/* --- social --- */
+.s-footer__social{ display:flex; gap:var(--sp-2); }
+.s-footer__soc{
+  display:inline-flex; align-items:center; justify-content:center;
+  width:38px; height:38px; border-radius:var(--radius-pill);
+  color:var(--accent-ink);
+  background:rgba(251,246,238,.07);
+  border:1px solid rgba(251,246,238,.14);
+  transition:color .2s ease, background .2s ease, border-color .2s ease, transform .15s ease;
+}
+.s-footer__soc:hover{
+  color:#fff; background:var(--pop);
+  border-color:var(--pop);
+  transform:translateY(-2px);
+}
+
+/* --- link columns --- */
+.s-footer__cols{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:var(--sp-5);
+}
+.s-footer__h{
+  font-family:var(--font-body);
+  font-weight:800; text-transform:uppercase;
+  letter-spacing:.16em; font-size:.72rem;
+  color:var(--blush);
+  margin:0 0 var(--sp-4);
+}
+.s-footer__col ul{ list-style:none; margin:0; padding:0; }
+.s-footer__col li{ margin-bottom:var(--sp-3); }
+.s-footer__col a{
+  color:rgba(251,246,238,.78);
+  font-size:var(--s--1);
+  transition:color .18s ease;
+}
+.s-footer__col a:hover{ color:var(--pop); }
+
+/* --- bottom bar --- */
+.s-footer__bottom{
+  display:flex; align-items:center; flex-wrap:wrap;
+  gap:var(--sp-3) var(--sp-4);
+  padding-top:var(--sp-5);
+}
+.s-footer__copy{
+  margin:0;
+  font-size:var(--s--1);
+  color:rgba(251,246,238,.62);
+}
+.s-footer__note{
+  margin:0;
+  font-size:.74rem; font-style:italic;
+  color:rgba(251,246,238,.40);
+}
+.s-footer__pay{
+  display:flex; gap:var(--sp-2); flex-wrap:wrap;
+  margin-left:auto;
+}
+.s-footer__pill{
+  font-size:.66rem; font-weight:700;
+  letter-spacing:.04em;
+  padding:.4em .7em; border-radius:var(--radius);
+  color:rgba(251,246,238,.78);
+  background:rgba(251,246,238,.08);
+  border:1px solid rgba(251,246,238,.14);
+}
+
+/* --- responsive --- */
+@media (max-width:860px){
+  .s-footer__top{ grid-template-columns:1fr; gap:var(--sp-5); }
+}
+@media (max-width:560px){
+  .s-footer__cols{ grid-template-columns:repeat(2,1fr); gap:var(--sp-5); }
+  .s-footer__bottom{ flex-direction:column; align-items:flex-start; }
+  .s-footer__pay{ margin-left:0; }
+}
+
