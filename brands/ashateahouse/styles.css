@@ -610,24 +610,41 @@
 }
 
 /* ===== matcha ===== */
-/* ── s-matcha: ceremonial green split band ───────────────────────── */
+/* ── s-matcha: ceremonial green product band ─────────────────────── */
 
 .s-matcha {
-  background: var(--accent);
   position: relative;
   overflow: hidden;
+  /* layered deep-forest band — not a flat fill:
+     diagonal forest gradient + two organic glows */
+  background:
+    radial-gradient(70% 90% at 88% 12%, rgba(136, 162, 74, .26), transparent 60%),
+    radial-gradient(80% 120% at 10% 100%, rgba(11, 36, 28, .55), transparent 55%),
+    linear-gradient(135deg, #1d5f4a 0%, #18503f 45%, #123528 100%);
+}
+
+/* faint botanical dot texture for depth */
+.s-matcha::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(255, 255, 255, .06) 1px, transparent 1.4px);
+  background-size: 26px 26px;
+  opacity: .6;
+  pointer-events: none;
 }
 
 .s-matcha .wrap {
   position: relative;
+  z-index: 1;
 }
 
 /* Two-column layout */
 .s-matcha__inner {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1.05fr 1fr;
   align-items: center;
-  gap: var(--sp-6);
+  gap: var(--sp-7);
   padding-block: var(--sp-7);
 }
 
@@ -636,95 +653,157 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: var(--sp-3);
 }
 
-.s-matcha__eyebrow {
-  color: var(--pop);
-  opacity: 1;
-}
-
-/* Override base .eyebrow color for dark bg */
+.s-matcha__eyebrow,
 .s-matcha .eyebrow {
   color: var(--pop);
 }
 
 .s-matcha__heading {
-  font-family: var(--font-display);
-  color: rgba(255, 255, 255, 1);
-  margin: 0;
+  color: #fff;
+  margin: 0 0 var(--sp-4);
 }
 
 .s-matcha__body {
   color: rgba(255, 255, 255, 0.82);
-  max-width: 42ch;
-  margin: 0;
+  max-width: 44ch;
+  margin: 0 0 var(--sp-5);
 }
 
-/* btn-light on dark bg */
-.s-matcha .btn.btn-light {
+/* feature checklist */
+.s-matcha__features {
+  list-style: none;
+  margin: 0 0 var(--sp-5);
+  padding: 0;
+  display: grid;
+  gap: var(--sp-3);
+}
+
+.s-matcha__features li {
+  position: relative;
+  padding-left: 2.1em;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.4;
+}
+
+.s-matcha__features li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: .05em;
+  width: 1.35em;
+  height: 1.35em;
+  border-radius: 50%;
+  background: rgba(136, 162, 74, .2);
+  border: 1px solid var(--pop);
+}
+
+.s-matcha__features li::after {
+  content: "";
+  position: absolute;
+  left: .47em;
+  top: .28em;
+  width: .34em;
+  height: .62em;
+  border: solid var(--pop);
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.s-matcha__cta {
   margin-top: var(--sp-1);
 }
 
-/* RIGHT: image column */
-.s-matcha__image-wrap {
+/* RIGHT: matcha-powder cutout on a cream disc */
+.s-matcha__media {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.s-matcha__image-frame {
+.s-matcha__disc {
+  position: relative;
+  z-index: 1;
   width: 100%;
-  max-width: 560px;
-  aspect-ratio: 4 / 5;
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  box-shadow: var(--shadow);
+  max-width: 460px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 38% 32%, var(--bg) 0%, var(--surface) 58%, var(--surface-2) 100%);
+  box-shadow:
+    0 28px 64px rgba(8, 26, 20, .42),
+    inset 0 2px 0 rgba(255, 255, 255, .5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* soft matcha-green glow inside the disc */
+.s-matcha__glow {
+  position: absolute;
+  width: 72%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(136, 162, 74, .4), transparent 70%);
+  z-index: 0;
 }
 
 .s-matcha__img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
+  position: relative;
+  z-index: 1;
+  width: 82%;
+  height: auto;
   display: block;
+  filter: drop-shadow(0 22px 30px rgba(26, 26, 22, .28));
 }
 
-/* Float element — desktop only */
-.s-matcha__float {
-  pointer-events: none;
-}
-
-.s-matcha__float img {
-  width: 100%;
-  display: block;
-  filter: drop-shadow(0 8px 24px rgba(0, 0, 0, 0.22));
+/* product caption chip clipped to the disc */
+.s-matcha__badge {
+  position: absolute;
+  z-index: 2;
+  bottom: 6%;
+  right: -8px;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: var(--s--1);
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  padding: .7em 1.2em;
+  border-radius: var(--radius-pill);
+  box-shadow: var(--shadow);
 }
 
 /* ── Responsive ───────────────────────────────────────────────────── */
 
-@media (max-width: 768px) {
+@media (max-width: 860px) {
   .s-matcha__inner {
     grid-template-columns: 1fr;
-    gap: var(--sp-4);
+    gap: var(--sp-6);
     padding-block: var(--sp-6);
   }
 
-  .s-matcha__image-wrap {
+  .s-matcha__media {
     order: -1;
   }
 
-  .s-matcha__image-frame {
-    max-width: 100%;
-    aspect-ratio: 3 / 2;
+  .s-matcha__disc {
+    max-width: 320px;
   }
 
-  .s-matcha__float {
-    display: none;
+  .s-matcha__badge {
+    right: 4px;
   }
 
   .s-matcha__heading {
     font-size: var(--s-3);
+  }
+
+  .s-matcha__heading br {
+    display: none;
   }
 }
 
