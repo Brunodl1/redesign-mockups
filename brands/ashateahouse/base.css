@@ -1,0 +1,95 @@
+/* Asha Tea House — base foundation (warm-natural minimal; faithful to real site) */
+:root{
+  /* color — warm white + near-black, deep tea-green accent, matcha pop */
+  --bg:        #FBFAF5;   /* warm white page */
+  --surface:   #F3EFE6;   /* soft stone/cream card-band */
+  --surface-2: #E8E1D3;   /* deeper warm stone */
+  --ink:       #1A1A16;   /* near-black */
+  --ink-soft:  #6C6660;   /* warm grey secondary */
+  --accent:    #1F6B53;   /* deep tea/matcha green — buttons, bands */
+  --accent-ink:#FBFAF5;
+  --accent-2:  #163E32;   /* dark forest — dark bands / footer */
+  --pop:       #88A24A;   /* matcha-leaf green — small highlights/stars */
+  --line:      #E3DBCC;   /* warm hairline */
+  --star:      #88A24A;
+  --btn:       #1F6B53;
+  --btn-ink:   #FBFAF5;
+  /* type */
+  --font-display: "Jost", "Futura", "Century Gothic", sans-serif;
+  --font-body:    "Mulish", "Helvetica Neue", Arial, sans-serif;
+  --s--1: .82rem;
+  --s-0:  1rem;
+  --s-1:  1.2rem;
+  --s-2:  1.55rem;
+  --s-3:  2.1rem;
+  --s-4:  2.9rem;
+  --s-5:  4rem;
+  /* space — generous / calm */
+  --sp-1:.25rem; --sp-2:.5rem; --sp-3:1rem; --sp-4:1.5rem;
+  --sp-5:2.5rem; --sp-6:4.25rem; --sp-7:6.5rem;
+  /* radius + shadow — soft minimal */
+  --radius:    6px;
+  --radius-lg: 14px;
+  --radius-pill: 999px;
+  --shadow:    0 12px 36px rgba(26,26,22,.09);
+  --shadow-sm: 0 6px 18px rgba(26,26,22,.07);
+  --maxw: 1280px;
+}
+
+*{box-sizing:border-box}
+html,body{overflow-x:clip}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--bg);color:var(--ink);
+  font-family:var(--font-body);font-size:var(--s-0);line-height:1.65;
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+
+/* display = Jost (Futura-like geometric), calm weights */
+h1,h2,h3{font-family:var(--font-display);font-weight:400;line-height:1.1;
+  letter-spacing:.01em;color:var(--ink);margin:0}
+h1{font-size:var(--s-5);font-weight:500}
+h2{font-size:var(--s-4)}
+h3{font-size:var(--s-2);font-weight:500}
+
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 var(--sp-4);width:100%}
+.sec{position:relative;padding:var(--sp-7) 0}
+.eyebrow{font-family:var(--font-display);font-size:var(--s--1);font-weight:500;
+  letter-spacing:.24em;text-transform:uppercase;color:var(--accent);margin:0 0 var(--sp-3)}
+
+/* buttons — calm, uppercase letter-spaced */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5em;
+  font-family:var(--font-display);font-size:var(--s--1);font-weight:500;
+  letter-spacing:.14em;text-transform:uppercase;cursor:pointer;
+  border:1.5px solid transparent;padding:1em 2em;border-radius:var(--radius);
+  transition:.22s ease;text-align:center;line-height:1}
+.btn-primary{background:var(--btn);color:var(--btn-ink);border-color:var(--btn)}
+.btn-primary:hover{background:var(--accent-2);border-color:var(--accent-2)}
+.btn-outline{background:transparent;color:var(--ink);border-color:var(--ink)}
+.btn-outline:hover{background:var(--ink);color:var(--bg)}
+.btn-light{background:var(--bg);color:var(--ink);border-color:var(--bg)}
+.btn-light:hover{background:transparent;color:var(--bg);border-color:var(--bg)}
+.btn-block{display:flex;width:100%}
+
+.stars{color:var(--star);letter-spacing:.08em;font-size:1rem}
+
+/* float (static product elements) */
+.float{position:absolute;z-index:2;pointer-events:none}
+.float img{width:100%;height:auto;transform:rotate(var(--rot,0deg));
+  filter:drop-shadow(0 20px 28px rgba(26,26,22,.22)) drop-shadow(0 5px 9px rgba(26,26,22,.13))}
+
+/* scroll reveal (3D) */
+.reveal{opacity:0;transform:perspective(900px) rotateX(8deg) translateY(26px);
+  transition:.7s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  .reveal{opacity:1;transform:none;transition:none}
+  html{scroll-behavior:auto}
+}
+
+@media (max-width:1000px){.float{display:none}}
+@media (max-width:900px){
+  :root{--s-5:2.7rem;--s-4:2.2rem;--s-3:1.75rem;--sp-7:4rem}
+}
