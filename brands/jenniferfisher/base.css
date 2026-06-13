@@ -1,0 +1,95 @@
+/* Jennifer Fisher — base foundation (bold editorial luxe; faithful to real site) */
+:root{
+  /* color — white/black base, gold from product + sparing accent */
+  --bg:        #FFFFFF;
+  --surface:   #F6F4EF;   /* warm off-white card/band */
+  --surface-2: #ECE9E2;   /* deeper warm grey fill */
+  --ink:       #141414;   /* near-black */
+  --ink-soft:  #6E6A64;   /* warm grey secondary */
+  --accent:    #141414;   /* black — buttons */
+  --accent-ink:#FFFFFF;
+  --accent-2:  #0E0E0E;   /* true black — dark bands / footer / hero panel */
+  --gold:      #B0823C;   /* metallic gold — hairlines/accents, sparingly */
+  --pop:       #B0823C;
+  --line:      #E4E1D9;   /* hairline */
+  --star:      #B0823C;
+  --btn:       #141414;
+  --btn-ink:   #FFFFFF;
+  /* type */
+  --font-display: "Fraunces", "Times New Roman", Georgia, serif;
+  --font-body:    "Inter", "Helvetica Neue", Arial, sans-serif;
+  --s--1: .8rem;
+  --s-0:  1rem;
+  --s-1:  1.2rem;
+  --s-2:  1.6rem;
+  --s-3:  2.3rem;
+  --s-4:  3.4rem;
+  --s-5:  4.8rem;
+  /* space — generous editorial */
+  --sp-1:.25rem; --sp-2:.5rem; --sp-3:1rem; --sp-4:1.5rem;
+  --sp-5:2.75rem; --sp-6:4.5rem; --sp-7:7rem;
+  /* radius + shadow — sharp/minimal */
+  --radius:    2px;
+  --radius-lg: 3px;
+  --radius-pill: 999px;
+  --shadow:    0 14px 40px rgba(20,20,20,.10);
+  --shadow-sm: 0 6px 20px rgba(20,20,20,.07);
+  --maxw: 1340px;
+}
+
+*{box-sizing:border-box}
+html,body{overflow-x:clip}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--bg);color:var(--ink);
+  font-family:var(--font-body);font-size:var(--s-0);line-height:1.65;
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+
+h1,h2,h3{font-family:var(--font-display);font-weight:400;line-height:1.04;
+  letter-spacing:-.01em;color:var(--ink);margin:0}
+h1{font-size:var(--s-5)}
+h2{font-size:var(--s-4)}
+h3{font-size:var(--s-2)}
+
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 var(--sp-4);width:100%}
+.sec{position:relative;padding:var(--sp-7) 0}
+.eyebrow{font-family:var(--font-body);font-size:var(--s--1);font-weight:600;
+  letter-spacing:.26em;text-transform:uppercase;color:var(--ink-soft);margin:0 0 var(--sp-3)}
+
+/* buttons — sharp, uppercase, letter-spaced */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5em;
+  font-family:var(--font-body);font-size:var(--s--1);font-weight:600;
+  letter-spacing:.16em;text-transform:uppercase;cursor:pointer;
+  border:1.5px solid transparent;padding:1.05em 2.2em;border-radius:var(--radius);
+  transition:.22s ease;text-align:center;line-height:1}
+.btn-primary{background:var(--btn);color:var(--btn-ink);border-color:var(--btn)}
+.btn-primary:hover{background:#000;border-color:#000}
+.btn-outline{background:transparent;color:var(--ink);border-color:var(--ink)}
+.btn-outline:hover{background:var(--ink);color:var(--bg)}
+.btn-light{background:var(--bg);color:var(--ink);border-color:var(--bg)}
+.btn-light:hover{background:transparent;color:var(--bg);border-color:var(--bg)}
+.btn-block{display:flex;width:100%}
+
+.stars{color:var(--star);letter-spacing:.08em;font-size:1rem}
+
+/* float (static product elements) */
+.float{position:absolute;z-index:2;pointer-events:none}
+.float img{width:100%;height:auto;transform:rotate(var(--rot,0deg));
+  filter:drop-shadow(0 22px 30px rgba(20,20,20,.28)) drop-shadow(0 6px 10px rgba(20,20,20,.16))}
+
+/* scroll reveal (3D) */
+.reveal{opacity:0;transform:perspective(900px) rotateX(8deg) translateY(26px);
+  transition:.7s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  .reveal{opacity:1;transform:none;transition:none}
+  html{scroll-behavior:auto}
+}
+
+@media (max-width:1000px){.float{display:none}}
+@media (max-width:900px){
+  :root{--s-5:3rem;--s-4:2.4rem;--s-3:1.9rem;--sp-7:4rem}
+}
