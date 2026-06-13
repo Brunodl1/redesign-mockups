@@ -58,7 +58,7 @@
   display:inline-flex;
   align-items:center;
 }
-.site-logo img{height:30px; width:auto}
+.site-logo img{height:42px; width:auto}
 
 /* right: actions */
 .site-actions{
@@ -884,7 +884,7 @@
 
 /* brand block */
 .site-foot .foot-logo{display:inline-block}
-.site-foot .foot-logo img{height:30px; width:auto}
+.site-foot .foot-logo img{height:40px; width:auto}
 .site-foot .foot-tag{
   margin:var(--sp-4) 0 var(--sp-4);
   max-width:30ch;
