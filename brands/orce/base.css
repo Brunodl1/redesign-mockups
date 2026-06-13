@@ -1,0 +1,78 @@
+/* Orcé Cosmetics — per-brand foundation (quiet-luxury navy-on-bone, didone serif, square UI) */
+:root{
+  /* color — navy does double duty as ink + accent (faithful to real site) */
+  --bg:#F4F3EE;            /* warm bone / off-white page bg */
+  --surface:#FBFAF6;       /* lighter card surface */
+  --surface-2:#ECE7DC;     /* warm tan band tint */
+  --ink:#001832;           /* deep navy — text + buttons */
+  --ink-soft:#4D5256;      /* muted slate — secondary text/nav */
+  --accent:#001832;        /* navy CTAs */
+  --accent-2:#0C2B4A;      /* hover navy */
+  --accent-ink:#F4F3EE;    /* bone text on navy */
+  --pop:#B08D57;           /* foil gold — eyebrows/stars (sparing) */
+  --line:#E1DBCE;          /* hairline */
+  --btn:#001832; --btn-ink:#F4F3EE;
+  --star:#B08D57;
+  /* type — didone serif display (Parnaso→Playfair) + Helvetica body */
+  --font-display:"Playfair Display",Georgia,"Times New Roman",serif;
+  --font-body:"Helvetica Neue",Helvetica,Arial,sans-serif;
+  --s--1:.84rem; --s-0:1rem; --s-1:1.25rem; --s-2:1.65rem;
+  --s-3:2.3rem; --s-4:3.4rem; --s-5:4.6rem;
+  /* space (4px base) */
+  --sp-1:.25rem; --sp-2:.5rem; --sp-3:1rem; --sp-4:1.5rem;
+  --sp-5:2.5rem; --sp-6:4rem; --sp-7:6.5rem;
+  /* radius + shadow — SQUARE, restrained (quiet luxury) */
+  --radius:0px; --radius-lg:0px;
+  --shadow:0 14px 44px rgba(0,24,50,.12);
+  --shadow-sm:0 6px 20px rgba(0,24,50,.08);
+  /* layout */
+  --maxw:1280px;
+}
+*{box-sizing:border-box}
+html,body{overflow-x:clip}
+html{scroll-behavior:smooth}
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font-family:var(--font-body); font-size:var(--s-0); line-height:1.6;
+  -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+}
+img{max-width:100%; display:block}
+h1,h2,h3{font-family:var(--font-display); font-weight:500; line-height:1.06; letter-spacing:0; margin:0 0 var(--sp-3); color:var(--ink)}
+h1{font-size:var(--s-5)} h2{font-size:var(--s-4)} h3{font-size:var(--s-2); font-weight:500}
+h1 em,h2 em,h3 em{font-style:italic} /* italic emphasis words (brand signature) */
+p{margin:0 0 var(--sp-3)}
+a{color:inherit; text-decoration:none}
+.wrap{width:min(100% - 2.5rem, var(--maxw)); margin-inline:auto}
+.section{padding:var(--sp-7) 0}
+/* eyebrow — uppercase letter-spaced (brand signature) */
+.eyebrow{font-family:var(--font-body); font-weight:700; font-size:var(--s--1);
+  text-transform:uppercase; letter-spacing:.22em; color:var(--ink-soft); margin:0 0 var(--sp-3)}
+.eyebrow.gold{color:var(--pop)}
+.lead{font-size:var(--s-1); color:var(--ink-soft); line-height:1.55}
+/* buttons — SQUARE, navy, UPPERCASE letter-spaced */
+.btn{display:inline-flex; align-items:center; justify-content:center; gap:.55rem;
+  font-family:var(--font-body); font-weight:700; font-size:var(--s--1); letter-spacing:.16em;
+  text-transform:uppercase; padding:1.05rem 2rem; border-radius:0; border:1.5px solid transparent;
+  cursor:pointer; transition:background .18s ease, color .18s ease, border-color .18s ease, transform .18s ease;}
+.btn:hover{transform:translateY(-1px)}
+.btn-primary{background:var(--accent); color:var(--accent-ink)}
+.btn-primary:hover{background:var(--accent-2)}
+.btn-outline{background:transparent; color:var(--ink); border-color:var(--ink)}
+.btn-outline:hover{background:var(--ink); color:var(--accent-ink)}
+.btn-light{background:var(--bg); color:var(--ink); border-color:var(--bg)}
+.btn-light:hover{background:transparent; color:var(--bg); border-color:var(--bg)}
+.btn-block{display:flex; width:100%}
+.ic{width:40px; height:40px; flex:none; stroke:currentColor; fill:none; stroke-width:1.4}
+/* floating elements (mechanical; unused this build) */
+.float{position:absolute; z-index:2; pointer-events:none}
+.float img{width:100%; height:auto; transform:rotate(var(--rot,0deg));
+  filter:drop-shadow(0 18px 26px rgba(0,24,50,.22))}
+@media(max-width:1000px){.float{display:none}}
+/* scroll-reveal (the 3D effect) */
+.reveal{opacity:0; transform:perspective(900px) rotateX(8deg) translateY(26px);
+  transition:opacity .7s cubic-bezier(.2,.7,.2,1), transform .7s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1; transform:none}
+@media(prefers-reduced-motion:reduce){
+  .reveal{opacity:1 !important; transform:none !important; transition:none}
+  html{scroll-behavior:auto}
+}
