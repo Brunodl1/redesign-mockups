@@ -1,0 +1,106 @@
+/* fond. — brand foundation. Sustainable coconut-wax candles: warm cream + deep wine + amber. */
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Alegreya+Sans:wght@400;500;700;800&display=swap');
+
+:root{
+  /* color */
+  --bg:        #F3ECDF;   /* warm cream page bg */
+  --surface:   #FBF7EE;   /* card / raised surface */
+  --surface-2: #EADFCB;   /* warm sand alt band */
+  --ink:       #260D14;   /* deep wine/aubergine — headings, text, bands */
+  --ink-soft:  #6E5A5E;   /* muted wine-grey secondary */
+  --accent:    #260D14;   /* deep wine — primary buttons */
+  --accent-ink:#FBF7EE;   /* text on accent */
+  --pop:       #C2954B;   /* warm amber/gold — badges, prices, stars, flame accent */
+  --pop-2:     #9A3B2C;   /* warm terracotta — secondary pop (sale/urgency) */
+  --line:      #E1D4C0;   /* warm hairline */
+  --star:      #C2954B;
+  --btn:       #260D14;
+  --btn-ink:   #FBF7EE;
+  /* type */
+  --font-display: "Fraunces", Georgia, "Times New Roman", serif;
+  --font-body:    "Alegreya Sans", "Helvetica Neue", Arial, sans-serif;
+  --s--1: .84rem;
+  --s-0:  1rem;
+  --s-1:  1.2rem;
+  --s-2:  1.6rem;
+  --s-3:  2.25rem;
+  --s-4:  3.25rem;
+  --s-5:  4.5rem;
+  /* space (4px base) */
+  --sp-1:.25rem; --sp-2:.5rem; --sp-3:1rem; --sp-4:1.5rem;
+  --sp-5:2.5rem; --sp-6:4rem; --sp-7:6.5rem;
+  /* radius + shadow */
+  --radius:    6px;
+  --radius-lg: 18px;
+  --radius-pill: 999px;
+  --shadow:    0 16px 44px rgba(38,13,20,.13);
+  --shadow-soft: 0 6px 22px rgba(38,13,20,.08);
+  --maxw: 1280px;
+}
+
+*{box-sizing:border-box}
+html,body{overflow-x:clip}
+html{scroll-behavior:smooth}
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font-family:var(--font-body); font-size:var(--s-0); line-height:1.65;
+  -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+}
+img{max-width:100%; display:block}
+a{color:inherit; text-decoration:none}
+
+h1,h2,h3{
+  font-family:var(--font-display); font-weight:500; color:var(--ink);
+  line-height:1.05; letter-spacing:-.015em; text-transform:lowercase;
+  margin:0 0 var(--sp-3);
+}
+h1{font-size:clamp(2.6rem,6vw,var(--s-5)); font-weight:500}
+h2{font-size:clamp(2rem,4vw,var(--s-4))}
+h3{font-size:var(--s-2); font-weight:600}
+p{margin:0 0 var(--sp-3)}
+
+.wrap{max-width:var(--maxw); margin:0 auto; padding:0 var(--sp-4)}
+.section{padding:var(--sp-7) 0; position:relative}
+
+.eyebrow{
+  font-family:var(--font-body); font-weight:700; text-transform:uppercase;
+  letter-spacing:.2em; font-size:.72rem; color:var(--pop);
+  margin:0 0 var(--sp-3); display:inline-block;
+}
+
+/* buttons — clean squared-minimal (brand uses square; refined) */
+.btn{
+  display:inline-flex; align-items:center; justify-content:center; gap:.5em;
+  font-family:var(--font-body); font-weight:700; font-size:.95rem;
+  letter-spacing:.04em;
+  padding:.95em 1.9em; border-radius:var(--radius); border:1.5px solid transparent;
+  cursor:pointer; transition:transform .15s ease, box-shadow .2s ease, background .2s ease, color .2s ease;
+  line-height:1; white-space:nowrap;
+}
+.btn:hover{transform:translateY(-2px)}
+.btn-primary{background:var(--btn); color:var(--btn-ink)}
+.btn-primary:hover{box-shadow:0 10px 26px rgba(38,13,20,.30)}
+.btn-accent{background:var(--pop); color:var(--ink)}
+.btn-accent:hover{box-shadow:0 10px 26px rgba(194,149,75,.32)}
+.btn-outline{background:transparent; color:var(--ink); border-color:var(--ink)}
+.btn-outline:hover{background:var(--ink); color:var(--btn-ink)}
+.btn-light{background:var(--surface); color:var(--ink); border-color:var(--line)}
+.btn-light:hover{border-color:var(--ink)}
+.btn-block{width:100%}
+
+/* floating product cut-outs (STATIC) */
+.float{position:absolute; z-index:3; pointer-events:none}
+.float img{width:100%; height:auto; transform:rotate(var(--rot,0deg));
+  filter:drop-shadow(0 24px 30px rgba(38,13,20,.28)) drop-shadow(0 6px 10px rgba(38,13,20,.16));}
+
+/* scroll-reveal (3D) — fx.js toggles .in */
+.reveal{opacity:0; transform:perspective(900px) rotateX(8deg) translateY(26px);
+  transition:opacity .7s ease, transform .7s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1; transform:none}
+@media (prefers-reduced-motion:reduce){
+  .reveal{opacity:1; transform:none; transition:none}
+  html{scroll-behavior:auto}
+}
+
+@media (max-width:1000px){ .float{display:none} }
+@media (max-width:760px){ .section{padding:var(--sp-6) 0} }
