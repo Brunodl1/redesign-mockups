@@ -1,0 +1,1362 @@
+/* Buttah Skin — base foundation. skincare-cosmetics DNA, BUTTAH look.
+   Warm cream base + gold accent + charcoal ink/CTAs. Celebrating melanin.
+   Real brand: Montserrat (body/UI, UPPERCASE buttons 0.2em) + warm serif (Fraunces) display. */
+:root{
+  /* color */
+  --bg:        #FFF8F1;   /* warm cream page */
+  --surface:   #FFFFFF;   /* cards */
+  --surface-2: #F4EADB;   /* warm sand alt band */
+  --ink:       #262624;   /* charcoal — headings/text + CTAs */
+  --ink-soft:  #5C574E;   /* secondary text */
+  --accent:    #B89243;   /* gold — decorative lines/badges/fills */
+  --accent-ink:#FFF8F1;   /* cream text on charcoal/gold-dark */
+  --pop:       #8C6A26;   /* DEEP gold — eyebrow text + stars (AA on cream) */
+  --soft:      #EDD9B8;   /* soft gold tint for panels */
+  --line:      #E7DCC8;   /* hairline */
+  --star:      #B5851E;   /* warm amber-gold stars */
+  --btn:       #262624;   /* charcoal CTA (Buttah) */
+  --btn-ink:   #FFF8F1;
+  --footer-bg: #262624;   /* charcoal footer */
+  /* type */
+  --font-display: "Fraunces", "Playfair Display", Georgia, serif;
+  --font-body:    "Montserrat", "Helvetica Neue", Arial, sans-serif;
+  --s--1: .84rem;
+  --s-0:  1rem;
+  --s-1:  1.2rem;
+  --s-2:  1.6rem;
+  --s-3:  2.2rem;
+  --s-4:  3.1rem;
+  --s-5:  4.4rem;
+  /* space */
+  --sp-1:.25rem; --sp-2:.5rem; --sp-3:1rem; --sp-4:1.5rem;
+  --sp-5:2.5rem; --sp-6:4rem; --sp-7:6rem;
+  /* shape */
+  --radius:    3px;
+  --radius-lg: 10px;
+  --radius-pill: 999px;
+  --shadow:    0 14px 40px rgba(38,38,36,.12);
+  --maxw: 1280px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{overflow-x:clip}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--font-body);
+  font-size:var(--s-0);
+  line-height:1.7;
+  color:var(--ink);
+  background:var(--bg);
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+
+h1,h2,h3{
+  font-family:var(--font-display);
+  font-weight:600;
+  line-height:1.08;
+  letter-spacing:0;
+  color:var(--ink);
+}
+h1{font-size:clamp(2.6rem,5.5vw,var(--s-5));font-weight:600}
+h2{font-size:clamp(2rem,4vw,var(--s-4))}
+h3{font-size:var(--s-2)}
+p{color:var(--ink-soft)}
+
+.wrap{max-width:var(--maxw);margin-inline:auto;padding-inline:clamp(1.1rem,4vw,2.5rem)}
+.sec{padding-block:clamp(3.2rem,7vw,var(--sp-7))}
+
+.eyebrow{
+  font-family:var(--font-body);
+  font-size:.74rem;
+  font-weight:700;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+  color:var(--pop);
+  display:inline-block;
+}
+/* dark-band eyebrows need the lighter gold for AA on charcoal/scrim */
+.s-video .eyebrow,.s-banner .eyebrow,.s-offer .eyebrow{color:var(--accent)}
+
+/* buttons — charcoal, uppercase, tracked (Buttah) */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:.5em;
+  font-family:var(--font-body);
+  font-size:.78rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;
+  padding:1.05em 2.4em;border:1.5px solid transparent;border-radius:var(--radius);
+  cursor:pointer;transition:.22s ease;line-height:1;
+}
+.btn-primary{background:var(--btn);color:var(--btn-ink);border-color:var(--btn)}
+.btn-primary:hover{background:#000;border-color:#000}
+.btn-outline{background:transparent;color:var(--ink);border-color:var(--ink)}
+.btn-outline:hover{background:var(--ink);color:var(--btn-ink)}
+.btn-light{background:var(--accent-ink);color:var(--ink);border-color:var(--accent-ink)}
+.btn-light:hover{background:transparent;color:var(--accent-ink);border-color:var(--accent-ink)}
+.btn-block{display:flex;width:100%}
+
+/* float (static) */
+.float{position:absolute;z-index:3;pointer-events:none}
+.float img{width:100%;height:auto;transform:rotate(var(--rot,0deg));
+  filter:drop-shadow(0 20px 28px rgba(38,38,36,.22)) drop-shadow(0 5px 9px rgba(38,38,36,.15))}
+@media(max-width:1000px){.float{display:none}}
+
+/* reveal */
+.reveal{opacity:0;transform:perspective(900px) rotateX(8deg) translateY(26px);
+  transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){
+  .reveal{opacity:1!important;transform:none!important;transition:none}
+  html{scroll-behavior:auto}
+}
+
+/* inline icon */
+.ic{width:40px;height:40px;stroke:currentColor;stroke-width:1.4;fill:none;display:block}
+
+/* ===== announcement bar ===== */
+.announce{background:var(--ink);color:var(--accent-ink)}
+.announce-inner{display:flex;align-items:center;justify-content:center;gap:.7rem;
+  padding-block:.5rem;font-size:.72rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase}
+.announce-item{color:var(--accent-ink)}
+.announce-sep{color:var(--accent);opacity:.8}
+@media(max-width:760px){.announce-extra{display:none}}
+
+/* ===== header (cream — black+gold logo reads) ===== */
+.site-head{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--bg) 92%,transparent);
+  backdrop-filter:saturate(120%) blur(10px);border-bottom:1px solid var(--line)}
+.head-inner{display:flex;align-items:center;justify-content:space-between;gap:1.5rem;
+  padding-block:.7rem}
+.head-logo img{height:42px;width:auto}
+.head-nav{display:flex;gap:1.7rem;flex:1;justify-content:center}
+.head-nav a{font-family:var(--font-body);font-size:.76rem;font-weight:600;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--ink);transition:color .2s}
+.head-nav a:hover{color:var(--pop)}
+.head-actions{display:flex;align-items:center;gap:1rem}
+.head-cta{padding:.6em 1.3em;font-size:.7rem}
+.head-cart{display:inline-flex}
+.head-cart .ic{width:26px;height:26px}
+@media(max-width:900px){
+  .head-nav{display:none}
+  .head-cta{display:none}
+  .head-logo img{height:36px}
+}
+
+/* ===== decorative floats ===== */
+.s-bestsellers{position:relative}
+.s-reviews{position:relative}
+.float-butter-a{top:-46px;right:-44px;width:165px;--rot:-12deg}
+.float-serum-b{bottom:-48px;left:-46px;width:180px;--rot:14deg}
+
+/* ===== footer (charcoal — logo on cream chip) ===== */
+.site-foot{background:var(--footer-bg);color:var(--accent-ink);padding-top:var(--sp-6)}
+.foot-inner{display:grid;grid-template-columns:1.7fr 1fr 1fr 1fr;gap:2.2rem;
+  padding-bottom:var(--sp-5)}
+.foot-logo{height:40px;width:auto;background:var(--bg);padding:8px 14px;border-radius:var(--radius);display:inline-block}
+.foot-tag{color:var(--accent-ink);opacity:.66;font-size:.88rem;margin-top:1rem;line-height:1.65;max-width:32ch}
+.foot-col h4{font-family:var(--font-display);font-size:1.15rem;font-weight:600;
+  margin-bottom:.9rem;color:var(--accent-ink)}
+.foot-col a{display:block;color:var(--accent-ink);opacity:.62;font-size:.9rem;padding:.28rem 0;transition:opacity .2s,color .2s}
+.foot-col a:hover{opacity:1;color:var(--accent)}
+.foot-bottom{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;
+  border-top:1px solid rgba(255,255,255,.14);padding-top:1.4rem;padding-bottom:2rem;
+  font-size:.8rem;color:var(--accent-ink);opacity:.55}
+@media(max-width:760px){
+  .foot-inner{grid-template-columns:1fr 1fr;gap:1.6rem}
+  .foot-brand{grid-column:1/-1}
+  .foot-col:last-child{grid-column:1/-1}
+  .foot-bottom{flex-direction:column;gap:.4rem}
+}
+
+/* ===== hero ===== */
+/* ── Hero — Buttah Skin ── */
+.s-hero {
+  position: relative;
+  padding-block: 0;
+  min-height: clamp(580px, 78vh, 820px);
+  display: flex;
+  flex-direction: column;
+}
+
+/* full-bleed background */
+.s-hero.hero-fullbleed {
+  background-image:
+    url('assets/Tones-Header-Right.jpg'),
+    url('https://www.buttahskin.com/cdn/shop/files/Tones-Header-Right.jpg?v=1749144760&width=1500');
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+}
+
+/* full-bleed scrim — dark-bottom gradient to keep card text legible */
+.s-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(38, 38, 36, 0.12) 0%,
+    rgba(38, 38, 36, 0.18) 45%,
+    rgba(38, 38, 36, 0.38) 100%
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* inner wrapper — full-height flex, card sits lower-left */
+.s-hero__inner {
+  position: relative;
+  z-index: 2;
+  max-width: var(--maxw);
+  margin-inline: auto;
+  padding-inline: clamp(1.1rem, 4vw, 2.5rem);
+  padding-block: clamp(3rem, 8vh, 6rem) clamp(3rem, 7vh, 5rem);
+  width: 100%;
+  min-height: inherit;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+}
+
+/* text card — frosted semi-opaque panel */
+.s-hero .hero-card {
+  background: rgba(38, 38, 36, 0.50);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 248, 241, 0.14);
+  border-radius: var(--radius-lg);
+  padding: clamp(1.5rem, 3vw, 2.4rem) clamp(1.5rem, 3vw, 2.6rem);
+  max-width: 520px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+}
+
+/* eyebrow — gold on dark card */
+.s-hero .hero-card .s-hero__eyebrow {
+  color: var(--accent);
+}
+
+/* H1 — cream serif, light on dark */
+.s-hero .hero-card .s-hero__h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 4.8vw, var(--s-5));
+  font-weight: 600;
+  line-height: 1.06;
+  color: var(--accent-ink);
+}
+
+/* subhead — cream, softer */
+.s-hero .hero-card .s-hero__lede.lede {
+  font-family: var(--font-body);
+  font-size: clamp(.9rem, 1.4vw, var(--s-1));
+  font-weight: 400;
+  line-height: 1.65;
+  color: var(--accent-ink);
+  opacity: 1;
+  margin-top: calc(0px - var(--sp-2));
+}
+
+/* CTA row */
+.s-hero__ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-3);
+  align-items: center;
+}
+
+/* btn-light override — ensure legible on dark card */
+.s-hero .hero-card .btn-light {
+  background: transparent;
+  color: var(--accent-ink);
+  border-color: var(--accent-ink);
+}
+.s-hero .hero-card .btn-light:hover {
+  background: var(--accent-ink);
+  color: var(--ink);
+  border-color: var(--accent-ink);
+}
+
+/* trust line */
+.s-hero .hero-card .s-hero__trust {
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  font-weight: 600;
+  letter-spacing: .06em;
+  color: var(--accent-ink);
+  opacity: .85;
+  margin-top: calc(0px - var(--sp-2));
+}
+
+/* ── Mobile ≤ 860px ── */
+@media (max-width: 860px) {
+  .s-hero.hero-fullbleed {
+    background-position: 70% top;
+    min-height: clamp(580px, 85svh, 780px);
+  }
+
+  .s-hero__inner {
+    align-items: flex-end;
+    justify-content: stretch;
+    padding-block-end: clamp(2rem, 5vh, 3.5rem);
+  }
+
+  .s-hero .hero-card {
+    max-width: 100%;
+    width: 100%;
+    gap: var(--sp-3);
+  }
+
+  .s-hero__ctas {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .s-hero__ctas .btn {
+    justify-content: center;
+  }
+}
+
+/* ===== trust ===== */
+/* ── s-trust: credential bar ── */
+
+.s-trust {
+  background: var(--surface-2);
+  padding-block: var(--sp-4);
+  border-block: 1px solid var(--line);
+}
+
+.s-trust__row {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: var(--sp-3) var(--sp-5);
+}
+
+.s-trust__item {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  flex: 0 1 auto;
+}
+
+.s-trust__item .ic {
+  flex-shrink: 0;
+  width: 34px;
+  height: 34px;
+  fill: none;
+}
+
+.s-trust__label {
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  font-weight: 600;
+  color: var(--ink);
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+}
+
+/* 2×2 on small screens */
+@media (max-width: 640px) {
+  .s-trust__row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--sp-4) var(--sp-3);
+    justify-items: start;
+  }
+
+  .s-trust__label {
+    white-space: normal;
+  }
+}
+
+/* ===== bestsellers ===== */
+/* ─── BESTSELLERS ──────────────────────────────────────────────── */
+
+.s-bestsellers {
+  background: var(--bg);
+  padding-block: var(--sp-7);
+}
+
+/* Head */
+.s-bestsellers__head {
+  text-align: center;
+  max-width: 52ch;
+  margin-inline: auto;
+  margin-bottom: var(--sp-6);
+}
+
+.s-bestsellers__title {
+  font-family: var(--font-display);
+  font-size: var(--s-4);
+  color: var(--ink);
+  margin-block: var(--sp-2) var(--sp-2);
+  line-height: 1.15;
+}
+
+.s-bestsellers__intro {
+  font-family: var(--font-body);
+  font-size: var(--s-0);
+  color: var(--ink-soft);
+  line-height: 1.6;
+}
+
+/* Grid */
+.s-bestsellers__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--sp-4);
+  margin-bottom: var(--sp-5);
+}
+
+@media (max-width: 960px) {
+  .s-bestsellers__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 520px) {
+  .s-bestsellers__grid {
+    grid-template-columns: 1fr;
+    max-width: 360px;
+    margin-inline: auto;
+  }
+}
+
+/* Card */
+.s-bestsellers__card {
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: inherit;
+  transition: box-shadow 0.22s ease, transform 0.22s ease;
+}
+
+.s-bestsellers__card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.13);
+}
+
+/* Image wrap + badge */
+.s-bestsellers__img-wrap {
+  position: relative;
+  background: var(--surface-2);
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+}
+
+.s-bestsellers__img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: var(--sp-3);
+  display: block;
+}
+
+.s-bestsellers__badge {
+  position: absolute;
+  top: var(--sp-2);
+  left: var(--sp-2);
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 3px var(--sp-2);
+  border-radius: var(--radius);
+  line-height: 1.4;
+}
+
+/* Card body */
+.s-bestsellers__body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: var(--sp-3) var(--sp-3) var(--sp-4);
+  gap: var(--sp-1);
+}
+
+.s-bestsellers__name {
+  font-family: var(--font-display);
+  font-size: var(--s-1);
+  color: var(--ink);
+  line-height: 1.25;
+  margin: 0;
+}
+
+.s-bestsellers__desc {
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  color: var(--ink-soft);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.s-bestsellers__stars {
+  font-family: var(--font-body);
+  font-size: var(--s-0);
+  color: var(--star);
+  font-weight: 600;
+  margin-top: var(--sp-1);
+}
+
+.s-bestsellers__count {
+  color: var(--ink-soft);
+  font-weight: 400;
+}
+
+.s-bestsellers__price {
+  font-family: var(--font-body);
+  font-size: var(--s-1);
+  font-weight: 700;
+  color: var(--ink);
+  margin: 0;
+}
+
+/* CTA */
+.s-bestsellers__cta {
+  margin-top: auto;
+  padding-block: var(--sp-2);
+  font-size: var(--s-0);
+}
+
+.btn-block {
+  width: 100%;
+  display: block;
+  text-align: center;
+}
+
+/* Shop-all footer */
+.s-bestsellers__footer {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--sp-3);
+}
+
+.s-bestsellers__footer .btn-outline {
+  padding-inline: var(--sp-6);
+  padding-block: var(--sp-2);
+  font-size: var(--s-0);
+}
+
+/* ===== video ===== */
+/* ── s-video: full-bleed background video section ── */
+
+.s-video {
+  position: relative;
+  width: 100%;
+  min-height: 80vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.s-video__media {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.s-video__scrim {
+  position: absolute;
+  inset: 0;
+  background: rgba(38, 38, 36, 0.42);
+  z-index: 1;
+}
+
+.s-video__overlay {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding-top: var(--sp-6);
+  padding-bottom: var(--sp-6);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sp-3);
+}
+
+.s-video__eyebrow {
+  color: var(--accent-ink);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-size: var(--s--1);
+  font-family: var(--font-body);
+  opacity: 0.85;
+}
+
+.s-video__heading {
+  font-family: var(--font-display);
+  font-size: clamp(var(--s-4), 6vw, var(--s-5));
+  color: var(--accent-ink);
+  line-height: 1.1;
+  font-weight: 500;
+  margin: 0;
+}
+
+.s-video__body {
+  font-family: var(--font-body);
+  font-size: var(--s-0);
+  color: var(--accent-ink);
+  opacity: 0.88;
+  max-width: 38ch;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ── Mobile ── */
+@media (max-width: 640px) {
+  .s-video {
+    min-height: 60vh;
+  }
+
+  .s-video__heading {
+    font-size: var(--s-3);
+  }
+
+  .s-video__overlay {
+    gap: var(--sp-2);
+    padding-top: var(--sp-5);
+    padding-bottom: var(--sp-5);
+  }
+}
+
+/* ===== ritual ===== */
+/* ── Ritual — Buttah Skin ── */
+
+.s-ritual {
+  background: var(--bg);
+  padding-block: var(--sp-7);
+}
+
+/* ── Head ── */
+.s-ritual__head {
+  text-align: center;
+  max-width: 600px;
+  margin-inline: auto;
+  margin-bottom: var(--sp-6);
+}
+
+.s-ritual__head h2 {
+  font-family: var(--font-display);
+  font-size: clamp(var(--s-3), 4.5vw, var(--s-5));
+  color: var(--ink);
+  line-height: 1.15;
+  margin-block: var(--sp-2) var(--sp-2);
+}
+
+.s-ritual__intro {
+  font-family: var(--font-body);
+  font-size: var(--s-0);
+  color: var(--ink-soft);
+  line-height: 1.65;
+  max-width: 480px;
+  margin-inline: auto;
+}
+
+/* ── Grid ── */
+.s-ritual__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--sp-4);
+}
+
+/* ── Card ── */
+.s-ritual__card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: var(--sp-5) var(--sp-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+  position: relative;
+  box-shadow: var(--shadow);
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
+}
+
+.s-ritual__card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: var(--sp-4);
+  right: var(--sp-4);
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  border-radius: 0 0 var(--radius) var(--radius);
+  opacity: 0.55;
+}
+
+.s-ritual__card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.10);
+}
+
+/* Step number badge */
+.s-ritual__card:nth-child(1)::after { content: '01'; }
+.s-ritual__card:nth-child(2)::after { content: '02'; }
+.s-ritual__card:nth-child(3)::after { content: '03'; }
+.s-ritual__card:nth-child(4)::after { content: '04'; }
+
+.s-ritual__card::after {
+  position: absolute;
+  top: var(--sp-3);
+  right: var(--sp-3);
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+  opacity: 0.55;
+}
+
+/* ── Icon wrapper ── */
+.s-ritual__card .ic {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 48px;
+  height: 48px;
+  background: var(--soft);
+  border-radius: var(--radius);
+  padding: 4px;
+  flex-shrink: 0;
+}
+
+/* ── Card title ── */
+.s-ritual__card-title {
+  font-family: var(--font-display);
+  font-size: var(--s-1);
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1.2;
+  margin: 0;
+}
+
+/* ── Card body ── */
+.s-ritual__card-body {
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  color: var(--ink-soft);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .s-ritual__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 520px) {
+  .s-ritual__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .s-ritual__head h2 {
+    font-size: var(--s-3);
+  }
+
+  .s-ritual {
+    padding-block: var(--sp-6);
+  }
+}
+
+/* ===== banner ===== */
+/* ── Brand Image Band — Buttah Skin ── */
+
+.s-banner {
+  position: relative;
+  width: 100%;
+  min-height: clamp(420px, 65vh, 780px);
+  display: flex;
+  align-items: center;
+  padding-block: 0;
+  overflow: hidden;
+
+  /* full-bleed background image */
+  background-image:
+    url('https://www.buttahskin.com/cdn/shop/files/Tones-Banner-Square.jpg?v=1749145056&width=1500');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+/* full-bleed scrim — left-weighted to keep right side of image visible */
+.s-banner__scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    100deg,
+    rgba(38, 38, 36, 0.58) 0%,
+    rgba(38, 38, 36, 0.22) 55%,
+    rgba(38, 38, 36, 0.12) 100%
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* inner wrapper — constrained, card sits left */
+.s-banner__inner {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-block: clamp(3.5rem, 8vh, 6rem);
+}
+
+/* frosted text card */
+.s-banner__card {
+  background: rgba(38, 38, 36, 0.50);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 248, 241, 0.13);
+  border-radius: var(--radius-lg);
+  padding: clamp(1.6rem, 3vw, 2.6rem) clamp(1.6rem, 3.5vw, 2.8rem);
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+}
+
+/* eyebrow — cream, all caps, spaced */
+.s-banner__eyebrow.eyebrow {
+  color: var(--accent-ink) !important;
+  opacity: 0.82;
+  letter-spacing: 0.13em;
+  font-size: var(--s--1);
+  font-family: var(--font-body);
+  text-transform: uppercase;
+  margin-block-end: 0;
+}
+
+/* headline — Fraunces display, cream */
+.s-banner__headline {
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 3.8vw, 3rem);
+  font-weight: 600;
+  line-height: 1.12;
+  color: var(--accent-ink);
+  margin: 0;
+}
+
+/* body line — cream, slightly soft */
+.s-banner__body {
+  font-family: var(--font-body);
+  font-size: clamp(0.92rem, 1.4vw, 1.05rem);
+  line-height: 1.6;
+  color: var(--accent-ink);
+  opacity: 0.88;
+  margin: 0;
+}
+
+/* CTA */
+.s-banner__cta.btn.btn-light {
+  align-self: flex-start;
+  margin-block-start: var(--sp-1);
+  color: var(--ink) !important;
+  background: var(--accent-ink) !important;
+  border-color: var(--accent-ink) !important;
+}
+
+.s-banner__cta.btn.btn-light:hover {
+  background: var(--soft) !important;
+  border-color: var(--soft) !important;
+}
+
+/* ── Mobile ── */
+@media (max-width: 640px) {
+  .s-banner {
+    align-items: flex-end;
+    min-height: 72vw;
+    min-height: clamp(340px, 72vw, 520px);
+  }
+
+  /* on mobile scrim darkens bottom where card sits */
+  .s-banner__scrim {
+    background: linear-gradient(
+      to bottom,
+      rgba(38, 38, 36, 0.08) 0%,
+      rgba(38, 38, 36, 0.22) 45%,
+      rgba(38, 38, 36, 0.62) 100%
+    );
+  }
+
+  .s-banner__inner {
+    align-items: flex-end;
+    padding-block: var(--sp-3) var(--sp-4);
+  }
+
+  .s-banner__card {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .s-banner__cta.btn.btn-light {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+}
+
+/* ===== founder ===== */
+/* ── Founder / Brand Story — Buttah Skin ── */
+
+.s-founder {
+  background: var(--surface-2);
+  padding-block: var(--sp-7);
+}
+
+/* ── Grid layout ── */
+.s-founder__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-6);
+  align-items: center;
+}
+
+/* ── Image side ── */
+.s-founder__image-wrap {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  aspect-ratio: 4 / 5;
+  box-shadow: var(--shadow);
+}
+
+.s-founder__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  border-radius: var(--radius-lg);
+}
+
+/* Gold accent ring — bottom-right corner decoration */
+.s-founder__img-accent {
+  position: absolute;
+  bottom: calc(-1 * var(--sp-3));
+  right: calc(-1 * var(--sp-3));
+  width: clamp(80px, 14vw, 140px);
+  height: clamp(80px, 14vw, 140px);
+  border-radius: 50%;
+  border: 3px solid var(--accent);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* ── Narrative side ── */
+.s-founder__copy {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+}
+
+.s-founder__headline {
+  font-family: var(--font-display);
+  font-size: clamp(var(--s-3), 4.5vw, var(--s-5));
+  font-weight: 600;
+  line-height: 1.1;
+  color: var(--ink);
+  margin: 0;
+}
+
+.s-founder__headline br {
+  display: block;
+}
+
+.s-founder__body {
+  font-family: var(--font-body);
+  font-size: var(--s-0);
+  line-height: 1.75;
+  color: var(--ink-soft);
+  margin: 0;
+  max-width: 52ch;
+}
+
+.s-founder__sig {
+  font-family: var(--font-display);
+  font-size: var(--s--1);
+  font-style: italic;
+  color: var(--accent);
+  letter-spacing: 0.02em;
+  margin: 0;
+}
+
+/* ── CTA ── */
+.s-founder .btn-outline {
+  align-self: flex-start;
+  margin-top: var(--sp-1);
+}
+
+/* ── Reveal animation ── */
+.s-founder .reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.55s ease, transform 0.55s ease;
+}
+
+.s-founder .reveal.in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Stagger children ── */
+.s-founder__copy .reveal:nth-child(1) { transition-delay: 0.05s; }
+.s-founder__copy .reveal:nth-child(2) { transition-delay: 0.12s; }
+.s-founder__copy .reveal:nth-child(3) { transition-delay: 0.20s; }
+.s-founder__copy .reveal:nth-child(4) { transition-delay: 0.28s; }
+.s-founder__copy .reveal:nth-child(5) { transition-delay: 0.36s; }
+.s-founder__copy .reveal:nth-child(6) { transition-delay: 0.44s; }
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .s-founder__grid {
+    grid-template-columns: 1fr;
+    gap: var(--sp-5);
+  }
+
+  .s-founder__image-wrap {
+    aspect-ratio: 3 / 2;
+    max-height: 420px;
+  }
+
+  .s-founder__img-accent {
+    display: none;
+  }
+
+  .s-founder__body {
+    max-width: none;
+  }
+}
+
+/* ===== reviews ===== */
+/* ─── REVIEWS WALL ─────────────────────────────────────────────── */
+
+.s-reviews {
+  background: var(--bg);
+  padding-block: var(--sp-7);
+}
+
+/* Head */
+.s-reviews__head {
+  text-align: center;
+  max-width: 44ch;
+  margin-inline: auto;
+  margin-bottom: var(--sp-6);
+}
+
+.s-reviews__title {
+  font-family: var(--font-display);
+  font-size: var(--s-4);
+  color: var(--ink);
+  line-height: 1.15;
+  margin-block: var(--sp-2) var(--sp-3);
+}
+
+.s-reviews__rating {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sp-2);
+  font-family: var(--font-body);
+  font-size: var(--s-0);
+  color: var(--ink-soft);
+}
+
+.s-reviews__stars {
+  color: var(--star);
+  font-size: var(--s-1);
+  letter-spacing: 0.05em;
+}
+
+.s-reviews__score {
+  color: var(--ink-soft);
+}
+
+/* Grid */
+.s-reviews__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-4);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+@media (max-width: 860px) {
+  .s-reviews__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 540px) {
+  .s-reviews__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Card */
+.s-reviews__card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: var(--sp-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+  box-shadow: var(--shadow);
+}
+
+.s-reviews__card-stars {
+  color: var(--star);
+  font-size: var(--s-1);
+  letter-spacing: 0.08em;
+  line-height: 1;
+}
+
+.s-reviews__card-headline {
+  font-family: var(--font-display);
+  font-size: var(--s-1);
+  color: var(--ink);
+  line-height: 1.25;
+  margin: 0;
+}
+
+.s-reviews__card-quote {
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  color: var(--ink-soft);
+  line-height: 1.65;
+  margin: 0;
+  padding: 0;
+  flex: 1;
+}
+
+.s-reviews__card-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding-top: var(--sp-2);
+  border-top: 1px solid var(--line);
+  margin-top: auto;
+}
+
+.s-reviews__card-name {
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.s-reviews__card-tag {
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  color: var(--ink-soft);
+}
+
+/* Disclaimer */
+.s-reviews__disclaimer {
+  text-align: center;
+  margin-top: var(--sp-5);
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  color: var(--ink-soft);
+  opacity: 0.55;
+}
+
+/* ===== offer ===== */
+/* ── s-offer: subscribe + newsletter band ── */
+
+.s-offer {
+  background: var(--footer-bg);
+  padding-block: var(--sp-6);
+  color: var(--accent-ink);
+}
+
+/* ── grid ── */
+.s-offer__grid {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: var(--sp-5);
+}
+
+/* ── vertical divider ── */
+.s-offer__divider {
+  width: 1px;
+  align-self: stretch;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    var(--accent) 20%,
+    var(--accent) 80%,
+    transparent
+  );
+  opacity: 0.35;
+  min-height: 160px;
+}
+
+/* ── shared card ── */
+.s-offer__card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+}
+
+.s-offer__card--subscribe {
+  align-items: flex-start;
+}
+
+.s-offer__card--newsletter {
+  align-items: flex-start;
+}
+
+/* ── eyebrow ── */
+.s-offer .s-offer__eyebrow {
+  color: var(--pop);
+  letter-spacing: 0.18em;
+  font-size: var(--s--1);
+  font-family: var(--font-body);
+  font-weight: 600;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+/* ── headings ── */
+.s-offer__heading {
+  font-family: var(--font-display);
+  font-size: var(--s-4);
+  font-weight: 400;
+  line-height: 1.12;
+  color: var(--accent-ink);
+  margin: 0;
+}
+
+/* ── body copy ── */
+.s-offer__body {
+  font-family: var(--font-body);
+  font-size: var(--s-0);
+  line-height: 1.6;
+  color: var(--accent-ink);
+  opacity: 0.82;
+  margin: 0;
+  max-width: 32ch;
+}
+
+/* ── subscribe CTA ── */
+.s-offer .s-offer__cta {
+  margin-top: var(--sp-1);
+}
+
+/* ── newsletter form ── */
+.s-offer__label {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.s-offer__inline {
+  display: flex;
+  align-items: stretch;
+  width: 100%;
+  max-width: 400px;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.s-offer__input {
+  flex: 1 1 0;
+  min-width: 0;
+  padding: var(--sp-2) var(--sp-3);
+  background: var(--accent-ink);
+  color: var(--footer-bg);
+  font-family: var(--font-body);
+  font-size: var(--s-0);
+  border: none;
+  outline: none;
+  border-radius: 0;
+}
+
+.s-offer__input::placeholder {
+  color: var(--ink-soft);
+  opacity: 0.7;
+}
+
+.s-offer__input:focus {
+  outline: 2px solid var(--pop);
+  outline-offset: -2px;
+}
+
+.s-offer__submit {
+  flex-shrink: 0;
+  background: var(--pop);
+  color: var(--footer-bg);
+  font-family: var(--font-body);
+  font-size: var(--s-0);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  padding-inline: var(--sp-4);
+  border: none;
+  border-radius: 0;
+  cursor: pointer;
+  transition: opacity 0.18s ease;
+}
+
+.s-offer__submit:hover,
+.s-offer__submit:focus-visible {
+  opacity: 0.86;
+  outline: 2px solid var(--accent-ink);
+  outline-offset: 2px;
+}
+
+/* ── mobile stack ── */
+@media (max-width: 700px) {
+  .s-offer__grid {
+    grid-template-columns: 1fr;
+    gap: var(--sp-5);
+  }
+
+  .s-offer__divider {
+    width: 100%;
+    min-height: 1px;
+    align-self: auto;
+    background: linear-gradient(
+      to right,
+      transparent,
+      var(--accent) 20%,
+      var(--accent) 80%,
+      transparent
+    );
+    opacity: 0.35;
+  }
+
+  .s-offer__heading {
+    font-size: var(--s-3);
+  }
+
+  .s-offer__inline {
+    max-width: 100%;
+  }
+}
+

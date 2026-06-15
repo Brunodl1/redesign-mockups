@@ -1,0 +1,11 @@
+{
+  "provider": "cloudflare-flux",
+  "model": "@cf/black-forest-labs/flux-1-schnell",
+  "account": "bruno1",
+  "aspect": "1:1",
+  "size": "1K",
+  "elapsed_s": 2.82,
+  "timestamp": "2026-06-15T17:34:22-0500",
+  "input_image": null,
+  "prompt": "a thick sculpted dollop and short swirl of warm ivory-cream shea body butter with soft glossy peaks and body, rich and smooth, centered on a pure solid white background, ultra photorealistic macro, no shadow, no text"
+}
