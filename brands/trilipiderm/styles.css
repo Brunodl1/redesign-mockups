@@ -1,0 +1,1701 @@
+/* Trilipiderm — assembled section styles (scoped). Base tokens in base.css */
+
+/* ===== header ===== */
+/* ============================================================
+   Trilipiderm — header.css
+   Scoped to: .announce  /  .site-header
+   Tokens only — base.css vars, no redefinitions.
+   ============================================================ */
+
+/* ── Announcement bar ────────────────────────────────────── */
+.announce {
+  background: var(--accent);          /* peacock teal */
+  color: #ffffff;
+  text-align: center;
+  font-size: .78rem;
+  font-family: var(--font-body);
+  font-weight: 500;
+  letter-spacing: .03em;
+  padding: var(--sp-2) var(--sp-3);
+  line-height: 1.4;
+}
+
+.announce-extra {
+  display: inline;
+}
+
+@media (max-width: 760px) {
+  .announce-extra {
+    display: none;
+  }
+}
+
+/* ── Sticky site header ──────────────────────────────────── */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--bg);
+  border-bottom: 1px solid var(--line);
+}
+
+.site-header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+  gap: var(--sp-4);
+}
+
+/* ── Logo ────────────────────────────────────────────────── */
+.site-header__logo-link {
+  flex: none;
+  display: flex;
+  align-items: center;
+}
+
+.site-header__logo-link .logo {
+  height: 34px;
+  width: auto;
+  display: block;
+}
+
+/* ── Center nav ──────────────────────────────────────────── */
+.site-header__nav {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-4);
+  flex: 1;
+  justify-content: center;
+}
+
+.site-header__nav-link {
+  font-family: var(--font-body);
+  font-size: .85rem;
+  font-weight: 500;
+  color: var(--ink);
+  white-space: nowrap;
+  transition: color .15s ease;
+  text-decoration: none;
+}
+
+.site-header__nav-link:hover {
+  color: var(--accent);
+}
+
+/* ── Right icons ─────────────────────────────────────────── */
+.site-header__icons {
+  flex: none;
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+}
+
+.site-header__icon-btn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--ink);
+  transition: color .15s ease;
+  padding: 0;
+  text-decoration: none;
+}
+
+.site-header__icon-btn:hover {
+  color: var(--accent);
+}
+
+/* Cart count bubble */
+.site-header__cart-count {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  background: var(--accent-2);   /* botanical green */
+  color: #ffffff;
+  font-family: var(--font-body);
+  font-size: .6rem;
+  font-weight: 700;
+  line-height: 1;
+  min-width: 16px;
+  height: 16px;
+  border-radius: 99px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 3px;
+  pointer-events: none;
+}
+
+/* ── Mobile (≤ 900px): logo + cart only ─────────────────── */
+@media (max-width: 900px) {
+  .site-header__nav {
+    display: none;
+  }
+
+  .site-header__search {
+    display: none;
+  }
+
+  .site-header__inner {
+    justify-content: space-between;
+    gap: 0;
+  }
+}
+
+/* ===== pdp ===== */
+/* ═══════════════════════════════════════════════════════════
+   Trilipiderm — PDP section (Main Product: gallery + buy box)
+   All rules scoped under .s-pdp
+   ═══════════════════════════════════════════════════════════ */
+
+/* ── Outer section ───────────────────────────────────────── */
+.s-pdp {
+  padding: clamp(36px, 5vw, 72px) 0 clamp(48px, 6vw, 80px);
+  background: var(--bg);
+}
+
+/* ── Two-column grid ─────────────────────────────────────── */
+.s-pdp .pdp-grid {
+  display: grid;
+  grid-template-columns: 55fr 45fr;
+  gap: clamp(32px, 4vw, 60px);
+  align-items: start;
+}
+
+/* ════════════════════════════════════════════════════════════
+   LEFT — GALLERY
+════════════════════════════════════════════════════════════ */
+.s-pdp .pdp-gallery {
+  position: sticky;
+  top: 90px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* Main image */
+.s-pdp .gallery-main {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--surface);
+  aspect-ratio: 1 / 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.s-pdp .gallery-main-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: opacity .22s ease;
+}
+
+/* Thumbnail strip (horizontal row) */
+.s-pdp .gallery-thumbs {
+  display: flex;
+  gap: 10px;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  scrollbar-width: none;
+  padding-bottom: 2px;
+}
+.s-pdp .gallery-thumbs::-webkit-scrollbar { display: none; }
+
+.s-pdp .thumb-btn {
+  flex: 0 0 calc((100% - 40px) / 5);
+  min-width: 64px;
+  max-width: 80px;
+  border: 1.5px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  cursor: pointer;
+  background: var(--surface);
+  padding: 0;
+  transition: border-color .15s ease, box-shadow .15s ease;
+  aspect-ratio: 1 / 1;
+}
+
+.s-pdp .thumb-btn img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.s-pdp .thumb-btn:hover {
+  border-color: var(--accent);
+}
+
+.s-pdp .thumb-btn.active {
+  border-color: var(--accent);
+  border-width: 2px;
+  box-shadow: 0 0 0 3px rgba(0,57,72,.12);
+}
+
+/* ════════════════════════════════════════════════════════════
+   RIGHT — BUY BOX
+════════════════════════════════════════════════════════════ */
+.s-pdp .pdp-buybox {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* 1. Breadcrumb */
+.s-pdp .pdp-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: var(--s--1);
+  color: var(--ink-soft);
+  opacity: .7;
+}
+.s-pdp .pdp-breadcrumb a:hover { color: var(--accent); text-decoration: underline; }
+.s-pdp .pdp-breadcrumb-sep {
+  font-size: .78em;
+  opacity: .5;
+}
+
+/* 2. Eyebrow — inherited from base .eyebrow; no override needed */
+
+/* 3. H1 */
+.s-pdp .pdp-title {
+  font-size: clamp(1.55rem, 2.2vw, 2rem);
+  line-height: 1.15;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: -.01em;
+  margin-top: -4px; /* tighten after eyebrow */
+}
+
+/* 4. Rating */
+.s-pdp .pdp-rating {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.s-pdp .pdp-stars {
+  color: var(--star);
+  font-size: 1.05rem;
+  letter-spacing: .06em;
+  line-height: 1;
+}
+.s-pdp .pdp-rating-label {
+  font-size: var(--s--1);
+  color: var(--ink-soft);
+  font-weight: 500;
+}
+
+/* 5. Short description */
+.s-pdp .pdp-desc {
+  font-size: .95rem;
+  color: var(--ink-soft);
+  line-height: 1.65;
+  max-width: 44ch;
+}
+
+/* 6. Price */
+.s-pdp .pdp-price-row {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+}
+.s-pdp .pdp-price {
+  font-size: var(--s-3);
+  font-weight: 700;
+  color: var(--ink);
+  font-family: var(--font-display);
+}
+.s-pdp .pdp-price-unit {
+  font-size: var(--s--1);
+  color: var(--ink-soft);
+  font-weight: 500;
+}
+
+/* 7. Variant pills */
+.s-pdp .pdp-variants {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.s-pdp .pdp-pill {
+  padding: 8px 18px;
+  border-radius: var(--radius-pill);
+  border: 1.5px solid var(--line);
+  background: transparent;
+  font-family: var(--font-body);
+  font-size: .84rem;
+  font-weight: 600;
+  color: var(--ink);
+  cursor: pointer;
+  transition: background .15s ease, border-color .15s ease, color .15s ease;
+  line-height: 1;
+}
+.s-pdp .pdp-pill:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+.s-pdp .pdp-pill.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+
+/* 8. Icon benefit bullets */
+.s-pdp .pdp-benefits {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 18px 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.s-pdp .pdp-benefit {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.s-pdp .pdp-benefit-icon {
+  flex: 0 0 40px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--surface-2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.s-pdp .pdp-benefit-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  line-height: 1.3;
+}
+.s-pdp .pdp-benefit-text strong {
+  font-size: .9rem;
+  font-weight: 700;
+  color: var(--ink);
+}
+.s-pdp .pdp-benefit-text small {
+  font-size: .78rem;
+  color: var(--ink-soft);
+  font-weight: 400;
+}
+
+/* 9. CTAs */
+.s-pdp .pdp-cta-block {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.s-pdp .pdp-atc {
+  font-size: 1rem;
+  padding: 17px 24px;
+  letter-spacing: .03em;
+}
+.s-pdp .pdp-subscribe {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: .87rem;
+  color: var(--ink-soft);
+  cursor: pointer;
+  user-select: none;
+  padding: 4px 0;
+}
+.s-pdp .pdp-subscribe strong {
+  color: var(--accent);
+}
+.s-pdp .sr-only {
+  position: absolute;
+  width: 1px; height: 1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+}
+/* Toggle track/thumb */
+.s-pdp .pdp-subscribe-toggle { display: flex; align-items: center; }
+.s-pdp .pdp-toggle-track {
+  display: inline-flex;
+  width: 36px;
+  height: 20px;
+  border-radius: 20px;
+  background: var(--line);
+  position: relative;
+  transition: background .18s;
+  border: 1px solid rgba(0,0,0,.08);
+}
+.s-pdp .pdp-subscribe input:checked ~ .pdp-toggle-track {
+  background: var(--accent);
+}
+.s-pdp .pdp-toggle-thumb {
+  position: absolute;
+  top: 2px; left: 2px;
+  width: 14px; height: 14px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 1px 3px rgba(0,0,0,.2);
+  transition: transform .18s;
+}
+.s-pdp .pdp-subscribe input:checked ~ .pdp-toggle-track .pdp-toggle-thumb {
+  transform: translateX(16px);
+}
+
+/* 10. Trust icon row */
+.s-pdp .pdp-trust {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 14px 16px;
+  background: var(--surface);
+  border-radius: var(--radius);
+}
+.s-pdp .pdp-trust-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  flex: 1;
+  text-align: center;
+}
+.s-pdp .pdp-trust-item span {
+  font-size: .68rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  color: var(--accent);
+  line-height: 1.2;
+  max-width: 64px;
+}
+
+/* 11. USP strip */
+.s-pdp .pdp-usp-strip {
+  background: var(--accent-soft);
+  border-left: 3px solid var(--accent-2);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  padding: 12px 16px;
+  font-size: .86rem;
+  font-weight: 600;
+  color: var(--accent);
+  line-height: 1.5;
+}
+
+/* 12. Mini testimonial */
+.s-pdp .pdp-testimonial {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 16px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.s-pdp .pdp-testimonial-stars {
+  color: var(--star);
+  font-size: .95rem;
+  letter-spacing: .06em;
+}
+.s-pdp .pdp-testimonial-quote {
+  font-size: .92rem;
+  color: var(--ink);
+  font-style: italic;
+  line-height: 1.55;
+  font-weight: 500;
+}
+.s-pdp .pdp-testimonial-author {
+  font-size: .78rem;
+  font-style: normal;
+  font-weight: 600;
+  color: var(--ink-soft);
+}
+.s-pdp .pdp-testimonial-note {
+  font-weight: 400;
+  opacity: .65;
+}
+
+/* ════════════════════════════════════════════════════════════
+   RESPONSIVE — tablet ≤ 900px
+════════════════════════════════════════════════════════════ */
+@media (max-width: 900px) {
+  .s-pdp .pdp-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  /* Gallery unsticks on mobile */
+  .s-pdp .pdp-gallery {
+    position: static;
+  }
+
+  /* Main image shorter on mobile */
+  .s-pdp .gallery-main {
+    aspect-ratio: 4 / 3;
+  }
+
+  /* Thumbs wrap if needed */
+  .s-pdp .gallery-thumbs {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+  }
+  .s-pdp .thumb-btn {
+    flex: 0 0 72px;
+    max-width: 72px;
+  }
+
+  /* Pills full-width-ish */
+  .s-pdp .pdp-variants {
+    gap: 8px;
+  }
+  .s-pdp .pdp-pill {
+    flex: 1 1 auto;
+    text-align: center;
+  }
+
+  /* Trust row: allow wrap on very narrow */
+  .s-pdp .pdp-trust {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+  }
+  .s-pdp .pdp-trust-item {
+    flex: 0 0 calc(50% - 12px);
+    max-width: 100px;
+  }
+}
+
+/* ── Very small ≤ 420px ─────────────────────────────────── */
+@media (max-width: 420px) {
+  .s-pdp .pdp-price { font-size: var(--s-2); }
+  .s-pdp .pdp-title { font-size: 1.4rem; }
+  .s-pdp .gallery-main { aspect-ratio: 3 / 2; }
+}
+
+/* ===== usp ===== */
+/* ─── USP / Benefits band ─── */
+
+.s-usp {
+  background: var(--surface);
+}
+
+/* 4-col grid, collapses gracefully */
+.s-usp__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--sp-4);
+}
+
+@media (max-width: 900px) {
+  .s-usp__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .s-usp__grid {
+    grid-template-columns: 1fr;
+    max-width: 340px;
+    margin-inline: auto;
+  }
+}
+
+/* Card */
+.s-usp__card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--sp-3);
+  background: var(--bg);
+  border-radius: var(--radius);
+  padding: clamp(22px, 3vw, 32px);
+  border: 1px solid var(--line);
+  transition: box-shadow .22s ease, border-color .22s ease;
+  /* staggered reveal delay via custom prop */
+  transition-delay: calc(var(--d, 0) * 80ms);
+}
+
+.s-usp__card:hover {
+  box-shadow: var(--shadow);
+  border-color: transparent;
+}
+
+/* Icon container — teal accent */
+.s-usp__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radius);
+  background: var(--surface-2);
+  color: var(--accent);
+  flex: none;
+}
+
+.s-usp__icon .ic {
+  width: 28px;
+  height: 28px;
+  stroke: var(--accent);
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none;
+}
+
+/* Title */
+.s-usp__title {
+  font-family: var(--font-display);
+  font-size: var(--s-1);
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1.2;
+  margin: 0;
+}
+
+/* Supporting line */
+.s-usp__body {
+  font-size: var(--s--1);
+  color: var(--ink-soft);
+  line-height: 1.55;
+  margin: 0;
+}
+
+/* Reveal stagger: each card delays by --d * 80ms */
+.s-usp__card.reveal {
+  transition: opacity .7s ease calc(var(--d, 0) * 80ms),
+              transform .7s cubic-bezier(.2,.7,.2,1) calc(var(--d, 0) * 80ms);
+}
+
+/* ===== howto ===== */
+/* ============================================================
+   HOW TO USE — Rosehip Toning Elixir
+   Scoped entirely under .s-howto
+   Tokens from base.css only — no raw hex values
+   ============================================================ */
+
+/* ── Stagger reveals via CSS custom property ── */
+.s-howto .reveal {
+  transition-delay: var(--delay, 0s);
+}
+
+/* ── Two-column layout ── */
+.s-howto__layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(var(--sp-5), 5vw, var(--sp-7));
+  align-items: center;
+}
+
+/* ── Lifestyle image ── */
+.s-howto__image-col {
+  /* keeps reveal stagger tight to the column */
+}
+
+.s-howto__image {
+  width: 100%;
+  height: clamp(340px, 50vw, 580px);
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+  display: block;
+}
+
+/* ── Step list ── */
+.s-howto__steps {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-5);
+}
+
+/* ── Individual step ── */
+.s-howto__step {
+  display: grid;
+  grid-template-columns: 52px 1fr;
+  gap: var(--sp-4);
+  align-items: flex-start;
+}
+
+/* ── Number badge ── */
+.s-howto__badge {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-family: var(--font-display);
+  font-size: var(--s-2);
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  letter-spacing: -.01em;
+  /* subtle botanical-green ring on hover */
+  outline: 2px solid transparent;
+  outline-offset: 3px;
+  transition: outline-color .2s ease;
+}
+
+.s-howto__step:hover .s-howto__badge {
+  outline-color: var(--accent-2);
+}
+
+/* ── Step copy ── */
+.s-howto__body {
+  padding-top: .35rem; /* optical alignment with badge centre */
+}
+
+.s-howto__title {
+  font-family: var(--font-display);
+  font-size: var(--s-1);
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: .25rem;
+  letter-spacing: .01em;
+}
+
+.s-howto__desc {
+  font-size: var(--s-0);
+  color: var(--ink-soft);
+  line-height: 1.55;
+}
+
+/* ── Divider between steps (botanical green rule) ── */
+.s-howto__step + .s-howto__step {
+  padding-top: var(--sp-5);
+  border-top: 1px solid var(--line);
+}
+
+/* ── Mobile: stack image above steps ── */
+@media (max-width: 768px) {
+  .s-howto__layout {
+    grid-template-columns: 1fr;
+  }
+
+  .s-howto__image {
+    height: clamp(240px, 60vw, 380px);
+  }
+
+  .s-howto__step {
+    grid-template-columns: 44px 1fr;
+    gap: var(--sp-3);
+  }
+
+  .s-howto__badge {
+    width: 44px;
+    height: 44px;
+    font-size: var(--s-1);
+  }
+}
+
+/* ===== ingredients ===== */
+/* ── Key Ingredients ───────────────────────────────────────────────── */
+.s-ingredients {
+  background: var(--surface);
+  padding: clamp(44px, 6vw, 80px) 0;
+}
+
+/* grid: 3 columns on desktop, 1 on mobile */
+.s-ingredients__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-4);
+}
+
+/* individual card */
+.s-ingredients__card {
+  background: var(--bg);
+  border: 1.5px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: var(--sp-5) var(--sp-4);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--sp-3);
+  transition: box-shadow .22s ease, transform .22s ease;
+}
+.s-ingredients__card:hover {
+  box-shadow: var(--shadow);
+  transform: translateY(-3px);
+}
+
+/* reveal stagger */
+.s-ingredients__card.reveal {
+  transition-delay: var(--delay, 0s);
+}
+
+/* icon circle */
+.s-ingredients__icon-wrap {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: var(--accent-soft);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+}
+.s-ingredients__icon-wrap .ic {
+  width: 28px;
+  height: 28px;
+  color: var(--accent);
+  stroke: var(--accent);
+  stroke-width: 1.6;
+  fill: none;
+}
+
+/* ingredient name */
+.s-ingredients__name {
+  font-family: var(--font-display);
+  font-size: var(--s-0);
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin: 0;
+}
+
+/* benefit copy */
+.s-ingredients__benefit {
+  font-size: var(--s--1);
+  color: var(--ink-soft);
+  line-height: 1.55;
+  margin: 0;
+}
+
+/* free-from chip row */
+.s-ingredients__free-from {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--sp-2);
+  margin-top: clamp(28px, 4vw, 44px);
+}
+.s-ingredients__chip {
+  font-family: var(--font-body);
+  font-size: .74rem;
+  font-weight: 600;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  background: var(--accent-soft);
+  border: 1px solid rgba(141, 198, 63, .35);
+  border-radius: var(--radius-pill);
+  padding: var(--sp-2) var(--sp-4);
+  white-space: nowrap;
+}
+
+/* reveal stagger on free-from row */
+.s-ingredients__free-from.reveal {
+  transition-delay: var(--delay, 0s);
+}
+
+/* ── Responsive ────────────────────────────────────────────────────── */
+@media (max-width: 840px) {
+  .s-ingredients__grid {
+    grid-template-columns: 1fr;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+
+  .s-ingredients__card {
+    padding: var(--sp-4) var(--sp-4);
+    flex-direction: row;
+    align-items: flex-start;
+    gap: var(--sp-3);
+  }
+
+  .s-ingredients__icon-wrap {
+    flex: none;
+    margin-top: 2px;
+  }
+
+  .s-ingredients__card > div:last-of-type,
+  .s-ingredients__name,
+  .s-ingredients__benefit {
+    flex: 1;
+  }
+}
+
+@media (max-width: 480px) {
+  .s-ingredients__card {
+    flex-direction: column;
+  }
+}
+
+/* ===== testimonials ===== */
+/* ── s-testimonials — Trilipiderm Rosehip Toning Elixir ─────────────────────
+   Horizontal carousel with prev/next arrows. All rules scoped to
+   .s-testimonials. Tokens only — no hard-coded colours.
+   ────────────────────────────────────────────────────────────────────────── */
+
+.s-testimonials {
+  background: var(--surface);
+}
+
+/* ── section head ──────────────────────────────────────────────────────────── */
+.s-testimonials .section-head {
+  position: relative;
+  z-index: 1;
+}
+
+.s-testimonials .section-head .t-stars {
+  color: var(--star);
+  font-size: var(--s-2);
+  letter-spacing: .06em;
+  display: block;
+  margin-bottom: .3rem;
+  line-height: 1;
+}
+
+/* ── carousel wrapper ─────────────────────────────────────────────────────── */
+.s-testimonials .testi-carousel {
+  position: relative;
+}
+
+/* ── scrollable track ─────────────────────────────────────────────────────── */
+.s-testimonials .testi-track {
+  display: flex;
+  gap: clamp(14px, 2vw, 24px);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  padding: var(--sp-2) clamp(8px, 2vw, 20px) var(--sp-4);
+  /* hide scrollbar cross-browser */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.s-testimonials .testi-track::-webkit-scrollbar {
+  display: none;
+}
+
+/* ── individual card ─────────────────────────────────────────────────────── */
+.s-testimonials .testi-card {
+  flex: 0 0 clamp(280px, 80vw, 360px);
+  scroll-snap-align: center;
+  background: var(--bg);
+  border: 1.5px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: clamp(22px, 3vw, 32px);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+  transition: box-shadow .2s ease;
+}
+.s-testimonials .testi-card:hover {
+  box-shadow: var(--shadow);
+}
+
+/* stars row */
+.s-testimonials .testi-card .c-stars {
+  color: var(--star);
+  font-size: 1.1rem;
+  letter-spacing: .1em;
+  line-height: 1;
+}
+
+/* bold headline */
+.s-testimonials .testi-card .c-headline {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--s-1);
+  color: var(--ink);
+  line-height: 1.25;
+  margin: 0;
+}
+
+/* quote body */
+.s-testimonials .testi-card .c-quote {
+  font-size: var(--s--1);
+  color: var(--ink-soft);
+  line-height: 1.65;
+  flex: 1;
+  font-style: italic;
+}
+.s-testimonials .testi-card .c-quote::before { content: "\201C"; }
+.s-testimonials .testi-card .c-quote::after  { content: "\201D"; }
+
+/* card footer */
+.s-testimonials .testi-card .c-footer {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  flex-wrap: wrap;
+  border-top: 1px solid var(--line);
+  padding-top: var(--sp-3);
+}
+
+.s-testimonials .testi-card .c-name {
+  font-weight: 600;
+  font-size: var(--s--1);
+  color: var(--ink);
+}
+
+.s-testimonials .testi-card .c-badge {
+  font-size: .68rem;
+  font-weight: 600;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--accent);
+  background: var(--accent-soft);
+  border-radius: var(--radius-pill);
+  padding: .22em .75em;
+  white-space: nowrap;
+}
+
+.s-testimonials .testi-card .c-variant {
+  font-size: .72rem;
+  color: var(--ink-soft);
+  margin-left: auto;
+}
+
+/* ── nav arrows ──────────────────────────────────────────────────────────── */
+.s-testimonials .testi-nav {
+  display: flex;
+  justify-content: center;
+  gap: var(--sp-3);
+  margin-top: var(--sp-4);
+}
+
+.s-testimonials .testi-btn {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 2px solid var(--accent);
+  background: transparent;
+  color: var(--accent);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  transition: background .18s ease, color .18s ease;
+  padding: 0;
+}
+.s-testimonials .testi-btn:hover {
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+.s-testimonials .testi-btn svg {
+  width: 20px;
+  height: 20px;
+  stroke: currentColor;
+  stroke-width: 2;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  display: block;
+}
+
+/* ── disclaimer ──────────────────────────────────────────────────────────── */
+.s-testimonials .testi-disclaimer {
+  text-align: center;
+  font-size: .68rem;
+  color: var(--ink-soft);
+  opacity: .6;
+  margin-top: var(--sp-3);
+  letter-spacing: .04em;
+}
+
+/* ===== regimen ===== */
+/* ── s-regimen: Complete Your Regimen cross-sell ── */
+
+.s-regimen {
+  background: var(--surface);
+}
+
+/* Grid: 3-col desktop → 2-col tablet → 1-col mobile */
+.s-regimen__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-4);
+}
+
+@media (max-width: 860px) {
+  .s-regimen__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 520px) {
+  .s-regimen__grid {
+    grid-template-columns: 1fr;
+    max-width: 380px;
+    margin-inline: auto;
+  }
+}
+
+/* Card */
+.s-regimen__card {
+  background: var(--bg);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform .22s ease, box-shadow .22s ease;
+}
+
+.s-regimen__card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow);
+}
+
+/* Image area — square, contained, var(--surface) pad */
+.s-regimen__img-wrap {
+  background: var(--surface);
+  aspect-ratio: 1 / 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--sp-4);
+}
+
+.s-regimen__img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Card body */
+.s-regimen__body {
+  padding: var(--sp-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+  flex: 1;
+}
+
+.s-regimen__role {
+  font-size: var(--s--1);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  color: var(--accent);
+  line-height: 1.2;
+}
+
+.s-regimen__name {
+  font-family: var(--font-display);
+  font-size: var(--s-1);
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1.2;
+  /* h3 reset already in base — override size only */
+  margin: 0;
+}
+
+.s-regimen__stars {
+  font-size: .82rem;
+  color: var(--star);
+  letter-spacing: .05em;
+  line-height: 1;
+}
+
+.s-regimen__price {
+  font-size: var(--s-1);
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1;
+}
+
+/* Push CTA to bottom of card */
+.s-regimen__body .btn {
+  margin-top: auto;
+}
+
+/* Bundle nudge */
+.s-regimen__bundle {
+  margin-top: clamp(28px, 4vw, 48px);
+  padding: var(--sp-5) var(--sp-5);
+  background: var(--surface-2);
+  border-radius: var(--radius-lg);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-4);
+}
+
+.s-regimen__bundle-note {
+  color: var(--ink-soft);
+  font-size: var(--s-1);
+  max-width: 560px;
+}
+
+.s-regimen__bundle-label {
+  font-weight: 700;
+  color: var(--ink);
+}
+
+@media (max-width: 640px) {
+  .s-regimen__bundle {
+    flex-direction: column;
+    text-align: center;
+    padding: var(--sp-4);
+  }
+
+  .s-regimen__bundle .btn {
+    width: 100%;
+  }
+}
+
+/* ===== guarantee ===== */
+/* ── Guarantee / trust strip ─────────────────────────────────────────────── */
+.s-guarantee {
+  background: var(--surface-2);        /* pale botanical green — calm, not loud */
+  padding: clamp(28px, 4vw, 48px) 0;
+}
+
+/* row — ul resets */
+.s-guarantee__row {
+  list-style: none;
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  gap: 0;                              /* dividers handle spacing */
+}
+
+/* vertical hairline dividers — li pseudo-elements */
+.s-guarantee__div {
+  width: 1px;
+  background: var(--line);
+  align-self: stretch;
+  margin: 8px 0;
+  flex: none;
+}
+
+/* each trust item */
+.s-guarantee__item {
+  flex: 1;
+  min-width: 0;
+}
+
+.s-guarantee__link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sp-2);
+  padding: var(--sp-4) clamp(var(--sp-3), 2.5vw, var(--sp-5));
+  text-align: center;
+  text-decoration: none;
+  color: inherit;
+  transition: opacity .18s ease;
+  height: 100%;
+}
+.s-guarantee__link:hover {
+  opacity: .72;
+}
+
+/* icon — .ic already sets 40x40 / stroke-width 1.6 / fill none */
+.s-guarantee__ic {
+  width: 34px;
+  height: 34px;
+  color: var(--accent);               /* peacock teal via currentColor */
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  flex: none;
+}
+
+/* label — Montserrat 600 */
+.s-guarantee__label {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: var(--s-0);              /* 1rem */
+  color: var(--ink);
+  line-height: 1.2;
+  display: block;
+}
+
+/* subtext */
+.s-guarantee__sub {
+  font-size: var(--s--1);             /* .82rem */
+  color: var(--ink-soft);
+  display: block;
+  line-height: 1.4;
+}
+
+/* ── Mobile: 2×2 grid ──────────────────────────────────────────────────── */
+@media (max-width: 700px) {
+  .s-guarantee__row {
+    flex-wrap: wrap;
+  }
+
+  .s-guarantee__item {
+    flex: 1 1 calc(50% - 1px);        /* half width, account for centre divider */
+    min-width: calc(50% - 1px);
+  }
+
+  /* hide the horizontal dividers (index 1 & 3); keep vertical centre (index 2) */
+  .s-guarantee__div:nth-child(2),
+  .s-guarantee__div:nth-child(4) {
+    display: none;
+  }
+
+  /* centre vertical divider becomes a horizontal hairline in mobile row 2 */
+  .s-guarantee__div:nth-child(3) {   /* the middle vertical divider */
+    width: 100%;
+    height: 1px;
+    margin: 0 16px;
+    flex-basis: calc(100% - 32px);
+    align-self: auto;
+  }
+
+  .s-guarantee__link {
+    padding: var(--sp-4) var(--sp-3);
+  }
+}
+
+/* ===== faq ===== */
+/* ─── FAQ — Trilipiderm Rosehip Toning Elixir PDP ─── */
+
+.s-faq {
+  background: var(--surface);          /* warm off-white band */
+}
+
+/* ── list container ── */
+.s-faq .faq-list {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+/* ── individual item ── */
+.s-faq .faq-item {
+  border-bottom: 1px solid var(--line);
+}
+
+.s-faq .faq-item:first-child {
+  border-top: 1px solid var(--line);
+}
+
+/* remove browser default marker */
+.s-faq .faq-item summary {
+  list-style: none;
+}
+.s-faq .faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+/* ── summary row ── */
+.s-faq .faq-summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-4);
+  padding: var(--sp-4) 0;
+  cursor: pointer;
+  user-select: none;
+  outline: none;
+}
+
+.s-faq .faq-summary:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* question text */
+.s-faq .faq-q {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: var(--s-0);
+  color: var(--ink);
+  line-height: 1.4;
+}
+
+/* +/− icon */
+.s-faq .faq-icon {
+  flex: none;
+  width: 22px;
+  height: 22px;
+  border: 1.5px solid var(--accent);
+  border-radius: 50%;
+  position: relative;
+  transition: background .2s ease, border-color .2s ease;
+}
+
+/* horizontal bar (always visible) */
+.s-faq .faq-icon::before,
+.s-faq .faq-icon::after {
+  content: "";
+  position: absolute;
+  background: var(--accent);
+  border-radius: 1px;
+  transition: transform .28s cubic-bezier(.4,0,.2,1), opacity .2s ease;
+}
+
+.s-faq .faq-icon::before {
+  width: 10px;
+  height: 1.5px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* vertical bar — rotates to 0 (hidden as +) when open */
+.s-faq .faq-icon::after {
+  width: 1.5px;
+  height: 10px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* open state: vertical bar collapses → shows − */
+.s-faq .faq-item[open] .faq-icon {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+.s-faq .faq-item[open] .faq-icon::before,
+.s-faq .faq-item[open] .faq-icon::after {
+  background: var(--accent-ink);   /* white on filled teal */
+}
+
+.s-faq .faq-item[open] .faq-icon::after {
+  transform: translate(-50%, -50%) rotate(90deg);
+  opacity: 0;
+}
+
+/* hover */
+.s-faq .faq-summary:hover .faq-q {
+  color: var(--accent);
+}
+
+/* ── answer body ── */
+.s-faq .faq-body {
+  padding: 0 0 var(--sp-4);
+  color: var(--ink-soft);
+  font-size: var(--s-0);
+  line-height: 1.65;
+  max-width: 680px;
+}
+
+.s-faq .faq-body a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.s-faq .faq-body a:hover {
+  color: var(--accent-2);
+}
+
+/* ── mobile ── */
+@media (max-width: 600px) {
+  .s-faq .faq-q {
+    font-size: var(--s--1);
+  }
+
+  .s-faq .faq-summary {
+    padding: var(--sp-3) 0;
+  }
+
+  .s-faq .faq-body {
+    padding-bottom: var(--sp-3);
+  }
+}
+
+/* ===== footer ===== */
+/* ============================================================
+   Trilipiderm — site-footer
+   Scope: .site-footer — all rules prefixed
+   Tokens: base.css :root
+   ============================================================ */
+
+.site-footer {
+  background: var(--footer-bg);
+  font-family: var(--font-body);
+  color: var(--footer-text);
+  padding-top: clamp(48px, 6vw, 80px);
+}
+
+/* ── Top grid: 4 columns ──────────────────────────────────── */
+.site-footer .sf-grid {
+  display: grid;
+  grid-template-columns: 1.5fr repeat(3, 1fr);
+  gap: var(--sp-6) var(--sp-5);
+  padding-bottom: clamp(40px, 5vw, 64px);
+}
+
+/* ── Brand column ─────────────────────────────────────────── */
+.site-footer .sf-brand {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+}
+
+.site-footer .sf-logo-chip {
+  display: inline-flex;
+  align-items: center;
+  background: #ffffff;
+  border-radius: var(--radius);
+  padding: 8px 14px;
+  align-self: flex-start;
+  transition: opacity .18s ease;
+}
+
+.site-footer .sf-logo-chip:hover {
+  opacity: .85;
+}
+
+.site-footer .sf-logo-chip img {
+  height: 30px;
+  width: auto;
+  display: block;
+}
+
+.site-footer .sf-tagline {
+  font-size: var(--s--1);
+  color: var(--footer-text);
+  line-height: 1.6;
+  max-width: 260px;
+}
+
+.site-footer .sf-social {
+  display: flex;
+  gap: var(--sp-3);
+  align-items: center;
+}
+
+.site-footer .sf-social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--footer-link);
+  transition: opacity .18s ease, transform .18s ease;
+}
+
+.site-footer .sf-social-link:hover {
+  opacity: .75;
+  transform: translateY(-2px);
+}
+
+/* ── Link columns ─────────────────────────────────────────── */
+.site-footer .sf-col {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+}
+
+.site-footer .sf-col-title {
+  font-family: var(--font-display);
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--footer-title);
+  margin-bottom: var(--sp-2);
+}
+
+.site-footer .sf-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: .6rem;
+}
+
+.site-footer .sf-links a {
+  font-size: var(--s--1);
+  color: var(--footer-text);
+  text-decoration: none;
+  transition: color .18s ease;
+  line-height: 1.4;
+}
+
+.site-footer .sf-links a:hover {
+  color: var(--footer-link);
+}
+
+/* ── Bottom bar ───────────────────────────────────────────── */
+.site-footer .sf-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-4);
+  border-top: 1px solid rgba(255, 255, 255, .18);
+  padding: var(--sp-4) 0;
+  flex-wrap: wrap;
+}
+
+.site-footer .sf-legal {
+  font-size: .74rem;
+  color: var(--footer-text);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .5ch var(--sp-3);
+}
+
+.site-footer .sf-legal-mock {
+  opacity: .55;
+  font-style: italic;
+}
+
+/* Payment badges row */
+.site-footer .sf-payments {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  flex-shrink: 0;
+}
+
+.site-footer .sf-pay-badge {
+  display: inline-flex;
+  border-radius: 3px;
+  overflow: hidden;
+  opacity: .7;
+  transition: opacity .18s ease;
+}
+
+.site-footer .sf-pay-badge:hover {
+  opacity: 1;
+}
+
+/* ── Responsive: 4 → 2 → 1 ───────────────────────────────── */
+
+/* 2-column breakpoint */
+@media (max-width: 900px) {
+  .site-footer .sf-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--sp-5) var(--sp-4);
+  }
+
+  /* Brand spans full width on top */
+  .site-footer .sf-brand {
+    grid-column: 1 / -1;
+  }
+
+  .site-footer .sf-tagline {
+    max-width: 100%;
+  }
+}
+
+/* 1-column (mobile) */
+@media (max-width: 560px) {
+  .site-footer .sf-grid {
+    grid-template-columns: 1fr;
+    gap: var(--sp-5);
+  }
+
+  .site-footer .sf-brand {
+    grid-column: 1;
+  }
+
+  .site-footer .sf-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--sp-3);
+  }
+
+  .site-footer .sf-payments {
+    flex-wrap: wrap;
+  }
+}

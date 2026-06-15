@@ -1,0 +1,104 @@
+/* Trilipiderm — per-brand foundation (faithful to real site:
+   Montserrat, peacock-teal #003948 + botanical green/pear, black SQUARE buttons,
+   pill variant selectors, white + #faf9f8). skincare-cosmetics conversion structure. */
+:root{
+  /* color */
+  --bg:#ffffff;
+  --surface:#faf9f8;        /* warm off-white band/card */
+  --surface-2:#eef3ef;      /* pale botanical green tint */
+  --ink:#121212;
+  --ink-soft:#4b4d4e;
+  --accent:#003948;         /* peacock teal — links, headings accent, icons */
+  --accent-2:#8DC63F;       /* botanical green — checks, highlights */
+  --accent-soft:#eaf3e0;    /* pale green tint */
+  --pear:#CBDB2A;
+  --accent-ink:#ffffff;
+  --pop:#8DC63F;
+  --star:#8DC63F;           /* green stars (botanical) */
+  --line:#e6e4e1;
+  --btn:#121212;            /* SQUARE black button (faithful) */
+  --btn-ink:#ffffff;
+  --footer-bg:#003948;      /* peacock footer */
+  --footer-title:#ffffff;
+  --footer-text:#bcd0d2;
+  --footer-link:#8DC63F;
+  /* type */
+  --font-display:"Montserrat", system-ui, sans-serif;
+  --font-body:"Montserrat", system-ui, sans-serif;
+  --s--1:.82rem; --s-0:1rem; --s-1:1.18rem; --s-2:1.5rem;
+  --s-3:2rem; --s-4:2.5rem; --s-5:3.2rem;
+  /* space */
+  --sp-1:.25rem; --sp-2:.5rem; --sp-3:1rem; --sp-4:1.5rem;
+  --sp-5:2.5rem; --sp-6:4rem; --sp-7:6rem;
+  /* shape — square buttons, modest card radius, pill variant selectors */
+  --radius:8px; --radius-lg:16px; --radius-pill:40px; --radius-btn:2px;
+  --shadow:0 10px 30px rgba(18,18,18,.08);
+  --shadow-sm:0 4px 14px rgba(18,18,18,.06);
+  --maxw:1280px;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{overflow-x:clip}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--font-body);
+  font-weight:400;
+  color:var(--ink-soft);
+  background:var(--bg);
+  font-size:16px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+
+h1,h2,h3,h4{font-family:var(--font-display);color:var(--ink);line-height:1.15;font-weight:600;letter-spacing:.01em}
+h1{font-size:var(--s-4)}
+h2{font-size:var(--s-3)}
+h3{font-size:var(--s-1);font-weight:600}
+
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 clamp(16px,4vw,40px);width:100%}
+.section{padding:clamp(44px,6vw,80px) 0}
+
+.eyebrow{
+  font-size:.74rem;font-weight:600;text-transform:uppercase;letter-spacing:.18em;
+  color:var(--accent);display:inline-block;margin-bottom:.7rem;
+}
+.section-head{max-width:720px;margin:0 auto clamp(26px,4vw,46px);text-align:center}
+.section-head h2{margin-bottom:.4rem}
+.section-head p{color:var(--ink-soft);font-size:var(--s-1)}
+
+/* buttons — SQUARE (faithful) */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:.5em;
+  font-family:var(--font-body);font-weight:600;font-size:.92rem;
+  letter-spacing:.02em;
+  padding:15px 30px;border-radius:var(--radius-btn);
+  border:1.5px solid transparent;cursor:pointer;transition:.18s ease;line-height:1;
+}
+.btn-dark{background:var(--btn);color:var(--btn-ink)}
+.btn-dark:hover{background:#000}
+.btn-primary{background:var(--accent);color:var(--accent-ink)}    /* peacock */
+.btn-primary:hover{background:#012b36}
+.btn-outline{background:transparent;color:var(--ink);border-color:var(--ink)}
+.btn-outline:hover{background:var(--ink);color:#fff}
+.btn-light{background:#fff;color:var(--ink);border-color:#fff}
+.btn-light:hover{background:transparent;color:#fff;border-color:#fff}
+.btn-block{width:100%}
+
+.ic{width:40px;height:40px;stroke:currentColor;stroke-width:1.6;fill:none;flex:none}
+
+/* depth: floats (STATIC) */
+.float{position:absolute;z-index:3;pointer-events:none}
+.float img{width:100%;height:auto;transform:rotate(var(--rot,0deg));
+  filter:drop-shadow(0 16px 26px rgba(18,18,18,.16)) drop-shadow(0 4px 8px rgba(18,18,18,.10))}
+@media(max-width:1000px){.float{display:none}}
+
+/* scroll reveal (3D) */
+.reveal{opacity:0;transform:perspective(900px) rotateX(8deg) translateY(26px);
+  transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){
+  .reveal{opacity:1;transform:none;transition:none}
+  html{scroll-behavior:auto}
+}
