@@ -1,0 +1,11 @@
+{
+  "provider": "cloudflare-flux",
+  "model": "@cf/black-forest-labs/flux-1-schnell",
+  "account": "bruno1",
+  "aspect": "1:1",
+  "size": "1K",
+  "elapsed_s": 1.97,
+  "timestamp": "2026-06-15T10:54:40-0500",
+  "input_image": null,
+  "prompt": "three short thick parallel swipes of foundation cream in graduated skin-tone shades from light beige to deep warm brown, each swipe sculpted with body and soft sheen, arranged in a row, centered on a pure solid white background, ultra photorealistic macro, no shadow, no text"
+}

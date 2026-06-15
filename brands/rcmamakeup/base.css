@@ -1,0 +1,108 @@
+/* RCMA Makeup — base foundation. Pro/editorial: charcoal + bone + clay-nude accent.
+   Real brand fonts: Archivo Narrow (display) + IBM Plex Sans (body). */
+:root{
+  /* color */
+  --bg:        #F4F0E9;   /* warm bone page bg */
+  --surface:   #FBF9F5;   /* card / raised surface */
+  --surface-2: #EAE4D8;   /* alt band fill, warm gray-sand */
+  --ink:       #17150F;   /* near-black charcoal — headings/text */
+  --ink-soft:  #5A554C;   /* secondary text */
+  --accent:    #17150F;   /* primary buttons (charcoal, pro) */
+  --accent-ink:#FBF9F5;   /* text on accent */
+  --pop:       #A66A45;   /* clay-nude — eyebrows, badges, rules, stars */
+  --line:      #D8D1C2;   /* hairline borders */
+  --star:      #A66A45;
+  --btn:       #17150F;
+  --btn-ink:   #FBF9F5;
+  /* type */
+  --font-display: "Archivo Narrow", "Arial Narrow", sans-serif;
+  --font-body:    "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
+  --s--1: .82rem;
+  --s-0:  1rem;
+  --s-1:  1.2rem;
+  --s-2:  1.55rem;
+  --s-3:  2.1rem;
+  --s-4:  3.1rem;
+  --s-5:  4.6rem;
+  /* space */
+  --sp-1:.25rem; --sp-2:.5rem; --sp-3:1rem; --sp-4:1.5rem;
+  --sp-5:2.5rem; --sp-6:4rem; --sp-7:6rem;
+  /* radius + shadow */
+  --radius:    2px;
+  --radius-lg: 4px;
+  --shadow:    0 14px 40px rgba(23,21,15,.10);
+  --maxw: 1280px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{overflow-x:clip}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--font-body);
+  font-size:var(--s-0);
+  line-height:1.65;
+  color:var(--ink);
+  background:var(--bg);
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+
+h1,h2,h3{
+  font-family:var(--font-display);
+  font-weight:700;
+  line-height:1.02;
+  letter-spacing:-.01em;
+  text-transform:uppercase;
+  color:var(--ink);
+}
+h1{font-size:clamp(2.6rem,6vw,var(--s-5))}
+h2{font-size:clamp(2rem,4vw,var(--s-4))}
+h3{font-size:var(--s-2)}
+p{color:var(--ink-soft)}
+
+.wrap{max-width:var(--maxw);margin-inline:auto;padding-inline:clamp(1.1rem,4vw,2.5rem)}
+.sec{padding-block:clamp(3.2rem,7vw,var(--sp-7))}
+
+.eyebrow{
+  font-family:var(--font-body);
+  font-size:.72rem;
+  font-weight:600;
+  letter-spacing:.28em;
+  text-transform:uppercase;
+  color:var(--pop);
+  display:inline-block;
+}
+
+/* buttons — rectangular, square, uppercase, pro */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:.5em;
+  font-family:var(--font-body);
+  font-size:.78rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;
+  padding:1.05em 2.1em;border:1px solid transparent;border-radius:var(--radius);
+  cursor:pointer;transition:.22s ease;line-height:1;
+}
+.btn-primary{background:var(--btn);color:var(--btn-ink);border-color:var(--btn)}
+.btn-primary:hover{background:transparent;color:var(--ink)}
+.btn-outline{background:transparent;color:var(--ink);border-color:var(--ink)}
+.btn-outline:hover{background:var(--ink);color:var(--btn-ink)}
+.btn-light{background:var(--surface);color:var(--ink);border-color:var(--surface)}
+.btn-light:hover{background:transparent;color:var(--surface);border-color:var(--surface)}
+.btn-block{display:flex;width:100%}
+
+/* float (static) */
+.float{position:absolute;z-index:3;pointer-events:none}
+.float img{width:100%;height:auto;transform:rotate(var(--rot,0deg));
+  filter:drop-shadow(0 18px 26px rgba(23,21,15,.22)) drop-shadow(0 4px 8px rgba(23,21,15,.16))}
+@media(max-width:1000px){.float{display:none}}
+
+/* reveal */
+.reveal{opacity:0;transform:perspective(900px) rotateX(8deg) translateY(26px);
+  transition:.7s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){
+  .reveal{opacity:1!important;transform:none!important;transition:none}
+  html{scroll-behavior:auto}
+}
+
+/* inline icon */
+.ic{width:38px;height:38px;stroke:var(--pop);stroke-width:1.4;fill:none;display:block}

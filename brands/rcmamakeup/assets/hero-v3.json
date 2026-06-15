@@ -1,0 +1,11 @@
+{
+  "provider": "cloudflare-flux",
+  "model": "@cf/black-forest-labs/flux-1-schnell",
+  "account": "bruno1",
+  "aspect": "4:5",
+  "size": "1K",
+  "elapsed_s": 6.62,
+  "timestamp": "2026-06-15T10:54:45-0500",
+  "input_image": null,
+  "prompt": "editorial overhead flatlay, professional makeup artist's kit on a warm bone-colored matte surface, open foundation and concealer cream palettes, a few makeup brushes fanned out, a soft mound of loose translucent setting powder, muted neutral nude and taupe tones, soft directional studio light with gentle shadows, refined minimal high-end beauty editorial, generous empty negative space in the upper-left third, photorealistic, shot from directly above"
+}
