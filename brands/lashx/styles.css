@@ -211,15 +211,19 @@
   overflow: hidden;
   background-image: url(assets/hero.jpg);
   background-size: cover;
-  background-position: center top;
+  background-position: 72% 52%;
   background-repeat: no-repeat;
 }
 
-/* Full-bleed baseline scrim — ensures no bare image behind card edges */
+/* Full-bleed baseline scrim — slightly stronger on the left for card legibility,
+   lets the lash photo read through on the right */
 .s-hero__scrim {
   position: absolute;
   inset: 0;
-  background: rgba(20, 10, 16, 0.38);
+  background: linear-gradient(90deg,
+    rgba(18, 10, 14, 0.55) 0%,
+    rgba(18, 10, 14, 0.34) 42%,
+    rgba(18, 10, 14, 0.12) 100%);
   z-index: 1;
   pointer-events: none;
 }
@@ -327,10 +331,12 @@
 /* ─── Mobile ≤720px ────────────────────────────────────────────────────────── */
 @media (max-width: 720px) {
   .s-hero {
-    min-height: 78vh;
+    min-height: 80vh;
     align-items: flex-end;
-    /* richer bottom scrim on mobile for legibility over the image */
-    background-position: center center;
+    /* zoom + bottom-anchor so the eye/lashes sit ABOVE the bottom text card
+       (a tall mobile crop has no vertical play under background-size:cover) */
+    background-size: auto 175%;
+    background-position: 72% bottom;
   }
 
   /* Override global scrim with a stronger bottom-weighted version on mobile */
