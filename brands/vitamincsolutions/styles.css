@@ -47,7 +47,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 64px;
+  height: 82px;
   max-width: var(--maxw);
   margin: 0 auto;
   padding: 0 clamp(16px, 4vw, 40px);
@@ -62,9 +62,13 @@
 }
 
 .site-header__logo .logo {
-  height: 40px;
+  height: 60px;
   width: auto;
   display: block;
+}
+@media (max-width: 600px){
+  .site-header__inner { height: 68px; }
+  .site-header__logo .logo { height: 48px; }
 }
 
 /* ── Center nav ─────────────────────────────────────────────────────────── */
@@ -178,177 +182,93 @@
    on the band, square black CTA, all text white.
    ───────────────────────────────────────────── */
 
-/* Section shell -------------------------------- */
+/* Section shell — full-bleed lifestyle image + contained text card */
 .s-hero {
-  background: linear-gradient(135deg, var(--block-1), var(--block-1b));
-  padding: clamp(56px, 8vw, 100px) 0 clamp(48px, 7vw, 88px);
   position: relative;
-  overflow: hidden;
-}
-
-/* Two-col grid --------------------------------- */
-.s-hero__inner {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  min-height: 88vh;
+  display: flex;
   align-items: center;
-  gap: clamp(32px, 5vw, 72px);
+  overflow: hidden;
+  background-image: url("assets/hero-life.jpg");
+  background-size: cover;
+  background-position: 70% center;   /* keep subject + bottles in frame */
+  background-repeat: no-repeat;
 }
+/* full-bleed scrim — darker on the left where the card sits */
+.s-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(4,28,48,.66) 0%, rgba(4,28,48,.40) 42%, rgba(4,28,48,.06) 70%);
+  z-index: 0;
+}
+.s-hero .wrap { position: relative; z-index: 1; }
 
-/* ── LEFT: text column ──────────────────────── */
-.s-hero__text {
+/* Contained text card (legible on any photo) */
+.s-hero__card {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: var(--sp-4);
+  max-width: 560px;
+  padding: clamp(26px, 3vw, 44px);
+  background: rgba(6, 36, 60, .52);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border: 1px solid rgba(255,255,255,.16);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 24px 60px rgba(4,28,48,.35);
 }
 
-/* Eyebrow: white/translucent, override base --accent color */
-.s-hero__eyebrow {
-  color: #ffffff;
-  letter-spacing: .18em;
-}
+.s-hero__eyebrow { color: #ffffff; letter-spacing: .18em; }
 
-/* h1: giant lowercase, white, tight lh */
-.s-hero__h1 {
+.s-hero .s-hero__card .s-hero__h1 {
   color: #ffffff;
-  font-size: clamp(2.4rem, 5.5vw, var(--s-5));
+  font-size: clamp(2.4rem, 5vw, var(--s-5));
   line-height: 1.02;
   letter-spacing: -.02em;
   font-weight: 800;
   text-transform: lowercase;
-  max-width: 14ch;
+  max-width: 16ch;
 }
 
-/* Subhead: white, clear legibility */
-.s-hero__sub {
-  color: rgba(255, 255, 255, 0.92);
+.s-hero .s-hero__card .s-hero__sub {
+  color: rgba(255, 255, 255, 0.94);
   font-size: var(--s-1);
   font-weight: 500;
   line-height: 1.45;
-  max-width: 38ch;
+  max-width: 42ch;
   margin-top: calc(-1 * var(--sp-2));
 }
 
-/* CTA: square black — btn btn-dark already handles this;
-   override only what's hero-specific */
-.s-hero__cta {
-  margin-top: var(--sp-2);
-  flex-shrink: 0;
-}
+.s-hero__cta { margin-top: var(--sp-2); flex-shrink: 0; }
 
-/* Trust line */
-.s-hero__trust {
-  color: rgba(255, 255, 255, 0.88);
+.s-hero .s-hero__card .s-hero__trust {
+  color: rgba(255, 255, 255, 0.92);
   font-size: var(--s--1);
   font-weight: 600;
   letter-spacing: .04em;
   margin-top: calc(-1 * var(--sp-2));
 }
 
-/* ── RIGHT: packshot column ─────────────────── */
-.s-hero__images {
-  position: relative;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  /* reserve height so images can overlap comfortably */
-  min-height: 440px;
-}
-
-.s-hero__img {
-  position: absolute;
-  width: clamp(200px, 28vw, 380px);
-  height: auto;
-  border-radius: var(--radius-lg);
-  filter: drop-shadow(0 24px 48px rgba(6, 40, 70, 0.40))
-          drop-shadow(0 6px 16px rgba(6, 40, 70, 0.25));
-  object-fit: contain;
-}
-
-/* Shampoo: back-left, slight counter-tilt */
-.s-hero__img--shampoo {
-  bottom: 20px;
-  left: 0;
-  transform: rotate(-4deg) translateX(-8px);
-  z-index: 1;
-}
-
-/* Conditioner: front-right, slight tilt opposite */
-.s-hero__img--conditioner {
-  bottom: 0;
-  right: 0;
-  transform: rotate(3deg) translateX(8px);
-  z-index: 2;
-}
-
-/* ── MOBILE (≤ 900px) ──────────────────────── */
+/* ── TABLET / MOBILE (≤ 900px) — image stays visible, card on bottom scrim ── */
 @media (max-width: 900px) {
   .s-hero {
-    padding: clamp(36px, 7vw, 60px) 0 clamp(40px, 8vw, 72px);
+    min-height: 86vh;
+    align-items: flex-end;
+    background-position: 64% center;
   }
-
-  .s-hero__inner {
-    grid-template-columns: 1fr;
-    gap: 0;
+  .s-hero::before {
+    background: linear-gradient(180deg, rgba(4,28,48,.18) 0%, rgba(4,28,48,.20) 45%, rgba(4,28,48,.74) 100%);
   }
-
-  /* Images come FIRST on mobile — visible above fold */
-  .s-hero__images {
-    order: -1;
-    min-height: 260px;
-    margin-bottom: var(--sp-5);
+  .s-hero .wrap { padding-bottom: clamp(24px, 6vw, 48px); }
+  .s-hero__card {
+    max-width: 100%;
+    background: rgba(6, 36, 60, .46);
   }
-
-  .s-hero__img {
-    width: clamp(130px, 38vw, 220px);
-    position: absolute;
-  }
-
-  /* Keep packshots tight + overlapping in the panel */
-  .s-hero__img--shampoo {
-    left: 10%;
-    bottom: 0;
-    transform: rotate(-4deg);
-  }
-
-  .s-hero__img--conditioner {
-    right: 10%;
-    bottom: 0;
-    transform: rotate(3deg);
-  }
-
-  .s-hero__h1 {
-    font-size: clamp(2rem, 8.5vw, 2.8rem);
-    max-width: 22ch;
-  }
-
-  .s-hero__sub {
-    font-size: var(--s-0);
-  }
-
-  .s-hero__cta {
-    width: 100%;
-    justify-content: center;
-  }
-}
-
-/* ── Very narrow (≤ 480px) ──────────────────── */
-@media (max-width: 480px) {
-  .s-hero__images {
-    min-height: 210px;
-  }
-
-  .s-hero__img {
-    width: clamp(110px, 42vw, 190px);
-  }
-
-  .s-hero__img--shampoo {
-    left: 5%;
-  }
-
-  .s-hero__img--conditioner {
-    right: 5%;
-  }
+  .s-hero .s-hero__card .s-hero__h1 { font-size: clamp(2rem, 8.5vw, 2.9rem); max-width: 18ch; }
+  .s-hero .s-hero__card .s-hero__sub { font-size: var(--s-0); }
+  .s-hero__cta { width: 100%; justify-content: center; }
 }
 
 /* ===== bestsellers ===== */
