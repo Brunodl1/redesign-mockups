@@ -1,0 +1,11 @@
+{
+  "provider": "cloudflare-flux",
+  "model": "@cf/black-forest-labs/flux-1-schnell",
+  "account": "bruno1",
+  "aspect": "1:1",
+  "size": "1K",
+  "elapsed_s": 3.74,
+  "timestamp": "2026-06-15T16:58:51-0500",
+  "input_image": null,
+  "prompt": "a small sprig of fresh green olives with green leaves on the branch, vibrant, centered on a pure solid white background, ultra photorealistic macro, no shadow, no text"
+}

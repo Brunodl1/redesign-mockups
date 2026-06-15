@@ -1,0 +1,11 @@
+{
+  "provider": "cloudflare-flux",
+  "model": "@cf/black-forest-labs/flux-1-schnell",
+  "account": "bruno1",
+  "aspect": "1:1",
+  "size": "1K",
+  "elapsed_s": 3.0,
+  "timestamp": "2026-06-15T16:58:50-0500",
+  "input_image": null,
+  "prompt": "a glossy golden stream and droplets of extra virgin olive oil, rich amber-gold, swirling drizzle with shine, centered on a pure solid white background, ultra photorealistic macro, no shadow, no text"
+}

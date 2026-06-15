@@ -1,0 +1,11 @@
+{
+  "provider": "cloudflare-flux",
+  "model": "@cf/black-forest-labs/flux-1-schnell",
+  "account": "bruno1",
+  "aspect": "4:5",
+  "size": "1K",
+  "elapsed_s": 2.56,
+  "timestamp": "2026-06-15T16:58:50-0500",
+  "input_image": null,
+  "prompt": "warm editorial food still life, golden extra virgin olive oil being drizzled from above onto a rustic dish, fresh green and black olives, a sprig of olive leaves, torn artisan bread, on a soft cream linen and pale marble surface, warm natural Mediterranean daylight, rich golden-green tones, premium gourmet, generous negative space at top, ultra photorealistic, shallow depth of field"
+}
