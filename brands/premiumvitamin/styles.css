@@ -233,14 +233,6 @@
   line-height: 1.4;
 }
 
-/* Float — bleeding off bottom-right edge */
-.s-hero .float-caps {
-  width: clamp(260px, 22vw, 380px);
-  bottom: -60px;
-  right: -40px;
-  top: auto;
-}
-
 /* ── Mobile ≤ 900px ──────────────────────────────────────────────── */
 @media (max-width: 900px) {
 
