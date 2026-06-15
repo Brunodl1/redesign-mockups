@@ -136,11 +136,6 @@ p{color:var(--ink-soft)}
   .head-logo img{height:26px}
 }
 
-/* ===== decorative floats ===== */
-.s-bestsellers{position:relative}
-.s-reviews{position:relative}
-.float-swatch-a{top:-70px;right:-60px;width:230px;--rot:-14deg}
-.float-swatch-b{bottom:-60px;left:-70px;width:250px;--rot:12deg}
 
 /* ===== footer ===== */
 .site-foot{background:var(--ink);color:var(--surface);padding-top:var(--sp-6)}
