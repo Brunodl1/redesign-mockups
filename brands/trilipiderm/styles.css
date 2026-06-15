@@ -1699,3 +1699,42 @@
     flex-wrap: wrap;
   }
 }
+
+/* ===== pdp purchase options (subscribe by outcome) ===== */
+.s-pdp .pdp-purchase{display:flex;flex-direction:column;gap:12px;margin:4px 0 18px}
+.s-pdp .pdp-plan{display:block;cursor:pointer}
+.s-pdp .pdp-plan-input{position:absolute;opacity:0;width:0;height:0}
+.s-pdp .pdp-plan-card{
+  display:block;border:1.5px solid var(--line);border-radius:var(--radius);
+  padding:14px 16px;transition:border-color .18s ease,box-shadow .18s ease,background .18s ease;background:var(--bg);
+}
+.s-pdp .pdp-plan-head{display:flex;align-items:center;gap:10px}
+.s-pdp .pdp-plan-radio{
+  width:18px;height:18px;border-radius:50%;border:2px solid var(--line);flex:none;position:relative;transition:border-color .18s ease;
+}
+.s-pdp .pdp-plan-title{font-family:var(--font-display);font-weight:600;color:var(--ink);font-size:.98rem;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.s-pdp .pdp-plan-price{margin-left:auto;font-weight:700;color:var(--ink);white-space:nowrap}
+.s-pdp .pdp-plan-price s{color:var(--ink-soft);font-weight:500;font-size:.86em;margin-left:4px}
+.s-pdp .pdp-sub-now{color:var(--accent)}
+.s-pdp .pdp-plan-badge{
+  font-size:.62rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+  background:var(--accent-2);color:#10331a;padding:3px 8px;border-radius:var(--radius-pill);
+}
+.s-pdp .pdp-plan-sub{display:block;color:var(--ink-soft);font-size:.82rem;margin:8px 0 0 28px}
+.s-pdp .pdp-plan-benefits{list-style:none;margin:12px 0 2px;padding:0 0 0 28px;display:flex;flex-direction:column;gap:9px}
+.s-pdp .pdp-plan-benefits li{display:flex;gap:9px;align-items:flex-start;font-size:.86rem;color:var(--ink-soft);line-height:1.4}
+.s-pdp .pdp-plan-benefits li svg{flex:none;margin-top:1px}
+.s-pdp .pdp-plan-benefits strong{color:var(--ink);font-weight:600}
+/* selected states */
+.s-pdp .pdp-plan-input:checked + .pdp-plan-card{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent)}
+.s-pdp .pdp-plan--sub .pdp-plan-input:checked + .pdp-plan-card{background:var(--accent-soft)}
+.s-pdp .pdp-plan-input:checked + .pdp-plan-card .pdp-plan-radio{border-color:var(--accent)}
+.s-pdp .pdp-plan-input:checked + .pdp-plan-card .pdp-plan-radio::after{
+  content:"";position:absolute;inset:3px;border-radius:50%;background:var(--accent);
+}
+.s-pdp .pdp-plan-input:focus-visible + .pdp-plan-card{outline:2px solid var(--accent);outline-offset:2px}
+/* collapse the benefits when one-time is chosen? keep visible always for the pitch */
+.s-pdp .pdp-cta-note{margin-top:10px;text-align:center;font-size:.78rem;color:var(--ink-soft)}
+@media(max-width:900px){
+  .s-pdp .pdp-plan-benefits li{font-size:.84rem}
+}
