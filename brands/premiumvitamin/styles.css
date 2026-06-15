@@ -1180,14 +1180,6 @@
   box-shadow: var(--shadow);
 }
 
-/* Float: bleeding off the right seam toward the text column */
-.s-trust .float-trust {
-  width: clamp(110px, 12vw, 180px);
-  right: -52px;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
 /* ── Text column ──────────────────────────────────────────────── */
 .s-trust__text {
   display: flex;
