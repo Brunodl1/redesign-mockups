@@ -1,0 +1,11 @@
+{
+  "provider": "cloudflare-flux",
+  "model": "@cf/black-forest-labs/flux-1-schnell",
+  "account": "bruno1",
+  "aspect": "1:1",
+  "size": "1K",
+  "elapsed_s": 3.0,
+  "timestamp": "2026-06-15T12:40:38-0500",
+  "input_image": null,
+  "prompt": "a single fresh green botanical leaf sprig with soft natural sheen, eucalyptus-like, centered on a pure solid white background, ultra photorealistic, no shadow, no text"
+}

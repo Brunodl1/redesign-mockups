@@ -1,0 +1,11 @@
+{
+  "provider": "cloudflare-flux",
+  "model": "@cf/black-forest-labs/flux-1-schnell",
+  "account": "bruno1",
+  "aspect": "1:1",
+  "size": "1K",
+  "elapsed_s": 2.79,
+  "timestamp": "2026-06-15T12:40:38-0500",
+  "input_image": null,
+  "prompt": "glossy translucent golden amber oil droplets and bubbles of varied sizes, honey-like sheen with tiny internal highlights, scattered, centered on a pure solid white background, ultra photorealistic macro, no shadow, no text"
+}

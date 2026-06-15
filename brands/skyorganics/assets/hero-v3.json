@@ -1,0 +1,11 @@
+{
+  "provider": "cloudflare-flux",
+  "model": "@cf/black-forest-labs/flux-1-schnell",
+  "account": "bruno1",
+  "aspect": "16:9",
+  "size": "1K",
+  "elapsed_s": 1.68,
+  "timestamp": "2026-06-15T12:40:37-0500",
+  "input_image": null,
+  "prompt": "warm golden-hour still life of natural organic beauty products, amber glass dropper oil bottles and a small balm tin arranged on a soft cream linen surface with fresh green botanical leaves and a honeycomb piece, soft diffused natural window light, earthy warm organic mood, generous empty negative space on the left third for text, ultra photorealistic editorial product photography, shallow depth of field"
+}
