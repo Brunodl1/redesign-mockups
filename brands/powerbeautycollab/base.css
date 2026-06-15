@@ -1,0 +1,86 @@
+/* Power Beauty Collab — per-brand foundation. PBC's real identity (indigo #223089
+   + hot-pink #fe78b9, PILL CTAs, airy white) ELEVATED with clean-beauty-marketplace
+   DNA (Credo: brand-eyebrow cards, clean-standard band) + Newsreader serif + DM Sans. */
+:root{
+  /* color */
+  --bg:        #fcfcfd;   /* airy near-white */
+  --surface:   #f6f3fb;   /* whisper lavender cream */
+  --surface-2: #ece6f7;   /* light lavender band */
+  --ink:       #20296b;   /* deep indigo — headings / strong text */
+  --ink-soft:  #5b6196;   /* muted indigo — body / secondary */
+  --accent:    #fe78b9;   /* hot pink — CTAs, highlights, badges */
+  --accent-ink:#20296b;   /* indigo text on pink (PBC's real combo, high contrast) */
+  --deep:      #223089;   /* indigo — clean-standard band, footer (the soul color) */
+  --deep-ink:  #f3f1fb;   /* light text on indigo */
+  --pop:       #fe78b9;   /* pink — sale/badge */
+  --pop-ink:   #20296b;
+  --line:      rgba(34,48,137,.14);
+  --btn:       #fe78b9;   /* primary button = hot pink */
+  --btn-ink:   #20296b;   /* indigo label on pink */
+  --star:      #fe78b9;
+  /* type */
+  --font-display:"Newsreader", Georgia, "Times New Roman", serif;
+  --font-body:   "DM Sans", system-ui, -apple-system, Arial, sans-serif;
+  --s--1: .82rem;
+  --s-0:  1rem;
+  --s-1:  1.25rem;
+  --s-2:  1.6rem;
+  --s-3:  2.15rem;
+  --s-4:  3rem;
+  --s-5:  3.9rem;
+  /* space */
+  --sp-1:.25rem; --sp-2:.5rem; --sp-3:1rem; --sp-4:1.5rem;
+  --sp-5:2.5rem; --sp-6:4rem; --sp-7:6rem;
+  /* shape */
+  --radius:6px; --radius-lg:16px;
+  --shadow:0 16px 44px -22px rgba(34,48,137,.30);
+  --maxw:1240px;
+}
+*{box-sizing:border-box}
+html,body{overflow-x:clip}
+body{
+  margin:0;background:var(--bg);color:var(--ink-soft);
+  font-family:var(--font-body);font-size:var(--s-0);line-height:1.6;
+  font-weight:400;-webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+h1,h2,h3,.h{
+  font-family:var(--font-display);font-weight:500;line-height:1.1;
+  letter-spacing:.005em;color:var(--ink);margin:0 0 .4em;
+}
+h1{font-size:var(--s-5);font-weight:600} h2{font-size:var(--s-3)} h3{font-size:var(--s-1)}
+p{margin:0 0 1em}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 clamp(20px,4vw,48px)}
+.section{padding:var(--sp-7) 0}
+.eyebrow{
+  font-family:var(--font-body);text-transform:uppercase;letter-spacing:.2em;
+  font-size:.72rem;font-weight:600;color:var(--accent);margin:0 0 var(--sp-3);
+}
+/* buttons — PILL (PBC signature), uppercase DM Sans */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:.5em;
+  font-family:var(--font-body);font-weight:600;text-transform:uppercase;
+  letter-spacing:.08em;font-size:.78rem;line-height:1;cursor:pointer;
+  padding:1.05em 2.1em;border:1.5px solid var(--btn);border-radius:999px;
+  background:var(--btn);color:var(--btn-ink);transition:.2s;
+}
+.btn:hover{background:#fd5fa9;border-color:#fd5fa9;transform:translateY(-1px)}
+.btn-outline{background:transparent;color:var(--ink);border-color:var(--ink)}
+.btn-outline:hover{background:var(--ink);color:#fff}
+.btn-light{background:#fff;color:var(--ink);border-color:#fff}
+.btn-light:hover{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.btn-block{display:flex;width:100%}
+/* floating decorative (static) — optional */
+.float{position:absolute;z-index:3;pointer-events:none}
+.float img{width:100%;height:auto;transform:rotate(var(--rot,0deg));
+  filter:drop-shadow(0 22px 30px rgba(34,48,137,.26)) drop-shadow(0 6px 10px rgba(34,48,137,.16))}
+@media(max-width:1000px){.float{display:none}}
+/* scroll-reveal 3D */
+.reveal{opacity:0;transform:perspective(900px) rotateX(8deg) translateY(26px);
+  transition:.7s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){
+  .reveal{opacity:1;transform:none;transition:none}
+  .float img{transform:rotate(var(--rot,0deg))!important}
+}
