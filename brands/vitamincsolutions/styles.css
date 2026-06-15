@@ -1,0 +1,1495 @@
+/* Vitamin C Solutions — assembled section styles (scoped). Base tokens in base.css */
+
+/* ===== header ===== */
+/* ── Vitamin C Solutions — Header + Announce Bar ──────────────────────────
+   Scoped entirely to .announce and .site-header
+   Tokens from base.css; no token redefinitions.
+   ───────────────────────────────────────────────────────────────────────── */
+
+/* ── Announcement bar ───────────────────────────────────────────────────── */
+.announce {
+  background: var(--ink);
+  color: #ffffff;
+  text-align: center;
+  padding: 9px var(--sp-3);
+  font-family: var(--font-body);
+  font-size: .78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .13em;
+  line-height: 1.4;
+  width: 100%;
+  position: relative;
+  z-index: 51; /* sits above sticky header */
+}
+
+.announce-extra {
+  display: inline;
+}
+
+@media (max-width: 760px) {
+  .announce-extra {
+    display: none;
+  }
+}
+
+/* ── Sticky site header ─────────────────────────────────────────────────── */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--bg);
+  border-bottom: 1px solid var(--line);
+  width: 100%;
+}
+
+.site-header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 clamp(16px, 4vw, 40px);
+}
+
+/* ── Logo ───────────────────────────────────────────────────────────────── */
+.site-header__logo {
+  display: flex;
+  align-items: center;
+  flex: 0 0 auto;
+  text-decoration: none;
+}
+
+.site-header__logo .logo {
+  height: 40px;
+  width: auto;
+  display: block;
+}
+
+/* ── Center nav ─────────────────────────────────────────────────────────── */
+.site-header__nav {
+  display: flex;
+  align-items: center;
+  gap: clamp(16px, 2.2vw, 32px);
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.site-header__nav a {
+  font-family: var(--font-body);
+  font-size: .82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .09em;
+  color: var(--ink);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color .15s ease;
+  line-height: 1;
+}
+
+.site-header__nav a:hover {
+  color: var(--accent);
+}
+
+/* ── Right icons ────────────────────────────────────────────────────────── */
+.site-header__icons {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex: 0 0 auto;
+}
+
+.site-header__icon-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  color: var(--ink);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  text-decoration: none;
+  position: relative;
+  transition: color .15s ease;
+}
+
+.site-header__icon-btn:hover {
+  color: var(--accent);
+}
+
+.site-header__icon-btn svg {
+  width: 22px;
+  height: 22px;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  display: block;
+  flex: none;
+}
+
+/* Cart count bubble */
+.cart-count {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  background: var(--accent);
+  color: #ffffff;
+  font-family: var(--font-body);
+  font-size: .6rem;
+  font-weight: 700;
+  line-height: 1;
+  min-width: 16px;
+  height: 16px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 3px;
+  pointer-events: none;
+}
+
+/* ── Mobile: ≤900px ─────────────────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .site-header__nav {
+    display: none;
+  }
+
+  .site-header__icon-btn--search {
+    display: none;
+  }
+
+  /* Logo stays left, cart stays right — single row, no wrap */
+  .site-header__inner {
+    justify-content: space-between;
+  }
+}
+
+/* ===== hero ===== */
+/* ─────────────────────────────────────────────
+   HERO — Full-bleed pool-blue color band
+   K18 DNA: oversized lowercase h1, packshots float
+   on the band, square black CTA, all text white.
+   ───────────────────────────────────────────── */
+
+/* Section shell -------------------------------- */
+.s-hero {
+  background: linear-gradient(135deg, var(--block-1), var(--block-1b));
+  padding: clamp(56px, 8vw, 100px) 0 clamp(48px, 7vw, 88px);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Two-col grid --------------------------------- */
+.s-hero__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: clamp(32px, 5vw, 72px);
+}
+
+/* ── LEFT: text column ──────────────────────── */
+.s-hero__text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--sp-4);
+}
+
+/* Eyebrow: white/translucent, override base --accent color */
+.s-hero__eyebrow {
+  color: #ffffff;
+  letter-spacing: .18em;
+}
+
+/* h1: giant lowercase, white, tight lh */
+.s-hero__h1 {
+  color: #ffffff;
+  font-size: clamp(2.4rem, 5.5vw, var(--s-5));
+  line-height: 1.02;
+  letter-spacing: -.02em;
+  font-weight: 800;
+  text-transform: lowercase;
+  max-width: 14ch;
+}
+
+/* Subhead: white, clear legibility */
+.s-hero__sub {
+  color: rgba(255, 255, 255, 0.92);
+  font-size: var(--s-1);
+  font-weight: 500;
+  line-height: 1.45;
+  max-width: 38ch;
+  margin-top: calc(-1 * var(--sp-2));
+}
+
+/* CTA: square black — btn btn-dark already handles this;
+   override only what's hero-specific */
+.s-hero__cta {
+  margin-top: var(--sp-2);
+  flex-shrink: 0;
+}
+
+/* Trust line */
+.s-hero__trust {
+  color: rgba(255, 255, 255, 0.88);
+  font-size: var(--s--1);
+  font-weight: 600;
+  letter-spacing: .04em;
+  margin-top: calc(-1 * var(--sp-2));
+}
+
+/* ── RIGHT: packshot column ─────────────────── */
+.s-hero__images {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  /* reserve height so images can overlap comfortably */
+  min-height: 440px;
+}
+
+.s-hero__img {
+  position: absolute;
+  width: clamp(200px, 28vw, 380px);
+  height: auto;
+  border-radius: var(--radius-lg);
+  filter: drop-shadow(0 24px 48px rgba(6, 40, 70, 0.40))
+          drop-shadow(0 6px 16px rgba(6, 40, 70, 0.25));
+  object-fit: contain;
+}
+
+/* Shampoo: back-left, slight counter-tilt */
+.s-hero__img--shampoo {
+  bottom: 20px;
+  left: 0;
+  transform: rotate(-4deg) translateX(-8px);
+  z-index: 1;
+}
+
+/* Conditioner: front-right, slight tilt opposite */
+.s-hero__img--conditioner {
+  bottom: 0;
+  right: 0;
+  transform: rotate(3deg) translateX(8px);
+  z-index: 2;
+}
+
+/* ── MOBILE (≤ 900px) ──────────────────────── */
+@media (max-width: 900px) {
+  .s-hero {
+    padding: clamp(36px, 7vw, 60px) 0 clamp(40px, 8vw, 72px);
+  }
+
+  .s-hero__inner {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  /* Images come FIRST on mobile — visible above fold */
+  .s-hero__images {
+    order: -1;
+    min-height: 260px;
+    margin-bottom: var(--sp-5);
+  }
+
+  .s-hero__img {
+    width: clamp(130px, 38vw, 220px);
+    position: absolute;
+  }
+
+  /* Keep packshots tight + overlapping in the panel */
+  .s-hero__img--shampoo {
+    left: 10%;
+    bottom: 0;
+    transform: rotate(-4deg);
+  }
+
+  .s-hero__img--conditioner {
+    right: 10%;
+    bottom: 0;
+    transform: rotate(3deg);
+  }
+
+  .s-hero__h1 {
+    font-size: clamp(2rem, 8.5vw, 2.8rem);
+    max-width: 22ch;
+  }
+
+  .s-hero__sub {
+    font-size: var(--s-0);
+  }
+
+  .s-hero__cta {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* ── Very narrow (≤ 480px) ──────────────────── */
+@media (max-width: 480px) {
+  .s-hero__images {
+    min-height: 210px;
+  }
+
+  .s-hero__img {
+    width: clamp(110px, 42vw, 190px);
+  }
+
+  .s-hero__img--shampoo {
+    left: 5%;
+  }
+
+  .s-hero__img--conditioner {
+    right: 5%;
+  }
+}
+
+/* ===== bestsellers ===== */
+/* ============================================================
+   BESTSELLERS — Vitamin C Solutions
+   Scoped under .s-bestsellers · tokens from base.css only
+   ============================================================ */
+
+/* ---------- section wrapper ---------- */
+.s-bestsellers {
+  background: var(--bg);
+}
+
+/* ---------- rating summary line under h2 ---------- */
+.s-bestsellers__rating {
+  color: var(--ink-soft);
+  font-size: var(--s-0);
+  font-weight: 600;
+  margin-top: .5rem;
+  margin-bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .3em;
+}
+
+.s-bestsellers__stars-inline {
+  color: var(--star);
+  font-size: 1.05em;
+  letter-spacing: .04em;
+}
+
+/* ---------- card grid ---------- */
+.s-bestsellers__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(14px, 2vw, 24px);
+}
+
+@media (max-width: 900px) {
+  .s-bestsellers__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* stays 2-col down to 361px, then collapses to 1 */
+@media (max-width: 360px) {
+  .s-bestsellers__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------- stagger via CSS custom property ---------- */
+.s-bestsellers__card.reveal {
+  transition-delay: var(--delay, 0s);
+}
+
+/* ---------- individual card ---------- */
+.s-bestsellers__card {
+  background: var(--surface);          /* white */
+  border: 1px solid var(--line);
+  border-radius: var(--radius);        /* square — 0px */
+  display: flex;
+  flex-direction: column;
+  transition: transform .22s ease, box-shadow .22s ease;
+}
+
+.s-bestsellers__card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow);
+}
+
+/* ---------- image area ---------- */
+.s-bestsellers__img-wrap {
+  position: relative;
+  display: block;
+  background: var(--surface-2);       /* light grey pad */
+  padding: clamp(14px, 3%, 24px);
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+}
+
+.s-bestsellers__img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* ---------- badges (top-left, absolute in img-wrap) ---------- */
+.s-bestsellers__badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 2;
+  font-family: var(--font-body);
+  font-size: .68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  padding: 4px 10px;
+  border-radius: var(--radius);
+  line-height: 1;
+}
+
+.s-bestsellers__badge--bundle {
+  background: var(--accent);          /* pink */
+  color: #fff;
+}
+
+.s-bestsellers__badge--save {
+  background: var(--accent-2);        /* sunny yellow */
+  color: var(--ink);
+}
+
+/* ---------- card body ---------- */
+.s-bestsellers__body {
+  padding: clamp(12px, 2.5%, 20px) clamp(12px, 2.5%, 20px) clamp(14px, 2.5%, 22px);
+  display: flex;
+  flex-direction: column;
+  gap: .45rem;
+  flex: 1;                            /* pushes CTA to bottom */
+}
+
+.s-bestsellers__name {
+  font-family: var(--font-display);
+  font-size: var(--s-0);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--ink);
+}
+
+/* ---------- star row ---------- */
+.s-bestsellers__meta {
+  display: flex;
+  align-items: center;
+  gap: .3em;
+}
+
+.s-bestsellers__stars {
+  color: var(--star);
+  font-size: .9em;
+  letter-spacing: .04em;
+  line-height: 1;
+}
+
+.s-bestsellers__count {
+  font-size: var(--s--1);
+  color: var(--ink-soft);
+  font-weight: 600;
+}
+
+/* ---------- descriptor ---------- */
+.s-bestsellers__desc {
+  font-size: var(--s--1);
+  color: var(--ink-soft);
+  font-weight: 500;
+  line-height: 1.4;
+  margin: 0;
+}
+
+/* ---------- price ---------- */
+.s-bestsellers__price {
+  font-size: var(--s-1);
+  font-weight: 800;
+  color: var(--ink);
+  margin: .1rem 0 .2rem;
+}
+
+/* ---------- CTA — inherits .btn .btn-dark .btn-block ---------- */
+/* Tighten padding at card width so text never wraps */
+.s-bestsellers__card .btn {
+  padding: 13px 16px;
+  font-size: .78rem;
+  letter-spacing: .06em;
+  margin-top: auto;                   /* pins to bottom of flex column */
+}
+
+/* ===== science ===== */
+/* ── Science band — Vitamin C Solutions ──────────────────────────────
+   Full-bleed citrus orange (--block-2), white text + white SVG line-art.
+   Scope: ALL rules under .s-science
+   ──────────────────────────────────────────────────────────────────── */
+
+.s-science {
+  position: relative;
+  background: var(--block-2);
+  color: #fff;
+  overflow: hidden;
+  padding: clamp(56px, 8vw, 104px) 0;
+}
+
+/* ── overrides for white-on-orange context ── */
+.s-science h2,
+.s-science h3,
+.s-science h4 {
+  color: #fff;
+}
+
+/* eyebrow: white + slightly less opacity to stay readable, not compete */
+.s-science .eyebrow.s-science__eyebrow {
+  color: rgba(255, 255, 255, .78);
+  letter-spacing: .2em;
+}
+
+/* ── two-column layout ── */
+.s-science__cols {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: clamp(32px, 5vw, 80px);
+  align-items: center;
+  margin-bottom: clamp(40px, 6vw, 72px);
+}
+
+/* ── LEFT: SVG graphic ── */
+.s-science__graphic {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+}
+
+.s-science__graphic svg {
+  width: min(280px, 100%);
+  height: auto;
+  filter: drop-shadow(0 6px 24px rgba(0,0,0,.18));
+}
+
+/* ── RIGHT: copy ── */
+.s-science__copy {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+  max-width: 600px;
+}
+
+.s-science__copy h2 {
+  font-size: clamp(var(--s-3), 4vw, var(--s-4));
+  line-height: 1.02;
+  margin-bottom: -.2rem; /* tighten gap below h2 */
+}
+
+/* the BIG falsifiable claim line */
+.s-science__claim {
+  font-family: var(--font-display);
+  font-size: clamp(var(--s-2), 2.6vw, var(--s-3));
+  font-weight: 800;
+  line-height: 1.12;
+  text-transform: lowercase;
+  letter-spacing: -.01em;
+  color: #fff;
+  /* subtle luminous underline to signal credibility */
+  border-left: 4px solid rgba(255, 255, 255, .55);
+  padding-left: var(--sp-3);
+}
+
+/* mechanism paragraph */
+.s-science__mech {
+  font-size: var(--s-1);
+  line-height: 1.6;
+  color: rgba(255, 255, 255, .88);
+  max-width: 520px;
+}
+
+/* CTA: btn-light already defined in base → just gap */
+.s-science__copy .btn {
+  align-self: flex-start;
+  margin-top: var(--sp-2);
+}
+
+/* ── stat row ── */
+.s-science__stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(16px, 3vw, 40px);
+  border-top: 1px solid rgba(255, 255, 255, .28);
+  padding-top: clamp(28px, 4vw, 48px);
+}
+
+.s-science__stat {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--sp-2);
+}
+
+/* icon: .ic from base already sets size 40×40, stroke currentColor */
+.s-science__stat .ic {
+  color: #fff;
+  flex: none;
+}
+
+.s-science__stat-label {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: var(--s-1);
+  color: #fff;
+  line-height: 1.2;
+}
+
+.s-science__stat-sub {
+  font-size: var(--s--1);
+  color: rgba(255, 255, 255, .72);
+  line-height: 1.4;
+}
+
+/* ── desktop float ── */
+/* .float + .float-cit position: base.css handles display:none <1000px */
+.s-science .float-cit {
+  /* bleed off the right seam of the science band */
+  right: -40px;
+  bottom: -30px;
+  width: clamp(160px, 14vw, 220px);
+}
+
+/* ── reveal stagger ── */
+/* graphic */
+.s-science__graphic.reveal { transition-delay: .05s }
+/* copy */
+.s-science__copy.reveal    { transition-delay: .18s }
+/* stats */
+.s-science__stats.reveal   { transition-delay: .34s }
+
+/* ── MOBILE ────────────────────────────────────────────────────────── */
+@media (max-width: 780px) {
+  .s-science__cols {
+    grid-template-columns: 1fr;
+    gap: clamp(24px, 5vw, 36px);
+  }
+
+  .s-science__graphic {
+    justify-content: center;
+  }
+
+  .s-science__graphic svg {
+    width: min(240px, 80vw);
+  }
+
+  .s-science__copy {
+    max-width: 100%;
+  }
+
+  .s-science__claim {
+    font-size: clamp(var(--s-1), 5vw, var(--s-2));
+  }
+
+  .s-science__stats {
+    grid-template-columns: 1fr;
+    gap: clamp(20px, 4vw, 28px);
+  }
+
+  .s-science__stat {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: var(--sp-3);
+  }
+
+  .s-science__stat-label,
+  .s-science__stat-sub {
+    display: block;
+  }
+}
+
+/* ===== usecase ===== */
+/* ─── Use-Case / What Vita C Fixes ─────────────────────────────────────────
+   Scoped entirely under .s-usecase. All values from base.css tokens.
+   DNA: K18 concern-by-concern explainer — clean white, bold lowercase, line icons.
+   ───────────────────────────────────────────────────────────────────────── */
+
+/* Section background: clean white (default --bg) */
+.s-usecase {
+  background: var(--bg);
+}
+
+/* ── Grid ──────────────────────────────────────────────────────────────── */
+.s-usecase__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--sp-4);
+}
+
+@media (max-width: 1024px) {
+  .s-usecase__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 540px) {
+  .s-usecase__grid {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+    margin-inline: auto;
+  }
+}
+
+/* ── Cards ─────────────────────────────────────────────────────────────── */
+.s-usecase__card {
+  background: var(--surface-2);
+  border-radius: var(--radius);           /* square — brand shape token */
+  border-top: 3px solid var(--block-1);   /* pool-blue accent stripe */
+  padding: var(--sp-5) var(--sp-4) var(--sp-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+  transition-delay: var(--delay, 0s);     /* stagger via inline custom prop */
+}
+
+/* ── Icon wrap ─────────────────────────────────────────────────────────── */
+.s-usecase__icon-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+/* .ic is 40×40 in base.css; override size to 44px as spec'd */
+.s-usecase__icon-wrap .ic {
+  width: 44px;
+  height: 44px;
+  color: var(--block-1);                  /* pool-blue stroke */
+  stroke-width: 1.7;
+}
+
+/* ── Card typography ───────────────────────────────────────────────────── */
+.s-usecase__card h3 {
+  font-size: var(--s-1);
+  font-weight: 800;
+  text-transform: lowercase;
+  color: var(--ink);
+  line-height: 1.1;
+  letter-spacing: -.01em;
+}
+
+.s-usecase__card p {
+  font-size: var(--s-0);
+  color: var(--ink-soft);
+  line-height: 1.5;
+  flex: 1;                                /* pushes link to card bottom */
+}
+
+/* ── Learn-more link ───────────────────────────────────────────────────── */
+.s-usecase__link {
+  display: inline-flex;
+  align-items: center;
+  gap: .3em;
+  font-size: var(--s--1);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1.5px solid transparent;
+  transition: border-color .18s ease, color .18s ease;
+  width: fit-content;
+}
+
+.s-usecase__link::after {
+  content: "→";
+  font-size: .9em;
+}
+
+.s-usecase__link:hover {
+  border-bottom-color: var(--accent);
+  color: var(--accent);
+}
+
+/* ── Reveal stagger (base transition set in base.css) ──────────────────── */
+.s-usecase__card.reveal {
+  transition-delay: var(--delay, 0s);
+}
+
+/* ===== pros ===== */
+/* ── FOR PROFESSIONALS / credibility band ─────────────────────────────────── */
+/* All rules scoped under .s-pros. Uses only base.css tokens.                  */
+
+.s-pros {
+  background: var(--surface-2);
+  overflow: hidden;
+}
+
+/* Two-column grid */
+.s-pros__cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(32px, 5vw, 72px);
+  align-items: center;
+}
+
+/* ── IMAGE ── */
+.s-pros__img-wrap {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  aspect-ratio: 1 / 1;   /* square */
+  flex: none;
+}
+
+.s-pros__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  border-radius: var(--radius-lg);
+}
+
+/* ── TEXT COLUMN ── */
+.s-pros__body {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(28px, 4vw, 48px);
+}
+
+.s-pros__text h2 {
+  margin: 0.3rem 0 1rem;
+  color: var(--ink);
+}
+
+.s-pros__text p {
+  color: var(--ink-soft);
+  font-size: var(--s-1);
+  line-height: 1.6;
+  margin-bottom: 1.75rem;
+  max-width: 42ch;
+}
+
+/* ── BADGE ROW ── */
+.s-pros__badges {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: clamp(12px, 2vw, 24px);
+}
+
+.s-pros__badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.55rem;
+  text-align: center;
+}
+
+.s-pros__badge-ic {
+  color: var(--accent);
+  width: 36px;
+  height: 36px;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  fill: none;
+  flex: none;
+}
+
+.s-pros__badge-label {
+  font-size: var(--s--1);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  color: var(--ink);
+  line-height: 1.25;
+}
+
+/* ── REVEAL DELAYS ── */
+.s-pros__img-wrap.reveal  { transition-delay: 0s;    }
+.s-pros__text.reveal      { transition-delay: 0.1s;  }
+.s-pros__badges.reveal    { transition-delay: 0.22s; }
+
+/* ── MOBILE ── */
+@media (max-width: 768px) {
+  .s-pros__cols {
+    grid-template-columns: 1fr;
+  }
+
+  /* image first on mobile */
+  .s-pros__img-wrap {
+    aspect-ratio: 4 / 3;
+    order: -1;
+  }
+
+  .s-pros__text p {
+    max-width: 100%;
+  }
+
+  /* badges: 2 × 2 wrap */
+  .s-pros__badges {
+    grid-template-columns: repeat(2, 1fr);
+    gap: clamp(16px, 4vw, 28px);
+  }
+}
+
+@media (max-width: 480px) {
+  .s-pros__img-wrap {
+    aspect-ratio: 3 / 2;
+  }
+}
+
+/* ===== reviews ===== */
+/* =========================================================
+   s-reviews — Vitamin C Solutions · Real Swimmers
+   ========================================================= */
+
+.s-reviews {
+  background: var(--surface-2);
+}
+
+/* Rating summary line under h2 */
+.s-reviews__rating {
+  color: var(--star);
+  font-size: var(--s-1);
+  font-weight: 700;
+  letter-spacing: .01em;
+  margin-top: .6rem;
+}
+
+/* ── Grid ─────────────────────────────────────────────── */
+.s-reviews__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-4);
+}
+
+@media (max-width: 900px) {
+  .s-reviews__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .s-reviews__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ── Card ─────────────────────────────────────────────── */
+.s-reviews__card {
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);       /* square — matches brand */
+  padding: var(--sp-5) var(--sp-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+  transition-delay: var(--delay, 0s); /* stagger via inline var */
+}
+
+/* Stars row */
+.s-reviews__stars {
+  color: var(--star);
+  font-size: var(--s-2);
+  line-height: 1;
+  letter-spacing: .05em;
+}
+
+/* Bold lowercase headline (brand voice) */
+.s-reviews__headline {
+  font-family: var(--font-display);
+  font-size: var(--s-1);
+  font-weight: 800;
+  text-transform: lowercase;
+  line-height: 1.15;
+  color: var(--ink);
+  margin: 0;
+}
+
+/* Quote body */
+.s-reviews__quote {
+  font-size: var(--s-0);
+  color: var(--ink-soft);
+  line-height: 1.6;
+  flex: 1;                            /* push footer to bottom */
+  margin: 0;
+}
+
+/* Footer: name · badge · product */
+.s-reviews__footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--sp-2);
+  margin-top: auto;
+  padding-top: var(--sp-3);
+  border-top: 1px solid var(--line);
+}
+
+.s-reviews__name {
+  font-weight: 700;
+  font-size: var(--s--1);
+  color: var(--ink);
+  flex-shrink: 0;
+}
+
+.s-reviews__badge {
+  font-size: .72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  color: #ffffff;
+  background: var(--accent);          /* brand pink */
+  border-radius: var(--radius-pill);
+  padding: 2px 10px;
+  flex-shrink: 0;
+}
+
+.s-reviews__product {
+  font-size: var(--s--1);
+  color: var(--ink-soft);
+  margin-left: auto;
+  text-align: right;
+}
+
+@media (max-width: 400px) {
+  .s-reviews__product {
+    margin-left: 0;
+    text-align: left;
+    width: 100%;
+  }
+}
+
+/* ── Disclaimer ───────────────────────────────────────── */
+.s-reviews__disclaimer {
+  margin-top: var(--sp-5);
+  text-align: center;
+  font-size: var(--s--1);
+  color: var(--ink-soft);
+}
+
+/* ===== founders ===== */
+/* ── s-founders: warm brand-story band ─────────────────────────────────── */
+
+.s-founders {
+  background: var(--surface-2);
+  position: relative;
+  overflow: hidden;
+}
+
+/* float: bleed off left edge at ~20% down */
+.s-founders .float-drop {
+  left: -60px;
+  top: 18%;
+  width: 220px;
+}
+
+/* split layout: copy (left) + emblem (right) */
+.s-founders .founders-inner {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: clamp(32px, 6vw, 80px);
+}
+
+/* ── copy column ─────────────────────────────────────────────────────────── */
+
+.s-founders .founders-copy {
+  max-width: 640px;
+}
+
+.s-founders .founders-copy h2 {
+  margin-bottom: var(--sp-4);
+  line-height: 1.02;
+}
+
+.s-founders .founders-body {
+  color: var(--ink-soft);
+  font-size: var(--s-1);
+  line-height: 1.65;
+  margin-bottom: var(--sp-5);
+  max-width: 520px;
+}
+
+/* stat trio: inline pill row */
+.s-founders .founders-stats {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+  list-style: none;
+  margin-bottom: var(--sp-5);
+}
+
+.s-founders .stat-label {
+  font-size: .78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .13em;
+  color: var(--ink);
+  background: #fff;
+  border: 1.5px solid var(--line);
+  padding: 5px 14px;
+  border-radius: var(--radius-pill);
+  white-space: nowrap;
+}
+
+.s-founders .stat-dot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--line);
+  flex: none;
+}
+
+/* ── emblem column ───────────────────────────────────────────────────────── */
+
+.s-founders .founders-emblem {
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.s-founders .founders-badge {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: var(--shadow);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.s-founders .founders-badge svg {
+  width: 120px;
+  height: 120px;
+}
+
+/* ── responsive ─────────────────────────────────────────────────────────── */
+
+@media (max-width: 768px) {
+  .s-founders .founders-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .s-founders .founders-emblem {
+    display: none; /* hide ornamental emblem on mobile to keep it clean */
+  }
+
+  .s-founders .founders-body {
+    font-size: var(--s-0);
+  }
+}
+
+/* ===== newsletter ===== */
+/* ── Newsletter band ──────────────────────────────────── */
+.s-newsletter {
+  background: linear-gradient(135deg, var(--block-1), var(--block-1b));
+  padding: clamp(56px, 8vw, 100px) 0;
+}
+
+.s-newsletter .nl-inner {
+  text-align: center;
+  max-width: 620px;
+  margin: 0 auto;
+}
+
+/* eyebrow override: white on blue */
+.s-newsletter .eyebrow {
+  color: rgba(255, 255, 255, .85);
+}
+
+/* headline */
+.s-newsletter h2 {
+  color: #ffffff;
+  margin-bottom: var(--sp-3);
+}
+
+/* subhead */
+.s-newsletter .nl-sub {
+  color: #ffffff;
+  font-size: var(--s-1);
+  margin-bottom: var(--sp-5);
+  line-height: 1.5;
+}
+
+/* inline form */
+.s-newsletter .nl-form {
+  display: flex;
+  gap: var(--sp-3);
+  align-items: stretch;
+  justify-content: center;
+  margin-bottom: var(--sp-3);
+}
+
+.s-newsletter .nl-input {
+  flex: 1 1 0;
+  min-width: 0;
+  padding: 15px 20px;
+  font-family: var(--font-body);
+  font-size: var(--s-0);
+  font-weight: 500;
+  color: var(--ink);
+  background: #ffffff;
+  border: 2px solid transparent;
+  border-radius: var(--radius);
+  outline: none;
+  transition: border-color .18s ease;
+  line-height: 1;
+}
+
+.s-newsletter .nl-input::placeholder {
+  color: var(--ink-soft);
+}
+
+.s-newsletter .nl-input:focus {
+  border-color: var(--accent-2);
+}
+
+/* btn-light already defined in base; no overrides needed */
+
+/* tiny print */
+.s-newsletter .nl-fine {
+  color: rgba(255, 255, 255, .70);
+  font-size: var(--s--1);
+}
+
+/* ── Mobile: stack form ──────────────────────────────── */
+@media (max-width: 600px) {
+  .s-newsletter .nl-form {
+    flex-direction: column;
+    gap: var(--sp-3);
+  }
+
+  .s-newsletter .nl-input,
+  .s-newsletter .nl-form .btn {
+    width: 100%;
+  }
+}
+
+/* ===== footer ===== */
+/* ============================================================
+   Vitamin C Solutions — footer.css
+   Scoped to .site-footer — tokens from base.css only
+   ============================================================ */
+
+/* ── Layout ─────────────────────────────────────────────── */
+.site-footer {
+  background: var(--footer-bg);
+  color: var(--footer-text);
+  font-family: var(--font-body);
+  font-size: var(--s-0);
+  line-height: 1.6;
+}
+
+.site-footer__inner {
+  padding: var(--sp-7) 0 var(--sp-6);
+}
+
+/* 4-column grid: brand | shop | learn | company */
+.site-footer__grid {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr 1fr 1fr;
+  gap: var(--sp-6) var(--sp-5);
+  align-items: start;
+}
+
+/* ── Brand column ───────────────────────────────────────── */
+.site-footer__brand {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+}
+
+.site-footer__logo-chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  border-radius: var(--radius-lg);
+  padding: 10px 14px;
+  width: fit-content;
+  flex-shrink: 0;
+}
+
+.site-footer__logo-chip img {
+  display: block;
+  height: 38px;
+  width: auto;
+  max-width: 180px;
+  object-fit: contain;
+}
+
+.site-footer__tagline {
+  font-size: var(--s--1);
+  color: var(--footer-text);
+  line-height: 1.65;
+  max-width: 280px;
+}
+
+.site-footer__socials {
+  display: flex;
+  gap: var(--sp-3);
+  align-items: center;
+}
+
+.site-footer__social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(255,255,255,.18);
+  color: var(--footer-text);
+  transition: border-color .18s ease, color .18s ease, background .18s ease;
+}
+
+.site-footer__social-link:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: rgba(254,98,146,.08);
+}
+
+.site-footer__social-link svg {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+  flex-shrink: 0;
+}
+
+/* ── Link columns ───────────────────────────────────────── */
+.site-footer__col-title {
+  font-family: var(--font-display);
+  font-size: .72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .14em;
+  color: var(--footer-title);
+  margin-bottom: var(--sp-4);
+}
+
+.site-footer__links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+}
+
+.site-footer__links li a {
+  color: var(--footer-text);
+  font-size: var(--s--1);
+  font-weight: 500;
+  text-decoration: none;
+  transition: color .16s ease;
+  display: inline-block;
+}
+
+.site-footer__links li a:hover {
+  color: var(--accent);
+}
+
+/* ── Bottom bar ─────────────────────────────────────────── */
+.site-footer__bottom {
+  border-top: 1px solid rgba(255,255,255,.12);
+  padding: var(--sp-4) 0;
+}
+
+.site-footer__bottom-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-4);
+  flex-wrap: wrap;
+}
+
+.site-footer__legal {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.site-footer__legal p {
+  font-size: .75rem;
+  color: var(--footer-text);
+  opacity: .7;
+  line-height: 1.5;
+}
+
+.site-footer__payments {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  flex-wrap: wrap;
+}
+
+.site-footer__pay-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255,255,255,.07);
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 4px;
+  padding: 4px 8px;
+  height: 26px;
+  gap: 4px;
+}
+
+.site-footer__pay-badge svg {
+  display: block;
+  height: 14px;
+  width: auto;
+}
+
+.site-footer__pay-badge span {
+  font-size: .68rem;
+  font-weight: 700;
+  color: var(--footer-text);
+  letter-spacing: .04em;
+  white-space: nowrap;
+}
+
+/* ── Responsive ─────────────────────────────────────────── */
+
+/* 2-col: tablet */
+@media (max-width: 860px) {
+  .site-footer__grid {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--sp-5) var(--sp-4);
+  }
+
+  /* brand column spans full row on top */
+  .site-footer__brand {
+    grid-column: 1 / -1;
+  }
+}
+
+/* 1-col: mobile */
+@media (max-width: 520px) {
+  .site-footer__grid {
+    grid-template-columns: 1fr;
+    gap: var(--sp-4);
+  }
+
+  .site-footer__brand {
+    grid-column: auto;
+  }
+
+  .site-footer__bottom-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--sp-3);
+  }
+
+  .site-footer__payments {
+    gap: var(--sp-2);
+  }
+}

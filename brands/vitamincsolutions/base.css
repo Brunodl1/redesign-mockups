@@ -1,0 +1,107 @@
+/* Vitamin C Solutions — per-brand foundation
+   (faithful to real site: Assistant font, SQUARE black buttons, white+black;
+    elevated with K18 science-haircare DNA: color-block sections, lowercase
+    oversized headlines, pool-blue + citrus blocks, pink accent) */
+:root{
+  /* color */
+  --bg:#ffffff;
+  --surface:#ffffff;
+  --surface-2:#f4f6f8;       /* light cool grey band/card */
+  --ink:#121212;
+  --ink-soft:#4f5b62;
+  --block-1:#1aa3e0;         /* HERO band — bright pool blue */
+  --block-1b:#0b6fb0;        /* deeper pool blue (gradient/scrim) */
+  --block-2:#ff7a1a;         /* SCIENCE/PROOF band — citrus orange (vitamin C) */
+  --accent:#fe6292;          /* brand pink — stars, links, highlights */
+  --accent-2:#fadc36;        /* sunny yellow pop */
+  --accent-ink:#ffffff;
+  --pop:#fe6292;
+  --btn:#121212;             /* SQUARE black button */
+  --btn-ink:#ffffff;
+  --line:#e4e8ea;
+  --footer-bg:#0e1416;
+  --footer-title:#ffffff;
+  --footer-text:#9aa6ab;
+  --star:#fe6292;
+  /* type — Assistant, heavy lowercase display */
+  --font-display:"Assistant", system-ui, sans-serif;
+  --font-body:"Assistant", system-ui, sans-serif;
+  --s--1:.82rem; --s-0:1rem; --s-1:1.2rem; --s-2:1.55rem;
+  --s-3:2.1rem; --s-4:3.1rem; --s-5:4.4rem;
+  /* space */
+  --sp-1:.25rem; --sp-2:.5rem; --sp-3:1rem; --sp-4:1.5rem;
+  --sp-5:2.5rem; --sp-6:4rem; --sp-7:6rem;
+  /* shape — SQUARE / minimal radius (clinical-bold) */
+  --radius:0px; --radius-lg:6px; --radius-pill:999px;
+  --shadow:0 12px 36px rgba(18,18,18,.10);
+  --shadow-sm:0 4px 16px rgba(18,18,18,.07);
+  --maxw:1320px;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{overflow-x:clip}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--font-body);
+  font-weight:500;
+  color:var(--ink);
+  background:var(--bg);
+  font-size:17px;
+  line-height:1.55;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+
+/* headlines: heavy, lowercase, tight (K18 voice) */
+h1,h2,h3,h4{font-family:var(--font-display);color:var(--ink);line-height:1.04;font-weight:800;letter-spacing:-.01em}
+h1{font-size:var(--s-5);text-transform:lowercase}
+h2{font-size:var(--s-4);text-transform:lowercase}
+h3{font-size:var(--s-2);font-weight:700}
+
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 clamp(16px,4vw,40px);width:100%}
+.section{padding:clamp(48px,7vw,90px) 0}
+
+/* section eyebrow */
+.eyebrow{
+  font-size:.76rem;font-weight:700;text-transform:uppercase;letter-spacing:.16em;
+  color:var(--accent);display:inline-block;margin-bottom:.7rem;
+}
+.section-head{max-width:760px;margin:0 auto clamp(28px,4vw,52px);text-align:center}
+.section-head h2{margin-bottom:.4rem}
+.section-head p{color:var(--ink-soft);font-size:var(--s-1)}
+
+/* buttons — SQUARE, uppercase, tracked (real brand + K18) */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:.5em;
+  font-family:var(--font-body);font-weight:700;font-size:.86rem;
+  text-transform:uppercase;letter-spacing:.08em;
+  padding:15px 38px;border-radius:var(--radius);
+  border:2px solid transparent;cursor:pointer;transition:.18s ease;line-height:1;
+}
+.btn-dark{background:var(--btn);color:var(--btn-ink)}
+.btn-dark:hover{background:#000;transform:translateY(-2px)}
+.btn-primary{background:var(--btn);color:var(--btn-ink)}      /* alias: square black */
+.btn-primary:hover{background:#000;transform:translateY(-2px)}
+.btn-outline{background:transparent;color:var(--ink);border-color:var(--ink)}
+.btn-outline:hover{background:var(--ink);color:#fff}
+.btn-light{background:#fff;color:var(--ink);border-color:#fff}
+.btn-light:hover{background:transparent;color:#fff;border-color:#fff}
+.btn-block{width:100%}
+
+.ic{width:40px;height:40px;stroke:currentColor;stroke-width:1.7;fill:none;flex:none}
+
+/* depth: floats (STATIC) */
+.float{position:absolute;z-index:3;pointer-events:none}
+.float img{width:100%;height:auto;transform:rotate(var(--rot,0deg));
+  filter:drop-shadow(0 18px 28px rgba(18,18,18,.22)) drop-shadow(0 4px 8px rgba(18,18,18,.12))}
+@media(max-width:1000px){.float{display:none}}
+
+/* scroll reveal (3D) */
+.reveal{opacity:0;transform:perspective(900px) rotateX(8deg) translateY(26px);
+  transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){
+  .reveal{opacity:1;transform:none;transition:none}
+  html{scroll-behavior:auto}
+}
