@@ -63,6 +63,7 @@
   height: 32px;
   width: auto;
   display: block;
+  filter: brightness(0); /* force the header logo to solid black */
 }
 
 /* Nav */
