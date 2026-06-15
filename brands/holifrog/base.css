@@ -1,0 +1,105 @@
+/* HoliFrog — per-brand foundation (faithful to real site:
+   white + cream #fffcf2, forest green #215732, mint #9fd8ca, new-hero→Hanken Grotesk,
+   PILL buttons, italic emphasis). Conversion structure from skincare-cosmetics ref. */
+:root{
+  /* color */
+  --bg:#ffffff;
+  --surface:#fffcf2;        /* warm ivory card/band */
+  --surface-2:#eef6f1;      /* pale mint-green fill */
+  --ink:#282928;            /* heading near-black */
+  --ink-soft:#454645;       /* body grey */
+  --accent:#215732;         /* forest green — buttons, links */
+  --accent-2:#9fd8ca;       /* mint — hover, soft accents */
+  --accent-soft:#e7f1ec;    /* pale green tint */
+  --accent-ink:#ffffff;
+  --pop:#a94600;            /* rust — sale/badge */
+  --star:#a67f63;           /* tan rating stars */
+  --line:#e1e3e1;
+  --btn:#215732;
+  --btn-ink:#ffffff;
+  --footer-bg:#215732;
+  --footer-title:#ffffff;
+  --footer-text:#cfe6dc;
+  --footer-link:#9fd8ca;
+  /* type */
+  --font-display:"Hanken Grotesk", system-ui, sans-serif;
+  --font-body:"Hanken Grotesk", system-ui, sans-serif;
+  --s--1:.82rem; --s-0:1rem; --s-1:1.2rem; --s-2:1.55rem;
+  --s-3:2.05rem; --s-4:2.9rem; --s-5:3.6rem;
+  /* space */
+  --sp-1:.25rem; --sp-2:.5rem; --sp-3:1rem; --sp-4:1.5rem;
+  --sp-5:2.5rem; --sp-6:4rem; --sp-7:6rem;
+  /* shape */
+  --radius:14px; --radius-lg:24px; --radius-pill:100px;
+  --shadow:0 12px 36px rgba(40,41,40,.09);
+  --shadow-sm:0 4px 16px rgba(40,41,40,.06);
+  --maxw:1280px;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{overflow-x:clip}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--font-body);
+  font-weight:400;
+  color:var(--ink-soft);
+  background:var(--bg);
+  font-size:17px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+
+h1,h2,h3,h4{font-family:var(--font-display);color:var(--ink);line-height:1.08;font-weight:600;letter-spacing:-.02em}
+h1{font-size:var(--s-5)}
+h2{font-size:var(--s-4)}
+h3{font-size:var(--s-2);font-weight:600;letter-spacing:-.01em}
+/* italic emphasis (brand signature) */
+em,.em{font-style:italic;font-weight:400}
+
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 clamp(16px,4vw,40px);width:100%}
+.section{padding:clamp(48px,7vw,88px) 0}
+
+.eyebrow{
+  font-size:.74rem;font-weight:600;text-transform:uppercase;letter-spacing:.16em;
+  color:var(--accent);display:inline-block;margin-bottom:.7rem;
+}
+.section-head{max-width:720px;margin:0 auto clamp(26px,4vw,46px);text-align:center}
+.section-head h2{margin-bottom:.4rem}
+.section-head p{color:var(--ink-soft);font-size:var(--s-1)}
+
+/* buttons — PILL, green, sentence-case (real brand) */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:.5em;
+  font-family:var(--font-body);font-weight:500;font-size:.95rem;
+  letter-spacing:.005em;
+  padding:13px 30px;border-radius:var(--radius-pill);
+  border:1.5px solid transparent;cursor:pointer;transition:.2s ease;line-height:1;
+}
+.btn-primary{background:var(--accent);color:var(--accent-ink)}
+.btn-primary:hover{background:var(--accent-2);color:var(--accent)}
+.btn-dark{background:var(--ink);color:#fff}
+.btn-dark:hover{background:#000}
+.btn-outline{background:transparent;color:var(--accent);border-color:var(--accent)}
+.btn-outline:hover{background:var(--accent);color:#fff}
+.btn-light{background:#fff;color:var(--accent);border-color:#fff}
+.btn-light:hover{background:transparent;color:#fff;border-color:#fff}
+.btn-block{width:100%}
+
+.ic{width:40px;height:40px;stroke:currentColor;stroke-width:1.6;fill:none;flex:none}
+
+/* depth: floats (STATIC) */
+.float{position:absolute;z-index:3;pointer-events:none}
+.float img{width:100%;height:auto;transform:rotate(var(--rot,0deg));
+  filter:drop-shadow(0 18px 28px rgba(40,41,40,.18)) drop-shadow(0 4px 8px rgba(40,41,40,.10))}
+@media(max-width:1000px){.float{display:none}}
+
+/* scroll reveal (3D) */
+.reveal{opacity:0;transform:perspective(900px) rotateX(8deg) translateY(26px);
+  transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){
+  .reveal{opacity:1;transform:none;transition:none}
+  html{scroll-behavior:auto}
+}
