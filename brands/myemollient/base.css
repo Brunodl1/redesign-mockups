@@ -1,0 +1,86 @@
+/* My Emollient — per-brand foundation. Their real brand (green-charcoal ink #040f0f,
+   Proza Libre + Poppins, square uppercase buttons) ELEVATED with skincare-cosmetics
+   warm-natural DNA. Brand had no accent → introduce ownable CLAY + FOREST-GREEN soul. */
+:root{
+  /* color */
+  --bg:        #f7f2e9;   /* warm cream page bg */
+  --surface:   #fbf7ef;   /* lighter cream card */
+  --surface-2: #ece1cd;   /* sand alt band */
+  --ink:       #14201a;   /* deep forest-charcoal (their green-black, warmed) */
+  --ink-soft:  #5d655b;   /* muted olive-grey secondary */
+  --accent:    #c0764c;   /* warm clay/terracotta — buttons, highlights (ownable) */
+  --accent-ink:#fbf7ef;   /* cream text on clay */
+  --deep:      #25382c;   /* forest green — dark bands, footer (soul color) */
+  --deep-ink:  #f0ead9;   /* cream text on forest */
+  --pop:       #a8472a;   /* deeper terracotta — sale/badges */
+  --pop-ink:   #ffffff;
+  --line:      rgba(20,32,26,.14);
+  --btn:       #c0764c;   /* primary button = clay */
+  --btn-ink:   #fbf7ef;
+  --star:      #c0764c;
+  /* type */
+  --font-display:"Proza Libre", Georgia, serif;
+  --font-body:   "Poppins", system-ui, -apple-system, Arial, sans-serif;
+  --s--1: .82rem;
+  --s-0:  1rem;
+  --s-1:  1.2rem;
+  --s-2:  1.5rem;
+  --s-3:  2.05rem;
+  --s-4:  2.85rem;
+  --s-5:  3.7rem;
+  /* space */
+  --sp-1:.25rem; --sp-2:.5rem; --sp-3:1rem; --sp-4:1.5rem;
+  --sp-5:2.5rem; --sp-6:4rem; --sp-7:6rem;
+  /* shape */
+  --radius:10px; --radius-lg:18px;
+  --shadow:0 16px 44px -22px rgba(40,30,18,.30);
+  --maxw:1200px;
+}
+*{box-sizing:border-box}
+html,body{overflow-x:clip}
+body{
+  margin:0;background:var(--bg);color:var(--ink-soft);
+  font-family:var(--font-body);font-size:var(--s-0);line-height:1.65;
+  font-weight:400;-webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+h1,h2,h3,.h{
+  font-family:var(--font-display);font-weight:600;line-height:1.12;
+  letter-spacing:0;color:var(--ink);margin:0 0 .4em;
+}
+h1{font-size:var(--s-5)} h2{font-size:var(--s-3)} h3{font-size:var(--s-1)}
+p{margin:0 0 1em}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 clamp(20px,4vw,48px)}
+.section{padding:var(--sp-7) 0}
+.eyebrow{
+  font-family:var(--font-body);text-transform:uppercase;letter-spacing:.2em;
+  font-size:.72rem;font-weight:600;color:var(--accent);margin:0 0 var(--sp-3);
+}
+/* buttons — square (their real style), uppercase Poppins, tracked */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:.5em;
+  font-family:var(--font-body);font-weight:600;text-transform:uppercase;
+  letter-spacing:.14em;font-size:.76rem;line-height:1;cursor:pointer;
+  padding:1.15em 2.2em;border:1.5px solid var(--btn);border-radius:2px;
+  background:var(--btn);color:var(--btn-ink);transition:.2s;
+}
+.btn:hover{background:#a8633e;border-color:#a8633e;transform:translateY(-1px)}
+.btn-outline{background:transparent;color:var(--ink);border-color:var(--ink)}
+.btn-outline:hover{background:var(--ink);color:var(--bg)}
+.btn-light{background:var(--surface);color:var(--ink);border-color:var(--surface)}
+.btn-light:hover{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.btn-block{display:flex;width:100%}
+/* floating decorative (static) — optional, unused here */
+.float{position:absolute;z-index:3;pointer-events:none}
+.float img{width:100%;height:auto;transform:rotate(var(--rot,0deg));
+  filter:drop-shadow(0 22px 30px rgba(40,30,18,.26))}
+@media(max-width:1000px){.float{display:none}}
+/* scroll-reveal 3D */
+.reveal{opacity:0;transform:perspective(900px) rotateX(8deg) translateY(26px);
+  transition:.7s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){
+  .reveal{opacity:1;transform:none;transition:none}
+  .float img{transform:rotate(var(--rot,0deg))!important}
+}
