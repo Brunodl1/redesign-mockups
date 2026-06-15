@@ -222,6 +222,41 @@
   letter-spacing: .01em;
 }
 
+/* As-featured-in press row inside the hero card */
+.s-hero__press {
+  margin-top: var(--sp-3);
+  padding-top: var(--sp-3);
+  border-top: 1px solid var(--line);
+}
+.s-hero__press-label {
+  display: block;
+  font-size: .68rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .18em;
+  color: var(--ink-soft);
+  opacity: .7;
+  margin-bottom: .55rem;
+}
+.s-hero__press-logos {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: clamp(.9rem, 2vw, 1.6rem);
+}
+.s-hero__press-logos li {
+  font-family: var(--font-display);
+  font-size: clamp(.78rem, 1.1vw, .95rem);
+  font-weight: 600;
+  letter-spacing: .14em;
+  color: var(--ink);
+  opacity: .55;
+}
+@media (max-width: 900px) {
+  .s-hero__press-logos { gap: 1rem .9rem; }
+}
+
 /* ── RIGHT PANEL (visual) ── */
 .s-hero__visual {
   position: relative;  /* anchor the float */
