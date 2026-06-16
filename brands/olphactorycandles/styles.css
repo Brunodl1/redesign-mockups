@@ -1,0 +1,1349 @@
+/* Olphactory Candles — assembled section styles (scoped). Base tokens in base.css */
+
+/* ===== header ===== */
+/* ============================================================
+   HEADER + ANNOUNCE BAR — Olphactory Candles
+   Monochrome: #000 bg, #fff text/icons. Montserrat UPPERCASE.
+   Scoped to .announce / .site-header only.
+   ============================================================ */
+
+/* Google Fonts — loaded here so section is self-contained */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=DM+Sans:wght@400;500&display=swap');
+
+/* ── Announce bar ─────────────────────────────────────── */
+.announce {
+  width: 100%;
+  background: #000;
+  color: #fff;
+  text-align: center;
+  padding: 9px var(--sp-3, 1rem);
+  font-family: var(--font-display, "Montserrat", sans-serif);
+  font-size: .72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .2em;
+  line-height: 1.4;
+}
+
+.announce-extra {
+  display: inline;
+}
+
+@media (max-width: 760px) {
+  .announce-extra {
+    display: none;
+  }
+}
+
+/* ── Site header ──────────────────────────────────────── */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  width: 100%;
+  background: #000;
+  border-bottom: 1px solid var(--header-border, rgba(255, 255, 255, .16));
+}
+
+.site-header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 68px;
+  gap: var(--sp-4, 1.5rem);
+}
+
+/* ── Logo ─────────────────────────────────────────────── */
+.site-header__logo {
+  display: flex;
+  align-items: center;
+  flex: 0 0 auto;
+}
+
+.site-header__logo .logo {
+  height: 38px;
+  width: auto;
+  display: block;
+}
+
+/* ── Center nav ───────────────────────────────────────── */
+.site-header__nav {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-5, 2.5rem);
+  flex: 1 1 auto;
+  justify-content: center;
+}
+
+.site-header__nav-link {
+  font-family: var(--font-display, "Montserrat", sans-serif);
+  font-size: .72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .2em;
+  color: #fff;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color .15s ease;
+}
+
+.site-header__nav-link:hover {
+  color: rgba(255, 255, 255, .6);
+}
+
+/* ── Right actions ────────────────────────────────────── */
+.site-header__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3, 1rem);
+  flex: 0 0 auto;
+}
+
+.site-header__icon-btn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  color: #fff;
+  line-height: 1;
+  transition: opacity .15s ease;
+}
+
+.site-header__icon-btn:hover {
+  opacity: .6;
+}
+
+/* Cart count bubble */
+.site-header__cart-count {
+  position: absolute;
+  top: -5px;
+  right: -6px;
+  width: 17px;
+  height: 17px;
+  background: #fff;
+  color: #000;
+  border-radius: 50%;
+  font-family: var(--font-display, "Montserrat", sans-serif);
+  font-size: .58rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  pointer-events: none;
+}
+
+/* ── Mobile: ≤900px — hide nav + search, show logo + cart ── */
+@media (max-width: 900px) {
+  .site-header__nav {
+    display: none;
+  }
+
+  .site-header__search {
+    display: none;
+  }
+
+  .site-header__inner {
+    justify-content: space-between;
+  }
+}
+
+/* ===== hero ===== */
+/* ─── HERO — full-bleed, B&W moody, jazz-luxury ─────────────────────────────
+   Scoped entirely under .s-hero
+   Tokens from base.css: --font-display, --font-body, --radius-btn, etc.
+   Classes reused from base.css: .btn, .btn-light, .btn-outline, .eyebrow, .float
+   NO .reveal on hero (per convention)
+─────────────────────────────────────────────────────────────────────────────── */
+
+/* ── Section shell ─────────────────────────────────────────────────────────── */
+.s-hero {
+  position: relative;
+  min-height: 88vh;
+  display: flex;
+  align-items: center;
+
+  /* Background: moody B&W lit candle */
+  background-image: url('assets/hero.jpg');
+  background-size: cover;
+  background-position: center 20%; /* keep candle flame near center */
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+/* ── Full-bleed scrim (global dark wash over entire image) ─────────────────── */
+.s-hero__scrim {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    160deg,
+    rgba(0,0,0,.62) 0%,
+    rgba(0,0,0,.38) 60%,
+    rgba(0,0,0,.20) 100%
+  );
+  pointer-events: none;
+}
+
+/* ── Left-weighted text scrim (extra legibility for the copy block) ─────────── */
+.s-hero__text-scrim {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: linear-gradient(
+    90deg,
+    rgba(0,0,0,.55) 0%,
+    rgba(0,0,0,.28) 42%,
+    rgba(0,0,0,0)   72%
+  );
+  pointer-events: none;
+}
+
+/* ── Wrap + content block ──────────────────────────────────────────────────── */
+.s-hero__wrap {
+  position: relative;
+  z-index: 4;
+  display: flex;
+  align-items: center;
+  padding-top: clamp(80px, 12vh, 140px);
+  padding-bottom: clamp(80px, 12vh, 140px);
+  width: 100%;
+}
+
+.s-hero__content {
+  max-width: 560px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+/* ── Eyebrow override: white on dark ──────────────────────────────────────── */
+.s-hero .eyebrow,
+.s-hero__eyebrow {
+  color: rgba(255,255,255,.72);
+  letter-spacing: .3em;
+  margin-bottom: 1rem;
+}
+
+/* ── H1 ─────────────────────────────────────────────────────────────────────── */
+.s-hero__h1 {
+  font-family: var(--font-display);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  line-height: 1.06;
+  color: #ffffff;
+  font-size: clamp(2.8rem, 7vw, 5.2rem);
+  margin-bottom: 1.25rem;
+}
+
+/* ── Subhead ─────────────────────────────────────────────────────────────────── */
+.s-hero__sub {
+  font-family: var(--font-body);
+  font-size: clamp(.95rem, 1.5vw, 1.15rem);
+  font-weight: 400;
+  color: rgba(255,255,255,.9);
+  line-height: 1.6;
+  max-width: 440px;
+  margin-bottom: 2rem;
+}
+
+/* ── CTA row ─────────────────────────────────────────────────────────────────── */
+.s-hero__ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .85rem;
+  margin-bottom: 1.5rem;
+}
+
+/* btn-light already white bg / black text from base.css;
+   on hover goes transparent/white border/white text — perfect on dark */
+
+/* btn-outline on dark: override to white border + white text */
+.s-hero .btn-outline {
+  color: #ffffff;
+  border-color: #ffffff;
+  background: transparent;
+}
+.s-hero .btn-outline:hover {
+  background: #ffffff;
+  color: #000000;
+}
+
+/* ── Trust line ──────────────────────────────────────────────────────────────── */
+.s-hero__trust {
+  font-family: var(--font-body);
+  font-size: .78rem;
+  font-weight: 500;
+  letter-spacing: .06em;
+  color: rgba(255,255,255,.75);
+  text-transform: uppercase;
+}
+
+/* ── Float: vinyl record (desktop only — base.css hides .float at ≤1000px) ─── */
+.float-rec {
+  right: -60px;   /* bleeds off the right seam */
+  bottom: 8%;
+  width: clamp(280px, 26vw, 420px);
+  z-index: 3;
+}
+
+/* Grayscale + shadow already applied via base.css .float img */
+
+/* ── Mobile (≤900px) ─────────────────────────────────────────────────────────── */
+@media (max-width: 900px) {
+
+  .s-hero {
+    min-height: 100svh;          /* full screen on mobile */
+    background-position: center 15%;
+    align-items: flex-end;       /* push text to bottom; candle visible above */
+  }
+
+  /* Bottom scrim: stronger gradient from bottom so text is always legible */
+  .s-hero__scrim {
+    background: linear-gradient(
+      to top,
+      rgba(0,0,0,.82) 0%,
+      rgba(0,0,0,.50) 45%,
+      rgba(0,0,0,.15) 100%
+    );
+  }
+
+  .s-hero__text-scrim {
+    display: none; /* left scrim not needed on mobile; bottom scrim covers it */
+  }
+
+  .s-hero__wrap {
+    padding-top: clamp(60px, 10vh, 100px);
+    padding-bottom: clamp(40px, 8vh, 70px);
+    align-items: flex-end;
+  }
+
+  .s-hero__content {
+    max-width: 100%;
+  }
+
+  .s-hero__h1 {
+    font-size: clamp(2rem, 9vw, 3rem);
+    letter-spacing: .06em;
+    margin-bottom: 1rem;
+  }
+
+  .s-hero__sub {
+    font-size: .95rem;
+    max-width: 100%;
+    margin-bottom: 1.5rem;
+  }
+
+  .s-hero__ctas {
+    flex-direction: column;
+    gap: .7rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .s-hero__ctas .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .s-hero__trust {
+    font-size: .72rem;
+  }
+}
+
+/* ===== trust ===== */
+/* ── Trust strip — Olphactory Candles ─────────────────────────────────────── */
+
+.s-trust {
+  background: var(--surface);
+  padding: var(--sp-5) 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+/* four-column row with thin dividers */
+.s-trust__row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+  gap: 0;
+}
+
+/* each trust item */
+.s-trust__item {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.s-trust__link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sp-2);
+  text-decoration: none;
+  color: var(--ink);
+  padding: var(--sp-3) var(--sp-4);
+  transition: opacity .18s ease;
+}
+
+.s-trust__link:hover {
+  opacity: .55;
+}
+
+/* icon — line only, 30px rendered inside 40px .ic frame */
+.s-trust__item .ic {
+  width: 30px;
+  height: 30px;
+  stroke: var(--ink);
+  stroke-width: 1.4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none;
+}
+
+/* label — Montserrat uppercase micro */
+.s-trust__label {
+  font-family: var(--font-display);
+  font-size: .65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .24em;
+  color: var(--ink);
+  line-height: 1.3;
+  text-align: center;
+  white-space: nowrap;
+}
+
+/* vertical thin dividers between items */
+.s-trust__divider {
+  width: 1px;
+  height: 3rem;
+  background: var(--line);
+  flex: none;
+}
+
+/* ── Mobile: 2 × 2 grid ──────────────────────────────────────────────────── */
+@media (max-width: 600px) {
+  .s-trust__row {
+    flex-wrap: wrap;
+  }
+
+  .s-trust__item {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+
+  /* hide vertical dividers; replace with border edges on cells */
+  .s-trust__divider {
+    display: none;
+  }
+
+  /* hairline between cells via outline on link */
+  .s-trust__link {
+    width: 100%;
+    border: 1px solid var(--line);
+    margin: -0.5px; /* collapse shared edges */
+  }
+}
+
+/* ===== bestsellers ===== */
+/* ── s-bestsellers — Olphactory Candles bestseller grid ── */
+
+.s-bestsellers {
+  background: var(--bg);
+}
+
+/* ── grid ── */
+.s-bestsellers .bs-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(16px, 2.5vw, 28px);
+}
+@media (max-width: 900px) {
+  .s-bestsellers .bs-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 360px) {
+  .s-bestsellers .bs-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ── card ── */
+.s-bestsellers .bs-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: transform .22s ease, box-shadow .22s ease;
+}
+.s-bestsellers .bs-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow);
+}
+
+/* ── image wrap ── */
+.s-bestsellers .bs-img-wrap {
+  display: block;
+  background: var(--surface-2);
+  padding: clamp(16px, 3vw, 28px);
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+}
+.s-bestsellers .bs-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  transition: filter .35s ease;
+}
+
+/* ── body ── */
+.s-bestsellers .bs-body {
+  padding: clamp(14px, 2vw, 20px);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+  flex: 1;
+}
+
+/* product name — Montserrat uppercase */
+.s-bestsellers .bs-name {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: var(--s-0);
+  text-transform: uppercase;
+  letter-spacing: .14em;
+  color: var(--ink);
+  line-height: 1.2;
+}
+
+/* scent notes — italic DM Sans, muted */
+.s-bestsellers .bs-notes {
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  font-style: italic;
+  color: var(--ink-soft);
+  letter-spacing: .02em;
+}
+
+/* star row */
+.s-bestsellers .bs-stars {
+  font-size: var(--s--1);
+  color: var(--ink-soft);
+  display: flex;
+  align-items: center;
+  gap: .35em;
+}
+.s-bestsellers .bs-star-row {
+  color: var(--star);
+  letter-spacing: .04em;
+}
+.s-bestsellers .bs-count {
+  color: var(--ink-soft);
+}
+
+/* price */
+.s-bestsellers .bs-price {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: var(--s-1);
+  color: var(--ink);
+  letter-spacing: .06em;
+  margin-top: auto;
+}
+
+/* CTA — inherits .btn .btn-dark .btn-block from base.css */
+.s-bestsellers .btn {
+  margin-top: var(--sp-2);
+}
+
+/* ===== story ===== */
+/* ============================================================
+   STORY BAND — Olphactory Candles
+   Jazz / Heritage / Black-owned differentiator
+   Black (#000) band, all text white, editorial + monochrome
+   ============================================================ */
+
+.s-story {
+  background: var(--dark);          /* #000000 */
+  color: var(--dark-ink);           /* #ffffff */
+  padding: clamp(72px, 10vw, 120px) 0;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ---- layout: left-weighted, float bleeds right ---- */
+.s-story__layout {
+  position: relative;
+  z-index: 2;
+  max-width: 680px;                 /* leave right half open for float */
+}
+
+/* ---- eyebrow override: white at .7 alpha ---- */
+.s-story .eyebrow,
+.s-story__eyebrow {
+  color: rgba(255, 255, 255, .7);
+  display: block;
+  margin-bottom: 1rem;
+}
+
+/* ---- headline ---- */
+.s-story__headline {
+  color: var(--dark-ink);           /* white */
+  font-family: var(--font-display);
+  font-size: clamp(var(--s-3), 4.5vw, var(--s-5));
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  line-height: 1.1;
+  margin-bottom: clamp(var(--sp-4), 3vw, var(--sp-5));
+}
+
+/* ---- narrative body ---- */
+.s-story__body {
+  font-family: var(--font-body);
+  font-size: var(--s-1);
+  line-height: 1.72;
+  color: rgba(255, 255, 255, .82);
+  max-width: 580px;
+  margin-bottom: clamp(var(--sp-4), 3.5vw, var(--sp-6));
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+/* ---- mini-stats row ---- */
+.s-story__stats {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-4);
+  margin-bottom: clamp(var(--sp-4), 3.5vw, var(--sp-6));
+  flex-wrap: wrap;
+}
+
+.s-story__stat {
+  font-family: var(--font-display);
+  font-size: .68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .26em;
+  color: rgba(255, 255, 255, .9);
+  white-space: nowrap;
+}
+
+.s-story__divider {
+  display: block;
+  width: 1px;
+  height: 1.4em;
+  background: rgba(255, 255, 255, .28);
+  flex-shrink: 0;
+}
+
+/* ---- CTA — btn-light on black = white button ---- */
+.s-story .btn-light {
+  /* inherits base: bg #fff, color #000, border #fff */
+  /* hover state already defined in base.css:
+     background:transparent; color:#fff; border-color:#fff */
+}
+
+/* ---- float: large vinyl record — desktop only, right-bleeding ---- */
+.s-story .float-rec2 {
+  right: -6vw;
+  top: 50%;
+  transform: translateY(-50%);
+  width: clamp(280px, 36vw, 520px);
+  /* base.css .float img already applies grayscale(1) + drop-shadow */
+}
+
+/* ---- reveal scoping: ensure .in class animates inside dark band ---- */
+.s-story .reveal {
+  /* inherits base.css .reveal (opacity:0 + rotateX) */
+}
+.s-story .reveal.in {
+  /* inherits base.css .reveal.in (opacity:1, transform:none) */
+}
+
+/* ---- grain overlay for editorial depth ---- */
+.s-story::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+  background-size: 180px 180px;
+  opacity: .032;
+  pointer-events: none;
+}
+
+/* ---- responsive ---- */
+@media (max-width: 900px) {
+  .s-story__layout {
+    max-width: 100%;
+  }
+
+  .s-story__headline {
+    font-size: clamp(var(--s-2), 6vw, var(--s-3));
+  }
+}
+
+@media (max-width: 600px) {
+  .s-story__stats {
+    gap: var(--sp-3);
+  }
+
+  .s-story__stat {
+    font-size: .62rem;
+    letter-spacing: .2em;
+  }
+}
+
+/* ===== collection ===== */
+/* ── Quartet Discovery Collection ── */
+.s-collection {
+  background: var(--bg);
+}
+
+/* 4-up grid: 4 cols desktop, 2 mobile */
+.s-collection .col-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--sp-4);
+  margin-bottom: var(--sp-5);
+}
+
+/* Card shell — square, sharp, no overflow */
+.s-collection .col-card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Image wrapper — square aspect, surface-2 bg */
+.s-collection .col-card__img-wrap {
+  display: block;
+  background: var(--surface-2);
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+}
+
+.s-collection .col-card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: var(--sp-4);
+  transition: filter .3s ease;
+}
+
+/* Body */
+.s-collection .col-card__body {
+  padding: var(--sp-3) var(--sp-4) var(--sp-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+  flex: 1;
+}
+
+/* Candle name — Montserrat uppercase, tracked */
+.s-collection .col-card__name {
+  font-family: var(--font-display);
+  font-size: .78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: .2em;
+  color: var(--ink);
+  line-height: 1.2;
+}
+
+/* Price + Shop row */
+.s-collection .col-card__foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+}
+
+.s-collection .col-card__price {
+  font-family: var(--font-display);
+  font-size: .72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .18em;
+  color: var(--ink-soft);
+}
+
+.s-collection .col-card__shop {
+  font-family: var(--font-display);
+  font-size: .68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .18em;
+  color: var(--ink);
+  transition: opacity .18s ease;
+}
+
+.s-collection .col-card__shop:hover {
+  opacity: .5;
+}
+
+/* CTA row */
+.s-collection .col-cta {
+  text-align: center;
+}
+
+/* Reveal stagger — uses shared .reveal / .in from base */
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .s-collection .col-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--sp-3);
+  }
+}
+
+@media (max-width: 480px) {
+  .s-collection .col-grid {
+    gap: var(--sp-2);
+  }
+}
+
+/* ===== craft ===== */
+/* ── CRAFT / WHY OLPHACTORY ── */
+/* All rules scoped under .s-craft */
+
+.s-craft {
+  background: var(--surface);
+  padding: clamp(56px, 8vw, 100px) 0;
+}
+
+/* ─ Grid ─ */
+.s-craft .craft-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+}
+
+/* thin vertical dividers between columns */
+.s-craft .craft-card + .craft-card {
+  border-left: 1px solid var(--line);
+}
+
+/* ─ Card ─ */
+.s-craft .craft-card {
+  padding: clamp(24px, 3vw, 40px) clamp(20px, 2.5vw, 36px);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--sp-3);
+}
+
+/* ─ Icon wrapper ─ */
+.s-craft .craft-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border: 1px solid var(--line);
+  flex: none;
+  color: var(--ink);
+}
+
+.s-craft .craft-icon .ic {
+  width: 28px;
+  height: 28px;
+  stroke: var(--ink);
+  stroke-width: 1.5;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* ─ Title ─ */
+.s-craft .craft-title {
+  font-family: var(--font-display);
+  font-size: var(--s-0);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .14em;
+  color: var(--ink);
+  line-height: 1.2;
+}
+
+/* ─ Body copy ─ */
+.s-craft .craft-body {
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  color: var(--ink-soft);
+  line-height: 1.6;
+  margin-top: calc(var(--sp-2) * -1); /* close gap with title */
+}
+
+/* ─ Reveal stagger ─ */
+.s-craft .reveal {
+  transition-delay: var(--delay, 0s);
+}
+
+/* ─ Tablet: 2 columns ─ */
+@media (max-width: 900px) {
+  .s-craft .craft-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* reset side dividers, add horizontal dividers between rows */
+  .s-craft .craft-card + .craft-card {
+    border-left: none;
+  }
+
+  .s-craft .craft-card:nth-child(2) {
+    border-left: 1px solid var(--line);
+  }
+
+  .s-craft .craft-card:nth-child(3),
+  .s-craft .craft-card:nth-child(4) {
+    border-top: 1px solid var(--line);
+  }
+
+  .s-craft .craft-card:nth-child(4) {
+    border-left: 1px solid var(--line);
+  }
+}
+
+/* ─ Mobile: 1 column ─ */
+@media (max-width: 540px) {
+  .s-craft .craft-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .s-craft .craft-card:nth-child(2) {
+    border-left: none;
+    border-top: 1px solid var(--line);
+  }
+
+  .s-craft .craft-card:nth-child(3),
+  .s-craft .craft-card:nth-child(4) {
+    border-left: none;
+    border-top: 1px solid var(--line);
+  }
+}
+
+/* ===== reviews ===== */
+/* ─── REVIEWS — Olphactory Candles ─────────────────────────────────────────── */
+
+.s-reviews {
+  background: var(--bg);
+}
+
+/* Rating summary line */
+.s-reviews .s-reviews__summary {
+  margin-top: var(--sp-3);
+  font-family: var(--font-body);
+  font-size: var(--s-0);
+  color: var(--star);
+  font-weight: 600;
+  letter-spacing: .04em;
+  text-transform: none;
+}
+
+/* Grid */
+.s-reviews__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-4);
+}
+
+@media (max-width: 900px) {
+  .s-reviews__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .s-reviews__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Stagger delay via CSS custom property set inline */
+.s-reviews__card {
+  transition-delay: var(--delay, 0s);
+}
+
+/* Card */
+.s-reviews__card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: var(--sp-5) var(--sp-4) var(--sp-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+}
+
+/* Stars */
+.s-reviews__stars {
+  font-size: var(--s-1);
+  color: var(--star);
+  letter-spacing: .06em;
+  line-height: 1;
+}
+
+/* Headline */
+.s-reviews__card .s-reviews__headline {
+  font-family: var(--font-display);
+  font-size: .82rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: .14em;
+  color: var(--ink);
+  line-height: 1.25;
+  margin: 0;
+}
+
+/* Quote */
+.s-reviews__quote {
+  font-family: var(--font-body);
+  font-size: var(--s-0);
+  color: var(--ink-soft);
+  line-height: 1.7;
+  font-style: normal;
+  flex: 1;
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Card footer */
+.s-reviews__foot {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  flex-wrap: wrap;
+  padding-top: var(--sp-3);
+  border-top: 1px solid var(--line);
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+}
+
+.s-reviews__name {
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: .02em;
+}
+
+.s-reviews__badge {
+  font-size: .68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .18em;
+  color: var(--ink-soft);
+  border: 1px solid var(--line);
+  padding: 2px 7px;
+  border-radius: var(--radius-lg);
+  line-height: 1.5;
+}
+
+.s-reviews__product {
+  margin-left: auto;
+  font-size: var(--s--1);
+  font-style: italic;
+  color: var(--ink-soft);
+}
+
+/* Disclaimer */
+.s-reviews__disclaimer {
+  margin-top: var(--sp-5);
+  text-align: center;
+  font-family: var(--font-body);
+  font-size: .72rem;
+  color: var(--ink-soft);
+  opacity: .6;
+  letter-spacing: .04em;
+}
+
+/* ===== newsletter ===== */
+/* ── Newsletter ─────────────────────────────────────────── */
+.s-newsletter {
+  background: #000;
+  padding: clamp(56px, 8vw, 100px) 0;
+}
+
+/* override eyebrow color on dark band */
+.s-newsletter .eyebrow {
+  color: rgba(255, 255, 255, .7);
+  margin-bottom: 1rem;
+}
+
+.s-newsletter .nl-inner {
+  text-align: center;
+  max-width: 620px;
+  margin: 0 auto;
+}
+
+.s-newsletter h2 {
+  color: #fff;
+  margin-bottom: .75rem;
+}
+
+.s-newsletter .nl-sub {
+  font-family: var(--font-body);
+  color: rgba(255, 255, 255, .75);
+  font-size: var(--s-1);
+  text-transform: none;
+  letter-spacing: 0;
+  margin-bottom: clamp(24px, 3vw, 36px);
+}
+
+/* inline form — side-by-side desktop, stacked mobile */
+.s-newsletter .nl-form {
+  display: flex;
+  gap: 0;
+  align-items: stretch;
+  justify-content: center;
+  margin-bottom: var(--sp-3);
+}
+
+.s-newsletter .nl-form input[type="email"] {
+  flex: 1 1 auto;
+  min-width: 0;
+  max-width: 340px;
+  padding: 16px 20px;
+  background: #000;
+  border: 1.5px solid #fff;
+  border-right: none;
+  border-radius: 0;
+  color: #fff;
+  font-family: var(--font-body);
+  font-size: var(--s-0);
+  outline: none;
+  transition: border-color .18s ease;
+}
+
+.s-newsletter .nl-form input[type="email"]::placeholder {
+  color: rgba(255, 255, 255, .6);
+}
+
+.s-newsletter .nl-form input[type="email"]:focus {
+  border-color: rgba(255, 255, 255, .85);
+}
+
+/* btn-light is already white-fill / black-text; square via --radius-btn:0 */
+.s-newsletter .nl-form .btn {
+  flex: none;
+  white-space: nowrap;
+  border-radius: 0;
+}
+
+.s-newsletter .nl-fine {
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  color: rgba(255, 255, 255, .6);
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+/* ── Mobile stack ─────────────────────────────────────── */
+@media (max-width: 600px) {
+  .s-newsletter .nl-form {
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--sp-2);
+  }
+
+  .s-newsletter .nl-form input[type="email"] {
+    max-width: 100%;
+    border-right: 1.5px solid #fff;
+  }
+
+  .s-newsletter .nl-form .btn {
+    width: 100%;
+  }
+}
+
+/* ===== footer ===== */
+/* ─── FOOTER — Olphactory Candles ─────────────────────────────────── */
+
+.site-footer {
+  background: var(--footer-bg);       /* #000 */
+  color: var(--footer-text);          /* rgba(255,255,255,.62) */
+  font-family: var(--font-body);
+  font-size: var(--s-0);
+  padding-top: clamp(56px, 8vw, 96px);
+}
+
+/* ── Top grid: 4 columns (brand + 3 link cols) ──────────────────────── */
+.site-footer .sf-grid {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr 1fr 1fr;
+  gap: clamp(28px, 4vw, 56px);
+  padding-bottom: clamp(48px, 7vw, 80px);
+}
+
+/* ── Brand column ───────────────────────────────────────────────────── */
+.site-footer .sf-logo-link {
+  display: inline-block;
+  margin-bottom: var(--sp-4);
+}
+
+.site-footer .sf-logo-link img {
+  display: block;
+  height: 34px;
+  width: auto;
+}
+
+.site-footer .sf-tagline {
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  line-height: 1.65;
+  color: var(--footer-text);
+  margin-bottom: var(--sp-5);
+  max-width: 22ch;
+}
+
+/* Social icons row */
+.site-footer .sf-socials {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-4);
+}
+
+.site-footer .sf-social-link {
+  color: var(--footer-text);
+  transition: color .18s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.site-footer .sf-social-link:hover {
+  color: var(--footer-link);
+}
+
+.site-footer .sf-social-link svg {
+  display: block;
+}
+
+/* ── Link columns ───────────────────────────────────────────────────── */
+.site-footer .sf-col-title {
+  font-family: var(--font-display);
+  font-size: .68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .24em;
+  color: var(--footer-title);          /* #fff */
+  margin-bottom: var(--sp-4);
+  line-height: 1.2;
+}
+
+/* Override h4 global so color stays white in footer */
+.site-footer h4 {
+  color: var(--footer-title);
+}
+
+.site-footer .sf-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+}
+
+.site-footer .sf-links a {
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  color: var(--footer-text);
+  text-decoration: none;
+  transition: color .16s ease;
+  line-height: 1.4;
+}
+
+.site-footer .sf-links a:hover {
+  color: var(--footer-link);
+}
+
+/* ── Bottom bar ─────────────────────────────────────────────────────── */
+.site-footer .sf-bottom {
+  border-top: 1px solid rgba(255, 255, 255, .16);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-4);
+  padding: var(--sp-4) 0 clamp(28px, 4vw, 40px);
+  flex-wrap: wrap;
+}
+
+.site-footer .sf-legal {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-family: var(--font-body);
+  font-size: .76rem;
+  color: var(--footer-text);
+  line-height: 1.55;
+}
+
+.site-footer .sf-disclaimer {
+  opacity: .5;
+  font-size: .72rem;
+}
+
+/* Payment icons row */
+.site-footer .sf-payments {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  flex-wrap: wrap;
+}
+
+.site-footer .sf-pay-icon {
+  width: 48px;
+  height: 32px;
+  display: block;
+  flex: none;
+}
+
+/* ── Responsive: 4 → 2 columns at 820px ────────────────────────────── */
+@media (max-width: 820px) {
+  .site-footer .sf-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(24px, 4vw, 40px);
+  }
+
+  /* Brand col spans full width on top */
+  .site-footer .sf-brand {
+    grid-column: 1 / -1;
+  }
+}
+
+/* ── Responsive: 2 → 1 column at 480px ─────────────────────────────── */
+@media (max-width: 480px) {
+  .site-footer .sf-grid {
+    grid-template-columns: 1fr;
+    gap: var(--sp-5);
+  }
+
+  .site-footer .sf-brand {
+    grid-column: 1;
+  }
+
+  .site-footer .sf-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--sp-3);
+  }
+
+  .site-footer .sf-payments {
+    gap: var(--sp-2);
+  }
+}

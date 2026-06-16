@@ -1,0 +1,112 @@
+/* Olphactory Candles — per-brand foundation (faithful to real site:
+   MONOCHROME black & white + grey, Montserrat heavy UPPERCASE tracked headings,
+   DM Sans body, black/near-black SQUARE buttons, black header/footer bands). candles structure. */
+:root{
+  /* color — strict monochrome (keep the B&W vibe) */
+  --bg:#efefef;             /* light grey page */
+  --surface:#ffffff;        /* white card/band */
+  --surface-2:#e4e4e4;      /* mid grey fill */
+  --ink:#000000;
+  --ink-soft:#6a6a6a;
+  --accent:#000000;         /* black — buttons, accents */
+  --accent-2:#1c1b1b;       /* near-black hover */
+  --accent-soft:#e4e4e4;
+  --accent-ink:#ffffff;
+  --dark:#000000;           /* black bands (header/footer/story) */
+  --dark-ink:#ffffff;
+  --pop:#000000;
+  --star:#1c1b1b;           /* monochrome stars */
+  --line:#cfcfcf;
+  --btn:#1c1b1b;
+  --btn-ink:#ffffff;
+  --footer-bg:#000000;
+  --footer-title:#ffffff;
+  --footer-text:rgba(255,255,255,.62);
+  --footer-link:#ffffff;
+  /* type */
+  --font-display:"Montserrat", system-ui, sans-serif;   /* heavy UPPERCASE tracked */
+  --font-body:"DM Sans", system-ui, sans-serif;
+  --s--1:.82rem; --s-0:1rem; --s-1:1.15rem; --s-2:1.45rem;
+  --s-3:1.9rem; --s-4:2.5rem; --s-5:3.4rem;
+  /* space */
+  --sp-1:.25rem; --sp-2:.5rem; --sp-3:1rem; --sp-4:1.5rem;
+  --sp-5:2.5rem; --sp-6:4rem; --sp-7:6rem;
+  /* shape — square, sharp (editorial monochrome) */
+  --radius:0px; --radius-lg:2px; --radius-pill:0px; --radius-btn:0px;
+  --shadow:0 14px 40px rgba(0,0,0,.16);
+  --shadow-sm:0 4px 16px rgba(0,0,0,.10);
+  --maxw:1320px;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{overflow-x:clip}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--font-body);
+  font-weight:400;
+  color:var(--ink-soft);
+  background:var(--bg);
+  font-size:16px;
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+
+/* headings — Montserrat, heavy, UPPERCASE, heavily tracked (Intro_Black vibe) */
+h1,h2,h3,h4{font-family:var(--font-display);color:var(--ink);line-height:1.18;
+  font-weight:800;text-transform:uppercase;letter-spacing:.16em}
+h1{font-size:var(--s-5);letter-spacing:.1em}
+h2{font-size:var(--s-4);letter-spacing:.12em}
+h3{font-size:var(--s-1);letter-spacing:.14em;font-weight:700}
+
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 clamp(16px,4vw,40px);width:100%}
+.section{padding:clamp(48px,7vw,90px) 0}
+
+.eyebrow{
+  font-family:var(--font-display);
+  font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.28em;
+  color:var(--ink-soft);display:inline-block;margin-bottom:.9rem;
+}
+.section-head{max-width:720px;margin:0 auto clamp(28px,4vw,48px);text-align:center}
+.section-head h2{margin-bottom:.5rem}
+.section-head p{color:var(--ink-soft);font-size:var(--s-1);font-family:var(--font-body);text-transform:none;letter-spacing:0}
+
+/* buttons — SQUARE, UPPERCASE, tracked (real brand) */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:.5em;
+  font-family:var(--font-display);font-weight:700;font-size:.76rem;
+  text-transform:uppercase;letter-spacing:.2em;
+  padding:16px 34px;border-radius:var(--radius-btn);
+  border:1.5px solid transparent;cursor:pointer;transition:.18s ease;line-height:1;
+}
+.btn-dark{background:var(--btn);color:var(--btn-ink)}
+.btn-dark:hover{background:#000}
+.btn-primary{background:var(--ink);color:#fff}
+.btn-primary:hover{background:#333}
+.btn-outline{background:transparent;color:var(--ink);border-color:var(--ink)}
+.btn-outline:hover{background:var(--ink);color:#fff}
+.btn-light{background:#fff;color:#000;border-color:#fff}
+.btn-light:hover{background:transparent;color:#fff;border-color:#fff}
+.btn-block{width:100%}
+
+.ic{width:40px;height:40px;stroke:currentColor;stroke-width:1.5;fill:none;flex:none}
+
+/* product imagery → grayscale to enforce the B&W vibe (subtle color on hover) */
+.gs{filter:grayscale(1) contrast(1.02)}
+.gs:hover{filter:grayscale(.15)}
+
+/* depth: floats (STATIC) */
+.float{position:absolute;z-index:3;pointer-events:none}
+.float img{width:100%;height:auto;transform:rotate(var(--rot,0deg));
+  filter:grayscale(1) drop-shadow(0 18px 28px rgba(0,0,0,.4))}
+@media(max-width:1000px){.float{display:none}}
+
+/* scroll reveal (3D) */
+.reveal{opacity:0;transform:perspective(900px) rotateX(8deg) translateY(26px);
+  transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){
+  .reveal{opacity:1;transform:none;transition:none}
+  html{scroll-behavior:auto}
+}
