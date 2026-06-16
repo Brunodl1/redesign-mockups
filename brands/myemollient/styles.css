@@ -1464,3 +1464,518 @@
   }
 }
 
+
+/* ===== ingredients ===== */
+/* ─────────────────────────────────────────────
+   s-ingredients — 7 Organic Ingredients section
+   All CSS scoped to .s-ingredients
+   ───────────────────────────────────────────── */
+
+/* Section shell */
+.s-ingredients {
+  padding: var(--sp-7) 0;
+  background: var(--bg);
+}
+
+/* ── Head ── */
+.s-ingredients__head {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto var(--sp-6);
+}
+
+.s-ingredients__head h2 {
+  font-size: var(--s-3);
+  margin-bottom: var(--sp-3);
+}
+
+.s-ingredients__intro {
+  font-family: var(--font-body);
+  font-size: var(--s-0);
+  color: var(--ink-soft);
+  max-width: 520px;
+  margin: 0 auto;
+  line-height: 1.65;
+}
+
+/* ── Card grid ── */
+.s-ingredients__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--sp-4);
+  align-items: start;       /* cards don't stretch to match siblings */
+}
+
+/* ── Individual card (<details>) ── */
+.s-ing-card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  border: 1.5px solid var(--line);
+  overflow: hidden;
+  transition: box-shadow .25s, border-color .25s, transform .2s;
+  cursor: pointer;
+}
+
+.s-ing-card:hover {
+  box-shadow: var(--shadow);
+  transform: translateY(-2px);
+}
+
+/* Open state: accent ring + lift */
+.s-ing-card[open] {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px var(--accent), var(--shadow);
+  transform: translateY(-3px);
+  /* Open card spans 2 columns on desktop so the content breathes */
+  grid-column: span 2;
+}
+
+/* ── summary (card face) ── */
+.s-ing-card > summary {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Remove default disclosure triangle in all browsers */
+.s-ing-card > summary::-webkit-details-marker { display: none; }
+.s-ing-card > summary::marker { content: ""; display: none; }
+
+/* Photo */
+.s-ing-card__img-wrap {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-radius: var(--radius) var(--radius) 0 0;
+  background: var(--surface-2);
+}
+
+.s-ing-card__img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--radius) var(--radius) 0 0;
+  transition: transform .35s ease;
+}
+
+.s-ing-card:hover .s-ing-card__img-wrap img {
+  transform: scale(1.04);
+}
+
+/* Card face text strip */
+.s-ing-card__face {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--sp-3) var(--sp-4);
+  gap: var(--sp-2);
+}
+
+.s-ing-card__name {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: var(--s-1);
+  color: var(--ink);
+  line-height: 1.2;
+}
+
+/* "+ How it helps" affordance */
+.s-ing-card__affordance {
+  display: flex;
+  align-items: center;
+  gap: .35em;
+  flex-shrink: 0;
+  color: var(--accent);
+}
+
+.s-ing-card__cta-text {
+  font-family: var(--font-body);
+  font-size: .7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .12em;
+  white-space: nowrap;
+}
+
+/* Chevron via CSS — rotates on open */
+.s-ing-card__chevron {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.s-ing-card__chevron::before,
+.s-ing-card__chevron::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 6px;
+  height: 1.5px;
+  background: var(--accent);
+  border-radius: 2px;
+  transition: transform .25s ease;
+}
+
+/* Default: "+" cross (vertical bar) */
+.s-ing-card__chevron::before {
+  left: 2px;
+  transform: translateY(-50%) rotate(45deg);
+}
+.s-ing-card__chevron::after {
+  right: 2px;
+  transform: translateY(-50%) rotate(-45deg);
+}
+
+/* Open: "−" / flat chevron pointing up */
+.s-ing-card[open] .s-ing-card__chevron::before {
+  transform: translateY(-50%) rotate(-45deg);
+}
+.s-ing-card[open] .s-ing-card__chevron::after {
+  transform: translateY(-50%) rotate(45deg);
+}
+
+/* ── Expanded body ── */
+.s-ing-card__body {
+  padding: 0 var(--sp-4) var(--sp-4);
+  border-top: 1px solid var(--line);
+  animation: ing-fade-in .3s ease both;
+}
+
+.s-ing-card__body p {
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  color: var(--ink-soft);
+  line-height: 1.7;
+  margin: var(--sp-3) 0 var(--sp-3);
+}
+
+.s-ing-card__link {
+  font-family: var(--font-body);
+  font-size: .7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .12em;
+  color: var(--accent);
+  border-bottom: 1px solid var(--accent);
+  padding-bottom: 1px;
+  transition: opacity .2s;
+}
+
+.s-ing-card__link:hover {
+  opacity: .7;
+}
+
+/* Fade-in animation for the body */
+@keyframes ing-fade-in {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Made Without band ── */
+.s-ingredients__made-without {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sp-3);
+  margin-top: var(--sp-6);
+  padding-top: var(--sp-5);
+  border-top: 1px solid var(--line);
+}
+
+.s-ingredients__mw-label {
+  font-family: var(--font-body);
+  font-size: .72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .2em;
+  color: var(--ink-soft);
+  margin: 0;
+}
+
+.s-ingredients__chips {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--sp-2);
+}
+
+.s-ingredients__chips li {
+  font-family: var(--font-body);
+  font-size: .7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  color: var(--ink);
+  background: var(--surface-2);
+  border-radius: 2px;
+  padding: .45em 1.1em;
+  line-height: 1;
+}
+
+/* ── Responsive breakpoints ── */
+
+/* Tablet: 3-up grid */
+@media (max-width: 960px) {
+  .s-ingredients__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .s-ing-card[open] {
+    grid-column: span 2;
+  }
+}
+
+/* Mobile: 2-up grid */
+@media (max-width: 600px) {
+  .s-ingredients__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--sp-3);
+  }
+  .s-ing-card[open] {
+    grid-column: span 2;   /* full row on mobile */
+  }
+  /* odd 7th card: stretch full-width so it's not an orphan half-tile */
+  .s-ing-card:last-child:nth-child(odd) {
+    grid-column: span 2;
+  }
+  .s-ingredients__head h2 {
+    font-size: var(--s-2);
+  }
+  .s-ing-card__face {
+    padding: var(--sp-2) var(--sp-3);
+  }
+  .s-ing-card__name {
+    font-size: var(--s-0);
+  }
+  .s-ing-card__cta-text {
+    display: none;   /* icon only on small screens */
+  }
+}
+
+/* ===== imagereviews ===== */
+/* ─── s-imagereviews — Real Results Reviews with Photos ─────────────────── */
+
+.s-imagereviews {
+  background: var(--bg);
+  padding: var(--sp-7) 0;
+}
+
+/* ── Section head ──────────────────────────────────────────────────────────── */
+
+.s-imagereviews__head {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto var(--sp-6);
+}
+
+.s-imagereviews__head h2 {
+  font-family: var(--font-display);
+  font-size: var(--s-4);
+  color: var(--ink);
+  margin-bottom: var(--sp-4);
+}
+
+.s-imagereviews__summary {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 100px;
+  padding: .45em 1.1em;
+}
+
+.s-imagereviews__stars {
+  color: var(--star);
+  font-size: var(--s-1);
+  letter-spacing: .04em;
+  line-height: 1;
+}
+
+.s-imagereviews__rating {
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  font-weight: 600;
+  color: var(--ink-soft);
+  letter-spacing: .02em;
+}
+
+/* ── Grid ──────────────────────────────────────────────────────────────────── */
+
+.s-imagereviews__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-4);
+  align-items: start;
+}
+
+/* ── Card ──────────────────────────────────────────────────────────────────── */
+
+.s-imagereviews__card {
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform .28s cubic-bezier(.2,.7,.2,1),
+              box-shadow .28s cubic-bezier(.2,.7,.2,1);
+  transition-delay: var(--delay, 0s);
+}
+
+.s-imagereviews__card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 28px 56px -20px rgba(40,30,18,.36);
+}
+
+/* stagger the reveal delay */
+.s-imagereviews__card.reveal {
+  transition-delay: var(--delay, 0s);
+}
+
+/* ── Photo ─────────────────────────────────────────────────────────────────── */
+
+.s-imagereviews__photo-wrap {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  flex-shrink: 0;
+  border-radius: var(--radius) var(--radius) 0 0;
+}
+
+.s-imagereviews__photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  transition: transform .5s cubic-bezier(.2,.7,.2,1);
+}
+
+.s-imagereviews__card:hover .s-imagereviews__photo {
+  transform: scale(1.04);
+}
+
+/* ── Card body ─────────────────────────────────────────────────────────────── */
+
+.s-imagereviews__body {
+  padding: var(--sp-4) var(--sp-4) var(--sp-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+  flex: 1;
+}
+
+.s-imagereviews__card-stars {
+  color: var(--star);
+  font-size: var(--s-1);
+  letter-spacing: .08em;
+  line-height: 1;
+}
+
+.s-imagereviews__quote {
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  line-height: 1.7;
+  color: var(--ink-soft);
+  margin: 0;
+  padding: 0;
+  font-style: italic;
+  flex: 1;
+}
+
+/* ── Meta (name + verified tag) ───────────────────────────────────────────── */
+
+.s-imagereviews__meta {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  flex-wrap: wrap;
+  margin-top: auto;
+  padding-top: var(--sp-2);
+  border-top: 1px solid var(--line);
+}
+
+.s-imagereviews__name {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: var(--s--1);
+  color: var(--ink);
+  letter-spacing: .01em;
+}
+
+.s-imagereviews__verified {
+  font-family: var(--font-body);
+  font-size: .68rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .14em;
+  color: var(--accent-ink);
+  background: var(--accent);
+  border-radius: 4px;
+  padding: .25em .6em;
+  line-height: 1;
+}
+
+/* ── Disclaimer ────────────────────────────────────────────────────────────── */
+
+.s-imagereviews__disclaimer {
+  text-align: center;
+  font-family: var(--font-body);
+  font-size: .68rem;
+  color: var(--ink-soft);
+  opacity: .55;
+  margin: var(--sp-5) auto 0;
+  max-width: 480px;
+  font-style: italic;
+}
+
+/* ── Reveal stagger ────────────────────────────────────────────────────────── */
+
+.s-imagereviews .reveal {
+  /* base .reveal from base.css handles opacity + rotateX transform;
+     we only need to pass the per-card delay via --delay custom property */
+  transition-delay: var(--delay, 0s);
+}
+
+/* ── Responsive ────────────────────────────────────────────────────────────── */
+
+@media (max-width: 900px) {
+  .s-imagereviews__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--sp-3);
+  }
+
+  .s-imagereviews__head h2 {
+    font-size: var(--s-3);
+  }
+}
+
+@media (max-width: 580px) {
+  .s-imagereviews {
+    padding: var(--sp-6) 0;
+  }
+
+  .s-imagereviews__grid {
+    grid-template-columns: 1fr;
+    gap: var(--sp-4);
+    max-width: 420px;
+    margin: 0 auto;
+  }
+
+  .s-imagereviews__photo-wrap {
+    /* keep 4:5 on mobile — photo stays prominent */
+    aspect-ratio: 4 / 5;
+  }
+
+  .s-imagereviews__head {
+    margin-bottom: var(--sp-5);
+  }
+}
