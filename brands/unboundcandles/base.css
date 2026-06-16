@@ -1,0 +1,87 @@
+/* Unbound Candles — per-brand foundation. KEEP their identity: Bodoni Moda didone
+   serif + Karla sans, black/white, SQUARE black buttons. Layer candles DNA + the
+   travel/destination angle. Brand is monochrome → introduce ownable AMBER accent. */
+:root{
+  /* color */
+  --bg:        #faf8f3;   /* soft warm white (candle warmth, close to their white) */
+  --surface:   #f1ebdf;   /* warm cream card / alt band */
+  --surface-2: #e6dcc9;   /* deeper sand band */
+  --ink:       #14110d;   /* warm near-black (their #121212) */
+  --ink-soft:  #6e6557;   /* warm grey secondary */
+  --accent:    #b07a3e;   /* amber / brass — candle flame (eyebrows, highlights, links) */
+  --accent-ink:#fbf7ef;
+  --deep:      #181410;   /* warm near-black — dark bands / footer */
+  --deep-ink:  #efe6d6;   /* cream text on dark */
+  --pop:       #a63f2c;   /* terracotta-red — sale / candle-of-the-month */
+  --pop-ink:   #ffffff;
+  --line:      rgba(20,17,13,.15);
+  --btn:       #14110d;   /* primary button = black (their style) */
+  --btn-ink:   #faf8f3;
+  --star:      #d39a2a;   /* warm gold stars */
+  /* type */
+  --font-display:"Bodoni Moda", Georgia, "Times New Roman", serif;
+  --font-body:   "Karla", system-ui, -apple-system, Arial, sans-serif;
+  --font-eyebrow:"Karla", var(--font-body);
+  --s--1: .84rem;
+  --s-0:  1rem;
+  --s-1:  1.25rem;
+  --s-2:  1.6rem;
+  --s-3:  2.2rem;
+  --s-4:  3.1rem;
+  --s-5:  4.2rem;
+  /* space */
+  --sp-1:.25rem; --sp-2:.5rem; --sp-3:1rem; --sp-4:1.5rem;
+  --sp-5:2.5rem; --sp-6:4rem; --sp-7:6rem;
+  /* shape */
+  --radius:2px; --radius-lg:6px;
+  --shadow:0 18px 48px -24px rgba(40,28,16,.34);
+  --maxw:1200px;
+}
+*{box-sizing:border-box}
+html,body{overflow-x:clip}
+body{
+  margin:0;background:var(--bg);color:var(--ink-soft);
+  font-family:var(--font-body);font-size:var(--s-0);line-height:1.62;
+  font-weight:400;-webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+h1,h2,h3,.h{
+  font-family:var(--font-display);font-weight:500;line-height:1.12;
+  letter-spacing:.005em;color:var(--ink);margin:0 0 .4em;
+}
+h1{font-size:var(--s-5)} h2{font-size:var(--s-3)} h3{font-size:var(--s-1)}
+p{margin:0 0 1em}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 clamp(20px,4vw,48px)}
+.section{padding:var(--sp-7) 0}
+.eyebrow{
+  font-family:var(--font-eyebrow);text-transform:uppercase;letter-spacing:.22em;
+  font-size:.72rem;font-weight:700;color:var(--accent);margin:0 0 var(--sp-3);
+}
+/* buttons — SQUARE black (their style), Karla, slight tracking */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:.5em;
+  font-family:var(--font-body);font-weight:700;text-transform:uppercase;
+  letter-spacing:.12em;font-size:.78rem;line-height:1;cursor:pointer;
+  padding:1.1em 2.2em;border:1.5px solid var(--btn);border-radius:0;
+  background:var(--btn);color:var(--btn-ink);transition:.2s;
+}
+.btn:hover{background:var(--accent);border-color:var(--accent);color:var(--accent-ink);transform:translateY(-1px)}
+.btn-outline{background:transparent;color:var(--ink);border-color:var(--ink)}
+.btn-outline:hover{background:var(--ink);color:var(--bg)}
+.btn-light{background:var(--bg);color:var(--ink);border-color:var(--bg)}
+.btn-light:hover{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.btn-block{display:flex;width:100%}
+/* floating decorative (static) */
+.float{position:absolute;z-index:3;pointer-events:none}
+.float img{width:100%;height:auto;transform:rotate(var(--rot,0deg));
+  filter:drop-shadow(0 22px 30px rgba(40,28,16,.30))}
+@media(max-width:1000px){.float{display:none}}
+/* scroll-reveal 3D */
+.reveal{opacity:0;transform:perspective(900px) rotateX(8deg) translateY(26px);
+  transition:.7s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){
+  .reveal{opacity:1;transform:none;transition:none}
+  .float img{transform:rotate(var(--rot,0deg))!important}
+}
