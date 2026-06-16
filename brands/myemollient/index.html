@@ -139,6 +139,103 @@
   </div>
 </section>
 
+<!-- ===== imagereviews ===== -->
+<section class="sec s-imagereviews">
+  <div class="wrap">
+
+    <!-- Section head -->
+    <div class="s-imagereviews__head reveal">
+      <p class="eyebrow">Real Skin, Real Results</p>
+      <h2>The proof is on their skin.</h2>
+      <div class="s-imagereviews__summary">
+        <span class="s-imagereviews__stars" aria-label="4.9 out of 5 stars">★★★★★</span>
+        <span class="s-imagereviews__rating">4.9/5 &middot; loved by sensitive skin</span>
+      </div>
+    </div>
+
+    <!-- Review cards grid -->
+    <div class="s-imagereviews__grid">
+
+      <!-- Card 1 — Angelina -->
+      <article class="s-imagereviews__card reveal" style="--delay:.1s">
+        <div class="s-imagereviews__photo-wrap">
+          <img
+            class="s-imagereviews__photo"
+            src="assets/rev-angelina.jpg"
+            alt="Angelina L., verified buyer"
+            loading="lazy"
+            width="480"
+            height="600"
+          >
+        </div>
+        <div class="s-imagereviews__body">
+          <div class="s-imagereviews__card-stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <blockquote class="s-imagereviews__quote">
+            "Really love this product! I've always had eczema and a tough spot on a visible part of my head for years. My Emollient was literally life-changing — my eczema spot disappeared after a few weeks."
+          </blockquote>
+          <div class="s-imagereviews__meta">
+            <span class="s-imagereviews__name">Angelina L.</span>
+            <span class="s-imagereviews__verified">Verified Buyer</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 2 — Roosevelt -->
+      <article class="s-imagereviews__card reveal" style="--delay:.22s">
+        <div class="s-imagereviews__photo-wrap">
+          <img
+            class="s-imagereviews__photo"
+            src="assets/rev-roosevelt.jpg"
+            alt="Roosevelt, customer"
+            loading="lazy"
+            width="480"
+            height="600"
+          >
+        </div>
+        <div class="s-imagereviews__body">
+          <div class="s-imagereviews__card-stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <blockquote class="s-imagereviews__quote">
+            "I'm a man's man and I love this — a little goes a long way and it moisturizes all day. It takes a lot for my skin not to be dry. Love the scent too. I'll be using My Emollient from now on."
+          </blockquote>
+          <div class="s-imagereviews__meta">
+            <span class="s-imagereviews__name">Roosevelt</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 3 — Tiffany -->
+      <article class="s-imagereviews__card reveal" style="--delay:.34s">
+        <div class="s-imagereviews__photo-wrap">
+          <img
+            class="s-imagereviews__photo"
+            src="assets/rev-tiffany.jpg"
+            alt="Tiffany, customer"
+            loading="lazy"
+            width="480"
+            height="600"
+          >
+        </div>
+        <div class="s-imagereviews__body">
+          <div class="s-imagereviews__card-stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <blockquote class="s-imagereviews__quote">
+            "It transformed my cracked, itchy winter skin without any reactions. Because it's all natural, you can feel the difference — not too greasy and the scent isn't overpowering. So glad I found this!"
+          </blockquote>
+          <div class="s-imagereviews__meta">
+            <span class="s-imagereviews__name">Tiffany</span>
+          </div>
+        </div>
+      </article>
+
+    </div><!-- /.s-imagereviews__grid -->
+
+    <!-- Disclaimer -->
+    <p class="s-imagereviews__disclaimer">
+      Reviews are real customer testimonials shown here for mockup purposes.
+    </p>
+
+  </div><!-- /.wrap -->
+</section>
+
 <!-- ===== bestsellers ===== -->
 <section class="sec s-bestsellers">
   <div class="wrap">
@@ -356,165 +453,188 @@
 <section class="sec s-ingredients">
   <div class="wrap">
 
-    <!-- Head -->
+    <!-- HEAD -->
     <div class="s-ingredients__head reveal">
       <p class="eyebrow">Just 7 Organic Ingredients</p>
       <h2>Everything your skin needs.<br>Nothing it doesn't.</h2>
-      <p class="s-ingredients__intro">
-        Every jar is made from the same seven simple, organic, food-grade ingredients —
-        tap any to see what it does.
-      </p>
+      <p>Every jar is made from the same seven simple, organic, food-grade ingredients. Tap any to see exactly what it does for your skin.</p>
     </div>
 
-    <!-- Ingredient cards -->
-    <div class="s-ingredients__grid reveal">
+    <!-- 7 hidden radio controls — direct siblings of the explorer below -->
+    <input class="s-ingredients__radio" type="radio" name="ingredient" id="ing-1" checked>
+    <input class="s-ingredients__radio" type="radio" name="ingredient" id="ing-2">
+    <input class="s-ingredients__radio" type="radio" name="ingredient" id="ing-3">
+    <input class="s-ingredients__radio" type="radio" name="ingredient" id="ing-4">
+    <input class="s-ingredients__radio" type="radio" name="ingredient" id="ing-5">
+    <input class="s-ingredients__radio" type="radio" name="ingredient" id="ing-6">
+    <input class="s-ingredients__radio" type="radio" name="ingredient" id="ing-7">
 
-      <details class="s-ing-card">
-        <summary>
-          <div class="s-ing-card__img-wrap">
+    <!-- EXPLORER — sibling of the radios above (~ combinator works) -->
+    <div class="s-ingredients__explorer reveal">
+
+      <!-- FEATURED PANEL (left column) -->
+      <div class="s-ingredients__featured">
+
+        <!-- Detail 1: Grapeseed Oil -->
+        <div class="s-ingredients__detail" data-id="1">
+          <div class="s-ingredients__detail-img-wrap">
             <img src="assets/ing-grape.jpg" alt="Grapeseed Oil" loading="lazy">
           </div>
-          <div class="s-ing-card__face">
-            <span class="s-ing-card__name">Grapeseed Oil</span>
-            <span class="s-ing-card__affordance">
-              <span class="s-ing-card__cta-text">How it helps</span>
-              <span class="s-ing-card__chevron" aria-hidden="true"></span>
-            </span>
+          <div class="s-ingredients__detail-body">
+            <p class="s-ingredients__detail-index">01 / 07</p>
+            <span class="s-ingredients__detail-tag">Lightweight Antioxidant</span>
+            <h3 class="s-ingredients__detail-name">Grapeseed Oil</h3>
+            <p class="s-ingredients__detail-copy">Lightweight and antioxidant-rich, it absorbs fast with no greasy feel, delivering vitamin E to soften and balance even reactive skin.</p>
           </div>
-        </summary>
-        <div class="s-ing-card__body">
-          <p>Lightweight and antioxidant-rich, it absorbs fast with no greasy feel, delivering vitamin E to soften and balance even reactive skin.</p>
-          <a href="https://www.google.com" class="s-ing-card__link">Learn more</a>
         </div>
-      </details>
 
-      <details class="s-ing-card">
-        <summary>
-          <div class="s-ing-card__img-wrap">
+        <!-- Detail 2: Kokum Butter -->
+        <div class="s-ingredients__detail" data-id="2">
+          <div class="s-ingredients__detail-img-wrap">
             <img src="assets/ing-kokum.jpg" alt="Kokum Butter" loading="lazy">
           </div>
-          <div class="s-ing-card__face">
-            <span class="s-ing-card__name">Kokum Butter</span>
-            <span class="s-ing-card__affordance">
-              <span class="s-ing-card__cta-text">How it helps</span>
-              <span class="s-ing-card__chevron" aria-hidden="true"></span>
-            </span>
+          <div class="s-ingredients__detail-body">
+            <p class="s-ingredients__detail-index">02 / 07</p>
+            <span class="s-ingredients__detail-tag">Deep Restorative</span>
+            <h3 class="s-ingredients__detail-name">Kokum Butter</h3>
+            <p class="s-ingredients__detail-copy">A deeply restorative, non-pore-clogging butter that helps regenerate skin cells and restore elasticity — rich moisture that never feels heavy.</p>
           </div>
-        </summary>
-        <div class="s-ing-card__body">
-          <p>A deeply restorative, non-pore-clogging butter that helps regenerate skin cells and restore elasticity — rich moisture that never feels heavy.</p>
-          <a href="https://www.google.com" class="s-ing-card__link">Learn more</a>
         </div>
-      </details>
 
-      <details class="s-ing-card">
-        <summary>
-          <div class="s-ing-card__img-wrap">
+        <!-- Detail 3: Organic Shea -->
+        <div class="s-ingredients__detail" data-id="3">
+          <div class="s-ingredients__detail-img-wrap">
             <img src="assets/ing-shea.jpg" alt="Organic Shea" loading="lazy">
           </div>
-          <div class="s-ing-card__face">
-            <span class="s-ing-card__name">Organic Shea</span>
-            <span class="s-ing-card__affordance">
-              <span class="s-ing-card__cta-text">How it helps</span>
-              <span class="s-ing-card__chevron" aria-hidden="true"></span>
-            </span>
+          <div class="s-ingredients__detail-body">
+            <p class="s-ingredients__detail-index">03 / 07</p>
+            <span class="s-ingredients__detail-tag">Eczema Hero</span>
+            <h3 class="s-ingredients__detail-name">Organic Shea</h3>
+            <p class="s-ingredients__detail-copy">Loaded with vitamins A &amp; E and fatty acids to intensely nourish, calm irritation and seal in moisture. A hero for eczema-prone, dry skin.</p>
           </div>
-        </summary>
-        <div class="s-ing-card__body">
-          <p>Loaded with vitamins A &amp; E and fatty acids to intensely nourish, calm irritation and seal in moisture. A hero for eczema-prone, dry skin.</p>
-          <a href="https://www.google.com" class="s-ing-card__link">Learn more</a>
         </div>
-      </details>
 
-      <details class="s-ing-card">
-        <summary>
-          <div class="s-ing-card__img-wrap">
+        <!-- Detail 4: Mango Butter -->
+        <div class="s-ingredients__detail" data-id="4">
+          <div class="s-ingredients__detail-img-wrap">
             <img src="assets/ing-mango.jpg" alt="Mango Butter" loading="lazy">
           </div>
-          <div class="s-ing-card__face">
-            <span class="s-ing-card__name">Mango Butter</span>
-            <span class="s-ing-card__affordance">
-              <span class="s-ing-card__cta-text">How it helps</span>
-              <span class="s-ing-card__chevron" aria-hidden="true"></span>
-            </span>
+          <div class="s-ingredients__detail-body">
+            <p class="s-ingredients__detail-index">04 / 07</p>
+            <span class="s-ingredients__detail-tag">Barrier Strengthener</span>
+            <h3 class="s-ingredients__detail-name">Mango Butter</h3>
+            <p class="s-ingredients__detail-copy">A velvety emollient high in fatty acids that softens rough patches, strengthens the skin barrier and relieves tightness and flaking.</p>
           </div>
-        </summary>
-        <div class="s-ing-card__body">
-          <p>A velvety emollient high in fatty acids that softens rough patches, strengthens the skin barrier and relieves tightness and flaking.</p>
-          <a href="https://www.google.com" class="s-ing-card__link">Learn more</a>
         </div>
-      </details>
 
-      <details class="s-ing-card">
-        <summary>
-          <div class="s-ing-card__img-wrap">
+        <!-- Detail 5: Safflower Oil -->
+        <div class="s-ingredients__detail" data-id="5">
+          <div class="s-ingredients__detail-img-wrap">
             <img src="assets/ing-safflower.jpg" alt="Safflower Oil" loading="lazy">
           </div>
-          <div class="s-ing-card__face">
-            <span class="s-ing-card__name">Safflower Oil</span>
-            <span class="s-ing-card__affordance">
-              <span class="s-ing-card__cta-text">How it helps</span>
-              <span class="s-ing-card__chevron" aria-hidden="true"></span>
-            </span>
+          <div class="s-ingredients__detail-body">
+            <p class="s-ingredients__detail-index">05 / 07</p>
+            <span class="s-ingredients__detail-tag">Anti-Inflammatory</span>
+            <h3 class="s-ingredients__detail-name">Safflower Oil</h3>
+            <p class="s-ingredients__detail-copy">High in linoleic acid to calm inflammation and reinforce the moisture barrier — ideal for sensitive and eczema-prone skin.</p>
           </div>
-        </summary>
-        <div class="s-ing-card__body">
-          <p>High in linoleic acid to calm inflammation and reinforce the moisture barrier — ideal for sensitive and eczema-prone skin.</p>
-          <a href="https://www.google.com" class="s-ing-card__link">Learn more</a>
         </div>
-      </details>
 
-      <details class="s-ing-card">
-        <summary>
-          <div class="s-ing-card__img-wrap">
+        <!-- Detail 6: Aloe Vera -->
+        <div class="s-ingredients__detail" data-id="6">
+          <div class="s-ingredients__detail-img-wrap">
             <img src="assets/ing-aloe.jpg" alt="Aloe Vera" loading="lazy">
           </div>
-          <div class="s-ing-card__face">
-            <span class="s-ing-card__name">Aloe Vera</span>
-            <span class="s-ing-card__affordance">
-              <span class="s-ing-card__cta-text">How it helps</span>
-              <span class="s-ing-card__chevron" aria-hidden="true"></span>
-            </span>
+          <div class="s-ingredients__detail-body">
+            <p class="s-ingredients__detail-index">06 / 07</p>
+            <span class="s-ingredients__detail-tag">Instant Soother</span>
+            <h3 class="s-ingredients__detail-name">Aloe Vera</h3>
+            <p class="s-ingredients__detail-copy">Cooling and hydrating, aloe soothes redness and irritation on contact, comforting reactive, itchy or flared skin.</p>
           </div>
-        </summary>
-        <div class="s-ing-card__body">
-          <p>Cooling and hydrating, aloe soothes redness and irritation on contact, comforting reactive, itchy or flared skin.</p>
-          <a href="https://www.google.com" class="s-ing-card__link">Learn more</a>
         </div>
-      </details>
 
-      <details class="s-ing-card">
-        <summary>
-          <div class="s-ing-card__img-wrap">
+        <!-- Detail 7: Beeswax -->
+        <div class="s-ingredients__detail" data-id="7">
+          <div class="s-ingredients__detail-img-wrap">
             <img src="assets/ing-beeswax.jpg" alt="Beeswax" loading="lazy">
           </div>
-          <div class="s-ing-card__face">
-            <span class="s-ing-card__name">Beeswax</span>
-            <span class="s-ing-card__affordance">
-              <span class="s-ing-card__cta-text">How it helps</span>
-              <span class="s-ing-card__chevron" aria-hidden="true"></span>
-            </span>
+          <div class="s-ingredients__detail-body">
+            <p class="s-ingredients__detail-index">07 / 07</p>
+            <span class="s-ingredients__detail-tag">Protective Seal</span>
+            <h3 class="s-ingredients__detail-name">Beeswax</h3>
+            <p class="s-ingredients__detail-copy">Forms a breathable, protective seal that locks in moisture and shields skin from harsh weather — without clogging pores.</p>
           </div>
-        </summary>
-        <div class="s-ing-card__body">
-          <p>Forms a breathable, protective seal that locks in moisture and shields skin from harsh weather — without clogging pores.</p>
-          <a href="https://www.google.com" class="s-ing-card__link">Learn more</a>
         </div>
-      </details>
 
-    </div><!-- /.s-ingredients__grid -->
+      </div><!-- /.s-ingredients__featured -->
 
-    <!-- Made Without chips -->
+      <!-- SELECTOR (right column) — 7 thumbnail labels -->
+      <div class="s-ingredients__selector">
+
+        <label class="s-ingredients__thumb" for="ing-1">
+          <div class="s-ingredients__thumb-img">
+            <img src="assets/ing-grape.jpg" alt="Grapeseed Oil">
+          </div>
+          <span class="s-ingredients__thumb-name">Grapeseed Oil</span>
+        </label>
+
+        <label class="s-ingredients__thumb" for="ing-2">
+          <div class="s-ingredients__thumb-img">
+            <img src="assets/ing-kokum.jpg" alt="Kokum Butter">
+          </div>
+          <span class="s-ingredients__thumb-name">Kokum Butter</span>
+        </label>
+
+        <label class="s-ingredients__thumb" for="ing-3">
+          <div class="s-ingredients__thumb-img">
+            <img src="assets/ing-shea.jpg" alt="Organic Shea">
+          </div>
+          <span class="s-ingredients__thumb-name">Organic Shea</span>
+        </label>
+
+        <label class="s-ingredients__thumb" for="ing-4">
+          <div class="s-ingredients__thumb-img">
+            <img src="assets/ing-mango.jpg" alt="Mango Butter">
+          </div>
+          <span class="s-ingredients__thumb-name">Mango Butter</span>
+        </label>
+
+        <label class="s-ingredients__thumb" for="ing-5">
+          <div class="s-ingredients__thumb-img">
+            <img src="assets/ing-safflower.jpg" alt="Safflower Oil">
+          </div>
+          <span class="s-ingredients__thumb-name">Safflower Oil</span>
+        </label>
+
+        <label class="s-ingredients__thumb" for="ing-6">
+          <div class="s-ingredients__thumb-img">
+            <img src="assets/ing-aloe.jpg" alt="Aloe Vera">
+          </div>
+          <span class="s-ingredients__thumb-name">Aloe Vera</span>
+        </label>
+
+        <label class="s-ingredients__thumb" for="ing-7">
+          <div class="s-ingredients__thumb-img">
+            <img src="assets/ing-beeswax.jpg" alt="Beeswax">
+          </div>
+          <span class="s-ingredients__thumb-name">Beeswax</span>
+        </label>
+
+      </div><!-- /.s-ingredients__selector -->
+
+    </div><!-- /.s-ingredients__explorer -->
+
+    <!-- MADE WITHOUT -->
     <div class="s-ingredients__made-without reveal">
-      <p class="s-ingredients__mw-label">Made without</p>
-      <ul class="s-ingredients__chips" role="list">
-        <li>Synthetic Fragrance</li>
-        <li>Parabens</li>
-        <li>Petroleum</li>
-        <li>Mineral Oil</li>
-        <li>Artificial Dyes</li>
-        <li>Fillers</li>
-      </ul>
+      <p class="s-ingredients__mw-label">Made Without</p>
+      <div class="s-ingredients__mw-chips">
+        <span class="s-ingredients__mw-chip">Synthetic Fragrance</span>
+        <span class="s-ingredients__mw-chip">Parabens</span>
+        <span class="s-ingredients__mw-chip">Petroleum</span>
+        <span class="s-ingredients__mw-chip">Mineral Oil</span>
+        <span class="s-ingredients__mw-chip">Artificial Dyes</span>
+        <span class="s-ingredients__mw-chip">Fillers</span>
+      </div>
     </div>
 
   </div><!-- /.wrap -->
@@ -551,103 +671,6 @@
 
     </div>
   </div>
-</section>
-
-<!-- ===== imagereviews ===== -->
-<section class="sec s-imagereviews">
-  <div class="wrap">
-
-    <!-- Section head -->
-    <div class="s-imagereviews__head reveal">
-      <p class="eyebrow">Real Skin, Real Results</p>
-      <h2>The proof is on their skin.</h2>
-      <div class="s-imagereviews__summary">
-        <span class="s-imagereviews__stars" aria-label="4.9 out of 5 stars">★★★★★</span>
-        <span class="s-imagereviews__rating">4.9/5 &middot; loved by sensitive skin</span>
-      </div>
-    </div>
-
-    <!-- Review cards grid -->
-    <div class="s-imagereviews__grid">
-
-      <!-- Card 1 — Angelina -->
-      <article class="s-imagereviews__card reveal" style="--delay:.1s">
-        <div class="s-imagereviews__photo-wrap">
-          <img
-            class="s-imagereviews__photo"
-            src="assets/rev-angelina.jpg"
-            alt="Angelina L., verified buyer"
-            loading="lazy"
-            width="480"
-            height="600"
-          >
-        </div>
-        <div class="s-imagereviews__body">
-          <div class="s-imagereviews__card-stars" aria-label="5 out of 5 stars">★★★★★</div>
-          <blockquote class="s-imagereviews__quote">
-            "Really love this product! I've always had eczema and a tough spot on a visible part of my head for years. My Emollient was literally life-changing — my eczema spot disappeared after a few weeks."
-          </blockquote>
-          <div class="s-imagereviews__meta">
-            <span class="s-imagereviews__name">Angelina L.</span>
-            <span class="s-imagereviews__verified">Verified Buyer</span>
-          </div>
-        </div>
-      </article>
-
-      <!-- Card 2 — Roosevelt -->
-      <article class="s-imagereviews__card reveal" style="--delay:.22s">
-        <div class="s-imagereviews__photo-wrap">
-          <img
-            class="s-imagereviews__photo"
-            src="assets/rev-roosevelt.jpg"
-            alt="Roosevelt, customer"
-            loading="lazy"
-            width="480"
-            height="600"
-          >
-        </div>
-        <div class="s-imagereviews__body">
-          <div class="s-imagereviews__card-stars" aria-label="5 out of 5 stars">★★★★★</div>
-          <blockquote class="s-imagereviews__quote">
-            "I'm a man's man and I love this — a little goes a long way and it moisturizes all day. It takes a lot for my skin not to be dry. Love the scent too. I'll be using My Emollient from now on."
-          </blockquote>
-          <div class="s-imagereviews__meta">
-            <span class="s-imagereviews__name">Roosevelt</span>
-          </div>
-        </div>
-      </article>
-
-      <!-- Card 3 — Tiffany -->
-      <article class="s-imagereviews__card reveal" style="--delay:.34s">
-        <div class="s-imagereviews__photo-wrap">
-          <img
-            class="s-imagereviews__photo"
-            src="assets/rev-tiffany.jpg"
-            alt="Tiffany, customer"
-            loading="lazy"
-            width="480"
-            height="600"
-          >
-        </div>
-        <div class="s-imagereviews__body">
-          <div class="s-imagereviews__card-stars" aria-label="5 out of 5 stars">★★★★★</div>
-          <blockquote class="s-imagereviews__quote">
-            "It transformed my cracked, itchy winter skin without any reactions. Because it's all natural, you can feel the difference — not too greasy and the scent isn't overpowering. So glad I found this!"
-          </blockquote>
-          <div class="s-imagereviews__meta">
-            <span class="s-imagereviews__name">Tiffany</span>
-          </div>
-        </div>
-      </article>
-
-    </div><!-- /.s-imagereviews__grid -->
-
-    <!-- Disclaimer -->
-    <p class="s-imagereviews__disclaimer">
-      Reviews are real customer testimonials shown here for mockup purposes.
-    </p>
-
-  </div><!-- /.wrap -->
 </section>
 
 <!-- ===== offer ===== -->
