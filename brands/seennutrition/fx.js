@@ -31,4 +31,12 @@
 
   /* floating elements are STATIC (Bruno's preference) — no parallax, no bob.
      They keep a fixed rotation via CSS (.float img { transform: rotate(var(--rot)) }). */
+
+  /* ingredient expand-on-click cards */
+  [].slice.call(document.querySelectorAll('.ing-card')).forEach(function (card) {
+    card.addEventListener('click', function () {
+      var open = card.classList.toggle('open');
+      card.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  });
 })();
