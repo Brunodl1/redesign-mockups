@@ -1,0 +1,1440 @@
+/* LaRocca Skincare — assembled section styles (scoped). Base tokens in base.css */
+
+/* ===== header ===== */
+/* LaRocca Skincare — header.css
+   Scoped to .announce and .site-header only. Tokens from base.css. */
+
+/* ── Announcement bar ── */
+.announce {
+  width: 100%;
+  background: #000;
+  color: #fff;
+  text-align: center;
+  padding: .45rem var(--sp-3);
+  font-family: var(--font-body);
+  font-size: .76rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .13em;
+  line-height: 1.4;
+}
+
+.announce-extra {
+  display: inline;
+}
+
+@media (max-width: 760px) {
+  .announce-extra {
+    display: none;
+  }
+}
+
+/* ── Sticky header ── */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--bg);
+  border-bottom: 1px solid var(--line);
+  width: 100%;
+}
+
+.site-header__inner {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 clamp(16px, 4vw, 40px);
+  height: 68px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-4);
+}
+
+/* Left — logo */
+.site-header__logo {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+}
+
+.site-header__logo .logo {
+  height: 40px;
+  width: auto;
+  display: block;
+}
+
+/* Center — nav */
+.site-header__nav {
+  flex: 1 1 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(var(--sp-3), 2.4vw, var(--sp-5));
+  list-style: none;
+}
+
+.site-header__nav a {
+  font-family: var(--font-display);
+  font-size: .8rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  color: var(--ink);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color .15s ease;
+}
+
+.site-header__nav a:hover {
+  color: var(--accent);
+}
+
+/* Right — icons */
+.site-header__icons {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+}
+
+.site-header__icon-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--ink);
+  padding: var(--sp-1);
+  border-radius: 0;
+  transition: color .15s ease;
+  position: relative;
+}
+
+.site-header__icon-btn:hover {
+  color: var(--accent);
+}
+
+.site-header__icon-btn svg {
+  width: 22px;
+  height: 22px;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  fill: none;
+  display: block;
+}
+
+/* Cart count bubble */
+.cart-count {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: var(--accent);
+  color: #fff;
+  font-family: var(--font-body);
+  font-size: .6rem;
+  font-weight: 700;
+  line-height: 1;
+  min-width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 3px;
+  transform: translate(30%, -20%);
+}
+
+/* ── Mobile (≤900px): logo + cart only ── */
+@media (max-width: 900px) {
+  .site-header__nav {
+    display: none;
+  }
+
+  .site-header__icon-btn--search {
+    display: none;
+  }
+
+  .site-header__inner {
+    height: 58px;
+  }
+
+  .site-header__logo .logo {
+    height: 34px;
+  }
+}
+
+/* ===== hero ===== */
+/* ── Hero — full-bleed botanical scene ──────────────────────────────────── */
+/* Scoped: all rules under .s-hero                                           */
+
+.s-hero {
+  position: relative;
+  min-height: 86vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* Full-bleed background image with soft scrim for text safety */
+.s-hero__bg {
+  position: absolute;
+  inset: 0;
+  background:
+    /* soft radial scrim: lightest on left where card sits */
+    linear-gradient(
+      to right,
+      rgba(255,255,255,.45) 0%,
+      rgba(255,255,255,.10) 42%,
+      rgba(0,0,0,.08) 100%
+    ),
+    url('assets/hero.jpg') center center / cover no-repeat;
+  z-index: 0;
+}
+
+/* Wrap: left-align card */
+.s-hero__wrap {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  min-height: 86vh;
+  padding-top: clamp(48px, 8vw, 96px);
+  padding-bottom: clamp(48px, 8vw, 96px);
+}
+
+/* Frosted text card */
+.s-hero__card {
+  max-width: 520px;
+  width: 100%;
+  background: rgba(255,255,255,.90);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-radius: var(--radius-lg);
+  padding: clamp(28px, 4vw, 48px) clamp(24px, 3.5vw, 44px);
+  box-shadow: var(--shadow);
+  border: 1px solid rgba(255,255,255,.70);
+}
+
+/* Eyebrow — inherits .eyebrow from base.css (accent plum, uppercase, tracked) */
+.s-hero .eyebrow {
+  margin-bottom: .65rem;
+}
+
+/* H1 — Oswald uppercase, dark ink */
+.s-hero__card h1 {
+  font-size: clamp(var(--s-3), 5vw, var(--s-5));  /* 2rem → 3.6rem */
+  color: var(--ink);
+  line-height: 1.08;
+  margin-bottom: .85rem;
+}
+
+/* Subhead — Lato, ink-soft */
+.s-hero__sub {
+  font-family: var(--font-body);
+  font-size: var(--s-1);           /* 1.18rem */
+  color: var(--ink-soft);
+  line-height: 1.55;
+  margin-bottom: 1.6rem;
+}
+
+/* CTA row — square buttons from base.css */
+.s-hero__ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .75rem;
+  margin-bottom: 1.25rem;
+}
+
+/* Trust line */
+.s-hero__trust {
+  font-family: var(--font-body);
+  font-size: .78rem;
+  color: var(--ink-soft);
+  letter-spacing: .02em;
+}
+
+/* Float: hibiscus bloom bottom-right, bleeds off edge */
+/* .float base rules (position:absolute, pointer-events:none, display:none <1000px) live in base.css */
+.s-hero .float-hib {
+  bottom: -60px;
+  right: -50px;
+  width: clamp(220px, 22vw, 360px);
+  z-index: 3;
+}
+
+/* ── Mobile ─────────────────────────────────────────────────────────────── */
+@media (max-width: 900px) {
+
+  .s-hero {
+    min-height: 100svh;           /* full viewport on mobile */
+    align-items: flex-end;        /* card anchored near bottom, image visible above */
+  }
+
+  .s-hero__bg {
+    background:
+      linear-gradient(
+        to bottom,
+        rgba(255,255,255,.05) 0%,
+        rgba(255,255,255,.72) 55%,
+        rgba(255,255,255,.95) 100%
+      ),
+      url('assets/hero.jpg') center top / cover no-repeat;
+  }
+
+  .s-hero__wrap {
+    min-height: 100svh;
+    align-items: flex-end;
+    padding-top: 48px;
+    padding-bottom: clamp(24px, 6vw, 40px);
+  }
+
+  .s-hero__card {
+    max-width: 100%;
+    padding: 24px 20px;
+    /* Keep frosted card readable over the gradient bottom */
+    background: rgba(255,255,255,.92);
+  }
+
+  .s-hero__card h1 {
+    font-size: clamp(1.65rem, 7.5vw, 2.5rem);
+    margin-bottom: .6rem;
+  }
+
+  .s-hero__sub {
+    font-size: var(--s-0);        /* 1rem — guaranteed single-line territory */
+    margin-bottom: 1.2rem;
+  }
+
+  .s-hero__ctas {
+    gap: .6rem;
+    margin-bottom: 1rem;
+  }
+
+  /* Ensure both CTAs are visible and don't overflow */
+  .s-hero__ctas .btn {
+    padding: 13px 22px;
+    font-size: .78rem;
+  }
+}
+
+/* ===== trust ===== */
+/* ─── Trust strip — LaRocca Skincare ─────────────────────────────────────── */
+/* Scoped entirely under .s-trust. Uses only tokens from base.css.           */
+
+.s-trust {
+  background: var(--surface);
+  padding: var(--sp-5) 0;          /* slim vertical band */
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+/* ── row: 4 items in a line ─────────────────────────────────────────────── */
+.s-trust__row {
+  list-style: none;
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  flex-wrap: wrap;                 /* wraps to 2×2 on mobile */
+  gap: 0;
+}
+
+/* ── each credential cell ───────────────────────────────────────────────── */
+.s-trust__item {
+  flex: 1 1 25%;
+  min-width: 160px;
+  display: flex;
+  align-items: stretch;
+}
+
+/* thin divider between items (the --ruled modifier) */
+.s-trust__item--ruled {
+  border-left: 1px solid var(--line);
+}
+
+/* ── anchor resets to column flex ──────────────────────────────────────────*/
+.s-trust__link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sp-2);
+  padding: var(--sp-4) var(--sp-3);
+  width: 100%;
+  color: var(--ink-soft);
+  text-align: center;
+  transition: color .18s ease;
+}
+
+.s-trust__link:hover {
+  color: var(--accent);
+}
+
+/* ── icon ─────────────────────────────────────────────────────────────────*/
+.s-trust__ic {
+  width: 30px;
+  height: 30px;
+  color: var(--accent);            /* inherits stroke via currentColor */
+  flex-shrink: 0;
+}
+
+/* ── label: Oswald micro-caps, tracked ────────────────────────────────────*/
+.s-trust__label {
+  font-family: var(--font-display);
+  font-size: var(--s--1);         /* .82rem */
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: .09em;
+  color: var(--ink);
+  line-height: 1.25;
+}
+
+/* ── mobile: 2 × 2 grid ───────────────────────────────────────────────────*/
+@media (max-width: 640px) {
+  .s-trust__row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .s-trust__item {
+    flex: unset;
+    min-width: unset;
+  }
+
+  /* re-apply dividers for 2-col layout */
+  .s-trust__item--ruled {
+    border-left: none;
+  }
+
+  /* vertical divider: items 2 & 4 (even columns) */
+  .s-trust__item:nth-child(even) {
+    border-left: 1px solid var(--line);
+  }
+
+  /* horizontal divider: bottom row (items 3 & 4) */
+  .s-trust__item:nth-child(n+3) {
+    border-top: 1px solid var(--line);
+  }
+}
+
+/* ===== categories ===== */
+/* ── s-categories ─────────────────────────────────────────── */
+
+.s-categories {
+  background: var(--bg);
+}
+
+/* stagger reveals via CSS custom property */
+.s-categories .reveal {
+  transition-delay: var(--delay, 0s);
+}
+
+/* 6-up → 3×2 → 2-col */
+.s-categories__grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: var(--sp-4);
+}
+
+/* tile = square link card */
+.s-categories__tile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sp-3);
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: var(--sp-5) var(--sp-4) var(--sp-4);
+  text-decoration: none;
+  transition: transform .22s cubic-bezier(.2,.7,.2,1),
+              box-shadow .22s ease;
+}
+
+.s-categories__tile:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow);
+}
+
+/* image container — square, generous padding */
+.s-categories__img-wrap {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.s-categories__img-wrap img {
+  width: 80%;
+  height: 80%;
+  object-fit: contain;
+  transition: transform .32s cubic-bezier(.2,.7,.2,1);
+}
+
+.s-categories__tile:hover .s-categories__img-wrap img {
+  transform: scale(1.06);
+}
+
+/* label — Oswald uppercase */
+.s-categories__label {
+  font-family: var(--font-display);
+  font-size: var(--s-0);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  color: var(--ink);
+  text-align: center;
+  line-height: 1.2;
+}
+
+/* ── responsive ───────────────────────────────────────────── */
+
+/* tablet: 3 columns */
+@media (max-width: 1024px) {
+  .s-categories__grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--sp-3);
+  }
+}
+
+/* mobile: 2 columns */
+@media (max-width: 600px) {
+  .s-categories__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--sp-3);
+  }
+
+  .s-categories__tile {
+    padding: var(--sp-4) var(--sp-3) var(--sp-3);
+  }
+
+  .s-categories__img-wrap img {
+    width: 85%;
+    height: 85%;
+  }
+
+  .s-categories__label {
+    font-size: var(--s--1);
+  }
+}
+
+/* ===== bestsellers ===== */
+/* LaRocca Skincare — Bestsellers section */
+
+.s-bestsellers{background:var(--bg)}
+
+/* ---------- section head ---------- */
+.s-bestsellers .section-head .rating-summary{
+  display:inline-flex;align-items:center;gap:.45em;
+  margin-top:.75rem;
+  font-family:var(--font-body);font-size:.88rem;color:var(--ink-soft);
+}
+.s-bestsellers .section-head .rating-summary .stars{
+  color:var(--star);font-size:1.05rem;letter-spacing:.02em;line-height:1;
+}
+
+/* ---------- grid ---------- */
+.s-bestsellers .bs-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:clamp(14px,2.5vw,28px);
+}
+@media(max-width:900px){
+  .s-bestsellers .bs-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:360px){
+  .s-bestsellers .bs-grid{grid-template-columns:1fr}
+}
+
+/* ---------- card ---------- */
+.s-bestsellers .bs-card{
+  background:var(--bg);
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  overflow:hidden;
+  display:flex;flex-direction:column;
+  transition:box-shadow .22s ease,transform .22s ease;
+  position:relative;
+}
+.s-bestsellers .bs-card:hover{
+  box-shadow:var(--shadow);
+  transform:translateY(-4px);
+}
+
+/* image wrapper */
+.s-bestsellers .bs-card__img-wrap{
+  background:var(--surface);
+  padding:clamp(16px,4%,28px);
+  aspect-ratio:1/1;
+  display:flex;align-items:center;justify-content:center;
+  overflow:hidden;
+}
+.s-bestsellers .bs-card__img-wrap img{
+  width:100%;height:100%;
+  object-fit:contain;
+  display:block;
+}
+
+/* badge */
+.s-bestsellers .bs-badge{
+  position:absolute;top:10px;left:10px;
+  font-family:var(--font-body);font-size:.67rem;font-weight:700;
+  text-transform:uppercase;letter-spacing:.1em;
+  padding:4px 10px;border-radius:var(--radius);
+  line-height:1.2;
+}
+.s-bestsellers .bs-badge--accent{background:var(--accent);color:#fff}
+.s-bestsellers .bs-badge--terra{background:var(--terra);color:#fff}
+
+/* card body */
+.s-bestsellers .bs-card__body{
+  padding:clamp(12px,3%,20px);
+  display:flex;flex-direction:column;flex:1;gap:.55rem;
+}
+.s-bestsellers .bs-card__name{
+  font-family:var(--font-display);
+  font-size:clamp(.82rem,1.2vw,1rem);
+  font-weight:500;
+  text-transform:uppercase;
+  letter-spacing:.04em;
+  color:var(--ink);
+  line-height:1.25;
+}
+.s-bestsellers .bs-card__stars{
+  color:var(--star);font-size:.92rem;letter-spacing:.02em;
+  display:flex;align-items:center;gap:.35em;
+}
+.s-bestsellers .bs-card__stars span{
+  font-family:var(--font-body);font-size:.78rem;color:var(--ink-soft);letter-spacing:0;
+}
+.s-bestsellers .bs-card__price{
+  font-family:var(--font-body);font-size:1rem;font-weight:700;color:var(--ink);
+}
+.s-bestsellers .bs-card__body .btn{
+  margin-top:auto;
+  font-size:.75rem;
+  padding:13px 20px;
+}
+
+/* stagger delays */
+.s-bestsellers .bs-card:nth-child(1){transition-delay:.05s}
+.s-bestsellers .bs-card:nth-child(2){transition-delay:.10s}
+.s-bestsellers .bs-card:nth-child(3){transition-delay:.15s}
+.s-bestsellers .bs-card:nth-child(4){transition-delay:.20s}
+.s-bestsellers .bs-card:nth-child(5){transition-delay:.25s}
+.s-bestsellers .bs-card:nth-child(6){transition-delay:.30s}
+
+/* ===== hibiscus ===== */
+/* ─── WHY HIBISCUS — ingredient/science band — LaRocca Skincare ─────────── */
+/* Scoped entirely under .s-hibiscus. Uses only tokens from base.css.        */
+
+/* ── section shell ──────────────────────────────────────────────────────── */
+.s-hibiscus {
+  background: var(--surface-2);      /* pale plum tint */
+  position: relative;
+  overflow: hidden;
+}
+
+/* ── two-column grid ────────────────────────────────────────────────────── */
+.s-hibiscus__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(32px, 5vw, 72px);
+  align-items: center;
+}
+
+/* ── image column ───────────────────────────────────────────────────────── */
+.s-hibiscus__img-col {
+  position: relative;               /* anchor for the float */
+}
+
+.s-hibiscus__img {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+  display: block;
+}
+
+/* ── float: cream jar bleeding off right seam ─────────────────────────── */
+/* base.css hides .float at ≤1000px automatically */
+.s-hibiscus .float-cream {
+  bottom: -28px;
+  right: -48px;
+  width: 160px;
+}
+
+/* ── copy column ────────────────────────────────────────────────────────── */
+.s-hibiscus__copy {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+}
+
+.s-hibiscus__copy h2 {
+  margin-top: var(--sp-1);
+  line-height: 1.08;
+}
+
+.s-hibiscus__intro {
+  font-family: var(--font-body);
+  font-size: var(--s-1);            /* 1.18rem */
+  color: var(--ink-soft);
+  line-height: 1.6;
+  max-width: 46ch;
+}
+
+/* ── benefit list ───────────────────────────────────────────────────────── */
+.s-hibiscus__benefits {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+}
+
+.s-hibiscus__benefit {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--sp-3);
+}
+
+/* icon — inherits stroke via currentColor from base.css .ic definition */
+.s-hibiscus__ic {
+  color: var(--accent);
+  flex-shrink: 0;
+  margin-top: 2px;                  /* optical alignment with first text line */
+}
+
+.s-hibiscus__benefit-text {
+  display: flex;
+  flex-direction: column;
+  gap: .2rem;
+}
+
+.s-hibiscus__benefit-text strong {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: var(--s-1);
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  color: var(--ink);
+  line-height: 1.2;
+}
+
+.s-hibiscus__benefit-text span {
+  font-family: var(--font-body);
+  font-size: var(--s-0);
+  color: var(--ink-soft);
+  line-height: 1.55;
+}
+
+/* ── CTA ────────────────────────────────────────────────────────────────── */
+.s-hibiscus__cta {
+  align-self: flex-start;
+  margin-top: var(--sp-2);
+}
+
+/* ── reveal: stagger the benefit items ─────────────────────────────────── */
+.s-hibiscus__benefits .reveal:nth-child(1) { transition-delay: .08s }
+.s-hibiscus__benefits .reveal:nth-child(2) { transition-delay: .18s }
+.s-hibiscus__benefits .reveal:nth-child(3) { transition-delay: .28s }
+
+/* ── tablet: keep two cols but tighten ─────────────────────────────────── */
+@media (max-width: 900px) {
+  .s-hibiscus__inner {
+    gap: clamp(24px, 4vw, 40px);
+  }
+
+  .s-hibiscus__img {
+    aspect-ratio: 4 / 5;
+  }
+}
+
+/* ── mobile: stack — image first, copy below ────────────────────────────── */
+@media (max-width: 680px) {
+  .s-hibiscus__inner {
+    grid-template-columns: 1fr;
+  }
+
+  .s-hibiscus__img {
+    aspect-ratio: 16 / 9;
+  }
+
+  .s-hibiscus__intro {
+    max-width: unset;
+  }
+
+  .s-hibiscus__cta {
+    align-self: stretch;            /* full-width button on small screens */
+    text-align: center;
+  }
+}
+
+/* ===== sets ===== */
+/* ── Sets & Routines promo band ─────────────────────────────────────────── */
+
+.s-sets {
+  background: var(--accent);          /* rich plum band */
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+/* eyebrow override: white on plum */
+.s-sets .s-sets__eyebrow {
+  color: rgba(255, 255, 255, .85);
+}
+
+/* section-head text: white on plum */
+.s-sets .s-sets__head h2 {
+  color: #fff;
+}
+
+.s-sets .s-sets__head p {
+  color: rgba(255, 255, 255, .80);
+}
+
+/* float — bleed off the right seam */
+.s-sets .float-hib2 {
+  right: -60px;
+  bottom: -40px;
+  width: 260px;
+}
+
+/* ── chip row ────────────────────────────────────────────────────────────── */
+.s-sets__chips {
+  display: flex;
+  gap: var(--sp-4);
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: var(--sp-5);
+}
+
+.s-sets__chip {
+  flex: 1 1 220px;
+  max-width: 300px;
+  background: rgba(255, 255, 255, .12);
+  border: 1.5px solid rgba(255, 255, 255, .28);
+  border-radius: var(--radius);
+  padding: var(--sp-5) var(--sp-4) var(--sp-4);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sp-2);
+  transition: background .18s ease, border-color .18s ease;
+}
+
+.s-sets__chip:hover {
+  background: rgba(255, 255, 255, .20);
+  border-color: rgba(255, 255, 255, .55);
+}
+
+.s-sets__chip-name {
+  font-family: var(--font-display);
+  font-size: var(--s-2);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  color: #fff;
+  line-height: 1.15;
+}
+
+.s-sets__chip-price {
+  font-family: var(--font-display);
+  font-size: var(--s-3);
+  font-weight: 600;
+  color: #fff;
+  letter-spacing: .04em;
+  line-height: 1;
+}
+
+.s-sets__chip-save {
+  font-family: var(--font-body);
+  font-size: .72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .14em;
+  color: rgba(255, 255, 255, .72);
+  background: rgba(255, 255, 255, .14);
+  padding: 3px 10px;
+  border-radius: var(--radius-pill);
+}
+
+.s-sets__chip-link {
+  margin-top: auto;
+  padding-top: var(--sp-2);
+  font-family: var(--font-body);
+  font-size: .82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .10em;
+  color: #fff;
+  opacity: .85;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: opacity .15s ease;
+}
+
+.s-sets__chip-link:hover {
+  opacity: 1;
+}
+
+/* ── CTA row ─────────────────────────────────────────────────────────────── */
+.s-sets__cta {
+  text-align: center;
+}
+
+/* ── Mobile: chips stack ─────────────────────────────────────────────────── */
+@media (max-width: 640px) {
+  .s-sets__chips {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .s-sets__chip {
+    width: 100%;
+    max-width: 100%;
+    flex: none;
+  }
+}
+
+/* ===== reviews ===== */
+/* =====================================================
+   LaRocca Skincare — Reviews section
+   Tokens from base.css; all rules scoped to .s-reviews
+   ===================================================== */
+
+.s-reviews {
+  background: var(--surface);
+}
+
+/* Rating summary line beneath the h2 */
+.s-reviews .rating-summary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .4em;
+  margin-top: .6rem;
+  font-family: var(--font-body);
+  font-size: var(--s-0);
+  color: var(--ink-soft);
+}
+
+.s-reviews .stars-summary {
+  color: var(--star);
+  font-size: 1.15rem;
+  letter-spacing: .05em;
+  line-height: 1;
+}
+
+/* ── Grid ─────────────────────────────────────────── */
+.s-reviews .reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(14px, 2vw, 24px);
+}
+
+@media (max-width: 900px) {
+  .s-reviews .reviews-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 540px) {
+  .s-reviews .reviews-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ── Card ─────────────────────────────────────────── */
+.s-reviews .review-card {
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: clamp(20px, 3vw, 30px);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+  transition-delay: var(--delay, 0s); /* stagger hook */
+}
+
+/* Stars */
+.s-reviews .review-stars {
+  color: var(--star);
+  font-size: 1.1rem;
+  letter-spacing: .06em;
+  line-height: 1;
+}
+
+/* Headline — Oswald uppercase, brand spec */
+.s-reviews .review-headline {
+  font-family: var(--font-display);
+  font-size: var(--s-1);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  color: var(--ink);
+  line-height: 1.2;
+}
+
+/* Quote body */
+.s-reviews .review-quote {
+  font-family: var(--font-body);
+  font-size: var(--s-0);
+  color: var(--ink-soft);
+  line-height: 1.65;
+  font-style: italic;
+  border: none;
+  padding: 0;
+  margin: 0;
+  flex: 1; /* push footer to bottom */
+}
+
+/* ── Card footer ──────────────────────────────────── */
+.s-reviews .review-footer {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: .5rem var(--sp-2);
+  margin-top: auto;
+  padding-top: var(--sp-3);
+  border-top: 1px solid var(--line);
+}
+
+.s-reviews .review-name {
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  font-weight: 700;
+  color: var(--ink);
+  text-transform: uppercase;
+  letter-spacing: .06em;
+}
+
+.s-reviews .verified-pill {
+  font-family: var(--font-body);
+  font-size: .68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  color: var(--accent);
+  background: var(--accent-soft);
+  border-radius: var(--radius-pill);
+  padding: 2px 9px;
+  line-height: 1.6;
+}
+
+.s-reviews .review-product {
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  color: var(--ink-soft);
+  margin-left: auto; /* push to far right */
+  font-style: italic;
+}
+
+@media (max-width: 420px) {
+  .s-reviews .review-product {
+    margin-left: 0;
+    width: 100%;
+  }
+}
+
+/* ── Disclaimer ───────────────────────────────────── */
+.s-reviews .reviews-disclaimer {
+  text-align: center;
+  margin-top: clamp(18px, 2.5vw, 28px);
+  font-family: var(--font-body);
+  font-size: .72rem;
+  color: var(--ink-soft);
+  opacity: .55;
+  letter-spacing: .04em;
+}
+
+/* ===== guarantee ===== */
+/* ── s-guarantee — value-props strip ── */
+
+.s-guarantee {
+  background: var(--surface-2);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  padding: var(--sp-5) 0;
+}
+
+/* ─ strip layout ─────────────────────────────────── */
+.s-guarantee__strip {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  gap: 0;
+  list-style: none;
+  flex-wrap: wrap;         /* allows 2×2 on mobile */
+}
+
+/* ─ vertical dividers ────────────────────────────── */
+.s-guarantee__divider {
+  width: 1px;
+  background: var(--line);
+  align-self: stretch;
+  flex: none;
+}
+
+/* ─ each item ────────────────────────────────────── */
+.s-guarantee__item {
+  flex: 1 1 200px;
+  min-width: 0;
+}
+
+.s-guarantee__link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--sp-2);
+  padding: var(--sp-4) var(--sp-4);
+  color: var(--ink);
+  text-decoration: none;
+  transition: color .18s ease;
+}
+
+.s-guarantee__link:hover {
+  color: var(--accent);
+}
+
+/* ─ icon ─────────────────────────────────────────── */
+.s-guarantee__icon {
+  /* reuse .ic dimensions (40×40) and stroke from base */
+  color: var(--accent);
+  stroke: var(--accent);
+  fill: none;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  flex: none;
+}
+
+/* ─ label ────────────────────────────────────────── */
+.s-guarantee__label {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: var(--s-0);
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  color: var(--ink);
+  line-height: 1.15;
+}
+
+.s-guarantee__link:hover .s-guarantee__label {
+  color: var(--accent);
+}
+
+/* ─ subtext ──────────────────────────────────────── */
+.s-guarantee__sub {
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  color: var(--ink-soft);
+  line-height: 1.4;
+}
+
+/* ─ mobile: 2×2 grid ─────────────────────────────── */
+@media (max-width: 680px) {
+  .s-guarantee__strip {
+    display: grid;
+    grid-template-columns: 1fr 1px 1fr;
+    grid-template-rows: auto 1px auto;
+    gap: 0;
+  }
+
+  /* horizontal hairline between rows */
+  .s-guarantee__strip::after {
+    content: "";
+    grid-column: 1 / -1;
+    height: 1px;
+    background: var(--line);
+    grid-row: 2;
+  }
+
+  .s-guarantee__divider:nth-child(2)  { grid-column: 2; grid-row: 1; }
+  .s-guarantee__divider:nth-child(4)  { grid-column: 2; grid-row: 3; }
+
+  /* hide the mid dividers that fall between rows */
+  .s-guarantee__divider:nth-child(6)  { display: none; }
+
+  .s-guarantee__item:nth-child(1) { grid-column: 1; grid-row: 1; }
+  .s-guarantee__item:nth-child(3) { grid-column: 3; grid-row: 1; }
+  .s-guarantee__item:nth-child(5) { grid-column: 1; grid-row: 3; }
+  .s-guarantee__item:nth-child(7) { grid-column: 3; grid-row: 3; }
+
+  .s-guarantee__link {
+    padding: var(--sp-4) var(--sp-3);
+  }
+}
+
+/* ===== newsletter ===== */
+/* ── Newsletter band ──────────────────────────────────────────────── */
+.s-newsletter {
+  background: var(--accent);
+  padding: clamp(56px, 7vw, 96px) 0;
+  text-align: center;
+}
+
+.s-newsletter .newsletter-inner {
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+/* eyebrow override — white on plum */
+.s-newsletter .eyebrow {
+  color: rgba(255, 255, 255, .85);
+}
+
+/* heading */
+.s-newsletter h2 {
+  color: #ffffff;
+  font-size: clamp(var(--s-3), 4.5vw, var(--s-4));
+  margin-bottom: var(--sp-3);
+}
+
+/* one-line subhead */
+.s-newsletter .newsletter-sub {
+  font-family: var(--font-body);
+  font-size: var(--s-1);
+  color: #ffffff;
+  margin-bottom: var(--sp-5);
+  line-height: 1.5;
+}
+
+/* inline form */
+.s-newsletter .newsletter-form {
+  display: flex;
+  align-items: stretch;
+  gap: 0;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: var(--sp-3);
+}
+
+/* email input — square, borderless on the button edge */
+.s-newsletter .newsletter-input {
+  font-family: var(--font-body);
+  font-size: var(--s-0);
+  color: var(--ink);
+  background: #ffffff;
+  border: none;
+  border-radius: var(--radius-btn); /* 0 — square */
+  padding: 15px 20px;
+  width: 320px;
+  max-width: 100%;
+  outline: none;
+  line-height: 1;
+}
+
+.s-newsletter .newsletter-input::placeholder {
+  color: rgba(0, 0, 0, .4);
+}
+
+.s-newsletter .newsletter-input:focus {
+  box-shadow: inset 0 0 0 2px rgba(117, 55, 137, .35);
+}
+
+/* btn-light inherits from base — just align height */
+.s-newsletter .btn.btn-light {
+  border-radius: var(--radius-btn); /* 0 — square */
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* fine print */
+.s-newsletter .newsletter-fine {
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  color: rgba(255, 255, 255, .7);
+  margin-top: var(--sp-2);
+}
+
+/* ── Mobile: stack form ───────────────────────────────────────────── */
+@media (max-width: 600px) {
+  .s-newsletter .newsletter-form {
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--sp-3);
+  }
+
+  .s-newsletter .newsletter-input {
+    width: 100%;
+  }
+
+  .s-newsletter .btn.btn-light {
+    width: 100%;
+  }
+}
+
+/* ===== footer ===== */
+/* LaRocca Skincare — footer partial
+   Scope: .site-footer | Tokens from base.css only */
+
+/* ── Shell ── */
+.site-footer {
+  background: var(--footer-bg);
+  border-top: 1px solid var(--line);
+  padding: var(--sp-6) 0 0;
+  font-family: var(--font-body);
+  color: var(--footer-text);
+}
+
+/* ── Main grid: brand + 3 columns ── */
+.sf-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1fr;
+  gap: var(--sp-5) var(--sp-5);
+  padding-bottom: var(--sp-6);
+}
+
+/* ── Brand column ── */
+.sf-logo-link {
+  display: inline-block;
+  margin-bottom: var(--sp-3);
+}
+
+.sf-logo {
+  height: 40px;
+  width: auto;
+  display: block;
+  /* white-bg logo is fine on #f7f7f7 — no chip needed */
+}
+
+.sf-tagline {
+  font-size: var(--s--1);
+  color: var(--footer-text);
+  line-height: 1.55;
+  max-width: 260px;
+  margin-bottom: var(--sp-4);
+}
+
+/* Social icons */
+.sf-socials {
+  display: flex;
+  gap: var(--sp-3);
+}
+
+.sf-social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent);
+  transition: color .18s ease, opacity .18s ease;
+}
+
+.sf-social-link:hover {
+  color: var(--accent-2);
+  opacity: .85;
+}
+
+/* ── Link columns ── */
+.sf-col-title {
+  font-family: var(--font-display);
+  font-size: .72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .14em;
+  color: var(--footer-title);
+  margin-bottom: var(--sp-3);
+  line-height: 1;
+}
+
+.sf-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+}
+
+.sf-links a {
+  font-size: var(--s--1);
+  color: var(--footer-text);
+  line-height: 1.4;
+  transition: color .16s ease;
+}
+
+.sf-links a:hover {
+  color: var(--footer-link);
+}
+
+/* ── Bottom bar ── */
+.sf-bottom {
+  border-top: 1px solid var(--line);
+  padding: var(--sp-4) 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-4);
+  flex-wrap: wrap;
+}
+
+.sf-copy {
+  font-size: .75rem;
+  color: var(--footer-text);
+  line-height: 1.5;
+}
+
+.sf-disclaimer {
+  display: inline-block;
+  margin-left: var(--sp-3);
+  opacity: .55;
+  font-size: .72rem;
+}
+
+/* Payment badge row */
+.sf-payments {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  flex-wrap: wrap;
+}
+
+.sf-pay-icon {
+  display: block;
+  opacity: .55;
+  border-radius: 4px;
+}
+
+/* ── Responsive: 4→2 columns at 840px ── */
+@media (max-width: 840px) {
+  .sf-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--sp-5) var(--sp-4);
+  }
+
+  .sf-brand {
+    grid-column: 1 / -1; /* brand spans full width on 2-col */
+  }
+
+  .sf-tagline {
+    max-width: 440px;
+  }
+}
+
+/* ── Responsive: 2→1 column at 540px ── */
+@media (max-width: 540px) {
+  .sf-grid {
+    grid-template-columns: 1fr;
+    gap: var(--sp-4);
+    padding-bottom: var(--sp-5);
+  }
+
+  .sf-brand {
+    grid-column: auto;
+  }
+
+  .sf-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--sp-3);
+  }
+
+  .sf-disclaimer {
+    display: block;
+    margin-left: 0;
+    margin-top: var(--sp-1);
+  }
+}
