@@ -734,15 +734,6 @@ h3{font-size:var(--s-1);font-weight:700}
   align-self: flex-start;
 }
 
-/* ── float position — seam between the two columns ── */
-.float-fruit {
-  width: clamp(90px, 9vw, 130px);
-  top: 6%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 4;
-}
-
 /* ── mobile: single column, no divider ── */
 @media (max-width: 768px) {
   .s-why__grid {
