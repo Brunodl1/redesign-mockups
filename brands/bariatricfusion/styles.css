@@ -141,7 +141,6 @@ p{color:var(--ink-soft)}
 /* ===== decorative floats ===== */
 .s-bestsellers{position:relative}
 .s-reviews{position:relative}
-.float-chews-a{top:-40px;right:-42px;width:155px;--rot:-12deg}
 .float-caps-b{bottom:-44px;left:-44px;width:150px;--rot:14deg}
 
 /* ===== footer (deep navy — logo on white chip) ===== */
@@ -401,7 +400,11 @@ p{color:var(--ink-soft)}
 /* ── s-needs: Shop by Need ── */
 
 .s-needs {
-  background: var(--bg);
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.48), rgba(255, 255, 255, 0.64)),
+    url('assets/needs-bg.jpg');
+  background-size: cover;
+  background-position: center;
 }
 
 .s-needs__head {
