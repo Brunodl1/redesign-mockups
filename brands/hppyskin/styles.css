@@ -222,7 +222,7 @@
 
 .s-buybox .wrap {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1.12fr .88fr;
   gap: var(--sp-6);
   align-items: start;
 }
@@ -286,7 +286,7 @@
 
 .s-buybox__gallery .gal-main img[data-gallery-main] {
   width: 100%;
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 1 / 1;
   object-fit: cover;
   display: block;
   border-radius: var(--radius-lg);
