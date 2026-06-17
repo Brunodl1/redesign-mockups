@@ -935,6 +935,7 @@
   background: var(--surface-2);
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
+  padding-block: clamp(46px, 6vw, 84px);
 }
 
 /* ── grid: 4-col desktop, 2x2 mobile ── */
