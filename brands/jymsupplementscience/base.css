@@ -1,0 +1,109 @@
+/* JYM Supplement Science — per-brand foundation (faithful to real site:
+   Saira Condensed heavy italic UPPERCASE headings (stratum-2), Barlow body (DIN),
+   black + light-grey + CRIMSON red, PILL buttons, big WHITE rounded card blocks). supplements structure. */
+:root{
+  /* color */
+  --bg:#f0f0f0;             /* light grey page */
+  --surface:#ffffff;        /* white card/block */
+  --surface-2:#e8e8e8;      /* mid grey fill */
+  --ink:#1a1a1a;
+  --ink-soft:#5a5a5a;
+  --accent:#be0120;         /* JYM crimson red */
+  --accent-2:#8f0018;       /* darker red hover */
+  --accent-soft:#fdeaed;    /* pale red tint */
+  --accent-ink:#ffffff;
+  --pop:#de0808;
+  --star:#ffb74a;           /* amber stars */
+  --line:rgba(26,26,26,.14);
+  --btn:#1a1a1a;            /* black primary button */
+  --btn-ink:#ffffff;
+  --footer-bg:#ffffff;
+  --footer-title:#1a1a1a;
+  --footer-text:#5a5a5a;
+  --footer-link:#be0120;
+  /* type */
+  --font-display:"Saira Condensed", "Arial Narrow", system-ui, sans-serif;  /* heavy italic uppercase */
+  --font-body:"Barlow", "Helvetica Neue", Arial, sans-serif;
+  --s--1:.82rem; --s-0:1rem; --s-1:1.18rem; --s-2:1.5rem;
+  --s-3:2rem; --s-4:2.6rem; --s-5:3.4rem;
+  /* space */
+  --sp-1:.25rem; --sp-2:.5rem; --sp-3:1rem; --sp-4:1.5rem;
+  --sp-5:2.5rem; --sp-6:4rem; --sp-7:6rem;
+  /* shape — pill buttons, big rounded white cards */
+  --radius:12px; --radius-lg:24px; --radius-pill:999px; --radius-btn:999px;
+  --shadow:0 18px 50px rgba(26,26,26,.10);
+  --shadow-sm:0 4px 16px rgba(26,26,26,.08);
+  --maxw:1440px;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{overflow-x:clip}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--font-body);
+  font-weight:400;
+  color:var(--ink);
+  background:var(--bg);
+  font-size:16px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+
+/* headings — Saira Condensed, heavy, ITALIC, UPPERCASE (stratum-2 vibe) */
+h1,h2,h3,h4{font-family:var(--font-display);color:var(--ink);line-height:1.0;
+  font-weight:800;font-style:italic;text-transform:uppercase;letter-spacing:-.01em}
+h1{font-size:var(--s-5)}
+h2{font-size:var(--s-4)}
+h3{font-size:var(--s-2)}
+
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 clamp(16px,4vw,40px);width:100%}
+.section{padding:clamp(40px,5.5vw,72px) 0}
+
+.eyebrow{
+  font-family:var(--font-body);
+  font-size:.74rem;font-weight:700;text-transform:uppercase;letter-spacing:.16em;
+  color:var(--accent);display:inline-block;margin-bottom:.7rem;
+}
+.section-head{max-width:760px;margin:0 auto clamp(24px,4vw,44px);text-align:center}
+.section-head h2{margin-bottom:.4rem}
+.section-head p{color:var(--ink-soft);font-size:var(--s-1);font-family:var(--font-body)}
+
+/* buttons — PILL, bold uppercase */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:.5em;
+  font-family:var(--font-body);font-weight:700;font-size:.92rem;
+  text-transform:uppercase;letter-spacing:.04em;
+  padding:16px 36px;border-radius:var(--radius-btn);
+  border:2px solid transparent;cursor:pointer;transition:.18s ease;line-height:1;
+}
+.btn-dark{background:var(--btn);color:var(--btn-ink)}
+.btn-dark:hover{background:#000}
+.btn-primary{background:var(--accent);color:#fff}      /* crimson */
+.btn-primary:hover{background:var(--accent-2)}
+.btn-outline{background:transparent;color:var(--ink);border-color:var(--ink)}
+.btn-outline:hover{background:var(--ink);color:#fff}
+.btn-light{background:#fff;color:var(--ink);border-color:#fff}
+.btn-light:hover{background:transparent;color:#fff;border-color:#fff}
+.btn-block{width:100%}
+
+.ic{width:40px;height:40px;stroke:currentColor;stroke-width:1.7;fill:none;flex:none}
+
+/* card block helper (big white rounded blocks on grey page) */
+.block{background:var(--surface);border-radius:var(--radius-lg);box-shadow:var(--shadow)}
+
+/* depth: floats (STATIC) */
+.float{position:absolute;z-index:3;pointer-events:none}
+.float img{width:100%;height:auto;transform:rotate(var(--rot,0deg));
+  filter:drop-shadow(0 18px 28px rgba(26,26,26,.22))}
+@media(max-width:1000px){.float{display:none}}
+
+/* scroll reveal (3D) */
+.reveal{opacity:0;transform:perspective(900px) rotateX(8deg) translateY(26px);
+  transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){
+  .reveal{opacity:1;transform:none;transition:none}
+  html{scroll-behavior:auto}
+}
