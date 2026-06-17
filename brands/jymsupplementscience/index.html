@@ -245,12 +245,28 @@
 
           </ul>
 
-          <!-- 9. CTA -->
+          <!-- 9. Purchase options + CTA -->
+          <div class="s-pdp__purchase" role="radiogroup" aria-label="Purchase option">
+            <label class="s-pdp__plan">
+              <input type="radio" name="pdp-plan" value="onetime" class="s-pdp__plan-input" checked>
+              <span class="s-pdp__plan-card">
+                <span class="s-pdp__plan-radio" aria-hidden="true"></span>
+                <span class="s-pdp__plan-title">One-time purchase</span>
+                <span class="s-pdp__plan-price"><span class="s-pdp__ot-price">$54.99</span></span>
+              </span>
+            </label>
+            <label class="s-pdp__plan">
+              <input type="radio" name="pdp-plan" value="sub" class="s-pdp__plan-input">
+              <span class="s-pdp__plan-card">
+                <span class="s-pdp__plan-radio" aria-hidden="true"></span>
+                <span class="s-pdp__plan-title">Subscribe &amp; Save <span class="s-pdp__plan-badge">15% off</span></span>
+                <span class="s-pdp__plan-price"><span class="s-pdp__sub-now">$46.74</span> <s class="s-pdp__sub-was">$54.99</s></span>
+                <span class="s-pdp__plan-note">Auto-delivered every 30 days · cancel anytime</span>
+              </span>
+            </label>
+          </div>
           <div class="s-pdp__cta-wrap">
-            <a href="https://www.google.com" class="btn btn-dark btn-block">Add to Cart – $54.99</a>
-            <p class="s-pdp__subscribe">
-              Or <strong>Subscribe &amp; Save 15%</strong> — cancel anytime
-            </p>
+            <a href="https://www.google.com" class="btn btn-atc btn-block s-pdp__atc">Add to Cart – $54.99</a>
           </div>
 
           <!-- 10. Trust row -->
@@ -296,6 +312,15 @@
 
           </div><!-- /.s-pdp__trust -->
 
+          <!-- 11. CA Prop 65 warning (subtle, collapsible) -->
+          <details class="s-pdp__ca">
+            <summary>
+              <span class="s-pdp__ca-title">CA Warning</span>
+              <svg class="s-pdp__ca-chev" viewBox="0 0 24 24" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <p class="s-pdp__ca-body">Consuming this product can expose you to chemicals including lead, which is known to the State of California to cause cancer and birth defects or other reproductive harm. For more information go to <a href="https://www.google.com">Prop 65 warnings</a>.</p>
+          </details>
+
         </div><!-- /.s-pdp__buy -->
 
       </div><!-- /.s-pdp__grid -->
@@ -335,6 +360,97 @@
       });
     });
   }
+
+  /* Purchase plan → dynamic price on the green Add-to-cart */
+  var BASE = 54.99, SUB = 0.85;
+  var atc = section.querySelector('.s-pdp__atc');
+  var plans = section.querySelectorAll('.s-pdp__plan-input');
+  function money(n){ return '$' + n.toFixed(2); }
+  function recompute(){
+    var sel = section.querySelector('.s-pdp__plan-input:checked');
+    var plan = sel ? sel.value : 'onetime';
+    var price = plan === 'sub' ? BASE * SUB : BASE;
+    if (atc) atc.textContent = 'Add to Cart – ' + money(price);
+    // reflect on sticky bar if present
+    var sticky = document.querySelector('.qadd__price');
+    if (sticky) sticky.textContent = money(price);
+  }
+  plans.forEach(function (r) { r.addEventListener('change', recompute); });
+  recompute();
+})();
+</script>
+
+<!-- ── Bought together (benefit-led, group image, dynamic total) ───────── -->
+<section class="sec s-bought section">
+  <div class="wrap">
+    <div class="s-bought__head reveal">
+      <span class="eyebrow">The complete system</span>
+      <h2>Train. Build. Recover.</h2>
+      <p>Pre JYM Plus fuels the work — pair it with Pro JYM to build and Post JYM to recover. Add the full stack in one click, and save 10%.</p>
+    </div>
+
+    <div class="s-bought__panel reveal">
+      <!-- group image (deselect a product and it disappears) -->
+      <div class="s-bought__group" aria-hidden="true">
+        <figure class="s-bought__prod" data-prod="pre"><img src="https://cdn.shopify.com/s/files/1/0564/2439/9023/files/PREP30CS_26173_121025_V1.1i_Front-2000px_1.png?width=400" alt="Pre JYM Plus"></figure>
+        <span class="s-bought__plus">+</span>
+        <figure class="s-bought__prod" data-prod="pro"><img src="https://cdn.shopify.com/s/files/1/0564/2439/9023/files/PRJ02CR200_24414_060422_V1.1ii_FRONT_SHADOW-1200.png?width=400" alt="Pro JYM Protein"></figure>
+        <span class="s-bought__plus">+</span>
+        <figure class="s-bought__prod" data-prod="post"><img src="https://cdn.shopify.com/s/files/1/0564/2439/9023/files/PAM30BA21413032825V1.4-Front-1200px_47942150-ce87-45c8-b2a5-f6ff960833b8.png?width=400" alt="Post JYM BCAAs+"></figure>
+      </div>
+
+      <!-- selectable items -->
+      <div class="s-bought__items">
+        <label class="s-bought__item">
+          <input type="checkbox" class="s-bought__check" data-prod="pre" data-price="54.99" checked disabled>
+          <span class="s-bought__box" aria-hidden="true"></span>
+          <span class="s-bought__name">Pre JYM Plus <em>(this item)</em></span>
+          <span class="s-bought__price">$54.99</span>
+        </label>
+        <label class="s-bought__item">
+          <input type="checkbox" class="s-bought__check" data-prod="pro" data-price="44.99" checked>
+          <span class="s-bought__box" aria-hidden="true"></span>
+          <span class="s-bought__name">Pro JYM Protein Powder</span>
+          <span class="s-bought__price">$44.99</span>
+        </label>
+        <label class="s-bought__item">
+          <input type="checkbox" class="s-bought__check" data-prod="post" data-price="44.99" checked>
+          <span class="s-bought__box" aria-hidden="true"></span>
+          <span class="s-bought__name">Post JYM BCAAs+ Recovery</span>
+          <span class="s-bought__price">$44.99</span>
+        </label>
+
+        <div class="s-bought__total">
+          <span>Total <span class="s-bought__count">(3 items)</span></span>
+          <span class="s-bought__sum">$144.97</span>
+        </div>
+        <a href="https://www.google.com" class="btn btn-atc btn-block s-bought__cta">Add 3 to cart – $144.97</a>
+        <p class="s-bought__note">Bundle discount applied at checkout · ships free.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+(function(){
+  var sec=document.querySelector('.s-bought'); if(!sec) return;
+  var checks=sec.querySelectorAll('.s-bought__check');
+  var cta=sec.querySelector('.s-bought__cta'), sum=sec.querySelector('.s-bought__sum'),
+      count=sec.querySelector('.s-bought__count');
+  function money(n){return '$'+n.toFixed(2);}
+  function recompute(){
+    var total=0,n=0;
+    checks.forEach(function(c){
+      var fig=sec.querySelector('.s-bought__prod[data-prod="'+c.dataset.prod+'"]');
+      if(c.checked){ total+=parseFloat(c.dataset.price); n++; if(fig) fig.classList.remove('is-off'); }
+      else { if(fig) fig.classList.add('is-off'); }
+    });
+    var disc=n>1?0.9:1; var final=total*disc;
+    if(sum) sum.textContent=money(final);
+    if(count) count.textContent='('+n+' item'+(n===1?'':'s')+')';
+    if(cta) cta.textContent='Add '+n+' to cart – '+money(final);
+  }
+  checks.forEach(function(c){ c.addEventListener('change', recompute); });
+  recompute();
 })();
 </script>
 
@@ -435,10 +551,10 @@
   </div><!-- /.wrap -->
 </section>
 
-<section class="sec s-ingredients">
+<section class="sec section s-ingredients">
   <div class="wrap">
 
-    <div class="section-head reveal">
+    <div class="section-head">
       <span class="eyebrow">Fully dosed. Fully transparent.</span>
       <h2>Featured Ingredients</h2>
       <p>No proprietary blends, no fillers — every active at a dose that works.</p>
@@ -446,69 +562,133 @@
 
     <ul class="s-ingredients__grid" role="list">
 
-      <li class="s-ingredients__card reveal" style="--delay:.08s">
-        <div class="s-ingredients__icon-wrap">
-          <svg class="ic" viewBox="0 0 40 40" aria-hidden="true">
-            <!-- Blood flow / pump: stylised artery loop with arrow -->
-            <circle cx="20" cy="20" r="10" stroke-dasharray="4 3"/>
-            <path d="M20 10 C26 10 30 15 30 20 C30 25 26 30 20 30"/>
-            <polyline points="18,27 20,30 22,27"/>
-          </svg>
+      <!-- Card 1: Citrulline / Nitrates -->
+      <li class="s-ingredients__card reveal" style="--delay:.06s">
+        <img class="s-ingredients__bg" src="assets/tex-red.jpg" alt="" aria-hidden="true">
+        <div class="s-ingredients__content">
+          <p class="s-ingredients__name">Citrulline / Nitrates</p>
+          <span class="s-ingredients__dose">6G</span>
+          <p class="s-ingredients__benefit">Surging blood flow and massive pumps.</p>
         </div>
-        <p class="s-ingredients__name">Citrulline / Nitrates</p>
-        <span class="s-ingredients__dose">6G</span>
-        <p class="s-ingredients__benefit">Surging blood flow and massive pumps.</p>
       </li>
 
-      <li class="s-ingredients__card reveal" style="--delay:.16s">
-        <div class="s-ingredients__icon-wrap">
-          <svg class="ic" viewBox="0 0 40 40" aria-hidden="true">
-            <!-- Acid buffer / shield + bolt -->
-            <path d="M20 6 L32 11 L32 22 C32 29 26 34 20 36 C14 34 8 29 8 22 L8 11 Z"/>
-            <polyline points="22,17 18,21 22,25"/>
-          </svg>
+      <!-- Card 2: Beta-Alanine -->
+      <li class="s-ingredients__card reveal" style="--delay:.12s">
+        <img class="s-ingredients__bg" src="assets/tex-white.jpg" alt="" aria-hidden="true">
+        <div class="s-ingredients__content">
+          <p class="s-ingredients__name">Beta-Alanine</p>
+          <span class="s-ingredients__dose">2G</span>
+          <p class="s-ingredients__benefit">Buffers acid build-up for more reps before fatigue.</p>
         </div>
-        <p class="s-ingredients__name">Beta-Alanine</p>
-        <span class="s-ingredients__dose">2G</span>
-        <p class="s-ingredients__benefit">Buffers acid build-up for more reps before fatigue.</p>
       </li>
 
+      <!-- Card 3: Creatine Monohydrate -->
+      <li class="s-ingredients__card reveal" style="--delay:.18s">
+        <img class="s-ingredients__bg" src="assets/tex-crystal.jpg" alt="" aria-hidden="true">
+        <div class="s-ingredients__content">
+          <p class="s-ingredients__name">Creatine Monohydrate</p>
+          <span class="s-ingredients__dose">3G</span>
+          <p class="s-ingredients__benefit">The most proven driver of strength and power.</p>
+        </div>
+      </li>
+
+      <!-- Card 4: Caffeine + Nootropics -->
       <li class="s-ingredients__card reveal" style="--delay:.24s">
-        <div class="s-ingredients__icon-wrap">
-          <svg class="ic" viewBox="0 0 40 40" aria-hidden="true">
-            <!-- Strength / barbell -->
-            <line x1="8" y1="20" x2="32" y2="20"/>
-            <rect x="6" y="15" width="4" height="10" rx="1"/>
-            <rect x="30" y="15" width="4" height="10" rx="1"/>
-            <rect x="10" y="17" width="3" height="6" rx="1"/>
-            <rect x="27" y="17" width="3" height="6" rx="1"/>
-          </svg>
+        <img class="s-ingredients__bg" src="assets/tex-dark.jpg" alt="" aria-hidden="true">
+        <div class="s-ingredients__content">
+          <p class="s-ingredients__name">Caffeine + Nootropics</p>
+          <span class="s-ingredients__dose">300MG</span>
+          <p class="s-ingredients__benefit">Clean, locked-in energy and focus.</p>
         </div>
-        <p class="s-ingredients__name">Creatine Monohydrate</p>
-        <span class="s-ingredients__dose">3G</span>
-        <p class="s-ingredients__benefit">The most proven driver of strength and power.</p>
       </li>
 
-      <li class="s-ingredients__card reveal" style="--delay:.32s">
-        <div class="s-ingredients__icon-wrap">
-          <svg class="ic" viewBox="0 0 40 40" aria-hidden="true">
-            <!-- Focus / brain outline -->
-            <path d="M14 28 C10 28 7 25 7 21 C7 18 9 16 12 15 C12 11 15 8 20 8 C25 8 28 11 28 15 C31 16 33 18 33 21 C33 25 30 28 26 28"/>
-            <line x1="20" y1="28" x2="20" y2="34"/>
-            <line x1="16" y1="32" x2="24" y2="32"/>
-          </svg>
+      <!-- Card 5: Betaine Anhydrous (hidden by default) -->
+      <li class="s-ingredients__card is-extra" style="--delay:.06s">
+        <img class="s-ingredients__bg" src="assets/tex-white.jpg" alt="" aria-hidden="true">
+        <div class="s-ingredients__content">
+          <p class="s-ingredients__name">Betaine Anhydrous</p>
+          <span class="s-ingredients__dose">1.5G</span>
+          <p class="s-ingredients__benefit">Supports power output and cellular hydration.</p>
         </div>
-        <p class="s-ingredients__name">Nootropics + Caffeine</p>
-        <span class="s-ingredients__dose">300MG</span>
-        <p class="s-ingredients__benefit">Clean, locked-in energy and focus.</p>
       </li>
 
-    </ul>
+      <!-- Card 6: L-Tyrosine (hidden by default) -->
+      <li class="s-ingredients__card is-extra" style="--delay:.12s">
+        <img class="s-ingredients__bg" src="assets/tex-beige.jpg" alt="" aria-hidden="true">
+        <div class="s-ingredients__content">
+          <p class="s-ingredients__name">L-Tyrosine</p>
+          <span class="s-ingredients__dose">1G</span>
+          <p class="s-ingredients__benefit">Sharpens focus and drive under stress.</p>
+        </div>
+      </li>
+
+      <!-- Card 7: Taurine (hidden by default) -->
+      <li class="s-ingredients__card is-extra" style="--delay:.18s">
+        <img class="s-ingredients__bg" src="assets/tex-beige.jpg" alt="" aria-hidden="true">
+        <div class="s-ingredients__content">
+          <p class="s-ingredients__name">Taurine</p>
+          <span class="s-ingredients__dose">1G</span>
+          <p class="s-ingredients__benefit">Endurance and hydration support.</p>
+        </div>
+      </li>
+
+      <!-- Card 8: BioPerine (hidden by default) -->
+      <li class="s-ingredients__card is-extra" style="--delay:.24s">
+        <img class="s-ingredients__bg" src="assets/tex-spice.jpg" alt="" aria-hidden="true">
+        <div class="s-ingredients__content">
+          <p class="s-ingredients__name">BioPerine® Black Pepper</p>
+          <span class="s-ingredients__dose">5MG</span>
+          <p class="s-ingredients__benefit">Boosts absorption of every active.</p>
+        </div>
+      </li>
+
+    </ul><!-- /.s-ingredients__grid -->
+
+    <div class="s-ingredients__toggle-wrap">
+      <a href="https://www.google.com" class="btn btn-outline s-ingredients__toggle" id="ingr-toggle">
+        Show more ingredients
+      </a>
+    </div>
 
     <p class="s-ingredients__note">Doses shown are illustrative for this mockup.</p>
 
-  </div>
-</section>
+  </div><!-- /.wrap -->
+</section><!-- /.s-ingredients -->
+
+<script>
+(function () {
+  var section = document.querySelector('.s-ingredients');
+  if (!section) return;
+  var toggle = section.querySelector('#ingr-toggle');
+  var extras = section.querySelectorAll('.s-ingredients__card.is-extra');
+  if (!toggle || !extras.length) return;
+
+  var expanded = false;
+
+  toggle.addEventListener('click', function (e) {
+    e.preventDefault();
+    expanded = !expanded;
+
+    extras.forEach(function (card) {
+      if (expanded) {
+        card.style.display = '';
+        /* trigger reveal animation on newly shown cards */
+        requestAnimationFrame(function () {
+          card.classList.add('reveal');
+          requestAnimationFrame(function () {
+            card.classList.add('in');
+          });
+        });
+      } else {
+        card.classList.remove('in');
+        card.style.display = 'none';
+      }
+    });
+
+    toggle.textContent = expanded ? 'Show less' : 'Show more ingredients';
+  });
+}());
+</script>
 
 <section class="sec s-howto section">
   <div class="wrap">
@@ -693,93 +873,6 @@
   </div><!-- /.wrap -->
 </section>
 
-<section class="sec s-stack section">
-  <div class="wrap">
-
-    <div class="section-head reveal">
-      <span class="eyebrow">Frequently bought together</span>
-      <h2>Complete your stack</h2>
-      <p>Train, build, recover — the full JYM system.</p>
-    </div>
-
-    <div class="s-stack__grid">
-
-      <!-- Card 1: Pre JYM Plus -->
-      <div class="s-stack__card reveal" style="transition-delay:.0s">
-        <div class="s-stack__img-wrap">
-          <img
-            src="https://cdn.shopify.com/s/files/1/0564/2439/9023/files/PREP30CS_26173_121025_V1.1i_Front-2000px_1.png?width=600"
-            alt="Pre JYM Plus"
-            loading="lazy"
-          >
-        </div>
-        <div class="s-stack__body">
-          <p class="s-stack__role">Pre-workout (this one)</p>
-          <h3 class="s-stack__name">Pre JYM Plus</h3>
-          <div class="s-stack__stars" aria-label="5 out of 5 stars">
-            <span>★★★★★</span>
-          </div>
-          <p class="s-stack__price">$54.99</p>
-          <a href="https://www.google.com" class="btn btn-outline btn-block">Add to cart</a>
-        </div>
-      </div>
-
-      <!-- Card 2: Pro JYM Protein Powder -->
-      <div class="s-stack__card reveal" style="transition-delay:.12s">
-        <div class="s-stack__img-wrap">
-          <img
-            src="https://cdn.shopify.com/s/files/1/0564/2439/9023/files/PRJ02CR200_24414_060422_V1.1ii_FRONT_SHADOW-1200.png?width=600"
-            alt="Pro JYM Protein Powder"
-            loading="lazy"
-          >
-        </div>
-        <div class="s-stack__body">
-          <p class="s-stack__role">Build — premium protein blend</p>
-          <h3 class="s-stack__name">Pro JYM Protein Powder</h3>
-          <div class="s-stack__stars" aria-label="5 out of 5 stars">
-            <span>★★★★★</span>
-          </div>
-          <p class="s-stack__price">$44.99</p>
-          <a href="https://www.google.com" class="btn btn-outline btn-block">Add to cart</a>
-        </div>
-      </div>
-
-      <!-- Card 3: Post JYM BCAAs+ Recovery -->
-      <div class="s-stack__card reveal" style="transition-delay:.24s">
-        <div class="s-stack__img-wrap">
-          <img
-            src="https://cdn.shopify.com/s/files/1/0564/2439/9023/files/PAM30BA21413032825V1.4-Front-1200px_47942150-ce87-45c8-b2a5-f6ff960833b8.png?width=600"
-            alt="Post JYM BCAAs+ Recovery"
-            loading="lazy"
-          >
-        </div>
-        <div class="s-stack__body">
-          <p class="s-stack__role">Recover — post-workout matrix</p>
-          <h3 class="s-stack__name">Post JYM BCAAs+ Recovery</h3>
-          <div class="s-stack__stars" aria-label="5 out of 5 stars">
-            <span>★★★★★</span>
-          </div>
-          <p class="s-stack__price">$44.99</p>
-          <a href="https://www.google.com" class="btn btn-outline btn-block">Add to cart</a>
-        </div>
-      </div>
-
-    </div><!-- /.s-stack__grid -->
-
-    <div class="s-stack__bundle reveal" style="transition-delay:.36s">
-      <div class="s-stack__bundle-inner">
-        <div class="s-stack__bundle-text">
-          <p class="s-stack__bundle-label">Bundle &amp; save</p>
-          <p class="s-stack__bundle-note">Save 10% as a stack</p>
-        </div>
-        <a href="https://www.google.com" class="btn btn-dark s-stack__bundle-btn">
-          Add all 3 to cart – $144.97
-        </a>
-      </div>
-    </div>
-
-  </div><!-- /.wrap -->
-</section>
 
 <section class="sec s-faq section">
   <div class="wrap">
@@ -980,6 +1073,31 @@
 
   </div><!-- /.wrap -->
 </footer>
+
+<!-- ── Sticky quick add-to-cart (appears after scrolling past the buy box) ── -->
+<div class="qadd" id="qadd" aria-hidden="true">
+  <img class="qadd__img" src="https://cdn.shopify.com/s/files/1/0564/2439/9023/files/PREP30CS_26173_121025_V1.1i_Front-2000px_1.png?width=120" alt="Pre JYM Plus">
+  <div class="qadd__info">
+    <span class="qadd__name">Pre JYM Plus</span>
+    <span class="qadd__meta">Cherry Slushie · 30 servings</span>
+  </div>
+  <span class="qadd__price">$54.99</span>
+  <a href="https://www.google.com" class="btn btn-atc qadd__btn">Add to Cart</a>
+</div>
+<script>
+(function(){
+  var qadd=document.getElementById('qadd');
+  var atc=document.querySelector('.s-pdp__atc');
+  if(!qadd||!atc||!('IntersectionObserver' in window)) return;
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(!e.isIntersecting && e.boundingClientRect.top < 0){ qadd.classList.add('is-visible'); }
+      else { qadd.classList.remove('is-visible'); }
+    });
+  }, {threshold:0});
+  io.observe(atc);
+})();
+</script>
 <script src="fx.js"></script>
 </body>
 </html>

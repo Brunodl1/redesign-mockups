@@ -1,0 +1,138 @@
+<section class="sec section s-ingredients">
+  <div class="wrap">
+
+    <div class="section-head">
+      <span class="eyebrow">Fully dosed. Fully transparent.</span>
+      <h2>Featured Ingredients</h2>
+      <p>No proprietary blends, no fillers — every active at a dose that works.</p>
+    </div>
+
+    <ul class="s-ingredients__grid" role="list">
+
+      <!-- Card 1: Citrulline / Nitrates -->
+      <li class="s-ingredients__card reveal" style="--delay:.06s">
+        <img class="s-ingredients__bg" src="assets/tex-red.jpg" alt="" aria-hidden="true">
+        <div class="s-ingredients__content">
+          <p class="s-ingredients__name">Citrulline / Nitrates</p>
+          <span class="s-ingredients__dose">6G</span>
+          <p class="s-ingredients__benefit">Surging blood flow and massive pumps.</p>
+        </div>
+      </li>
+
+      <!-- Card 2: Beta-Alanine -->
+      <li class="s-ingredients__card reveal" style="--delay:.12s">
+        <img class="s-ingredients__bg" src="assets/tex-white.jpg" alt="" aria-hidden="true">
+        <div class="s-ingredients__content">
+          <p class="s-ingredients__name">Beta-Alanine</p>
+          <span class="s-ingredients__dose">2G</span>
+          <p class="s-ingredients__benefit">Buffers acid build-up for more reps before fatigue.</p>
+        </div>
+      </li>
+
+      <!-- Card 3: Creatine Monohydrate -->
+      <li class="s-ingredients__card reveal" style="--delay:.18s">
+        <img class="s-ingredients__bg" src="assets/tex-crystal.jpg" alt="" aria-hidden="true">
+        <div class="s-ingredients__content">
+          <p class="s-ingredients__name">Creatine Monohydrate</p>
+          <span class="s-ingredients__dose">3G</span>
+          <p class="s-ingredients__benefit">The most proven driver of strength and power.</p>
+        </div>
+      </li>
+
+      <!-- Card 4: Caffeine + Nootropics -->
+      <li class="s-ingredients__card reveal" style="--delay:.24s">
+        <img class="s-ingredients__bg" src="assets/tex-dark.jpg" alt="" aria-hidden="true">
+        <div class="s-ingredients__content">
+          <p class="s-ingredients__name">Caffeine + Nootropics</p>
+          <span class="s-ingredients__dose">300MG</span>
+          <p class="s-ingredients__benefit">Clean, locked-in energy and focus.</p>
+        </div>
+      </li>
+
+      <!-- Card 5: Betaine Anhydrous (hidden by default) -->
+      <li class="s-ingredients__card is-extra" style="--delay:.06s">
+        <img class="s-ingredients__bg" src="assets/tex-white.jpg" alt="" aria-hidden="true">
+        <div class="s-ingredients__content">
+          <p class="s-ingredients__name">Betaine Anhydrous</p>
+          <span class="s-ingredients__dose">1.5G</span>
+          <p class="s-ingredients__benefit">Supports power output and cellular hydration.</p>
+        </div>
+      </li>
+
+      <!-- Card 6: L-Tyrosine (hidden by default) -->
+      <li class="s-ingredients__card is-extra" style="--delay:.12s">
+        <img class="s-ingredients__bg" src="assets/tex-beige.jpg" alt="" aria-hidden="true">
+        <div class="s-ingredients__content">
+          <p class="s-ingredients__name">L-Tyrosine</p>
+          <span class="s-ingredients__dose">1G</span>
+          <p class="s-ingredients__benefit">Sharpens focus and drive under stress.</p>
+        </div>
+      </li>
+
+      <!-- Card 7: Taurine (hidden by default) -->
+      <li class="s-ingredients__card is-extra" style="--delay:.18s">
+        <img class="s-ingredients__bg" src="assets/tex-beige.jpg" alt="" aria-hidden="true">
+        <div class="s-ingredients__content">
+          <p class="s-ingredients__name">Taurine</p>
+          <span class="s-ingredients__dose">1G</span>
+          <p class="s-ingredients__benefit">Endurance and hydration support.</p>
+        </div>
+      </li>
+
+      <!-- Card 8: BioPerine (hidden by default) -->
+      <li class="s-ingredients__card is-extra" style="--delay:.24s">
+        <img class="s-ingredients__bg" src="assets/tex-spice.jpg" alt="" aria-hidden="true">
+        <div class="s-ingredients__content">
+          <p class="s-ingredients__name">BioPerine® Black Pepper</p>
+          <span class="s-ingredients__dose">5MG</span>
+          <p class="s-ingredients__benefit">Boosts absorption of every active.</p>
+        </div>
+      </li>
+
+    </ul><!-- /.s-ingredients__grid -->
+
+    <div class="s-ingredients__toggle-wrap">
+      <a href="https://www.google.com" class="btn btn-outline s-ingredients__toggle" id="ingr-toggle">
+        Show more ingredients
+      </a>
+    </div>
+
+    <p class="s-ingredients__note">Doses shown are illustrative for this mockup.</p>
+
+  </div><!-- /.wrap -->
+</section><!-- /.s-ingredients -->
+
+<script>
+(function () {
+  var section = document.querySelector('.s-ingredients');
+  if (!section) return;
+  var toggle = section.querySelector('#ingr-toggle');
+  var extras = section.querySelectorAll('.s-ingredients__card.is-extra');
+  if (!toggle || !extras.length) return;
+
+  var expanded = false;
+
+  toggle.addEventListener('click', function (e) {
+    e.preventDefault();
+    expanded = !expanded;
+
+    extras.forEach(function (card) {
+      if (expanded) {
+        card.style.display = '';
+        /* trigger reveal animation on newly shown cards */
+        requestAnimationFrame(function () {
+          card.classList.add('reveal');
+          requestAnimationFrame(function () {
+            card.classList.add('in');
+          });
+        });
+      } else {
+        card.classList.remove('in');
+        card.style.display = 'none';
+      }
+    });
+
+    toggle.textContent = expanded ? 'Show less' : 'Show more ingredients';
+  });
+}());
+</script>

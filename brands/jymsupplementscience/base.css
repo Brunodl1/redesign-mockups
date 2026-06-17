@@ -12,6 +12,8 @@
   --accent-2:#8f0018;       /* darker red hover */
   --accent-soft:#fdeaed;    /* pale red tint */
   --accent-ink:#ffffff;
+  --atc:#1fa64d;            /* add-to-cart green */
+  --atc-2:#17833d;          /* atc green hover */
   --pop:#de0808;
   --star:#ffb74a;           /* amber stars */
   --line:rgba(26,26,26,.14);
@@ -82,6 +84,8 @@ h3{font-size:var(--s-2)}
 .btn-dark:hover{background:#000}
 .btn-primary{background:var(--accent);color:#fff}      /* crimson */
 .btn-primary:hover{background:var(--accent-2)}
+.btn-atc{background:var(--atc);color:#fff}             /* add-to-cart green */
+.btn-atc:hover{background:var(--atc-2)}
 .btn-outline{background:transparent;color:var(--ink);border-color:var(--ink)}
 .btn-outline:hover{background:var(--ink);color:#fff}
 .btn-light{background:#fff;color:var(--ink);border-color:#fff}
