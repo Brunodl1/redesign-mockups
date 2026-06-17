@@ -103,6 +103,18 @@
             width="900"
             height="900"
           />
+          <!-- Floating review card (shown only on the review slide) -->
+          <figure class="s-pdp__review-card" aria-hidden="true">
+            <div class="s-pdp__rc-stars" aria-hidden="true">★★★★★</div>
+            <blockquote class="s-pdp__rc-quote">"More energy and way less bloating within two weeks — it's the one supplement I actually look forward to."</blockquote>
+            <figcaption class="s-pdp__rc-foot">
+              <span class="s-pdp__rc-name">Jordan M.</span>
+              <span class="s-pdp__rc-badge">
+                <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                Verified Buyer
+              </span>
+            </figcaption>
+          </figure>
         </div>
 
         <!-- Thumbnail strip -->
@@ -191,6 +203,17 @@
               width="80"
               height="80"
             />
+          </button>
+
+          <button
+            class="s-pdp__thumb"
+            role="tab"
+            aria-selected="false"
+            data-full="assets/howto-steps.jpg"
+            data-alt="How to use VidaGreens in 3 steps"
+            aria-label="Image 6: How to use in 3 steps"
+          >
+            <img src="assets/howto-steps.jpg" alt="" loading="lazy" width="80" height="80" />
           </button>
 
         </div><!-- /.s-pdp__thumbs -->
@@ -409,6 +432,7 @@
     thumb.setAttribute('aria-selected', 'true');
   }
 
+  var mainWrap = section.querySelector('.s-pdp__main');
   function swapMain(src, alt, thumb) {
     if (!mainImg) return;
     mainImg.classList.add('is-swapping');
@@ -418,6 +442,8 @@
       mainImg.classList.remove('is-swapping');
     }, 180);
     setActiveThumb(thumb);
+    /* show the floating review card only on the review slide */
+    if (mainWrap) mainWrap.classList.toggle('is-review', /review\.jpg/.test(src));
   }
 
   thumbs.forEach(function (thumb) {
@@ -672,19 +698,28 @@
     </div>
     <ol class="s-howto__steps">
       <li class="s-howto__step reveal" style="--d:.1s">
-        <div class="s-howto__badge" aria-hidden="true">1</div>
-        <h3 class="s-howto__title">Scoop</h3>
-        <p class="s-howto__body">Add one scoop to 8–12 oz of cold water or your smoothie.</p>
+        <img class="s-howto__bg" src="assets/step-scoop.jpg" alt="" aria-hidden="true">
+        <div class="s-howto__inner">
+          <div class="s-howto__badge" aria-hidden="true">1</div>
+          <h3 class="s-howto__title">Scoop</h3>
+          <p class="s-howto__body">Add one scoop to 8–12 oz of cold water or your smoothie.</p>
+        </div>
       </li>
       <li class="s-howto__step reveal" style="--d:.22s">
-        <div class="s-howto__badge" aria-hidden="true">2</div>
-        <h3 class="s-howto__title">Shake</h3>
-        <p class="s-howto__body">Shake or stir until smooth — crisp green-apple taste.</p>
+        <img class="s-howto__bg" src="assets/step-shake.jpg" alt="" aria-hidden="true">
+        <div class="s-howto__inner">
+          <div class="s-howto__badge" aria-hidden="true">2</div>
+          <h3 class="s-howto__title">Shake</h3>
+          <p class="s-howto__body">Shake or stir until smooth — crisp green-apple taste.</p>
+        </div>
       </li>
       <li class="s-howto__step reveal" style="--d:.34s">
-        <div class="s-howto__badge" aria-hidden="true">3</div>
-        <h3 class="s-howto__title">Thrive</h3>
-        <p class="s-howto__body">Drink daily, ideally in the morning, and feel the difference.</p>
+        <img class="s-howto__bg" src="assets/step-thrive.jpg" alt="" aria-hidden="true">
+        <div class="s-howto__inner">
+          <div class="s-howto__badge" aria-hidden="true">3</div>
+          <h3 class="s-howto__title">Thrive</h3>
+          <p class="s-howto__body">Drink daily, ideally in the morning, and feel the difference.</p>
+        </div>
       </li>
     </ol>
   </div>
