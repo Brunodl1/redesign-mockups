@@ -174,7 +174,7 @@ p{color:var(--ink-soft)}
   align-items: stretch;
   background-image: url('assets/hero.jpg');
   background-size: cover;
-  background-position: center right 20%;
+  background-position: left center;
   background-repeat: no-repeat;
   overflow: hidden;
 }
@@ -185,9 +185,9 @@ p{color:var(--ink-soft)}
   inset: 0;
   background: linear-gradient(
     100deg,
-    rgba(14, 42, 64, 0.72) 0%,
-    rgba(14, 42, 64, 0.45) 55%,
-    rgba(14, 42, 64, 0.12) 100%
+    rgba(14, 42, 64, 0.12) 0%,
+    rgba(14, 42, 64, 0.45) 45%,
+    rgba(14, 42, 64, 0.72) 100%
   );
   z-index: 1;
   pointer-events: none;
@@ -198,6 +198,7 @@ p{color:var(--ink-soft)}
   z-index: 2;
   display: flex;
   align-items: center;
+  justify-content: flex-end;
   padding-block: var(--sp-7);
 }
 
