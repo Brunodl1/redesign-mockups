@@ -1,0 +1,109 @@
+/* Vitanu Labs — VidaGreens PDP foundation
+   Bruno brief: WHITE bg + BLACK + BLUE, professional, BLUE add-to-cart.
+   (Brand's real accent blue #116aae → crisp pro blue #1763c7; Inter type.) supplements structure. */
+:root{
+  /* color */
+  --bg:#ffffff;
+  --surface:#f5f8fc;        /* very light blue-grey card/band */
+  --surface-2:#eef3fa;      /* soft blue tint */
+  --ink:#161616;
+  --ink-soft:#5b6470;
+  --accent:#1763c7;         /* professional blue — links, accents */
+  --accent-2:#0f4ea3;       /* darker blue hover */
+  --accent-soft:#e7f0fb;    /* pale blue tint */
+  --accent-ink:#ffffff;
+  --atc:#1763c7;            /* BLUE add-to-cart */
+  --atc-2:#0f4ea3;
+  --pop:#1763c7;
+  --star:#ffb01f;           /* amber stars */
+  --line:#e6e9ee;
+  --btn:#161616;            /* black secondary */
+  --btn-ink:#ffffff;
+  --footer-bg:#0f1419;      /* near-black footer */
+  --footer-title:#ffffff;
+  --footer-text:rgba(255,255,255,.62);
+  --footer-link:#7db4f0;
+  /* type */
+  --font-display:"Inter", system-ui, "Helvetica Neue", Arial, sans-serif;
+  --font-body:"Inter", system-ui, "Helvetica Neue", Arial, sans-serif;
+  --s--1:.82rem; --s-0:1rem; --s-1:1.15rem; --s-2:1.45rem;
+  --s-3:1.9rem; --s-4:2.5rem; --s-5:3.3rem;
+  /* space */
+  --sp-1:.25rem; --sp-2:.5rem; --sp-3:1rem; --sp-4:1.5rem;
+  --sp-5:2.5rem; --sp-6:4rem; --sp-7:6rem;
+  /* shape — modern professional: soft radius, soft shadows */
+  --radius:12px; --radius-lg:20px; --radius-pill:999px; --radius-btn:10px;
+  --shadow:0 14px 40px rgba(22,30,46,.10);
+  --shadow-sm:0 4px 16px rgba(22,30,46,.07);
+  --maxw:1280px;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{overflow-x:clip}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--font-body);
+  font-weight:400;
+  color:var(--ink);
+  background:var(--bg);
+  font-size:16px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+
+h1,h2,h3,h4{font-family:var(--font-display);color:var(--ink);line-height:1.15;font-weight:800;letter-spacing:-.02em}
+h1{font-size:var(--s-5)}
+h2{font-size:var(--s-4)}
+h3{font-size:var(--s-1);font-weight:700;letter-spacing:-.01em}
+
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 clamp(16px,4vw,40px);width:100%}
+.section{padding:clamp(46px,6vw,84px) 0}
+
+.eyebrow{
+  font-size:.74rem;font-weight:700;text-transform:uppercase;letter-spacing:.16em;
+  color:var(--accent);display:inline-block;margin-bottom:.7rem;
+}
+.section-head{max-width:720px;margin:0 auto clamp(26px,4vw,46px);text-align:center}
+.section-head h2{margin-bottom:.4rem}
+.section-head p{color:var(--ink-soft);font-size:var(--s-1)}
+
+/* buttons — modern rounded, uppercase tracked */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:.5em;
+  font-family:var(--font-body);font-weight:700;font-size:.9rem;
+  text-transform:uppercase;letter-spacing:.04em;
+  padding:15px 32px;border-radius:var(--radius-btn);
+  border:2px solid transparent;cursor:pointer;transition:.18s ease;line-height:1;
+}
+.btn-primary{background:var(--accent);color:#fff}
+.btn-primary:hover{background:var(--accent-2)}
+.btn-atc{background:var(--atc);color:#fff}              /* BLUE add-to-cart */
+.btn-atc:hover{background:var(--atc-2)}
+.btn-dark{background:var(--btn);color:#fff}
+.btn-dark:hover{background:#000}
+.btn-outline{background:transparent;color:var(--ink);border-color:var(--ink)}
+.btn-outline:hover{background:var(--ink);color:#fff}
+.btn-light{background:#fff;color:var(--accent);border-color:#fff}
+.btn-light:hover{background:transparent;color:#fff;border-color:#fff}
+.btn-block{width:100%}
+
+.ic{width:40px;height:40px;stroke:currentColor;stroke-width:1.7;fill:none;flex:none}
+
+.block{background:var(--surface);border-radius:var(--radius-lg);box-shadow:var(--shadow-sm)}
+
+/* depth: floats (STATIC) */
+.float{position:absolute;z-index:3;pointer-events:none}
+.float img{width:100%;height:auto;transform:rotate(var(--rot,0deg));
+  filter:drop-shadow(0 16px 26px rgba(22,30,46,.18))}
+@media(max-width:1000px){.float{display:none}}
+
+/* scroll reveal (3D) */
+.reveal{opacity:0;transform:perspective(900px) rotateX(8deg) translateY(26px);
+  transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){
+  .reveal{opacity:1;transform:none;transition:none}
+  html{scroll-behavior:auto}
+}
