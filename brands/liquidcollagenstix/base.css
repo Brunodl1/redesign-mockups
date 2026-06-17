@@ -1,0 +1,110 @@
+/* Liquid Collagen Stix — per-brand foundation (faithful to real site:
+   navy #0e1b4d + light #eff0f5 + white, Archivo headings + Questrial body,
+   PILL navy buttons, navy header/footer bands). supplements structure. */
+:root{
+  /* color */
+  --bg:#eff0f5;             /* light lavender-grey page */
+  --surface:#ffffff;        /* white card/band */
+  --surface-2:#e6e8f0;      /* soft cool fill */
+  --ink:#0e1b4d;            /* brand navy */
+  --ink-soft:rgba(14,27,77,.72);
+  --accent:#0e1b4d;         /* navy — buttons, headings */
+  --accent-2:#1c2f6e;       /* lighter navy hover */
+  --accent-soft:#e6e9f4;    /* pale navy tint */
+  --peach:#ef9d6b;          /* warm flavor accent (highlights/stars/CTA pop) */
+  --peach-2:#e07d45;
+  --accent-ink:#eff0f5;
+  --pop:#ef9d6b;
+  --star:#ef9d6b;           /* warm peach stars */
+  --line:rgba(14,27,77,.14);
+  --btn:#0e1b4d;
+  --btn-ink:#eff0f5;
+  --footer-bg:#0e1b4d;      /* navy footer */
+  --footer-title:#ffffff;
+  --footer-text:rgba(255,255,255,.66);
+  --footer-link:#ef9d6b;
+  /* type */
+  --font-display:"Archivo", system-ui, sans-serif;
+  --font-body:"Questrial", system-ui, sans-serif;
+  --s--1:.82rem; --s-0:1rem; --s-1:1.18rem; --s-2:1.5rem;
+  --s-3:2rem; --s-4:2.7rem; --s-5:3.6rem;
+  /* space */
+  --sp-1:.25rem; --sp-2:.5rem; --sp-3:1rem; --sp-4:1.5rem;
+  --sp-5:2.5rem; --sp-6:4rem; --sp-7:6rem;
+  /* shape — pill buttons, soft cards */
+  --radius:14px; --radius-lg:24px; --radius-pill:999px; --radius-btn:999px;
+  --shadow:0 16px 44px rgba(14,27,77,.12);
+  --shadow-sm:0 4px 16px rgba(14,27,77,.08);
+  --maxw:1280px;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{overflow-x:clip}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--font-body);
+  font-weight:400;
+  color:var(--ink-soft);
+  background:var(--bg);
+  font-size:17px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+
+h1,h2,h3,h4{font-family:var(--font-display);color:var(--ink);line-height:1.1;font-weight:700;letter-spacing:.01em}
+h1{font-size:var(--s-5)}
+h2{font-size:var(--s-4)}
+h3{font-size:var(--s-1);font-weight:700}
+
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 clamp(16px,4vw,40px);width:100%}
+.section{padding:clamp(46px,6.5vw,88px) 0}
+
+.eyebrow{
+  font-family:var(--font-body);
+  font-size:.76rem;font-weight:400;text-transform:uppercase;letter-spacing:.18em;
+  color:var(--peach-2);display:inline-block;margin-bottom:.7rem;
+}
+.section-head{max-width:720px;margin:0 auto clamp(26px,4vw,46px);text-align:center}
+.section-head h2{margin-bottom:.4rem}
+.section-head p{color:var(--ink-soft);font-size:var(--s-1)}
+
+/* buttons — PILL, uppercase-ish tracked (real brand) */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:.5em;
+  font-family:var(--font-body);font-weight:400;font-size:.95rem;
+  letter-spacing:.06em;
+  padding:16px 34px;border-radius:var(--radius-btn);
+  border:1.5px solid transparent;cursor:pointer;transition:.18s ease;line-height:1;
+}
+.btn-primary{background:var(--accent);color:var(--btn-ink)}
+.btn-primary:hover{background:var(--accent-2)}
+.btn-peach{background:var(--peach);color:#3a1c08}          /* warm pop CTA */
+.btn-peach:hover{background:var(--peach-2);color:#fff}
+.btn-dark{background:var(--ink);color:#fff}
+.btn-dark:hover{background:#000}
+.btn-outline{background:transparent;color:var(--ink);border-color:var(--ink)}
+.btn-outline:hover{background:var(--ink);color:#fff}
+.btn-light{background:#fff;color:var(--ink);border-color:#fff}
+.btn-light:hover{background:transparent;color:#fff;border-color:#fff}
+.btn-block{width:100%}
+
+.ic{width:40px;height:40px;stroke:currentColor;stroke-width:1.6;fill:none;flex:none}
+
+.block{background:var(--surface);border-radius:var(--radius-lg);box-shadow:var(--shadow-sm)}
+
+/* depth: floats (STATIC) */
+.float{position:absolute;z-index:3;pointer-events:none}
+.float img{width:100%;height:auto;transform:rotate(var(--rot,0deg));
+  filter:drop-shadow(0 18px 28px rgba(14,27,77,.20))}
+@media(max-width:1000px){.float{display:none}}
+
+/* scroll reveal (3D) */
+.reveal{opacity:0;transform:perspective(900px) rotateX(8deg) translateY(26px);
+  transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){
+  .reveal{opacity:1;transform:none;transition:none}
+  html{scroll-behavior:auto}
+}

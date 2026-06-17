@@ -1,0 +1,1547 @@
+/* Liquid Collagen Stix — per-brand foundation (faithful to real site:
+   navy #0e1b4d + light #eff0f5 + white, Archivo headings + Questrial body,
+   PILL navy buttons, navy header/footer bands). supplements structure. */
+:root{
+  /* color */
+  --bg:#eff0f5;             /* light lavender-grey page */
+  --surface:#ffffff;        /* white card/band */
+  --surface-2:#e6e8f0;      /* soft cool fill */
+  --ink:#0e1b4d;            /* brand navy */
+  --ink-soft:rgba(14,27,77,.72);
+  --accent:#0e1b4d;         /* navy — buttons, headings */
+  --accent-2:#1c2f6e;       /* lighter navy hover */
+  --accent-soft:#e6e9f4;    /* pale navy tint */
+  --peach:#ef9d6b;          /* warm flavor accent (highlights/stars/CTA pop) */
+  --peach-2:#e07d45;
+  --accent-ink:#eff0f5;
+  --pop:#ef9d6b;
+  --star:#ef9d6b;           /* warm peach stars */
+  --line:rgba(14,27,77,.14);
+  --btn:#0e1b4d;
+  --btn-ink:#eff0f5;
+  --footer-bg:#0e1b4d;      /* navy footer */
+  --footer-title:#ffffff;
+  --footer-text:rgba(255,255,255,.66);
+  --footer-link:#ef9d6b;
+  /* type */
+  --font-display:"Archivo", system-ui, sans-serif;
+  --font-body:"Questrial", system-ui, sans-serif;
+  --s--1:.82rem; --s-0:1rem; --s-1:1.18rem; --s-2:1.5rem;
+  --s-3:2rem; --s-4:2.7rem; --s-5:3.6rem;
+  /* space */
+  --sp-1:.25rem; --sp-2:.5rem; --sp-3:1rem; --sp-4:1.5rem;
+  --sp-5:2.5rem; --sp-6:4rem; --sp-7:6rem;
+  /* shape — pill buttons, soft cards */
+  --radius:14px; --radius-lg:24px; --radius-pill:999px; --radius-btn:999px;
+  --shadow:0 16px 44px rgba(14,27,77,.12);
+  --shadow-sm:0 4px 16px rgba(14,27,77,.08);
+  --maxw:1280px;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{overflow-x:clip}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--font-body);
+  font-weight:400;
+  color:var(--ink-soft);
+  background:var(--bg);
+  font-size:17px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+
+h1,h2,h3,h4{font-family:var(--font-display);color:var(--ink);line-height:1.1;font-weight:700;letter-spacing:.01em}
+h1{font-size:var(--s-5)}
+h2{font-size:var(--s-4)}
+h3{font-size:var(--s-1);font-weight:700}
+
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 clamp(16px,4vw,40px);width:100%}
+.section{padding:clamp(46px,6.5vw,88px) 0}
+
+.eyebrow{
+  font-family:var(--font-body);
+  font-size:.76rem;font-weight:400;text-transform:uppercase;letter-spacing:.18em;
+  color:var(--peach-2);display:inline-block;margin-bottom:.7rem;
+}
+.section-head{max-width:720px;margin:0 auto clamp(26px,4vw,46px);text-align:center}
+.section-head h2{margin-bottom:.4rem}
+.section-head p{color:var(--ink-soft);font-size:var(--s-1)}
+
+/* buttons — PILL, uppercase-ish tracked (real brand) */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:.5em;
+  font-family:var(--font-body);font-weight:400;font-size:.95rem;
+  letter-spacing:.06em;
+  padding:16px 34px;border-radius:var(--radius-btn);
+  border:1.5px solid transparent;cursor:pointer;transition:.18s ease;line-height:1;
+}
+.btn-primary{background:var(--accent);color:var(--btn-ink)}
+.btn-primary:hover{background:var(--accent-2)}
+.btn-peach{background:var(--peach);color:#3a1c08}          /* warm pop CTA */
+.btn-peach:hover{background:var(--peach-2);color:#fff}
+.btn-dark{background:var(--ink);color:#fff}
+.btn-dark:hover{background:#000}
+.btn-outline{background:transparent;color:var(--ink);border-color:var(--ink)}
+.btn-outline:hover{background:var(--ink);color:#fff}
+.btn-light{background:#fff;color:var(--ink);border-color:#fff}
+.btn-light:hover{background:transparent;color:#fff;border-color:#fff}
+.btn-block{width:100%}
+
+.ic{width:40px;height:40px;stroke:currentColor;stroke-width:1.6;fill:none;flex:none}
+
+.block{background:var(--surface);border-radius:var(--radius-lg);box-shadow:var(--shadow-sm)}
+
+/* depth: floats (STATIC) */
+.float{position:absolute;z-index:3;pointer-events:none}
+.float img{width:100%;height:auto;transform:rotate(var(--rot,0deg));
+  filter:drop-shadow(0 18px 28px rgba(14,27,77,.20))}
+@media(max-width:1000px){.float{display:none}}
+
+/* scroll reveal (3D) */
+.reveal{opacity:0;transform:perspective(900px) rotateX(8deg) translateY(26px);
+  transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){
+  .reveal{opacity:1;transform:none;transition:none}
+  html{scroll-behavior:auto}
+}
+
+/* ===== header ===== */
+/* ── Liquid Collagen Stix · header.css ───────────────────────────── */
+/* Scoped entirely to .announce and .site-header. Tokens from base.css only. */
+
+/* ── Announcement bar ─────────────────────────────────────────────── */
+.announce {
+  background: var(--peach);
+  color: #3a1c08;
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  font-weight: 400;
+  letter-spacing: .04em;
+  text-align: center;
+  padding: 9px var(--sp-3);
+  line-height: 1.4;
+  position: relative;
+  z-index: 51;
+}
+
+.announce a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.announce-code {
+  font-weight: 700;
+  letter-spacing: .08em;
+}
+
+.announce-extra {
+  display: inline;
+  margin-left: .25em;
+}
+
+@media (max-width: 760px) {
+  .announce-extra {
+    display: none;
+  }
+}
+
+/* ── Sticky site header ───────────────────────────────────────────── */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--ink);
+  border-bottom: 1px solid rgba(255,255,255,.08);
+}
+
+.site-header__inner {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 clamp(16px, 4vw, 40px);
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  height: 64px;
+  gap: var(--sp-3);
+}
+
+/* ── Logo (left column) ───────────────────────────────────────────── */
+.site-header__logo {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.site-header__logo .logo {
+  height: 34px;
+  width: auto;
+  display: block;
+}
+
+/* ── Center nav ───────────────────────────────────────────────────── */
+.site-header__nav {
+  display: flex;
+  align-items: center;
+  gap: clamp(var(--sp-3), 2.5vw, var(--sp-5));
+  list-style: none;
+}
+
+.site-header__nav li a {
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  font-weight: 400;
+  letter-spacing: .06em;
+  color: var(--accent-ink);
+  text-transform: uppercase;
+  white-space: nowrap;
+  transition: color .15s ease;
+}
+
+.site-header__nav li a:hover {
+  color: var(--peach);
+}
+
+/* ── Right icons ──────────────────────────────────────────────────── */
+.site-header__actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--sp-3);
+}
+
+.site-header__icon-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent-ink);
+  transition: color .15s ease;
+  border-radius: var(--radius-pill);
+}
+
+.site-header__icon-btn:hover {
+  color: var(--peach);
+}
+
+.site-header__icon-btn svg {
+  width: 22px;
+  height: 22px;
+  stroke: currentColor;
+  stroke-width: 1.6;
+  fill: none;
+  display: block;
+  flex: none;
+}
+
+/* Cart with count bubble */
+.site-header__cart-wrap {
+  position: relative;
+  display: flex;
+}
+
+.site-header__cart-count {
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translate(40%, -40%);
+  background: var(--peach);
+  color: #3a1c08;
+  font-family: var(--font-body);
+  font-size: .62rem;
+  font-weight: 700;
+  line-height: 1;
+  min-width: 16px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-pill);
+  padding: 0 3px;
+  pointer-events: none;
+}
+
+/* ── Mobile: ≤900px hide nav + search, keep logo + cart ─────────── */
+@media (max-width: 900px) {
+  .site-header__inner {
+    grid-template-columns: 1fr auto;
+  }
+
+  .site-header__nav {
+    display: none;
+  }
+
+  .site-header__search {
+    display: none;
+  }
+}
+
+/* ===== hero ===== */
+/* ─── Hero: split variant ─── */
+
+.s-hero {
+  background: var(--bg);
+  padding: clamp(56px, 8vw, 112px) 0;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Two-column grid */
+.s-hero__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: clamp(32px, 5vw, 80px);
+  position: relative;
+}
+
+/* ─── LEFT: text column ─── */
+.s-hero__text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0;
+}
+
+.s-hero__text .eyebrow {
+  margin-bottom: var(--sp-3);
+}
+
+.s-hero__text h1 {
+  font-size: clamp(2.4rem, 4.5vw, var(--s-5));
+  line-height: 1.08;
+  letter-spacing: -.01em;
+  color: var(--ink);
+  margin-bottom: var(--sp-4);
+  max-width: 20ch;
+}
+
+.s-hero__sub {
+  font-family: var(--font-body);
+  font-size: clamp(var(--s-0), 1.2vw, var(--s-1));
+  color: var(--ink-soft);
+  line-height: 1.55;
+  max-width: 44ch;
+  margin-bottom: var(--sp-5);
+}
+
+.s-hero__ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-3);
+  margin-bottom: var(--sp-4);
+}
+
+.s-hero__trust {
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  color: var(--ink-soft);
+  line-height: 1.5;
+}
+
+.s-hero__stars {
+  color: var(--star);
+  font-weight: 600;
+}
+
+/* ─── RIGHT: image column ─── */
+.s-hero__media {
+  position: relative;
+}
+
+.s-hero__img {
+  width: 100%;
+  height: clamp(340px, 44vw, 540px);
+  object-fit: cover;
+  object-position: center 35%;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+  display: block;
+}
+
+/* Float: bleeds off the column seam toward the left */
+.s-hero .float-splash {
+  width: clamp(80px, 10vw, 130px);
+  left: -44px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* ─── MOBILE (≤ 900px): image above, then text ─── */
+@media (max-width: 900px) {
+  .s-hero {
+    padding: 40px 0 56px;
+  }
+
+  .s-hero__grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  /* Move image to the top via order */
+  .s-hero__media {
+    order: -1;
+  }
+
+  .s-hero__img {
+    height: clamp(240px, 58vw, 360px);
+    border-radius: var(--radius);
+  }
+
+  .s-hero__text h1 {
+    font-size: clamp(2rem, 7.5vw, 2.6rem);
+    max-width: none;
+  }
+
+  .s-hero__sub {
+    max-width: none;
+    margin-bottom: var(--sp-4);
+  }
+
+  .s-hero__ctas {
+    flex-direction: column;
+  }
+
+  .s-hero__ctas .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* ===== trust ===== */
+/* ── Trust strip ─────────────────────────────────────────── */
+.s-trust {
+  background: var(--surface);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  padding: var(--sp-5) 0;
+}
+
+.s-trust__row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0;
+  list-style: none;
+}
+
+/* ── Items ─────────────────────────────────────────────────── */
+.s-trust__item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1 1 0;
+  min-width: 140px;
+}
+
+.s-trust__link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sp-2);
+  padding: var(--sp-4) var(--sp-3);
+  color: var(--ink);
+  text-decoration: none;
+  transition: color .18s ease, transform .18s ease;
+}
+
+.s-trust__link:hover {
+  color: var(--peach-2);
+  transform: translateY(-2px);
+}
+
+.s-trust__link .ic {
+  width: 32px;
+  height: 32px;
+  stroke-width: 1.7;
+  color: var(--ink);
+  transition: color .18s ease;
+}
+
+.s-trust__link:hover .ic {
+  color: var(--peach);
+}
+
+/* ── Labels ─────────────────────────────────────────────────── */
+.s-trust__label {
+  font-family: var(--font-body);
+  font-size: .7rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: .13em;
+  color: var(--ink);
+  text-align: center;
+  line-height: 1.35;
+  transition: color .18s ease;
+}
+
+.s-trust__link:hover .s-trust__label {
+  color: var(--peach-2);
+}
+
+/* ── Dividers (desktop) ─────────────────────────────────────── */
+.s-trust__divider {
+  width: 1px;
+  height: 40px;
+  background: var(--line);
+  flex: none;
+  list-style: none;
+}
+
+/* ── Mobile: 2×2 grid ───────────────────────────────────────── */
+@media (max-width: 640px) {
+  .s-trust__row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .s-trust__divider {
+    display: none;
+  }
+
+  .s-trust__item {
+    border: none;
+  }
+
+  /* add subtle inner grid lines via outline trick */
+  .s-trust__item:nth-child(1),
+  .s-trust__item:nth-child(3) {
+    border-right: 1px solid var(--line);
+  }
+
+  .s-trust__item:nth-child(1),
+  .s-trust__item:nth-child(2) {
+    border-bottom: 1px solid var(--line);
+  }
+}
+
+/* ===== flavors ===== */
+/* ── Shop-the-Flavors ──────────────────────────────────────── */
+.s-flavors {
+  background: var(--bg);
+}
+
+/* 3-col grid → 1-col mobile */
+.s-flavors__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-4);
+}
+
+@media (max-width: 860px) {
+  .s-flavors__grid {
+    grid-template-columns: 1fr;
+    max-width: 420px;
+    margin-inline: auto;
+  }
+}
+
+/* Card */
+.s-flavors__card {
+  background: var(--surface);
+  border: 1.5px solid var(--line);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-sm);
+  transition: transform .22s cubic-bezier(.2,.7,.2,1),
+              box-shadow .22s ease;
+}
+
+.s-flavors__card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow);
+}
+
+/* stagger via CSS custom property set inline */
+.s-flavors__card.reveal {
+  transition-delay: var(--delay, 0s);
+}
+
+/* Image area */
+.s-flavors__img-wrap {
+  background: var(--surface-2);
+  padding: var(--sp-5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 1 / 1;
+}
+
+.s-flavors__img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* Card body */
+.s-flavors__body {
+  padding: var(--sp-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+  flex: 1;
+}
+
+.s-flavors__name {
+  font-family: var(--font-display);
+  font-size: var(--s-2);
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.1;
+}
+
+/* Stars */
+.s-flavors__stars {
+  display: flex;
+  align-items: baseline;
+  gap: .35em;
+}
+
+.s-flavors__star-icons {
+  color: var(--star);
+  font-size: var(--s-1);
+  letter-spacing: .04em;
+  line-height: 1;
+}
+
+.s-flavors__count {
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  color: var(--ink-soft);
+}
+
+/* One-line tasting note */
+.s-flavors__note {
+  font-family: var(--font-body);
+  font-size: var(--s-0);
+  color: var(--ink-soft);
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Price */
+.s-flavors__price {
+  font-family: var(--font-display);
+  font-size: var(--s-2);
+  font-weight: 700;
+  color: var(--ink);
+  margin-top: auto;
+  padding-top: var(--sp-2);
+}
+
+/* CTA — push to bottom of flex column */
+.s-flavors__body .btn {
+  margin-top: var(--sp-2);
+}
+
+/* ===== why ===== */
+/* ── s-why : WHY COLLAGEN / the-problem band ──────────────────────────── */
+/* All rules scoped to .s-why. Tokens from base.css only. */
+
+.s-why {
+  background: var(--ink);
+  color: rgba(239, 240, 245, .88);   /* --bg at opacity, light on navy */
+  position: relative;
+  overflow: hidden;
+}
+
+/* ── grid ── */
+.s-why__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(var(--sp-5), 6vw, var(--sp-7));
+  align-items: center;
+}
+
+/* ── LEFT: stat ── */
+.s-why__stat {
+  text-align: center;
+  padding: var(--sp-5) var(--sp-4);
+  border-right: 1px solid rgba(239, 240, 245, .12);
+}
+
+.s-why__stat-number {
+  display: block;
+  font-family: var(--font-display);
+  font-size: clamp(6rem, 14vw, 11rem);
+  font-weight: 700;
+  line-height: 1;
+  color: var(--peach);
+  letter-spacing: -.02em;
+}
+
+.s-why__stat-pct {
+  font-size: .55em;
+  vertical-align: super;
+  color: var(--peach);
+}
+
+.s-why__stat-caption {
+  font-family: var(--font-body);
+  font-size: var(--s-1);
+  color: rgba(239, 240, 245, .68);
+  margin-top: var(--sp-3);
+  max-width: 22ch;
+  margin-inline: auto;
+  line-height: 1.4;
+}
+
+/* ── RIGHT: narrative ── */
+.s-why__narrative {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+  padding: var(--sp-4) 0;
+}
+
+/* eyebrow override — light version on navy bg */
+.s-why__eyebrow {
+  color: var(--peach);
+  margin-bottom: 0;              /* gap handles spacing */
+}
+
+.s-why__heading {
+  font-family: var(--font-display);
+  font-size: clamp(var(--s-3), 4vw, var(--s-4));
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.1;
+  margin: 0;
+}
+
+.s-why__body {
+  font-family: var(--font-body);
+  font-size: var(--s-1);
+  color: rgba(239, 240, 245, .80);
+  line-height: 1.65;
+  max-width: 52ch;
+}
+
+.s-why__cta {
+  align-self: flex-start;
+}
+
+/* ── float position — seam between the two columns ── */
+.float-fruit {
+  width: clamp(90px, 9vw, 130px);
+  top: 6%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 4;
+}
+
+/* ── mobile: single column, no divider ── */
+@media (max-width: 768px) {
+  .s-why__grid {
+    grid-template-columns: 1fr;
+    gap: var(--sp-5);
+  }
+
+  .s-why__stat {
+    border-right: none;
+    border-bottom: 1px solid rgba(239, 240, 245, .12);
+    padding-bottom: var(--sp-5);
+  }
+
+  .s-why__stat-caption {
+    max-width: none;
+  }
+
+  .s-why__cta {
+    align-self: stretch;
+    text-align: center;
+  }
+}
+
+/* ===== how ===== */
+/* ── HOW IT WORKS ──────────────────────────────────────────────────────── */
+.s-how {
+  background: var(--bg);
+}
+
+/* 3-col desktop grid → single col mobile */
+.s-how__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-4);
+}
+
+@media (max-width: 760px) {
+  .s-how__grid {
+    grid-template-columns: 1fr;
+    gap: var(--sp-3);
+  }
+}
+
+/* Card */
+.s-how__card {
+  padding: clamp(24px, 3.5vw, 36px) clamp(20px, 3vw, 32px);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+  box-shadow: 0 6px 22px rgba(14,27,77,.10);
+  transition-delay: var(--delay, 0s);   /* stagger reveal */
+}
+
+/* Icon wrapper — peach tinted circle */
+.s-how__icon-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radius-pill);
+  background: color-mix(in srgb, var(--peach) 14%, transparent);
+  color: var(--peach);
+  flex-shrink: 0;
+}
+
+.s-how__icon-wrap .ic {
+  width: 44px;
+  height: 44px;
+  stroke-width: 1.5;
+}
+
+/* Card heading */
+.s-how__card h3 {
+  font-size: var(--s-2);
+  color: var(--ink);
+  margin: 0;
+  line-height: 1.15;
+}
+
+/* Card body copy */
+.s-how__card p {
+  color: var(--ink-soft);
+  font-size: var(--s-0);
+  line-height: 1.55;
+  margin: 0;
+}
+
+/* ===== benefits ===== */
+/* ── Benefits band ──────────────────────────────────────────── */
+.s-benefits {
+  background: var(--bg);
+}
+
+/* 4-col → 2-col → 1–2 col responsive grid */
+.s-benefits .benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--sp-4);
+}
+
+/* Card */
+.s-benefits .benefit-card {
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  padding: var(--sp-5) var(--sp-4) var(--sp-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+  transition: box-shadow .22s ease, transform .22s ease;
+}
+
+.s-benefits .benefit-card:hover {
+  box-shadow: var(--shadow);
+  transform: translateY(-3px);
+}
+
+/* Icon wrapper */
+.s-benefits .benefit-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--accent-soft);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+}
+
+/* Alternate peach tint on even cards */
+.s-benefits .benefit-card:nth-child(even) .benefit-icon {
+  background: rgba(239, 157, 107, .14);
+}
+
+/* Icon stroke colours — odd: accent, even: peach */
+.s-benefits .benefit-card:nth-child(odd) .ic {
+  color: var(--accent);
+}
+.s-benefits .benefit-card:nth-child(even) .ic {
+  color: var(--peach);
+}
+
+/* Title */
+.s-benefits .benefit-title {
+  font-family: var(--font-display);
+  font-size: var(--s-1);
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  letter-spacing: .01em;
+}
+
+/* Body copy */
+.s-benefits .benefit-body {
+  font-family: var(--font-body);
+  font-size: var(--s-0);
+  color: var(--ink-soft);
+  line-height: 1.55;
+  margin: 0;
+}
+
+/* Stagger reveals */
+.s-benefits .benefit-card.reveal {
+  transition-delay: var(--delay, 0s);
+}
+
+/* ── Responsive ────────────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .s-benefits .benefits-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 540px) {
+  .s-benefits .benefits-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .s-benefits .benefit-card {
+    padding: var(--sp-4) var(--sp-3);
+  }
+}
+
+/* ===== reviews ===== */
+/* ── Reviews section ──────────────────────────────────────────────── */
+.s-reviews {
+  background: var(--surface-2);
+}
+
+/* Rating summary line in section-head */
+.s-reviews__rating {
+  margin-top: var(--sp-3);
+  font-family: var(--font-body);
+  font-size: var(--s-1);
+  color: var(--ink-soft);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .35em;
+  flex-wrap: wrap;
+}
+
+.s-reviews__stars {
+  color: var(--star);
+  font-size: 1.25rem;
+  letter-spacing: .06em;
+  line-height: 1;
+}
+
+/* ── Card grid ────────────────────────────────────────────────────── */
+.s-reviews__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(14px, 2vw, 24px);
+}
+
+@media (max-width: 900px) {
+  .s-reviews__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 540px) {
+  .s-reviews__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ── Individual card ──────────────────────────────────────────────── */
+.s-reviews__card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: clamp(18px, 2.5vw, 28px);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+  box-shadow: var(--shadow-sm);
+  transition-property: opacity, transform, box-shadow;
+}
+
+.s-reviews__card:hover {
+  box-shadow: var(--shadow);
+  transform: translateY(-3px);
+}
+
+/* stars inside card */
+.s-reviews__card-stars {
+  color: var(--star);
+  font-size: 1.1rem;
+  letter-spacing: .08em;
+  line-height: 1;
+}
+
+/* card headline */
+.s-reviews__card-headline {
+  font-family: var(--font-display);
+  font-size: var(--s-0);
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.25;
+  margin: 0;
+}
+
+/* quote body */
+.s-reviews__card-quote {
+  font-family: var(--font-body);
+  font-size: var(--s--1);
+  color: var(--ink-soft);
+  line-height: 1.6;
+  flex: 1;
+  margin: 0;
+}
+
+/* card footer row */
+.s-reviews__card-footer {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+  margin-top: auto;
+  padding-top: var(--sp-3);
+  border-top: 1px solid var(--line);
+}
+
+.s-reviews__card-name {
+  font-family: var(--font-display);
+  font-size: var(--s--1);
+  font-weight: 700;
+  color: var(--ink);
+  flex: 1 1 auto;
+}
+
+/* "Verified Buyer" pill */
+.s-reviews__verified {
+  font-family: var(--font-body);
+  font-size: .72rem;
+  font-weight: 400;
+  letter-spacing: .07em;
+  color: var(--peach-2);
+  background: rgba(239, 157, 107, .14);
+  border: 1px solid rgba(239, 157, 107, .35);
+  border-radius: var(--radius-pill);
+  padding: .18em .75em;
+  white-space: nowrap;
+}
+
+/* flavor tag */
+.s-reviews__flavor {
+  font-family: var(--font-body);
+  font-size: .72rem;
+  color: var(--ink-soft);
+  background: var(--accent-soft);
+  border-radius: var(--radius-pill);
+  padding: .18em .7em;
+  white-space: nowrap;
+}
+
+/* ── Disclaimer ───────────────────────────────────────────────────── */
+.s-reviews__disclaimer {
+  margin-top: clamp(18px, 2.5vw, 28px);
+  text-align: center;
+  font-size: .72rem;
+  color: var(--ink-soft);
+  opacity: .55;
+}
+
+/* ===== offer ===== */
+/* ── s-offer: Subscribe & Save band ── */
+.s-offer {
+  background: var(--ink);
+  padding: clamp(56px, 8vw, 100px) 0;
+}
+
+.s-offer__inner {
+  max-width: 640px;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sp-4);
+}
+
+/* eyebrow inherits .eyebrow but override color for dark bg */
+.s-offer .eyebrow {
+  color: var(--peach);
+  margin-bottom: 0;
+}
+
+/* h2 light on navy */
+.s-offer h2 {
+  color: #ffffff;
+  font-size: clamp(var(--s-3), 4.5vw, var(--s-4));
+  line-height: 1.1;
+}
+
+.s-offer__sub {
+  font-family: var(--font-body);
+  font-size: var(--s-1);
+  color: rgba(239, 240, 245, 0.78);
+  max-width: 520px;
+  line-height: 1.55;
+  margin-top: calc(-1 * var(--sp-2));
+}
+
+/* perks row */
+.s-offer__perks {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--sp-2) var(--sp-5);
+  padding: 0;
+  margin: 0;
+}
+
+.s-offer__perks li {
+  display: flex;
+  align-items: center;
+  gap: .45em;
+  font-family: var(--font-body);
+  font-size: .9rem;
+  color: rgba(239, 240, 245, 0.9);
+  letter-spacing: .02em;
+  white-space: nowrap;
+}
+
+/* peach check icon */
+.s-offer__check {
+  width: 20px;
+  height: 20px;
+  stroke: var(--peach);
+  stroke-width: 2;
+  fill: none;
+  flex: none;
+}
+
+/* CTA stack */
+.s-offer__cta-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sp-3);
+  margin-top: var(--sp-2);
+}
+
+.s-offer .btn-peach {
+  font-size: 1rem;
+  padding: 18px 44px;
+}
+
+.s-offer__code {
+  font-family: var(--font-body);
+  font-size: .88rem;
+  color: rgba(239, 240, 245, 0.6);
+  letter-spacing: .01em;
+}
+
+.s-offer__code strong {
+  color: var(--peach);
+  font-weight: 400;
+  letter-spacing: .08em;
+}
+
+/* ── mobile ── */
+@media (max-width: 600px) {
+  .s-offer__perks {
+    gap: var(--sp-3) var(--sp-4);
+  }
+
+  .s-offer__perks li {
+    white-space: normal;
+  }
+
+  .s-offer .btn-peach {
+    width: 100%;
+    max-width: 360px;
+  }
+}
+
+/* ===== faq ===== */
+/* ── FAQ ───────────────────────────────────────────────────────────── */
+.s-faq {
+  background: var(--bg);
+}
+
+/* list container */
+.s-faq .faq-list {
+  list-style: none;
+  max-width: 780px;
+  margin: 0 auto;
+  border-top: 1px solid var(--line);
+}
+
+/* each row */
+.s-faq .faq-item {
+  border-bottom: 1px solid var(--line);
+}
+
+.s-faq details {
+  width: 100%;
+}
+
+/* summary / question row */
+.s-faq .faq-q {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-4);
+  padding: var(--sp-4) 0;
+  cursor: pointer;
+  list-style: none; /* hide default disclosure triangle */
+
+  font-family: var(--font-display);
+  font-size: var(--s-1);
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* remove native arrow in webkit/FF */
+.s-faq .faq-q::-webkit-details-marker { display: none; }
+.s-faq .faq-q::marker { display: none; }
+
+/* chevron icon */
+.s-faq .faq-chevron {
+  width: 22px;
+  height: 22px;
+  stroke: var(--peach);
+  stroke-width: 2.2;
+  fill: none;
+  flex: none;
+  transition: transform .28s cubic-bezier(.4,0,.2,1);
+}
+
+/* rotate on open */
+.s-faq details[open] > .faq-q .faq-chevron {
+  transform: rotate(180deg);
+}
+
+/* peach underline on hover */
+.s-faq .faq-q:hover {
+  color: var(--peach-2);
+}
+.s-faq .faq-q:hover .faq-chevron {
+  stroke: var(--peach-2);
+}
+
+/* answer panel */
+.s-faq .faq-a {
+  padding: 0 0 var(--sp-4) 0;
+  font-family: var(--font-body);
+  font-size: var(--s-0);
+  color: var(--ink-soft);
+  line-height: 1.65;
+  max-width: 680px;
+}
+
+.s-faq .faq-a strong {
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--ink);
+}
+
+/* CTA row */
+.s-faq .faq-cta {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--sp-6);
+}
+
+/* ── Responsive ── */
+@media (max-width: 600px) {
+  .s-faq .faq-q {
+    font-size: var(--s-0);
+    padding: var(--sp-3) 0;
+  }
+
+  .s-faq .faq-a {
+    font-size: var(--s--1);
+  }
+
+  .s-faq .faq-chevron {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+/* ===== footer ===== */
+/* ============================================================
+   Liquid Collagen Stix — footer.css
+   Scope: .site-footer — all tokens from base.css
+   ============================================================ */
+
+.site-footer {
+  background: var(--footer-bg);
+  padding: clamp(48px, 7vw, 80px) 0 0;
+  font-family: var(--font-body);
+}
+
+/* ── Newsletter row ────────────────────────────────────────── */
+.sf-newsletter {
+  border-bottom: 1px solid rgba(255, 255, 255, .12);
+  padding-bottom: clamp(36px, 5vw, 56px);
+  margin-bottom: clamp(36px, 5vw, 56px);
+  text-align: center;
+}
+
+.sf-nl-heading {
+  font-family: var(--font-display);
+  font-size: var(--s-2);
+  font-weight: 700;
+  color: var(--footer-title);
+  margin-bottom: var(--sp-4);
+  letter-spacing: .01em;
+}
+
+.sf-nl-form {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  max-width: 520px;
+  margin: 0 auto var(--sp-3);
+}
+
+.sf-nl-input {
+  flex: 1;
+  padding: 14px 22px;
+  border-radius: var(--radius-pill);
+  border: 1.5px solid rgba(255, 255, 255, .22);
+  background: rgba(255, 255, 255, .08);
+  color: var(--footer-title);
+  font-family: var(--font-body);
+  font-size: var(--s-0);
+  outline: none;
+  transition: border-color .18s ease;
+}
+
+.sf-nl-input::placeholder {
+  color: var(--footer-text);
+}
+
+.sf-nl-input:focus {
+  border-color: var(--peach);
+  background: rgba(255, 255, 255, .12);
+}
+
+.sf-nl-btn {
+  white-space: nowrap;
+  flex-shrink: 0;
+  padding: 14px 28px;
+}
+
+.sf-nl-note {
+  font-size: var(--s--1);
+  color: var(--footer-text);
+}
+
+.sf-nl-note strong {
+  color: var(--footer-title);
+  font-weight: 600;
+}
+
+/* ── Main 4-column grid ────────────────────────────────────── */
+.sf-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr;
+  gap: clamp(24px, 4vw, 56px);
+  padding-bottom: clamp(36px, 5vw, 56px);
+}
+
+/* Brand column */
+.sf-brand {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+}
+
+.sf-logo-link {
+  display: inline-block;
+}
+
+.sf-logo {
+  height: 30px;
+  width: auto;
+  object-fit: contain;
+}
+
+.sf-tagline {
+  font-size: var(--s--1);
+  color: var(--footer-text);
+  line-height: 1.6;
+  max-width: 240px;
+}
+
+.sf-social {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+}
+
+.sf-social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--footer-text);
+  transition: color .18s ease;
+}
+
+.sf-social-link:hover {
+  color: var(--footer-link);
+}
+
+/* Link columns */
+.sf-col {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+}
+
+.sf-col-title {
+  font-family: var(--font-display);
+  font-size: .72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .14em;
+  color: var(--footer-title);
+  margin-bottom: var(--sp-1);
+  line-height: 1;
+}
+
+.sf-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+}
+
+.sf-links a {
+  font-size: var(--s-0);
+  color: var(--footer-text);
+  transition: color .18s ease;
+  line-height: 1.4;
+}
+
+.sf-links a:hover {
+  color: var(--footer-link);
+}
+
+/* ── Bottom bar ────────────────────────────────────────────── */
+.sf-bottom {
+  border-top: 1px solid rgba(255, 255, 255, .16);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-4);
+  padding: var(--sp-4) 0 clamp(24px, 3vw, 36px);
+  flex-wrap: wrap;
+}
+
+.sf-copy {
+  font-size: var(--s--1);
+  color: var(--footer-text);
+  line-height: 1.5;
+}
+
+.sf-payments {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+}
+
+.sf-pay-badge {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+/* ── Responsive ────────────────────────────────────────────── */
+
+/* 2-column layout */
+@media (max-width: 900px) {
+  .sf-grid {
+    grid-template-columns: 1fr 1fr;
+    row-gap: clamp(32px, 5vw, 48px);
+  }
+
+  /* Brand spans full width */
+  .sf-brand {
+    grid-column: 1 / -1;
+    flex-direction: row;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: var(--sp-5);
+  }
+
+  .sf-tagline {
+    max-width: none;
+    flex-basis: 100%;
+    margin-top: calc(-1 * var(--sp-3));
+  }
+
+  .sf-nl-form {
+    flex-direction: row;
+  }
+}
+
+/* 1-column stack on mobile */
+@media (max-width: 560px) {
+  .sf-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .sf-brand {
+    flex-direction: column;
+    gap: var(--sp-3);
+  }
+
+  .sf-tagline {
+    margin-top: 0;
+  }
+
+  .sf-nl-form {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .sf-nl-btn {
+    width: 100%;
+  }
+
+  .sf-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--sp-3);
+  }
+}
