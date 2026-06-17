@@ -83,27 +83,51 @@
 
 <!-- ===== hero ===== -->
 <section class="sec s-hero hero-fullbleed">
-  <div class="wrap">
-    <div class="s-hero__card">
+  <div class="hero-inner">
 
-      <p class="eyebrow">Science Backed &middot; Mother Nature Approved</p>
+    <!-- LEFT: text card -->
+    <div class="hero-text">
+      <p class="eyebrow">Science Backed · Mother Nature Approved</p>
 
-      <h1 class="s-hero__headline">The Graceful<br>Aging Era<br>is Here.</h1>
+      <h1>The Graceful<br>Aging Era<br>is Here.</h1>
 
-      <p class="s-hero__sub">Premium, clean supplements &mdash; selectively sourced from nature&rsquo;s finest and third-party lab tested for results you can feel.</p>
+      <p class="hero-subhead">Premium, clean supplements — selectively sourced from nature's finest and third-party lab tested for results you can feel.</p>
 
-      <div class="s-hero__ctas">
-        <a href="https://www.google.com" class="btn">Shop Wellness</a>
-        <a href="https://www.google.com" class="btn btn-outline">Take the Quiz</a>
+      <div class="hero-ctas">
+        <a href="https://www.google.com" class="btn">SHOP WELLNESS</a>
+        <a href="https://www.google.com" class="btn btn-outline">TAKE THE QUIZ</a>
       </div>
 
-      <div class="s-hero__trust">
-        <span class="s-hero__stars" aria-hidden="true">★★★★★</span>
-        <span>4,500+</span>
-        <span class="s-hero__trust-label">five-star reviews</span>
+      <div class="hero-trust">
+        <span class="stars">★★★★★</span>
+        <span>4,500+ five-star reviews</span>
       </div>
-
     </div>
+
+    <!-- RIGHT: product cluster -->
+    <div class="hero-products">
+      <img
+        class="prod-magnesium"
+        src="assets/cut-magnesium.png"
+        alt="Amandean Magnesium Glycinate"
+      >
+      <img
+        class="prod-collagenpeptides"
+        src="assets/cut-collagenpeptides.png"
+        alt="Amandean Collagen Peptides"
+      >
+      <img
+        class="prod-marinecollagen"
+        src="assets/cut-marinecollagen.png"
+        alt="Amandean Marine Collagen"
+      >
+      <img
+        class="prod-vitc"
+        src="assets/cut-vitc.png"
+        alt="Amandean Vitamin C"
+      >
+    </div>
+
   </div>
 </section>
 
@@ -168,89 +192,100 @@
 <section class="sec s-benefits">
   <div class="wrap">
 
-    <!-- head -->
-    <div class="sec-head reveal">
-      <p class="eyebrow">Shop by Benefit</p>
+    <div class="s-benefits__head reveal">
+      <p class="eyebrow">SHOP BY BENEFIT</p>
       <h2>Find your wellness goal</h2>
     </div>
 
-    <!-- tiles -->
-    <div class="benefits-grid">
+    <div class="s-benefits__grid">
 
-      <!-- 1. General Wellness — leaf/shield -->
-      <a href="https://www.google.com" class="benefit-tile tile-bg-cream reveal">
-        <svg class="tile-icon" viewBox="0 0 44 44" fill="none" stroke="currentColor"
-             stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <path d="M22 4C22 4 8 10 8 22c0 9 6.5 15 14 18 7.5-3 14-9 14-18C36 10 22 4 22 4z"/>
-          <path d="M16 22c1.5-3 4-5 6-6 2 1 4.5 3 6 6"/>
-          <line x1="22" y1="16" x2="22" y2="32"/>
-        </svg>
-        <p class="tile-name">General Wellness</p>
-        <p class="tile-cta">Shop <span aria-hidden="true">→</span></p>
+      <!-- 1. General Wellness -->
+      <a class="s-benefits__tile reveal" href="https://www.google.com" style="background-image:url('assets/bg-wellness.jpg')">
+        <div class="s-benefits__content">
+          <span class="s-benefits__icon" aria-hidden="true">
+            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="20" cy="20" r="13"/>
+              <path d="M20 13v7l4 4"/>
+              <path d="M13.5 8.5C10 11 8 15.2 8 20c0 6.6 5.4 12 12 12s12-5.4 12-12"/>
+            </svg>
+          </span>
+          <span class="s-benefits__name">General Wellness</span>
+          <span class="s-benefits__cta">SHOP →</span>
+        </div>
       </a>
 
-      <!-- 2. Skin, Hair & Nails — sparkle/diamond -->
-      <a href="https://www.google.com" class="benefit-tile tile-bg-teal reveal">
-        <svg class="tile-icon" viewBox="0 0 44 44" fill="none" stroke="currentColor"
-             stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <path d="M22 6l4.5 8H38l-9 8 3.5 11L22 27l-10.5 6L15 22l-9-8h11.5L22 6z"/>
-          <circle cx="22" cy="22" r="3.5"/>
-        </svg>
-        <p class="tile-name">Skin, Hair &amp; Nails</p>
-        <p class="tile-cta">Shop <span aria-hidden="true">→</span></p>
+      <!-- 2. Skin, Hair & Nails -->
+      <a class="s-benefits__tile reveal" href="https://www.google.com" style="background-image:url('assets/bg-skin.jpg')">
+        <div class="s-benefits__content">
+          <span class="s-benefits__icon" aria-hidden="true">
+            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 7c-3.5 4-7 7.5-7 12a7 7 0 0 0 14 0c0-4.5-3.5-8-7-12z"/>
+              <path d="M20 28v5M17 31h6"/>
+            </svg>
+          </span>
+          <span class="s-benefits__name">Skin, Hair &amp; Nails</span>
+          <span class="s-benefits__cta">SHOP →</span>
+        </div>
       </a>
 
-      <!-- 3. Immune Health — plus/shield -->
-      <a href="https://www.google.com" class="benefit-tile tile-bg-sand reveal">
-        <svg class="tile-icon" viewBox="0 0 44 44" fill="none" stroke="currentColor"
-             stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <path d="M22 6l-13 5.5V22c0 8.5 5.5 14.5 13 17 7.5-2.5 13-8.5 13-17V11.5L22 6z"/>
-          <line x1="22" y1="16" x2="22" y2="28"/>
-          <line x1="16" y1="22" x2="28" y2="22"/>
-        </svg>
-        <p class="tile-name">Immune Health</p>
-        <p class="tile-cta">Shop <span aria-hidden="true">→</span></p>
+      <!-- 3. Immune Health -->
+      <a class="s-benefits__tile reveal" href="https://www.google.com" style="background-image:url('assets/bg-immune.jpg')">
+        <div class="s-benefits__content">
+          <span class="s-benefits__icon" aria-hidden="true">
+            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 6l3.5 7 7.5 1.1-5.5 5.3 1.3 7.6L20 23.5l-6.8 3.5 1.3-7.6L9 14.1l7.5-1.1z"/>
+            </svg>
+          </span>
+          <span class="s-benefits__name">Immune Health</span>
+          <span class="s-benefits__cta">SHOP →</span>
+        </div>
       </a>
 
-      <!-- 4. Sleep & Calm — crescent/moon -->
-      <a href="https://www.google.com" class="benefit-tile tile-bg-sage reveal">
-        <svg class="tile-icon" viewBox="0 0 44 44" fill="none" stroke="currentColor"
-             stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <path d="M28 8a16 16 0 1 1-14 24A12 12 0 0 0 28 8z"/>
-          <circle cx="32" cy="14" r="1.5" stroke-width="2"/>
-          <circle cx="36" cy="22" r="1" stroke-width="2"/>
-        </svg>
-        <p class="tile-name">Sleep &amp; Calm</p>
-        <p class="tile-cta">Shop <span aria-hidden="true">→</span></p>
+      <!-- 4. Sleep & Calm -->
+      <a class="s-benefits__tile reveal" href="https://www.google.com" style="background-image:url('assets/bg-sleep.jpg')">
+        <div class="s-benefits__content">
+          <span class="s-benefits__icon" aria-hidden="true">
+            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M28 22a10 10 0 1 1-11-9.9A8 8 0 0 0 28 22z"/>
+              <path d="M30 10l2.5-2.5M30 10h4M30 10v4"/>
+            </svg>
+          </span>
+          <span class="s-benefits__name">Sleep &amp; Calm</span>
+          <span class="s-benefits__cta">SHOP →</span>
+        </div>
       </a>
 
-      <!-- 5. Joints & Mobility — figure in motion -->
-      <a href="https://www.google.com" class="benefit-tile tile-bg-cream reveal">
-        <svg class="tile-icon" viewBox="0 0 44 44" fill="none" stroke="currentColor"
-             stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <circle cx="22" cy="9" r="3.5"/>
-          <line x1="22" y1="12.5" x2="22" y2="22"/>
-          <path d="M22 22l-7 8"/>
-          <path d="M22 22l7 8"/>
-          <path d="M22 18l-6-4"/>
-          <path d="M22 18l6-4"/>
-        </svg>
-        <p class="tile-name">Joints &amp; Mobility</p>
-        <p class="tile-cta">Shop <span aria-hidden="true">→</span></p>
+      <!-- 5. Joints & Mobility -->
+      <a class="s-benefits__tile reveal" href="https://www.google.com" style="background-image:url('assets/bg-joints.jpg')">
+        <div class="s-benefits__content">
+          <span class="s-benefits__icon" aria-hidden="true">
+            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="14" cy="12" r="4"/>
+              <circle cx="26" cy="28" r="4"/>
+              <path d="M14 16c0 6 4 8 6 8s6-2 6-8"/>
+              <path d="M18 24l-2 6M22 24l2 6"/>
+            </svg>
+          </span>
+          <span class="s-benefits__name">Joints &amp; Mobility</span>
+          <span class="s-benefits__cta">SHOP →</span>
+        </div>
       </a>
 
-      <!-- 6. Energy & Focus — lightning bolt -->
-      <a href="https://www.google.com" class="benefit-tile tile-bg-teal reveal">
-        <svg class="tile-icon" viewBox="0 0 44 44" fill="none" stroke="currentColor"
-             stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <path d="M25 6L12 25h13l-4 13L36 19H23L25 6z"/>
-        </svg>
-        <p class="tile-name">Energy &amp; Focus</p>
-        <p class="tile-cta">Shop <span aria-hidden="true">→</span></p>
+      <!-- 6. Energy & Focus -->
+      <a class="s-benefits__tile reveal" href="https://www.google.com" style="background-image:url('assets/bg-energy.jpg')">
+        <div class="s-benefits__content">
+          <span class="s-benefits__icon" aria-hidden="true">
+            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M23 7L13 22h8l-4 11 14-16h-9z"/>
+            </svg>
+          </span>
+          <span class="s-benefits__name">Energy &amp; Focus</span>
+          <span class="s-benefits__cta">SHOP →</span>
+        </div>
       </a>
 
-    </div><!-- /benefits-grid -->
-  </div><!-- /wrap -->
+    </div><!-- /.s-benefits__grid -->
+  </div><!-- /.wrap -->
 </section>
 
 <!-- ===== bestsellers ===== -->
