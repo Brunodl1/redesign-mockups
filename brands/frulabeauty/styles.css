@@ -582,7 +582,7 @@
 /* image zone */
 .s-cat-tile__img-wrap {
   display: block;
-  padding: var(--sp-4) var(--sp-4) var(--sp-3);
+  padding: var(--sp-5) var(--sp-4) var(--sp-4);
   background: var(--surface-2);
   aspect-ratio: 4 / 3;
   overflow: hidden;
@@ -593,6 +593,7 @@
   height: 100%;
   object-fit: contain;
   display: block;
+  filter: drop-shadow(0 14px 22px rgba(150, 95, 60, .22));
 }
 
 /* body */
