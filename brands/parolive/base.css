@@ -1,0 +1,111 @@
+/* Par Olive — per-brand foundation (faithful to real site:
+   white + near-black #1c1c1c + dark plum #19080b bands, coral #F04860 accent,
+   Fraunces display (uppercase, letter-spaced) + Montserrat body, SQUARE buttons). */
+:root{
+  /* color */
+  --bg:#ffffff;             /* white page */
+  --surface:#ffffff;        /* white card/band */
+  --surface-2:#f7f3ef;      /* warm cream alt section */
+  --surface-3:#ededed;      /* light grey */
+  --ink:#1c1c1c;            /* near-black */
+  --ink-soft:#6a6c77;       /* muted grey text */
+  --accent:#1c1c1c;         /* dark — primary buttons/headings */
+  --accent-2:#000000;       /* hover */
+  --accent-soft:#f3ece9;    /* pale warm tint */
+  --coral:#F04860;          /* brand coral pop (CTA accent / highlights) */
+  --coral-2:#d63350;
+  --pop:#F04860;
+  --star:#FBCA10;           /* yellow review stars */
+  --dark:#19080b;           /* dark plum band */
+  --dark-ink:#f4ece9;       /* text on dark */
+  --line:rgba(28,28,28,.14);
+  --btn:#1c1c1c;
+  --btn-ink:#ffffff;
+  --accent-ink:#ffffff;
+  --footer-bg:#19080b;      /* dark plum footer */
+  --footer-title:#ffffff;
+  --footer-text:rgba(244,236,233,.66);
+  --footer-link:#F04860;
+  /* type */
+  --font-display:"Fraunces", Georgia, serif;
+  --font-body:"Montserrat", system-ui, sans-serif;
+  --s--1:.8rem; --s-0:.95rem; --s-1:1.1rem; --s-2:1.4rem;
+  --s-3:1.9rem; --s-4:2.5rem; --s-5:3.3rem;
+  /* space */
+  --sp-1:.25rem; --sp-2:.5rem; --sp-3:1rem; --sp-4:1.5rem;
+  --sp-5:2.5rem; --sp-6:4rem; --sp-7:6rem;
+  /* shape — SQUARE buttons (radius 0), minimal cards */
+  --radius:0px; --radius-lg:2px; --radius-pill:0px; --radius-btn:0px;
+  --shadow:0 18px 50px rgba(28,28,28,.10);
+  --shadow-sm:0 6px 20px rgba(28,28,28,.07);
+  --maxw:1280px;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{overflow-x:clip}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--font-body);
+  font-weight:400;
+  color:var(--ink);
+  background:var(--bg);
+  font-size:16px;
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+
+h1,h2,h3,h4{font-family:var(--font-display);color:var(--ink);line-height:1.12;font-weight:500;letter-spacing:.02em}
+h1{font-size:var(--s-5);text-transform:uppercase;letter-spacing:.04em}
+h2{font-size:var(--s-4);text-transform:uppercase;letter-spacing:.03em}
+h3{font-size:var(--s-1);font-weight:600}
+
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 clamp(16px,4vw,40px);width:100%}
+.section{padding:clamp(48px,7vw,96px) 0}
+
+.eyebrow{
+  font-family:var(--font-body);
+  font-size:.72rem;font-weight:600;text-transform:uppercase;letter-spacing:.22em;
+  color:var(--coral);display:inline-block;margin-bottom:.8rem;
+}
+.section-head{max-width:720px;margin:0 auto clamp(28px,4vw,52px);text-align:center}
+.section-head h2{margin-bottom:.5rem}
+.section-head p{color:var(--ink-soft);font-size:var(--s-1)}
+
+/* buttons — SQUARE, uppercase tracked (real brand) */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:.5em;
+  font-family:var(--font-body);font-weight:600;font-size:.82rem;
+  letter-spacing:.14em;text-transform:uppercase;
+  padding:17px 34px;border-radius:var(--radius-btn);
+  border:1.5px solid transparent;cursor:pointer;transition:.18s ease;line-height:1;
+}
+.btn-primary{background:var(--accent);color:var(--btn-ink)}
+.btn-primary:hover{background:var(--accent-2)}
+.btn-coral{background:var(--coral);color:#fff}
+.btn-coral:hover{background:var(--coral-2)}
+.btn-outline{background:transparent;color:var(--ink);border-color:var(--ink)}
+.btn-outline:hover{background:var(--ink);color:#fff}
+.btn-light{background:#fff;color:var(--ink);border-color:#fff}
+.btn-light:hover{background:transparent;color:#fff;border-color:#fff}
+.btn-block{width:100%}
+
+.ic{width:40px;height:40px;stroke:currentColor;stroke-width:1.4;fill:none;flex:none}
+
+.block{background:var(--surface);border-radius:var(--radius-lg);box-shadow:var(--shadow-sm)}
+
+/* depth: floats (STATIC) */
+.float{position:absolute;z-index:3;pointer-events:none}
+.float img{width:100%;height:auto;transform:rotate(var(--rot,0deg));
+  filter:drop-shadow(0 18px 28px rgba(28,28,28,.18))}
+@media(max-width:1000px){.float{display:none}}
+
+/* scroll reveal (3D) */
+.reveal{opacity:0;transform:perspective(900px) rotateX(8deg) translateY(26px);
+  transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){
+  .reveal{opacity:1;transform:none;transition:none}
+  html{scroll-behavior:auto}
+}
