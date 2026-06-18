@@ -1,0 +1,95 @@
+/* ===== PlantFusion — Complete Protein — per-brand foundation =====
+   Real brand DNA: Figtree (Avenir-Next-like geometric sans), teal-green #108474
+   primary + leaf greens, warm gold #ffc000 pop, clean white + soft green-grey
+   surfaces. Friendly-athletic plant-based health. Pill buttons. */
+:root{
+  --bg:#ffffff;
+  --surface:#f4f7f2;        /* soft green-grey */
+  --surface-2:#e7efe6;      /* deeper sage tint */
+  --ink:#20241f;
+  --ink-soft:#5d6a5b;
+  --accent:#108474;         /* PlantFusion teal-green */
+  --accent-dk:#0c6a5d;
+  --accent-ink:#063f37;
+  --leaf:#4d7b54;
+  --pop:#ffc000;            /* warm gold */
+  --pop-ink:#5a4500;
+  --line:#e2e8df;
+  --btn:#108474;
+  --btn-ink:#ffffff;
+
+  --font-display:'Figtree','Avenir Next','Helvetica Neue',Arial,sans-serif;
+  --font-body:'Figtree','Avenir Next','Helvetica Neue',Arial,sans-serif;
+
+  --s--1:.8rem; --s-0:1rem; --s-1:1.18rem; --s-2:1.5rem;
+  --s-3:2.05rem;  --s-4:2.9rem; --s-5:4.2rem;
+
+  --sp-1:.4rem; --sp-2:.8rem; --sp-3:1.2rem; --sp-4:2rem;
+  --sp-5:3rem;  --sp-6:4.5rem; --sp-7:7rem;
+
+  --radius:12px; --radius-lg:22px;
+  --shadow:0 18px 48px -22px rgba(20,40,24,.34);
+  --maxw:1240px;
+}
+
+*{box-sizing:border-box}
+html,body{overflow-x:clip}
+html{scroll-behavior:smooth}
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font-family:var(--font-body); font-size:var(--s-0); line-height:1.6;
+  font-weight:400; -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%; display:block}
+a{color:inherit; text-decoration:none}
+
+h1,h2,h3{font-family:var(--font-display); font-weight:800; line-height:1.05; letter-spacing:-.02em; margin:0}
+h1{font-size:clamp(2.3rem,5vw,var(--s-5))}
+h2{font-size:clamp(1.85rem,3.6vw,var(--s-4))}
+h3{font-size:var(--s-2); font-weight:700; letter-spacing:-.01em}
+p{margin:0 0 1em}
+
+.wrap{max-width:var(--maxw); margin:0 auto; padding:0 clamp(18px,4vw,40px)}
+.wrap-wide{max-width:1480px; margin:0 auto; padding:0 clamp(14px,3vw,28px)}
+.sec{padding:var(--sp-7) 0}
+.sec-tight{padding:var(--sp-5) 0}
+
+.eyebrow{
+  font-size:.74rem; letter-spacing:.18em; text-transform:uppercase;
+  font-weight:700; color:var(--accent); margin:0 0 .9rem;
+}
+.eyebrow-ink{color:var(--ink-soft)}
+
+/* buttons — green pills */
+.btn{
+  display:inline-flex; align-items:center; justify-content:center; gap:.5em;
+  font-family:var(--font-display); font-weight:700; font-size:1rem;
+  padding:1.02em 1.9em; border-radius:999px; border:2px solid transparent;
+  cursor:pointer; transition:transform .15s ease, background .2s ease, color .2s ease;
+  letter-spacing:.01em; line-height:1; text-align:center;
+}
+.btn:hover{transform:translateY(-2px)}
+.btn-primary{background:var(--btn); color:var(--btn-ink)}
+.btn-primary:hover{background:var(--accent-dk)}
+.btn-outline{background:transparent; color:var(--accent-ink); border-color:var(--accent)}
+.btn-outline:hover{background:var(--accent); color:#fff}
+.btn-light{background:#fff; color:var(--accent-ink)}
+.btn-pop{background:var(--pop); color:var(--pop-ink)}
+.btn-block{display:flex; width:100%}
+
+/* depth: floats + reveal */
+.float{position:absolute; z-index:2; pointer-events:none}
+.float img{width:100%; transform:rotate(var(--rot,0deg)); filter:drop-shadow(0 22px 30px rgba(20,40,24,.26))}
+@media(max-width:1000px){.float{display:none}}
+
+.reveal{opacity:0; transform:perspective(900px) rotateX(8deg) translateY(26px); transition:.7s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1; transform:none}
+@media(prefers-reduced-motion:reduce){
+  .reveal{opacity:1; transform:none; transition:none}
+  html{scroll-behavior:auto}
+}
+
+.ic{width:40px; height:40px; flex:none; stroke:currentColor; stroke-width:1.6; fill:none}
+.pill{display:inline-flex; align-items:center; gap:.45em; padding:.4em .85em; border:1px solid var(--line);
+  border-radius:999px; font-size:.8rem; letter-spacing:.02em; background:var(--bg)}
+.stars{color:var(--pop); letter-spacing:.06em}
