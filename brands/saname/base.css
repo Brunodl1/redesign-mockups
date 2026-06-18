@@ -1,0 +1,99 @@
+/* ===== SANAME — Home — per-brand foundation =====
+   Real DNA: Lato (display, black/bold) + Open Sans (body). Earthy-premium
+   wellness: grass green #3fda21 / deep green #2c7721, sand #cdc1a0, olive,
+   near-black #151515. Dark premium header. Bold solid green buttons. */
+:root{
+  --bg:#ffffff;
+  --surface:#f7f6f0;        /* warm sand-white */
+  --surface-2:#ece7d8;      /* sand */
+  --ink:#151515;
+  --ink-soft:#5e6157;
+  --accent:#2c7721;         /* deep grass green (buttons/links) */
+  --accent-dk:#225e1a;
+  --accent-bright:#3fda21;  /* vivid grass (highlights/badges) */
+  --accent-ink:#163d12;
+  --sand:#cdc1a0;
+  --olive:#979a70;
+  --pop:#3fda21;
+  --dark:#151515;
+  --dark-2:#1f2418;         /* deep green-charcoal */
+  --line:#e4e0d2;
+  --btn:#2c7721;
+  --btn-ink:#ffffff;
+
+  --font-display:'Lato','Helvetica Neue',Arial,sans-serif;
+  --font-body:'Open Sans','Helvetica Neue',Arial,sans-serif;
+
+  --s--1:.82rem; --s-0:1rem; --s-1:1.18rem; --s-2:1.5rem;
+  --s-3:2.05rem;  --s-4:2.9rem; --s-5:4.2rem;
+
+  --sp-1:.4rem; --sp-2:.8rem; --sp-3:1.2rem; --sp-4:2rem;
+  --sp-5:3rem;  --sp-6:4.5rem; --sp-7:7rem;
+
+  --radius:10px; --radius-lg:20px;
+  --shadow:0 20px 50px -24px rgba(20,30,15,.4);
+  --maxw:1240px;
+}
+
+*{box-sizing:border-box}
+html,body{overflow-x:clip}
+html{scroll-behavior:smooth}
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font-family:var(--font-body); font-size:var(--s-0); line-height:1.65;
+  font-weight:400; -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%; display:block}
+a{color:inherit; text-decoration:none}
+
+h1,h2,h3{font-family:var(--font-display); font-weight:900; line-height:1.04; letter-spacing:-.015em; margin:0}
+h1{font-size:clamp(2.4rem,5.4vw,var(--s-5)); text-transform:none}
+h2{font-size:clamp(1.9rem,3.6vw,var(--s-4))}
+h3{font-size:var(--s-2); font-weight:700; letter-spacing:-.01em}
+p{margin:0 0 1em}
+
+.wrap{max-width:var(--maxw); margin:0 auto; padding:0 clamp(18px,4vw,40px)}
+.wrap-wide{max-width:1460px; margin:0 auto; padding:0 clamp(14px,3vw,28px)}
+.sec{padding:var(--sp-7) 0}
+.sec-tight{padding:var(--sp-5) 0}
+
+.eyebrow{
+  font-size:.74rem; letter-spacing:.2em; text-transform:uppercase;
+  font-weight:800; color:var(--accent); margin:0 0 .9rem; font-family:var(--font-display);
+}
+.eyebrow-light{color:var(--accent-bright)}
+
+/* buttons — bold solid green */
+.btn{
+  display:inline-flex; align-items:center; justify-content:center; gap:.5em;
+  font-family:var(--font-display); font-weight:800; font-size:1rem;
+  padding:1.02em 2em; border-radius:var(--radius); border:2px solid transparent;
+  cursor:pointer; transition:transform .15s ease, background .2s ease, color .2s ease;
+  letter-spacing:.02em; line-height:1; text-align:center; text-transform:uppercase;
+}
+.btn:hover{transform:translateY(-2px)}
+.btn-primary{background:var(--btn); color:var(--btn-ink)}
+.btn-primary:hover{background:var(--accent-dk)}
+.btn-outline{background:transparent; color:var(--accent-ink); border-color:var(--accent)}
+.btn-outline:hover{background:var(--accent); color:#fff}
+.btn-light{background:#fff; color:var(--accent-ink)}
+.btn-light:hover{background:var(--surface)}
+.btn-bright{background:var(--accent-bright); color:var(--accent-ink)}
+.btn-block{display:flex; width:100%}
+
+/* depth */
+.float{position:absolute; z-index:2; pointer-events:none}
+.float img{width:100%; transform:rotate(var(--rot,0deg)); filter:drop-shadow(0 22px 30px rgba(20,30,15,.3))}
+@media(max-width:1000px){.float{display:none}}
+
+.reveal{opacity:0; transform:perspective(900px) rotateX(8deg) translateY(26px); transition:.7s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1; transform:none}
+@media(prefers-reduced-motion:reduce){
+  .reveal{opacity:1; transform:none; transition:none}
+  html{scroll-behavior:auto}
+}
+
+.ic{width:40px; height:40px; flex:none; stroke:currentColor; stroke-width:1.6; fill:none}
+.pill{display:inline-flex; align-items:center; gap:.45em; padding:.4em .9em; border:1px solid var(--line);
+  border-radius:999px; font-size:.8rem; letter-spacing:.02em; background:var(--bg); font-weight:600}
+.stars{color:var(--accent-bright); letter-spacing:.06em}
