@@ -1,0 +1,111 @@
+/* Country Of Glow — base foundation. skincare-cosmetics DNA (warm-natural), COG look.
+   Warm taupe + blush + soft sky-blue accent (echoes Hyaluronic jar) + near-black ink.
+   Assistant font, light weights, large soft headings, BLACK PILL buttons. */
+:root{
+  /* color */
+  --bg:        #FBF8F5;   /* warm near-white base */
+  --surface:   #FFFFFF;   /* cards */
+  --surface-2: #F0E9E3;   /* soft blush sand alt band */
+  --ink:       #121212;   /* near-black — headings/text */
+  --ink-soft:  #5E574F;   /* warm taupe-grey body */
+  --accent:    #4E7CA0;   /* deeper sky-blue (echoes Hyaluronic jar) — eyebrows/links/chips, AA on white */
+  --accent-2:  #947F71;   /* warm taupe — dark bands/footer */
+  --accent-ink:#FFFFFF;
+  --pop:       #A9C1E4;   /* pale jar-blue — soft highlights/badges */
+  --line:      #E7DED6;   /* warm hairline */
+  --star:      #C9A24B;   /* soft gold stars */
+  --btn:       #121212;   /* black pill CTA */
+  --btn-ink:   #FFFFFF;
+  --footer-bg: #2A2622;   /* deep warm charcoal footer (taupe-tinted) */
+  /* type */
+  --font-display: "Assistant", "Helvetica Neue", Arial, sans-serif;
+  --font-body:    "Assistant", "Helvetica Neue", Arial, sans-serif;
+  --s--1: .82rem;
+  --s-0:  1rem;
+  --s-1:  1.18rem;
+  --s-2:  1.5rem;
+  --s-3:  2.1rem;
+  --s-4:  2.85rem;
+  --s-5:  3.6rem;
+  /* space */
+  --sp-1:.25rem; --sp-2:.5rem; --sp-3:1rem; --sp-4:1.5rem;
+  --sp-5:2.5rem; --sp-6:4rem; --sp-7:6rem;
+  /* shape — soft, pill buttons */
+  --radius:    14px;
+  --radius-lg: 24px;
+  --radius-pill: 999px;
+  --shadow:    0 18px 50px rgba(42,38,34,.12);
+  --maxw: 1280px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{overflow-x:clip}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--font-body);
+  font-size:var(--s-0);
+  line-height:1.7;
+  color:var(--ink-soft);
+  background:var(--bg);
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+
+h1,h2,h3{
+  font-family:var(--font-display);
+  font-weight:400;            /* their headings are light */
+  line-height:1.15;
+  letter-spacing:.01em;
+  color:var(--ink);
+}
+h1{font-size:clamp(2.2rem,4.6vw,var(--s-5));font-weight:400}
+h2{font-size:clamp(1.7rem,3.4vw,var(--s-4));font-weight:400}
+h3{font-size:var(--s-2);font-weight:500}
+p{color:var(--ink-soft)}
+
+.wrap{max-width:var(--maxw);margin-inline:auto;padding-inline:clamp(1.1rem,4vw,2.5rem)}
+.sec{padding-block:clamp(3rem,6vw,var(--sp-7))}
+
+.eyebrow{
+  font-family:var(--font-body);
+  font-size:.74rem;
+  font-weight:700;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+  color:var(--accent);
+  display:inline-block;
+}
+
+/* buttons — black pill, soft, light text (their real style) */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:.55em;
+  font-family:var(--font-body);
+  font-size:.92rem;font-weight:600;letter-spacing:.06em;
+  padding:1.05em 2.4em;border:1.5px solid transparent;border-radius:var(--radius-pill);
+  cursor:pointer;transition:.22s ease;line-height:1;
+}
+.btn-primary{background:var(--btn);color:var(--btn-ink);border-color:var(--btn)}
+.btn-primary:hover{background:#000;border-color:#000;transform:translateY(-1px)}
+.btn-outline{background:transparent;color:var(--ink);border-color:var(--ink)}
+.btn-outline:hover{background:var(--ink);color:var(--accent-ink)}
+.btn-light{background:#fff;color:var(--ink);border-color:#fff}
+.btn-light:hover{background:transparent;color:#fff;border-color:#fff}
+.btn-block{display:flex;width:100%}
+
+/* float (static) */
+.float{position:absolute;z-index:3;pointer-events:none}
+.float img{width:100%;height:auto;transform:rotate(var(--rot,0deg));
+  filter:drop-shadow(0 18px 28px rgba(42,38,34,.20))}
+@media(max-width:1000px){.float{display:none}}
+
+/* reveal */
+.reveal{opacity:0;transform:perspective(900px) rotateX(8deg) translateY(26px);
+  transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){
+  .reveal{opacity:1!important;transform:none!important;transition:none}
+  html{scroll-behavior:auto}
+}
+
+/* inline icon */
+.ic{width:38px;height:38px;stroke:currentColor;stroke-width:1.4;fill:none;display:block}
