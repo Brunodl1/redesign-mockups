@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=2">
+<link rel="stylesheet" href="styles.css?v=3">
 </head>
 <body>
 
@@ -90,6 +90,12 @@
           <button class="pdp-thumb" aria-label="View 5" data-src="https://au.parolive.com/cdn/shop/files/PDP_MCS_coconut_jar_5.png?width=1200">
             <img src="https://au.parolive.com/cdn/shop/files/PDP_MCS_coconut_jar_5.png?width=200" alt="View 5" />
           </button>
+          <button class="pdp-thumb pdp-thumb--life" aria-label="In use" data-src="assets/gallery-using.jpg">
+            <img src="assets/gallery-using.jpg" alt="Stirring Par Olive into morning coffee" />
+          </button>
+          <button class="pdp-thumb pdp-thumb--life" aria-label="Customer review" data-src="assets/gallery-testimonial.jpg">
+            <img src="assets/gallery-testimonial.jpg" alt="Customer holding Par Olive with a 5-star review" />
+          </button>
         </div>
       </div>
 
@@ -118,14 +124,22 @@
 
         <!-- Format selector -->
         <div class="pdp-selector-group">
-          <p class="pdp-selector-label">Format</p>
+          <p class="pdp-selector-label">Format <span class="pdp-serves-chip">30 serves each</span></p>
           <div class="pdp-options" role="radiogroup" aria-label="Format">
             <button class="pdp-option is-selected" role="radio" aria-checked="true" data-format="jar" data-price-ot="89.00" data-price-sub="75.65">
-              <span class="pdp-option-name">Jar — 150g</span>
+              <span class="pdp-opt-radio" aria-hidden="true"></span>
+              <span class="pdp-opt-main">
+                <span class="pdp-option-name">Jar — 150g</span>
+                <span class="pdp-opt-sub"><strong>30 serves</strong> · just $2.97 / serve</span>
+              </span>
               <span class="pdp-option-price">$89.00</span>
             </button>
             <button class="pdp-option" role="radio" aria-checked="false" data-format="refill" data-price-ot="79.00" data-price-sub="67.15">
-              <span class="pdp-option-name">Refill Pouch</span>
+              <span class="pdp-opt-radio" aria-hidden="true"></span>
+              <span class="pdp-opt-main">
+                <span class="pdp-option-name">Refill Pouch</span>
+                <span class="pdp-opt-sub"><strong>30 serves</strong> · just $2.63 / serve</span>
+              </span>
               <span class="pdp-option-price">$79.00</span>
             </button>
           </div>
@@ -136,11 +150,19 @@
           <p class="pdp-selector-label">Purchase type</p>
           <div class="pdp-options pdp-purchase-opts" role="radiogroup" aria-label="Purchase type">
             <button class="pdp-option" role="radio" aria-checked="false" data-type="onetime">
-              <span class="pdp-option-name">One-time purchase</span>
+              <span class="pdp-opt-radio" aria-hidden="true"></span>
+              <span class="pdp-opt-main">
+                <span class="pdp-option-name">One-time purchase</span>
+                <span class="pdp-opt-sub">Ships once</span>
+              </span>
               <span class="pdp-option-price" id="pdp-ot-price">$89.00</span>
             </button>
             <button class="pdp-option pdp-option--sub is-selected" role="radio" aria-checked="true" data-type="subscribe">
-              <span class="pdp-option-name">Subscribe &amp; Save 15%</span>
+              <span class="pdp-opt-radio" aria-hidden="true"></span>
+              <span class="pdp-opt-main">
+                <span class="pdp-option-name">Subscribe &amp; Save 15%</span>
+                <span class="pdp-opt-sub pdp-opt-save">Save 15% · free shipping · skip anytime</span>
+              </span>
               <span class="pdp-option-price" id="pdp-sub-price">$75.65</span>
               <span class="pdp-option-tag">Most popular</span>
             </button>
@@ -259,6 +281,7 @@
       });
       btn.classList.add('is-active');
       mainImg.src = btn.dataset.src;
+      mainImg.classList.toggle('is-life', btn.classList.contains('pdp-thumb--life'));
     });
   });
 
@@ -477,7 +500,7 @@
       <!-- 1 · Marine Collagen -->
       <article class="ing-card reveal" style="--delay:.08s">
         <div class="ing-img-wrap">
-          <div class="ing-img-placeholder ing-img-placeholder--ocean"></div>
+          <img class="ing-img" src="assets/ing-marine.png" alt="Marine collagen powder" loading="lazy">
         </div>
         <div class="ing-body">
           <h3 class="ing-name">Marine Collagen</h3>
@@ -489,7 +512,7 @@
       <!-- 2 · Freshwater Pearl Powder -->
       <article class="ing-card reveal" style="--delay:.18s">
         <div class="ing-img-wrap">
-          <div class="ing-img-placeholder ing-img-placeholder--pearl"></div>
+          <img class="ing-img" src="assets/ing-pearl.png" alt="Freshwater pearls" loading="lazy">
         </div>
         <div class="ing-body">
           <h3 class="ing-name">Freshwater Pearl Powder</h3>
@@ -501,7 +524,7 @@
       <!-- 3 · Kakadu Plum -->
       <article class="ing-card reveal" style="--delay:.28s">
         <div class="ing-img-wrap">
-          <div class="ing-img-placeholder ing-img-placeholder--plum"></div>
+          <img class="ing-img" src="assets/ing-plum.png" alt="Kakadu plum" loading="lazy">
         </div>
         <div class="ing-body">
           <h3 class="ing-name">Kakadu Plum</h3>
