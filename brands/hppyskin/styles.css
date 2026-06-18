@@ -222,9 +222,12 @@
 
 .s-buybox .wrap {
   display: grid;
-  grid-template-columns: 1.12fr .88fr;
+  /* Right column pinned to its current width so the buy box stays identical;
+     extra container width is absorbed entirely by the gallery on the left. */
+  grid-template-columns: 1fr 479px;
   gap: var(--sp-6);
   align-items: start;
+  max-width: 1360px;
 }
 
 /* ============================================================
@@ -839,6 +842,7 @@
 .ugc-track {
   display: flex;
   gap: 1rem;
+  justify-content: safe center;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   scroll-padding: 1.5rem;
