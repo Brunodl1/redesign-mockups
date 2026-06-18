@@ -300,7 +300,6 @@ h3{font-size:var(--s-1);font-weight:700}
   align-items: center;
   gap: 0;
   min-height: clamp(560px, 56vw, 760px);
-  position: relative;
 }
 
 /* ─── RIGHT: text column ─── */
@@ -360,7 +359,7 @@ h3{font-size:var(--s-1);font-weight:700}
   left: 0;
   top: 0;
   bottom: 0;
-  width: 50vw;
+  width: 50%;
   height: 100%;
 }
 
