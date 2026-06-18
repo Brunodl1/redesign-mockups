@@ -604,6 +604,7 @@ p{color:var(--ink-soft)}
   line-height: 1.1;
   font-weight: 500;
   margin: 0;
+  visibility: hidden; /* hidden but keeps its space so eyebrow + button stay put */
 }
 
 .s-video__body {
@@ -614,6 +615,7 @@ p{color:var(--ink-soft)}
   max-width: 38ch;
   line-height: 1.6;
   margin: 0;
+  visibility: hidden; /* hidden but keeps its space */
 }
 
 /* ── Mobile ── */
