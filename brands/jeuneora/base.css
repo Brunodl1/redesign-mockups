@@ -1,0 +1,110 @@
+/* Jeuneora — per-brand foundation (faithful to real site:
+   cream #f9f7f4 + near-black #1a1a1a + deep plum #682742 accent + deep maroon #4a0c1c bands,
+   Playfair Display serif display + Inter (apercu substitute) body, SQUARE buttons, luxe editorial). */
+:root{
+  /* color */
+  --bg:#f9f7f4;             /* warm cream page */
+  --surface:#ffffff;        /* white card */
+  --surface-2:#efeae3;      /* warm beige alt */
+  --surface-3:#e8e5e0;      /* deeper beige */
+  --ink:#1a1a1a;            /* near-black */
+  --ink-soft:#5b5650;       /* warm muted grey */
+  --accent:#682742;         /* deep plum — buttons/headings accents */
+  --accent-2:#4a0c1c;       /* deep maroon — dark bands/hover */
+  --accent-soft:#f0e7ea;    /* pale plum tint */
+  --plum:#682742;
+  --pop:#682742;
+  --star:#1a1a1a;           /* black review stars (real brand) */
+  --dark:#4a0c1c;           /* deep maroon band (hero scrim / footer) */
+  --dark-ink:#f4ece9;       /* text on dark */
+  --line:rgba(26,26,26,.14);
+  --btn:#682742;
+  --btn-ink:#ffffff;
+  --accent-ink:#ffffff;
+  --footer-bg:#4a0c1c;      /* deep maroon footer */
+  --footer-title:#ffffff;
+  --footer-text:rgba(244,236,233,.66);
+  --footer-link:#e8b4c2;
+  /* type */
+  --font-display:"Playfair Display", Georgia, serif;
+  --font-body:"Inter", system-ui, sans-serif;
+  --s--1:.82rem; --s-0:1rem; --s-1:1.18rem; --s-2:1.5rem;
+  --s-3:2.1rem; --s-4:2.9rem; --s-5:4rem;
+  /* space */
+  --sp-1:.25rem; --sp-2:.5rem; --sp-3:1rem; --sp-4:1.5rem;
+  --sp-5:2.5rem; --sp-6:4rem; --sp-7:6rem;
+  /* shape — SQUARE buttons, minimal cards */
+  --radius:0px; --radius-lg:2px; --radius-pill:0px; --radius-btn:0px;
+  --shadow:0 20px 56px rgba(26,26,26,.12);
+  --shadow-sm:0 8px 24px rgba(26,26,26,.08);
+  --maxw:1320px;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{overflow-x:clip}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--font-body);
+  font-weight:400;
+  color:var(--ink);
+  background:var(--bg);
+  font-size:16px;
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+
+h1,h2,h3,h4{font-family:var(--font-display);color:var(--ink);line-height:1.12;font-weight:400;letter-spacing:0}
+h1{font-size:var(--s-5)}
+h2{font-size:var(--s-4)}
+h3{font-size:var(--s-1);font-weight:500}
+
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 clamp(16px,4vw,44px);width:100%}
+.section{padding:clamp(52px,7vw,100px) 0}
+
+.eyebrow{
+  font-family:var(--font-body);
+  font-size:.74rem;font-weight:500;text-transform:uppercase;letter-spacing:.22em;
+  color:var(--accent);display:inline-block;margin-bottom:.9rem;
+}
+.section-head{max-width:760px;margin:0 auto clamp(30px,4vw,56px);text-align:center}
+.section-head h2{margin-bottom:.5rem}
+.section-head p{color:var(--ink-soft);font-size:var(--s-1)}
+
+/* buttons — SQUARE, quiet-luxe, light tracking */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:.5em;
+  font-family:var(--font-body);font-weight:500;font-size:.82rem;
+  letter-spacing:.16em;text-transform:uppercase;
+  padding:17px 36px;border-radius:var(--radius-btn);
+  border:1px solid transparent;cursor:pointer;transition:.18s ease;line-height:1;
+}
+.btn-primary{background:var(--accent);color:var(--btn-ink)}
+.btn-primary:hover{background:var(--accent-2)}
+.btn-dark{background:var(--ink);color:#fff}
+.btn-dark:hover{background:#000}
+.btn-outline{background:transparent;color:var(--ink);border-color:var(--ink)}
+.btn-outline:hover{background:var(--ink);color:#fff}
+.btn-light{background:#fff;color:var(--ink);border-color:#fff}
+.btn-light:hover{background:transparent;color:#fff;border-color:#fff}
+.btn-block{width:100%}
+
+.ic{width:40px;height:40px;stroke:currentColor;stroke-width:1.3;fill:none;flex:none}
+
+.block{background:var(--surface);border-radius:var(--radius-lg);box-shadow:var(--shadow-sm)}
+
+/* depth: floats (STATIC) */
+.float{position:absolute;z-index:3;pointer-events:none}
+.float img{width:100%;height:auto;transform:rotate(var(--rot,0deg));
+  filter:drop-shadow(0 20px 30px rgba(26,26,26,.20))}
+@media(max-width:1000px){.float{display:none}}
+
+/* scroll reveal (3D) */
+.reveal{opacity:0;transform:perspective(900px) rotateX(8deg) translateY(26px);
+  transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){
+  .reveal{opacity:1;transform:none;transition:none}
+  html{scroll-behavior:auto}
+}
